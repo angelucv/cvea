@@ -17,7 +17,7 @@ format:
 
 ::: {.callout-note icon=false}
 ## Manuscrito completo (versión extendida)
-[**Abrir artículo completo**](https://angelucv.github.io/cvea/assets/articulos/articulo-colmenares-espacio-temporal.html){target="_blank"} (introducción, revisión literaria, métodos, resultados, figuras y conclusiones). Puede tardar unos segundos en cargar.
+[**Abrir artículo completo**](https://app.box.com/s/4kfgwwbdzj9u0k171xgvua7amvfxlscb){target="_blank"} (introducción, revisión literaria, métodos, resultados, figuras y conclusiones). Puede tardar unos segundos en cargar.
 :::
 
 ## Resumen
