@@ -2,32 +2,84 @@
 title: "Centro Venezolano de Estudios Actuariales"
 subtitle: "Miembros del Comité Editorial y de Investigación"
 toc: false
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        .comite-editorial-member { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 2rem; }
+        .comite-editorial-member img { flex-shrink: 0; }
+        .comite-editorial-member .comite-info { flex: 1; }
+        </style>
 ---
 
 Perfiles del Comité Editorial de la RVEA y del equipo de investigación del CVEA.
 
-## Perfiles en LinkedIn
+## Comité Editorial
 
-- [**Prof. Jorge Dias**](https://cn.linkedin.com/in/jorge-dias7)
-- [**Prof. Angel Colmenares**](https://ve.linkedin.com/in/angel-colmenares-a2ab06204)
-- [**Prof. Aymara Gerdel**](https://cn.linkedin.com/in/aymaragerdel)
-- [**Prof. Jhon Beens**](https://ve.linkedin.com/in/jhon-d-beens-c-491923157)
+::: {.comite-editorial-member}
 
-## Prof. Jorge Dias
+![Prof. Jorge Dias](assets/editores/jorge-dias.jpg){width=120 style="border-radius: 8px;"}
+
+::: {.comite-info}
+
+**Prof. Jorge Dias**
+
+[Perfil en LinkedIn](https://cn.linkedin.com/in/jorge-dias7)
 
 Licenciado en Ciencias Actuariales por la Universidad Central de Venezuela (UCV), con una Maestría en Estadísticas Aplicadas de la Universidad Jiaotong de Pekín y candidato a Doctor en Finanzas y Seguros en la Universidad de Economía y Negocios Internacionales de Pekín. Es Jefe del Departamento de Actuariado y profesor asistente en la Escuela de Estadística y Ciencias Actuariales de la UCV, con experiencia docente en áreas como Seguros de Personas y Matemáticas de Pensiones. Su carrera combina la academia con la experiencia profesional en la Superintendencia de la Actividad Aseguradora, aportando una visión integral del sector.
 
-## Prof. Angel Colmenares
+:::
+
+:::
+
+::: {.comite-editorial-member}
+
+![Prof. Angel Colmenares](assets/editores/angel-colmenares.jpg){width=120 style="border-radius: 8px;"}
+
+::: {.comite-info}
+
+**Prof. Angel Colmenares**
+
+[Perfil en LinkedIn](https://ve.linkedin.com/in/angel-colmenares-a2ab06204)
 
 Licenciado en Ciencias Actuariales y Magister Scientiarum en Modelos Aleatorios por la Universidad Central de Venezuela (UCV), actualmente cursando un Doctorado en Matemáticas en la misma casa de estudios. Como profesor asistente en la UCV, ha liderado múltiples departamentos y ha sido un actor clave en la reforma curricular y en la promoción de convenios interinstitucionales. Su vasta experiencia profesional incluye roles de alta dirección como Vicepresidente de Suscripción en C.N.A. de Seguros La Previsora, Vicepresidente Ejecutivo de Riesgo en el Banco de Venezuela y Profesional V Actuarial en la Superintendencia de la Actividad Aseguradora, lo que le confiere una profunda comprensión del riesgo en los sectores de seguros y finanzas.
 
-## Prof. Aymara Gerdel
+:::
+
+:::
+
+::: {.comite-editorial-member}
+
+![Prof. Aymara Gerdel](assets/editores/aymara-gerdel.jpg){width=120 style="border-radius: 8px;"}
+
+::: {.comite-info}
+
+**Prof. Aymara Gerdel**
+
+[Perfil en LinkedIn](https://cn.linkedin.com/in/aymaragerdel)
 
 Licenciada en Estadística y Especialista en Gobierno y Políticas Públicas por la Universidad Central de Venezuela (UCV). Posee una Maestría en Economía (Comercio Internacional) y actualmente es candidata a Doctora en Políticas Públicas por la University of International Business and Economics en Pekín. Como profesora en la UCV, su perfil combina un sólido fundamento cuantitativo con una especialización en políticas públicas y economía internacional, aportando una perspectiva crucial para evaluar el impacto socioeconómico y regulatorio de los sistemas de previsión social.
 
-## Prof. Jhon Beens
+:::
+
+:::
+
+::: {.comite-editorial-member}
+
+![Prof. Jhon Beens](assets/editores/jhon-beens.jpg){width=120 style="border-radius: 8px;"}
+
+::: {.comite-info}
+
+**Prof. Jhon Beens**
+
+[Perfil en LinkedIn](https://ve.linkedin.com/in/jhon-d-beens-c-491923157)
 
 Licenciado en Ciencias Estadísticas por la Escuela de Estadística y Ciencias Actuariales de la Universidad Central de Venezuela (UCV) y maestrante en Estudios de la Ciencia y la Tecnología en el Instituto Venezolano de Investigaciones Científicas (IVIC). Es profesor en la Facultad de Ciencias Económicas y Sociales de la UCV y Coordinador del Área de Estudios Históricos y Culturales del Centro Venezolano de Estudios sobre China (CVEC). Su formación en estadística y su enfoque en los estudios de la ciencia y la tecnología aportan una visión crítica sobre la construcción y aplicación del conocimiento técnico y científico.
+
+:::
+
+:::
 
 ## Colaboradores y tesistas (volúmenes inaugurales)
 

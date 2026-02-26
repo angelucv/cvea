@@ -10,13 +10,29 @@ listing:
     - vol1-azuaje.qmd
     - vol2-herrera.qmd
   fields: [title, author, date]
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        .quarto-listing-table,
+        .quarto-listing-table th,
+        .quarto-listing-table td { background: #38666A !important; color: white !important; border-color: rgba(255,255,255,0.3) !important; }
+        .quarto-listing-table a { color: white !important; text-decoration: underline; }
+        .rvea-tabla-articulos table { width: 100%; }
+        .rvea-tabla-articulos table th,
+        .rvea-tabla-articulos table td { background: #38666A !important; color: white !important; border: 1px solid rgba(255,255,255,0.3); }
+        .rvea-tabla-articulos table a { color: white !important; }
+        </style>
 ---
 
-La **Revista Venezolana de Actuariado (RVEA)** es la publicación arbitrada del CVEA. Publica trabajos originales en ciencias actuariales, estadística aplicada y temas afines: mortalidad, supervivencia, reservas, riesgo, bases técnicas, solvencia, pensiones, tarificación, proyecciones demográficas, análisis de datos composicionales y metodologías reproducibles, con énfasis en aplicaciones al contexto venezolano y latinoamericano. Cada manuscrito incluye código reproducible (R/Python/Julia) y está disponible en formato web y, cuando aplique, en PDF.
+La **Revista Venezolana de Actuariado (RVEA)** es la publicación arbitrada del CVEA. Publica trabajos originales en ciencias actuariales, estadística y disciplinas afines, con un enfoque global que abarca teoría, metodología y aplicaciones en contextos nacionales e internacionales. Cada manuscrito incluye código reproducible (R/Python/Julia) y está disponible en formato web y, cuando aplique, en PDF.
 
-**Alcance:** la RVEA mantiene una visión amplia; incluye, entre otros, modelos estocásticos de mortalidad (Lee-Carter, BYM, INLA), análisis espacial y espacio-temporal, tablas dinámicas, proyección por causas (CoDa), solvencia y pensiones, tarificación y reservas, seguros de personas, matemáticas financieras y temas emergentes del sector. Se priorizan estudios que aporten datos, código y replicabilidad.
+**Alcance:** la RVEA mantiene una visión amplia y plural; acoge contribuciones en modelización de riesgos, solvencia, pensiones, tarificación, seguros, matemáticas financieras y actuariales, proyecciones demográficas, metodologías reproducibles y temas emergentes del sector. Se priorizan estudios que aporten datos, código y replicabilidad.
 
 ## Volumen I
+
+::: {.rvea-tabla-articulos}
 
 | Artículo | Autor(es) | Tema / Área |
 |----------|-----------|-------------|
@@ -25,7 +41,13 @@ La **Revista Venezolana de Actuariado (RVEA)** es la publicación arbitrada del 
 | Valuación de Bases Técnicas | Daylin Moreno | Desfase de las bases de Masjuán (1960) frente a la realidad del siglo XXI |
 | Tabla Dinámica LC15 | Daniel Azuaje | Tabla de mortalidad dinámica con R; superación de tablas estáticas CSO 1980 |
 
+:::
+
+Las versiones completas (HTML) del artículo de **Angel Colmenares** (análisis espacio-temporal de la mortalidad 1996-2016) y del artículo de **Arlet Moreno y Angel Colmenares** (mortalidad neonatal, postneonatal y en la niñez) están disponibles en el repositorio: [Artículo Angel Colmenares (BYM/INLA)](https://github.com/angelucv/cvea/blob/main/Referencias/RVEA_Volumen%20I/RVA_Vol_I_Angel_C/V3/Art_Angel_Plantilla_RVEA.html), [Artículo Arlet Moreno y Angel Colmenares (Lee-Carter)](https://github.com/angelucv/cvea/blob/main/Referencias/RVEA_Volumen%20I/RVA_Vol_I_Arlet_M/RVA-Arlet_Moreno1.html).
+
 ## Volumen II: Las dimensiones de la mortalidad (causa, género y territorio)
+
+::: {.rvea-tabla-articulos}
 
 | Artículo | Autor(es) | Tema / Área |
 |----------|-----------|-------------|
@@ -37,7 +59,11 @@ La **Revista Venezolana de Actuariado (RVEA)** es la publicación arbitrada del 
 | Principales causas (regiones Los Llanos y Capital) | Daniela Godoy | Mapeo geográfico del riesgo |
 | Principales causas (regiones Oriental y Guayana) | Oriana Lopez | Cobertura nacional del mapa de riesgo |
 
+:::
+
 ## Volumen III: Perspectivas internacionales y fronteras en la modelización
+
+::: {.rvea-tabla-articulos}
 
 | Artículo | Autor(es) | Tema / Área |
 |----------|-----------|-------------|
@@ -45,6 +71,8 @@ La **Revista Venezolana de Actuariado (RVEA)** es la publicación arbitrada del 
 | Medición del riesgo de longevidad (Portugal) | Oliver Triveño | Impacto financiero en rentas vitalicias y pensiones |
 | Comparativa internacional (Países Bajos, Bélgica) | Luis Alvarez | En desarrollo |
 | Comparativa internacional (Italia, Grecia) | José Mendoza | En desarrollo |
+
+:::
 
 ## Cómo publicar
 

@@ -5,7 +5,7 @@ subtitle: "Eje de Investigación — Diagnóstico del sistema de pensiones y bas
 
 **Libros y Materiales Docentes** recopila el diagnóstico del sistema de pensiones venezolano y las bases técnicas actualizadas, en línea con la misión del CVEA de soberanía técnica y divulgación reproducible. Los volúmenes se dirigen a actuarios, reguladores (IVSS, Sudeaseg), académicos y decisores de política pública.
 
-**Objetivos:** (1) Documentar el desfase de las tablas históricas (Masjuán, CSO 1980) frente a la realidad demográfica actual; (2) ofrecer metodologías dinámicas y territorializadas (Lee-Carter, modelos espaciales); (3) proporcionar código y datos para replicación. Los libros del CVEA se generan con la **plantilla Quarto Book** (modelo: *Applied Machine Learning Using mlr3 in R*), disponible en `Referencias/Plantilla_CVEA_Book_Applied Machine Learning Using mlr3 in R/`.
+**Objetivos:** (1) Documentar el desfase de las tablas históricas (Masjuán, CSO 1980) frente a la realidad demográfica actual; (2) ofrecer metodologías dinámicas y territorializadas (Lee-Carter, modelos espaciales); (3) proporcionar código y datos para replicación. Los libros del CVEA se generan con la **plantilla Quarto Book** (modelo: *Applied Machine Learning Using mlr3 in R*). La plantilla está en el repositorio: [Ver plantilla mlr3 (HTML)](https://github.com/angelucv/cvea/blob/main/Referencias/Plantilla_CVEA_Book_Applied%20Machine%20Learning%20Using%20mlr3%20in%20R/book/index.html). El libro *Demografía, Mortalidad y Previsión Social…* dispone de enlace «Ver en línea» y «Descargar PDF» en la sección [Libro disponible](#libro-disponible).
 
 ## Libros base de los materiales docentes
 

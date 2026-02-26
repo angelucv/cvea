@@ -9,6 +9,18 @@ listing:
       # image: assets/img/dashboard-preview.png  # Descomenta cuando tengas la captura
     - title: "Mapa de Riesgo de Mortalidad"
       path: demo-mapa.qmd
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        /* Galería de demos: fondo verde CVEA en las cajas */
+        .quarto-listing-grid .listing-card,
+        .quarto-listing-grid .grid-item,
+        .listing-grid .listing-card { background: #38666A !important; color: white !important; border-radius: 8px; }
+        .quarto-listing-grid .listing-card a,
+        .quarto-listing-grid .listing-card .listing-title { color: white !important; }
+        </style>
 ---
 
 El **eje de Extensión** del CVEA ofrece una galería de capacidades técnicas mediante dashboards interactivos, herramientas reproducibles y servicios profesionales. Los demos y asesorías ilustran aplicaciones directas de la investigación publicada en la RVEA y en los libros y materiales docentes (mortalidad, reservas, riesgo territorial).
@@ -16,7 +28,7 @@ El **eje de Extensión** del CVEA ofrece una galería de capacidades técnicas m
 ## Qué encontrarás aquí
 
 - **Demos interactivos:** simuladores de reservas IBNR, mapas de riesgo de mortalidad y visualizaciones de indicadores, enlazados desde las tarjetas siguientes. Para aplicaciones Streamlit o Shiny se utilizan iframes optimizados.
-- **Consultoría y asesoría técnica:** reservas técnicas, tarificación territorializada, diagnóstico de bases técnicas y recomendaciones para entidades reguladas (IVSS, Sudeaseg, aseguradoras). El CVEA ofrece informes técnicos, revisión de modelos y acompañamiento en la transición hacia tablas dinámicas.
+- **Consultoría y asesoría técnica:** reservas técnicas, tarificación territorializada, diagnóstico de bases técnicas y recomendaciones para entidades reguladas (IVSS, Sudeaseg, aseguradoras). El CVEA ofrece informes técnicos, revisión de modelos y acompañamiento en la transición hacia dashboards interactivos.
 - **Formación continua y talleres:** sesiones orientadas a actuarios, reguladores y profesionales del sector, alineadas con los temas de la RVEA y los libros del Centro.
 - **Observatorios y seguimiento:** apoyo metodológico para indicadores de mortalidad, longevidad y solvencia, con énfasis en reproducibilidad (código y datos).
 - **Informes técnicos y policy briefs:** síntesis de hallazgos de investigación en formato breve (4-8 páginas) con recomendaciones de política, dirigidos a ministerios, superintendencias, aseguradoras y decisores.
