@@ -15,6 +15,11 @@ format:
     fontsize: 11pt
 ---
 
+::: {.callout-note icon=false}
+## Manuscrito completo (versión extendida)
+[**Abrir artículo completo**](https://angelucv.github.io/cvea/assets/articulos/articulo-colmenares-espacio-temporal.html){target="_blank"} (introducción, revisión literaria, métodos, resultados, figuras y conclusiones). Puede tardar unos segundos en cargar.
+:::
+
 ## Resumen
 
 **Resumen:** La evaluación de la mortalidad sub-nacional es crítica para la solvencia de sistemas de previsión social y la tarificación de seguros de vida. Este estudio analiza la mortalidad en los 335 municipios de Venezuela (1996-2016) combinando normalización geográfica (GADM), clusters de K-means, índices de autocorrelación espacial de Moran y un modelo jerárquico Bayesiano Besag-York-Mollié (BYM) mediante INLA. Se identificó una tendencia nacional de incremento del riesgo del 1.4% anual, con clusters de riesgo persistentes en el arco central y zonas fronterizas. La interpolación IDW del riesgo bayesiano revela una superficie de mortalidad heterogénea que invalida el uso de tablas de mortalidad únicas nacionales. Existe un exceso de mortalidad crónico en regiones específicas que requiere ajustes actuariales territorializados.

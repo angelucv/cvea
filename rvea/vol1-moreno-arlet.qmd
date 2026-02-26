@@ -16,6 +16,11 @@ format:
     fontsize: 11pt
 ---
 
+::: {.callout-note icon=false}
+## Manuscrito completo (versión extendida)
+[**Abrir artículo completo**](https://angelucv.github.io/cvea/assets/articulos/articulo-moreno-colmenares-mortalidad-infantil.html){target="_blank"} (introducción, revisión literaria, métodos, resultados, figuras y conclusiones). Puede tardar unos segundos en cargar.
+:::
+
 ## Resumen
 
 La planificación de riesgos demográficos y actuariales en Venezuela ha dependido históricamente de proyecciones determinísticas (CELADE, INDEC), que no capturan la incertidumbre ni la heterogeneidad regional. Este estudio aplicó el modelo estocástico de Lee-Carter a los Anuarios de Mortalidad del MPPS (1995-2012), desagregados por entidad federal, sexo y edad (días/meses). El índice temporal $\kappa_t$ se modeló con series de tiempo y se proyectó hasta 2022 (R: demography, ILC).
