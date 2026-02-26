@@ -63,7 +63,7 @@ include-in-header: assets/meta.html
         <div class="quote-img">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" class="svg-quote" style="width: 60px; height: auto;"><path fill="#FFFFFF" fill-rule="evenodd" d="M6.438,50.5v35.875h35.875V50.5h-20.5c0-11.321,9.179-20.5,20.5-20.5V14.625C22.498,14.625,6.438,30.686,6.438,50.5z M93.562,30V14.625c-19.814,0-35.875,16.061-35.875,35.875v35.875h35.875V50.5h-20.5C73.062,39.179,82.241,30,93.562,30z"/></svg>
         </div>
-        <p class="quote-copy" style="color:white;"><i>El CVEA representa un pilar fundamental para el desarrollo de las ciencias estadísticas y actuariales en Venezuela, promoviendo un enfoque práctico y colaborativo entre la academia y diversos sectores que permite a docentes y estudiantes contribuir activamente a la solución de desafíos reales en nuestra sociedad. Juntos, podemos transformar nuestra disciplina y avanzar hacia un futuro de excelencia.</i></p>
+        <p class="quote-copy" style="color:white;"><i>Juntos podemos transformar nuestra disciplina y avanzar hacia un futuro de excelencia.</i></p>
         <img src="assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png" alt="CVEA" style="width: 100px; margin-bottom: 16px; filter: brightness(0) invert(1);">
       </div>
     </div>

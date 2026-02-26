@@ -19,7 +19,7 @@ Perfiles del Comité Editorial de la RVEA y del equipo de investigación del CVE
 
 ::: {.comite-editorial-member}
 
-![Prof. Jorge Dias](assets/editores/jorge-dias.jpg){width=120 style="border-radius: 8px;"}
+![Prof. Jorge Dias](https://ui-avatars.com/api/?name=Jorge+Dias&size=120&background=38666A&color=fff){width=120 style="border-radius: 8px;"}
 
 ::: {.comite-info}
 
@@ -35,7 +35,7 @@ Licenciado en Ciencias Actuariales por la Universidad Central de Venezuela (UCV)
 
 ::: {.comite-editorial-member}
 
-![Prof. Angel Colmenares](assets/editores/angel-colmenares.jpg){width=120 style="border-radius: 8px;"}
+![Prof. Angel Colmenares](https://ui-avatars.com/api/?name=Angel+Colmenares&size=120&background=38666A&color=fff){width=120 style="border-radius: 8px;"}
 
 ::: {.comite-info}
 
@@ -51,7 +51,7 @@ Licenciado en Ciencias Actuariales y Magister Scientiarum en Modelos Aleatorios 
 
 ::: {.comite-editorial-member}
 
-![Prof. Aymara Gerdel](assets/editores/aymara-gerdel.jpg){width=120 style="border-radius: 8px;"}
+![Prof. Aymara Gerdel](https://ui-avatars.com/api/?name=Aymara+Gerdel&size=120&background=38666A&color=fff){width=120 style="border-radius: 8px;"}
 
 ::: {.comite-info}
 
@@ -67,7 +67,7 @@ Licenciada en Estadística y Especialista en Gobierno y Políticas Públicas por
 
 ::: {.comite-editorial-member}
 
-![Prof. Jhon Beens](assets/editores/jhon-beens.jpg){width=120 style="border-radius: 8px;"}
+![Prof. Jhon Beens](https://ui-avatars.com/api/?name=Jhon+Beens&size=120&background=38666A&color=fff){width=120 style="border-radius: 8px;"}
 
 ::: {.comite-info}
 
