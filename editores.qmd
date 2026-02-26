@@ -88,24 +88,29 @@ Los siguientes autores han contribuido con trabajos de grado y manuscritos que s
 
 **Volumen I: Fundamentos, demografía y sostenibilidad del sistema de previsión social**
 
-- **Daylin Moreno** — Valuación actuarial de las bases técnicas de Masjuán; desfase y obsolescencia.
-- **José Raúl Gálvez** — Situación de pensiones y jubilaciones; gobernanza, morosidad y sostenibilidad.
-- **Daniel Azuaje** — Tabla de mortalidad dinámica Lee-Carter (LC15); superación de tablas estáticas (CSO 1980).
-- **Arlet Moreno** — Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal.
+- [**Daylin Moreno**](https://www.linkedin.com/in/daylin-moreno-9a7027232) (2025) — Valuación actuarial de las bases técnicas de Masjuán; desfase y obsolescencia.
+- [**José Raúl Gálvez**](https://www.linkedin.com/in/jos%C3%A9-ra%C3%BAl-g%C3%A1lvez-340b18124) (2025) — Situación de pensiones y jubilaciones; gobernanza, morosidad y sostenibilidad.
+- [**Daniel Azuaje**](https://www.linkedin.com/in/daniel-azuaje) (2025) — Tabla de mortalidad dinámica Lee-Carter (LC15); superación de tablas estáticas (CSO 1980).
+- [**Arlet Moreno**](https://www.linkedin.com/in/arlet-moreno-vera-35506b161) (2025) — Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal.
 
 **Volumen II: Las dimensiones de la mortalidad (causa, género y territorio)**
 
-- **Iliria Herrera** — Proyección de la mortalidad por causas (Lee-Carter y CoDa).
-- **Williams Fernandez** — Tablas de decrecimiento múltiple con Cadenas de Markov.
-- **Kelvin Guedez** — Principales causas de fallecimiento en la población masculina venezolana.
-- **Dorielys Rangel** — Principales causas de fallecimiento en la población femenina venezolana.
-- **Kennya Briceño** — Tablas de decrecimiento múltiple (regiones Occidental, Andes, Central).
-- **Daniela Godoy** — Principales causas en las regiones Los Llanos y Capital.
-- **Oriana Lopez** — Principales causas en las regiones Oriental y Guayana.
+- [**Iliria Herrera**](https://www.linkedin.com/in/iliriah1) (2025) — Proyección de la mortalidad por causas (Lee-Carter y CoDa).
+- [**Williams Fernandez**](https://www.linkedin.com/in/williams-fernandez-solorzano-066069135) (2025) — Tablas de decrecimiento múltiple con Cadenas de Markov.
+- [**Kelvin Guedez**](https://www.linkedin.com/in/kelvin-taylor-guedez-alvarez-1162785b) (2025) — Principales causas de fallecimiento en la población masculina venezolana.
+- [**Dorielys Rangel**](https://www.linkedin.com/in/dorielys-z-rangel-gonzalez-18b549187) (2025) — Principales causas de fallecimiento en la población femenina venezolana.
+- [**Kennya Briceño**](https://www.linkedin.com/in/kennya-brice%C3%B1o-63b3a3204) (2025) — Tablas de decrecimiento múltiple (regiones Occidental, Andes, Central).
+- [**Daniela Godoy**](https://www.linkedin.com/in/daniela-godoy-v%C3%A1squez-a78188206) (2025) — Principales causas en las regiones Los Llanos y Capital.
+- **Oriana Lopez** (2025) — Principales causas en las regiones Oriental y Guayana.
 
 **Volumen III: Perspectivas internacionales y fronteras en la modelización**
 
-- **Eleazar Domínguez** — Análisis comparativo de métodos de proyección (Chile y Japón).
-- **Oliver Triveño** — Medición del riesgo de longevidad (Portugal); impacto en rentas vitalicias y pensiones.
-- **Luis Alvarez** — Comparativa internacional (Países Bajos, Bélgica) — en desarrollo.
-- **José Mendoza** — Comparativa internacional (Italia, Grecia) — en desarrollo.
+- [**Eleazar Domínguez**](https://www.linkedin.com/in/eleazar-dom%C3%ADnguez-886449294) (2025) — Análisis comparativo de métodos de proyección (Chile y Japón).
+- [**Oliver Triveño**](https://www.linkedin.com/in/olivertc) (2025) — Medición del riesgo de longevidad (Portugal); impacto en rentas vitalicias y pensiones.
+- [**Luis Alvarez**](https://www.linkedin.com/in/luis-alvarez-285b78297) (2026, en desarrollo) — Comparativa internacional (Países Bajos, Bélgica).
+- [**José Mendoza**](https://www.linkedin.com/in/jose-alejandro-mendoza-m%C3%A1rquez-3261a8324) (2026, en desarrollo) — Comparativa internacional (Italia, Grecia).
+
+**Otros autores**
+
+- [**Franklin Quero**](https://www.linkedin.com/in/franklin-quero-80484a282) (2025) — *Introducción a las Matemáticas Financieras* (TFPG).
+- [**Felipe Moreno**](https://www.linkedin.com/in/felipe-moreno-moreno-aa383617) — Colaboración en *Introducción a las Matemáticas Actuariales* (en preparación).
