@@ -1,0 +1,246 @@
+/* CVEA — base HCC + overrides teal */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
+
+@import "hcc-base.css";
+
+/* Overrides: identidad CVEA (teal #38666A en lugar de rojo HCC) */
+:root {
+  --cvea-teal: #38666A;
+  --cvea-teal-light: #4a7d82;
+  --main-font: 'Nunito Sans', sans-serif;
+}
+hr { border-color: var(--cvea-teal) !important; }
+.navbar-brand { color: var(--cvea-teal) !important; }
+.navbar .navbar-nav .nav-link.active { color: var(--cvea-teal) !important; }
+.navbar a.nav-link:after { background: var(--cvea-teal); }
+.navbar-dark .navbar-nav .nav-link:hover { color: var(--cvea-teal) !important; }
+a:not(.lightbox) { color: #38666A; }
+a:hover { color: var(--cvea-teal-light); }
+p > a, p > a:not(.lightbox) { color: var(--cvea-teal); }
+p > a:hover { color: var(--cvea-teal); }
+p > a:before:not(img, #TOC) { background-color: var(--cvea-teal); }
+p > a:hover::before { visibility: visible; transform: scaleX(1); }
+ul.share li a { background-color: var(--cvea-teal); }
+.sidebar nav[role=doc-toc] ul>li>a.active { border-left-color: var(--cvea-teal); color: var(--cvea-teal) !important; }
+.sidebar nav[role=doc-toc] ul>li>ul>li>a.active { border-left-color: var(--cvea-teal); color: var(--cvea-teal) !important; }
+.nav-link:hover, .nav-link:focus { color: var(--cvea-teal); }
+.btn-21:hover:before { background: linear-gradient(to right, transparent, var(--cvea-teal)); }
+.btn-21:hover:after { background: linear-gradient(to bottom, transparent, var(--cvea-teal)); }
+.btn-21 span:hover:before { background: linear-gradient(to top, transparent, var(--cvea-teal)); }
+.btn-21 span:hover:after { background: linear-gradient(to left, transparent, var(--cvea-teal)); }
+
+/* Hero CVEA: contenedor y capa del fondo animado */
+.hero-cvea {
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  margin-top: -120px;
+  padding-top: 120px;
+  background: var(--cvea-teal);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.hero-doodle-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  min-height: 100vh;
+}
+.hero-doodle-bg css-doodle {
+  display: block !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  opacity: 0.92;
+}
+/* Asegurar que el canvas/svg interno del doodle ocupe todo el espacio */
+.hero-doodle-bg css-doodle canvas,
+.hero-doodle-bg css-doodle svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+.hero-cvea-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 1rem;
+}
+/* Palabras rotatorias (Investigación, Docencia, Extensión): negro y más grandes */
+.hero-cvea-content .hero-rotate-line,
+.hero-cvea-content .hero-rotate-line .txt-rotate,
+.hero-cvea-content .txt-rotate {
+  color: #000 !important;
+  font-size: clamp(1.75rem, 5.5vw, 3rem) !important;
+  font-weight: 600;
+}
+.hero-cvea-content .txt-rotate > .wrap {
+  border-right-color: #000;
+}
+.cvea-hero, .intro_f.cvea-intro {
+  background-color: var(--cvea-teal) !important;
+}
+
+/* Navbar y menú unificados (mismo estilo en toda la barra y dropdowns) */
+.navbar {
+  font-family: var(--main-font, 'Nunito Sans'), sans-serif !important;
+  background: #1a1a1a !important;
+}
+.navbar a,
+.navbar .nav-link,
+.navbar .dropdown-item {
+  color: #fff !important;
+  font-weight: 500;
+}
+.navbar .nav-link .bi,
+.navbar .dropdown-item .bi {
+  margin-right: 0.35em;
+  opacity: 0.95;
+}
+.navbar-brand { color: var(--cvea-teal) !important; }
+.navbar .navbar-nav .nav-link.active { color: var(--cvea-teal) !important; font-weight: 700 !important; }
+.navbar a.nav-link:after { background: var(--cvea-teal); }
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar .nav-link:hover { color: var(--cvea-teal) !important; }
+.dropdown-menu {
+  background: #1a1a1a !important;
+  border: 1px solid rgba(56, 102, 106, 0.3);
+}
+.dropdown-menu .dropdown-item {
+  color: #fff !important;
+  background: transparent !important;
+}
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+  color: var(--cvea-teal) !important;
+  background: rgba(56, 102, 106, 0.15) !important;
+}
+.navbar-toggler { border-color: rgba(255,255,255,0.4) !important; }
+.navbar-logo { max-height: 48px !important; width: auto !important; }
+
+/* Ocultar el título "On this page" del TOC lateral */
+#toc-title {
+  display: none !important;
+}
+
+/* Ocultar el título de la página (p. ej. "Centro Venezolano...") encima del contenido */
+header#title-block-header.quarto-title-block.default {
+  display: none !important;
+}
+
+/* Nombre del sitio al lado del logo en la barra, en blanco */
+.navbar-title,
+.navbar-brand-container .navbar-brand:not(.navbar-brand-logo) {
+  display: inline-block !important;
+  color: #fff !important;
+  font-weight: 500;
+}
+
+/* Objetivos (iconos): texto siempre visible en blanco al lado de cada icono */
+.container-blue .achievements .scroll-text {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+.container-blue .achievements .work-heading,
+.container-blue .achievements .work-text,
+.container-blue .achievements .work-link .work-heading,
+.container-blue .achievements .work-link .work-text {
+  color: #fff !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+.container-blue .achievements .work-heading {
+  font-size: 1.35rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+.container-blue .achievements .work-text {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Sección Acceso rápido (texto): fondo oscuro y texto blanco */
+.acceso-rapido-contenido {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+}
+.acceso-rapido-contenido h2 {
+  color: #fff !important;
+  margin-top: 0;
+}
+.acceso-rapido-contenido ul,
+.acceso-rapido-contenido li,
+.acceso-rapido-contenido a {
+  color: #fff !important;
+}
+.acceso-rapido-contenido a:hover {
+  color: var(--cvea-teal-light) !important;
+  text-decoration: underline;
+}
+
+/* Objetivos con iconos: enlaces que mantienen layout (icono + texto al lado) */
+.achievements a.work-link {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  text-decoration: none !important;
+  color: inherit;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding: 40px 0 20px 0;
+  width: 100%;
+  margin-left: 10px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.achievements a.work-link:hover {
+  background: rgba(56, 102, 106, 0.2);
+  color: #fff;
+}
+.achievements a.work-link .work-icon {
+  width: 30%;
+  flex: 0 0 30%;
+}
+.achievements a.work-link .work-description {
+  width: 70%;
+  flex: 1;
+  margin-left: 0;
+}
+.achievements a.work-link .work-heading,
+.achievements a.work-link .work-text {
+  color: #fff !important;
+}
+.achievements a.work-link:last-child {
+  border-bottom: none;
+}
+@media (max-width: 768px) {
+  .achievements a.work-link {
+    flex-direction: column;
+    align-items: center;
+  }
+  .achievements a.work-link .work-icon,
+  .achievements a.work-link .work-description {
+    width: 100%;
+  }
+  .achievements a.work-link .work-description .work-text {
+    margin-left: 0;
+    text-align: center;
+  }
+}
