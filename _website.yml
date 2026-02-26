@@ -1,7 +1,7 @@
 # Configuración del sitio (modelo Hertie Coding Club)
 website:
   title: "Centro Venezolano de Estudios Actuariales"
-  site-url: https://angel-colmenares.github.io/cvea/
+  site-url: https://angelucv.github.io/cvea/
   favicon: assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png
   navbar:
     logo: "assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png"
