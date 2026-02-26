@@ -34,6 +34,9 @@ jobs:
         with:
           version: "1.8.27"
 
+      - name: Install TinyTeX (for PDF output)
+        run: quarto install tinytex
+
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
