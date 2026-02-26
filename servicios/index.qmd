@@ -11,13 +11,19 @@ listing:
       path: demo-mapa.qmd
 ---
 
-El **eje de Extensión** del CVEA ofrece una galería de capacidades técnicas mediante dashboards interactivos y herramientas reproducibles. Los demos ilustran aplicaciones directas de la investigación publicada en la RVEA y los libros y materiales docentes (mortalidad, reservas, riesgo territorial).
+El **eje de Extensión** del CVEA ofrece una galería de capacidades técnicas mediante dashboards interactivos, herramientas reproducibles y servicios profesionales. Los demos y asesorías ilustran aplicaciones directas de la investigación publicada en la RVEA y en los libros y materiales docentes (mortalidad, reservas, riesgo territorial).
 
 ## Qué encontrarás aquí
 
-- **Demos interactivos:** simuladores de reservas IBNR y mapas de riesgo de mortalidad, enlazados desde las tarjetas siguientes. Para aplicaciones Streamlit o Shiny se utilizan iframes optimizados.
-- **Consultoría:** el CVEA ofrece asesoría en reservas técnicas, tarificación territorializada y diagnóstico de bases técnicas para entidades reguladas (IVSS, aseguradoras). Contacto a través del [Comité Editorial](../editores.qmd).
+- **Demos interactivos:** simuladores de reservas IBNR, mapas de riesgo de mortalidad y visualizaciones de indicadores, enlazados desde las tarjetas siguientes. Para aplicaciones Streamlit o Shiny se utilizan iframes optimizados.
+- **Consultoría y asesoría técnica:** reservas técnicas, tarificación territorializada, diagnóstico de bases técnicas y recomendaciones para entidades reguladas (IVSS, Sudeaseg, aseguradoras). El CVEA ofrece informes técnicos, revisión de modelos y acompañamiento en la transición hacia tablas dinámicas.
+- **Formación continua y talleres:** sesiones orientadas a actuarios, reguladores y profesionales del sector, alineadas con los temas de la RVEA y los libros del Centro.
+- **Observatorios y seguimiento:** apoyo metodológico para indicadores de mortalidad, longevidad y solvencia, con énfasis en reproducibilidad (código y datos).
+- **Informes técnicos y policy briefs:** síntesis de hallazgos de investigación en formato breve (4-8 páginas) con recomendaciones de política, dirigidos a ministerios, superintendencias, aseguradoras y decisores.
+- **Fomento a nuevos trabajos de grado:** definición de líneas de investigación prioritarias, tutoría y apoyo metodológico; banco de tesis de acceso abierto.
 - **Reproducibilidad:** cuando el código fuente de un demo esté disponible en un repositorio público, se enlazará desde la descripción del demo.
+
+Contacto a través del [Comité Editorial](../editores.qmd).
 
 ## Galería de demos
 

@@ -25,7 +25,7 @@ La coordinación editorial, la tutoría de investigaciones y la relación con el
 
 La Revista Venezolana de Actuariado (RVEA) cuenta con un Comité Editorial que vela por la calidad y la reproducibilidad de los manuscritos. Las recomendaciones estratégicas del CVEA (transición a tablas dinámicas, territorialización de reservas, observatorios de mortalidad) se dirigen al sector actuarial, IVSS, Sudeaseg y decisores de política pública.
 
-La tutoría y coordinación de investigaciones del volumen inaugural de la RVEA está a cargo del Prof. Angel Colmenares. Los tesistas Daylin Moreno, José Raúl Gálvez, Daniel Azuaje y Arlet Moreno han sido pilares del diagnóstico sistémico presentado en el primer volumen.
+La tutoría y coordinación de investigaciones del volumen inaugural de la RVEA está a cargo del Prof. Jorge Dias y del Prof. Angel Colmenares. Los tesistas Daylin Moreno, José Raúl Gálvez, Daniel Azuaje y Arlet Moreno han sido pilares del diagnóstico sistémico presentado en el primer volumen.
 
 ### Modelo de artículo: I-RL-M-R-D
 
@@ -50,13 +50,13 @@ La plantilla oficial de la RVEA está en la carpeta de referencia del proyecto:
 
 Para integrar la plantilla en tu flujo de trabajo, copia ese archivo y los archivos indicados en su cabecera a tu carpeta de manuscrito.
 
-## Libros y Materiales Docentes y plantilla de libros
+## Plantilla de Libros y Materiales Docentes
 
 El **modelo para los libros del CVEA** es la plantilla **Quarto Book** basada en *Applied Machine Learning Using mlr3 in R*, ubicada en `Referencias/Plantilla_CVEA_Book_Applied Machine Learning Using mlr3 in R/book/`. Incluye partes, capítulos, PDF descargable, sidebar y búsqueda; ya está adaptada al CVEA (título, logo, pie de página).
 
 El libro **Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial** fue generado con esa plantilla y está compilado; se publica en la web colocando solo el HTML y el PDF en `libro/demografia-siglo-xxi/`. Ver [Libros y Materiales Docentes](libro/index.qmd) para el enlace "Ver en línea" y "Descargar PDF".
 
-Los libros y materiales docentes (diagnóstico del sistema de pensiones y bases técnicas) sigue el plan editorial 2025-2026; los capítulos se irán añadiendo usando la misma plantilla.
+Los libros y materiales docentes (diagnóstico del sistema de pensiones y bases técnicas) siguen el plan editorial 2025-2026; los capítulos se irán añadiendo usando la misma plantilla.
 
 ## Documentos de referencia
 

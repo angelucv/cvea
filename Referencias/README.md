@@ -50,12 +50,33 @@ La RVEA utiliza la estructura **I-RL-M-R-D**:
 
 Tesistas y trabajos vinculados a este volumen: Daylin Moreno, José Raúl Gálvez, Daniel Azuaje, Arlet Moreno.
 
+### Volumen II — Las dimensiones de la mortalidad (causa, género y territorio)
+
+| Artículo / tema | Autor(es) |
+|-----------------|-----------|
+| Proyección de la mortalidad por causas (Lee-Carter y CoDa) | Iliria Herrera |
+| Tablas de decrecimiento múltiple con Cadenas de Markov | Williams Fernandez |
+| Principales causas de fallecimiento (población masculina) | Kelvin Guedez |
+| Principales causas de fallecimiento (población femenina) | Dorielys Rangel |
+| Tablas de decrecimiento múltiple (regiones Occidental, Andes, Central) | Kennya Briceño |
+| Principales causas (regiones Los Llanos y Capital) | Daniela Godoy |
+| Principales causas (regiones Oriental y Guayana) | Oriana Lopez |
+
+### Volumen III — Perspectivas internacionales y fronteras en la modelización
+
+| Artículo / tema | Autor(es) | Estado |
+|-----------------|-----------|--------|
+| Análisis comparativo de métodos de proyección (Chile y Japón) | Eleazar Domínguez | — |
+| Medición del riesgo de longevidad (Portugal); impacto en rentas vitalicias y pensiones | Oliver Triveño | — |
+| Comparativa internacional (Países Bajos, Bélgica) | Luis Alvarez | En desarrollo |
+| Comparativa internacional (Italia, Grecia) | José Mendoza | En desarrollo |
+
 ### Comité editorial
 
 - Comité Editorial de la RVEA referido en los manuscritos (p. ej. recomendaciones desde el CVEA a IVSS y Sudeaseg).
-- Tutoría y coordinación de investigaciones del volumen: Prof. Angel Colmenares.
+- Tutoría y coordinación de investigaciones del volumen: Prof. Jorge Dias y Prof. Angel Colmenares.
 
-## Libros y Materiales Docentes y plantilla de libros
+## Plantilla de Libros y Materiales Docentes
 
 ### Plantilla de libro (Quarto Book)
 
@@ -74,7 +95,7 @@ Ese libro fue **generado con la plantilla anterior** y está completamente compi
 
 ### Libros y Materiales Docentes (plan editorial)
 
-- Los **libros y materiales docentes** en la plataforma sigue el plan editorial 2025-2026.
+- Los **libros y materiales docentes** en la plataforma siguen el plan editorial 2025-2026.
 - Contenido: diagnóstico del sistema de pensiones, bases técnicas, actualización de tablas (Masjuán, CSO 1980, modelos dinámicos).
 - Capítulos y volúmenes adicionales se incorporan según ese plan, usando la misma plantilla de libro.
 

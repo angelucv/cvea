@@ -6,6 +6,13 @@ toc: false
 
 Perfiles del Comité Editorial de la RVEA y del equipo de investigación del CVEA.
 
+## Perfiles en LinkedIn
+
+- [**Prof. Jorge Dias**](https://cn.linkedin.com/in/jorge-dias7)
+- [**Prof. Angel Colmenares**](https://ve.linkedin.com/in/angel-colmenares-a2ab06204)
+- [**Prof. Aymara Gerdel**](https://cn.linkedin.com/in/aymaragerdel)
+- [**Prof. Jhon Beens**](https://ve.linkedin.com/in/jhon-d-beens-c-491923157)
+
 ## Prof. Jorge Dias
 
 Licenciado en Ciencias Actuariales por la Universidad Central de Venezuela (UCV), con una Maestría en Estadísticas Aplicadas de la Universidad Jiaotong de Pekín y candidato a Doctor en Finanzas y Seguros en la Universidad de Economía y Negocios Internacionales de Pekín. Es Jefe del Departamento de Actuariado y profesor asistente en la Escuela de Estadística y Ciencias Actuariales de la UCV, con experiencia docente en áreas como Seguros de Personas y Matemáticas de Pensiones. Su carrera combina la academia con la experiencia profesional en la Superintendencia de la Actividad Aseguradora, aportando una visión integral del sector.
@@ -22,11 +29,30 @@ Licenciada en Estadística y Especialista en Gobierno y Políticas Públicas por
 
 Licenciado en Ciencias Estadísticas por la Escuela de Estadística y Ciencias Actuariales de la Universidad Central de Venezuela (UCV) y maestrante en Estudios de la Ciencia y la Tecnología en el Instituto Venezolano de Investigaciones Científicas (IVIC). Es profesor en la Facultad de Ciencias Económicas y Sociales de la UCV y Coordinador del Área de Estudios Históricos y Culturales del Centro Venezolano de Estudios sobre China (CVEC). Su formación en estadística y su enfoque en los estudios de la ciencia y la tecnología aportan una visión crítica sobre la construcción y aplicación del conocimiento técnico y científico.
 
-## Colaboradores y tesistas del volumen inaugural
+## Colaboradores y tesistas (volúmenes inaugurales)
 
-Los siguientes autores han contribuido con trabajos de grado y manuscritos que sustentan el diagnóstico sistémico del primer volumen de la RVEA y de los libros y materiales docentes:
+Los siguientes autores han contribuido con trabajos de grado y manuscritos que sustentan el diagnóstico sistémico de los tres volúmenes de la RVEA y del libro *Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI* (según la Propuesta Editorial CVEA 2025-2026):
 
-- **Daylin Moreno** — Valuación de bases técnicas y solvencia del sistema de pensiones.
-- **José Raúl Gálvez** — Contribuciones al diagnóstico actuarial.
-- **Daniel Azuaje** — Tabla dinámica LC15 y superación de tablas estáticas (CSO 1980).
-- **Arlet Moreno** — Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal (Lee-Carter).
+**Volumen I: Fundamentos, demografía y sostenibilidad del sistema de previsión social**
+
+- **Daylin Moreno** — Valuación actuarial de las bases técnicas de Masjuán; desfase y obsolescencia.
+- **José Raúl Gálvez** — Situación de pensiones y jubilaciones; gobernanza, morosidad y sostenibilidad.
+- **Daniel Azuaje** — Tabla de mortalidad dinámica Lee-Carter (LC15); superación de tablas estáticas (CSO 1980).
+- **Arlet Moreno** — Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal.
+
+**Volumen II: Las dimensiones de la mortalidad (causa, género y territorio)**
+
+- **Iliria Herrera** — Proyección de la mortalidad por causas (Lee-Carter y CoDa).
+- **Williams Fernandez** — Tablas de decrecimiento múltiple con Cadenas de Markov.
+- **Kelvin Guedez** — Principales causas de fallecimiento en la población masculina venezolana.
+- **Dorielys Rangel** — Principales causas de fallecimiento en la población femenina venezolana.
+- **Kennya Briceño** — Tablas de decrecimiento múltiple (regiones Occidental, Andes, Central).
+- **Daniela Godoy** — Principales causas en las regiones Los Llanos y Capital.
+- **Oriana Lopez** — Principales causas en las regiones Oriental y Guayana.
+
+**Volumen III: Perspectivas internacionales y fronteras en la modelización**
+
+- **Eleazar Domínguez** — Análisis comparativo de métodos de proyección (Chile y Japón).
+- **Oliver Triveño** — Medición del riesgo de longevidad (Portugal); impacto en rentas vitalicias y pensiones.
+- **Luis Alvarez** — Comparativa internacional (Países Bajos, Bélgica) — en desarrollo.
+- **José Mendoza** — Comparativa internacional (Italia, Grecia) — en desarrollo.

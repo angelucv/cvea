@@ -7,6 +7,10 @@ subtitle: "Eje de Investigación — Diagnóstico del sistema de pensiones y bas
 
 **Objetivos:** (1) Documentar el desfase de las tablas históricas (Masjuán, CSO 1980) frente a la realidad demográfica actual; (2) ofrecer metodologías dinámicas y territorializadas (Lee-Carter, modelos espaciales); (3) proporcionar código y datos para replicación. Los libros del CVEA se generan con la **plantilla Quarto Book** (modelo: *Applied Machine Learning Using mlr3 in R*), disponible en `Referencias/Plantilla_CVEA_Book_Applied Machine Learning Using mlr3 in R/`.
 
+## Libros base de los materiales docentes
+
+Los materiales docentes del CVEA se apoyan en obras de referencia que recopilan diagnóstico, bases técnicas y metodologías reproducibles. La propuesta editorial del CVEA (2025-2026) contempla el libro *Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial*, estructurado en cuatro partes: (I) Diagnóstico del sistema de previsión social venezolano; (II) Dinámica de la mortalidad: métodos y proyecciones (Lee-Carter, Cadenas de Markov, CoDa); (III) Anatomía del riesgo por causa, género y región; (IV) Síntesis y recomendaciones para política pública y práctica actuarial. Además, el CVEA incorpora *Introducción a las Matemáticas Financieras*, producto del Trabajo Final de Pregrado (TFPG) de **Franklin Quero (2025)**. Está previsto un segundo libro, *Introducción a las Matemáticas Actuariales*, en colaboración con el **Prof. Felipe Moreno**. Estas obras y otros materiales de la presentación institucional del Centro complementan la base para cursos, asesorías y recomendaciones a reguladores (IVSS, Sudeaseg) y al sector asegurador.
+
 ## Libro disponible
 
 **Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial**
