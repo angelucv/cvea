@@ -18,7 +18,7 @@ format:
 
 ::: {.callout-note icon=false}
 ## Manuscrito completo (versión extendida)
-[**Abrir artículo completo**](https://app.box.com/s/psa5ilhtmfjgz2cuy3ghnor7robbk095){target="_blank"} (introducción, revisión literaria, métodos, resultados, figuras y conclusiones). Puede tardar unos segundos en cargar.
+[**Ver HTML**](https://angelucv.github.io/cvea-articulos/articulo-moreno-colmenares-mortalidad-infantil.html){target="_blank"} · [**Descargar PDF**](https://angelucv.github.io/cvea-articulos/articulo-moreno-colmenares-mortalidad-infantil.pdf){target="_blank"} (introducción, revisión literaria, métodos, resultados, figuras y conclusiones).
 :::
 
 ## Resumen
