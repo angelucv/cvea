@@ -1,0 +1,40 @@
+---
+title: "Trabajos Finales de Pregrado (TFPG)"
+subtitle: "Catálogo de resúmenes ejecutivos"
+toc: true
+---
+
+Catálogo de trabajos finales de pregrado vinculados al CVEA. Cada ficha incluye título, autor, tutor, resumen ejecutivo y metodología. Para solicitar más información o acceso al documento completo, utilice el botón **Solicitar más información**.
+
+::: {.callout-note}
+El CVEA no publica los PDF completos de forma abierta; la ficha de investigación está diseñada para generar autoridad y canalizar consultas a través del [Contacto](contacto.qmd).
+:::
+
+## Fichas de investigación
+
+### Análisis de riesgo en carteras de salud colectiva (ejemplo de ficha)
+
+| Campo | Contenido |
+|-------|-----------|
+| **Título** | Análisis de riesgo en carteras de salud colectiva |
+| **Autor** | [Nombre del autor] |
+| **Tutor** | [Nombre del tutor] |
+| **Año** | 2025 |
+
+**Resumen ejecutivo:** (300–500 palabras enfocadas en resultados, metodología y conclusiones. Este bloque se completará con los resúmenes reales de cada TFPG registrado.)
+
+[**Solicitar más información**](../contacto.qmd){.btn .btn-primary}
+
+---
+
+### TFPG vinculados a la RVEA y al libro Demografía y Previsión Social
+
+Los siguientes autores han contribuido con trabajos que sustentan el Volumen I de la RVEA y el libro *Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI*:
+
+- **Daylin Moreno** (2025) — Valuación actuarial de las bases técnicas de Masjuán.
+- **José Raúl Gálvez** (2025) — Situación de pensiones y jubilaciones; gobernanza y sostenibilidad.
+- **Daniel Azuaje** (2025) — Tabla de mortalidad dinámica Lee-Carter (LC15).
+- **Arlet Moreno** (2025) — Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal.
+- **Franklin Quero** (2025) — *Introducción a las Matemáticas Financieras* (TFPG).
+
+Para más perfiles y enlaces a LinkedIn, ver [Nuestro equipo](../editores.qmd#colaboradores-y-tesistas-volúmenes-inaugurales). Para solicitar información sobre un TFPG concreto, use [Contacto](../contacto.qmd).

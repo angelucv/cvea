@@ -1,5 +1,6 @@
 ---
-title: "Centro Venezolano de Estudios Actuariales"
+title: "El Centro"
+subtitle: "Hub de Innovación Actuarial — Investigación, Docencia y Extensión"
 page-layout: custom
 title-block-banner: false
 toc: true
@@ -46,7 +47,7 @@ include-in-header: assets/meta.html
     <p class="hero-rotate-line">
       <span class="txt-rotate" data-period="2000" data-rotate='["Investigación", "Docencia", "Extensión", "Cursos", "Aplicativos", "Modelado", "Reservas", "Mortalidad", "Formación", "Publicaciones", "Consultoría", "Seguros", "Banca", "Pensiones", "Trading"]'></span>
     </p>
-    <a href="editores.qmd" class="btn-21 animate__animated animate__zoomInUp" style="margin-top: 1.5rem; text-decoration: none; color: white;"><span>Conocer más</span></a>
+    <a href="#bloque-academico" class="btn-21 animate__animated animate__zoomInUp" style="margin-top: 1.5rem; text-decoration: none; color: white;"><span>Conocer más</span></a>
   </div>
 </div>
 
@@ -83,107 +84,109 @@ include-in-header: assets/meta.html
   </div>
 </div>
 
-<!-- Objetivos con lord-icon: cada uno enlaza a su sección -->
-<div class="container-blue">
+<!-- Bloque A: Ejes Académicos (El Núcleo Universitario) — iconos uno debajo del otro -->
+<div class="container-blue" id="bloque-academico">
+  <p style="text-align:center; color: white; margin-bottom: 1rem;"><strong>Ejes Académicos</strong> — La razón de ser del centro y su producción intelectual.</p>
   <div class="layout_grid_objectives">
     <div class="achievements">
-      <a href="rvea/index.qmd" class="work work-link">
+      <a href="#identidad" class="work work-link">
+        <div class="work-icon">
+          <lord-icon src="https://cdn.lordicon.com/zjscbpdr.json" trigger="loop" delay="250" colors="primary:#30c9e8,secondary:#38666A" style="width:100px;height:100px"></lord-icon>
+          <p class="work-heading scroll-text">El Centro</p>
+        </div>
+        <div class="work-description">
+          <p class="work-text scroll-text">Identidad institucional, misión y equipo de expertos.</p>
+        </div>
+      </a>
+      <a href="investigacion/index.qmd" class="work work-link">
         <div class="work-icon">
           <lord-icon src="https://cdn.lordicon.com/nocovwne.json" trigger="loop" delay="250" colors="primary:#30c9e8,secondary:#104891" style="width:100px;height:100px"></lord-icon>
           <p class="work-heading scroll-text">Investigación</p>
         </div>
         <div class="work-description">
-          <p class="work-text scroll-text">RVEA, libros y materiales docentes y manuscritos en mortalidad y reservas.</p>
+          <p class="work-text scroll-text">Libros, TFPG y la Revista (RVEA). Producción científica y Model Hub.</p>
         </div>
       </a>
-      <a href="docencia/series-tiempo/index.qmd" class="work work-link">
+      <a href="docencia/index.qmd" class="work work-link">
         <div class="work-icon">
           <lord-icon src="https://cdn.lordicon.com/flvisirw.json" trigger="loop" delay="250" colors="primary:#d1e3fa,secondary:#38666A" style="width:100px;height:100px"></lord-icon>
-          <p class="work-heading scroll-text">Formación</p>
+          <p class="work-heading scroll-text">Docencia</p>
         </div>
         <div class="work-description">
-          <p class="work-text scroll-text">Cursos en series de tiempo y modelado actuarial (R, Python, Quarto).</p>
+          <p class="work-text scroll-text">Formación continua, Series de Tiempo y recursos pedagógicos.</p>
         </div>
       </a>
       <a href="servicios/index.qmd" class="work work-link">
         <div class="work-icon">
           <lord-icon src="https://cdn.lordicon.com/jkzrgmvk.json" trigger="loop" delay="400" colors="primary:#38666A,secondary:#30c9e8" style="width:100px;height:100px"></lord-icon>
-          <p class="work-heading scroll-text">Servicios</p>
+          <p class="work-heading scroll-text">Extensión</p>
         </div>
         <div class="work-description">
-          <p class="work-text scroll-text">Demos, dashboards (IBNR, mapas) y consultoría en reservas.</p>
+          <p class="work-text scroll-text">Consultoría estratégica, demos y vinculación con la industria.</p>
         </div>
       </a>
-      <a href="editores.qmd" class="work work-link">
-        <div class="work-icon">
-          <lord-icon src="https://cdn.lordicon.com/zjscbpdr.json" trigger="loop" delay="250" colors="primary:#30c9e8,secondary:#38666A" style="width:100px;height:100px"></lord-icon>
-          <p class="work-heading scroll-text">Comité Editorial</p>
-        </div>
-        <div class="work-description">
-          <p class="work-text scroll-text">Equipo editorial y de investigación del CVEA.</p>
-        </div>
-      </a>
-      <a href="sobre.qmd" class="work work-link">
+      <a href="observatorio.qmd" class="work work-link">
         <div class="work-icon">
           <lord-icon src="https://cdn.lordicon.com/gkstbnbz.json" trigger="loop" delay="1000" colors="primary:#38666A" style="width:100px;height:100px"></lord-icon>
-          <p class="work-heading scroll-text">Sobre el CVEA</p>
+          <p class="work-heading scroll-text">Observatorio</p>
         </div>
         <div class="work-description">
-          <p class="work-text scroll-text">Estructura, modelo editorial y líneas de trabajo.</p>
+          <p class="work-text scroll-text">Variables biométricas, financieras y de previsión. Indicadores dinámicos.</p>
         </div>
       </a>
     </div>
   </div>
 </div>
 
-<!-- Tiles de acceso rápido -->
+<!-- Bloque B: Gestión y Vinculación (El Motor Operativo) — imágenes una al lado de la otra -->
+<p style="text-align:center; margin-top: 2rem;"><strong>Gestión y Vinculación</strong> — Sostenibilidad, dinamismo y comunicación con el entorno.</p>
 <div class="wrap">
   <div class="tile">
-    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=450&fit=crop" alt="Equipo"/>
-    <a href="editores.qmd">
-      <div class="text">
-        <h1>Comité Editorial</h1>
-        <p class="animate-text">Miembros del Comité Editorial y de Investigación del CVEA.</p>
-        <div class="dots"><span></span><span></span><span></span></div>
-      </div>
-    </a>
-  </div>
-  <div class="tile">
-    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=450&fit=crop" alt="Revista"/>
+    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=450&fit=crop" alt="RVEA"/>
     <a href="rvea/index.qmd">
       <div class="text">
-        <h1>Revista RVEA</h1>
-        <p class="animate-text">Artículos del Volumen I y II: mortalidad, bases técnicas, Lee-Carter, BYM.</p>
+        <h1>RVEA</h1>
+        <p class="animate-text">Gestión del proceso de revisión por pares y Call for Papers para la revista.</p>
         <div class="dots"><span></span><span></span><span></span></div>
       </div>
     </a>
   </div>
   <div class="tile">
-    <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=400&h=450&fit=crop" alt="Libro"/>
+    <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=400&h=450&fit=crop" alt="Libros"/>
     <a href="libro/index.qmd">
       <div class="text">
-        <h1>Libros y Materiales Docentes</h1>
-        <p class="animate-text">Diagnóstico del sistema de pensiones y libro Demografía, Mortalidad y Previsión Social.</p>
+        <h1>Libros</h1>
+        <p class="animate-text">Repositorio de herramientas técnicas: scripts R/Python, Excel actuarial.</p>
         <div class="dots"><span></span><span></span><span></span></div>
       </div>
     </a>
   </div>
   <div class="tile">
-    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=450&fit=crop" alt="Formación"/>
+    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=450&fit=crop" alt="Cursos"/>
     <a href="docencia/series-tiempo/index.qmd">
       <div class="text">
-        <h1>Series de Tiempo (Python)</h1>
-        <p class="animate-text">Curso para actuarios: series de tiempo con Python.</p>
+        <h1>Cursos</h1>
+        <p class="animate-text">Formación continua: Series de Tiempo (Python) y próximas ofertas.</p>
         <div class="dots"><span></span><span></span><span></span></div>
       </div>
     </a>
   </div>
   <div class="tile">
-    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=450&fit=crop" alt="Servicios"/>
-    <a href="servicios/index.qmd">
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=450&fit=crop" alt="Actualidad"/>
+    <a href="actualidad.qmd">
       <div class="text">
-        <h1>Servicios y Demos</h1>
-        <p class="animate-text">Galería interactiva: IBNR, mapa de riesgo y dashboards.</p>
+        <h1>Actualidad</h1>
+        <p class="animate-text">Noticias del sector, eventos académicos y crónicas institucionales.</p>
+        <div class="dots"><span></span><span></span><span></span></div>
+      </div>
+    </a>
+  </div>
+  <div class="tile">
+    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=450&fit=crop" alt="Contacto"/>
+    <a href="contacto.qmd">
+      <div class="text">
+        <h1>Contacto / Soporte</h1>
+        <p class="animate-text">Solicitudes de investigación, consultoría y soporte técnico.</p>
         <div class="dots"><span></span><span></span><span></span></div>
       </div>
     </a>
@@ -197,15 +200,26 @@ include-in-header: assets/meta.html
 <script src="assets/js/background.js"></script>
 ```
 
-::: {.column-page .acceso-rapido-contenido}
+::: {.column-page .acceso-rapido-contenido #identidad}
 
-## Contenido
+## El Centro — Identidad y propósito
 
-- [**Revista RVEA**](rvea/index.qmd) — Artículos del Volumen I y II
-- [**Libros y Materiales Docentes**](libro/index.qmd) — Diagnóstico del sistema de pensiones
-- [**Series de Tiempo con Python**](docencia/series-tiempo/index.qmd) — Curso para actuarios
-- [**Servicios y Demos**](servicios/index.qmd) — Galería interactiva (IBNR, mapa de riesgo)
-- [**Comité Editorial**](editores.qmd) — Miembros del Comité
-- [**Sobre el CVEA**](sobre.qmd) — Estructura y modelo editorial
+El **Centro Venezolano de Estudios Actuariales (CVEA)** se erige como un **Hub de Innovación Actuarial**. Integrado por profesores de la Escuela de Estadística y Ciencias Actuariales (EECA) de la Universidad Central de Venezuela, tiene un enfoque integral y multidisciplinario. El CVEA busca ser el puente entre la academia y el país, aportando precisión matemática a diversos sectores donde el riesgo es un factor crítico.
+
+El CVEA no nace únicamente como un espacio físico, sino como un **imperativo técnico y académico**. Aunque su génesis se centra en estudios de la Previsión Social y Demografía, el CVEA abarcará todos los sectores de la economía nacional. La meta es la **creación de conocimiento**: generar modelos propios y adaptados a la realidad venezolana del siglo XXI. Para lograrlo, articulamos nuestra gestión en los **tres ejes** de la educación universitaria definidos en el Departamento de Actuariado: **Investigación, Docencia y Extensión**.
+
+- **Identidad y Propósito:** Misión, visión y valores actuariales; autonomía técnica del CVEA. Detalle en [Sobre el CVEA](sobre.qmd).
+- **Nuestro Equipo:** Perfiles profesionales con enlace a LinkedIn y áreas de experticia. [**Comité Editorial y equipo de investigación**](editores.qmd).
+- **Historia:** Origen del centro en la UCV y su relación con el Departamento de Actuariado (Prof. Jorge Días, Prof. Angel Colmenares — jefe de departamento y jefe de cátedra).
+- **Sello editorial:** Instancia para la difusión del material que se produzca; modelo I-RL-M-R-D y plantillas. [Sobre el CVEA — Editorial](sobre.qmd#editorial).
+
+## Enlaces rápidos
+
+- [**Investigación**](investigacion/index.qmd) — Libros, TFPG, RVEA, Model Hub
+- [**Docencia**](docencia/index.qmd) — Cursos, recursos, próximas ofertas
+- [**Extensión / Servicios**](servicios/index.qmd) — Consultoría, demos, observatorio
+- [**Observatorio**](observatorio.qmd) — Variables biométricas, financieras y de previsión
+- [**Actualidad**](actualidad.qmd) — Noticias, eventos, Call for Papers
+- [**Contacto**](contacto.qmd) — Solicitudes y soporte
 
 :::

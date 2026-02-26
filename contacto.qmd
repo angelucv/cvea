@@ -1,0 +1,33 @@
+---
+title: "Contacto y soporte"
+subtitle: "Canales de atención para investigación, consultoría y soporte técnico"
+toc: true
+---
+
+Canales de atención del CVEA para **solicitudes de investigación**, **consultoría estratégica** y **soporte técnico**.
+
+## Consultoría y asesoría
+
+- **Auditoría de reservas,** gestión de riesgos (ERM), diseño técnico de productos, valuaciones de sostenibilidad fiscal y modelado actuarial (seguros, banca, previsión social).
+- Solicitudes a través del Comité Editorial y del equipo de investigación. Perfiles y áreas de experticia en [Nuestro equipo](editores.qmd).
+
+## Investigación y TFPG
+
+- Para **solicitar más información** sobre trabajos finales de pregrado (TFPG) o acceso a documentos del catálogo: indicar en el mensaje el título o autor del trabajo de interés.
+- Propuestas de colaboración en investigación y tutoría: contactar al equipo en [Comité Editorial](editores.qmd).
+
+## Revista RVEA y publicaciones
+
+- Envío de manuscritos y consultas sobre el proceso de revisión por pares: ver [Revista RVEA](rvea/index.qmd) y [Sobre el CVEA — Editorial](sobre.qmd#editorial).
+- Plantillas para autores y libros: referenciadas en [Sobre el CVEA](sobre.qmd).
+
+## Formación y cursos
+
+- Información sobre el curso de **Series de Tiempo (Python)** y próximas ofertas: [Docencia](docencia/series-tiempo/index.qmd).
+
+## Cómo contactar
+
+- **GitHub (repositorio de la plataforma):** [angel-colmenares/cvea-platform](https://github.com/angel-colmenares/cvea-platform)
+- **Perfiles profesionales:** [Comité Editorial](editores.qmd) — enlaces a LinkedIn de cada miembro.
+
+*(Se puede añadir aquí un formulario de contacto o correo institucional cuando esté definido.)*

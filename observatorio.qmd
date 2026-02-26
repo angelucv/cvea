@@ -1,0 +1,30 @@
+---
+title: "Observatorio de Variables Actuariales"
+subtitle: "Motor dinámico del portal — indicadores biométricos, financieros y de previsión"
+toc: true
+---
+
+El **Observatorio** es el núcleo dinámico de datos y variables actuariales del país. Su objetivo es que el portal no sea visitado solo una vez, sino que se convierta en una **herramienta de consulta diaria** para actuarios y analistas en Venezuela.
+
+## Variables biométricas
+
+Gráficos dinámicos de las últimas tablas de mortalidad calibradas por el centro: tendencias nacionales y subnacionales, SMR, clusters de riesgo y proyecciones Lee-Carter. Basado en la investigación publicada en la [RVEA](rvea/index.qmd) y en el libro *Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI*.
+
+- Enlace a dashboards: [Servicios y Demos — Mapa de riesgo](servicios/demo-mapa.qmd) y visualizaciones asociadas.
+- Boletines de indicadores mensuales (en desarrollo).
+
+## Variables financieras
+
+Seguimiento de la **inflación actuarial** y de las **tasas técnicas de descuento** relevantes para reservas, tarificación y valuación de pensiones. Insumos para el sector asegurador, banca y previsión social.
+
+*(Contenido en construcción según disponibilidad de series oficiales.)*
+
+## Variables de previsión
+
+Indicadores de **solvencia** y **sostenibilidad** de fondos de pensiones y regímenes de previsión social. Síntesis de diagnósticos del CVEA dirigidos a IVSS, Sudeaseg y decisores de política pública.
+
+- Referencia: [Libros — Diagnóstico del sistema de pensiones](libro/index.qmd).
+
+---
+
+Para consultoría sobre indicadores o convenios de datos, utilice [Contacto](contacto.qmd).

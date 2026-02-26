@@ -19,6 +19,10 @@ El **Centro Venezolano de Estudios Actuariales (CVEA)** integra tres ejes bajo u
 
 La coordinación editorial, la tutoría de investigaciones y la relación con el sector (IVSS, Sudeaseg, aseguradoras) están a cargo del equipo cuyo perfil se presenta en [Comité Editorial](editores.qmd).
 
+## Historia
+
+El CVEA tiene su origen en la **Escuela de Estadística y Ciencias Actuariales (EECA)** de la **Universidad Central de Venezuela (UCV)** y en el **Departamento de Actuariado**. Su consolidación como centro de investigación y extensión ha contado con el impulso del **Prof. Jorge Días** (Jefe del Departamento de Actuariado, profesor en la EECA) y del **Prof. Angel Colmenares** (Jefe de Cátedra y coordinación de la investigación del volumen inaugural de la RVEA). La relación con el departamento permite articular la docencia de grado, los trabajos finales de pregrado (TFPG) y la producción científica (RVEA, libros) en un mismo ecosistema.
+
 ## Editorial {#editorial}
 
 ### Comité Editorial RVEA

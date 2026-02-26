@@ -1,0 +1,26 @@
+---
+title: "Actualidad"
+subtitle: "Noticias, eventos y editorial"
+toc: true
+---
+
+Sección de **comunicación dinámica** del CVEA: noticias del sector, eventos académicos y notificaciones editoriales.
+
+## Noticias y blog
+
+Artículos de opinión técnica y análisis de coyuntura económica y actuarial. *(Contenido se irá publicando según disponibilidad.)*
+
+## Eventos
+
+Calendario de **defensas de TFPG**, seminarios y conferencias organizados o coorganizados por el CVEA. Próximas ofertas de formación continua (webinars, certificaciones) en [Docencia](docencia/series-tiempo/index.qmd).
+
+*(Próximos eventos se anunciarán aquí.)*
+
+## Editorial (Notificaciones)
+
+- **Call for Papers:** la [Revista RVEA](rvea/index.qmd) mantiene convocatoria abierta para manuscritos con revisión por pares. Estructura I-RL-M-R-D y reproducibilidad (código y datos en repositorio público). Detalles en [Sobre el CVEA — Editorial](sobre.qmd#editorial).
+- **Actualizaciones:** nuevas publicaciones, volúmenes y libros se anunciarán en esta sección y en la página de la RVEA.
+
+---
+
+Para proponer noticias o eventos, utilice [Contacto](contacto.qmd).

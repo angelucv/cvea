@@ -1,0 +1,31 @@
+---
+title: "Docencia"
+subtitle: "Formación continua y recursos para estudiantes"
+toc: true
+---
+
+El **eje de Docencia** del CVEA capitaliza la experiencia docente y los cursos existentes, y ofrece recursos para estudiantes y profesionales.
+
+## Formación continua
+
+### Curso de Series de Tiempo (Python)
+
+Ficha técnica, programa, objetivos e inscripción del curso orientado a actuarios y profesionales que requieran proyecciones de mortalidad, siniestralidad o indicadores económicos.
+
+[**Ir al curso Series de Tiempo con Python**](series-tiempo/index.qmd)
+
+### Próximas ofertas {#proximas}
+
+Webinars y certificaciones en temas emergentes (por ejemplo, IA en Actuaría). Las convocatorias se publicarán en [Actualidad](../actualidad.qmd).
+
+*(Próximas ofertas se anunciarán aquí.)*
+
+## Recursos para estudiantes {#recursos}
+
+- **Guías metodológicas para TFPG:** estructura I-RL-M-R-D, reproducibilidad y referencias en formato APA; ver [Sobre el CVEA — Editorial](../sobre.qmd#editorial).
+- **Bibliografía recomendada:** alineada con los libros y materiales docentes del Centro; ver [Libros](../libro/index.qmd).
+- **Acceso al Model Hub:** scripts en R/Python, Excel actuarial y bases de datos abiertas con fines pedagógicos; ver [Model Hub](../investigacion/model-hub.qmd).
+
+## Ecosistema de aprendizaje
+
+Información sobre el **currículo actuarial** en la UCV y cómo los estudiantes se integran en cursos electivos y en la investigación del centro. Perfiles del Comité Editorial y colaboradores en [Nuestro equipo](../editores.qmd).

@@ -7,6 +7,10 @@ project:
     - index.qmd
     - editores.qmd
     - sobre.qmd
+    - observatorio.qmd
+    - actualidad.qmd
+    - contacto.qmd
+    - investigacion
     - rvea
     - libro
     - docencia

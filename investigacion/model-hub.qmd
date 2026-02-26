@@ -1,0 +1,21 @@
+---
+title: "Model Hub"
+subtitle: "Repositorio de scripts, Excel actuarial y bases de datos abiertas"
+toc: true
+---
+
+El **Model Hub** del CVEA es un repositorio de herramientas técnicas reproducibles: scripts en R/Python, hojas Excel parametrizadas y bases de datos abiertas, alineadas con la investigación publicada en la RVEA y en los libros del Centro.
+
+## Contenido previsto
+
+- **Scripts R/Python:** modelos de mortalidad (Lee-Carter, BYM/INLA), reservas IBNR, proyecciones demográficas.
+- **Excel actuarial:** plantillas parametrizadas para cálculos técnicos y docencia.
+- **Bases de datos abiertas:** referencias a fuentes públicas utilizadas en los artículos (MPPS, INE, GADM, etc.).
+
+Los materiales se irán incorporando según el plan editorial y la disponibilidad de código en repositorios públicos. La plantilla de libro (Quarto Book) y la plantilla RVEA están referenciadas en [Sobre el CVEA — Editorial](../sobre.qmd#editorial).
+
+## Enlaces relacionados
+
+- [Revista RVEA](../rvea/index.qmd) — artículos con código reproducible.
+- [Libros y Materiales Docentes](../libro/index.qmd) — diagnóstico y bases técnicas.
+- [Docencia — Recursos para estudiantes](../docencia/index.qmd#recursos) — acceso al Model Hub con fines pedagógicos.

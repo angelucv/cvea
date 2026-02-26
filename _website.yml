@@ -1,4 +1,4 @@
-# Configuración del sitio (modelo Hertie Coding Club)
+# Configuración del sitio — Arquitectura: Investigación, Docencia y Extensión
 website:
   title: "Centro Venezolano de Estudios Actuariales"
   site-url: https://angelucv.github.io/cvea/
@@ -10,30 +10,52 @@ website:
     collapse-below: lg
     pinned: true
     right:
+      # Bloque A: Ejes Académicos (Núcleo Universitario)
       - icon: house-fill
+        text: "El Centro"
         href: index.qmd
-        text: "Inicio"
-      - icon: people-fill
-        text: "Comité Editorial"
-        href: editores.qmd
-      - icon: info-circle-fill
-        text: "Sobre"
-        href: sobre.qmd
       - icon: journal-richtext
         text: "Investigación"
         menu:
+          - text: "Libros"
+            href: libro/index.qmd
+          - text: "TFPG"
+            href: investigacion/tfpg.qmd
           - text: "Revista RVEA"
             href: rvea/index.qmd
-          - text: "Libros y Materiales Docentes"
-            href: libro/index.qmd
+          - text: "Model Hub"
+            href: investigacion/model-hub.qmd
       - icon: person-workspace
-        text: "Formación"
+        text: "Docencia"
         menu:
           - text: "Series de Tiempo (Python)"
             href: docencia/series-tiempo/index.qmd
+          - text: "Recursos para estudiantes"
+            href: docencia/index.qmd#recursos
+          - text: "Próximas ofertas"
+            href: docencia/index.qmd#proximas
       - icon: gear-fill
-        text: "Servicios"
+        text: "Extensión"
         href: servicios/index.qmd
+      - icon: bar-chart-line
+        text: "Observatorio"
+        href: observatorio.qmd
+      # Bloque B: Gestión y Vinculación
+      - icon: file-earmark-text
+        text: "RVEA"
+        href: rvea/index.qmd
+      - icon: book
+        text: "Libros"
+        href: libro/index.qmd
+      - icon: play-btn
+        text: "Cursos"
+        href: docencia/series-tiempo/index.qmd
+      - icon: megaphone
+        text: "Actualidad"
+        href: actualidad.qmd
+      - icon: envelope
+        text: "Contacto"
+        href: contacto.qmd
       - icon: github
         href: https://github.com/angel-colmenares/cvea-platform
   page-footer:

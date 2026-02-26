@@ -1,0 +1,31 @@
+---
+title: "Investigación"
+subtitle: "Producción de conocimiento — Libros, TFPG, RVEA y Model Hub"
+toc: true
+---
+
+El **eje de Investigación** del CVEA articula la producción científica en cuatro pilares: libros técnicos, trabajos finales de pregrado (TFPG), la Revista Venezolana de Actuariado (RVEA) y un repositorio de modelos y herramientas (Model Hub).
+
+## Libros
+
+Landing pages para cada obra con metadatos técnicos y tabla de contenido indexable. Diagnóstico del sistema de previsión social, bases técnicas actualizadas y metodologías reproducibles (Lee-Carter, modelos espaciales).
+
+[**Ir a Libros y Materiales Docentes**](../libro/index.qmd)
+
+## Trabajos Finales de Pregrado (TFPG)
+
+Catálogo de resúmenes ejecutivos: título, autor, tutor, resumen, metodología y ecuación central. Para solicitar más información o acceso a documentos completos, utilice el botón en cada ficha.
+
+[**Ir al catálogo TFPG**](tfpg.qmd)
+
+## Revista (RVEA)
+
+Revista arbitrada con revisión por pares. Flujo editorial según la Propuesta Editorial 2025-2026; artículos con código reproducible (R/Python/Julia) y estructura I-RL-M-R-D.
+
+[**Ir a la Revista RVEA**](../rvea/index.qmd)
+
+## Model Hub (Otros materiales)
+
+Repositorio de scripts en R/Python, hojas Excel parametrizadas y bases de datos abiertas para replicación y uso pedagógico.
+
+[**Ir al Model Hub**](model-hub.qmd)
