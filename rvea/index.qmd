@@ -43,7 +43,12 @@ La **Revista Venezolana de Actuariado (RVEA)** es la publicación arbitrada del 
 
 :::
 
-Artículos completos (versión extendida): [**Angel Colmenares** — Análisis espacio-temporal de la mortalidad 1996-2016 (BYM/INLA)](../assets/articulos/articulo-colmenares-espacio-temporal.html) · [**Arlet Moreno y Angel Colmenares** — Mortalidad neonatal, postneonatal y en la niñez (Lee-Carter)](../assets/articulos/articulo-moreno-colmenares-mortalidad-infantil.html).
+### Artículos completos (manuscrito extendido)
+
+Los siguientes enlaces abren el **manuscrito completo** (incluye introducción, revisión literaria, métodos, resultados, figuras y conclusiones). Pueden tardar unos segundos en cargar por el tamaño del documento.
+
+- [**Angel Colmenares** — Análisis espacio-temporal de la mortalidad en Venezuela 1996-2016 (BYM/INLA)](../assets/articulos/articulo-colmenares-espacio-temporal.html){target="_blank"}
+- [**Arlet Moreno y Angel Colmenares** — Mortalidad neonatal, postneonatal y en la niñez por entidad federal (Lee-Carter)](../assets/articulos/articulo-moreno-colmenares-mortalidad-infantil.html){target="_blank"}
 
 ## Volumen II: Las dimensiones de la mortalidad (causa, género y territorio)
 

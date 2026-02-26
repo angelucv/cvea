@@ -1,6 +1,8 @@
 # Orquestador global — modelo HCC (https://github.com/jurjoroa/hcc-website)
 project:
   type: website
+  resources:
+    - assets/articulos
   render:
     - index.qmd
     - editores.qmd
