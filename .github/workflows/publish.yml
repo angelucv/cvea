@@ -19,6 +19,8 @@ jobs:
 
       - name: Create gh-pages branch if missing
         run: |
+          git config user.email "quarto-publish@github-actions"
+          git config user.name "Quarto Publish"
           git fetch origin
           if ! git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
             git checkout --orphan gh-pages
