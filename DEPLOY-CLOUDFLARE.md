@@ -1,102 +1,99 @@
-# Guía paso a paso: desplegar CVEA en Cloudflare Pages (gratis)
+# Configurar Cloudflare Pages para CVEA
 
-Tu proyecto ya se publica en **GitHub Pages** con un workflow que genera el sitio con Quarto y lo sube a la rama `gh-pages`. En Cloudflare solo vamos a **usar esa misma rama** como origen, sin volver a construir nada. Así no pagas nada y todo sigue siendo automático.
-
----
-
-## Requisitos previos
-
-- Proyecto en **GitHub** (por ejemplo `angel-colmenares/cvea-platform`).
-- El workflow en `.github/workflows/publish.yml` debe estar activo (cada push a `main` genera y sube el sitio a la rama `gh-pages`).
-
-Si aún no has subido el repo o no tienes el workflow, hazlo antes de seguir.
+Tu repo está en **https://github.com/angelucv/cvea**. El workflow de GitHub ya genera el sitio y lo sube a la rama **`gh-pages`**. En Cloudflare solo conectamos esa rama y servimos los archivos (sin volver a construir).
 
 ---
 
-## Paso 1: Crear cuenta en Cloudflare (si no la tienes)
+## Valores exactos para Cloudflare (cópialos al configurar)
 
-1. Entra en **[dash.cloudflare.com](https://dash.cloudflare.com)**.
-2. Pulsa **Sign Up** y regístrate con tu email (o con Google/GitHub).
-3. Verifica el correo si te lo piden.
-
-No hace falta añadir ningún dominio ni pagar nada.
-
----
-
-## Paso 2: Crear un proyecto en Cloudflare Pages
-
-1. En el panel de Cloudflare, en el menú izquierdo entra en **Workers & Pages**.
-2. Pulsa **Create** → **Pages**.
-3. Elige **Connect to Git** (conectar con Git).
-4. Si es la primera vez, autoriza **GitHub**:
-   - Pulsa **Connect GitHub**.
-   - Inicia sesión en GitHub si hace falta y autoriza el acceso a **Cloudflare Pages**.
-   - Puedes dar acceso a todos los repos o solo al repo del CVEA.
+| Campo | Valor que debes poner |
+|-------|------------------------|
+| **Repository** | `angelucv/cvea` |
+| **Production branch** | `gh-pages` |
+| **Build command** | *(dejar vacío)* |
+| **Build output directory** | `/` |
+| **Project name** | `cvea` (la URL será **https://cvea.pages.dev**) |
 
 ---
 
-## Paso 3: Elegir el repositorio y la rama
+## Paso 1: Entrar en Cloudflare
 
-1. En **Select repository** elige tu repo (ej. `angel-colmenares/cvea-platform`).
-2. Pulsa **Begin setup**.
-3. Configura así:
-   - **Project name:** por ejemplo `cvea` o `cvea-platform` (será la parte de la URL: `cvea.pages.dev`).
-   - **Production branch:** **`gh-pages`** (importante: la rama donde GitHub Actions ya publica el sitio).
-   - **Build settings:**
-     - **Build command:** déjalo **vacío** (no queremos que Cloudflare ejecute Quarto).
-     - **Build output directory:** escribe **`/`** (raíz de la rama; en `gh-pages` el contenido del sitio ya está en la raíz).
-4. Pulsa **Save and Deploy**.
-
-Cloudflare va a leer la rama `gh-pages` y desplegar ese contenido. No ejecuta ningún build.
+1. Abre **[dash.cloudflare.com](https://dash.cloudflare.com)**.
+2. Inicia sesión (o regístrate con email o GitHub).
 
 ---
 
-## Paso 4: Esperar el primer despliegue
+## Paso 2: Crear proyecto en Pages
 
-1. En la página del proyecto verás un despliegue **Building** y luego **Success**.
-2. Cuando termine, te dará un enlace tipo:
-   - **https://cvea.pages.dev** (o el nombre que hayas puesto al proyecto).
-
-Abre ese enlace y comprueba que el sitio se ve igual que en GitHub Pages.
-
----
-
-## Paso 5: Despliegues automáticos a partir de ahora
-
-- Cada vez que hagas **push a la rama `main`** de GitHub:
-  1. El workflow de GitHub Actions genera el sitio con Quarto y actualiza la rama **`gh-pages`**.
-  2. Cloudflare Pages detecta el cambio en `gh-pages` y hace un **nuevo despliegue** automáticamente.
-
-No tienes que hacer nada más en Cloudflare; solo seguir trabajando y haciendo push a `main` como hasta ahora.
+1. En el menú izquierdo, clic en **Workers & Pages**.
+2. Clic en **Create**.
+3. Elige **Pages**.
+4. Elige **Connect to Git**.
 
 ---
 
-## Resumen de configuración en Cloudflare
+## Paso 3: Conectar GitHub
 
-| Campo                    | Valor      |
-|--------------------------|------------|
-| Production branch        | `gh-pages` |
-| Build command            | *(vacío)*  |
-| Build output directory   | `/`        |
-
----
-
-## (Opcional) Dominio propio (ej. cvea.com)
-
-Si más adelante compras un dominio:
-
-1. En el proyecto de Pages, ve a **Custom domains**.
-2. Pulsa **Set up a custom domain** e introduce tu dominio (ej. `cvea.com`).
-3. Sigue las instrucciones de Cloudflare para añadir los registros DNS en tu registrador (o en Cloudflare si el dominio está ahí).
-
-El alojamiento en Cloudflare Pages sigue siendo gratis; solo pagas el dominio al registrador.
+1. Si te sale **Connect GitHub**, clic ahí.
+2. Inicia sesión en GitHub si hace falta.
+3. Autoriza **Cloudflare Pages** (puedes dar acceso solo al repo `cvea` o a todos).
+4. Vuelve al panel de Cloudflare.
 
 ---
 
-## Si algo falla
+## Paso 4: Elegir repo y configurar
 
-- **El sitio no se actualiza:** Comprueba que el workflow de GitHub se ejecuta en cada push a `main` y que la rama `gh-pages` existe y tiene los últimos archivos (carpeta del sitio en la raíz).
-- **Error en Cloudflare:** Revisa que **Production branch** sea exactamente **`gh-pages`** y que **Build output directory** sea **`/`**.
-- **Página en blanco o 404:** Confirma que en la rama `gh-pages` hay un `index.html` en la raíz (así lo deja el workflow de Quarto).
+1. En **Select repository** busca y elige **`angelucv/cvea`**.
+2. Clic en **Begin setup**.
 
-Con esto puedes desplegar tu proyecto actual en Cloudflare Pages sin pagar nada y con la mayor capacidad (ancho de banda ilimitado en el plan gratuito).
+Luego rellena así:
+
+- **Project name:** `cvea`  
+  (así la URL quedará **https://cvea.pages.dev**)
+
+- **Production branch:** `gh-pages`  
+  (es la rama donde GitHub Actions ya publica el sitio)
+
+- **Build settings:**
+  - **Framework preset:** *None* (o déjalo por defecto).
+  - **Build command:** **borra todo** y déjalo vacío.
+  - **Build output directory:** escribe **`/`** (solo la barra).
+
+3. Clic en **Save and Deploy**.
+
+---
+
+## Paso 5: Esperar el primer despliegue
+
+1. Verás un despliegue en estado **Building** y luego **Success** (unos segundos, porque no hay build).
+2. Al terminar, clic en **Visit site** o abre **https://cvea.pages.dev**.
+
+Ahí debería verse tu sitio igual que en **https://angelucv.github.io/cvea/**.
+
+---
+
+## A partir de ahora (automático)
+
+- Cada **push a `main`** en GitHub → el workflow actualiza **`gh-pages`** → Cloudflare detecta el cambio y vuelve a desplegar.
+- No tienes que hacer nada más en Cloudflare.
+
+---
+
+## Si la rama `gh-pages` aún no existe
+
+Si acabas de crear el repo y todavía no se ha ejecutado el workflow de GitHub:
+
+1. Ve a **[github.com/angelucv/cvea/actions](https://github.com/angelucv/cvea/actions)**.
+2. Comprueba que el workflow **Quarto Publish** haya terminado correctamente (rama `gh-pages` creada).
+3. Luego en Cloudflare haz **Retry deployment** o espera al siguiente push a `main`; cuando exista `gh-pages`, el despliegue funcionará.
+
+---
+
+## Resumen
+
+- **Repositorio:** [github.com/angelucv/cvea](https://github.com/angelucv/cvea)
+- **Rama en Cloudflare:** `gh-pages`
+- **Build:** ninguno (comando vacío, output `/`)
+- **URL del sitio en Cloudflare:** **https://cvea.pages.dev**
+
+Si más adelante quieres un dominio propio (ej. cvea.com): en el proyecto de Pages → **Custom domains** → **Set up a custom domain** y sigue las instrucciones.
