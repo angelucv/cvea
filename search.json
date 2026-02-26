@@ -70,116 +70,60 @@
     "text": "2 Metodología\nEl modelo Lee-Carter descompone el logaritmo de la tasa central de mortalidad:\n\\[\\log m_{x,t} = \\alpha_x + \\beta_x \\kappa_t + \\epsilon_{x,t}\\]\nDonde \\(\\kappa_t\\) captura la tendencia temporal y se proyecta mediante series de tiempo."
   },
   {
-    "objectID": "rvea/vol1-moreno-arlet.html",
-    "href": "rvea/vol1-moreno-arlet.html",
-    "title": "Modelación y Proyección de la Mortalidad Neonatal, Postneonatal y en la Niñez por Entidad Federal en Venezuela",
+    "objectID": "rvea/vol1-moreno.html",
+    "href": "rvea/vol1-moreno.html",
+    "title": "Valuación Actuarial de Bases Técnicas",
+    "section": "",
+    "text": "Investigación sobre el desfase de las bases técnicas de Masjuán (1960) frente a la realidad demográfica y actuarial del siglo XXI. Análisis de la solvencia del sistema de pensiones y la subestimación sistemática de la supervivencia.\nEste artículo es un placeholder. Sustituir por el contenido completo del manuscrito (por ejemplo, a partir de la plantilla RVEA en d:\\CVEA\\RVEA\\Volumen I\\RVA_Vol_I_Arlet_M\\ o material equivalente)."
+  },
+  {
+    "objectID": "rvea/vol1-moreno.html#resumen",
+    "href": "rvea/vol1-moreno.html#resumen",
+    "title": "Valuación Actuarial de Bases Técnicas",
+    "section": "",
+    "text": "Investigación sobre el desfase de las bases técnicas de Masjuán (1960) frente a la realidad demográfica y actuarial del siglo XXI. Análisis de la solvencia del sistema de pensiones y la subestimación sistemática de la supervivencia.\nEste artículo es un placeholder. Sustituir por el contenido completo del manuscrito (por ejemplo, a partir de la plantilla RVEA en d:\\CVEA\\RVEA\\Volumen I\\RVA_Vol_I_Arlet_M\\ o material equivalente)."
+  },
+  {
+    "objectID": "rvea/vol1-moreno.html#referencias",
+    "href": "rvea/vol1-moreno.html#referencias",
+    "title": "Valuación Actuarial de Bases Técnicas",
+    "section": "2 Referencias",
+    "text": "2 Referencias\n\nMoreno, D. (2018). Evaluación de la solvencia del sistema de pensiones en Venezuela: Un análisis de longevidad. Trabajo de Grado, UCV."
+  },
+  {
+    "objectID": "rvea/vol1-colmenares.html",
+    "href": "rvea/vol1-colmenares.html",
+    "title": "Análisis Espacio-Temporal de la Mortalidad en Venezuela (1996-2016)",
     "section": "",
     "text": "NoteManuscrito completo (versión extendida)\n\n\n\nAbrir artículo completo (introducción, revisión literaria, métodos, resultados, figuras y conclusiones). Puede tardar unos segundos en cargar."
   },
   {
-    "objectID": "rvea/vol1-moreno-arlet.html#resumen",
-    "href": "rvea/vol1-moreno-arlet.html#resumen",
-    "title": "Modelación y Proyección de la Mortalidad Neonatal, Postneonatal y en la Niñez por Entidad Federal en Venezuela",
+    "objectID": "rvea/vol1-colmenares.html#resumen",
+    "href": "rvea/vol1-colmenares.html#resumen",
+    "title": "Análisis Espacio-Temporal de la Mortalidad en Venezuela (1996-2016)",
     "section": "1 Resumen",
-    "text": "1 Resumen\nLa planificación de riesgos demográficos y actuariales en Venezuela ha dependido históricamente de proyecciones determinísticas (CELADE, INDEC), que no capturan la incertidumbre ni la heterogeneidad regional. Este estudio aplicó el modelo estocástico de Lee-Carter a los Anuarios de Mortalidad del MPPS (1995-2012), desagregados por entidad federal, sexo y edad (días/meses). El índice temporal \\(\\kappa_t\\) se modeló con series de tiempo y se proyectó hasta 2022 (R: demography, ILC).\nHallazgos: Disparidad regional severa; Zulia con tasas más elevadas en períodos Neonatal, Postneonatal y en la Niñez; concentración del riesgo en Neonatal (0-27 días); anomalía proyectada en Trujillo (ascenso de mortalidad neonatal desde 2014). La modelación estocástica subnacional es indispensable para un mapa de riesgo accionable y para que salud pública y práctica actuarial abandonen la homogeneidad nacional.\nPalabras clave: Mortalidad infantil, Lee-Carter, Venezuela, entidad federal, proyección estocástica."
+    "text": "1 Resumen\nResumen: La evaluación de la mortalidad sub-nacional es crítica para la solvencia de sistemas de previsión social y la tarificación de seguros de vida. Este estudio analiza la mortalidad en los 335 municipios de Venezuela (1996-2016) combinando normalización geográfica (GADM), clusters de K-means, índices de autocorrelación espacial de Moran y un modelo jerárquico Bayesiano Besag-York-Mollié (BYM) mediante INLA. Se identificó una tendencia nacional de incremento del riesgo del 1.4% anual, con clusters de riesgo persistentes en el arco central y zonas fronterizas. La interpolación IDW del riesgo bayesiano revela una superficie de mortalidad heterogénea que invalida el uso de tablas de mortalidad únicas nacionales. Existe un exceso de mortalidad crónico en regiones específicas que requiere ajustes actuariales territorializados.\nAbstract: Sub-national mortality assessment is critical for the solvency of social security systems and life insurance pricing. This study analyzes mortality across Venezuela’s 335 municipalities (1996-2016) combining geographic normalization (GADM), K-means clustering, Moran’s spatial autocorrelation indices, and a Bayesian Besag-York-Mollié (BYM) hierarchical model via INLA. A national increasing risk trend of 1.4% per year was identified, with persistent risk clusters in the central arc and border areas. IDW interpolation of Bayesian risk reveals a heterogeneous mortality surface that invalidates the use of single national mortality tables. There is chronic excess mortality in specific regions requiring territorialized actuarial adjustments.\nPalabras clave: Mortalidad, Venezuela, INLA, SMR, Análisis Espacial."
   },
   {
-    "objectID": "rvea/vol1-moreno-arlet.html#introducción",
-    "href": "rvea/vol1-moreno-arlet.html#introducción",
-    "title": "Modelación y Proyección de la Mortalidad Neonatal, Postneonatal y en la Niñez por Entidad Federal en Venezuela",
+    "objectID": "rvea/vol1-colmenares.html#introducción",
+    "href": "rvea/vol1-colmenares.html#introducción",
+    "title": "Análisis Espacio-Temporal de la Mortalidad en Venezuela (1996-2016)",
     "section": "2 Introducción",
-    "text": "2 Introducción\nLa gestión de riesgos demográficos y financieros en Venezuela ha enfrentado un desafío estructural: obsolescencia de bases técnicas y dependencia de métodos determinísticos. El rol del actuario moderno se redefine como gestor de la incertidumbre; la aplicación de modelos estocásticos resulta imprescindible para estimar nubes de valores probables y proyectar riesgos con grados de confianza. El foco de esta investigación es la mortalidad de recién nacidos, desagregando el riesgo en períodos Neonatal y Postneonatal y en las entidades con mayores tasas."
+    "text": "2 Introducción\nLa dinámica demográfica de Venezuela ha experimentado transformaciones estructurales profundas en las últimas dos décadas. El análisis de la mortalidad, entendido como el componente esencial del riesgo actuarial y la base de la seguridad social, requiere una lente geográfica de alta resolución que permita identificar desigualdades territoriales que las métricas nacionales agregadas suelen ocultar.\nDurante décadas, la práctica actuarial en el país ha dependido de tablas de mortalidad estáticas (Masjuán, CSO 1980), con un desfase significativo frente a la realidad actual. El presente artículo aborda el período 1996-2016 y emplea una estrategia que transita desde la exploración por clusters de K-means hasta la modelización bayesiana avanzada mediante el modelo BYM con INLA. Este trabajo se integra en el primer volumen de la RVEA como un aporte fundamental del CVEA."
   },
   {
-    "objectID": "rvea/vol1-moreno-arlet.html#métodos-resumen",
-    "href": "rvea/vol1-moreno-arlet.html#métodos-resumen",
-    "title": "Modelación y Proyección de la Mortalidad Neonatal, Postneonatal y en la Niñez por Entidad Federal en Venezuela",
+    "objectID": "rvea/vol1-colmenares.html#métodos-resumen",
+    "href": "rvea/vol1-colmenares.html#métodos-resumen",
+    "title": "Análisis Espacio-Temporal de la Mortalidad en Venezuela (1996-2016)",
     "section": "3 Métodos (resumen)",
-    "text": "3 Métodos (resumen)\n\nDatos: Anuarios de Mortalidad MPPS, 1995-2012, por entidad federal, sexo y edad (alta resolución temporal).\nModelo Lee-Carter; proyección del índice \\(\\kappa_t\\) hasta 2022.\nSoftware: R (demography, ILC)."
+    "text": "3 Métodos (resumen)\n\nCuraduría de datos: normalización de nombres entre MPPS, INE y cartografía GADM.\nK-means: segmentación de trayectorias de tasas de mortalidad por municipio.\nÍndice de Moran: validación de la estructura geográfica del riesgo.\nModelo BYM (INLA): riesgo relativo suavizado por municipio.\nInterpolación IDW: superficies de riesgo continuo para visualización."
   },
   {
-    "objectID": "rvea/vol1-moreno-arlet.html#discusión",
-    "href": "rvea/vol1-moreno-arlet.html#discusión",
-    "title": "Modelación y Proyección de la Mortalidad Neonatal, Postneonatal y en la Niñez por Entidad Federal en Venezuela",
-    "section": "4 Discusión",
-    "text": "4 Discusión\nEl “Factor Zulia” y la “Advertencia de Trujillo” son hallazgos relevantes para política pública. Se recomienda focalización geográfica prioritaria y adopción de Quarto y estructura I-RL-M-R-D con reproducibilidad estricta.\n\nArtículo completo: ver Referencias/RVEA_Volumen I/RVA_Vol_I_Arlet_M/RVA-Arlet_Moreno1.qmd. PDF disponible según proceso editorial."
-  },
-  {
-    "objectID": "rvea/vol2-herrera.html",
-    "href": "rvea/vol2-herrera.html",
-    "title": "Proyección de la Mortalidad por Causas de Fallecimiento",
-    "section": "",
-    "text": "Proyección de la mortalidad por causas de fallecimiento integrando el modelo Lee-Carter con Análisis de Datos Composicionales (CoDa). Permite capturar la evolución de la estructura de causas y su impacto en las reservas actuariales.\nEste artículo es un placeholder. Sustituir por el manuscrito completo cuando esté disponible."
-  },
-  {
-    "objectID": "rvea/vol2-herrera.html#resumen",
-    "href": "rvea/vol2-herrera.html#resumen",
-    "title": "Proyección de la Mortalidad por Causas de Fallecimiento",
-    "section": "",
-    "text": "Proyección de la mortalidad por causas de fallecimiento integrando el modelo Lee-Carter con Análisis de Datos Composicionales (CoDa). Permite capturar la evolución de la estructura de causas y su impacto en las reservas actuariales.\nEste artículo es un placeholder. Sustituir por el manuscrito completo cuando esté disponible."
-  },
-  {
-    "objectID": "sobre.html",
-    "href": "sobre.html",
-    "title": "Sobre el CVEA",
-    "section": "",
-    "text": "Los perfiles del Comité Editorial y de Investigación están en una página dedicada: Comité Editorial. Ahí se muestra el título «Centro Venezolano de Estudios Actuariales» y los perfiles de los miembros."
-  },
-  {
-    "objectID": "sobre.html#estructura-del-centro",
-    "href": "sobre.html#estructura-del-centro",
-    "title": "Sobre el CVEA",
-    "section": "Estructura del Centro",
-    "text": "Estructura del Centro\nEl Centro Venezolano de Estudios Actuariales (CVEA) integra tres ejes bajo una misma identidad institucional:\n\n\n\n\n\n\n\nEje\nContenido\n\n\n\n\nInvestigación\nRevista Venezolana de Actuariado (RVEA), Libros y Materiales Docentes, manuscritos y código reproducible.\n\n\nFormación\nCursos en series de tiempo, modelado actuarial y despliegue en entornos productivos.\n\n\nServicios\nDemos analíticos, dashboards interactivos y consultoría en reservas y riesgo.\n\n\n\nLa coordinación editorial, la tutoría de investigaciones y la relación con el sector (IVSS, Sudeaseg, aseguradoras) están a cargo del equipo cuyo perfil se presenta en Comité Editorial."
-  },
-  {
-    "objectID": "sobre.html#editorial",
-    "href": "sobre.html#editorial",
-    "title": "Sobre el CVEA",
-    "section": "Editorial",
-    "text": "Editorial\n\nComité Editorial RVEA\nLa Revista Venezolana de Actuariado (RVEA) cuenta con un Comité Editorial que vela por la calidad y la reproducibilidad de los manuscritos. Las recomendaciones estratégicas del CVEA (transición a tablas dinámicas, territorialización de reservas, observatorios de mortalidad) se dirigen al sector actuarial, IVSS, Sudeaseg y decisores de política pública.\nLa tutoría y coordinación de investigaciones del volumen inaugural de la RVEA está a cargo del Prof. Jorge Dias y del Prof. Angel Colmenares. Los tesistas Daylin Moreno, José Raúl Gálvez, Daniel Azuaje y Arlet Moreno han sido pilares del diagnóstico sistémico presentado en el primer volumen.\n\n\nModelo de artículo: I-RL-M-R-D\nLos manuscritos de la RVEA siguen la estructura I-RL-M-R-D:\n\n\n\n\n\n\n\n\nSigla\nSección\nContenido\n\n\n\n\nI\nIntroducción\nContexto, problema, vacío de conocimiento, objetivo y contribución.\n\n\nRL\nRevisión literaria\nSíntesis analítica (no cronológica), metodología de la revisión, conclusión que justifica los métodos.\n\n\nM\nMétodos\nDiseño, fuentes de datos, modelización, entorno computacional y código fuente.\n\n\nR\nResultados\nPresentación objetiva y secuencial; figuras y tablas con leyendas y referenciación cruzada.\n\n\nD\nDiscusión\nInterpretación, implicaciones, limitaciones y conclusiones.\n\n\n\nSe exige reproducibilidad: código (R, Python, Julia) y datos en repositorio público; referencias en formato APA (references.bib + .csl).\n\n\nPlantilla para autores\nLa plantilla oficial de la RVEA está en la carpeta de referencia del proyecto:\n\nUbicación: Referencias/Plantilla_RVEA/jfwm_template_raw.qmd\nIncluye guías por sección (Introducción, Revisión Literaria, Métodos, Resultados, Discusión), ejemplos de código y requisitos de archivos (references.bib, apa.csl, logo CVEA para PDF).\n\nPara integrar la plantilla en tu flujo de trabajo, copia ese archivo y los archivos indicados en su cabecera a tu carpeta de manuscrito."
-  },
-  {
-    "objectID": "sobre.html#plantilla-de-libros-y-materiales-docentes",
-    "href": "sobre.html#plantilla-de-libros-y-materiales-docentes",
-    "title": "Sobre el CVEA",
-    "section": "Plantilla de Libros y Materiales Docentes",
-    "text": "Plantilla de Libros y Materiales Docentes\nEl modelo para los libros del CVEA es la plantilla Quarto Book basada en Applied Machine Learning Using mlr3 in R, ubicada en Referencias/Plantilla_CVEA_Book_Applied Machine Learning Using mlr3 in R/book/. Incluye partes, capítulos, PDF descargable, sidebar y búsqueda; ya está adaptada al CVEA (título, logo, pie de página).\nEl libro Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial fue generado con esa plantilla y está compilado; se publica en la web colocando solo el HTML y el PDF en libro/demografia-siglo-xxi/. Ver Libros y Materiales Docentes para el enlace “Ver en línea” y “Descargar PDF”.\nLos libros y materiales docentes (diagnóstico del sistema de pensiones y bases técnicas) siguen el plan editorial 2025-2026; los capítulos se irán añadiendo usando la misma plantilla."
-  },
-  {
-    "objectID": "sobre.html#documentos-de-referencia",
-    "href": "sobre.html#documentos-de-referencia",
-    "title": "Sobre el CVEA",
-    "section": "Documentos de referencia",
-    "text": "Documentos de referencia\nLa carpeta Referencias del repositorio contiene la estructura general del centro, editores, modelos de revista (RVEA) y de libro, volúmenes y artículos. Ver Referencias/README.md para el detalle de la plantilla RVEA, la plantilla de libro (mlr3) y el libro Demografía."
-  },
-  {
-    "objectID": "index.html#contenido",
-    "href": "index.html#contenido",
-    "title": "Centro Venezolano de Estudios Actuariales",
-    "section": "Contenido",
-    "text": "Contenido\n\nRevista RVEA — Artículos del Volumen I y II\nLibros y Materiales Docentes — Diagnóstico del sistema de pensiones\nSeries de Tiempo con Python — Curso para actuarios\nServicios y Demos — Galería interactiva (IBNR, mapa de riesgo)\nComité Editorial — Miembros del Comité\nSobre el CVEA — Estructura y modelo editorial"
-  },
-  {
-    "objectID": "editores.html",
-    "href": "editores.html",
-    "title": "Centro Venezolano de Estudios Actuariales",
-    "section": "",
-    "text": "Perfiles del Comité Editorial de la RVEA y del equipo de investigación del CVEA."
-  },
-  {
-    "objectID": "editores.html#comité-editorial",
-    "href": "editores.html#comité-editorial",
-    "title": "Centro Venezolano de Estudios Actuariales",
-    "section": "Comité Editorial",
-    "text": "Comité Editorial\n\n\n\n\nProf. Jorge Dias\n\n\n\nProf. Jorge Dias\nPerfil en LinkedIn\nLicenciado en Ciencias Actuariales por la Universidad Central de Venezuela (UCV), con una Maestría en Estadísticas Aplicadas de la Universidad Jiaotong de Pekín y candidato a Doctor en Finanzas y Seguros en la Universidad de Economía y Negocios Internacionales de Pekín. Es Jefe del Departamento de Actuariado y profesor asistente en la Escuela de Estadística y Ciencias Actuariales de la UCV, con experiencia docente en áreas como Seguros de Personas y Matemáticas de Pensiones. Su carrera combina la academia con la experiencia profesional en la Superintendencia de la Actividad Aseguradora, aportando una visión integral del sector.\n\n\n\n\n\n\nProf. Angel Colmenares\n\n\n\nProf. Angel Colmenares\nPerfil en LinkedIn\nLicenciado en Ciencias Actuariales y Magister Scientiarum en Modelos Aleatorios por la Universidad Central de Venezuela (UCV), actualmente cursando un Doctorado en Matemáticas en la misma casa de estudios. Como profesor asistente en la UCV, ha liderado múltiples departamentos y ha sido un actor clave en la reforma curricular y en la promoción de convenios interinstitucionales. Su vasta experiencia profesional incluye roles de alta dirección como Vicepresidente de Suscripción en C.N.A. de Seguros La Previsora, Vicepresidente Ejecutivo de Riesgo en el Banco de Venezuela y Profesional V Actuarial en la Superintendencia de la Actividad Aseguradora, lo que le confiere una profunda comprensión del riesgo en los sectores de seguros y finanzas.\n\n\n\n\n\n\nProf. Aymara Gerdel\n\n\n\nProf. Aymara Gerdel\nPerfil en LinkedIn\nLicenciada en Estadística y Especialista en Gobierno y Políticas Públicas por la Universidad Central de Venezuela (UCV). Posee una Maestría en Economía (Comercio Internacional) y actualmente es candidata a Doctora en Políticas Públicas por la University of International Business and Economics en Pekín. Como profesora en la UCV, su perfil combina un sólido fundamento cuantitativo con una especialización en políticas públicas y economía internacional, aportando una perspectiva crucial para evaluar el impacto socioeconómico y regulatorio de los sistemas de previsión social.\n\n\n\n\n\n\nProf. Jhon Beens\n\n\n\nProf. Jhon Beens\nPerfil en LinkedIn\nLicenciado en Ciencias Estadísticas por la Escuela de Estadística y Ciencias Actuariales de la Universidad Central de Venezuela (UCV) y maestrante en Estudios de la Ciencia y la Tecnología en el Instituto Venezolano de Investigaciones Científicas (IVIC). Es profesor en la Facultad de Ciencias Económicas y Sociales de la UCV y Coordinador del Área de Estudios Históricos y Culturales del Centro Venezolano de Estudios sobre China (CVEC). Su formación en estadística y su enfoque en los estudios de la ciencia y la tecnología aportan una visión crítica sobre la construcción y aplicación del conocimiento técnico y científico."
-  },
-  {
-    "objectID": "editores.html#colaboradores-y-tesistas-volúmenes-inaugurales",
-    "href": "editores.html#colaboradores-y-tesistas-volúmenes-inaugurales",
-    "title": "Centro Venezolano de Estudios Actuariales",
-    "section": "Colaboradores y tesistas (volúmenes inaugurales)",
-    "text": "Colaboradores y tesistas (volúmenes inaugurales)\nLos siguientes autores han contribuido con trabajos de grado y manuscritos que sustentan el diagnóstico sistémico de los tres volúmenes de la RVEA y del libro Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI (según la Propuesta Editorial CVEA 2025-2026):\nVolumen I: Fundamentos, demografía y sostenibilidad del sistema de previsión social\n\nDaylin Moreno (2025) — Valuación actuarial de las bases técnicas de Masjuán; desfase y obsolescencia.\nJosé Raúl Gálvez (2025) — Situación de pensiones y jubilaciones; gobernanza, morosidad y sostenibilidad.\nDaniel Azuaje (2025) — Tabla de mortalidad dinámica Lee-Carter (LC15); superación de tablas estáticas (CSO 1980).\nArlet Moreno (2025) — Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal.\n\nVolumen II: Las dimensiones de la mortalidad (causa, género y territorio)\n\nIliria Herrera (2025) — Proyección de la mortalidad por causas (Lee-Carter y CoDa).\nWilliams Fernandez (2025) — Tablas de decrecimiento múltiple con Cadenas de Markov.\nKelvin Guedez (2025) — Principales causas de fallecimiento en la población masculina venezolana.\nDorielys Rangel (2025) — Principales causas de fallecimiento en la población femenina venezolana.\nKennya Briceño (2025) — Tablas de decrecimiento múltiple (regiones Occidental, Andes, Central).\nDaniela Godoy (2025) — Principales causas en las regiones Los Llanos y Capital.\nOriana Lopez (2025) — Principales causas en las regiones Oriental y Guayana.\n\nVolumen III: Perspectivas internacionales y fronteras en la modelización\n\nEleazar Domínguez (2025) — Análisis comparativo de métodos de proyección (Chile y Japón).\nOliver Triveño (2025) — Medición del riesgo de longevidad (Portugal); impacto en rentas vitalicias y pensiones.\nLuis Alvarez (2026, en desarrollo) — Comparativa internacional (Países Bajos, Bélgica).\nJosé Mendoza (2026, en desarrollo) — Comparativa internacional (Italia, Grecia).\n\nOtros autores\n\nFranklin Quero (2025) — Introducción a las Matemáticas Financieras (TFPG).\nFelipe Moreno — Colaboración en Introducción a las Matemáticas Actuariales (en preparación)."
+    "objectID": "rvea/vol1-colmenares.html#conclusiones-y-recomendaciones",
+    "href": "rvea/vol1-colmenares.html#conclusiones-y-recomendaciones",
+    "title": "Análisis Espacio-Temporal de la Mortalidad en Venezuela (1996-2016)",
+    "section": "4 Conclusiones y recomendaciones",
+    "text": "4 Conclusiones y recomendaciones\nComo miembro del Comité Editorial de la RVEA se presentan recomendaciones estratégicas: (1) transición hacia tablas dinámicas (Lee-Carter, BYM); (2) territorialización de reservas según mapa de riesgo; (3) monitoreo del incremento del 1.4% anual; (4) integración de datos y código abierto (Quarto, R) para reproducibilidad.\n\nArtículo completo con código reproducible (R, INLA, sf, gstat) y figuras: ver carpeta Referencias/RVEA_Volumen I/RVA_Vol_I_Angel_C/V3/ (Art_Angel_Plantilla_RVEA.qmd). PDF disponible según proceso editorial."
   },
   {
     "objectID": "rvea/index.html",
@@ -224,60 +168,137 @@
     "text": "5 Modelo editorial y plantilla\nLa RVEA exige reproducibilidad (código y datos en repositorio público) y la estructura I-RL-M-R-D. La plantilla para autores y el detalle del Comité Editorial se describen en Sobre el CVEA — Editorial."
   },
   {
-    "objectID": "rvea/vol1-colmenares.html",
-    "href": "rvea/vol1-colmenares.html",
-    "title": "Análisis Espacio-Temporal de la Mortalidad en Venezuela (1996-2016)",
+    "objectID": "editores.html",
+    "href": "editores.html",
+    "title": "Centro Venezolano de Estudios Actuariales",
+    "section": "",
+    "text": "Perfiles del Comité Editorial de la RVEA y del equipo de investigación del CVEA."
+  },
+  {
+    "objectID": "editores.html#comité-editorial",
+    "href": "editores.html#comité-editorial",
+    "title": "Centro Venezolano de Estudios Actuariales",
+    "section": "Comité Editorial",
+    "text": "Comité Editorial\n\n\n\n\nProf. Jorge Dias\n\n\n\nProf. Jorge Dias\nPerfil en LinkedIn\nLicenciado en Ciencias Actuariales por la Universidad Central de Venezuela (UCV), con una Maestría en Estadísticas Aplicadas de la Universidad Jiaotong de Pekín y candidato a Doctor en Finanzas y Seguros en la Universidad de Economía y Negocios Internacionales de Pekín. Es Jefe del Departamento de Actuariado y profesor asistente en la Escuela de Estadística y Ciencias Actuariales de la UCV, con experiencia docente en áreas como Seguros de Personas y Matemáticas de Pensiones. Su carrera combina la academia con la experiencia profesional en la Superintendencia de la Actividad Aseguradora, aportando una visión integral del sector.\n\n\n\n\n\n\nProf. Angel Colmenares\n\n\n\nProf. Angel Colmenares\nPerfil en LinkedIn\nLicenciado en Ciencias Actuariales y Magister Scientiarum en Modelos Aleatorios por la Universidad Central de Venezuela (UCV), actualmente cursando un Doctorado en Matemáticas en la misma casa de estudios. Como profesor asistente en la UCV, ha liderado múltiples departamentos y ha sido un actor clave en la reforma curricular y en la promoción de convenios interinstitucionales. Su vasta experiencia profesional incluye roles de alta dirección como Vicepresidente de Suscripción en C.N.A. de Seguros La Previsora, Vicepresidente Ejecutivo de Riesgo en el Banco de Venezuela y Profesional V Actuarial en la Superintendencia de la Actividad Aseguradora, lo que le confiere una profunda comprensión del riesgo en los sectores de seguros y finanzas.\n\n\n\n\n\n\nProf. Aymara Gerdel\n\n\n\nProf. Aymara Gerdel\nPerfil en LinkedIn\nLicenciada en Estadística y Especialista en Gobierno y Políticas Públicas por la Universidad Central de Venezuela (UCV). Posee una Maestría en Economía (Comercio Internacional) y actualmente es candidata a Doctora en Políticas Públicas por la University of International Business and Economics en Pekín. Como profesora en la UCV, su perfil combina un sólido fundamento cuantitativo con una especialización en políticas públicas y economía internacional, aportando una perspectiva crucial para evaluar el impacto socioeconómico y regulatorio de los sistemas de previsión social.\n\n\n\n\n\n\nProf. Jhon Beens\n\n\n\nProf. Jhon Beens\nPerfil en LinkedIn\nLicenciado en Ciencias Estadísticas por la Escuela de Estadística y Ciencias Actuariales de la Universidad Central de Venezuela (UCV) y maestrante en Estudios de la Ciencia y la Tecnología en el Instituto Venezolano de Investigaciones Científicas (IVIC). Es profesor en la Facultad de Ciencias Económicas y Sociales de la UCV y Coordinador del Área de Estudios Históricos y Culturales del Centro Venezolano de Estudios sobre China (CVEC). Su formación en estadística y su enfoque en los estudios de la ciencia y la tecnología aportan una visión crítica sobre la construcción y aplicación del conocimiento técnico y científico."
+  },
+  {
+    "objectID": "editores.html#colaboradores-y-tesistas-volúmenes-inaugurales",
+    "href": "editores.html#colaboradores-y-tesistas-volúmenes-inaugurales",
+    "title": "Centro Venezolano de Estudios Actuariales",
+    "section": "Colaboradores y tesistas (volúmenes inaugurales)",
+    "text": "Colaboradores y tesistas (volúmenes inaugurales)\nLos siguientes autores han contribuido con trabajos de grado y manuscritos que sustentan el diagnóstico sistémico de los tres volúmenes de la RVEA y del libro Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI (según la Propuesta Editorial CVEA 2025-2026):\nVolumen I: Fundamentos, demografía y sostenibilidad del sistema de previsión social\n\nDaylin Moreno (2025) — Valuación actuarial de las bases técnicas de Masjuán; desfase y obsolescencia.\nJosé Raúl Gálvez (2025) — Situación de pensiones y jubilaciones; gobernanza, morosidad y sostenibilidad.\nDaniel Azuaje (2025) — Tabla de mortalidad dinámica Lee-Carter (LC15); superación de tablas estáticas (CSO 1980).\nArlet Moreno (2025) — Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal.\n\nVolumen II: Las dimensiones de la mortalidad (causa, género y territorio)\n\nIliria Herrera (2025) — Proyección de la mortalidad por causas (Lee-Carter y CoDa).\nWilliams Fernandez (2025) — Tablas de decrecimiento múltiple con Cadenas de Markov.\nKelvin Guedez (2025) — Principales causas de fallecimiento en la población masculina venezolana.\nDorielys Rangel (2025) — Principales causas de fallecimiento en la población femenina venezolana.\nKennya Briceño (2025) — Tablas de decrecimiento múltiple (regiones Occidental, Andes, Central).\nDaniela Godoy (2025) — Principales causas en las regiones Los Llanos y Capital.\nOriana Lopez (2025) — Principales causas en las regiones Oriental y Guayana.\n\nVolumen III: Perspectivas internacionales y fronteras en la modelización\n\nEleazar Domínguez (2025) — Análisis comparativo de métodos de proyección (Chile y Japón).\nOliver Triveño (2025) — Medición del riesgo de longevidad (Portugal); impacto en rentas vitalicias y pensiones.\nLuis Alvarez (2026, en desarrollo) — Comparativa internacional (Países Bajos, Bélgica).\nJosé Mendoza (2026, en desarrollo) — Comparativa internacional (Italia, Grecia).\n\nOtros autores\n\nFranklin Quero (2025) — Introducción a las Matemáticas Financieras (TFPG).\nFelipe Moreno — Colaboración en Introducción a las Matemáticas Actuariales (en preparación)."
+  },
+  {
+    "objectID": "index.html#contenido",
+    "href": "index.html#contenido",
+    "title": "Centro Venezolano de Estudios Actuariales",
+    "section": "Contenido",
+    "text": "Contenido\n\nRevista RVEA — Artículos del Volumen I y II\nLibros y Materiales Docentes — Diagnóstico del sistema de pensiones\nSeries de Tiempo con Python — Curso para actuarios\nServicios y Demos — Galería interactiva (IBNR, mapa de riesgo)\nComité Editorial — Miembros del Comité\nSobre el CVEA — Estructura y modelo editorial"
+  },
+  {
+    "objectID": "sobre.html",
+    "href": "sobre.html",
+    "title": "Sobre el CVEA",
+    "section": "",
+    "text": "Los perfiles del Comité Editorial y de Investigación están en una página dedicada: Comité Editorial. Ahí se muestra el título «Centro Venezolano de Estudios Actuariales» y los perfiles de los miembros."
+  },
+  {
+    "objectID": "sobre.html#estructura-del-centro",
+    "href": "sobre.html#estructura-del-centro",
+    "title": "Sobre el CVEA",
+    "section": "Estructura del Centro",
+    "text": "Estructura del Centro\nEl Centro Venezolano de Estudios Actuariales (CVEA) integra tres ejes bajo una misma identidad institucional:\n\n\n\n\n\n\n\nEje\nContenido\n\n\n\n\nInvestigación\nRevista Venezolana de Actuariado (RVEA), Libros y Materiales Docentes, manuscritos y código reproducible.\n\n\nFormación\nCursos en series de tiempo, modelado actuarial y despliegue en entornos productivos.\n\n\nServicios\nDemos analíticos, dashboards interactivos y consultoría en reservas y riesgo.\n\n\n\nLa coordinación editorial, la tutoría de investigaciones y la relación con el sector (IVSS, Sudeaseg, aseguradoras) están a cargo del equipo cuyo perfil se presenta en Comité Editorial."
+  },
+  {
+    "objectID": "sobre.html#editorial",
+    "href": "sobre.html#editorial",
+    "title": "Sobre el CVEA",
+    "section": "Editorial",
+    "text": "Editorial\n\nComité Editorial RVEA\nLa Revista Venezolana de Actuariado (RVEA) cuenta con un Comité Editorial que vela por la calidad y la reproducibilidad de los manuscritos. Las recomendaciones estratégicas del CVEA (transición a tablas dinámicas, territorialización de reservas, observatorios de mortalidad) se dirigen al sector actuarial, IVSS, Sudeaseg y decisores de política pública.\nLa tutoría y coordinación de investigaciones del volumen inaugural de la RVEA está a cargo del Prof. Jorge Dias y del Prof. Angel Colmenares. Los tesistas Daylin Moreno, José Raúl Gálvez, Daniel Azuaje y Arlet Moreno han sido pilares del diagnóstico sistémico presentado en el primer volumen.\n\n\nModelo de artículo: I-RL-M-R-D\nLos manuscritos de la RVEA siguen la estructura I-RL-M-R-D:\n\n\n\n\n\n\n\n\nSigla\nSección\nContenido\n\n\n\n\nI\nIntroducción\nContexto, problema, vacío de conocimiento, objetivo y contribución.\n\n\nRL\nRevisión literaria\nSíntesis analítica (no cronológica), metodología de la revisión, conclusión que justifica los métodos.\n\n\nM\nMétodos\nDiseño, fuentes de datos, modelización, entorno computacional y código fuente.\n\n\nR\nResultados\nPresentación objetiva y secuencial; figuras y tablas con leyendas y referenciación cruzada.\n\n\nD\nDiscusión\nInterpretación, implicaciones, limitaciones y conclusiones.\n\n\n\nSe exige reproducibilidad: código (R, Python, Julia) y datos en repositorio público; referencias en formato APA (references.bib + .csl).\n\n\nPlantilla para autores\nLa plantilla oficial de la RVEA está en la carpeta de referencia del proyecto:\n\nUbicación: Referencias/Plantilla_RVEA/jfwm_template_raw.qmd\nIncluye guías por sección (Introducción, Revisión Literaria, Métodos, Resultados, Discusión), ejemplos de código y requisitos de archivos (references.bib, apa.csl, logo CVEA para PDF).\n\nPara integrar la plantilla en tu flujo de trabajo, copia ese archivo y los archivos indicados en su cabecera a tu carpeta de manuscrito."
+  },
+  {
+    "objectID": "sobre.html#plantilla-de-libros-y-materiales-docentes",
+    "href": "sobre.html#plantilla-de-libros-y-materiales-docentes",
+    "title": "Sobre el CVEA",
+    "section": "Plantilla de Libros y Materiales Docentes",
+    "text": "Plantilla de Libros y Materiales Docentes\nEl modelo para los libros del CVEA es la plantilla Quarto Book basada en Applied Machine Learning Using mlr3 in R, ubicada en Referencias/Plantilla_CVEA_Book_Applied Machine Learning Using mlr3 in R/book/. Incluye partes, capítulos, PDF descargable, sidebar y búsqueda; ya está adaptada al CVEA (título, logo, pie de página).\nEl libro Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial fue generado con esa plantilla y está compilado; se publica en la web colocando solo el HTML y el PDF en libro/demografia-siglo-xxi/. Ver Libros y Materiales Docentes para el enlace “Ver en línea” y “Descargar PDF”.\nLos libros y materiales docentes (diagnóstico del sistema de pensiones y bases técnicas) siguen el plan editorial 2025-2026; los capítulos se irán añadiendo usando la misma plantilla."
+  },
+  {
+    "objectID": "sobre.html#documentos-de-referencia",
+    "href": "sobre.html#documentos-de-referencia",
+    "title": "Sobre el CVEA",
+    "section": "Documentos de referencia",
+    "text": "Documentos de referencia\nLa carpeta Referencias del repositorio contiene la estructura general del centro, editores, modelos de revista (RVEA) y de libro, volúmenes y artículos. Ver Referencias/README.md para el detalle de la plantilla RVEA, la plantilla de libro (mlr3) y el libro Demografía."
+  },
+  {
+    "objectID": "rvea/vol2-herrera.html",
+    "href": "rvea/vol2-herrera.html",
+    "title": "Proyección de la Mortalidad por Causas de Fallecimiento",
+    "section": "",
+    "text": "Proyección de la mortalidad por causas de fallecimiento integrando el modelo Lee-Carter con Análisis de Datos Composicionales (CoDa). Permite capturar la evolución de la estructura de causas y su impacto en las reservas actuariales.\nEste artículo es un placeholder. Sustituir por el manuscrito completo cuando esté disponible."
+  },
+  {
+    "objectID": "rvea/vol2-herrera.html#resumen",
+    "href": "rvea/vol2-herrera.html#resumen",
+    "title": "Proyección de la Mortalidad por Causas de Fallecimiento",
+    "section": "",
+    "text": "Proyección de la mortalidad por causas de fallecimiento integrando el modelo Lee-Carter con Análisis de Datos Composicionales (CoDa). Permite capturar la evolución de la estructura de causas y su impacto en las reservas actuariales.\nEste artículo es un placeholder. Sustituir por el manuscrito completo cuando esté disponible."
+  },
+  {
+    "objectID": "rvea/vol1-moreno-arlet.html",
+    "href": "rvea/vol1-moreno-arlet.html",
+    "title": "Modelación y Proyección de la Mortalidad Neonatal, Postneonatal y en la Niñez por Entidad Federal en Venezuela",
     "section": "",
     "text": "NoteManuscrito completo (versión extendida)\n\n\n\nAbrir artículo completo (introducción, revisión literaria, métodos, resultados, figuras y conclusiones). Puede tardar unos segundos en cargar."
   },
   {
-    "objectID": "rvea/vol1-colmenares.html#resumen",
-    "href": "rvea/vol1-colmenares.html#resumen",
-    "title": "Análisis Espacio-Temporal de la Mortalidad en Venezuela (1996-2016)",
+    "objectID": "rvea/vol1-moreno-arlet.html#resumen",
+    "href": "rvea/vol1-moreno-arlet.html#resumen",
+    "title": "Modelación y Proyección de la Mortalidad Neonatal, Postneonatal y en la Niñez por Entidad Federal en Venezuela",
     "section": "1 Resumen",
-    "text": "1 Resumen\nResumen: La evaluación de la mortalidad sub-nacional es crítica para la solvencia de sistemas de previsión social y la tarificación de seguros de vida. Este estudio analiza la mortalidad en los 335 municipios de Venezuela (1996-2016) combinando normalización geográfica (GADM), clusters de K-means, índices de autocorrelación espacial de Moran y un modelo jerárquico Bayesiano Besag-York-Mollié (BYM) mediante INLA. Se identificó una tendencia nacional de incremento del riesgo del 1.4% anual, con clusters de riesgo persistentes en el arco central y zonas fronterizas. La interpolación IDW del riesgo bayesiano revela una superficie de mortalidad heterogénea que invalida el uso de tablas de mortalidad únicas nacionales. Existe un exceso de mortalidad crónico en regiones específicas que requiere ajustes actuariales territorializados.\nAbstract: Sub-national mortality assessment is critical for the solvency of social security systems and life insurance pricing. This study analyzes mortality across Venezuela’s 335 municipalities (1996-2016) combining geographic normalization (GADM), K-means clustering, Moran’s spatial autocorrelation indices, and a Bayesian Besag-York-Mollié (BYM) hierarchical model via INLA. A national increasing risk trend of 1.4% per year was identified, with persistent risk clusters in the central arc and border areas. IDW interpolation of Bayesian risk reveals a heterogeneous mortality surface that invalidates the use of single national mortality tables. There is chronic excess mortality in specific regions requiring territorialized actuarial adjustments.\nPalabras clave: Mortalidad, Venezuela, INLA, SMR, Análisis Espacial."
+    "text": "1 Resumen\nLa planificación de riesgos demográficos y actuariales en Venezuela ha dependido históricamente de proyecciones determinísticas (CELADE, INDEC), que no capturan la incertidumbre ni la heterogeneidad regional. Este estudio aplicó el modelo estocástico de Lee-Carter a los Anuarios de Mortalidad del MPPS (1995-2012), desagregados por entidad federal, sexo y edad (días/meses). El índice temporal \\(\\kappa_t\\) se modeló con series de tiempo y se proyectó hasta 2022 (R: demography, ILC).\nHallazgos: Disparidad regional severa; Zulia con tasas más elevadas en períodos Neonatal, Postneonatal y en la Niñez; concentración del riesgo en Neonatal (0-27 días); anomalía proyectada en Trujillo (ascenso de mortalidad neonatal desde 2014). La modelación estocástica subnacional es indispensable para un mapa de riesgo accionable y para que salud pública y práctica actuarial abandonen la homogeneidad nacional.\nPalabras clave: Mortalidad infantil, Lee-Carter, Venezuela, entidad federal, proyección estocástica."
   },
   {
-    "objectID": "rvea/vol1-colmenares.html#introducción",
-    "href": "rvea/vol1-colmenares.html#introducción",
-    "title": "Análisis Espacio-Temporal de la Mortalidad en Venezuela (1996-2016)",
+    "objectID": "rvea/vol1-moreno-arlet.html#introducción",
+    "href": "rvea/vol1-moreno-arlet.html#introducción",
+    "title": "Modelación y Proyección de la Mortalidad Neonatal, Postneonatal y en la Niñez por Entidad Federal en Venezuela",
     "section": "2 Introducción",
-    "text": "2 Introducción\nLa dinámica demográfica de Venezuela ha experimentado transformaciones estructurales profundas en las últimas dos décadas. El análisis de la mortalidad, entendido como el componente esencial del riesgo actuarial y la base de la seguridad social, requiere una lente geográfica de alta resolución que permita identificar desigualdades territoriales que las métricas nacionales agregadas suelen ocultar.\nDurante décadas, la práctica actuarial en el país ha dependido de tablas de mortalidad estáticas (Masjuán, CSO 1980), con un desfase significativo frente a la realidad actual. El presente artículo aborda el período 1996-2016 y emplea una estrategia que transita desde la exploración por clusters de K-means hasta la modelización bayesiana avanzada mediante el modelo BYM con INLA. Este trabajo se integra en el primer volumen de la RVEA como un aporte fundamental del CVEA."
+    "text": "2 Introducción\nLa gestión de riesgos demográficos y financieros en Venezuela ha enfrentado un desafío estructural: obsolescencia de bases técnicas y dependencia de métodos determinísticos. El rol del actuario moderno se redefine como gestor de la incertidumbre; la aplicación de modelos estocásticos resulta imprescindible para estimar nubes de valores probables y proyectar riesgos con grados de confianza. El foco de esta investigación es la mortalidad de recién nacidos, desagregando el riesgo en períodos Neonatal y Postneonatal y en las entidades con mayores tasas."
   },
   {
-    "objectID": "rvea/vol1-colmenares.html#métodos-resumen",
-    "href": "rvea/vol1-colmenares.html#métodos-resumen",
-    "title": "Análisis Espacio-Temporal de la Mortalidad en Venezuela (1996-2016)",
+    "objectID": "rvea/vol1-moreno-arlet.html#métodos-resumen",
+    "href": "rvea/vol1-moreno-arlet.html#métodos-resumen",
+    "title": "Modelación y Proyección de la Mortalidad Neonatal, Postneonatal y en la Niñez por Entidad Federal en Venezuela",
     "section": "3 Métodos (resumen)",
-    "text": "3 Métodos (resumen)\n\nCuraduría de datos: normalización de nombres entre MPPS, INE y cartografía GADM.\nK-means: segmentación de trayectorias de tasas de mortalidad por municipio.\nÍndice de Moran: validación de la estructura geográfica del riesgo.\nModelo BYM (INLA): riesgo relativo suavizado por municipio.\nInterpolación IDW: superficies de riesgo continuo para visualización."
+    "text": "3 Métodos (resumen)\n\nDatos: Anuarios de Mortalidad MPPS, 1995-2012, por entidad federal, sexo y edad (alta resolución temporal).\nModelo Lee-Carter; proyección del índice \\(\\kappa_t\\) hasta 2022.\nSoftware: R (demography, ILC)."
   },
   {
-    "objectID": "rvea/vol1-colmenares.html#conclusiones-y-recomendaciones",
-    "href": "rvea/vol1-colmenares.html#conclusiones-y-recomendaciones",
-    "title": "Análisis Espacio-Temporal de la Mortalidad en Venezuela (1996-2016)",
-    "section": "4 Conclusiones y recomendaciones",
-    "text": "4 Conclusiones y recomendaciones\nComo miembro del Comité Editorial de la RVEA se presentan recomendaciones estratégicas: (1) transición hacia tablas dinámicas (Lee-Carter, BYM); (2) territorialización de reservas según mapa de riesgo; (3) monitoreo del incremento del 1.4% anual; (4) integración de datos y código abierto (Quarto, R) para reproducibilidad.\n\nArtículo completo con código reproducible (R, INLA, sf, gstat) y figuras: ver carpeta Referencias/RVEA_Volumen I/RVA_Vol_I_Angel_C/V3/ (Art_Angel_Plantilla_RVEA.qmd). PDF disponible según proceso editorial."
+    "objectID": "rvea/vol1-moreno-arlet.html#discusión",
+    "href": "rvea/vol1-moreno-arlet.html#discusión",
+    "title": "Modelación y Proyección de la Mortalidad Neonatal, Postneonatal y en la Niñez por Entidad Federal en Venezuela",
+    "section": "4 Discusión",
+    "text": "4 Discusión\nEl “Factor Zulia” y la “Advertencia de Trujillo” son hallazgos relevantes para política pública. Se recomienda focalización geográfica prioritaria y adopción de Quarto y estructura I-RL-M-R-D con reproducibilidad estricta.\n\nArtículo completo: ver Referencias/RVEA_Volumen I/RVA_Vol_I_Arlet_M/RVA-Arlet_Moreno1.qmd. PDF disponible según proceso editorial."
   },
   {
-    "objectID": "rvea/vol1-moreno.html",
-    "href": "rvea/vol1-moreno.html",
-    "title": "Valuación Actuarial de Bases Técnicas",
+    "objectID": "rvea/ENLACES_BOX_ARTICULOS.html",
+    "href": "rvea/ENLACES_BOX_ARTICULOS.html",
+    "title": "1 Enlaces Box — Artículos completos RVEA",
     "section": "",
-    "text": "Investigación sobre el desfase de las bases técnicas de Masjuán (1960) frente a la realidad demográfica y actuarial del siglo XXI. Análisis de la solvencia del sistema de pensiones y la subestimación sistemática de la supervivencia.\nEste artículo es un placeholder. Sustituir por el contenido completo del manuscrito (por ejemplo, a partir de la plantilla RVEA en d:\\CVEA\\RVEA\\Volumen I\\RVA_Vol_I_Arlet_M\\ o material equivalente)."
+    "text": "Los artículos completos (HTML autocontenidos) no se sirven correctamente desde GitHub Pages. Se usan enlaces a Box para que los lectores puedan abrirlos.\n\n\n\nAngel Colmenares — Análisis espacio-temporal de la mortalidad (BYM/INLA)\n\nArchivo local: assets/articulos/articulo-colmenares-espacio-temporal.html\n\nSubir a Box y obtener enlace de compartir (ej. https://ucv.box.com/s/xxxx).\n\nArlet Moreno y Angel Colmenares — Mortalidad neonatal, postneonatal y en la niñez (Lee-Carter)\n\nArchivo local: assets/articulos/articulo-moreno-colmenares-mortalidad-infantil.html\n\nSubir a Box y obtener enlace de compartir.\n\n\n\n\n\nCuando tengas los dos enlaces de Box, reemplaza en todo el proyecto (buscar y reemplazar):\n\n\n\n\n\n\n\nBuscar (placeholder)\nReemplazar por\n\n\n\n\nhttps://app.box.com/s/COLMENARES_ESPACIO_TEMPORAL_REEMPLAZAR\nTu enlace Box del artículo de Colmenares (espacio-temporal)\n\n\nhttps://app.box.com/s/MORENO_COLMENARES_MORTALIDAD_REEMPLAZAR\nTu enlace Box del artículo de Moreno-Colmenares (mortalidad infantil)\n\n\n\nArchivos que contienen estos placeholders:\n\nrvea/index.qmd\nrvea/vol1-colmenares.qmd\nrvea/vol1-moreno-arlet.qmd\n\nDespués de reemplazar, ejecuta quarto render y haz commit + push."
   },
   {
-    "objectID": "rvea/vol1-moreno.html#resumen",
-    "href": "rvea/vol1-moreno.html#resumen",
-    "title": "Valuación Actuarial de Bases Técnicas",
+    "objectID": "rvea/ENLACES_BOX_ARTICULOS.html#archivos-a-subir-a-box",
+    "href": "rvea/ENLACES_BOX_ARTICULOS.html#archivos-a-subir-a-box",
+    "title": "1 Enlaces Box — Artículos completos RVEA",
     "section": "",
-    "text": "Investigación sobre el desfase de las bases técnicas de Masjuán (1960) frente a la realidad demográfica y actuarial del siglo XXI. Análisis de la solvencia del sistema de pensiones y la subestimación sistemática de la supervivencia.\nEste artículo es un placeholder. Sustituir por el contenido completo del manuscrito (por ejemplo, a partir de la plantilla RVEA en d:\\CVEA\\RVEA\\Volumen I\\RVA_Vol_I_Arlet_M\\ o material equivalente)."
+    "text": "Angel Colmenares — Análisis espacio-temporal de la mortalidad (BYM/INLA)\n\nArchivo local: assets/articulos/articulo-colmenares-espacio-temporal.html\n\nSubir a Box y obtener enlace de compartir (ej. https://ucv.box.com/s/xxxx).\n\nArlet Moreno y Angel Colmenares — Mortalidad neonatal, postneonatal y en la niñez (Lee-Carter)\n\nArchivo local: assets/articulos/articulo-moreno-colmenares-mortalidad-infantil.html\n\nSubir a Box y obtener enlace de compartir."
   },
   {
-    "objectID": "rvea/vol1-moreno.html#referencias",
-    "href": "rvea/vol1-moreno.html#referencias",
-    "title": "Valuación Actuarial de Bases Técnicas",
-    "section": "2 Referencias",
-    "text": "2 Referencias\n\nMoreno, D. (2018). Evaluación de la solvencia del sistema de pensiones en Venezuela: Un análisis de longevidad. Trabajo de Grado, UCV."
+    "objectID": "rvea/ENLACES_BOX_ARTICULOS.html#dónde-pegar-los-enlaces",
+    "href": "rvea/ENLACES_BOX_ARTICULOS.html#dónde-pegar-los-enlaces",
+    "title": "1 Enlaces Box — Artículos completos RVEA",
+    "section": "",
+    "text": "Cuando tengas los dos enlaces de Box, reemplaza en todo el proyecto (buscar y reemplazar):\n\n\n\n\n\n\n\nBuscar (placeholder)\nReemplazar por\n\n\n\n\nhttps://app.box.com/s/COLMENARES_ESPACIO_TEMPORAL_REEMPLAZAR\nTu enlace Box del artículo de Colmenares (espacio-temporal)\n\n\nhttps://app.box.com/s/MORENO_COLMENARES_MORTALIDAD_REEMPLAZAR\nTu enlace Box del artículo de Moreno-Colmenares (mortalidad infantil)\n\n\n\nArchivos que contienen estos placeholders:\n\nrvea/index.qmd\nrvea/vol1-colmenares.qmd\nrvea/vol1-moreno-arlet.qmd\n\nDespués de reemplazar, ejecuta quarto render y haz commit + push."
   },
   {
     "objectID": "libro/index.html",
