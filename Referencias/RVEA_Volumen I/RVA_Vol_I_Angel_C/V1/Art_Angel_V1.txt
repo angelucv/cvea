@@ -1,0 +1,967 @@
+---
+title: "Análisis Histórico y Espacio-Temporal de la Mortalidad en Venezuela (1996-2016)"
+subtitle: "Un enfoque de Riesgo Bayesiano y Autocorrelación Espacial a nivel municipal"
+author:
+  - name: "Angel Colmenares"
+    orcid: "0000-0002-8866-1377"
+    affiliation: 
+      - ref: ucv
+    corresponding: true # Indicar autor de correspondencia
+    email: angel.colmenares@ucv.ve
+affiliations:
+  - id: ucv
+    name: "Escuela de Estadística y Ciencias Actuariales, UCV"
+  - id: cvea
+    name: "Centro Venezolano de Estudios Actuariales (CVEA)"
+abstract: |
+  
+  
+  **Resumen:** (Antecedentes) La evaluación de la mortalidad sub-nacional es crítica para la solvencia de sistemas de previsión social y la tarificación de seguros de vida. (Métodos) Este estudio analiza la mortalidad en los 335 municipios de Venezuela (1996-2016) combinando normalización geográfica (GADM), clusters de K-means, índices de autocorrelación espacial de Moran y un modelo jerárquico Bayesiano Besag-York-Mollié (BYM) mediante INLA. (Resultados) Se identificó una tendencia nacional de incremento del riesgo del 1.4% anual, con clusters de riesgo persistentes en el arco central y zonas fronterizas. La interpolación IDW del riesgo bayesiano revela una superficie de mortalidad heterogénea que invalida el uso de tablas de mortalidad únicas nacionales. (Conclusiones) Existe un exceso de mortalidad crónico en regiones específicas que requiere ajustes actuariales territorializados.
+  **Abstract:** (Background) Sub-national mortality assessment is critical for the solvency of social security systems and life insurance pricing. (Methods) This study analyzes mortality across Venezuela's 335 municipalities (1996-2016) combining geographic normalization (GADM), K-means clustering, Moran's spatial autocorrelation indices, and a Bayesian Besag-York-Mollié (BYM) hierarchical model via INLA. (Results) A national increasing risk trend of 1.4% per year was identified, with persistent risk clusters in the central arc and border areas. IDW interpolation of Bayesian risk reveals a heterogeneous mortality surface that invalidates the use of single national mortality tables. (Conclusions) There is chronic excess mortality in specific regions requiring territorialized actuarial adjustments.
+keywords: ["Mortalidad", "Venezuela", "INLA", "SMR", "Análisis Espacial"]
+keywords-en: ["Mortality", "Venezuela", "INLA", "SMR", "Spatial Analysis"]
+jel-codes: ["I10", "J11", "C11"] # Códigos JEL opcionales
+journal-title: "Revista Venezolana de Actuariado"
+volume: 1
+issue: 1
+year: 2026
+date: today # La fecha se actualizará automáticamente al compilar
+format:
+  pdf:
+    # --- Código LaTeX para personalización del PDF ---
+    documentclass: article
+    papersize: a4
+    fontsize: 11pt
+    linestretch: 1.5
+    margin: 1in
+    keep-tex: true
+    include-in-header:
+      - text: |
+          \usepackage{fancyhdr}
+          \usepackage{titling}
+          \pagestyle{fancy}
+          \fancyhf{}
+          \fancyhead[L]{\includegraphics[height=0.5cm]{cvea-logo.png}}
+          \fancyhead[R]{\leftmark}
+          \fancyfoot[C]{\thepage}
+          \renewcommand{\headrulewidth}{0.4pt}
+          \pretitle{\begin{center}\includegraphics[width=1\textwidth]{cvea-logo.png}\\[\bigskipamount]}
+          \posttitle{\end{center}}
+  html:
+    # --- Inserta un logo fijo en la esquina superior izquierda del HTML ---
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    embed-resources: true
+  docx:
+    fig-cap-location: bottom
+bibliography: references.bib
+csl: apa.csl 
+editor_options: 
+  markdown: 
+    wrap: sentence
+  chunk_output_type: console
+---
+
+```{r}
+#| label: setup
+#| include: false
+#| message: false
+#| warning: false
+
+# 1. Carga de librerías 
+library(tidyverse)
+library(sf)
+library(geodata)
+library(viridis)
+library(scales)
+library(lubridate)
+library(zoo)
+library(stringi)
+library(janitor)
+library(cluster)
+library(factoextra)
+library(spdep)
+library(INLA)
+library(broom)
+library(gstat)
+
+# 2. DEFINICIÓN DE FUNCIONES DE LIMPIEZA
+# ==============================================================================
+
+# A. Función Maestra para Normalizar Nombres (Garantiza cruce entre 3 fuentes: Mort, Pob, Mapa)
+normalizar_nombres_gadm <- function(texto_vector, estado_vector) {
+  # 1. Limpieza básica
+  limpio <- stri_trans_general(str_to_upper(str_trim(texto_vector)), "Latin-ASCII")
+  # Agregamos 'INDIGENA' a la lista de eliminación para casos como 'Municipio Indígena Guajira'
+  limpio <- str_remove_all(limpio, "MUNICIPIO |AUTONOMO |BOLIVARIANO |DE |INDIGENA ")
+  limpio <- str_squish(limpio)
+  
+  # 2. Diccionario de Correcciones (Data -> GADM/Oficial)
+  tibble(Muni = limpio, EST = estado_vector) %>%
+    mutate(
+      Muni_Clean = case_when(
+        EST == "DISTRITO CAPITAL" ~ "LIBERTADOR",
+        EST == "VARGAS" ~ "VARGAS", 
+        EST == "DEPENDENCIAS FEDERALES" ~ "DEPENDENCIAS FEDERALES", 
+        
+        # Cojedes
+        EST == "COJEDES" & (Muni == "SAN CARLOS" | Muni == "EZEQUIEL ZAMORA") ~ "EZEQUIEL ZOMORA", 
+        EST == "COJEDES" & Muni == "FALCON" ~ "TINAQUILLO", 
+        
+        # Falcón
+        EST == "FALCON" & Muni == "PALMASOLA" ~ "PALMA SOLA",
+        EST == "FALCON" & str_detect(Muni, "TAQUES") ~ "LOS TANQUES",
+        
+        # Guárico (Uso de str_detect para mayor flexibilidad)
+        EST == "GUARICO" & str_detect(Muni, "GUAYABAL") ~ "SAN GERONIMO GUAYABAL",
+        EST == "GUARICO" & str_detect(Muni, "INFANTE") ~ "LEONARDO INFANTE",
+        EST == "GUARICO" & str_detect(Muni, "MELLADO") ~ "JULIAN MELLADO",
+        EST == "GUARICO" & str_detect(Muni, "MIRANDA") ~ "FRANCISCO DE MIRANDA",
+        EST == "GUARICO" & str_detect(Muni, "MONAGAS") ~ "JOSE TADEO MONAGAS",
+        EST == "GUARICO" & str_detect(Muni, "RIBAS") ~ "JOSE FELIX RIBAS",
+        EST == "GUARICO" & str_detect(Muni, "ROSCIO") ~ "JUAN GERMAN ROSCIO",
+        EST == "GUARICO" & str_detect(Muni, "ZARAZA") ~ "PEDRO ZARAZA",
+        
+        # Mérida
+        EST == "MERIDA" & str_detect(Muni, "CARRACCIOLO") ~ "CARACCIOLO PARRA OLMEDO",
+        EST == "MERIDA" & Muni == "ALBERTO ADRIAN" ~ "ALBERTO ADRIANI",
+        
+        # Nueva Esparta
+        EST == "NUEVA ESPARTA" & (Muni == "VILLALBA" | Muni == "COCHE") ~ "ISLA COCHE", 
+        
+        # Táchira
+        EST == "TACHIRA" & Muni == "ANTONIO ROMULO ACOSTA" ~ "ANTONIO ROMULO COSTA", 
+        EST == "TACHIRA" & Muni == "MIRANDA" ~ "FRANCISCO DE MIRANDA",
+        
+        # Trujillo
+        EST == "TRUJILLO" & Muni == "VARELA" ~ "VALERA",
+        EST == "TRUJILLO" & Muni == "JUAN VICENTE CAMPO ELIAS" ~ "JUAN VICENTE CAMPOS ELIAS",
+        EST == "TRUJILLO" & Muni == "JOSE FELIPE MARQUEZ CANIZALES" ~ "JOSE FELIPE MARQUEZ CANIZALEZ",
+        
+        # Zulia
+        EST == "ZULIA" & (Muni == "PAEZ" | Muni == "GUAJIRA") ~ "GUAJIRA",
+        EST == "ZULIA" & str_detect(Muni, "LOSADA") ~ "JESUS ENRIQUE LOSSADA",
+        
+        # Anzoátegui (Regex flexible para Arthur/Artur)
+        EST == "ANZOATEGUI" & str_detect(Muni, "DIEGO BAUTISTA") ~ "LIC. DIEGO BAUTISTA URBAN",
+        EST == "ANZOATEGUI" & str_detect(Muni, "ART[H]?UR") ~ "GENERAL SIR ARTHUR MCGREGOR", # Catch Artur & Arthur
+        EST == "ANZOATEGUI" & Muni == "FRANCISCO DEL CARMEN CARVAJAL" ~ "CARVAJAL",
+        EST == "ANZOATEGUI" & Muni == "FRANCISCO MIRANDA" ~ "MIRANDA",
+        EST == "ANZOATEGUI" & Muni == "JOSE GREGORIO MONAGAS" ~ "MONAGAS",
+        EST == "ANZOATEGUI" & Muni == "JUAN ANTONIO SOTILLO" ~ "SOTILLO",
+        EST == "ANZOATEGUI" & Muni == "JUAN MANUEL CAJIGAL" ~ "CAJIGAL",
+        EST == "ANZOATEGUI" & Muni == "MANUEL EZEQUIEL BRUZUAL" ~ "BRUZUAL",
+        EST == "ANZOATEGUI" & Muni == "PEDRO MARIA FREITES" ~ "FREITES",
+        EST == "ANZOATEGUI" & Muni == "SAN JOSE GUANIPA" ~ "GUANIPA",
+        EST == "ANZOATEGUI" & Muni == "SIMON BOLIVAR" ~ "BOLIVAR",
+        
+        # Apure
+        EST == "APURE" & Muni == "MUNOS" ~ "MUNOZ",
+        
+        # Aragua
+        EST == "ARAGUA" & Muni == "FRANCISCO LINARES ALCANTARA" ~ "FRANCISCO LINARES",
+        EST == "ARAGUA" & Muni == "JOSE FELIX RIVAS" ~ "JOSE FELIX RIBAS",
+        EST == "ARAGUA" & Muni == "JOSE RAFAEL REVENGA" ~ "JOSE R REVENGA",
+        EST == "ARAGUA" & Muni == "OCUMARE LA COSTA" ~ "OCUMARE LA COSTA ORO",
+        
+        # Bolívar
+        EST == "BOLIVAR" & Muni == "RAUL LEONI" ~ "ANGOSTURA",
+        
+        # Carabobo
+        EST == "CARABOBO" & Muni == "CARLOS ARVELO" ~ "CARLOS AREVALO",
+        
+        TRUE ~ Muni
+      )
+    ) %>%
+    pull(Muni_Clean)
+}
+
+
+
+
+```
+
+
+Resumen (Ejemplo Estructurado) (Máximo 250 palabras):
+
+
+Abstract (Structured Example - Maximum 250 words):
+
+
+
+# Introducción
+
+La dinámica demográfica de Venezuela ha experimentado transformaciones profundas en las últimas dos décadas. El análisis de la mortalidad, como componente esencial del riesgo actuarial y la seguridad social, requiere una lupa geográfica que permita identificar desigualdades territoriales.
+
+El presente estudio aborda el período 1996-2016, un lapso marcado por cambios socioeconómicos significativos. El objetivo central es determinar si la distribución de la mortalidad en los 335 municipios de Venezuela responde a un patrón puramente aleatorio o si existen estructuras de riesgo espaciales persistentes. Para ello, se transita desde el análisis descriptivo de tasas hasta la modelización bayesiana avanzada para el filtrado de ruido aleatorio en áreas con poblaciones pequeñas.
+
+# Revisión Literaria
+
+La epidemiología espacial moderna descansa sobre la premisa de que "todo está relacionado con todo lo demás, pero las cosas cercanas están más relacionadas que las cosas distantes". En el contexto actuarial, el uso de la Razón de Mortalidad Estandarizada (SMR) ha sido el estándar para comparar unidades territoriales de distinto tamaño poblacional.
+
+Sin embargo, autores como Besag, York y Mollié (1991) identificaron que en áreas con baja densidad poblacional, las tasas crudas y los SMR tienden a ser inestables. La literatura reciente sugiere el uso de modelos jerárquicos bayesianos (BYM) para "tomar prestada" fuerza de los vecinos y producir estimaciones suavizadas del riesgo relativo (RR). En Venezuela, los estudios de mortalidad suelen limitarse a nivel estatal; este trabajo expande la frontera hacia el nivel municipal para capturar la heterogeneidad local.
+
+
+
+# Métodos
+
+## Fuentes de Datos y Procesamiento
+Se utilizaron los registros administrativos de mortalidad territorial (1996-2016) y el Censo de Población de 2011. Debido a la carencia de censos anuales, se aplicó una tasa de crecimiento intercensal del 1.6% anual para proyectar los denominadores poblacionales.
+
+```{r}
+#| label: procesamiento-datos
+#| message: false
+#| warning: false
+# 3. PROCESAMIENTO DE MORTALIDAD (NUMERADOR)
+# ==============================================================================
+raw_mortality <- read_csv("Mort_Territ_Vzla_96_16.csv", show_col_types = FALSE)
+
+df_mortality <- raw_mortality %>%
+  select(1, 3, 4, 5, 6, 7, 8) %>%
+  set_names(c("ano", "ES", "EST", "Muni", "Total", "H", "M")) %>%
+  filter(!is.na(ano), !is.na(EST), !is.na(Muni)) %>%
+  mutate(
+    Total = as.numeric(gsub("[^0-9]", "", Total)),
+    ano = as.numeric(ano),
+    # Normalizar Estados
+    EST = stri_trans_general(str_to_upper(str_trim(EST)), "Latin-ASCII"),
+    EST = case_when(
+      EST == "DISTRITO FEDERAL" ~ "VARGAS",
+      EST == "DEPENDENCIAS FEDERALES" ~ "DEPENDENCIAS FEDERALES",
+      TRUE ~ EST
+    )
+  ) %>%
+  mutate(Muni_Clean = normalizar_nombres_gadm(Muni, EST)) %>%
+  filter(Muni_Clean != "MUNI") %>%
+  group_by(ano, EST, Muni_Clean) %>%
+  summarise(Total_Muertes = sum(Total, na.rm = TRUE), .groups = "drop")
+
+# 4. PROCESAMIENTO DE POBLACIÓN (DENOMINADOR - CENSO 2011)
+# ==============================================================================
+raw_pop <- read_csv("Pob_Territ_2011.csv", show_col_types = FALSE) %>% clean_names()
+
+df_poblacion_2011 <- raw_pop %>%
+  mutate(
+    total = as.numeric(gsub("[^0-9]", "", total)),
+    EST = stri_trans_general(str_to_upper(str_trim(ent_fed)), "Latin-ASCII"),
+    # CORRECCIÓN CRÍTICA: Eliminar "BOLIVARIANO DE" para que Miranda cruce
+    EST = str_replace_all(EST, "ESTADO |BOLIVARIANO DE ", ""), 
+    EST = str_trim(EST), 
+    EST = case_when(EST == "DISTRITO CAPITAL" ~ "DISTRITO CAPITAL", TRUE ~ EST)
+  ) %>%
+  separate(munic, into = c("Trash", "Muni_Raw"), sep = ",", extra = "merge", fill = "left") %>%
+  mutate(
+    Muni_Raw = ifelse(is.na(Muni_Raw), Trash, Muni_Raw),
+    Muni_Raw = str_trim(Muni_Raw)
+  ) %>% 
+  mutate(Muni_Clean = normalizar_nombres_gadm(Muni_Raw, EST)) %>%
+  group_by(EST, Muni_Clean) %>%
+  summarise(Poblacion_2011 = sum(total, na.rm = TRUE), .groups = "drop")
+
+# 5. PROYECCIÓN DE POBLACIÓN (1996-2016)
+# ==============================================================================
+tasa_crecimiento <- 0.016 
+years <- 1996:2016
+
+df_poblacion_panel <- df_poblacion_2011 %>%
+  expand_grid(ano = years) %>%
+  mutate(
+    Poblacion = Poblacion_2011 * (1 + tasa_crecimiento)^(ano - 2011),
+    Poblacion = round(Poblacion)
+  )
+
+# 6. UNIFICACIÓN Y CÁLCULO DE TASAS
+# ==============================================================================
+df_final <- df_mortality %>%
+  inner_join(df_poblacion_panel, by = c("ano", "EST", "Muni_Clean")) %>%
+  mutate(
+    Tasa = (Total_Muertes / Poblacion) * 10000
+  ) %>%
+  filter(is.finite(Tasa)) 
+
+message("Base consolidada (Cruce Exitoso): ", nrow(df_final), " registros.")
+
+# 7. DIAGNÓSTICO DE CRUCE (DEPURACIÓN)
+# ==============================================================================
+munis_mort <- df_mortality %>% distinct(EST, Muni_Clean)
+munis_pop <- df_poblacion_2011 %>% distinct(EST, Muni_Clean)
+
+perdidos_mort <- munis_mort %>% anti_join(munis_pop, by = c("EST", "Muni_Clean"))
+
+if(nrow(perdidos_mort) > 0) {
+  message("\n--- ALERTA: MUNICIPIOS CON DATOS DE MUERTES PERO SIN POBLACIÓN ---")
+  print(head(perdidos_mort, 20))
+} else {
+  message("\n--- CRUCE PERFECTO: Todos los municipios con muertes tienen población asignada. ---")
+}
+
+```
+
+## Estrategia Estadística
+
+Exploración: Clusterización K-means para identificar perfiles de riesgo históricos.
+
+Autocorrelación: Índice de Moran utilizando una matriz de vecinos más cercanos (KNN=2) para integrar territorios insulares.
+
+Modelado: Regresión de Poisson para tendencias temporales y Modelo BYM (Besag-York-Mollié) para riesgo relativo suavizado.
+
+Interpolación: Método IDW para generar una superficie continua de riesgo.
+
+El Modelo Espacial Bayesiano
+
+Para evitar sesgos en municipios con poblaciones pequeñas, implementamos un modelo Besag-York-Mollié (BYM). La estructura del modelo es:
+
+$$y_i \sim \text{Poisson}(E_i \cdot RR_i)$$
+
+donde $RR_i$ es el riesgo relativo que combina un efecto espacial estructurado y un efecto no estructurado.
+
+# Resultados
+
+## Segmentación por Clusters de Riesgo
+
+El análisis de K-means identifica cuatro grupos de municipios basados en sus trayectorias de mortalidad.
+
+
+```{r}
+#| label: fig-clusters
+#| fig-cap: "Mapa de clusters de riesgo de mortalidad municipal (1996-2016)."
+#| echo: true
+
+# 8. VISUALIZACIÓN: CLUSTERS DE TASA (RIESGO)
+# ==============================================================================
+ts_matrix <- df_final %>%
+  select(EST, Muni_Clean, ano, Tasa) %>%
+  pivot_wider(names_from = ano, values_from = Tasa, values_fill = 0) 
+
+# K-Means
+matrix_values <- ts_matrix %>% select(-EST, -Muni_Clean) %>% as.matrix()
+matrix_scaled <- t(scale(t(matrix_values)))
+
+set.seed(123)
+kmeans_result <- kmeans(matrix_scaled, centers = 4, nstart = 25)
+
+ts_clustered <- ts_matrix %>%
+  select(EST, Muni_Clean) %>%
+  mutate(Cluster = as.factor(kmeans_result$cluster))
+
+# Cargar Mapa
+mapa_vzla_muni <- geodata::gadm(country = "VEN", level = 2, path = tempdir()) %>% 
+  st_as_sf() %>%
+  rename(EST = NAME_1, Muni_GADM = NAME_2) %>%
+  mutate(
+    EST = stri_trans_general(str_to_upper(str_trim(EST)), "Latin-ASCII"),
+    Muni_Clean = normalizar_nombres_gadm(Muni_GADM, EST)
+  ) %>%
+  mutate(EST = case_when(EST == "DELTA AMACURO" ~ "DELTA AMACURO", EST == "VARGAS" ~ "VARGAS", TRUE ~ EST))
+
+# Mapa Final
+map_clusters <- mapa_vzla_muni %>% inner_join(ts_clustered, by = c("EST", "Muni_Clean"))
+
+plot_map_clusters <- ggplot(map_clusters) +
+  geom_sf(aes(fill = Cluster), color = "white", size = 0.05) +
+  scale_fill_viridis_d(option = "plasma", name = "Riesgo") +
+  labs(title = "Clusterización de Riesgo de Mortalidad (Tasas)",
+       subtitle = "Basado en Tasa por 10k hab (Pob. proyectada 1996-2016)") +
+  theme_void() +
+  theme(legend.position = "right")
+
+print(plot_map_clusters)
+
+
+```
+
+## Análisis de Autocorrelación Espacial
+
+La aplicación del Índice de Moran para el año 2016 arrojó un valor significativo ($p < 0.001$), confirmando que la mortalidad en Venezuela no se distribuye al azar, sino que presenta una fuerte dependencia geográfica (hotspots).
+
+```{r}
+#| label: Analisis-Autocorrelacion
+#| echo: true
+
+# 9. AUTOCORRELACIÓN ESPACIAL DE LA TASA (2016) - SOLUCIÓN KNN (ISLAS)
+# ==============================================================================
+message("\n--- ANÁLISIS ESPACIAL: Usando Vecinos Cercanos (KNN) para incluir Islas ---")
+
+datos_espaciales <- df_final %>%
+  filter(ano == 2016) %>%
+  right_join(mapa_vzla_muni, by = c("EST", "Muni_Clean")) %>%
+  st_as_sf() %>%
+  filter(!is.na(Tasa))
+
+# --- SOLUCIÓN PARA ISLAS Y GEOMETRÍAS DESCONECTADAS ---
+# Usamos K=2 para garantizar una red más robusta que conecte islas a tierra firme
+coords <- st_coordinates(st_centroid(datos_espaciales))
+nb_knn <- knearneigh(coords, k = 2) # Buscar 2 vecinos más cercanos para evitar sub-grafos aislados
+nb <- knn2nb(nb_knn) 
+
+lw <- nb2listw(nb, style = "W", zero.policy = TRUE)
+
+moran <- moran.test(datos_espaciales$Tasa, lw, zero.policy = TRUE)
+
+message("Índice de Moran (Tasa 2016, KNN=2): ", round(moran$estimate[1], 3), 
+        " (p-val: ", format.pval(moran$p.value, digits=4), ")")
+if(moran$p.value < 0.05) {
+  message("--> CONCLUSIÓN: Existe un patrón espacial claro (P-valor significativo).")
+} else {
+  message("--> CONCLUSIÓN: La distribución sigue pareciendo aleatoria.")
+}
+
+```
+
+
+
+## Modelado epidemiológico
+
+
+
+
+```{r}
+#| label: modelado-epidemiologico
+#| message: false
+#| warning: false
+#| echo: true
+#| 
+# 10. MODELADO EPIDEMIOLÓGICO: CÁLCULO DE SMR (Standardized Mortality Ratio)
+# ==============================================================================
+# Paso clave hacia el modelo espacio-temporal:
+# SMR = Observados / Esperados
+# Esperados = Población_Local * Tasa_Nacional_Año
+
+message("\n--- CALCULANDO RAZÓN DE MORTALIDAD ESTANDARIZADA (SMR) ---")
+
+# A. Calcular Tasa Nacional por Año (Referencia)
+tasas_nacionales <- df_final %>%
+  group_by(ano) %>%
+  summarise(
+    Total_Pais = sum(Total_Muertes),
+    Pob_Pais = sum(Poblacion)
+  ) %>%
+  mutate(Tasa_Nacional = Total_Pais / Pob_Pais)
+
+# B. Calcular Esperados y SMR por Municipio
+df_smr <- df_final %>%
+  inner_join(tasas_nacionales %>% select(ano, Tasa_Nacional), by = "ano") %>%
+  mutate(
+    Esperados = Poblacion * Tasa_Nacional,
+    SMR = Total_Muertes / Esperados,
+    # Clasificación de Riesgo
+    Riesgo = case_when(
+      SMR > 1.5 ~ "Muy Alto (>50% exceso)",
+      SMR > 1.1 ~ "Alto (10-50% exceso)",
+      SMR >= 0.9 & SMR <= 1.1 ~ "Promedio",
+      SMR < 0.9 ~ "Bajo (Protector)"
+    )
+  )
+
+# 11. VISUALIZACIÓN ESPACIO-TEMPORAL (LA PELÍCULA)
+# ==============================================================================
+# Ver la evolución del SMR cada 5 años
+years_snapshot <- c(1996, 2001, 2006, 2011, 2016)
+
+map_smr <- df_smr %>%
+  filter(ano %in% years_snapshot) %>%
+  right_join(mapa_vzla_muni, by = c("EST", "Muni_Clean")) %>%
+  st_as_sf() %>%
+  filter(!is.na(SMR))
+
+# CORRECCIÓN: Usamos 'pseudo_log' para evitar error con SMR=0 (log(0)=-Inf)
+plot_smr_evolution <- ggplot(map_smr) +
+  geom_sf(aes(fill = SMR), color = NA) +
+  scale_fill_gradient2(
+    low = "#313695", mid = "white", high = "#a50026", 
+    midpoint = 1, # Punto medio es 1 (Lo esperado)
+    trans = "pseudo_log", # Escala logarítmica que tolera ceros
+    name = "SMR (Log)",
+    breaks = c(0, 0.5, 1, 2, 5) # Cortes legibles
+  ) +
+  facet_wrap(~ano, ncol = 3) +
+  labs(title = "Evolución Espacio-Temporal del Exceso de Riesgo (SMR)",
+       subtitle = "Rojo = Más muertes de lo esperado | Azul = Menos de lo esperado") +
+  theme_void() +
+  theme(legend.position = "bottom")
+
+print(plot_smr_evolution)
+
+# 12. DETECCIÓN DE ZONAS DE RIESGO CRÓNICO
+# ==============================================================================
+# Municipios que han tenido SMR > 1.2 (20% exceso) en más del 80% de los años estudiados.
+# Estos son los "Hotspots Temporales".
+
+riesgo_cronico <- df_smr %>%
+  group_by(EST, Muni_Clean) %>%
+  summarise(
+    Años_Alto_Riesgo = sum(SMR > 1.2),
+    Total_Años = n(),
+    SMR_Promedio = mean(SMR),
+    .groups = "drop"
+  ) %>%
+  mutate(Persistencia_Pct = (Años_Alto_Riesgo / Total_Años) * 100) %>%
+  filter(Persistencia_Pct > 80) %>% # Más del 80% del tiempo en riesgo
+  arrange(desc(SMR_Promedio))
+
+message("\n--- MUNICIPIOS CON EXCESO DE MORTALIDAD CRÓNICO (>20 años) ---")
+print(head(riesgo_cronico, 15))
+```
+
+
+
+## Regresión de Poisson y Tendencias
+
+
+```{r}
+#| label: regresion-poisson
+#| message: false
+#| warning: false
+#| echo: true
+
+# 13. MODELADO ESTADÍSTICO: REGRESIÓN DE POISSON (PREVIO AL BAYESIANO)
+# ==============================================================================
+# Objetivo: Cuantificar si la tendencia temporal es significativa y cuánto influye el Cluster.
+# Modelo: Log(Muertes) = Intercepto + B1*Año + B2*Cluster + Offset(Log(Poblacion))
+
+message("\n--- EJECUTANDO MODELO DE REGRESIÓN DE POISSON ---")
+
+# Preparamos datos: Unimos el Cluster identificado en la sección 8 a la data completa
+df_model <- df_final %>%
+  inner_join(ts_clustered %>% select(EST, Muni_Clean, Cluster), by = c("EST", "Muni_Clean")) %>%
+  mutate(
+    Cluster = factor(Cluster), # Convertir a factor para análisis
+    Tiempo = ano - 1996 # Centrar el tiempo en 0 (1996=0) para interpretar mejor el intercepto
+  )
+
+# Ajuste del Modelo GLM Poisson
+# offset(log(Poblacion)) es fundamental: le dice al modelo que analice TASAS, no conteos brutos.
+modelo_poisson <- glm(Total_Muertes ~ Tiempo + Cluster + offset(log(Poblacion)), 
+                      family = poisson(link = "log"), 
+                      data = df_model)
+
+# Resumen de resultados (Interpretación de Coeficientes)
+resumen_modelo <- broom::tidy(modelo_poisson, exponentiate = TRUE, conf.int = TRUE) %>%
+  filter(term != "(Intercept)") %>%
+  mutate(
+    Interpretacion = case_when(
+      term == "Tiempo" ~ paste0("Por cada año que pasa, el riesgo cambia un ", round((estimate-1)*100, 2), "%"),
+      str_detect(term, "Cluster") ~ paste0("Este cluster tiene ", round(estimate, 2), " veces el riesgo del Cluster 1"),
+      TRUE ~ ""
+    )
+  ) %>%
+  select(Termino = term, Riesgo_Relativo = estimate, P_Valor = p.value, Interpretacion)
+
+print(resumen_modelo)
+
+message("\nGUÍA DE INTERPRETACIÓN POISSON:")
+message("- Riesgo_Relativo (RR) > 1: Aumenta el riesgo.")
+message("- RR < 1: Disminuye el riesgo.")
+message("- Si P_Valor < 0.05, el efecto es estadísticamente significativo.")
+message("- Este modelo asume que todos los municipios dentro de un cluster se comportan igual (lo cual refinaremos luego con INLA).")
+
+# 14. INTERACCIÓN ESPACIO-TEMPORAL: MAPA DE TENDENCIAS LOCALES (SLOPE MAP)
+# ==============================================================================
+# El modelo Poisson nos dio una tendencia nacional (+1.4%).
+# Ahora calculamos la tendencia INDIVIDUAL de cada municipio para ver quién empeora más rápido.
+
+message("\n--- CALCULANDO TENDENCIAS LOCALES (PENDIENTES) ---")
+
+# Calculamos regresión lineal log-tasa para cada municipio
+tendencias_locales <- df_final %>%
+  mutate(Log_Tasa = log(Tasa + 0.1)) %>% # Log-transformación para linealizar
+  group_by(EST, Muni_Clean) %>%
+  do(broom::tidy(lm(Log_Tasa ~ ano, data = .))) %>% # Regresión por grupo
+  filter(term == "ano") %>%
+  select(EST, Muni_Clean, Pendiente = estimate, P_Valor = p.value) %>%
+  ungroup() %>%
+  mutate(
+    # Interpretación: % Cambio Anual
+    Cambio_Anual_Pct = (exp(Pendiente) - 1) * 100,
+    Tendencia = case_when(
+      Cambio_Anual_Pct > 3 ~ "Aumento Crítico (>3%/año)",
+      Cambio_Anual_Pct > 0 & Cambio_Anual_Pct <= 3 ~ "Aumento Leve",
+      Cambio_Anual_Pct <= 0 ~ "Descenso/Estable"
+    )
+  )
+
+# Visualización
+map_tendencias <- mapa_vzla_muni %>%
+  inner_join(tendencias_locales, by = c("EST", "Muni_Clean"))
+
+plot_tendencias <- ggplot(map_tendencias) +
+  geom_sf(aes(fill = Cambio_Anual_Pct), color = NA) +
+  scale_fill_gradient2(
+    low = "blue", mid = "white", high = "red", 
+    midpoint = 0, 
+    name = "Cambio Anual (%)"
+  ) +
+  labs(title = "Mapa de Aceleración de la Mortalidad (1996-2016)",
+       subtitle = "¿Dónde está empeorando más rápido la situación?",
+       caption = "Rojo = La tasa de mortalidad crece año tras año\nAzul = La tasa disminuye") +
+  theme_void() +
+  theme(legend.position = "right")
+
+print(plot_tendencias)
+
+message("Top 5 Municipios con PEOR tendencia (Mayor crecimiento anual de mortalidad):")
+print(head(tendencias_locales %>% arrange(desc(Cambio_Anual_Pct)) %>% select(EST, Muni_Clean, Cambio_Anual_Pct), 5))
+
+```
+
+
+## Modelado Bayesiano y Riesgo Suavizado (INLA)
+
+El mapa de Riesgo Relativo (RR) derivado del modelo BYM (Figura 2) filtra la variabilidad aleatoria. Los valores $>1$ indican un exceso de mortalidad respecto al promedio nacional una vez ajustado por la estructura espacial y temporal.
+
+
+```{r}
+#| label: modelado-bayesiano
+#| message: false
+#| warning: false
+#| echo: true
+
+# 15. PREPARACIÓN PARA MODELO BAYESIANO (INLA)
+# ==============================================================================
+# El "Gold Standard" es el modelo Besag-York-Mollié (BYM) espacio-temporal.
+# Requiere una matriz de vecindad. CORRECCIÓN: Usamos KNN para incluir islas.
+
+message("\n--- PREPARANDO MATRIZ DE VECINDAD PARA INLA (MÉTODO KNN) ---")
+
+# Extraer polígonos ordenados
+mapa_ordenado <- mapa_vzla_muni %>% arrange(EST, Muni_Clean)
+
+# CORRECCIÓN: En lugar de poly2nb (fronteras físicas), usamos KNN (proximidad).
+# Esto conecta Margarita, Coche y Los Roques con tierra firme para que INLA no falle.
+coords_inla <- st_coordinates(st_centroid(mapa_ordenado))
+# k=2: Cada municipio se conecta con sus 2 vecinos más cercanos (red robusta)
+nb_knn_inla <- knearneigh(coords_inla, k = 2) 
+nb_inla_raw <- knn2nb(nb_knn_inla)
+
+# CORRECCIÓN CRÍTICA: INLA requiere grafo simétrico (no dirigido).
+# KNN crea grafo dirigido (A cercano a B no implica B cercano a A).
+# make.sym.nb fuerza la simetría: si A->B, entonces crea B->A.
+nb_inla <- make.sym.nb(nb_inla_raw)
+
+# Generar archivo .graph
+graph_file <- file.path(tempdir(), "venezuela.graph")
+# nb2INLA requiere libreria spdep
+nb2INLA(graph_file, nb_inla)
+
+message("Archivo de grafo (vecindad) generado exitosamente en:")
+message(graph_file)
+message("--> ADVERTENCIA: Se usó el método de '2 Vecinos Más Cercanos' SIMETRIZADO.")
+message("--> Los errores de 'graph is invalid' deberían desaparecer ahora.")
+
+
+# 16. EJECUCIÓN DEL MODELO ESPACIO-TEMPORAL (INLA)
+# ==============================================================================
+# ESTA ES LA FASE FINAL.
+# Si no tienes INLA instalado, descomenta y corre la siguiente línea:
+
+# 1. Instalar Gestor de Bioconductor:
+#if (!requireNamespace("BiocManager", quietly = TRUE)) install.packages("BiocManager")
+
+# 2. Instalar dependencias difíciles (graph y Rgraphviz):
+#BiocManager::install(c("graph", "Rgraphviz"), update = FALSE)
+
+# 3. Instalar INLA:
+#install.packages("INLA", repos=c(getOption("repos"), INLA="https://inla.r-inla-download.org/R/stable"), dep=TRUE)
+#if (!requireNamespace("fmesher", quietly = TRUE)) install.packages("fmesher")
+
+
+
+library(INLA)
+message("\n--- EJECUTANDO MODELO BAYESIANO (BYM + RW1) ---")
+message("Esto puede tardar unos minutos...")
+
+# A. Preparar Data para INLA
+tasa_global_promedio <- sum(df_final$Total_Muertes) / sum(df_final$Poblacion)
+
+df_inla <- df_final %>%
+  # Asegurar orden idéntico al grafo
+  arrange(EST, Muni_Clean, ano) %>%
+  mutate(
+    ID_Area = as.numeric(factor(paste(EST, Muni_Clean), levels = unique(paste(mapa_ordenado$EST, mapa_ordenado$Muni_Clean)))),
+    ID_Tiempo = ano - 1995, # 1..21
+    Esperados = Poblacion * tasa_global_promedio
+  ) %>%
+  filter(!is.na(ID_Area)) # Seguridad
+
+# Normalizar ruta del grafo para evitar errores en Windows
+graph_file_safe <- gsub("\\\\", "/", graph_file)
+
+# B. Definir Fórmula
+# Y ~ f(espacio) + f(tiempo)
+formula_inla <- Total_Muertes ~ 1 + 
+  f(ID_Area, model = "bym", graph = graph_file_safe) + 
+  f(ID_Tiempo, model = "rw1") 
+
+# C. Correr Modelo (CON CORRECCIÓN ANTI-CRASH)
+# num.threads = 1 es vital en Windows
+# verbose = FALSE para limpiar la consola ahora que sabemos que funciona
+resultado_inla <- inla(formula_inla, 
+                       family = "poisson", 
+                       data = df_inla, 
+                       E = Esperados,
+                       control.predictor = list(compute = TRUE),
+                       num.threads = 1, 
+                       verbose = FALSE) 
+
+# D. Extraer Resultados (Riesgo Relativo Suavizado)
+message("Modelo ajustado exitosamente.")
+
+# Extraemos la media del efecto aleatorio espacial
+efecto_espacial <- resultado_inla$summary.random$ID_Area[1:nrow(mapa_ordenado), ]
+
+# Unir al mapa
+mapa_riesgo_final <- mapa_ordenado %>%
+  mutate(
+    ID_Area = 1:n(),
+    Riesgo_Espacial = exp(efecto_espacial$mean) # Exponencial para volver a escala de Riesgo Relativo
+  )
+
+# E. Visualización Final
+plot_inla <- ggplot(mapa_riesgo_final) +
+  geom_sf(aes(fill = Riesgo_Espacial), color = NA) +
+  scale_fill_gradient2(
+    low = "#2166ac", mid = "#f7f7f7", high = "#b2182b", 
+    midpoint = 1, 
+    name = "RR Suavizado"
+  ) +
+  labs(title = "Mapa de Riesgo Espacial 'Puro' (Modelo Bayesiano)",
+       subtitle = "Riesgo Relativo (RR) limpiando el efecto del tiempo y el ruido",
+       caption = "RR > 1 (Rojo): Zona de Alto Riesgo Estructural\nRR < 1 (Azul): Zona Protectora") +
+  theme_void() +
+  theme(legend.position = "right")
+
+print(plot_inla)
+
+message("INTERPRETACIÓN DEL MAPA:")
+message("- Este mapa muestra la estructura subyacente de la mortalidad.")
+message("- Un RR de 1.5 significa 50% más riesgo que el promedio nacional.")
+
+```
+
+
+## Interpolacion y mapa de Calor
+La interpolación espacial mediante IDW permite visualizar la transición del riesgo en el territorio, identificando fronteras epidemiológicas difusas entre municipios.
+
+```{r}
+#| label: interpolacion-mapa
+#| message: false
+#| warning: false
+#| echo: true
+# 18. MAPA DE CALOR INTERPOLADO (CONTINUO)
+# ==============================================================================
+
+# 1. Cargar librerías
+if (!requireNamespace("pacman", quietly = TRUE)) install.packages("pacman")
+pacman::p_load(tidyverse, sf, geodata, viridis, scales, lubridate, zoo, stringi, janitor, cluster, factoextra, spdep, gstat, raster)
+
+# Asegurar carga explicita de gstat por si pacman falla silenciosamente
+if (!requireNamespace("gstat", quietly = TRUE)) install.packages("gstat")
+library(gstat)
+
+message("\n--- GENERANDO MAPA DE CALOR INTERPOLADO (IDW) ---")
+
+# 1. Convertir Polígonos a Puntos (Centroides de Riesgo)
+puntos_riesgo <- st_centroid(mapa_riesgo_final)
+
+# 2. Crear una grilla vacía de ALTA RESOLUCIÓN (300x300)
+# Mayor resolución = superficie más suave
+grilla_total <- st_make_grid(mapa_riesgo_final, n = c(900, 900), what = "centers") %>%
+  st_as_sf()
+
+# 3. RECORTAR LA GRILLA (Paso clave para evitar el cuadrado)
+# Solo mantenemos los puntos que caen DENTRO de los municipios de Venezuela
+# CORRECCIÓN: Usar dplyr::select explícitamente para evitar conflicto con paquete raster
+grilla_recortada <- grilla_total %>%
+  st_join(mapa_riesgo_final[, "EST"]) %>%
+  filter(!is.na(EST))
+
+message("Interpolando riesgo sobre ", nrow(grilla_recortada), " puntos de grilla...")
+
+# 4. Interpolación IDW (Inverse Distance Weighting)
+# Usamos gstat para el modelo
+modelo_idw <- gstat(formula = Riesgo_Espacial ~ 1, locations = puntos_riesgo, 
+                    set = list(idp = 2.0))
+
+# Predecir sobre la grilla recortada
+interpolacion <- predict(modelo_idw, grilla_recortada)
+
+# Convertir a coordenadas XY para usar geom_tile (que crea superficies continuas)
+coords_interp <- st_coordinates(interpolacion)
+data_heatmap <- interpolacion %>%
+  bind_cols(as_tibble(coords_interp)) %>%
+  rename(lon = X, lat = Y, Riesgo = var1.pred)
+
+# 5. Visualizar como SUPERFICIE CONTINUA (Raster)
+plot_heatmap <- ggplot() +
+  # Usamos geom_tile en lugar de geom_sf para crear una superficie sólida
+  geom_tile(data = data_heatmap, aes(x = lon, y = lat, fill = Riesgo)) +
+  # Añadimos el contorno de los estados para referencia
+  geom_sf(data = mapa_vzla_muni %>% group_by(EST) %>% summarise(), 
+          fill = NA, color = "white", size = 0.1, alpha = 0.3) +
+  # CAMBIO DE PALETA: Gradiente divergente LOGARÍTMICO
+  # Esto garantiza que el centro (Riesgo 1) sea neutro y la transición sea simétrica
+  scale_fill_gradient2(
+    low = "#313695",    # Azul (Riesgo Bajo < 1)
+    mid = "#ffffbf",    # Amarillo Pálido (Riesgo Promedio ~ 1)
+    high = "#a50026",   # Rojo (Riesgo Alto > 1)
+    midpoint = 0,       # En escala Log, el centro es log(1) = 0
+    trans = "log",      # Clave: Suaviza la transición entre valores bajos y altos
+    breaks = c(0.5, 0.8, 1, 1.5, 3), # Cortes manuales para entender la leyenda
+    name = "Riesgo Continuo",
+    na.value = "transparent"
+  ) +
+  labs(title = "Mapa de Calor Continuo de Mortalidad",
+       subtitle = "Interpolación IDW del Riesgo Bayesiano (Superficie Suavizada)",
+       caption = "Interpolación sobre territorio nacional (excluye mar/fronteras)\nAzul: Bajo Riesgo | Rojo: Alto Riesgo") +
+  theme_void() +
+  theme(legend.position = "right")
+
+print(plot_heatmap)
+message("Mapa de calor generado exitosamente.")
+```
+
+
+
+## Proyeccion 
+
+
+```{r}
+#| label: Proyeccion
+#| message: false
+#| warning: false
+#| echo: true
+# 19. MODELADO PREDICTIVO: PROYECCIÓN ESPACIO-TEMPORAL BAYESIANA (INLA)
+# ==============================================================================
+message("\n--- GENERANDO PROYECCIONES FUTURAS 2017-2021 (FORECASTING BAYESIANO) ---")
+message("Aplicando la lógica 'Lee-Carter Espacial':")
+message("1. Estructura Espacial (Vecinos) + 2. Tendencia Temporal (Inercia) -> Predicción")
+
+# A. Crear Estructura de Datos Futuros (2017-2021)
+future_years <- 2017:2021
+tasa_crecimiento_pob <- 0.016
+
+# Generamos la cuadrícula de municipios x años futuros
+df_future <- expand_grid(
+  EST = unique(df_final$EST),
+  Muni_Clean = unique(df_final$Muni_Clean),
+  ano = future_years
+) %>%
+  # Cruzamos con la población base de 2016 para proyectarla
+  # CORRECCIÓN: Usar dplyr::select para evitar conflictos con raster
+  left_join(df_poblacion_panel %>% filter(ano == 2016) %>% dplyr::select(EST, Muni_Clean, Pob_2016 = Poblacion), 
+            by = c("EST", "Muni_Clean")) %>%
+  mutate(
+    # Proyectar población 2017-2021
+    Poblacion = Pob_2016 * (1 + tasa_crecimiento_pob)^(ano - 2016),
+    # Variables clave para INLA
+    Total_Muertes = NA, # <--- ESTO ES LO QUE INLA VA A PREDECIR
+    ID_Tiempo = ano - 1995, # Continúa la secuencia temporal (22, 23, 24...)
+    Esperados = NA # Se calculará al unir
+  ) %>%
+  # CORRECCIÓN: Usar dplyr::select
+  dplyr::select(-Pob_2016)
+
+# Unir Historia + Futuro
+# Necesitamos recalcular IDs de Área para que coincidan
+unique_areas <- unique(paste(mapa_ordenado$EST, mapa_ordenado$Muni_Clean))
+
+df_forecast_inla <- bind_rows(
+  df_final %>% mutate(Tipo = "Historia"),
+  df_future %>% mutate(Tipo = "Prediccion")
+) %>%
+  arrange(EST, Muni_Clean, ano) %>%
+  mutate(
+    ID_Area = as.numeric(factor(paste(EST, Muni_Clean), levels = unique_areas)),
+    # Recalcular Esperados globales para el offset (usando tasa histórica promedio)
+    Esperados = ifelse(is.na(Esperados), Poblacion * tasa_global_promedio, Esperados)
+  ) %>%
+  filter(!is.na(ID_Area))
+
+message("Datos preparados: ", nrow(df_forecast_inla), " registros (Historia + Futuro).")
+
+# B. Ejecutar Modelo INLA con Datos Faltantes (NA)
+# INLA imputará los NAs basándose en la correlación espacio-temporal aprendida
+message("Re-entrenando INLA para predicción (puede tardar 1-2 mins)...")
+
+formula_forecast <- Total_Muertes ~ 1 + 
+  f(ID_Area, model = "bym", graph = graph_file_safe) + 
+  f(ID_Tiempo, model = "rw1") 
+
+# link=1 le dice a INLA que calcule los fitted values en la escala de respuesta (muertes)
+resultado_forecast <- inla(formula_forecast, 
+                           family = "poisson", 
+                           data = df_forecast_inla, 
+                           E = Esperados,
+                           control.predictor = list(compute = TRUE, link = 1),
+                           num.threads = 1, 
+                           verbose = FALSE)
+
+# C. Extraer Predicciones
+message("Extrayendo predicciones...")
+
+# Los valores ajustados (fitted.values) contienen la media posterior
+predicciones <- df_forecast_inla %>%
+  mutate(
+    Muertes_Predichas = resultado_forecast$summary.fitted.values$mean,
+    Limite_Inf = resultado_forecast$summary.fitted.values$`0.025quant`,
+    Limite_Sup = resultado_forecast$summary.fitted.values$`0.975quant`,
+    Tasa_Predicha = (Muertes_Predichas / Poblacion) * 10000
+  ) %>%
+  filter(Tipo == "Prediccion")
+
+# D. Visualizar la Proyección (Mapa 2021)
+mapa_2021 <- mapa_vzla_muni %>%
+  inner_join(predicciones %>% filter(ano == 2021), by = c("EST", "Muni_Clean"))
+
+plot_forecast_map <- ggplot(mapa_2021) +
+  geom_sf(aes(fill = Tasa_Predicha), color = NA) +
+  scale_fill_viridis_c(option = "magma", direction = -1, name = "Tasa Predicha\n(2021)") +
+  labs(title = "Proyección de Mortalidad 2021 (Modelo Espacio-Temporal)",
+       subtitle = "Estimación Bayesiana basada en vecindad y tendencia histórica",
+       caption = "Proyección asumiendo continuidad de patrones 1996-2016") +
+  theme_void() +
+  theme(legend.position = "right")
+
+print(plot_forecast_map)
+
+message("Proceso completo. Se ha generado la proyección a 2021 incorporando la lógica espacial.")
+```
+
+
+# Discusión y Conclusiones
+
+
+Los hallazgos de este estudio demuestran una heterogeneidad espacial persistente en la mortalidad venezolana. La identificación de zonas de riesgo crónico ($SMR > 1.2$ en más del 80% del tiempo) sugiere la existencia de determinantes sociales de la salud localizados.
+
+Desde el punto de vista actuarial:
+
+Tablas Territoriales: Se recomienda el desarrollo de factores de ajuste geográfico para el cálculo de reservas en fondos de pensiones y seguros de vida.
+
+Solvencia: El incremento tendencial detectado (1.4% anual) debe ser monitoreado para evitar el infratarificación del riesgo de fallecimiento en carteras concentradas geográficamente.
+
+En conclusión, la integración de técnicas bayesianas permite una visión más robusta y "suave" de la realidad demográfica, fundamental para la toma de decisiones en entornos de incertidumbre.
+
+
+
+# Agradecimientos {.unnumbered}
+
+Sección opcional para agradecer a personas o instituciones que contribuyeron al trabajo pero no cumplen los criterios de autoría (ej. financiamiento, revisión de estilo, etc.).
+
+# Referencias {.unnumbered}
+
+La lista de referencias se generará automáticamente aquí a partir del archivo `references.bib` y las citas usadas en el texto.
+No es necesario escribir nada en esta sección.
+
+
+
+*Ejemplos de Referencias Generadas (Formato APA):*
+
+-   Besag, J., York, J., & Mollié, A. (1991). Bayesian image restoration.
+
+-   Rue, H., Martino, S., & Chopin, N. (2009). INLA: Approximate Bayesian inference.
+
+------------------------------------------------------------------------
+
+

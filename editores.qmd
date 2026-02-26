@@ -1,0 +1,32 @@
+---
+title: "Centro Venezolano de Estudios Actuariales"
+subtitle: "Miembros del Comité Editorial y de Investigación"
+toc: false
+---
+
+Perfiles del Comité Editorial de la RVEA y del equipo de investigación del CVEA.
+
+## Prof. Jorge Dias
+
+Licenciado en Ciencias Actuariales por la Universidad Central de Venezuela (UCV), con una Maestría en Estadísticas Aplicadas de la Universidad Jiaotong de Pekín y candidato a Doctor en Finanzas y Seguros en la Universidad de Economía y Negocios Internacionales de Pekín. Es Jefe del Departamento de Actuariado y profesor asistente en la Escuela de Estadística y Ciencias Actuariales de la UCV, con experiencia docente en áreas como Seguros de Personas y Matemáticas de Pensiones. Su carrera combina la academia con la experiencia profesional en la Superintendencia de la Actividad Aseguradora, aportando una visión integral del sector.
+
+## Prof. Angel Colmenares
+
+Licenciado en Ciencias Actuariales y Magister Scientiarum en Modelos Aleatorios por la Universidad Central de Venezuela (UCV), actualmente cursando un Doctorado en Matemáticas en la misma casa de estudios. Como profesor asistente en la UCV, ha liderado múltiples departamentos y ha sido un actor clave en la reforma curricular y en la promoción de convenios interinstitucionales. Su vasta experiencia profesional incluye roles de alta dirección como Vicepresidente de Suscripción en C.N.A. de Seguros La Previsora, Vicepresidente Ejecutivo de Riesgo en el Banco de Venezuela y Profesional V Actuarial en la Superintendencia de la Actividad Aseguradora, lo que le confiere una profunda comprensión del riesgo en los sectores de seguros y finanzas.
+
+## Prof. Aymara Gerdel
+
+Licenciada en Estadística y Especialista en Gobierno y Políticas Públicas por la Universidad Central de Venezuela (UCV). Posee una Maestría en Economía (Comercio Internacional) y actualmente es candidata a Doctora en Políticas Públicas por la University of International Business and Economics en Pekín. Como profesora en la UCV, su perfil combina un sólido fundamento cuantitativo con una especialización en políticas públicas y economía internacional, aportando una perspectiva crucial para evaluar el impacto socioeconómico y regulatorio de los sistemas de previsión social.
+
+## Prof. Jhon Beens
+
+Licenciado en Ciencias Estadísticas por la Escuela de Estadística y Ciencias Actuariales de la Universidad Central de Venezuela (UCV) y maestrante en Estudios de la Ciencia y la Tecnología en el Instituto Venezolano de Investigaciones Científicas (IVIC). Es profesor en la Facultad de Ciencias Económicas y Sociales de la UCV y Coordinador del Área de Estudios Históricos y Culturales del Centro Venezolano de Estudios sobre China (CVEC). Su formación en estadística y su enfoque en los estudios de la ciencia y la tecnología aportan una visión crítica sobre la construcción y aplicación del conocimiento técnico y científico.
+
+## Colaboradores y tesistas del volumen inaugural
+
+Los siguientes autores han contribuido con trabajos de grado y manuscritos que sustentan el diagnóstico sistémico del primer volumen de la RVEA y de los libros y materiales docentes:
+
+- **Daylin Moreno** — Valuación de bases técnicas y solvencia del sistema de pensiones.
+- **José Raúl Gálvez** — Contribuciones al diagnóstico actuarial.
+- **Daniel Azuaje** — Tabla dinámica LC15 y superación de tablas estáticas (CSO 1980).
+- **Arlet Moreno** — Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal (Lee-Carter).

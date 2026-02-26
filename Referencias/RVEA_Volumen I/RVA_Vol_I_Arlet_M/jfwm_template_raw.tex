@@ -1,0 +1,1032 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  11pt,
+  a4paper,
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{setspace}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{fancyhdr}
+\usepackage{titling}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[height=0.5cm]{cvea-logo.png}}
+\fancyhead[R]{\leftmark}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\pretitle{\begin{center}\includegraphics[width=1\textwidth]{cvea-logo.png}\\[\bigskipamount]}
+\posttitle{\end{center}}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Modelación y Proyección de la Mortalidad Neonatal, Postneonatal y en la niñez por entidad federal en Venezuela},
+  pdfauthor={Lic. Arlet Moreno; Prof.~Angel Colmenares},
+  pdfkeywords={Palabra Clave 1, Palabra Clave 2, Palabra Clave 3},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Modelación y Proyección de la Mortalidad Neonatal, Postneonatal y
+en la niñez por entidad federal en Venezuela}
+\author{Lic. Arlet Moreno \and Prof.~Angel Colmenares}
+\date{2025-11-23}
+\begin{document}
+\maketitle
+\begin{abstract}
+\textbf{Resumen:} La planificación de riesgos demográficos y actuariales
+en Venezuela ha dependido históricamente de proyecciones determinísticas
+(tales como las utilizadas por CELADE e INDEC), que no logran capturar
+la incertidumbre inherente ni la marcada heterogeneidad regional de la
+mortalidad. Existe una preocupación crítica y la necesidad de una
+estimación detallada del riesgo de fallecimiento en recién nacidos. Este
+estudio aplicó el modelo estocástico de Lee-Carter (LC) a los datos
+extraídos de los Anuarios de Mortalidad del Ministerio del Poder Popular
+para la Salud (MPPS) para el período 1995-2012. La información fue
+desagregada minuciosamente por Entidad Federal, sexo y edad con alta
+resolución temporal (días y meses). El índice temporal \(\kappa_t\), que
+captura la tendencia de la mortalidad, se modeló utilizando series de
+tiempo y se proyectó hasta el año 2022, empleando el entorno R y sus
+librerías especializadas como demography e ILC. Se identificó una severa
+disparidad regional en el riesgo de mortalidad infantil. El estado Zulia
+demostró consistentemente las tasas más elevadas en los períodos
+Neonatal, Postneonatal y en la Niñez. El riesgo se concentra en el
+período Neonatal (0-27 días), superando al riesgo Postneonatal. Un
+hallazgo crítico fue la proyección de una anomalía en la tendencia para
+el estado Trujillo, donde la tasa de mortalidad neonatal mostró un
+ascenso proyectado a partir de 2014, lo que contrasta con la tendencia
+general descendente del resto del país. La modelación estocástica a
+nivel subnacional es indispensable para generar un mapa de riesgo
+accionable. La alta concentración del riesgo en la fase Neonatal indica
+debilidades sistémicas en la atención perinatal. Se concluye que la
+planificación de la salud pública y la práctica actuarial deben
+abandonar los supuestos de homogeneidad nacional y focalizar la
+intervención con base en la estratificación regional del riesgo.
+\end{abstract}
+
+
+\setstretch{1.5}
+\section{Introducción}\label{introducciuxf3n}
+
+\subsection{Contexto y Relevancia (El Marco Actuarial
+Venezolano)}\label{contexto-y-relevancia-el-marco-actuarial-venezolano}
+
+La gestión de riesgos demográficos y financieros en Venezuela,
+particularmente en lo concerniente a la previsión social y el sector
+asegurador, ha enfrentado históricamente un desafío estructural derivado
+de la obsolescencia de sus bases técnicas y la dependencia de métodos de
+proyección simplistas. La ciencia actuarial tradicional, al igual que
+las proyecciones de población y mortalidad utilizadas por entidades como
+el Centro Latinoamericano y Caribeño de Demografía (CELADE) o el
+Instituto Nacional de Estadística y Censos (INDEC), se ha apoyado en
+modelos puramente determinísticos. Estos enfoques asumen que las
+variables demográficas, aunque sujetas a cierto movimiento, son
+relativamente suaves y moderadamente previsibles en el tiempo.
+
+Esta dependencia del determinismo introduce una limitación crítica: se
+ignora la incertidumbre inherente y la alta volatilidad propia de las
+dinámicas sociales y sanitarias, especialmente en contextos de
+desarrollo desigual y crisis. La probabilidad de que las estimaciones
+futuras coincidan con el valor puntual proyectado se torna baja,
+comprometiendo la sostenibilidad de los sistemas de pensiones, el
+cálculo de primas de seguros de vida y la planificación sanitaria a
+largo plazo.
+
+El rol del actuario moderno se redefine como gestor de la incertidumbre.
+Para subsanar estos inconvenientes, la aplicación de modelos
+estocásticos resulta imprescindible. Estos modelos, a diferencia de los
+determinísticos, permiten estimar una nube de valores probables y
+proyectar los riesgos futuros con un determinado grado de confianza.
+Este enfoque ofrece una visión más realista y gestionable del riesgo a
+largo plazo, trascendiendo las simplificaciones de las proyecciones
+puntuales y permitiendo la cuantificación de las primas de riesgo
+necesarias para afrontar la variabilidad demográfica.
+
+\subsection{Problema Específico: Modelación de la Volatilidad
+Subnacional}\label{problema-especuxedfico-modelaciuxf3n-de-la-volatilidad-subnacional}
+
+Históricamente, las proyecciones demográficas en Venezuela han dependido
+de modelos puramente determinísticos, como los utilizados por CELADE e
+INDEC, que asumen que las variables demográficas exhiben movimientos
+relativamente suaves y moderadamente previsibles en el tiempo. Este
+enfoque se ha vuelto insuficiente. La situación demográfica en un país
+en vías de desarrollo y, más aún, su desagregación territorial (Entidad
+Federal), muestra una alta volatilidad que no es homogénea.
+
+El uso de proyecciones determinísticas introduce una limitación crítica:
+la baja probabilidad de que las estimaciones futuras coincidan con el
+valor proyectado, especialmente en entornos económicos y sociales
+volátiles. Para subsanar estos inconvenientes, la aplicación de modelos
+estocásticos resulta imprescindible. Estos modelos permiten estimar una
+nube de valores futuros, conteniendo los valores proyectados con un
+determinado grado de confianza, ofreciendo así una visión más realista y
+gestionable del riesgo.
+
+El foco de la presente investigación se centra en la alta preocupación
+que genera la mortalidad de los recién nacidos en Venezuela, buscando
+específicamente desagregar el riesgo en aquellos períodos (Neonatal,
+Postneonatal) donde se suscitan la mayor cantidad de defunciones, y en
+aquellas entidades geográficas donde se evidencian las mayores tasas.
+
+\subsection{Justificación del Vacío (La Necesidad de la Desagregación
+Estocástica)}\label{justificaciuxf3n-del-vacuxedo-la-necesidad-de-la-desagregaciuxf3n-estocuxe1stica}
+
+El vacío de conocimiento abordado radica en la ausencia de proyecciones
+de mortalidad estocásticas que ofrezcan una resolución lo
+suficientemente alta, tanto a nivel geográfico como temporal, para ser
+utilizadas en el diseño de políticas públicas focalizadas. La falta de
+datos locales o la inaplicabilidad de modelos extranjeros en el entorno
+económico venezolano actual es un problema bien documentado. Este
+estudio llena ese vacío al aplicar un modelo de estándar internacional
+(Lee-Carter) a datos locales, desagregando la información hasta el nivel
+de Entidad Federal y edad en días/meses.
+
+La capacidad de identificar qué no se sabe sobre el riesgo de mortalidad
+infantil en Venezuela (es decir, dónde y cuándo ocurre la mortalidad de
+manera más intensa) es la justificación principal. La desagregación
+geográfica permite generar un mapa de riesgo accionable, indispensable
+para que el sector salud pública y los entes de previsión social puedan
+enfocar la intervención y la inversión en las entidades con mayor
+riesgo.
+
+Estratégicamente, la aplicación del modelo Lee-Carter
+---tradicionalmente empleado para analizar la longevidad y la
+sostenibilidad de pensiones--- a la mortalidad infantil, que es un
+problema crítico de salud pública, demuestra la versatilidad de las
+herramientas actuariales modernas. Esto confirma la visión del CVEA de
+que el actuario moderno, con su capacidad para modelar la incertidumbre,
+debe colaborar interdisciplinariamente, por ejemplo, con la medicina y
+la epidemiología, para abordar los desafíos complejos del país.
+
+\subsection{Objetivo y Contribución}\label{objetivo-y-contribuciuxf3n}
+
+Dentro de este marco de modelación de la incertidumbre, la Tasa de
+Mortalidad Infantil (TMI), que cuantifica las defunciones de niños
+menores de un año por cada mil nacidos vivos, se erige como un indicador
+sociosanitario de relevancia fundamental. La TMI refleja no solo la
+condición de salud de la población infantil, sino también el nivel
+socioeconómico de una comunidad y la disponibilidad y efectividad de la
+atención en materia de salud.
+
+La desagregación de la TMI es vital, ya que las causas y los
+determinantes del fallecimiento varían drásticamente según la edad
+post-nacimiento. Este estudio se concentra en la clasificación
+tripartita establecida por la Organización Mundial de la Salud (OMS) :
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Mortalidad Neonatal (MN):} Se produce desde el nacimiento
+  hasta cumplir los 27 días de vida. El riesgo en este periodo es
+  fuertemente \textbf{endógeno} , predominando las causas de origen
+  perinatal, ligadas a la salud materna, el control del embarazo, la
+  calidad de la atención obstétrica y los cuidados inmediatos del recién
+  nacido. Las fallas en esta etapa indican debilidades sistémicas en la
+  infraestructura sanitaria de alta complejidad.
+\item
+  \textbf{Mortalidad Postneonatal (MPN):} Se extiende desde los 28 hasta
+  los 364 días de vida. Las causas de muerte en este periodo son
+  predominantemente \textbf{exógenas} o ``blandas'' , estando más
+  relacionadas con las condiciones socioeconómicas, ambientales,
+  saneamiento deficiente e infecciones adquiridas (como diarreas o
+  trastornos respiratorios agudos).
+\item
+  \textbf{Mortalidad en la Niñez (N):} Abarca las muertes ocurridas
+  entre el primer y el quinto año de vida.
+\end{enumerate}
+
+El objetivo principal de este trabajo es modelar y proyectar las tablas
+de mortalidad infantil (subdividida en los períodos Neonatal,
+Postneonatal y en la Niñez) a nivel de Entidad Federal para el período
+2013-2022, basándose en la aplicación del modelo estocástico de
+Lee-Carter.
+
+La contribución novedosa del trabajo es doble. Metodológicamente,
+establece un estándar riguroso para la cuantificación estocástica de
+riesgos de alta resolución en el contexto venezolano. Empíricamente,
+proporciona un ``mapa de riesgo'' subnacional sin precedentes, que
+permite el diagnóstico de las tendencias de mortalidad regionalmente
+divergentes, justificando la transición desde supuestos homogéneos de
+riesgo a una gestión basada en la realidad geográfica.
+
+\section{Revisión Literaria}\label{revisiuxf3n-literaria}
+
+\subsection{Metodología de la Revisión y Antecedentes
+Actuariales}\label{metodologuxeda-de-la-revisiuxf3n-y-antecedentes-actuariales}
+
+La revisión literaria se estructuró para realizar una síntesis analítica
+y sistemática del estado del arte en la modelización de la mortalidad,
+demostrando dominio en la literatura demográfica y actuarial. La
+estrategia de búsqueda priorizó fuentes de alta confiabilidad en bases
+de datos académicas (Scopus, Scielo, Redalyc). Los antecedentes en
+proyecciones de mortalidad se clasifican generalmente en modelos
+determinísticos (basados en factores de reducción o extrapolaciones
+simples) y modelos estocásticos (basados en series de tiempo y
+componentes principales).1 El enfoque se centró en la justificación de
+por qué los modelos estocásticos, como el Lee-Carter, ofrecen una
+alternativa superior para la modelización de riesgos a largo plazo, en
+contraste con los métodos tradicionales unidimensionales que solo
+consideran la edad y no la evolución temporal.
+
+\subsection{Fundamentos Teóricos de la Mortalidad
+Infantil}\label{fundamentos-teuxf3ricos-de-la-mortalidad-infantil}
+
+La Mortalidad Infantil (MI), definida como la muerte de niños menores de
+un año, se clasifica rigurosamente en dos grandes componentes debido a
+la diferencia en sus causas y determinantes
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Mortalidad Neonatal (MN):} Se produce desde el nacimiento
+  hasta cumplir los 27 días de vida. El riesgo en este período es
+  fuertemente endógeno y está ligado a causas de origen perinatal,
+  incluyendo complicaciones congénitas, de la salud de la madre, el
+  control del embarazo, y la calidad de la atención durante el parto y
+  los cuidados inmediatos.
+\item
+  \textbf{Mortalidad Postneonatal (MPN):} Se extiende desde los 28 hasta
+  los 364 días de vida. Las causas de muerte en este período son
+  predominantemente exógenas o ``blandas'', estando más relacionadas con
+  las condiciones socioeconómicas, ambientales, sanitarias deficientes,
+  e infecciones (como diarreas o trastornos respiratorios agudos).
+\end{enumerate}
+
+Esta distinción es crucial para la modelización, ya que el análisis
+desagregado permite a las autoridades sanitarias identificar si las
+debilidades se encuentran en el sistema de atención médica primaria (MN)
+o en las condiciones de vida y saneamiento (MPN).
+
+\subsection{Modelos Estocásticos de Mortalidad (Familia
+Lee-Carter)}\label{modelos-estocuxe1sticos-de-mortalidad-familia-lee-carter}
+
+Desde principios de la década de 1990, los modelos estocásticos han
+revolucionado el análisis de la mejora de la mortalidad, destacando el
+modelo Lee-Carter (LC) de 1992. El modelo LC es una aproximación
+log-lineal que descompone la tasa central de mortalidad \(m_{x,t}\) en
+una matriz de dos dimensiones (edad \(x\) y tiempo \(t\)):
+
+\[\log m_{x,t} = \alpha_x + \beta_x \kappa_t + \epsilon_{x,t}\] Donde
+\(\alpha_x\) describe el patrón promedio de la mortalidad por edad
+(independiente del tiempo), \(\kappa_t\) representa el nivel general de
+la mortalidad en el año \(t\) (independiente de la edad) y captura la
+tendencia de mejora o deterioro, y \(\beta_x\) mide la sensibilidad de
+cada edad \(x\) a los cambios en el nivel general de la mortalidad
+\(\kappa_t\).
+
+El éxito del modelo LC radica en su parsimonia y en su capacidad para
+transformar un problema de series de tiempo multivariado en uno
+univariado, a través de la modelización del índice temporal \(\kappa_t\)
+mediante técnicas de series de tiempo (ej. Box-Jenkins). La literatura
+empírica internacional ha validado extensivamente la efectividad del
+modelo LC en la proyección del equilibrio del sistema de seguridad
+social en países como Estados Unidos y Chile, así como en poblaciones
+con alta calidad de datos como el G7 y Suecia.
+
+El enfoque metodológico para el análisis de la mortalidad en Venezuela
+debe necesariamente abordar la no-uniformidad de la mejora. Al aplicar
+el modelo Lee-Carter de manera independiente a cada Entidad Federal, se
+permite que cada estado posea su propio índice de mortalidad
+(\(\kappa_t\)) y su propia velocidad de cambio (parámetro de deriva,
+\(d\)). Esta elección es fundamentalmente un esfuerzo por revelar la
+geografía de la mejora de la mortalidad en Venezuela. Si las condiciones
+sanitarias, económicas y de seguridad mejoran de manera desigual, el
+riesgo futuro también divergerá regionalmente. Utilizar un modelo LC
+para cada jurisdicción permite cuantificar esta divergencia.
+
+\subsection{Conclusión de la
+Revisión}\label{conclusiuxf3n-de-la-revisiuxf3n}
+
+La revisión confirma que, dada la complejidad generada por las
+limitaciones de los modelos determinísticos y la necesidad de modelar la
+incertidumbre en un contexto volátil, el enfoque estocástico de
+Lee-Carter proporciona el marco metodológico más apropiado. Este marco
+es capaz de abordar el doble desafío de generar proyecciones confiables
+a largo plazo y capturar la alta heterogeneidad regional de la
+mortalidad infantil en Venezuela.
+
+\section{Métodos}\label{muxe9todos}
+
+\subsection{Diseño del Estudio, Fuentes de Datos y
+Preprocesamiento}\label{diseuxf1o-del-estudio-fuentes-de-datos-y-preprocesamiento}
+
+El estudio se fundamenta en un análisis de series de tiempo empírico y
+riguroso. La principal fuente de datos utilizada para la calibración del
+modelo LC provino de los Anuarios de Mortalidad publicados por el
+Ministerio del Poder Popular para la Salud (MPPS) . Se compiló
+información detallada de las defunciones y la población expuesta al
+riesgo para un periodo de 18 años, desde 1995 hasta 2012 . Este lapso
+histórico es crucial, ya que provee una base temporal suficiente para la
+calibración robusta de los parámetros estocásticos.
+
+Para lograr la alta resolución requerida por el análisis de la
+mortalidad infantil, los datos fueron procesados para su desagregación
+específica, no solo por Entidad Federal y sexo, sino también por edad
+detallada: días (para el periodo Neonatal) y meses (para el periodo
+Postneonatal). Este nivel de granularidad es vital para que las
+autoridades sanitarias puedan focalizar la intervención en las ventanas
+temporales más críticas de la primera infancia.
+
+Un desafío metodológico significativo en la modelación actuarial a nivel
+subnacional, especialmente en entidades de baja densidad poblacional
+como Amazonas o Delta Amacuro, es el manejo de las tasas centrales de
+mortalidad nulas o con valores atípicos, causadas por el registro de un
+número reducido de fallecimientos. Para asegurar una calibración robusta
+y evitar sesgos derivados de estas tasas nulas, se implementaron
+técnicas de interpolación y suavizado de datos, inherentes a las
+librerías especializadas del entorno R, basándose en la información de
+la misma cohorte de edades similares.
+
+\subsection{Formulación y Calibración del Modelo
+Lee-Carter}\label{formulaciuxf3n-y-calibraciuxf3n-del-modelo-lee-carter}
+
+La modelización se centró en la aplicación de la formulación log-lineal
+del método Lee-Carter (LC). El modelo se calibra para la tasa central de
+mortalidad a la edad \(x\) en el año \(t\), \(m_{x,t}\):
+
+\[\log m_{x,t} = \alpha_x + \beta_x \kappa_t + \epsilon_{x,t} \quad \text{con restricciones: } \sum_t \kappa_t = 0, \sum_x \beta_x = 1\]
+Los parámetros fueron estimados bajo el principio de Descomposición de
+Valores Singulares (SVD) o métodos de Modelos Lineales Generalizados
+(GLM) para obtener \(\hat{\alpha}_x\) (el patrón de edad),
+\(\hat{\beta}_x\) (la velocidad de cambio por edad) y \(\hat{\kappa}_t\)
+(el índice temporal).
+
+La parte crucial del enfoque estocástico es el modelado y proyección del
+índice temporal \(\hat{\kappa}_t\). Este índice, que resume la tendencia
+histórica de la mortalidad, se modela como una serie de tiempo. Se
+utilizó un modelo de Caminata Aleatoria con Deriva (Random Walk with
+Drift), que resultó ser el más apropiado para capturar la tendencia de
+mejora a largo plazo:
+
+\[\kappa_t = d + \kappa_{t-1} + e_t\] Donde \(d\) (deriva) es el cambio
+anual promedio en el nivel general de la mortalidad, y \(e_t\) es el
+término de error. La estimación del parámetro \(d\) es el componente
+central de la proyección estocástica, ya que determina la pendiente de
+la tendencia futura. Las proyecciones hasta 2022 se calcularon a partir
+de esta caminata aleatoria, permitiendo la construcción de intervalos de
+confianza alrededor de las tasas proyectadas.
+
+\subsubsection{\texorpdfstring{Proyección y Diagnóstico del Índice
+Temporal
+(\(\kappa_t\))}{Proyección y Diagnóstico del Índice Temporal (\textbackslash kappa\_t)}}\label{proyecciuxf3n-y-diagnuxf3stico-del-uxedndice-temporal-kappa_t}
+
+La calibración de los parámetros \(\hat{\alpha}_x\), \(\hat{\beta}_x\) y
+\(\hat{\kappa}_t\) se realizó a través de métodos de Descomposición de
+Valores Singulares (SVD) o Modelos Lineales Generalizados
+(GLM).\textsuperscript{1} Una vez estimado el índice temporal
+\(\hat{\kappa}_t\), que resume la tendencia histórica de la mortalidad
+para cada jurisdicción, se procedió a su modelación estocástica.
+
+El índice \(\hat{\kappa}_t\) se modeló como una Caminata Aleatoria con
+Deriva (Random Walk with Drift), un modelo de series de tiempo que ha
+demostrado ser el más apropiado para capturar la tendencia de mejora o
+deterioro a largo plazo. El componente central de esta modelación es la
+estimación del parámetro \(d\), la deriva, la cual determina la
+pendiente de la tendencia futura de la mortalidad para la Entidad
+Federal específica.\textsuperscript{1}
+
+Las proyecciones se calcularon hasta el año 2022, extendiéndose 10 años
+más allá del último dato histórico disponible (2012). La selección de
+este horizonte de 10 años es coherente con las recomendaciones
+metodológicas que sugieren no proyectar mucho más allá de la mitad del
+periodo histórico base (18 años) para mantener la fiabilidad de las
+extrapolaciones.
+
+El diagnóstico del ajuste del modelo fue exhaustivo. Se aplicaron
+pruebas de diagnóstico estándar para series de tiempo, como las pruebas
+de Box-Pierce y Ljung-Box, con el fin de verificar la autocorrelación de
+los residuos del modelo. Este rigor estadístico es necesario para
+asegurar que el índice temporal \(\kappa_t\) efectivamente capturara la
+dinámica histórica de la mortalidad en el tiempo, validando la
+adecuación del ajuste para la construcción de intervalos de confianza
+alrededor de las tasas proyectadas.
+
+Es fundamental destacar la ventaja de la aplicación regional del modelo
+LC. Al ajustar un modelo independiente a cada Entidad Federal, la gran
+varianza asociada a la heterogeneidad geográfica del riesgo no se carga
+en el término de error \(\epsilon_{x,t}\) del modelo. Esto resulta en
+una reducción de la varianza de los residuos y, por consiguiente, en
+proyecciones puntuales más confiables a nivel local, con intervalos de
+confianza más estrechos, lo cual es de máxima utilidad para la
+planificación subnacional.
+
+\section{Resultados}\label{resultados}
+
+Los resultados empíricos históricos (1995-2012) y las proyecciones
+estocásticas (2013-2022) generadas por el modelo Lee-Carter confirmaron
+una profunda y persistente heterogeneidad en el riesgo de mortalidad
+infantil a nivel subnacional, desvirtuando cualquier supuesto de
+uniformidad de riesgo en el país.\textsuperscript{1}
+
+\subsection{Concentración del Riesgo: Mortalidad Neonatal (MN: 0-27
+Días)}\label{concentraciuxf3n-del-riesgo-mortalidad-neonatal-mn-0-27-duxedas}
+
+El análisis de la Mortalidad Neonatal (MN) es crucial, ya que el mayor
+peso de las defunciones infantiles se concentra antes de cumplir los 28
+días de vida.
+
+\subsubsection{La Geografía del Riesgo Extremo: El Factor Zulia y
+Trujillo}\label{la-geografuxeda-del-riesgo-extremo-el-factor-zulia-y-trujillo}
+
+El estado Zulia se ubicó consistentemente como la entidad con las tasas
+de mortalidad más altas en el periodo MN. Este fenómeno, denominado el
+``Factor Zulia'', sugiere una causalidad macro-estructural, ligada a
+deficiencias crónicas y profundas en el sistema de salud regional.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Zulia: Epicentro Consistente de Riesgo:} El estado Zulia
+  presentó una tasa promedio de mortalidad neonatal de
+  \(12.16 \text{‰}\) entre 1985 y 2007. No obstante, el pico de riesgo
+  registrado en el periodo de estudio 1995-2012 se dio en el año
+  \textbf{2007}, con una tasa máxima de \(57.19\) por cada \(1,000\)
+  nacidos vivos.
+\end{itemize}
+
+\phantomsection\label{fig:zulia-1}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/zulia1.jpg}}
+Mortalidad Neonatal Masculina Zulia
+
+\phantomsection\label{fig:zulia-2}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/zulia2.jpg}}
+Mortalidad Neonatal Masculina Zulia
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Aragua (Riesgo Histórico Elevado):} El estado Aragua
+  históricamente mostró un riesgo neonatal elevado, con una tasa
+  promedio de \(11.23 \text{‰}\) para el periodo
+  1985-2007.\textsuperscript{1} En el lapso estudiado, se registró una
+  alta tasa de \(9.19 \text{‰}\) a los 0 días de edad en 1995.
+\end{itemize}
+
+\phantomsection\label{fig:Aragua-1}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/aragua1.jpg}}
+Mortalidad Neonatal Masculina Aragua
+
+\phantomsection\label{fig:Aragua-2}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/aragua2.jpg}}
+Mortalidad Neonatal Masculina Aragua
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Trujillo: La Advertencia de Deterioro Proyectado:}
+  Históricamente, Trujillo alcanzó una tasa promedio de
+  \(10.96 \text{‰}\) entre 1985 y 2007. A pesar de que la tendencia
+  general proyectada por el modelo LC para la mayoría de los estados
+  apuntaba hacia un descenso progresivo de las tasas de mortalidad
+  neonatal, se identificó un resultado proyectado altamente
+  significativo y preocupante en el estado Trujillo. El modelo
+  Lee-Carter pronosticó un \textbf{ascenso considerable y sostenido en
+  la mortalidad neonatal a partir de los años 2014-2016}. Este
+  incremento proyectado constituyó un \textbf{punto de quiebre} en la
+  tendencia histórica de reducción. El ascenso proyectado se dispara a
+  \textbf{más de 10 puntos por encima del promedio histórico} de las
+  tasas observadas en los años inmediatamente anteriores. La tasa, que
+  era de \(12.3 \text{‰}\) en 2013, se elevó a \(14.2 \text{‰}\) en
+  2014.
+\end{itemize}
+
+\phantomsection\label{fig:Trujillo-1}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Trujillo1.jpg}}
+Mortalidad Neonatal Masculina Trujillo
+
+\phantomsection\label{fig:Trujillo-2}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Trujillo2.jpg}}
+Mortalidad Neonatal Masculina Trujillo
+
+La aparición de una deriva (\(d\)) positiva en el índice temporal
+\(\kappa_t\) de Trujillo, que se traduce en un ascenso en el riesgo
+proyectado, constituye una \textbf{advertencia de deterioro agudo del
+sistema de salud regional}.
+
+\subsubsection{Patrones de Resiliencia y Disparidad (Miranda, Falcón y
+Sucre)}\label{patrones-de-resiliencia-y-disparidad-miranda-falcuxf3n-y-sucre}
+
+El análisis también identificó a las Entidades Federales que exhibieron
+las tasas más bajas de mortalidad neonatal histórica. La diferencia
+entre el riesgo máximo y mínimo subraya la disparidad de condiciones de
+salud en el territorio.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Miranda:} Mantuvo la tasa máxima más baja de todo el país
+  dentro de las entidades analizadas, registrando un máximo de \(2.88\)
+  por cada \(1,000\) nacidos vivos en 1996. Su tasa promedio histórica
+  fue de \(7.54 \text{‰}\).
+\end{itemize}
+
+\phantomsection\label{fig:Miranda-1}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Miranda1.jpg}}
+Mortalidad Neonatal Masculina Miranda
+
+\phantomsection\label{fig:Miranda-2}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Miranda2.jpg}}
+Mortalidad Neonatal Masculina Miranda
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Falcón:} Presentó una tasa promedio de \(7.50 \text{‰}\).
+\end{itemize}
+
+\phantomsection\label{fig:Falcon-1}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Falcon1.jpg}}
+Mortalidad Neonatal Masculina Falcon
+
+\phantomsection\label{fig:Falcon-2}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Falcon2.jpg}}
+Mortalidad Neonatal Masculina Falcon
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Sucre:} Reportó la tasa promedio más baja en el periodo de
+  referencia (\(7.49 \text{‰}\)).
+\end{itemize}
+
+\phantomsection\label{fig:Sucre-1}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Sucre1.jpg}}
+Mortalidad Neonatal Masculina Sucre
+
+\phantomsection\label{fig:Sucre-2}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Sucre2.jpg}}
+Mortalidad Neonatal Masculina Sucre
+
+La comparación entre los extremos es ilustrativa.La disparidad entre el
+riesgo máximo histórico de Zulia (\(57.19 \text{‰}\)) y el mínimo de
+Miranda (\(2.88 \text{‰}\)) establece un \textbf{ratio de disparidad de
+aproximadamente} \(20:1\).
+
+\subsubsection{Análisis Descriptivo General y Causas
+Subyacentes}\label{anuxe1lisis-descriptivo-general-y-causas-subyacentes}
+
+El análisis descriptivo general del periodo Neonatal mostró un patrón
+consistente: el mayor peso de las defunciones se concentra antes de
+cumplir los 28 días. Este riesgo elevado, particularmente en las
+primeras 24 horas y durante los primeros 27 días, se debe
+fundamentalmente a \textbf{afecciones originadas en el periodo
+perinatal}. Esto incluye bajo peso al nacer, prematuridad,
+complicaciones durante el parto y malformaciones congénitas.
+
+Las causas de defunción confirman que:
+
+\begin{itemize}
+\item
+  \textbf{Causas Primarias (Endógenas):} Las afecciones originadas en el
+  periodo perinatal son la principal causa de mortalidad neonatal a lo
+  largo de los años.
+\item
+  \textbf{Causas Secundarias y Terciarias:} Las enfermedades del sistema
+  respiratorio y ciertas enfermedades infecciosas y parasitarias son la
+  segunda y tercera causa más importante, respectivamente.
+\item
+  \textbf{Diferencial de Género:} Un patrón constante observado en la
+  mayoría de las entidades federales fue que el género \textbf{masculino
+  exhibió consistentemente una mayor probabilidad de fallecer} en el
+  periodo neonatal que el femenino. Esta sobremortalidad biológica se
+  concentra de manera más intensa en las primeras 24 horas de vida del
+  neonato.
+\end{itemize}
+
+Esto implica que la debilidad no reside primariamente en el saneamiento
+o el ambiente post-neonatal, sino en la \textbf{calidad deficiente del
+control prenatal, la infraestructura obstétrica y los cuidados
+intensivos neonatales}.
+
+\subsection{Transición del Riesgo: Mortalidad Postneonatal (MPN) y en la
+Niñez
+(N)}\label{transiciuxf3n-del-riesgo-mortalidad-postneonatal-mpn-y-en-la-niuxf1ez-n}
+
+El riesgo de mortalidad evoluciona con la edad. A partir de los 28 días,
+el patrón causal de las defunciones transita de ser predominantemente
+endógeno a \textbf{exógeno}. En esta etapa, el riesgo está impulsado por
+factores ambientales, socioeconómicos y de acceso a la atención básica,
+tales como infecciones, diarreas, deshidratación y trastornos
+respiratorios agudos.
+
+\subsubsection{Alto Riesgo Persistente en la Periferia y Anomalías de
+Género}\label{alto-riesgo-persistente-en-la-periferia-y-anomaluxedas-de-guxe9nero}
+
+Aunque Zulia mantiene el riesgo más alto, otras entidades de baja
+densidad poblacional y ubicaciones remotas muestran una vulnerabilidad
+estructural persistente en los periodos MPN y en la Niñez.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Mortalidad Postneonatal (MPN):} Zulia se mantuvo como líder en
+  la tasa máxima histórica, con \(23.91 \text{‰}\) en 2007. Delta
+  Amacuro se ubicó como el segundo estado con mayor tasa, alcanzando
+  \(8.94 \text{‰}\) a los 4 meses de edad en 1998. Amazonas fue el
+  tercer estado con mayor riesgo de MPN.
+\end{itemize}
+
+\phantomsection\label{fig:Zulia-3}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Zulia3.jpg}}
+Mortalidad Neonatal Masculina Zulia
+
+\phantomsection\label{fig:Zulia-4}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Zulia4.jpg}}
+Mortalidad Neonatal Masculina Zulia
+
+\phantomsection\label{fig:Delta-1}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Delta1.jpg}}
+Mortalidad Neonatal Masculina Delta
+
+\phantomsection\label{fig:Delta-2}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Delta2.jpg}}
+Mortalidad Neonatal Masculina Delta
+
+\phantomsection\label{fig:Amazonas-1}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Amazonas1.jpg}}
+Mortalidad Neonatal Masculina Amazonas
+
+\phantomsection\label{fig:Amazonas-2}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Amazonas2.jpg}}
+Mortalidad Neonatal Masculina Amazonas
+
+\begin{itemize}
+\item
+  \textbf{Anomalía de Género en Amazonas (MPN):} En el periodo
+  Postneonatal, se identificó un patrón de mortalidad atípico en el
+  estado Amazonas, un fenómeno que invierte la tendencia biológica
+  general de sobremortalidad masculina en la primera infancia. En
+  Amazonas, el índice de \textbf{mortalidad femenina superó al
+  masculino} en el periodo Postneonatal. Este patrón inusual sugiere la
+  existencia de \textbf{factores causales específicos de la región,
+  posiblemente de índole socio-cultural o ambiental}.
+\item
+  \textbf{Mortalidad en la Niñez (N):} Zulia volvió a registrar la tasa
+  más alta con \(46.01 \text{‰}\) en 2004.\textsuperscript{1} Le
+  siguieron Amazonas, con \(17.41 \text{‰}\) en 1996, y Delta Amacuro,
+  con \(11.90 \text{‰}\) en 1997.
+\end{itemize}
+
+\phantomsection\label{fig:Zulia-5}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Zulia5.jpg}}
+Mortalidad Neonatal Masculina Zulia
+
+\phantomsection\label{fig:Zulia-6}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Zulia6.jpg}}
+Mortalidad Neonatal Masculina Zulia
+
+\phantomsection\label{fig:Delta-3}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Delta3.jpg}}
+Mortalidad Neonatal Masculina Delta
+
+\phantomsection\label{fig:Delta-4}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Delta4.jpg}}
+Mortalidad Neonatal Masculina Delta
+
+\phantomsection\label{fig:Amazonas-3}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Amazonas3.jpg}}
+Mortalidad Neonatal Masculina Amazonas
+
+\phantomsection\label{fig:Amazonas-4}
+\pandocbounded{\includegraphics[keepaspectratio]{figure/Amazonas4.jpg}}
+Mortalidad Neonatal Masculina Amazonas
+
+La persistencia de entidades como Delta Amacuro y Amazonas en el grupo
+de alto riesgo a lo largo de 18 años de datos históricos es un hallazgo
+robusto. Esto indica que la falta de acceso geográfico a la atención
+primaria de salud, el saneamiento y la calidad de vida son factores de
+riesgo crónicos que el promedio nacional de mejora nunca ha logrado
+mitigar.
+
+\subsection{Síntesis de la Heterogeneidad Geográfica Histórica
+(1995-2012)}\label{suxedntesis-de-la-heterogeneidad-geogruxe1fica-histuxf3rica-1995-2012}
+
+La magnitud de la heterogeneidad geográfica del riesgo se consolida en
+la siguiente tabla que resume los extremos históricos observados:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 12\tabcolsep) * \real{0.1429}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{Período} & \textbf{Entidad de Máximo Riesgo} & \textbf{Tasa
+Máxima (por 1,000 NV)} & \textbf{Año Pico} & \textbf{Entidad de Mínimo
+Riesgo} & \textbf{Tasa Mínima Histórica (por 1,000 NV)} & \textbf{Ratio
+de Disparidad (Máx/Mín)} \\
+Neonatal (MN) & Zulia & 57.19 & 2007 & Miranda & 2.88 &
+\(\approx 20:1\) \\
+Postneonatal (MPN) & Zulia & 23.91 & 2007 & Sucre & 1.36 &
+\(\approx 18:1\) \\
+Niñez (N) & Zulia & 46.01 & 2004 & Anzoátegui & 1.60 &
+\(\approx 29:1\) \\
+\end{longtable}
+
+La disparidad extrema en el riesgo, con ratios de hasta \(29:1\) (Zulia
+vs.~Anzoátegui en la Niñez), es la evidencia fundamental de la
+\textbf{ineficiencia de la tarificación actuarial no regionalizada} y la
+necesidad de integrar la geografía como un factor de riesgo crucial en
+el diseño de productos y políticas.
+
+\section{Discusión y Conclusiones}\label{discusiuxf3n-y-conclusiones}
+
+\subsection{Interpretación de los Hallazgos Centrales y Diálogo con el
+Estado del
+Arte}\label{interpretaciuxf3n-de-los-hallazgos-centrales-y-diuxe1logo-con-el-estado-del-arte}
+
+Los resultados confirman que el riesgo de mortalidad infantil en
+Venezuela está fuertemente concentrado y no es homogéneo. El predominio
+del riesgo en la Mortalidad Neonatal (0-27 días) sobre la Postneonatal
+sugiere que los desafíos más acuciantes se encuentran en la esfera de la
+atención médica directa: control prenatal, infraestructura obstétrica y
+cuidados intensivos neonatales. Esto se alinea con la controversia
+epidemiológica que vincula la MN con fallas sistémicas en el ámbito
+sanitario. El fenómeno del Factor Zulia, donde la entidad concentra el
+riesgo más alto en todas las etapas de la mortalidad infantil, indica
+que la causalidad es probablemente macro-estructural, ligada a
+deficiencias crónicas y profundas en el sistema de salud regional. Esta
+vulnerabilidad estructural magnifica el impacto de cualquier shock
+adverso, como el pico de 2007. La Advertencia de Trujillo es, quizás, el
+hallazgo más relevante desde la perspectiva de la política pública. El
+ascenso proyectado en la mortalidad neonatal de Trujillo, en contraste
+con las tendencias nacionales históricas de mejora, es una señal
+inequívoca de una divergencia regional crítica.1 Este resultado tiene
+dos implicaciones fundamentales: Demuestra que la suposición de
+tendencias homogéneas, característica de los modelos determinísticos, es
+inadecuada para la planificación en Venezuela. Valida la necesidad de
+utilizar modelos estocásticos y granularmente aplicados para identificar
+estos ``puntos de inflexión'' o dinámicas de deterioro regional antes de
+que se reflejen en los datos nacionales agregados.
+
+\subsection{Limitaciones del Estudio y
+Sesgos}\label{limitaciones-del-estudio-y-sesgos}
+
+El principal factor limitante de este análisis es el período de
+referencia, que culmina en 2012.1 La modelación estocástica de
+Lee-Carter se basa intrínsecamente en la extrapolación de la deriva
+histórica (\(d\)). Por lo tanto, si las condiciones socioeconómicas y
+sanitarias han experimentado un deterioro significativo y sostenido
+posterior a 2012 (como ha sido documentado por otros estudios), el
+modelo podría subestimar el riesgo actual, dado que la tendencia
+histórica incluida es predominantemente de mejora o estabilidad.
+Adicionalmente, se reconoce el potencial sesgo de volatilidad en los
+estados de baja población, como Delta Amacuro y Amazonas. En estas
+entidades, un número reducido de fallecimientos puede generar tasas
+extremas debido a la escasa población expuesta al riesgo. No obstante,
+la persistencia de estas regiones en el grupo de alto riesgo a lo largo
+de 18 años de datos históricos es un hallazgo robusto que no debe ser
+desestimado.
+
+\subsection{Implicaciones y Futuras
+Direcciones}\label{implicaciones-y-futuras-direcciones}
+
+\textbf{Implicaciones de Política Pública}
+
+La evidencia generada por el modelado estocástico subnacional ofrece
+recomendaciones claras para una intervención efectiva:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Focalización Geográfica Prioritaria:} La asignación
+  presupuestaria y la inversión en infraestructura de salud deben
+  concentrarse prioritariamente en las regiones de riesgo extremo,
+  identificadas consistentemente como Zulia, Amazonas y Delta Amacuro.
+\item
+  \textbf{Focalización Temporal en la Ventana Neonatal:} Las estrategias
+  de intervención deben maximizar el impacto en el período de 0 a 27
+  días de vida. Esto implica el fortalecimiento urgente del control
+  prenatal, la mejora de la calidad de la atención obstétrica y la
+  dotación de unidades de neonatología funcionales. La reducción del
+  riesgo neonatal tendrá el mayor efecto apalancamiento en la reducción
+  de la TMI general.
+\end{enumerate}
+
+\textbf{Implicaciones para la Práctica Actuarial}
+
+Los hallazgos de este trabajo son cruciales para la modernización del
+sector de seguros y pensiones: Reforma de Bases Técnicas Actuariales: Se
+hace un llamado a los entes reguladores (como Sudeaseg) y a la industria
+para que integren las proyecciones estocásticas del riesgo infantil en
+sus cálculos. La dependencia de bases estáticas u obsoletas ignora el
+riesgo real y la volatilidad, llevando a una estimación incorrecta de
+las primas y las reservas.1 Tarificación Basada en Riesgo Regional: La
+clara evidencia de la heterogeneidad geográfica del riesgo (un riesgo
+veinte veces mayor en Zulia que en Miranda en el pico histórico) exige
+la creación de factores de ajuste regionales para la tarificación de
+seguros de vida y salud infantil. Esto permitirá una tarificación más
+justa y ajustada a la realidad del riesgo geográfico local.1
+
+\subsection{Conclusión Final}\label{conclusiuxf3n-final}
+
+Este estudio de modelación y proyección de la mortalidad infantil
+demuestra cómo el rigor de la modelación estocástica basada en el modelo
+Lee-Carter puede aplicarse eficazmente a desafíos específicos de salud
+pública, proveyendo un mapa de riesgo y de incertidumbre que es
+indispensable en el contexto volátil venezolano. Se concluye que la
+mitigación efectiva de la mortalidad infantil y la optimización de los
+recursos de salud requieren, de manera fundamental, una planificación
+estratégica que abandone la homogeneidad y se base en una estricta
+estratificación del riesgo, tanto geográfica como temporal, priorizando
+la intervención en la fase neonatal y en las entidades federales
+identificadas con riesgo extremo.
+
+\section*{Agradecimientos}\label{agradecimientos}
+\addcontentsline{toc}{section}{Agradecimientos}
+
+\section*{Referencias}\label{referencias}
+\addcontentsline{toc}{section}{Referencias}
+
+La lista de referencias se generará automáticamente aquí a partir del
+archivo \texttt{references.bib} y las citas usadas en el texto. No es
+necesario escribir nada en esta sección.
+
+\emph{Ejemplos de Referencias Generadas (Formato APA):}
+
+\begin{itemize}
+\item
+  Akaike, H. (1974). A new look at the statistical model identification.
+  \emph{IEEE Transactions on Automatic Control}, \emph{19}(6), 716--723.
+\item
+  Breusch, T. S., \& Pagan, A. R. (1979). A simple test for
+  heteroskedasticity and random coefficient variation.
+  \emph{Econometrica}, \emph{47}(5), 1287--1294.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\newpage
+
+\section*{Comentarios Finales y
+Recomendaciones}\label{comentarios-finales-y-recomendaciones}
+\addcontentsline{toc}{section}{Comentarios Finales y Recomendaciones}
+
+Esta plantilla ha sido creada con Quarto, un sistema de publicación
+científica de código abierto que integra texto y código para producir
+documentos reproducibles y de alta calidad.
+
+La adopción de Quarto y la exigencia de la nueva estructura I-RL-M-R-D
+se complementan con un estricto enfoque en la reproducibilidad. Los
+modelos actuariales, dada su función crítica en la toma de decisiones
+financieras y de riesgo, deben ser totalmente transparentes. La
+metodología de Quarto permite que el código fuente sea parte integral
+del manuscrito, lo que constituye el estándar de oro para la
+verificación por pares.
+
+
+
+
+\end{document}

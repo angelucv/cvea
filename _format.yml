@@ -1,0 +1,17 @@
+# Formato HTML global (modelo HCC: theme spacelab, highlight oscuro)
+format:
+  html:
+    theme: spacelab
+    highlight-style: github-dark
+    smooth-scroll: true
+    toc: true
+    toc-title: ""
+    code-link: true
+    link-external-newwindow: true
+    embed-resources: true
+    include-in-header:
+      - assets/doodle-head.html
+      - assets/mathjax-config.html
+      - assets/navbar-logo.html
+      - assets/meta.html
+    css: assets/styles.css

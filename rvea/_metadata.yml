@@ -1,0 +1,13 @@
+# Estética compartida para artículos de la RVEA
+# Hereda identidad de _brand.yml del proyecto
+
+format:
+  html:
+    theme: [cosmo, brand]
+    toc: true
+    number-sections: true
+    embed-resources: true
+  pdf:
+    documentclass: article
+    papersize: a4
+    fontsize: 11pt

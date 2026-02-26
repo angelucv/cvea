@@ -1,0 +1,27 @@
+---
+title: "Modelado Lee-Carter y Tabla de Mortalidad Dinámica LC15"
+subtitle: "Superando la obsolescencia de las tablas estáticas CSO 1980"
+author: "Daniel Azuaje"
+date: today
+format:
+  html:
+    toc: true
+    number-sections: true
+  pdf:
+    documentclass: article
+    papersize: a4
+---
+
+## Resumen
+
+Desarrollo de la tabla de mortalidad dinámica $LC15$ utilizando R para superar la obsolescencia de las tablas estáticas CSO 1980. Aplicación del modelo Lee-Carter en el contexto venezolano.
+
+*Este artículo es un placeholder. Sustituir por el manuscrito completo cuando esté disponible.*
+
+## Metodología
+
+El modelo Lee-Carter descompone el logaritmo de la tasa central de mortalidad:
+
+$$\log m_{x,t} = \alpha_x + \beta_x \kappa_t + \epsilon_{x,t}$$
+
+Donde $\kappa_t$ captura la tendencia temporal y se proyecta mediante series de tiempo.

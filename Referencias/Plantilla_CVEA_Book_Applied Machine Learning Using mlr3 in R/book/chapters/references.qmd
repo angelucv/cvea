@@ -1,0 +1,10 @@
+---
+aliases:
+  - "/references.html"
+---
+
+
+# References
+
+::: {#refs}
+:::

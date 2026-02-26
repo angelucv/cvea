@@ -1,0 +1,43 @@
+---
+title: "Modelación y Proyección de la Mortalidad Neonatal, Postneonatal y en la Niñez por Entidad Federal en Venezuela"
+subtitle: "Modelo estocástico Lee-Carter a nivel subnacional"
+author:
+  - name: "Lic. Arlet Moreno"
+    affiliation: "Escuela de Estadística y Ciencias Actuariales, UCV"
+  - name: "Prof. Angel Colmenares"
+    affiliation: "Centro Venezolano de Estudios Actuariales (CVEA)"
+format:
+  html:
+    toc: true
+    number-sections: true
+  pdf:
+    documentclass: article
+    papersize: a4
+    fontsize: 11pt
+---
+
+## Resumen
+
+La planificación de riesgos demográficos y actuariales en Venezuela ha dependido históricamente de proyecciones determinísticas (CELADE, INDEC), que no capturan la incertidumbre ni la heterogeneidad regional. Este estudio aplicó el modelo estocástico de Lee-Carter a los Anuarios de Mortalidad del MPPS (1995-2012), desagregados por entidad federal, sexo y edad (días/meses). El índice temporal $\kappa_t$ se modeló con series de tiempo y se proyectó hasta 2022 (R: demography, ILC).
+
+**Hallazgos:** Disparidad regional severa; Zulia con tasas más elevadas en períodos Neonatal, Postneonatal y en la Niñez; concentración del riesgo en Neonatal (0-27 días); anomalía proyectada en Trujillo (ascenso de mortalidad neonatal desde 2014). La modelación estocástica subnacional es indispensable para un mapa de riesgo accionable y para que salud pública y práctica actuarial abandonen la homogeneidad nacional.
+
+**Palabras clave:** Mortalidad infantil, Lee-Carter, Venezuela, entidad federal, proyección estocástica.
+
+## Introducción
+
+La gestión de riesgos demográficos y financieros en Venezuela ha enfrentado un desafío estructural: obsolescencia de bases técnicas y dependencia de métodos determinísticos. El rol del actuario moderno se redefine como gestor de la incertidumbre; la aplicación de modelos estocásticos resulta imprescindible para estimar nubes de valores probables y proyectar riesgos con grados de confianza. El foco de esta investigación es la mortalidad de recién nacidos, desagregando el riesgo en períodos Neonatal y Postneonatal y en las entidades con mayores tasas.
+
+## Métodos (resumen)
+
+- Datos: Anuarios de Mortalidad MPPS, 1995-2012, por entidad federal, sexo y edad (alta resolución temporal).
+- Modelo Lee-Carter; proyección del índice $\kappa_t$ hasta 2022.
+- Software: R (demography, ILC).
+
+## Discusión
+
+El "Factor Zulia" y la "Advertencia de Trujillo" son hallazgos relevantes para política pública. Se recomienda focalización geográfica prioritaria y adopción de Quarto y estructura I-RL-M-R-D con reproducibilidad estricta.
+
+---
+
+*Artículo completo: ver `Referencias/RVEA_Volumen I/RVA_Vol_I_Arlet_M/RVA-Arlet_Moreno1.qmd`. PDF disponible según proceso editorial.*

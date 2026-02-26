@@ -1,0 +1,346 @@
+---
+aliases:
+  - "/introduction_and_overview.html"
+---
+
+# Introduction and Overview {#sec-introduction}
+
+{{< include ../../common/_setup.qmd >}}
+
+`r chapter = "Introduction and Overview"`
+`r authors(chapter)`
+
+Welcome to the **M**achine **L**earning in **R** universe.
+In this book, we will guide you through the functionality offered by `mlr3` step by step.
+If you want to contribute to our universe, ask any questions, read documentation, or just chat with the team, head to `r link("https://github.com/mlr-org/mlr3")` which has several useful links in the README.
+
+The `r mlr3` [@mlr3] package and the wider `mlr3` ecosystem provide a generic, `r index("object-oriented", "object-oriented programming")`, and extensible framework for `r index("regression")` (@sec-tasks), `r index("classification")` (@sec-classif), and other machine learning `r index("tasks")` (@sec-special) for the R language [@R].
+On the most basic level, the unified interface provides functionality to train, test, and evaluate many machine learning algorithms.
+You can also take this a step further with hyperparameter optimization, computational pipelines, model interpretation, and much more.
+`mlr3` has similar overall aims to `caret` and `tidymodels` for R, `scikit-learn` for Python, and `MLJ` for Julia.
+In general, `r mlr3` is designed to provide more flexibility than other ML frameworks while still offering easy ways to use advanced functionality.
+While `tidymodels` in particular makes it very easy to perform simple ML tasks, `r mlr3` is more geared towards advanced ML.
+
+Before we can show you the full power of `mlr3`, we recommend installing the `r mlr3verse` package, which will install several, important packages in the `mlr3` ecosystem.
+
+```{r introduction_and_overview-001, eval = FALSE}
+library(igraph)
+install.packages("mlr3verse")
+#install.packages("kknn")
+```
+
+Chapters that were added after the release of the printed version of this book are marked with a '+'.
+
+## Installation Guidelines {#installguide}
+
+There are many packages in the `mlr3` ecosystem that you may want to use as you work through this book.
+All our packages can be installed from GitHub and R-universe[^runiverse]; the majority (but not all) packages can also be installed from CRAN.
+We recommend adding the mlr-org R-universe to your R options so you can install all packages with `install.packages()`, without having to worry which package repository it comes from.
+To do this, install `r ref_pkg("usethis")` and run the following:
+
+[^runiverse]: R-universe is an alternative package repository to CRAN. The bit of code below tells R to look at both R-universe and CRAN when trying to install packages. R will always install the latest version of a package.
+
+```{r introduction_and_overview-002, eval = FALSE}
+usethis::edit_r_profile()
+```
+
+In the file that opens add or change the `repos` argument in `options` so it looks something like the code below (you might need to add the full code block below or just edit the existing `options` function).
+
+```{r introduction_and_overview-003, eval = FALSE}
+options(repos = c(
+  mlrorg = "https://mlr-org.r-universe.dev",
+  CRAN = "https://cloud.r-project.org/"
+))
+```
+
+Save the file, restart your R session, and you are ready to go!
+
+If you want the latest development version of any of our packages, run
+
+```{r introduction_and_overview-004, eval = FALSE}
+remotes::install_github("mlr-org/{pkg}")
+```
+
+with `{pkg}` replaced with the name of the package you want to install.
+You can see an up-to-date list of all our extension packages at `r link("https://github.com/mlr-org/mlr3/wiki/Extension-Packages")`.
+
+## How to Use This Book {#howtouse}
+
+You could read this book cover to cover but you may benefit more from dipping in and out of chapters as suits your needs, we have provided a comprehensive index to help you find relevant pages and sections.
+We do recommend reading the first part of the book in its entirety as this will provide you with a complete overview of our basic infrastructure and design, which is used throughout our ecosystem.
+
+We have marked sections that are particularly complex with respect to either technical or methodological detail and could be skipped on a first read with the following information box:
+
+{{< include ../../common/_optional.qmd >}}
+
+Each chapter includes examples, API references, and explanations of methodologies.
+At the end of each part of the book we have included exercises for you to test yourself on what you have learned; you can find the solutions to these exercises at `r link("https://mlr3book.mlr-org.com/solutions.html")`.
+We have marked more challenging (and possibly time-consuming) exercises with an asterisk, '*'.
+
+If you want more detail about any of the tasks used in this book or links to all the `mlr3` dictionaries, please see the appendices in the online version of the book at `r link("https://mlr3book.mlr-org.com/")`.
+
+#### Reproducibility {.unnumbered .unlisted}
+
+At the start of each chapter we run `set.seed(123)` and use `r ref_pkg("renv")` to manage package versions, you can find our lockfile at `r link("https://github.com/mlr-org/mlr3book/blob/main/book/renv.lock")`.
+
+
+## mlr3book Code Style {#styleguide}
+
+Throughout this book we will use the following code style:
+
+1. We always use `=` instead of `<-` for assignment.
+2. Class names are in `UpperCamelCase`
+3. Function and method names are in `lower_snake_case`
+4. When referencing functions, we will only include the package prefix (e.g., `pkg::function`) for functions outside the `mlr3` universe or when there may be ambiguity about in which package the function lives. Note you can use `environment(function)` to see which namespace a function is loaded from.
+5. We denote packages, fields, methods, and functions as follows:
+
+    * `package` (highlighted in the first instance)
+    * `package::function()` or `function()` (see point 4)
+    * `$field` for fields (data encapsulated in an R6 class)
+    * `$method()` for methods (functions encapsulated in an R6 class)
+    * `Class` (for R6 classes primarily, these can be distinguished from packages by context)
+
+Now let us see this in practice with our first example.
+
+## mlr3 by Example
+
+The `mlr3` universe includes a wide range of tools taking you from basic ML to complex experiments.
+To get started, here is an example of the simplest functionality -- training a model and making predictions.
+
+```{r introduction_and_overview-005}
+library(mlr3)
+task = tsk("penguins")
+split = partition(task)
+learner = lrn("classif.rpart")
+
+learner$train(task, row_ids = split$train)
+learner$model
+
+prediction = learner$predict(task, row_ids = split$test)
+prediction
+
+prediction$score(msr("classif.acc"))
+```
+
+In this example, we trained a decision tree on a subset of the `r ref("palmerpenguins::penguins")` dataset, made predictions on the rest of the data and then evaluated these with the accuracy measure.
+In @sec-basics we will break this down in more detail.
+
+The `mlr3` interface also lets you run more complicated experiments in just a few lines of code:
+
+```{r introduction_and_overview-006, eval = FALSE}
+library(mlr3verse)
+
+tasks = tsks(c("breast_cancer", "sonar"))
+
+glrn_rf_tuned = as_learner(ppl("robustify") %>>% auto_tuner(
+    tnr("grid_search", resolution = 5),
+    lrn("classif.ranger", num.trees = to_tune(200, 500)),
+    rsmp("holdout")
+))
+glrn_rf_tuned$id = "RF"
+
+glrn_stack = as_learner(ppl("robustify") %>>% ppl("stacking",
+    lrns(c("classif.rpart", "classif.kknn")),
+    lrn("classif.log_reg")
+))
+glrn_stack$id = "Stack"
+
+learners = c(glrn_rf_tuned, glrn_stack)
+bmr = benchmark(benchmark_grid(tasks, learners, rsmp("cv", folds = 3)))
+
+bmr$aggregate(msr("classif.acc"))
+```
+
+```{r introduction_and_overview-007, output = FALSE, echo = FALSE}
+library(mlr3verse)
+library(mlr3pipelines)
+library(mlr3benchmark)
+
+tasks = tsks(c("breast_cancer", "sonar"))
+glrn_rf_tuned = auto_tuner(
+    tnr("grid_search", resolution = 5),
+    lrn("classif.ranger", num.trees = to_tune(200, 500)),
+    rsmp("holdout")
+)
+glrn_rf_tuned = pipeline_robustify(NULL, glrn_rf_tuned, TRUE) %>>%
+    po("learner", glrn_rf_tuned)
+glrn_stack = ppl(
+    "stacking",
+    base_learners = lrns(c("classif.rpart", "classif.kknn")),
+    lrn("classif.log_reg"))
+glrn_stack = pipeline_robustify(NULL, glrn_stack, TRUE) %>>%
+    po("learner", glrn_stack)
+
+learners = c(glrn_rf_tuned, glrn_stack)
+bmr = benchmark(benchmark_grid(tasks, learners, rsmp("holdout")))
+```
+
+```{r introduction_and_overview-008, echo = FALSE}
+aggr = bmr$aggregate(msr("classif.acc"))[, c("task_id", "learner_id",
+  "classif.acc")]
+aggr$learner_id = rep(c("RF", "Stack"), 2)
+aggr
+```
+
+In this (much more complex!) example we chose two tasks and two learners and used automated tuning to optimize the number of trees in the random forest learner (@sec-optimization), and a machine learning pipeline that imputes missing data, collapses factor levels, and stacks models (@sec-pipelines and @sec-pipelines-nonseq).
+We also showed basic features like loading learners (@sec-basics) and choosing resampling strategies for benchmarking (@sec-performance).
+Finally, we compared the performance of the models using the mean accuracy with three-fold cross-validation.
+
+You will learn how to do all this and more in this book.
+
+## The `mlr3` Ecosystem
+
+Throughout this book, we often refer to `mlr3`, which may refer to the single `r mlr3` base package but usually refers to all packages in our ecosystem, this should be clear from context.
+The `r mlr3` *package* provides the base functionality that the rest of the ecosystem depends on for building more advanced machine learning tools.
+@fig-mlr3verse shows the packages in our ecosystem that extend `r mlr3` with capabilities for preprocessing, pipelining, visualizations, additional learners, additional task types, and much more.
+
+```{r introduction_and_overview-009, echo = FALSE, out.width = "100%"}
+#| label: fig-mlr3verse
+#| fig-cap: Overview of the `mlr3` ecosystem, the packages with gray dashed lines are still in development, all others have a stable interface.
+#| fig-alt: "Mindmap showing the packages of the mlr3verse and their relationship. Center `mlr3`, immediately connected to that are 'Learners', 'Evaluation', 'Tuning', 'Feature Selection', 'Utilities', 'Special Tasks', 'Data', and 'Pipelines'. Within each group is: Learners: `mlr3learners`, `mlr3extralearners`, `mlr3torch`; Evaluation: `mlr3measures`, `mlr3benchmark`; Tuning: `mlr3tuning`, `miesmuschel`, `mlr3hyperband`, `mlr3mbo`, `bbotk`, `mlr3tuningspaces`; Feature Selection: `mlr3filters`, `mlr3fselect`; Utilities: `mlr3misc`, `mlr3viz`, `mlr3verse`, `mlr3batchmark`, `paradox`; Special Tasks: `mlr3spatiotempcv`, `mlr3spatial`, `mlr3proba`, `mlr3cluster`, `mlr3fda`, `mlr3fairness`; Data: `mlr3db`, `mlr3oml`, `mlr3data`; Pipelines: `mlr3pipelines`. `mlr3fda` and `mlr3torch` are connected by gray dashed lines."
+include_multi_graphics("mlr3_ecosystem")
+```
+
+A complete and up-to-date list of extension packages can be found at `r link("https://mlr-org.com/ecosystem.html")`.
+
+As well as packages within the `mlr3` ecosystem, software in the `mlr3verse` also depends on the following popular and well-established packages:
+
+*   `r ref_pkg("R6")`: The class system predominantly used in `mlr3`.
+*   `r ref_pkg("data.table")`: High-performance extension of R's `data.frame`.
+*   `r ref_pkg("digest")`: Cryptographic hash functions.
+*   `r ref_pkg("uuid")`: Generation of universally unique identifiers.
+*   `r ref_pkg("lgr")`: Configurable logging library.
+*   `r ref_pkg("mlbench")` and `r ref_pkg("palmerpenguins")`: Machine learning datasets.
+*   `r ref_pkg("future")` / `r ref_pkg("future.apply")` / `r ref_pkg("parallelly")`: For parallelization (@sec-parallelization).
+*   `r ref_pkg("evaluate")`: For capturing output, warnings, and exceptions (@sec-error-handling).
+
+We build on `r ref_pkg("R6")` for object orientation and `r ref_pkg("data.table")` to store and operate on tabular data.
+As both are core to `mlr3` we *briefly* introduce both packages for beginners; in-depth expertise with these packages is not necessary to work with `mlr3`.
+
+### R6 for Beginners {#sec-r6}
+
+`r ref_pkg("R6")` is one of R's more recent paradigms for `r index('object-oriented programming')`.
+If you have experience with any (class) object-oriented programming then R6 should feel familiar.
+We focus on the parts of R6 that you need to know to use `mlr3`.
+
+*Objects* are created by constructing an instance of an `r ref("R6::R6Class")` variable using the `$new()` initialization method.
+For example, say we have implemented a class called `Foo`, then  `foo = Foo$new(bar = 1)` would create a new object of class `Foo` and set the `bar` argument of the constructor to the value `1`.
+In practice, we implement a lot of sugar functionality (@sec-mlr3-utilities) in `mlr3` that make construction and access a bit more convenient.
+
+Some `R6` objects may have mutable states that are encapsulated in their *fields*, which can be accessed through the dollar, `$`, operator.
+Continuing the previous example, we can access the `bar` value in the `foo` object by using `foo$bar` or we could give it a new value, e.g. `foo$bar = 2`.
+These fields can also be 'active bindings', which perform additional computations when referenced or modified.
+
+In addition to fields, *methods* allow users to inspect the object's state, retrieve information, or perform an action that changes the internal state of the object.
+For example, in `mlr3`, the `$train()` method of a learner changes the internal state of the learner by building and storing a model.
+Methods that modify the internal state of an object often return the object itself.
+Other methods may return a new R6 object.
+In both cases, it is possible to 'chain' methods by calling one immediately after the other using the `$`-operator; this is similar to the `%>%`-operator used in `tidyverse` packages.
+For example, `Foo$bar()$hello_world()` would run the `$bar()` method of the object `Foo` and then the `$hello_world()` method of the object returned by `$bar()` (which may be `Foo` itself).
+
+Fields and methods can be public or private.
+The public fields and methods define the API to interact with the object.
+In `mlr3`, you can safely ignore private methods unless you are looking to extend our universe by adding a new class (@sec-technical).
+
+Finally, `R6` objects are `environments`, and as such have reference semantics.
+This means that, for example, `foo2 = foo` does not create a new variable called `foo2` that is a copy of `foo`.
+Instead, it creates a variable called `foo2` that references `foo`, and so setting `foo$bar = 3` will also change `foo2$bar` to `3` and vice versa.
+To copy an object, use the `$clone(deep = TRUE)` method, so to copy `foo`: `foo2 = foo$clone(deep = TRUE)`[`$clone()`]{.aside}.
+
+For a longer introduction, we recommend the `R6` vignettes found at `r link("https://r6.r-lib.org/")`; more detail can be found in `r link("https://adv-r.hadley.nz/r6.html")`.
+
+### data.table for Beginners {#sec-data.table}
+
+The package `r ref_pkg("data.table")` implements `r ref("data.table()")`, which is a popular alternative to R's `data.frame()`.
+We use `r ref_pkg("data.table")` because it is blazingly fast and scales well to bigger data.
+
+As with `data.frame`, `data.table`s can be constructed with `r ref("data.table()")` or `r ref("as.data.table()")`:
+
+```{r introduction_and_overview-010.table-001.table-002}
+library(data.table)
+# converting a matrix with as.data.table
+as.data.table(matrix(runif(4), 2, 2))
+
+# using data.table
+dt = data.table(x = 1:6, y = rep(letters[1:3], each = 2))
+dt
+```
+
+`data.table`s can be used much like `data.frame`s, but they provide additional functionality that makes complex operations easier.
+For example, data can be summarized by groups with a `by` argument in the `[` operator and they can be modified in-place with the `:=` operator.
+
+```{r introduction_and_overview-011.table-003.table-004}
+# mean of x column in groups given by y
+dt[, mean(x), by = "y"]
+# adding a new column with :=
+dt[, z := x * 3]
+dt
+```
+
+Finally `data.table` also uses reference semantics so you will need to use `r ref("data.table::copy()")` to clone a `data.table`.
+For an in-depth introduction, we recommend the vignette @datatable.
+
+## Essential mlr3 Utilities {#sec-mlr3-utilities}
+
+`mlr3` includes a few important utilities that are essential to simplifying code in our ecosystem.
+
+### Sugar Functions {.unnumbered .unlisted}
+
+Most objects in `mlr3` can be created through convenience functions called helper functions or `r index("sugar functions")`.
+They provide shortcuts for common code idioms, reducing the amount of code a user has to write.
+For example `lrn("regr.rpart")` returns the learner without having to explicitly create a new R6 object.
+We heavily use sugar functions throughout this book and provide the equivalent "full form" for complete detail at the end of each chapter.
+The sugar functions are designed to cover the majority of use cases for most users, knowledge about the full `R6` backend is only required if you want to build custom objects or extensions.
+
+Many object names in `mlr3` are standardized according to the convention: `mlr_<type>_<key>`, where `<type>` will be `tasks`, `learners`, `measures`, and other classes that will be covered in the book, and `<key>` refers to the ID of the object.
+To simplify the process of constructing objects, you only need to know the object key and the sugar function for constructing the type.
+For example: `mlr_tasks_mtcars` becomes `tsk("mtcars")`;`mlr_learners_regr.rpart` becomes `lrn("regr.rpart")`; and `mlr_measures_regr.mse` becomes `msr("regr.mse")`.
+Throughout this book, we will refer to all objects using this abbreviated form.
+
+### Dictionaries {.unnumbered .unlisted}
+
+`mlr3` uses `r index('dictionaries')` to store R6 classes, which associate keys (unique identifiers) with objects (R6 objects).
+Values in dictionaries are often accessed through sugar functions that retrieve objects from the relevant dictionary, for example `lrn("regr.rpart")` is a wrapper around `mlr_learners$get("regr.rpart")` and is thus a simpler way to load a decision tree learner from `r ref("mlr_learners")`.
+We use dictionaries to group large collections of relevant objects so they can be listed and retrieved easily.
+For example, you can see an overview of available learners (that are in loaded packages) and their properties with `as.data.table(mlr_learners)` or by calling the sugar function without any arguments, e.g. `lrn()`.
+
+### mlr3viz {.unnumbered .unlisted}
+
+`r mlr3viz` includes all plotting functionality in `mlr3` and uses `r ref_pkg("ggplot2")` under the hood.
+We use `r ref("ggplot2::theme_minimal()")` in all our plots to unify our aesthetic, but as with all `ggplot` outputs, users can fully customize this.
+`r mlr3viz` extends `fortify` and `autoplot` for use with common `r mlr3` outputs including `r ref("Prediction")`, `r ref("Learner")`, and `r ref("BenchmarkResult")` objects (which we will introduce and cover in the next chapters).
+We will cover major plot types throughout the book.
+The best way to learn about `r mlr3viz` is through experimentation; load the package and see what happens when you run `autoplot` on an `mlr3` object.
+Plot types are documented in the respective manual page that can be accessed through `?autoplot.<class>`, for example, you can find different types of plots for regression tasks by running `?autoplot.TaskRegr`.
+
+## Design Principles
+
+{{< include ../../common/_optional.qmd >}}
+
+Learning from over a decade of design and adaptation from `r ref_pkg("mlr")` to `r mlr3`, we now follow these design principles in the `r mlr3` ecosystem:
+
+*   **Object-oriented programming**.
+We embrace `r ref_pkg("R6")` for a clean, object-oriented design, object state changes, and reference semantics.
+This means that the state of common objects (e.g. tasks (@sec-tasks) and learners (@sec-learners)) is encapsulated within the object, for example, to keep track of whether a model has been trained, without the user having to worry about this.
+We also use inheritance to specialize objects, e.g. all learners are derived from a common base class that provides basic functionality.
+*   **Tabular data**.
+Embrace `r ref_pkg("data.table")` for its top-notch computational performance as well as tabular data as a structure that can be easily processed further.
+*   **Unified tabular input and output data formats.**
+This considerably simplifies the API and allows easy selection and "split-apply-combine" (aggregation) operations.
+We combine `data.table` and `R6` to place references to non-atomic and compound objects in tables and make heavy use of list columns.
+*   **Defensive programming and type safety**.
+All user input is checked with `r ref_pkg("checkmate")` [@checkmate].
+We use `data.table`, which has behavior that is more consistent than several base R methods (e.g., indexing `data.frame`s simplifies the result when the `drop` argument is omitted).
+And we have extensive unit tests!
+*   **Light on dependencies**.
+One of the main maintenance burdens for `r ref_pkg("mlr")` was to keep up with changing learner interfaces and behavior of the many packages it depended on.
+We require far fewer packages in `r mlr3`, which makes installation and maintenance easier.
+We still provide the same functionality, but it is split into more packages that have fewer dependencies individually.
+*   **Separation of computation and presentation**.
+Most packages of the `r mlr3` ecosystem focus on processing and transforming data, applying ML algorithms, and computing results.
+Our core packages do not provide visualizations because their dependencies would make installation unnecessarily complex, especially on headless servers (i.e., computers without a monitor where graphical libraries are not installed).
+Hence, visualizations of data and results are provided in `r mlr3viz`.
+
+::: {.content-visible when-format="html"}
+`r citeas(chapter)`
+:::

@@ -1,0 +1,1272 @@
+{
+    "sources": [
+        {
+            "DOI": "10.5281/zenodo.5772942",
+            "URL": "https://github.com/claudiozandonella/trackdown",
+            "author": [
+                {
+                    "family": "Kothe",
+                    "given": "Emily"
+                },
+                {
+                    "family": "Callegher",
+                    "given": "Claudio Zandonella"
+                },
+                {
+                    "family": "Gambarota",
+                    "given": "Filippo"
+                },
+                {
+                    "family": "Linkersdörfer",
+                    "given": "Janosch"
+                },
+                {
+                    "family": "Ling",
+                    "given": "Mathew"
+                }
+            ],
+            "id": "Kothe2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "note": "R package version 1.1.1",
+            "title": "Trackdown: Collaborative writing and editing of r markdown (or quarto / sweave) documents in google drive",
+            "title-short": "Trackdown",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Van Rossum",
+                    "given": "Guido"
+                },
+                {
+                    "family": "Drake Jr",
+                    "given": "Fred L"
+                }
+            ],
+            "id": "van1995python",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher-place": "Centrum voor Wiskunde en Informatica Amsterdam, The Netherlands",
+            "title": "Python tutorial",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "r2024",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "publisher": "R Foundation for Statistical Computing",
+            "publisher-place": "Vienna, Austria",
+            "title": "R: A language and environment for statistical computing",
+            "title-short": "R",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Bennie",
+                    "given": "Barb"
+                },
+                {
+                    "family": "Erickson",
+                    "given": "Richard A"
+                }
+            ],
+            "container-title": "Journal of Statistics and Data Science Education",
+            "id": "bennie2024obtaining",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "page": "217-226",
+            "title": "Obtaining and applying public data for training students in technical statistical writing: Case studies with data from us geological survey and general ecological literature",
+            "title-short": "Obtaining and applying public data for training students in technical statistical writing",
+            "type": "article-journal",
+            "volume": "32"
+        },
+        {
+            "author": [
+                {
+                    "family": "Gould",
+                    "given": "Elliot"
+                },
+                {
+                    "family": "Fraser",
+                    "given": "Hannah S"
+                },
+                {
+                    "family": "Parker",
+                    "given": "Timothy H"
+                },
+                {
+                    "family": "Nakagawa",
+                    "given": "Shinichi"
+                },
+                {
+                    "family": "Griffith",
+                    "given": "Simon C"
+                },
+                {
+                    "family": "Vesk",
+                    "given": "Peter A"
+                },
+                {
+                    "family": "Fidler",
+                    "given": "Fiona"
+                },
+                {
+                    "family": "Hamilton",
+                    "given": "Daniel G"
+                },
+                {
+                    "family": "Abbey-Lee",
+                    "given": "Robin N"
+                },
+                {
+                    "family": "Abbott",
+                    "given": "Jessica K"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "container-title": "EcoEvoRxiv",
+            "id": "gould2023same",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "title": "Same data, different analysts: Variation in effect sizes due to analytical decisions in ecology and evolutionary biology",
+            "title-short": "Same data, different analysts",
+            "type": "article-journal"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=roxygen2",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Danenberg",
+                    "given": "Peter"
+                },
+                {
+                    "family": "Csárdi",
+                    "given": "Gábor"
+                },
+                {
+                    "family": "Eugster",
+                    "given": "Manuel"
+                }
+            ],
+            "id": "roxygen2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "note": "R package version 7.2.3",
+            "title": "roxygen2: In-Line Documentation for R",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=kableExtra",
+            "author": [
+                {
+                    "family": "Zhu",
+                    "given": "Hao"
+                }
+            ],
+            "id": "kableExtra",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "note": "R package version 1.3.4",
+            "title": "kableExtra: Construct Complex Table with ’kable’ and Pipe Syntax",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=flextable",
+            "author": [
+                {
+                    "family": "Gohel",
+                    "given": "David"
+                },
+                {
+                    "family": "Skintzos",
+                    "given": "Panagiotis"
+                }
+            ],
+            "id": "flextable2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "note": "R package version 0.9.3",
+            "title": "Flextable: Functions for tabular reporting",
+            "title-short": "Flextable",
+            "type": "book"
+        },
+        {
+            "URL": "https://yihui.org/knitr/",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "container-title": "Implementing Reproducible Computational Research",
+            "editor": [
+                {
+                    "family": "Stodden",
+                    "given": "Victoria"
+                },
+                {
+                    "family": "Leisch",
+                    "given": "Friedrich"
+                },
+                {
+                    "family": "Peng",
+                    "given": "Roger D."
+                }
+            ],
+            "id": "knitr2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1466561595",
+            "publisher": "Chapman; Hall/CRC",
+            "title": "knitr: A Comprehensive Tool for Reproducible Research in R",
+            "type": "chapter"
+        },
+        {
+            "URL": "https://www.tug.org/TUGboat/tb35-1/tb109dominici.pdf",
+            "author": [
+                {
+                    "family": "Dominici",
+                    "given": "Massimiliano"
+                }
+            ],
+            "container-title": "TUGboat",
+            "id": "dominici2014overview",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "page": "44-50",
+            "title": "An overview of Pandoc",
+            "type": "article-journal",
+            "volume": "35"
+        },
+        {
+            "URL": "https://code.visualstudio.com/",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2024,
+                        1,
+                        4
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "Microsoft"
+                }
+            ],
+            "container-title": "https://code.visualstudio.com",
+            "id": "code2023visual",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "publisher-place": "Seattle, WA",
+            "title": "Visual Studio Code",
+            "type": "book"
+        },
+        {
+            "URL": "http://www.posit.co/",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2024,
+                        1,
+                        4
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "Posit Team"
+                }
+            ],
+            "id": "rstudio",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "publisher": "Posit Software, PBC",
+            "publisher-place": "Boston, MA",
+            "title": "RStudio: Integrated development environment for R",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1073/pnas.170827211",
+            "author": [
+                {
+                    "family": "Fanelli",
+                    "given": "D"
+                }
+            ],
+            "container-title": "Proceedings of the National Academy of Sciences",
+            "id": "fanelli2018science",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "2628-2631",
+            "title": "Is science really facing a reproducibility crisis, and do we need it to?",
+            "type": "article-journal",
+            "volume": "115"
+        },
+        {
+            "DOI": "10.3133/ofr20221043",
+            "author": [
+                {
+                    "family": "Lightsom",
+                    "given": "Frances L"
+                },
+                {
+                    "family": "Hutchison",
+                    "given": "Vivian B"
+                },
+                {
+                    "family": "Bishop",
+                    "given": "Bradley"
+                },
+                {
+                    "family": "Debrewer",
+                    "given": "Linda M"
+                },
+                {
+                    "family": "Govoni",
+                    "given": "David L"
+                },
+                {
+                    "family": "Latysh",
+                    "given": "Natalie"
+                },
+                {
+                    "family": "Stall",
+                    "given": "Shelley"
+                }
+            ],
+            "id": "lightsom2022opportunities",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "publisher": "U.S. Geological Survey, Reston, VA. doi:10.3133/ofr20221043",
+            "title": "Opportunities to improve alignment with the FAIR principles for U.S. Geological Survey data. U.S. Geological Survey Open File Report 2022-1043",
+            "type": "report"
+        },
+        {
+            "URL": "http://www.posit.co/",
+            "author": [
+                {
+                    "literal": "Posit Team"
+                }
+            ],
+            "id": "rstudio",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "publisher": "Posit Software, PBC",
+            "publisher-place": "Boston, MA",
+            "title": "RStudio: Integrated Development Environment for R",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Fanelli",
+                    "given": "D"
+                }
+            ],
+            "container-title": "Proceedings of the National Academy of Sciences",
+            "id": "fanelli2018science",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "page": "2628-2631",
+            "title": "Is science really facing a reproducibility crisis, and do we need it to?",
+            "type": "article-journal",
+            "volume": "115"
+        },
+        {
+            "DOI": "10.3133/ofr20221043",
+            "author": [
+                {
+                    "family": "Lightsom",
+                    "given": "Frances L"
+                },
+                {
+                    "family": "Hutchison",
+                    "given": "Vivian B"
+                },
+                {
+                    "family": "Bishop",
+                    "given": "Bradley"
+                },
+                {
+                    "family": "Debrewer",
+                    "given": "Linda M"
+                },
+                {
+                    "family": "Govoni",
+                    "given": "David L"
+                },
+                {
+                    "family": "Latysh",
+                    "given": "Natalie"
+                },
+                {
+                    "family": "Stall",
+                    "given": "Shelley"
+                }
+            ],
+            "id": "lightsom2022opportunities",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "publisher": "US Geological Survey",
+            "title": "Opportunities to improve alignment with the FAIR Principles for US Geological Survey data",
+            "type": "report"
+        },
+        {
+            "DOI": "10.1002/wics.1348",
+            "author": [
+                {
+                    "family": "Baumer",
+                    "given": "Benjamin"
+                },
+                {
+                    "family": "Udwin",
+                    "given": "Dana"
+                }
+            ],
+            "container-title": "Wiley Interdisciplinary Reviews: Computational Statistics",
+            "id": "baumer2015r",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "page": "167-177",
+            "title": "R Markdown",
+            "type": "article-journal",
+            "volume": "7"
+        },
+        {
+            "DOI": "10.1111/ecog.02493",
+            "author": [
+                {
+                    "family": "Borregaard",
+                    "given": "MK"
+                },
+                {
+                    "family": "Hart",
+                    "given": "EM"
+                }
+            ],
+            "container-title": "Ecography",
+            "id": "borregaard2016towards",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "page": "349-353",
+            "title": "Towards a more reproducible ecology",
+            "type": "article-journal",
+            "volume": "39"
+        },
+        {
+            "URL": "https://www.fws.gov/media/fiscal-year-2024-fish-and-wildlife-service-budget-justification",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2024,
+                        1,
+                        4
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "U.S. Fish and Wildlife Service"
+                }
+            ],
+            "id": "usfws2023budget",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "publisher": "U.S. Department of the Interior, Washington, D.C. USA",
+            "title": "Budget justifications and performance information fiscal year 2024",
+            "type": "report"
+        },
+        {
+            "URL": "https://www.fws.gov/media/waterfowl-population-status-2023",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2024,
+                        1,
+                        4
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "U.S. Fish and Wildlife Service"
+                }
+            ],
+            "id": "usfws2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "publisher": "U.S. Department of the Interior, Washington, D.C. USA",
+            "title": "Waterfowl population status, 2023",
+            "type": "report"
+        },
+        {
+            "DOI": "10.5066/P9FPFKKS",
+            "URL": "https://code.usgs.gov/umesc/quant-ecology/jfwm-quarto-template",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2024,
+                        1,
+                        4
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Erickson",
+                    "given": "R. A."
+                },
+                {
+                    "family": "Archer",
+                    "given": "A. A."
+                },
+                {
+                    "family": "Fienen",
+                    "given": "M. N."
+                }
+            ],
+            "id": "erickson2024quarto",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "publisher-place": "Reston, VA",
+            "title": "Journal of Fish and Wildlife Management Quarto template, U.S. Geological Survey software release",
+            "type": "report"
+        },
+        {
+            "DOI": "10.5066/P9FPFKKS",
+            "URL": "https://code.usgs.gov/umesc/quant-ecology/jfwm-quarto-template",
+            "author": [
+                {
+                    "family": "Erickson",
+                    "given": "R. A."
+                },
+                {
+                    "family": "Archer",
+                    "given": "A. A."
+                },
+                {
+                    "family": "Fienen",
+                    "given": "M. N."
+                }
+            ],
+            "id": "erickson2023quarto",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "publisher-place": "Reston, VA",
+            "title": "Journal of Fish and Wildlife Management Quarto template, U.S. Geological Survey software release",
+            "type": "report"
+        },
+        {
+            "DOI": "10.5066/P9FPFKKS",
+            "URL": "https://github.com/DOI-USGS/quarto-utils",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2024,
+                        1,
+                        4
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Fienen",
+                    "given": "M. N."
+                },
+                {
+                    "family": "Erickson",
+                    "given": "R. A."
+                }
+            ],
+            "id": "fienen2024quarto",
+            "issued": {
+                "date-parts": [
+                    [
+                        2024
+                    ]
+                ]
+            },
+            "publisher-place": "Reston, VA",
+            "title": "Quarto-utis, U.S. Geological Survey software release",
+            "type": "report"
+        },
+        {
+            "URL": "http://invasivecarp.us/Documents/InterimSummary2015.pdf",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2024,
+                        1,
+                        4
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "literal": "Karl Broman, Mine Cetinkaya-Rundel, Amy Nussbaum, Christopher Paciorek, Roger Peng, Daniel Turek, and Hadley Wickham"
+                }
+            ],
+            "id": "asa2017",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "publisher": "American Statistical Association",
+            "title": "Recommendations to funding agencies for supporting reproducible research",
+            "type": "report"
+        },
+        {
+            "author": [
+                {
+                    "family": "Knuth",
+                    "given": "Donald E"
+                }
+            ],
+            "id": "knuth1984tex",
+            "issued": {
+                "date-parts": [
+                    [
+                        1984
+                    ]
+                ]
+            },
+            "publisher": "Addison–Wesley",
+            "publisher-place": "Reading, MA",
+            "title": "TEX: The Program",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Lamport",
+                    "given": "Leslie"
+                }
+            ],
+            "id": "lamport1985latex",
+            "issued": {
+                "date-parts": [
+                    [
+                        1985
+                    ]
+                ]
+            },
+            "publisher": "Addison–Wesley",
+            "publisher-place": "Reading, MA",
+            "title": "LaTeX–A Document Preparation System",
+            "type": "book"
+        },
+        {
+            "DOI": "10.1111/2041-210x.14108",
+            "author": [
+                {
+                    "family": "Braga",
+                    "given": "Pedro Henrique Pereira"
+                },
+                {
+                    "family": "Hebert",
+                    "given": "Katherine"
+                },
+                {
+                    "family": "Hudgins",
+                    "given": "Emma J."
+                },
+                {
+                    "family": "Scott",
+                    "given": "Eric R."
+                },
+                {
+                    "family": "Edwards",
+                    "given": "Brandon P. M."
+                },
+                {
+                    "family": "Reyes",
+                    "given": "Luna L. Sanchez"
+                },
+                {
+                    "family": "Grainger",
+                    "given": "Matthew J."
+                },
+                {
+                    "family": "Foroughirad",
+                    "given": "Vivienne"
+                },
+                {
+                    "family": "Hillemann",
+                    "given": "Friederike"
+                },
+                {
+                    "family": "Binley",
+                    "given": "Allison D."
+                },
+                {
+                    "family": "Brookson",
+                    "given": "Cole B."
+                },
+                {
+                    "family": "Gaynor",
+                    "given": "Kaitlyn M."
+                },
+                {
+                    "family": "Sabet",
+                    "given": "Saeed Shafiei"
+                },
+                {
+                    "family": "Guncan",
+                    "given": "Ali"
+                },
+                {
+                    "family": "Weierbach",
+                    "given": "Helen"
+                },
+                {
+                    "family": "Gomes",
+                    "given": "Dylan G. E."
+                },
+                {
+                    "family": "Crystal-Ornelas",
+                    "given": "Robert"
+                }
+            ],
+            "container-title": "Methods in Ecology and Evolution",
+            "id": "Braga_2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023,
+                        4
+                    ]
+                ]
+            },
+            "page": "1364-1380",
+            "publisher": "Wiley",
+            "title": "Not just for programmers: How GitHub can accelerate collaborative and reproducible research in ecology and evolution",
+            "type": "article-journal",
+            "volume": "14"
+        },
+        {
+            "DOI": "10.1038/533452a",
+            "author": [
+                {
+                    "family": "Baker",
+                    "given": "Monya"
+                }
+            ],
+            "container-title": "Nature",
+            "id": "Baker_2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016,
+                        5
+                    ]
+                ]
+            },
+            "page": "452-454",
+            "publisher": "Springer Science; Business Media LLC",
+            "title": "1,500 scientists lift the lid on reproducibility",
+            "type": "article-journal",
+            "volume": "533"
+        },
+        {
+            "DOI": "10.1111/nrm.12318",
+            "author": [
+                {
+                    "family": "Erickson",
+                    "given": "Richard A."
+                },
+                {
+                    "family": "Burnett",
+                    "given": "Jessica L."
+                },
+                {
+                    "family": "Wiltermuth",
+                    "given": "Mark T."
+                },
+                {
+                    "family": "Bulliner",
+                    "given": "Edward A."
+                },
+                {
+                    "family": "Hsu",
+                    "given": "Leslie"
+                }
+            ],
+            "container-title": "Natural Resource Modeling",
+            "id": "Erickson_2021",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021,
+                        6
+                    ]
+                ]
+            },
+            "page": "e12318",
+            "publisher": "Wiley",
+            "title": "Paths to computational fluency for natural resource educators, researchers, and managers",
+            "type": "article-journal",
+            "volume": "34"
+        },
+        {
+            "DOI": "10.1002/etc.4800",
+            "author": [
+                {
+                    "family": "Erickson",
+                    "given": "Richard A."
+                },
+                {
+                    "family": "Rattner",
+                    "given": "Barnett A."
+                }
+            ],
+            "container-title": "Environmental Toxicology and Chemistry",
+            "id": "Erickson_2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        8
+                    ]
+                ]
+            },
+            "page": "1657-1669",
+            "publisher": "Wiley",
+            "title": "Moving beyond p $\\leq$ 0.05 in ecotoxicology: A guide for practitioners",
+            "type": "article-journal",
+            "volume": "39"
+        },
+        {
+            "DOI": "10.1016/j.molp.2018.07.005",
+            "author": [
+                {
+                    "family": "Reiser",
+                    "given": "Leonore"
+                },
+                {
+                    "family": "Harper",
+                    "given": "Lisa"
+                },
+                {
+                    "family": "Freeling",
+                    "given": "Michael"
+                },
+                {
+                    "family": "Han",
+                    "given": "Bin"
+                },
+                {
+                    "family": "Luan",
+                    "given": "Sheng"
+                }
+            ],
+            "container-title": "Molecular Plant",
+            "id": "Reiser_2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        9
+                    ]
+                ]
+            },
+            "page": "1105-1108",
+            "publisher": "Elsevier BV",
+            "title": "FAIR: A call to make published data more findable, accessible, interoperable, and reusable",
+            "title-short": "FAIR",
+            "type": "article-journal",
+            "volume": "11"
+        },
+        {
+            "DOI": "10.1002/jwmg.21855",
+            "author": [
+                {
+                    "family": "ArchMiller",
+                    "given": "Althea A."
+                },
+                {
+                    "family": "Johnson",
+                    "given": "Andrew D."
+                },
+                {
+                    "family": "Nolan",
+                    "given": "Jane"
+                },
+                {
+                    "family": "Edwards",
+                    "given": "Margaret"
+                },
+                {
+                    "family": "Elliott",
+                    "given": "Lisa H."
+                },
+                {
+                    "family": "Ferguson",
+                    "given": "Jake M."
+                },
+                {
+                    "family": "Iannarilli",
+                    "given": "Fabiola"
+                },
+                {
+                    "family": "Vélez",
+                    "given": "Juliana"
+                },
+                {
+                    "family": "Vitense",
+                    "given": "Kelsey"
+                },
+                {
+                    "family": "Johnson",
+                    "given": "Douglas H."
+                },
+                {
+                    "family": "Fieberg",
+                    "given": "John"
+                }
+            ],
+            "container-title": "Journal of Wildlife Management",
+            "id": "ArchMiller_2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020,
+                        3
+                    ]
+                ]
+            },
+            "page": "1012-1017",
+            "publisher": "Wiley",
+            "title": "Computational reproducibility in The Wildlife Society’s flagship journals",
+            "type": "article-journal",
+            "volume": "84"
+        },
+        {
+            "DOI": "10.1007/978-3-642-57489-4_89",
+            "author": [
+                {
+                    "family": "Leisch",
+                    "given": "Friedrich"
+                }
+            ],
+            "container-title": "Compstat",
+            "id": "Leisch_2002",
+            "issued": {
+                "date-parts": [
+                    [
+                        2002
+                    ]
+                ]
+            },
+            "page": "575-580",
+            "publisher": "Physica-Verlag HD",
+            "title": "Sweave: Dynamic generation of statistical reports using literate data analysis",
+            "title-short": "Sweave",
+            "type": "chapter"
+        },
+        {
+            "DOI": "10.1201/9781138359444",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Allaire",
+                    "given": "J. J."
+                },
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                }
+            ],
+            "id": "Xie_2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018,
+                        7
+                    ]
+                ]
+            },
+            "publisher": "Chapman; Hall/CRC",
+            "title": "R Markdown",
+            "type": "book"
+        },
+        {
+            "DOI": "10.5281/ZENODO.5960048",
+            "author": [
+                {
+                    "family": "Allaire",
+                    "given": "J. J."
+                },
+                {
+                    "family": "Teague",
+                    "given": "Charles"
+                },
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Dervieux",
+                    "given": "Christophe"
+                }
+            ],
+            "id": "Allaire2022",
+            "issued": {
+                "date-parts": [
+                    [
+                        2022
+                    ]
+                ]
+            },
+            "publisher": "Zenodo",
+            "title": "Quarto",
+            "type": ""
+        },
+        {
+            "DOI": "10.5194/hess-20-3739-2016",
+            "author": [
+                {
+                    "family": "Fienen",
+                    "given": "Michael N."
+                },
+                {
+                    "family": "Bakker",
+                    "given": "Mark"
+                }
+            ],
+            "container-title": "Hydrology and Earth System Sciences",
+            "id": "Fienen_2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016,
+                        9
+                    ]
+                ]
+            },
+            "page": "3739-3743",
+            "publisher": "Copernicus GmbH",
+            "title": "HESS opinions: Repeatable research: What hydrologists can learn from the Duke cancer research scandal",
+            "title-short": "HESS opinions",
+            "type": "article-journal",
+            "volume": "20"
+        },
+        {
+            "DOI": "10.1002/2016wr019285",
+            "author": [
+                {
+                    "family": "Hutton",
+                    "given": "Christopher"
+                },
+                {
+                    "family": "Wagener",
+                    "given": "Thorsten"
+                },
+                {
+                    "family": "Freer",
+                    "given": "Jim"
+                },
+                {
+                    "family": "Han",
+                    "given": "Dawei"
+                },
+                {
+                    "family": "Duffy",
+                    "given": "Chris"
+                },
+                {
+                    "family": "Arheimer",
+                    "given": "Berit"
+                }
+            ],
+            "container-title": "Water Resources Research",
+            "id": "Hutton_2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016,
+                        10
+                    ]
+                ]
+            },
+            "page": "7548-7555",
+            "publisher": "American Geophysical Union (AGU)",
+            "title": "Most computational hydrology is not reproducible, so is it really science?",
+            "type": "article-journal",
+            "volume": "52"
+        },
+        {
+            "author": [
+                {
+                    "family": "Aguilar",
+                    "given": "Jose"
+                }
+            ],
+            "id": "aguilar2012",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "publisher": "Universidad de Los Andes",
+            "title": "Guía básica para la publicación de artículos científicos",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "literal": "Centro Venezolano de Estudios Actuariales"
+                }
+            ],
+            "genre": "Documento interno",
+            "id": "cvea2025",
+            "issued": {
+                "date-parts": [
+                    [
+                        2025
+                    ]
+                ]
+            },
+            "publisher": "Centro Venezolano de Estudios Actuariales",
+            "title": "Propuesta editorial 2025-2026 V2",
+            "type": "report"
+        }
+    ],
+    "project_biblios": []
+}

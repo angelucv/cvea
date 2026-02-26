@@ -1,0 +1,46 @@
+---
+title: "Análisis Espacio-Temporal de la Mortalidad en Venezuela (1996-2016)"
+subtitle: "Un enfoque de Riesgo Bayesiano y Autocorrelación Espacial a nivel municipal"
+author:
+  - name: "Prof. Angel Colmenares"
+    orcid: "0000-0002-8866-1377"
+    affiliation: "Escuela de Estadística y Ciencias Actuariales, UCV / CVEA"
+format:
+  html:
+    toc: true
+    number-sections: true
+  pdf:
+    documentclass: article
+    papersize: a4
+    fontsize: 11pt
+---
+
+## Resumen
+
+**Resumen:** La evaluación de la mortalidad sub-nacional es crítica para la solvencia de sistemas de previsión social y la tarificación de seguros de vida. Este estudio analiza la mortalidad en los 335 municipios de Venezuela (1996-2016) combinando normalización geográfica (GADM), clusters de K-means, índices de autocorrelación espacial de Moran y un modelo jerárquico Bayesiano Besag-York-Mollié (BYM) mediante INLA. Se identificó una tendencia nacional de incremento del riesgo del 1.4% anual, con clusters de riesgo persistentes en el arco central y zonas fronterizas. La interpolación IDW del riesgo bayesiano revela una superficie de mortalidad heterogénea que invalida el uso de tablas de mortalidad únicas nacionales. Existe un exceso de mortalidad crónico en regiones específicas que requiere ajustes actuariales territorializados.
+
+**Abstract:** Sub-national mortality assessment is critical for the solvency of social security systems and life insurance pricing. This study analyzes mortality across Venezuela's 335 municipalities (1996-2016) combining geographic normalization (GADM), K-means clustering, Moran's spatial autocorrelation indices, and a Bayesian Besag-York-Mollié (BYM) hierarchical model via INLA. A national increasing risk trend of 1.4% per year was identified, with persistent risk clusters in the central arc and border areas. IDW interpolation of Bayesian risk reveals a heterogeneous mortality surface that invalidates the use of single national mortality tables. There is chronic excess mortality in specific regions requiring territorialized actuarial adjustments.
+
+**Palabras clave:** Mortalidad, Venezuela, INLA, SMR, Análisis Espacial.
+
+## Introducción
+
+La dinámica demográfica de Venezuela ha experimentado transformaciones estructurales profundas en las últimas dos décadas. El análisis de la mortalidad, entendido como el componente esencial del riesgo actuarial y la base de la seguridad social, requiere una lente geográfica de alta resolución que permita identificar desigualdades territoriales que las métricas nacionales agregadas suelen ocultar.
+
+Durante décadas, la práctica actuarial en el país ha dependido de tablas de mortalidad estáticas (Masjuán, CSO 1980), con un desfase significativo frente a la realidad actual. El presente artículo aborda el período 1996-2016 y emplea una estrategia que transita desde la exploración por clusters de K-means hasta la modelización bayesiana avanzada mediante el modelo BYM con INLA. Este trabajo se integra en el primer volumen de la RVEA como un aporte fundamental del CVEA.
+
+## Métodos (resumen)
+
+- **Curaduría de datos:** normalización de nombres entre MPPS, INE y cartografía GADM.
+- **K-means:** segmentación de trayectorias de tasas de mortalidad por municipio.
+- **Índice de Moran:** validación de la estructura geográfica del riesgo.
+- **Modelo BYM (INLA):** riesgo relativo suavizado por municipio.
+- **Interpolación IDW:** superficies de riesgo continuo para visualización.
+
+## Conclusiones y recomendaciones
+
+Como miembro del Comité Editorial de la RVEA se presentan recomendaciones estratégicas: (1) transición hacia tablas dinámicas (Lee-Carter, BYM); (2) territorialización de reservas según mapa de riesgo; (3) monitoreo del incremento del 1.4% anual; (4) integración de datos y código abierto (Quarto, R) para reproducibilidad.
+
+---
+
+*Artículo completo con código reproducible (R, INLA, sf, gstat) y figuras: ver carpeta `Referencias/RVEA_Volumen I/RVA_Vol_I_Angel_C/V3/` (Art_Angel_Plantilla_RVEA.qmd). PDF disponible según proceso editorial.*

@@ -1,0 +1,19 @@
+---
+title: "Proyección de la Mortalidad por Causas de Fallecimiento"
+subtitle: "Integración de Lee-Carter con Análisis de Datos Composicionales (CoDa)"
+author: "Iliria Herrera"
+date: today
+format:
+  html:
+    toc: true
+    number-sections: true
+  pdf:
+    documentclass: article
+    papersize: a4
+---
+
+## Resumen
+
+Proyección de la mortalidad por causas de fallecimiento integrando el modelo Lee-Carter con Análisis de Datos Composicionales (CoDa). Permite capturar la evolución de la estructura de causas y su impacto en las reservas actuariales.
+
+*Este artículo es un placeholder. Sustituir por el manuscrito completo cuando esté disponible.*

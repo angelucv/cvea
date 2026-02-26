@@ -1,0 +1,25 @@
+---
+title: "Libros y Materiales Docentes"
+subtitle: "Eje de Investigación — Diagnóstico del sistema de pensiones y bases técnicas"
+---
+
+**Libros y Materiales Docentes** recopila el diagnóstico del sistema de pensiones venezolano y las bases técnicas actualizadas, en línea con la misión del CVEA de soberanía técnica y divulgación reproducible. Los volúmenes se dirigen a actuarios, reguladores (IVSS, Sudeaseg), académicos y decisores de política pública.
+
+**Objetivos:** (1) Documentar el desfase de las tablas históricas (Masjuán, CSO 1980) frente a la realidad demográfica actual; (2) ofrecer metodologías dinámicas y territorializadas (Lee-Carter, modelos espaciales); (3) proporcionar código y datos para replicación. Los libros del CVEA se generan con la **plantilla Quarto Book** (modelo: *Applied Machine Learning Using mlr3 in R*), disponible en `Referencias/Plantilla_CVEA_Book_Applied Machine Learning Using mlr3 in R/`.
+
+## Libro disponible
+
+**Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial**
+
+Libro compilado con la plantilla CVEA Book. Si ya colocaste el HTML y el PDF en `libro/demografia-siglo-xxi/`, usa los enlaces siguientes:
+
+- [Ver en línea (HTML)](demografia-siglo-xxi/index.html)
+- [Descargar PDF](demografia-siglo-xxi/Demografia-Mortalidad-Prevision-Social-Venezuela-Siglo-XXI.pdf)
+
+*Si el PDF tiene otro nombre, edita este archivo y sustituye el nombre del enlace. Instrucciones en `libro/demografia-siglo-xxi/README.md`.*
+
+## Contenido (Libros y Materiales Docentes en desarrollo)
+
+1. [Diagnóstico del sistema de pensiones](cap1-diagnostico.qmd) — Introducción al diagnóstico del sistema de pensiones, necesidad de abandonar tablas estáticas y adoptar modelos dinámicos.
+
+*Se irán añadiendo capítulos según el plan editorial 2025-2026 (bases técnicas por edad/sexo, territorialización, proyecciones), usando la misma plantilla de libro. La coordinación editorial está a cargo del equipo del CVEA; ver [Comité Editorial](../editores.qmd).*

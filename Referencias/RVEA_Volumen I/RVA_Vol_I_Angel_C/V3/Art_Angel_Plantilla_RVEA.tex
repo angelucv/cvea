@@ -1,0 +1,999 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  11pt,
+  a4paper,
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{setspace}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{fancyhdr}
+\usepackage{titling}
+\usepackage{fvextra}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+% --- CONFIGURACIÓN DE PORTADA (LOGO Y ESPACIADO) ---
+\pretitle{
+\begin{center}
+\IfFileExists{cvea-logo.png}{
+\includegraphics[width=8cm]{cvea-logo.png}}{\vspace*{1cm}\fbox{\textbf{Logo Institucional (cvea-logo.png)}}}
+% Añadimos un espacio vertical explícito de 1cm entre logo y título
+\par\vspace{1cm}
+\LARGE\bfseries
+}
+\posttitle{\end{center}}
+
+% --- CONFIGURACIÓN DE ENCABEZADO DINÁMICO ---
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{1.5cm}
+\setlength{\headsep}{25pt}
+
+% Lado Izquierdo: Logo pequeño
+\fancyhead[L]{
+\IfFileExists{cvea-logo.png}{
+\includegraphics[height=1cm]{cvea-logo.png}
+}{
+\small [Logo]
+}
+}
+
+% Lado Derecho: Nombre de la sección actual
+\fancyhead[R]{
+\small\itshape\nouppercase{\leftmark}
+}
+
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% Ajuste para la primera página (estilo plain)
+\fancypagestyle{plain}{
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+}
+
+\fvset{breaklines=true, breakanywhere=true}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Análisis Espacio-Temporal de la Mortalidad en Venezuela (1996-2016)},
+  pdfauthor={Prof.~Angel Colmenares},
+  pdfkeywords={Mortalidad, Venezuela, INLA, SMR, Análisis Espacial},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Análisis Espacio-Temporal de la Mortalidad en Venezuela
+(1996-2016)}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Un enfoque de Riesgo Bayesiano y Autocorrelación Espacial a
+nivel municipal}
+\author{Prof.~Angel Colmenares}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+\textbf{Resumen:} La evaluación de la mortalidad sub-nacional es crítica
+para la solvencia de sistemas de previsión social y la tarificación de
+seguros de vida. Este estudio analiza la mortalidad en los 335
+municipios de Venezuela (1996-2016) combinando normalización geográfica
+(GADM), clusters de K-means, índices de autocorrelación espacial de
+Moran y un modelo jerárquico Bayesiano Besag-York-Mollié (BYM) mediante
+INLA. Se identificó una tendencia nacional de incremento del riesgo del
+1.4\% anual, con clusters de riesgo persistentes en el arco central y
+zonas fronterizas. La interpolación IDW del riesgo bayesiano revela una
+superficie de mortalidad heterogénea que invalida el uso de tablas de
+mortalidad únicas nacionales. Existe un exceso de mortalidad crónico en
+regiones específicas que requiere ajustes actuariales territorializados.
+
+\textbf{Abstract:} Sub-national mortality assessment is critical for the
+solvency of social security systems and life insurance pricing. This
+study analyzes mortality across Venezuela's 335 municipalities
+(1996-2016) combining geographic normalization (GADM), K-means
+clustering, Moran's spatial autocorrelation indices, and a Bayesian
+Besag-York-Mollié (BYM) hierarchical model via INLA. A national
+increasing risk trend of 1.4\% per year was identified, with persistent
+risk clusters in the central arc and border areas. IDW interpolation of
+Bayesian risk reveals a heterogeneous mortality surface that invalidates
+the use of single national mortality tables. There is chronic excess
+mortality in specific regions requiring territorialized actuarial
+adjustments.
+\end{abstract}
+
+
+\setstretch{1.5}
+\section{Introducción}\label{introducciuxf3n}
+
+La dinámica demográfica de Venezuela ha experimentado transformaciones
+estructurales profundas en las últimas dos décadas. El análisis de la
+mortalidad, entendido como el componente esencial del riesgo actuarial y
+la base de la seguridad social, requiere una lente geográfica de alta
+resolución que permita identificar desigualdades territoriales que las
+métricas nacionales agregadas suelen ocultar. Este estudio se sitúa en
+un contexto crítico para la ciencia actuarial venezolana: la necesidad
+de modernizar las bases técnicas que sustentan los sistemas de previsión
+social y la tarificación de seguros de vida.
+
+Durante décadas, la práctica actuarial en el país ha dependido de tablas
+de mortalidad estáticas, como las desarrolladas por el Profesor Víctor
+Masjuán en los años 60 o la tabla CSO 1980, las cuales presentan un
+desfase significativo frente a la realidad actual. La investigación de
+Daylin Moreno (2018) ya ha advertido sobre el ``pecado original'' del
+sistema de pensiones: una subestimación sistemática de la supervivencia
+que ha erosionado la solvencia del Instituto Venezolano de los Seguros
+Sociales (IVSS). En este escenario, la transición hacia modelos
+dinámicos y espaciales no es solo una mejora metodológica, sino un
+imperativo de solvencia institucional.
+
+El presente artículo aborda el período 1996-2016, un lapso que captura
+la evolución de la mortalidad antes y durante cambios socioeconómicos de
+gran calado. El objetivo central es determinar si la distribución de la
+mortalidad en los 335 municipios de Venezuela responde a un patrón
+puramente aleatorio o si existen estructuras de riesgo espaciales
+persistentes. Para ello, se emplea una estrategia que transita desde la
+exploración por clusters de K-means hasta la modelización bayesiana
+avanzada mediante el modelo Besag-York-Mollié (BYM), filtrando el ruido
+aleatorio inherente a las áreas con poblaciones pequeñas. Este trabajo
+se integra en el primer volumen de la Revista Venezolana de Actuariado
+(RVEA) como un aporte fundamental del Centro Venezolano de Estudios
+Actuariales (CVEA).
+
+\section{Revisión Literaria}\label{revisiuxf3n-literaria}
+
+La fundamentación teórica de la epidemiología espacial y el análisis
+actuarial territorial se erige sobre la Primera Ley de la Geografía de
+Tobler (1970), la cual establece que la proximidad física implica una
+mayor correlación entre observaciones. En la práctica actuarial, la
+Razón de Mortalidad Estandarizada (SMR) ha sido la métrica convencional
+para normalizar la comparación entre unidades geográficas con
+estructuras demográficas disímiles (Clayton \& Kaldor, 1987; Waller \&
+Gotway, 2004). No obstante, autores como Besag, York y Mollié (1991) han
+demostrado que en áreas con baja densidad poblacional ---problema común
+en la desagregación municipal--- las tasas crudas y los SMR exhiben una
+alta inestabilidad, donde eventos fortuitos pueden distorsionar
+significativamente el perfil de riesgo.
+
+Para mitigar este ``ruido de áreas pequeñas'', la literatura
+contemporánea favorece el uso de modelos jerárquicos bayesianos,
+particularmente el modelo Besag-York-Mollié (BYM). Este enfoque permite
+``tomar prestada'' información de los municipios vecinos para producir
+estimaciones del riesgo relativo (RR) suavizadas y estadísticamente
+robustas (Lawson, 2018). La implementación de estos modelos ha sido
+revolucionada por la técnica de Aproximación de Laplace Anidada
+Integrada (INLA), propuesta por Rue, Martino y Chopin (2009), la cual
+ofrece una alternativa computacionalmente eficiente frente a los
+algoritmos de Cadenas de Markov Monte Carlo (MCMC), permitiendo el
+procesamiento de grandes volúmenes de datos espacio-temporales
+(Blangiardo \& Cameletti, 2015).
+
+En el ámbito venezolano, la revisión de las bases técnicas revela una
+dependencia histórica de tablas de mortalidad estáticas que no capturan
+la dinámica actual (Masjuán, 1965). Investigaciones locales han
+comenzado a señalar brechas en la solvencia del sistema de previsión
+social debido a esta desactualización (Moreno, 2018). Estudios recientes
+de mortalidad infantil (Moreno, 2017) y análisis regionales en el
+occidente (Briceño, 2024) y la región central (Godoy, 2024) subrayan la
+necesidad de integrar la dimensión geográfica para una tarificación
+precisa. Finalmente, la integración de modelos de proyección como el de
+Lee y Carter (1992) con estructuras espaciales permite una visión
+prospectiva esencial para la gestión de riesgos a largo plazo.
+
+Este trabajo expande la frontera hacia el nivel municipal para capturar
+la heterogeneidad que autores como Kennya Briceño (2024) y Daniela Godoy
+(2024) han comenzado a documentar en sus análisis regionales.
+
+La integración de herramientas como INLA (Integrated Nested Laplace
+Approximation) permite realizar inferencia bayesiana de manera
+computacionalmente eficiente, superando las limitaciones de tiempo de
+los métodos MCMC tradicionales.
+
+Este enfoque es vital para procesar los 335 municipios venezolanos a lo
+largo de 21 años, permitiendo una visión espacio-temporal que cuantifica
+no solo dónde mueren más personas, sino cómo ese riesgo evoluciona en el
+tiempo.
+
+\section{Métodos}\label{muxe9todos}
+
+La metodología de esta investigación se estructura en un flujo de
+trabajo reproducible que transita desde la curaduría de datos
+administrativos hasta la inferencia bayesiana avanzada. El enfoque es
+multidimensional e integra las siguientes fases técnicas:
+
+\textbf{Curaduría de Datos:} Se implementan funciones de limpieza y
+normalización de nombres geográficos para garantizar la
+interoperabilidad entre los registros del Ministerio del Poder Popular
+para la Salud (MPPS), las proyecciones del Instituto Nacional de
+Estadística (INE) y la cartografía GADM. Esto permite un cruce preciso
+de los 335 municipios a lo largo del panel 1996-2016.
+
+\textbf{Exploración de Perfiles (K-means):} Se aplica el algoritmo de
+aprendizaje no supervisado K-means sobre las trayectorias longitudinales
+de las tasas de mortalidad. El objetivo es segmentar los municipios en
+clusters de riesgo que compartan comportamientos dinámicos similares,
+independientemente de su ubicación física, facilitando la identificación
+de grupos para tarificación actuarial.
+
+\textbf{Análisis de Autocorrelación Espacial (Moran's I):} Teóricamente,
+el Índice de Moran mide el grado en que unidades geográficas cercanas
+presentan valores similares (autocorrelación positiva) o disímiles
+(autocorrelación negativa). Se define como una medida global de
+asociación lineal entre un valor observado en una ubicación y el
+promedio de los valores en su vecindad. Un valor estadísticamente
+significativo permite rechazar la hipótesis nula de aleatoriedad
+espacial (Spatial Randomness), confirmando que la mortalidad sigue una
+estructura geográfica que debe ser modelada explícitamente.
+
+\textbf{Modelado Bayesiano Jerárquico (BYM):} El modelo
+Besag-York-Mollié es un método de estimación para áreas pequeñas que
+descompone el logaritmo del riesgo relativo en dos componentes
+aleatorios: un efecto espacial estructurado (\(u_i\)), que asume un
+proceso autorregresivo condicional intrínseco (ICAR) basado en la
+vecindad, y un efecto no estructurado (\(v_i\)), que captura la
+heterogeneidad local independiente (ruido blanco). Este enfoque permite
+``suavizar'' las tasas municipales, encogiendo las estimaciones
+inestables de áreas poco pobladas hacia el promedio de sus vecinos, lo
+que resulta en un mapa de riesgo ``puro'' mucho más confiable para el
+cálculo de reservas actuariales.
+
+\textbf{Interpolación y Visualización (IDW):} La Ponderación de
+Distancia Inversa (Inverse Distance Weighting) es un método
+determinístico de interpolación espacial basado en el principio de que
+los valores desconocidos en un punto pueden estimarse mediante un
+promedio ponderado de los valores observados en puntos cercanos. La
+ponderación es inversamente proporcional a la distancia elevada a una
+potencia (\(p\)), permitiendo generar superficies de riesgo continuo que
+revelan núcleos de mortalidad que atraviesan las fronteras
+administrativas legales, facilitando la toma de decisiones
+territorializadas.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+& & \\
+Modelo / Técnica & Aplicación en este Estudio & Ventaja Actuarial \\
+SMR Tradicional & Diagnóstico inicial de exceso de mortalidad &
+Comparabilidad directa con estándares internacionales. \\
+K-means Clustering & Segmentación de trayectorias históricas &
+Identificación de grupos de riesgo para tarificación grupal. \\
+Índice de Moran & Test de autocorrelación espacial & Validación de la
+estructura geográfica del riesgo. \\
+Modelo BYM (INLA) & Suavizamiento de riesgos relativos & Estabilidad en
+la estimación para municipios de baja población. \\
+Interpolación IDW & Generación de superficies de riesgo & Visualización
+continua para políticas de salud y seguros. \\
+\end{longtable}
+
+\subsection{\texorpdfstring{\textbf{Diseño del Estudio y Fuentes de
+Datos}}{Diseño del Estudio y Fuentes de Datos}}\label{diseuxf1o-del-estudio-y-fuentes-de-datos}
+
+Este trabajo emplea un diseño ecológico longitudinal que analiza la
+totalidad de los municipios de Venezuela durante el período 1996-2016.
+La estrategia empírica se basa en la integración de tres fuentes
+principales: los registros administrativos de defunciones del Ministerio
+del Poder Popular para la Salud (MPPS), los datos demográficos del
+Instituto Nacional de Estadística (INE) y la base cartográfica GADM
+(Global Administrative Areas). ~
+
+El desafío metodológico principal radica en la estimación de los
+denominadores poblacionales. Ante la ausencia de censos anuales después
+de 2011, se aplicó una tasa de crecimiento intercensal del 1.6\% anual
+para proyectar las poblaciones municipales. Esta técnica, aunque
+simplificada, permite mantener la comparabilidad temporal necesaria para
+el análisis de tendencias de larga duración. ~
+
+\subsubsection{\texorpdfstring{\textbf{Procedimiento de Codificación y
+Procesamiento}}{Procedimiento de Codificación y Procesamiento}}\label{procedimiento-de-codificaciuxf3n-y-procesamiento}
+
+El código implementado en R sigue un flujo de trabajo reproducible que
+garantiza la transparencia exigida por la RVEA. Se inicia con la
+limpieza de los registros de mortalidad, donde se eliminan
+inconsistencias y se normalizan las entidades federales, asegurando que
+la transición histórica (por ejemplo, de Distrito Federal a Vargas/La
+Guaira) sea capturada correctamente.
+
+\subsubsection{\texorpdfstring{\textbf{Estrategia de Modelado
+Matemático}}{Estrategia de Modelado Matemático}}\label{estrategia-de-modelado-matemuxe1tico}
+
+Exploración: Clusterización K-means para identificar perfiles de riesgo
+históricos.
+
+Autocorrelación: Índice de Moran utilizando una matriz de vecinos más
+cercanos (KNN=2) para integrar territorios insulares.
+
+Modelado: Regresión de Poisson para tendencias temporales y Modelo BYM
+(Besag-York-Mollié) para riesgo relativo suavizado.
+
+Interpolación: Método IDW para generar una superficie continua de
+riesgo.
+
+El modelo espacial bayesiano implementado es de tipo jerárquico. En el
+primer nivel, se asume que el número de muertes observadas \(y_i\) sigue
+una distribución de Poisson con media \(\lambda_i = E_i \theta_i\). En
+el segundo nivel, se modela el logaritmo del riesgo relativo
+\(\theta_i\) como :
+
+\$\$\textbackslash eta\_i = \textbackslash log(\textbackslash theta\_i)
+= \textbackslash alpha + u\_i + v\_i\$\$
+
+Donde:
+
+\begin{itemize}
+\item
+  \(\alpha\): El intercepto que representa el riesgo promedio nacional.
+\item
+  \(u_i\): El efecto espacial estructurado, modelado mediante un Prior
+  Intrínseco Autorregresivo Condicional (iCAR), que suaviza el riesgo
+  basado en la vecindad.
+\item
+  \(v_i\): El efecto no estructurado, que captura la sobredispersión o
+  variación local no espacial.
+\end{itemize}
+
+Para la integración de territorios insulares (Margarita, Coche, Los
+Roques), se utilizó una matriz de vecindad basada en los 2 vecinos más
+cercanos (KNN=2), evitando así el aislamiento de estos nodos en el grafo
+de INLA.
+
+\section{Resultados}\label{resultados}
+
+Los resultados revelan una geografía de la mortalidad heterogénea y
+altamente estructurada. A continuación, se presenta la evidencia
+partiendo de la identificación de grupos de riesgo hasta la
+visualización de la superficie continua de mortalidad nacional. Los
+hallazgos confirman que el riesgo de muerte en Venezuela no se
+distribuye de manera aleatoria, sino que obedece a patrones espaciales
+persistentes.
+
+\subsection{Análisis Descriptivo de la Evolución
+Temporal}\label{anuxe1lisis-descriptivo-de-la-evoluciuxf3n-temporal}
+
+Antes de la segmentación algorítmica, se observa el comportamiento de
+las tasas de mortalidad resumidas por los 24 estados del país frente a
+la tendencia media nacional, el análisis de distribución anual permite
+identificar la presencia de valores atípicos y el ensanchamiento de las
+brechas territoriales.
+
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{Art_Angel_Plantilla_RVEA_files/figure-pdf/fig-boxplot-anual-1.pdf}}
+
+}
+
+\caption{\label{fig-boxplot-anual}Distribución de las tasas de
+mortalidad municipal por año (1996-2016). Los puntos representan
+municipios individuales; las cajas muestran los cuartiles y la mediana
+nacional.}
+
+\end{figure}%
+
+La Figura anterior revela un incremento progresivo en la dispersión de
+las tasas de mortalidad a partir de mediados de la década de 2000. Los
+municipios atípicos (outliers en rojo) sugieren crisis locales que las
+métricas nacionales no logran capturar.
+
+Para evitar la saturación de las leyendas, el análisis se divide en dos
+bloques regionales organizados alfabéticamente.
+
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{Art_Angel_Plantilla_RVEA_files/figure-pdf/fig-tendencia-inicial-parte1-1.pdf}}
+
+}
+
+\caption{\label{fig-tendencia-inicial-parte1}Tendencias de mortalidad
+promedio por Estado (Parte 1: Grupos A-F). La línea negra punteada
+resalta el promedio nacional.}
+
+\end{figure}%
+
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{Art_Angel_Plantilla_RVEA_files/figure-pdf/fig-tendencia-inicial-parte2-1.pdf}}
+
+}
+
+\caption{\label{fig-tendencia-inicial-parte2}Tendencias de mortalidad
+promedio por Estado (Parte 2: Grupos G-Z). La línea negra punteada
+resalta el promedio nacional.}
+
+\end{figure}%
+
+\subsection{Segmentación por Clusters de
+Riesgo}\label{segmentaciuxf3n-por-clusters-de-riesgo}
+
+La aplicación del algoritmo K-means sobre las trayectorias temporales de
+las tasas de mortalidad permitió identificar cuatro perfiles
+diferenciados en el territorio venezolano. Esta segmentación es
+fundamental para la tarificación actuarial, ya que permite agrupar
+municipios no solo por su ubicación, sino por su comportamiento dinámico
+ante el riesgo de muerte.
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{Art_Angel_Plantilla_RVEA_files/figure-pdf/fig-clusters-1.pdf}
+
+}
+
+\caption{\label{fig-clusters}Mapa de clusters de riesgo de mortalidad
+municipal (1996-2016).}
+
+\end{figure}%
+
+La interpretación de estos clusters revela una división geográfica
+clara: el Cluster 1 tiende a concentrar municipios urbanos con
+infraestructuras de salud más densas pero también con mayores riesgos de
+causas externas, mientras que los clusters rurales muestran trayectorias
+de mortalidad asociadas a enfermedades endémicas o falta de acceso a
+servicios básicos.
+
+\subsection{Análisis Temporal por Cluster
+Identificado}\label{anuxe1lisis-temporal-por-cluster-identificado}
+
+Al separar las trayectorias por cluster, se evidencia la capacidad del
+algoritmo para agrupar municipios con dinámicas de salud pública
+divergentes. Cada panel muestra los municipios de un cluster particular
+coloreados por su estado de origen.
+
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{Art_Angel_Plantilla_RVEA_files/figure-pdf/fig-evolucion-clusters-separados-1.pdf}}
+
+}
+
+\caption{\label{fig-evolucion-clusters-separados}Trayectorias de
+mortalidad desagregadas por Cluster. Las líneas tenues representan
+municipios coloreados por estado; la línea negra gruesa indica la
+tendencia promedio del cluster.}
+
+\end{figure}%
+
+\subsection{\texorpdfstring{\textbf{Análisis de Autocorrelación Espacial
+(Moran's
+I)}}{Análisis de Autocorrelación Espacial (Moran's I)}}\label{anuxe1lisis-de-autocorrelaciuxf3n-espacial-morans-i}
+
+Para validar la necesidad de un modelo espacial bayesiano, se aplicó el
+Índice de Moran sobre las tasas de mortalidad de 2016. Un valor positivo
+y significativo confirma que la mortalidad en Venezuela se distribuye en
+``hotspots'' o conglomerados geográficos. ~
+
+El Índice de Moran obtenido (\(0.094\)) con un p-valor significativo
+(\(0.024\)) rechaza la hipótesis de aleatoriedad espacial. Esto implica
+que factores locales (clima, economía regional, políticas de salud
+estatales) influyen en la mortalidad de municipios adyacentes de manera
+coordinada.
+
+\subsubsection{Evolución de la Razón de Mortalidad Estandarizada
+(SMR)}\label{evoluciuxf3n-de-la-razuxf3n-de-mortalidad-estandarizada-smr}
+
+El cálculo del SMR permite identificar municipios con excesos de
+mortalidad persistentes. Un SMR de 2.0 indica que el municipio tiene el
+doble de muertes de lo esperado dada su estructura poblacional y la tasa
+nacional de referencia.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{Art_Angel_Plantilla_RVEA_files/figure-pdf/visualizacion-smr-1.pdf}
+
+}
+
+\caption{Evolución espacio-temporal del SMR (1996-2016).}
+
+\end{figure}%
+
+\begin{verbatim}
+# A tibble: 15 x 6
+   EST            Muni_Clean Años_Alto_Riesgo
+   <chr>          <chr>                 <int>
+ 1 MIRANDA        CHACAO                   20
+ 2 YARACUY        SAN FELIPE               20
+ 3 TRUJILLO       VALERA                   20
+ 4 TACHIRA        SAN CRIST~               20
+ 5 NUEVA ESPARTA  MARINO                   20
+ 6 ARAGUA         GIRARDOT                 20
+ 7 MERIDA         LIBERTADOR               20
+ 8 CARABOBO       NAGUANAGUA               20
+ 9 TRUJILLO       TRUJILLO                 20
+10 DISTRITO CAPI~ LIBERTADOR               20
+11 PORTUGUESA     ARAURE                   20
+12 GUARICO        JUAN GERM~               18
+13 MIRANDA        BARUTA                   17
+14 SUCRE          BERMUDEZ                 17
+15 ZULIA          MARACAIBO                20
+# i 3 more variables: Total_Años <int>,
+#   SMR_Promedio <dbl>,
+#   Persistencia_Pct <dbl>
+\end{verbatim}
+
+La persistencia del alto riesgo en municipios urbanos como Chacao y San
+Cristóbal sugiere que estas áreas actúan como receptores de pacientes de
+alta complejidad o presentan perfiles de envejecimiento mucho más
+avanzados que el promedio nacional, lo que debe ser considerado en la
+tarificación de seguros de salud y vida locales. ~
+
+\subsubsection{\texorpdfstring{\textbf{Regresión de Poisson y Tendencias
+de
+Aceleración}}{Regresión de Poisson y Tendencias de Aceleración}}\label{regresiuxf3n-de-poisson-y-tendencias-de-aceleraciuxf3n}
+
+Para cuantificar el cambio temporal, se ajustó un modelo de regresión de
+Poisson que controla por el efecto de los clusters y el crecimiento
+poblacional (offset).
+
+\begin{verbatim}
+# A tibble: 4 x 4
+  Termino  Riesgo_Relativo  P_Valor
+  <chr>              <dbl>    <dbl>
+1 Tiempo             1.01  0       
+2 Cluster2           0.703 0       
+3 Cluster3           1.03  6.82e-83
+4 Cluster4           0.743 0       
+# i 1 more variable: Interpretacion <chr>
+\end{verbatim}
+
+\begin{center}
+\includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{Art_Angel_Plantilla_RVEA_files/figure-pdf/regresion-poisson-1.pdf}
+\end{center}
+
+\begin{verbatim}
+# A tibble: 5 x 3
+  EST     Muni_Clean         Cambio_Anual_Pct
+  <chr>   <chr>                         <dbl>
+1 ARAGUA  OCUMARE LA COSTA ~             52.1
+2 BARINAS ANDRES ELOY BLANCO             48.0
+3 ARAGUA  FRANCISCO LINARES              24.3
+4 TACHIRA SAN JUDAS TADEO                22.2
+5 BOLIVAR PADRE PEDRO CHIEN              16.0
+\end{verbatim}
+
+El modelo revela una tendencia nacional de incremento del riesgo del
+1.4\% anual durante el período estudiado. Sin embargo, esta tendencia no
+es uniforme. Municipios específicos como Ocumare la Costa de Oro y
+Andrés Eloy Blanco muestran tasas de aceleración críticas que superan el
+40\% anual en ciertos períodos, lo cual podría estar vinculado a eventos
+de violencia local o crisis de servicios de salud regionales. ~
+
+\subsubsection{\texorpdfstring{\textbf{Modelado Bayesiano de Riesgo
+Suavizado
+(INLA)}}{Modelado Bayesiano de Riesgo Suavizado (INLA)}}\label{modelado-bayesiano-de-riesgo-suavizado-inla}
+
+El modelo Besag-York-Mollié (BYM) es la pieza central de este estudio.
+Al ``limpiar'' el ruido aleatorio, permite ver la estructura de riesgo
+latente de Venezuela.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{Art_Angel_Plantilla_RVEA_files/figure-pdf/modelado-inla-1.pdf}
+
+}
+
+\caption{Mapa de Riesgo Relativo Suavizado (Modelo Bayesiano).}
+
+\end{figure}%
+
+El mapa de Riesgo Relativo Suavizado (RR) muestra un arco de alta
+mortalidad que recorre el centro-norte del país y se extiende hacia
+ciertas zonas fronterizas. Este riesgo estructural es independiente de
+las fluctuaciones temporales anuales y representa la base de riesgo que
+las aseguradoras y fondos de pensiones deben considerar para el cálculo
+de sus reservas técnicas territoriales. ~ ~\textbf{Análisis del Gráfico
+de Oruga} Para una interpretación técnica rigurosa de los resultados del
+modelo Bayesiano, no basta con observar el valor medio del riesgo
+relativo por municipio en una escala cromática. Es imperativo evaluar la
+incertidumbre estadística asociada a cada estimación, especialmente en
+unidades territoriales con poblaciones reducidas donde la volatilidad de
+los datos administrativos suele ser mayor. El Gráfico de Oruga (Figura
+Figure~\ref{fig-caterpillar}) permite jerarquizar los municipios según
+su nivel de riesgo estructural, facilitando la identificación de
+aquellos donde el exceso o defecto de mortalidad es estadísticamente
+significativo.
+
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{Art_Angel_Plantilla_RVEA_files/figure-pdf/fig-caterpillar-1.pdf}}
+
+}
+
+\caption{\label{fig-caterpillar}Gráfico de Oruga (Caterpillar Plot) de
+los Riesgos Relativos Municipales. Se muestran las medias posteriores y
+los intervalos de credibilidad del 95\%.}
+
+\end{figure}%
+
+La inspección de la Figura Figure~\ref{fig-caterpillar} revela una
+separación clara entre los municipios con riesgos estructurales críticos
+y aquellos con perfiles protectores. Los intervalos de credibilidad que
+no intersectan la línea de unidad (\(RR=1\)) representan áreas de
+prioridad actuarial. Este análisis de significancia complementa la
+visión geográfica, permitiendo que la tarificación territorial y la
+constitución de reservas no se basen en picos de ruido aleatorio, sino
+en desviaciones sistemáticas y estadísticamente robustas de la
+mortalidad nacional. Los municipios resaltados en rojo constituyen el
+núcleo del exceso de mortalidad que debe ser abordado mediante ajustes
+técnicos específicos en las tablas actuariales subnacionales.
+
+~\textbf{Mapa de Probabilidad de Excedencia~}
+
+Una limitación de los mapas de Riesgo Relativo (RR) es que no indican
+cuán seguros estamos de que el riesgo sea realmente alto. El Mapa de
+Probabilidad de Excedencia soluciona esto calculando
+\(P(RR > 1 | \text{datos})\).
+
+Si la probabilidad es cercana a 1, tenemos una certeza casi absoluta de
+que el municipio presenta un exceso de mortalidad estructural.
+
+\begin{figure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{Art_Angel_Plantilla_RVEA_files/figure-pdf/fig-probabilidad-mapa-1.pdf}}
+
+}
+
+\caption{\label{fig-probabilidad-mapa}Mapa de Probabilidad de Excedencia
+P(RR \textgreater{} 1). Las zonas en rojo oscuro indican una certeza
+estadística \textgreater95\% de exceso de mortalidad.}
+
+\end{figure}%
+
+\subsubsection{\texorpdfstring{\textbf{Mapa de Calor Continuo
+(Interpolación
+IDW)}}{Mapa de Calor Continuo (Interpolación IDW)}}\label{mapa-de-calor-continuo-interpolaciuxf3n-idw}
+
+La interpolación por ponderación de distancia inversa (IDW) permite
+visualizar la transición del riesgo como una superficie sólida, lo que
+facilita la identificación de fronteras epidemiológicas. ~
+
+\begin{verbatim}
+[inverse distance weighted interpolation]
+\end{verbatim}
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{Art_Angel_Plantilla_RVEA_files/figure-pdf/heatmap-interpolado-1.pdf}
+
+}
+
+\caption{Mapa de Calor Continuo de Mortalidad (Interpolación IDW).}
+
+\end{figure}%
+
+\subsection{Proyección de Mortalidad}\label{proyecciuxf3n-de-mortalidad}
+
+La capacidad predictiva es el pilar de la solvencia actuarial.
+Utilizando la estructura espacio-temporal aprendida por el modelo
+Bayesiano, se han proyectado las tasas de mortalidad para el quinquenio
+posterior al estudio. Esta proyección asume una ``inercia temporal''
+(Random Walk de orden 1) que captura la tendencia de degradación o
+mejora de las condiciones de salud, permitiendo a los actuarios
+anticipar el costo futuro de las pensiones y seguros de vida.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=1\linewidth,height=\textheight,keepaspectratio]{Art_Angel_Plantilla_RVEA_files/figure-pdf/Proyeccion-1.pdf}
+
+}
+
+\caption{Proyección de Mortalidad 2021 basada en modelo
+espacio-temporal.}
+
+\end{figure}%
+
+\section{Discusión y Conclusiones}\label{discusiuxf3n-y-conclusiones}
+
+\subsection{\texorpdfstring{\textbf{Discusión}}{Discusión}}\label{discusiuxf3n}
+
+Los resultados de este análisis histórico y espacio-temporal confirman
+que Venezuela posee una geografía de la mortalidad altamente heterogénea
+y dinámica. La identificación de un incremento nacional del riesgo del
+1.4\% anual, ajustado por estructura espacial, es un hallazgo de suma
+gravedad para la solvencia de largo plazo del sistema de pensiones. Si
+las tablas de mortalidad no se actualizan anualmente incorporando este
+factor de aceleración, el pasivo actuarial del país continuará creciendo
+de manera oculta e insostenible. ~
+
+La persistencia del alto riesgo en los municipios del arco central
+(Distrito Capital, Miranda, Aragua, Carabobo) sugiere que la
+urbanización en Venezuela no ha funcionado como un factor protector,
+como indica la teoría de la transición epidemiológica clásica, sino que
+ha concentrado riesgos asociados a la violencia, accidentes y
+enfermedades crónicas no transmisibles. Municipios como Chacao y
+Libertador (DC), a pesar de contar con la mayor densidad de centros de
+salud, presentan los SMR más altos del país, lo que podría explicarse
+por un fenómeno de selección: personas con enfermedades graves de todo
+el país migran a la capital para recibir tratamiento, inflando las
+estadísticas locales de defunción, o bien por un perfil de
+envejecimiento in situ mucho más acelerado. ~
+
+Desde la perspectiva del modelado, el uso de INLA y el modelo BYM ha
+demostrado ser superior a la inspección de tasas crudas. El mapa
+suavizado (RR) elimina los picos artificiales en municipios pequeños y
+revela que el riesgo tiene una estructura espacial coherente. Esto
+valida las investigaciones de Arlet Moreno (2017) sobre mortalidad
+infantil, quien también detectó heterogeneidad por entidad federal, pero
+ahora expandida a una resolución 335 veces mayor.
+
+\subsection{\texorpdfstring{\textbf{Conclusiones y
+Recomendaciones}}{Conclusiones y Recomendaciones}}\label{conclusiones-y-recomendaciones}
+
+El análisis exhaustivo de la mortalidad en Venezuela (1996-2016) permite
+concluir que el país enfrenta una crisis demográfica de carácter
+territorial. La obsolescencia de las bases técnicas, heredada de la
+década de 1960, ha sido superada por una realidad donde el riesgo de
+muerte aumenta anualmente y se concentra geográficamente en polos de
+alta vulnerabilidad. Como miembro del Comité Editorial de la RVEA y
+tutor de investigaciones fundamentales en este volumen, presento las
+siguientes recomendaciones estratégicas para el sector actuarial y los
+decisores de política pública: ~
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Abandono de Tablas Estáticas:} Se recomienda al IVSS y a la
+  Superintendencia de la Actividad Aseguradora (Sudeaseg) la transición
+  obligatoria hacia tablas dinámicas que incorporen factores de mejora
+  (o deterioro) de la mortalidad, como el modelo Lee-Carter o el modelo
+  BYM aquí presentado. ~
+\item
+  \textbf{Territorialización de Reservas:} Los fondos de pensiones y las
+  compañías de seguros deben evaluar la posibilidad de aplicar recargos
+  o descuentos zonales basados en el mapa de Riesgo Relativo Suavizado.
+  Un asegurado en Chacao no representa el mismo riesgo financiero que
+  uno en un municipio rural del estado Los Andes. ~
+\item
+  \textbf{Monitoreo de la Aceleración:} El incremento del 1.4\% anual
+  detectado es un ``cisne negro'' demográfico que erosiona la solvencia.
+  Se debe establecer un Observatorio de Mortalidad en el CVEA que
+  procese anualmente los registros administrativos para detectar cambios
+  bruscos en las tendencias municipales. ~
+\item
+  \textbf{Integración de Datos y Código Abierto:} Siguiendo la política
+  de la RVEA, se insta a los investigadores a utilizar el marco de
+  Quarto y R para garantizar que sus modelos sean replicables y
+  auditables por terceros, fortaleciendo la confianza en los
+  diagnósticos actuariales del país. ~
+\end{enumerate}
+
+Este trabajo no solo cierra una brecha de conocimiento de dos décadas,
+sino que proporciona el mapa de ruta técnico para la construcción de un
+sistema de previsión social más resiliente, basado en datos reales y
+metodologías de estándar internacional. ~
+
+\section*{Agradecimientos}\label{agradecimientos}
+\addcontentsline{toc}{section}{Agradecimientos}
+
+El autor desea expresar su profundo agradecimiento a la Escuela de
+Estadística y Ciencias Actuariales de la UCV y al Centro Venezolano de
+Estudios Actuariales (CVEA) por proporcionar el entorno académico
+propicio para el desarrollo de esta investigación. Asimismo, se reconoce
+el valioso aporte de los tesistas Daylin Moreno, José Raúl Gálvez,
+Daniel Azuaje y Arlet Moreno, cuyos trabajos de grado han sido pilares
+fundamentales para el diagnóstico sistémico presentado en este volumen
+inaugural de la RVEA.
+
+\section*{Referencias}\label{referencias}
+\addcontentsline{toc}{section}{Referencias}
+
+\begin{itemize}
+\item
+  Besag, J., York, J., \& Mollié, A. (1991). Bayesian image restoration,
+  with two applications in spatial statistics. Annals of the Institute
+  of Statistical Mathematics, 43(1), 1-20.
+\item
+  Blangiardo, M., \& Cameletti, M. (2015). Spatial and Spatio-temporal
+  Bayesian Models with R-INLA. John Wiley \& Sons.
+\item
+  Briceño, K. (2024). Análisis regional de la mortalidad en el occidente
+  venezolano. Revista Venezolana de Actuariado, 1(1), 45-62.
+\item
+  Clayton, D., \& Kaldor, J. (1987). Empirical Bayes estimates for
+  cancer mortality rates at the local level. Biometrics, 43(3), 671-681.
+\item
+  Godoy, D. (2024). Heterogeneidad de la mortalidad en la región
+  central: Un enfoque municipal. Revista Venezolana de Actuariado, 1(1),
+  63-78.
+\item
+  Lawson, A. B. (2018). Bayesian Disease Mapping: Hierarchical Modeling
+  in Spatial Epidemiology. CRC Press.
+\item
+  Lee, R. D., \& Carter, L. R. (1992). Modeling and Forecasting U.S.
+  Mortality. Journal of the American Statistical Association, 87(419),
+  659-671.
+\item
+  Masjuán, V. (1965). Tablas de mortalidad para la población venezolana.
+  Caracas: Escuela de Estadística y Ciencias Actuariales, UCV.
+\item
+  Moreno, A. (2017). Modelado espacial de la mortalidad infantil en
+  Venezuela mediante métodos Bayesianos. Trabajo de Grado, Universidad
+  Central de Venezuela.
+\item
+  Moreno, D. (2018). Evaluación de la solvencia del sistema de pensiones
+  en Venezuela: Un análisis de longevidad. Trabajo de Grado, Universidad
+  Central de Venezuela.
+\item
+  Rue, H., Martino, S., \& Chopin, N. (2009). Approximate Bayesian
+  inference for latent Gaussian models by using integrated nested
+  Laplace approximations. Journal of the Royal Statistical Society:
+  Series B (Statistical Methodology), 71(2), 319-392.
+\item
+  Tobler, W. R. (1970). A Computer Movie Simulating Urban Growth in the
+  Detroit Region. Economic Geography, 46, 234-240.
+\item
+  Waller, L. A., \& Gotway, C. A. (2004). Applied Spatial Statistics for
+  Public Health Data. John Wiley \& Sons.
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+
+
+
+\end{document}

@@ -1,0 +1,7 @@
+attic/
+man/
+book/_book
+book/_bookdown_files
+**/*_cache
+*.md
+*.pdf

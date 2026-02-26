@@ -1,0 +1,13 @@
+^renv$
+^renv\.lock$
+^Makefile$
+^\.travis\.yml$
+^.editorconfig$
+^.ignore$
+^book$
+^serve$
+^.*\.Rproj$
+^\.Rproj\.user$
+^usecases$
+^attic$
+^.lintr$

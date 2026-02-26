@@ -1,0 +1,860 @@
+---
+aliases:
+  - "/non-sequential_pipelines_and_tuning.html"
+---
+
+# Non-sequential Pipelines and Tuning {#sec-pipelines-nonseq}
+
+{{< include ../../common/_setup.qmd >}}
+
+`r chapter = "Non-sequential Pipelines and Tuning"`
+`r authors(chapter)`
+
+```{r non-sequential_pipelines_and_tuning-001, include = FALSE, cache = FALSE}
+library(mlr3oml)
+#install.packages("bestNormalize")
+dir.create(here::here("book", "openml"), showWarnings = FALSE, recursive = TRUE)
+options(mlr3oml.cache = here::here("book", "openml", "cache"))
+```
+
+In @sec-pipelines we looked at simple sequential pipelines that can be built using the `r ref("Graph")` class and a few `r ref("PipeOp")` objects.
+In this chapter, we will take this further and look at non-sequential pipelines that can perform more complex operations.
+We will then look at tuning pipelines by combining methods in `r mlr3tuning` and `r mlr3pipelines` and will consider some concrete examples using multi-fidelity tuning (@sec-hyperband) and feature selection (@sec-feature-selection).
+
+We saw the power of the `%>>%`-operator in @sec-pipelines to assemble graphs from combinations of multiple `PipeOp`s and `Learner`s.
+Given a single `PipeOp` or `r ref("Learner")`, the `%>>%`-operator will arrange these objects into a linear `Graph` with each `PipeOp` acting in sequence.
+However, by using the `r ref("gunion()")` function, we can instead combine multiple `PipeOp`s, `Graph`s, or a mixture of both, into a parallel `Graph`.
+
+In the following example, we create a `Graph` that centers its inputs (`po("scale")`) and then copies the centered data to two parallel streams: one replaces the data with columns that indicate whether data is missing (`po("missind")`), and the other imputes missing data using the median (`po("imputemedian")`), which we will return to in @sec-preprocessing-missing.
+The outputs of both streams are then combined into a single dataset using `po("featureunion")`.
+
+```{r non-sequential_pipelines_and_tuning-002, eval = FALSE}
+library(mlr3pipelines)
+
+graph = po("scale", center = TRUE, scale = FALSE) %>>%
+  gunion(list(
+    po("missind"),
+    po("imputemedian")
+  )) %>>%
+  po("featureunion")
+
+graph$plot(horizontal = TRUE)
+```
+```{r non-sequential_pipelines_and_tuning-003, fig.width = 8, eval = TRUE, echo = FALSE}
+#| label: fig-pipelines-parallel-plot
+#| fig-cap: 'Simple parallel pipeline plot showing a common data source being scaled then the same data being passed to two `PipeOp`s in parallel whose outputs are combined and returned to the user.'
+#| fig-alt: 'Six boxes where first two are "<INPUT> -> scale", then "scale" has two arrows to "missind" and "imputemedian" which both have an arrow to "featureunion -> <OUTPUT>".'
+library(mlr3pipelines)
+
+graph = po("scale", center = TRUE, scale = FALSE) %>>%
+  gunion(list(
+    po("missind"),
+    po("imputemedian")
+  )) %>>%
+  po("featureunion")
+fig = magick::image_graph(width = 1500, height = 1000, res = 100, pointsize = 24)
+graph$plot(horizontal = TRUE)
+invisible(dev.off())
+magick::image_trim(fig)
+```
+
+When applied to the first three rows of the `"pima"` task we can see how this imputes missing data and adds a column indicating where values were missing.
+
+```{r non-sequential_pipelines_and_tuning-004, eval = TRUE}
+tsk_pima_head = tsk("pima")$filter(1:3)
+tsk_pima_head$data(cols = c("diabetes", "insulin", "triceps"))
+result = graph$train(tsk_pima_head)[[1]]
+result$data(cols = c("diabetes", "insulin", "missing_insulin", "triceps",
+  "missing_triceps"))
+```
+
+## Selectors and Parallel Pipelines
+
+It is common in `r ref("Graph")`s for an operation to be applied to a subset of features.
+In `mlr3pipelines` this can be achieved in two ways (@fig-pipelines-select-affect): either by passing the column subset to the `affect_columns` hyperparameter of a `r ref("PipeOp")` (assuming it has that hyperparameter), which controls which columns should be affected by the `PipeOp`; or, one can use the `r ref("PipeOpSelect", index = TRUE)` operator to create operations in parallel on specified feature subsets, and then unite the result using `r ref("PipeOpFeatureUnion")`.
+
+```{r non-sequential_pipelines_and_tuning-005, echo = FALSE, out.width = "70%"}
+#| label: fig-pipelines-select-affect
+#| layout-nrow: 2
+#| fig-cap: "Two methods of setting up `PipeOp`s (`po(op1)` and `po(op2)`) that operate on complementary features (X and ¬X) of an input task."
+#| fig-alt: 'Top plot shows the sequential pipeline "po(op1, affected_columns: ¬X") -> po(op2, affected_columns: X"). Bottom plot shows the parallel pipeline that starts with an arrow splitting and then pointing to both  po("select", ¬X) and po("select", X). These respectively point to po(op1) and po(op2), which then both point to the same po("featureunion").'
+#| fig-subcap:
+#|   - 'The `affect_columns` hyperparameter can be used to restrict operations to a subset of features. When used, pipelines may still be run in sequence.'
+#|   - 'Operating on subsets of tasks using concurrent paths by first splitting the inputs with `po("select")` and then combining outputs with `po("featureunion")`.'
+include_multi_graphics("mlr3book_figures-28")
+include_multi_graphics("mlr3book_figures-29")
+```
+
+Both methods make use of `r ref("Selector", aside = TRUE)`-functions.
+These are helper functions that indicate to a `PipeOp` which features it should apply to.
+`Selectors` may match column names by regular expressions (`r ref("selector_grep()")`), or by column type (`r ref("selector_type()")`).
+`Selectors` can also be used to join variables (`r ref("selector_union()")`), return their set difference (`r ref("selector_setdiff()")`), or select the complement of features from another `Selector` (`r ref("selector_invert()")`).
+
+For example, in @sec-pipelines-pipeops we applied PCA to the bill length and depth of penguins from `tsk("penguins_simple")` by first selecting these columns using the `Task` method `$select()` and then applying the `PipeOp`.
+We can now do this more simply with `selector_grep`, and could go on to use `selector_invert` to apply some other `PipeOp` to other features, below we use `po("scale")` and make use of the `affect_columns` hyperparameter:
+
+```{r non-sequential_pipelines_and_tuning-006, eval = TRUE}
+sel_bill = selector_grep("^bill")
+sel_not_bill = selector_invert(sel_bill)
+
+graph = po("scale", affect_columns = sel_not_bill) %>>%
+  po("pca", affect_columns = sel_bill)
+
+result = graph$train(tsk("penguins_simple"))
+result[[1]]$data()[1:3, 1:5]
+```
+
+The biggest advantage of this method is that it creates a very simple, sequential `Graph`.
+However, one disadvantage of the `affect_columns` method is that it is relatively easy to have unexpected results if the ordering of `PipeOp`s is mixed up.
+For example, if we had reversed the order of `po("pca")` and `po("scale")` above then we would have first created columns `"PC1"` and `"PC2"` and then erroneously scaled these, since their names do not start with "bill" and they are therefore matched by `sel_not_bill`.
+Creating parallel paths with `po("select")` can help mitigate such errors by selecting features given by the `Selector` and creating independent data processing streams with the given feature subset.
+Below we pass the parallel pipelines to `r ref("gunion()")` as a `list` to ensure they receive the same input, and then combine the outputs with `po("featureunion")`.
+
+```{r non-sequential_pipelines_and_tuning-007, eval = FALSE}
+po_select_bill = po("select", id = "s_bill", selector = sel_bill)
+po_select_not_bill = po("select", id = "s_notbill",
+  selector = sel_not_bill)
+
+path_pca =  po_select_bill %>>% po("pca")
+path_scale = po_select_not_bill %>>% po("scale")
+
+graph = gunion(list(path_pca, path_scale)) %>>% po("featureunion")
+graph$plot(horizontal = TRUE)
+```
+```{r non-sequential_pipelines_and_tuning-008, fig.width = 8, eval = TRUE, echo = FALSE}
+#| label: fig-pipelines-pcascale
+#| fig-cap: Visualization of a `Graph` where features are split into two paths, one with PCA and one with scaling, then combined and returned.
+#| fig-alt: 'Seven boxes where first is "<INPUT>" which points to "s_bill -> pca" and "s_notbill" -> scale", then both "pca" and "scale" point to "featureunion -> <OUTPUT>".'
+po_select_bill = po("select", id = "s_bill", selector = sel_bill)
+po_select_not_bill = po("select", id = "s_notbill",
+  selector = sel_not_bill)
+
+path_pca =  po_select_bill %>>% po("pca")
+path_scale = po_select_not_bill %>>% po("scale")
+
+graph = gunion(list(path_pca, path_scale)) %>>% po("featureunion")
+fig = magick::image_graph(width = 1500, height = 1000, res = 100, pointsize = 24)
+graph$plot(horizontal = TRUE)
+invisible(dev.off())
+magick::image_trim(fig)
+```
+
+The `po("select")` method also has the significant advantage that it allows the same set of features to be used in multiple operations simultaneously, or to both transform features and keep their untransformed versions (by using `po("nop")` in one path).
+`r ref("PipeOpNOP")` performs no operation on its inputs and is thus useful when you only want to perform a transformation on a subset of features and leave the others untouched:
+
+```{r non-sequential_pipelines_and_tuning-009, eval = FALSE}
+graph = gunion(list(
+  po_select_bill %>>% po("scale"),
+  po_select_not_bill %>>% po("nop")
+)) %>>% po("featureunion")
+graph$plot(horizontal = TRUE)
+```
+```{r non-sequential_pipelines_and_tuning-010, fig.width = 8, eval = TRUE, echo = FALSE}
+#| label: fig-pipelines-selectnop
+#| fig-cap: Visualization of our `Graph` where features are split into two paths, features that start with 'bill' are scaled and the rest are untransformed.
+#| fig-alt: 'Seven boxes where first is "<INPUT>" which points to "s_bill -> scale" and "s_notbill -> nop", then both "scale" and "nop" point to "featureunion -> <OUTPUT>".'
+graph = gunion(list(
+  po_select_bill %>>% po("scale"),
+  po_select_not_bill %>>% po("nop")
+)) %>>% po("featureunion")
+fig = magick::image_graph(width = 1500, height = 1000, res = 100, pointsize = 24)
+graph$plot(horizontal = TRUE)
+invisible(dev.off())
+magick::image_trim(fig)
+```
+
+```{r non-sequential_pipelines_and_tuning-011, eval = TRUE}
+graph$train(tsk("penguins_simple"))[[1]]$data()[1:3, 1:5]
+```
+
+##  Common Patterns and ppl() {#sec-pipelines-ppl}
+
+Now you have the tools to create sequential and non-sequential pipelines, you can create an infinite number of transformations on `r ref("Task")`, `r ref("Learner")`, and `r ref("Prediction")` objects.
+In @sec-pipelines-bagging and @sec-pipelines-stack we will work through two examples to demonstrate how you can make complex and powerful graphs using the methods and classes we have already looked at.
+However, many common problems in ML can be well solved by the same pipelines, and so to make your life easier we have implemented and saved these pipelines in the `r ref("mlr_graphs", index = TRUE)` dictionary; pipelines in the dictionary can be accessed with the `r ref("ppl()", aside = TRUE)` sugar function.
+
+At the time of writing, this dictionary includes seven `r ref("Graph")`s (required arguments included below):
+
+* `ppl("bagging", graph)`: In `mlr3pipelines`, `r index('bagging')` is the process of running a `graph` multiple times on different data samples and then averaging the results. This is discussed in detail in @sec-pipelines-bagging.
+* `ppl("branch", graphs)`: Uses `r ref("PipeOpBranch")` to create different path branches from the given `graphs` where only one branch is evaluated. This is returned to in more detail in @sec-pipelines-branch.
+* `ppl("greplicate", graph, n)`: Create a `Graph` that replicates `graph` (which can also be a single `PipeOp`) `n` times. The pipeline avoids ID clashes by adding a suffix to each `PipeOp`, we will see this pipeline in use in @sec-pipelines-bagging.
+* `ppl("ovr", graph)`: `r index('One-versus-rest classification')` for converting `r index('multiclass classification', 'multiclass', parent = 'classification')` tasks into several binary classification tasks with one task for each class in the original. These tasks are then evaluated by the given `graph`, which should be a learner (or a pipeline containing a learner that emits a prediction). The predictions made on the binary tasks are combined into the multiclass prediction needed for the original task.
+* `ppl("robustify")`: Performs common preprocessing steps to make any `Task` compatible with a given `Learner`. This pipeline is demonstrated in @sec-prepro-robustify.
+* `ppl("stacking", base_learners, super_learner)`: `r index('Stacking')`, returned to in detail in @sec-pipelines-stack, is the process of using predictions from one or more models (`base_learners`) as features in a subsequent model (`super_learner`)
+* `ppl("targettrafo", graph)`: Create a `Graph` that transforms the prediction target of a task and ensures that any transformations applied during training (using the function passed to the `targetmutate.trafo` hyperparameter) are inverted in the resulting predictions (using the function passed to the `targetmutate.inverter` hyperparameter); an example is given in @sec-prepro-scale.
+
+## Practical Pipelines by Example
+
+In this section, we will put pipelines into practice by demonstrating how to turn weak learners into powerful machine learning models using `r index('bagging')` and `r index('stacking')`.
+
+### Bagging with "greplicate" and "subsample" {#sec-pipelines-bagging}
+
+The basic idea of `r index('bagging')` (from **b**ootstrapp **agg**regat**ing**), introduced by @Breiman1996, is to aggregate multiple predictors into a single, more powerful predictor (@fig-pipelines-bagging).
+Predictions are usually aggregated by the arithmetic mean for regression tasks or majority vote for classification.
+The underlying intuition behind bagging is that averaging a set of unstable and diverse (i.e., only weakly correlated) predictors can reduce the variance of the overall prediction.
+Each learner is trained on a different random sample of the original data.
+
+Although we have already seen that a pre-constructed bagging pipeline is available with `ppl("bagging")`, in this section we will build our own pipeline from scratch to showcase how to construct a complex `r ref("Graph")`, which will look something like @fig-pipelines-bagging.
+
+```{r non-sequential_pipelines_and_tuning-012, echo = FALSE, out.width = "70%"}
+#| label: fig-pipelines-bagging
+#| fig-cap: "Graph that performs Bagging by independently subsampling data and fitting individual decision tree learners. The resulting predictions are aggregated by a majority vote `PipeOp`."
+#| fig-alt: 'Graph shows "Dtrain" with arrows to four separate po("subsample") boxes that each have a separate arrow to four more po("classif.rpart") boxes that each have an arrow to the same one po("classif.avg") box.'
+include_multi_graphics("mlr3book_figures-26")
+```
+
+To begin, we use `po("subsample")` to sample a fraction of the data (here 70%), which is then passed to a classification tree (note by default `po("subsample")` samples without replacement).
+
+```{r non-sequential_pipelines_and_tuning-013, eval = TRUE}
+gr_single_pred = po("subsample", frac = 0.7) %>>% lrn("classif.rpart")
+```
+
+Next, we use `ppl("greplicate")` to copy the graph, `gr_single_pred`, 10 times (`n = 10`) and finally `po("classifavg")` to take the majority vote of all predictions, note that we pass `innum = 10` to `"classifavg"` to tell the `r ref("PipeOp")` to expect 10 inputs.
+
+```{r non-sequential_pipelines_and_tuning-014, eval = FALSE}
+gr_pred_set = ppl("greplicate", graph = gr_single_pred, n = 10)
+gr_bagging = gr_pred_set %>>% po("classifavg", innum = 10)
+gr_bagging$plot()
+```
+
+```{r non-sequential_pipelines_and_tuning-015, echo = FALSE}
+#| label: fig-pipelines-bagginggraph
+#| fig-cap: Constructed bagging `Graph` with one input being sampled many times for 10 different learners.
+#| fig-alt: 'Parallel pipeline showing "<INPUT>" pointing to ten PipeOps "subsample_1",...,"subsample_10" that each separately point to "classif.rpart_1",...,"classif.rpart_10" respectively, which all point to the same "classifavg -> <OUTPUT>".'
+gr_pred_set = ppl("greplicate", graph = gr_single_pred, n = 10)
+gr_bagging = gr_pred_set %>>% po("classifavg", innum = 10)
+fig = magick::image_graph(width = 2000, height = 1000, res = 100, pointsize = 17)
+gr_bagging$plot()
+invisible(dev.off())
+magick::image_trim(fig)
+```
+
+Now let us see how well our bagging pipeline compares to the single decision tree and a random forest when benchmarked against `tsk("sonar")`.
+
+```{r non-sequential_pipelines_and_tuning-016}
+# turn graph into learner
+glrn_bagging = as_learner(gr_bagging)
+glrn_bagging$id = "bagging"
+
+lrn_rpart = lrn("classif.rpart")
+learners = c(glrn_bagging, lrn_rpart, lrn("classif.ranger"))
+
+bmr = benchmark(benchmark_grid(tsk("sonar"), learners,
+  rsmp("cv", folds = 3)))
+bmr$aggregate()[, .(learner_id, classif.ce)]
+```
+
+The bagged learner performs better than the decision tree but worse than the random forest.
+To automatically recreate this pipeline, you can construct `ppl("bagging")` by specifying the learner to 'bag', the number of iterations, the fraction of data to sample, and the `r ref("PipeOp")` to average the predictions, as shown in the code below.
+Note we set `collect_multiplicity = TRUE` which collects the predictions across paths, that technically use the `r ref("Multiplicity")` method, which we will not discuss here but refer the reader to the documentation.
+
+```{r non-sequential_pipelines_and_tuning-017, eval = FALSE}
+ppl("bagging", lrn("classif.rpart"),
+  iterations = 10, frac = 0.7,
+  averager = po("classifavg", collect_multiplicity = TRUE))
+```
+
+The main difference between our pipeline and a random forest is that the latter also performs feature subsampling, where only a random subset of available features is considered at each split point.
+While we cannot implement this directly with `mlr3pipelines`, we can use a custom `r ref("Selector")` method to approximate this method.
+We will create this `Selector` by passing a function that takes as input the task and returns a sample of the features, we sample the square root of the number of features to mimic the implementation in `r ref("ranger::ranger")`.
+For efficiency, we will now use `ppl("bagging")` to recreate the steps above:
+
+```{r non-sequential_pipelines_and_tuning-018}
+# custom selector
+selector_subsample = function(task) {
+  sample(task$feature_names, sqrt(length(task$feature_names)))
+}
+
+# bagging pipeline with our selector
+gr_bagging_quasi_rf = ppl("bagging",
+  graph = po("select", selector = selector_subsample) %>>%
+    lrn("classif.rpart", minsplit = 1),
+  iterations = 100,
+  averager = po("classifavg", collect_multiplicity = TRUE)
+)
+
+# bootstrap resampling
+gr_bagging_quasi_rf$param_set$values$subsample.replace = TRUE
+
+# convert to learner
+glrn_quasi_rf = as_learner(gr_bagging_quasi_rf)
+glrn_quasi_rf$id = "quasi.rf"
+
+# benchmark
+design = benchmark_grid(tsks("sonar"),
+  c(glrn_quasi_rf, lrn("classif.ranger", num.trees = 100)),
+  rsmp("cv", folds = 5)
+)
+bmr = benchmark(design)
+bmr$aggregate()[, .(learner_id, classif.ce)]
+```
+
+In only a few lines of code, we took a weaker learner and turned it into a powerful model that we can see is comparable to the implementation in `ranger::ranger`.
+In the next section, we will look at a second example, which makes use of cross-validation within pipelines.
+
+### Stacking with po("learner_cv") {#sec-pipelines-stack}
+
+`r index('Stacking')` [@Wolpert1992] is another very popular ensembling technique that can significantly improve predictive performance.
+The basic idea behind stacking is to use predictions from multiple models (usually referred to as level 0 models) as features for a subsequent model (the level 1 model) which in turn combines these predictions (@fig-pipelines-stacking).
+A simple combination can be a linear model (possibly regularized if you have many level 0 models), since a weighted sum of level 0 models is often plausible and good enough.
+Though, non-linear level 1 models can also be used, and it is also possible for the level 1 model to access the input features as well as the level 0 predictions.
+Stacking can be built with more than two levels (both conceptually, and in `mlr3`) but we limit ourselves to this simpler setup here, which often also performs well in practice.
+
+As with bagging, we will demonstrate how to create a stacking pipeline manually, although a pre-constructed pipeline is available with `ppl("stacking")`.
+
+```{r non-sequential_pipelines_and_tuning-019, echo = FALSE, out.width = "70%"}
+#| label: fig-pipelines-stacking
+#| fig-cap: "Graph that performs Stacking by fitting three models and using their outputs as features for another model after combining with `PipeOpFeatureUnion`."
+#| fig-alt: 'Graph shows "Dtrain" with arrows to three boxes: "Decision Tree", "KNN", and "Lasso Regression". Each of these points to the same "Feature Union -> Logistic Regression".'
+include_multi_graphics("mlr3book_figures-27")
+```
+
+Stacking pipelines depend on the level 0 learners returning predictions during the `$train()` phase.
+This is possible in `mlr3pipelines` with `r ref("PipeOpLearnerCV", index = TRUE)`.
+During training, this operator performs cross-validation and passes the out-of-sample predictions to the level 1 model.
+Using cross-validated predictions is recommended to reduce the risk of overfitting.
+
+We first create the level 0 learners to produce the predictions that will be used as features.
+In this example, we use a classification tree\index{decision tree}, `r index('k-nearest neighbors')` (KNN)\index{KNN|see{k-nearest neighbors}}, and a regularized GLM\index{generalized linear model}.
+Each learner is wrapped in `po("learner_cv")` which performs cross-validation on the input data and then outputs the predictions from the `r ref("Learner")` in a new `r ref("Task")` object.
+
+```{r non-sequential_pipelines_and_tuning-020}
+lrn_rpart = lrn("classif.rpart", predict_type = "prob")
+po_rpart_cv = po("learner_cv", learner = lrn_rpart,
+  resampling.folds = 2, id = "rpart_cv"
+)
+
+lrn_knn = lrn("classif.kknn", predict_type = "prob")
+po_knn_cv = po("learner_cv",
+  learner = lrn_knn,
+  resampling.folds = 2, id = "knn_cv"
+)
+
+lrn_glmnet = lrn("classif.glmnet", predict_type = "prob")
+po_glmnet_cv = po("learner_cv",
+  learner = lrn_glmnet,
+  resampling.folds = 2, id = "glmnet_cv"
+)
+```
+
+These learners are combined using `r ref("gunion()")`, and `po("featureunion")` is used to merge their predictions.
+This is demonstrated in the output of `$train()`:
+
+```{r non-sequential_pipelines_and_tuning-021, warning = FALSE}
+gr_level_0 = gunion(list(po_rpart_cv, po_knn_cv, po_glmnet_cv))
+gr_combined = gr_level_0 %>>% po("featureunion")
+
+gr_combined$train(tsk("sonar"))[[1]]$head()
+```
+
+:::{.callout-tip}
+
+## Retaining Features
+
+In this example, the original features were removed as each `PipeOp` only returns the predictions made by the respective learners.
+To retain the original features, include `po("nop")` in the list passed to `r ref("gunion()")`.
+:::
+
+The resulting task contains the predicted probabilities for both classes made from each of the level 0 learners.
+However, as the probabilities always add up to $1$, we only need the predictions for one of the classes (as this is a binary classification task), so we can use `po("select")` to only keep predictions for one class (we choose `"M"` in this example).
+
+
+```{r non-sequential_pipelines_and_tuning-022}
+gr_stack = gr_combined %>>%
+  po("select", selector = selector_grep("\\.M$"))
+```
+
+Finally, we can combine our pipeline with the final model that will take these predictions as its input.
+Below we use `r index('logistic regression')`, which combines the level 0 predictions in a weighted linear sum.
+
+```{r non-sequential_pipelines_and_tuning-023, eval = FALSE}
+gr_stack = gr_stack %>>% po("learner", lrn("classif.log_reg"))
+gr_stack$plot(horizontal = TRUE)
+```
+
+```{r non-sequential_pipelines_and_tuning-024, fig.width = 10, echo = FALSE}
+#| label: fig-pipelines-stackinggraph
+#| fig-cap: 'Constructed stacking Graph with one input being passed to three weak learners whose predictions are passed to the logistic regression.'
+#| fig-alt: 'Graph with "<INPUT>" in the first box with arrows to three boxes: "rpart_cv", "knn_cv", "glmnet_cv", which all have arrows pointing to the same boxes: "featureunion -> select -> classif.log_reg -> <OUTPUT>".'
+gr_stack = gr_stack %>>% po("learner", lrn("classif.log_reg"))
+fig = magick::image_graph(width = 2000, height = 1000, res = 100, pointsize = 24)
+gr_stack$plot(horizontal = TRUE)
+invisible(dev.off())
+magick::image_trim(fig)
+```
+
+As our final model was an interpretable logistic regression, we can inspect the weights of the level 0 learners by looking at the final trained model:
+
+```{r non-sequential_pipelines_and_tuning-025, warning = FALSE}
+glrn_stack = as_learner(gr_stack)
+glrn_stack$train(tsk("sonar"))
+glrn_stack$base_learner()$model
+```
+
+The model weights suggest that `r c("rpart", "knn", "glmnet")[which.max(glrn_stack$base_learner()$model$coefficients[-1])]` influences the predictions the most with the largest coefficient.
+To confirm this we can benchmark the individual models alongside the stacking pipeline.
+
+```{r non-sequential_pipelines_and_tuning-026, warning = FALSE}
+glrn_stack$id = "stacking"
+design = benchmark_grid(tsk("sonar"),
+  list(lrn_rpart, lrn_knn, lrn_glmnet, glrn_stack), rsmp("repeated_cv"))
+bmr = benchmark(design)
+bmr$aggregate()[, .(learner_id, classif.ce)]
+```
+
+This experiment confirms that of the individual models, the KNN learner performs the best, however, our stacking pipeline outperforms them all.
+Now that we have seen the inner workings of this pipeline, next time you might want to more efficiently create it using `ppl("stacking")`, to copy the example above you would run:
+
+```{r non-sequential_pipelines_and_tuning-027, eval = FALSE}
+ppl("stacking",
+  base_learners = lrns(c("classif.rpart", "classif.kknn",
+    "classif.glmnet")),
+  super_learner = lrn("classif.log_reg")
+)
+```
+
+Having covered the building blocks of `mlr3pipelines` and seen these in practice, we will now turn to more advanced functionality, combining pipelines with tuning.
+
+## `r index('Tuning')` Graphs {#sec-pipelines-tuning}
+
+By wrapping a pipeline inside a `r ref("GraphLearner")`, we can tune it at two levels of complexity using `r mlr3tuning`:
+
+1. Tuning of a fixed, usually sequential pipeline, where preprocessing is combined with a given learner.
+  This simply means the joint tuning of any subset of selected hyperparameters of operations in the pipeline.
+  Conceptually and also technically in `mlr3`, this is not much different from tuning a learner that is not part of a pipeline.
+
+2. Tuning not only the hyperparameters of a pipeline, whose structure is not completely fixed in terms of its included operations, but also which concrete `r ref("PipeOp")`s should be applied to data.
+  This allows us to select these operations (e.g. which learner to use, which preprocessing to perform) in a data-driven manner known as "`r index('Combined Algorithm Selection and Hyperparameter optimization')`"\index{CASH|see{combined algorithm selection and hyperparameter optimization}} [@Thornton2013].
+  As we will soon see, we can do this in `mlr3pipelines` by using the powerful branching (@sec-pipelines-branch) and proxy (@sec-pipelines-proxy) meta operators.
+  Through this, we can conveniently create our own "mini AutoML systems" [@hutter2019automated] in `mlr3`, which can even be geared for specific tasks.
+
+### Tuning Graph Hyperparameters {#sec-pipelines-combined}
+
+Let us consider a simple, sequential pipeline using `po("pca")` followed by `lrn("classif.kknn")`:
+
+```{r non-sequential_pipelines_and_tuning-028}
+graph_learner = as_learner(po("pca") %>>% lrn("classif.kknn"))
+```
+
+The optimal setting of the `rank.` hyperparameter of our PCA `r ref("PipeOp")` may realistically depend on the value of the `k` hyperparameter of the KNN model so jointly tuning them is reasonable.
+For this, we can simply use the syntax for tuning `Learner`s, which was introduced in @sec-optimization.
+
+```{r non-sequential_pipelines_and_tuning-029}
+lrn_knn = lrn("classif.kknn", k = to_tune(1, 32))
+po_pca = po("pca", rank. = to_tune(2, 20))
+graph_learner = as_learner(po_pca %>>% lrn_knn)
+graph_learner$param_set$values
+```
+
+We can see how the pipeline's `$param_set` includes the tune tokens for all selected hyperparameters, creating a joint search space.
+We can compare the tuned and untuned pipeline in a benchmark experiment with nested resampling by using an `AutoTuner`:
+
+```{r non-sequential_pipelines_and_tuning-030}
+glrn_tuned = auto_tuner(tnr("random_search"), graph_learner,
+  rsmp("holdout"), term_evals = 10)
+glrn_untuned = po("pca") %>>% lrn("classif.kknn")
+design = benchmark_grid(tsk("sonar"), c(glrn_tuned, glrn_untuned),
+  rsmp("cv", folds = 5))
+benchmark(design)$aggregate()[, .(learner_id, classif.ce)]
+```
+
+Tuning pipelines will usually take longer than tuning individual learners as training steps are often more complex and the search space will be larger.
+Therefore, parallelization is often appropriate (@sec-parallelization) and/or more efficient tuning methods for searching large tuning spaces such as `r index('Bayesian optimization', lower = FALSE)` (@sec-bayesian-optimization).
+
+### Tuning Alternative Paths with po("branch") {#sec-pipelines-branch}
+
+In the previous section, we tuned the KKNN and `r index('decision tree')` in the stacking pipeline, as well as tuning the rank of the PCA.
+However, we tuned the PCA without first considering if it was even beneficial at all, in this section we will answer that question by making use of `r ref("PipeOpBranch")` and `r ref("PipeOpUnbranch")`, which make it possible to specify multiple alternative paths in a pipeline.
+`po("branch")` creates multiple paths such that data can only flow through *one* of these as determined by the `selection` hyperparameter (@fig-pipelines-alternatives).
+This concept makes it possible to use tuning to decide which `r ref("PipeOp")`s and `r ref("Learner")`s to include in the pipeline, while also allowing all options in every path to be tuned.
+
+```{r non-sequential_pipelines_and_tuning-031, echo = FALSE, out.width = "100%"}
+#| label: fig-pipelines-branching
+#| fig-cap: 'Figure demonstrates the `po("branch")` and `po("unbranch")` operators where three separate branches are created and data only flows through the PCA, which is specified with the argument to `selection`.'
+#| fig-alt: 'Graph with "Dtrain" on the left with an arrow to `po("branch", selection = "pca")` which then has a dark shaded arrow to a box that says "PCA". Above this box is a transparent box that says "PipeOpNOP" and below the "PCA" box is another transparent box that says "YeoJohnson", the implication is that only the "PCA" box is active. The "PCA" box then has an arrow to `po("unbranch")` -> po("branch", selection = "XGBoost")` which has three arrows to another three boxes with "XGBoost" highlighted and "Random Forest" and "Decision Tree" transparent again. These finally have arrows to the same `po("unbranch")`.'
+include_multi_graphics("mlr3book_figures-24")
+```
+
+To demonstrate alternative paths we will make use of the MNIST [@lecun1998gradient] data, which is useful for demonstrating preprocessing.
+The data is loaded from OpenML, which is described in @sec-openml, we subset the data to make the example run faster.
+
+```{r non-sequential_pipelines_and_tuning-032}
+library(mlr3oml)
+otsk_mnist = otsk(id = 3573)
+tsk_mnist = as_task(otsk_mnist)$
+  filter(sample(70000, 1000))$
+  select(otsk_mnist$feature_names[sample(700, 100)])
+```
+
+`po("branch")` is initialized either with the number of branches or with a `character`-vector indicating the names of the branches, the latter makes the `selection` hyperparameter (discussed below) more readable.
+Below we create three branches: do nothing (`po("nop")`), apply PCA (`po("pca")`), remove constant features (`po("removeconstants")`) then apply the `r index('Yeo-Johnson', lower = FALSE)` transform (`po("yeojohnson")`).
+It is important to use `po("unbranch")` (with the same arguments as `"branch"`) to ensure that the outputs are merged into one result object.
+
+```{r non-sequential_pipelines_and_tuning-033, eval = FALSE}
+paths = c("nop", "pca", "yeojohnson")
+
+graph = po("branch", paths, id = "brnchPO") %>>%
+  gunion(list(
+    po("nop"),
+    po("pca"),
+    po("removeconstants", id = "rm_const") %>>%
+      po("yeojohnson", id = "YJ")
+  )) %>>% po("unbranch", paths, id = "unbrnchPO")
+
+graph$plot(horizontal = TRUE)
+```
+
+```{r non-sequential_pipelines_and_tuning-034, fig.width = 10, echo = FALSE}
+#| label: fig-pipelines-branchone
+#| fig-cap: 'Graph with branching to three different paths that are split with `po("branch")` and combined with `po("unbranch")`.'
+#| fig-alt: 'Graph starting with "<INPUT> -> brnchPO" which has three arrows to "removeconstants -> yeojohnson", "nop", and "pca", which all then point to "unbrnchPO -> <OUTPUT>".'
+paths = c("nop", "pca", "yeojohnson")
+
+graph = po("branch", paths, id = "brnchPO") %>>%
+  gunion(list(
+    po("nop"),
+    po("pca"),
+    po("removeconstants", id = "rm_const") %>>% po("yeojohnson", id = "YJ")
+  )) %>>% po("unbranch", paths, id = "unbrnchPO")
+
+fig = magick::image_graph(width = 2000, height = 900, res = 100, pointsize = 24)
+graph$plot(horizontal = TRUE)
+invisible(dev.off())
+magick::image_trim(fig)
+```
+
+We can see how the output of this `Graph` depends on the setting of the `branch.selection` hyperparameter:
+
+```{r non-sequential_pipelines_and_tuning-035}
+# use the "PCA" path
+graph$param_set$values$brnchPO.selection = "pca"
+# new PCA columns
+head(graph$train(tsk_mnist)[[1]]$feature_names)
+# use the "No-Op" path
+graph$param_set$values$brnchPO.selection = "nop"
+# same features
+head(graph$train(tsk_mnist)[[1]]$feature_names)
+```
+
+`ppl("branch")` simplifies the above by allowing you to just pass the different paths to the `graphs` argument (omitting "`rm_const`" for simplicity here):
+
+```{r non-sequential_pipelines_and_tuning-036, eval = FALSE}
+ppl("branch", graphs = pos(c("nop", "pca", "yeojohnson")))
+```
+
+Branching can even be used to tune which of several learners is most appropriate for a given dataset.
+We extend our example further and add the choice between a decision tree and KKNN:
+
+```{r non-sequential_pipelines_and_tuning-037, eval = FALSE}
+graph_learner = graph %>>%
+  ppl("branch", lrns(c("classif.rpart", "classif.kknn")))
+graph_learner$plot(horizontal = TRUE)
+```
+
+```{r non-sequential_pipelines_and_tuning-038, fig.width = 8, fig.height = 6, echo = FALSE, out.width = "100%"}
+#| label: fig-pipelines-branchtwo
+#| fig-cap: 'Graph with branching to three different paths that are split with `po("branch")` and combined with `po("unbranch")` then branch and recombine again.'
+#| fig-alt: 'Graph starts with "<INPUT> -> brnchPO" which has three arrows to "removeconstants -> yeojohnson", "nop", and "pca", which all then point to "unbrnchPO -> branch", which then has two arrows to "classif.rpart" and "classif.kknn" which then both point to "unbranch -> <OUTPUT>".'
+graph_learner = graph %>>%
+  ppl("branch", lrns(c("classif.rpart", "classif.kknn")))
+fig = magick::image_graph(width = 2000, height = 900, res = 100, pointsize = 22)
+graph_learner$plot(horizontal = TRUE)
+invisible(dev.off())
+magick::image_trim(fig)
+```
+
+Tuning the `selection` hyperparameters can help determine which of the possible options work best in combination.
+We additionally tune the `k` hyperparameter of the KNN learner, as it may depend on the type of preprocessing performed.
+As this hyperparameter is only active when the `"classif.kknn"` path is chosen we will set a dependency (@sec-optimization-depends):
+
+```{r non-sequential_pipelines_and_tuning-039, echo = FALSE}
+# instead of plotting, we make autoplot() save the plot so we can edit it afterwards
+# This is *not* the same as ggplot::last_plot(), but the result is easier to handle in a loop.
+plt_container = new.env()
+autoplot = function(...) {
+  # <<- doesn't seem to work on CI for some reason
+  plt_container$plt = ggplot2::autoplot(...)
+  invisible(NULL)
+}
+```
+
+```{r non-sequential_pipelines_and_tuning-040}
+graph_learner = as_learner(graph_learner)
+
+graph_learner$param_set$set_values(
+  brnchPO.selection = to_tune(paths),
+  branch.selection = to_tune(c("classif.rpart", "classif.kknn")),
+  classif.kknn.k = to_tune(p_int(1, 32,
+    depends = branch.selection == "classif.kknn"))
+)
+
+instance = tune(tnr("grid_search"), tsk_mnist, graph_learner,
+  rsmp("repeated_cv", folds = 3, repeats = 3), msr("classif.ce"))
+
+instance$archive$data[order(classif.ce)[1:5],
+  .(brnchPO.selection, classif.kknn.k, branch.selection, classif.ce)]
+
+autoplot(instance)
+```
+
+```{r non-sequential_pipelines_and_tuning-041, echo = FALSE, message = FALSE, warning = FALSE}
+#| label: fig-nonseq-instance
+#| fig-cap: Instance after tuning preprocessing branch choice (`brnchPO.selection`), KNN `k` parameter (`classif.kknn.k`), and learning branch choice (`branch.selection`). Dots are different hyperparameter configurations that were tested during tuning, colors separate hyperparameter configurations.
+#| fig-alt: "Three scatter plots all with y-axis 'classif.ce' from around 0.25 to 0.5. Left plot is 'brnchPO.selection', middle is 'classif.knn.k', right is 'branch.selection'. x-axis text is the hyperparameter values to tune. Each 'row' of the y-axis indicates a different hyperparameter configuration (also separated by colored dots). The bottom row (and therefore best configuration) is at around 0.22 and shows the same results as in the instance output. Other 'rows' show a trade-off between KKNN `k` parameter, choice of learner, and choice of operators."
+library("ggplot2")
+plt = plt_container$plt
+for (i in seq_along(plt)) {
+
+  # remove axis labels and text,
+  if (i != 1) {
+    plt[[i]]$labels$y = NULL
+    plt[[i]]$theme$axis.text.y = element_blank()
+  }
+  # bring axes to same scale
+  plt[[i]]$coordinates$limits$y = range(plt[[1]]$data$classif.ce)  # hard-coding y var here...
+
+  ## The following removes the legend and rotates the x-axis labels
+  ## We do this in the hidden part of the document to avoid cluttering the
+  ## example. If you want the example to be "exact" (except for the modifications above),
+  ## use the following instead:
+  # autoplot(instance, theme = theme_minimal() + theme(
+  #     axis.text.x = element_text(angle = 45),
+  #     legend.position = "none"))
+  ### Angle the x-axis labels
+  et = element_text(angle = 45)
+  plt[[i]]$theme$axis.text.x = et
+  ### Remove the legends
+  plt[[i]]$theme$legend.position = "none"
+}
+rm(autoplot) # reset to original function
+print(plt)
+```
+
+As we can see in the results and @fig-nonseq-instance, the KNN-learner with `k` set to `r instance$result$classif.kknn.k` was selected, which performs best in combination with the Yeo-Johnson transform.
+
+### Tuning with po("proxy") {#sec-pipelines-proxy}
+
+{{< include ../../common/_optional.qmd >}}
+
+`po("proxy")` is a meta-operator that performs the operation that is stored in its `content` hyperparameter, which could be another `r ref("PipeOp")` or `r ref("Graph")`.
+It can therefore be used to tune over and select different `PipeOp`s or `Graph`s that could be passed to this hyperparameter (@fig-pipelines-alternatives).
+
+```{r non-sequential_pipelines_and_tuning-042, echo = FALSE, out.width = "70%"}
+#| label: fig-pipelines-alternatives
+#| fig-cap: 'Figure demonstrates the `po("proxy")` operator with a `PipeOp` as its argument.'
+#| fig-alt: 'Graph with "Dtrain -> po("proxy", content = PCA) -> po("proxy", content = XGBoost)"; "PCA" and "XGBoost" are represented as boxes that imply PipeOps.'
+include_multi_graphics("mlr3book_figures-25")
+```
+
+To recreate the example above with `po("proxy")`, the first step is to create placeholder `r ref("PipeOpProxy")` operators to stand in for the operations (i.e., different paths) that should be tuned.
+
+```{r non-sequential_pipelines_and_tuning-043}
+graph_learner = po("proxy", id = "preproc") %>>%
+  po("proxy", id = "learner")
+graph_learner = as_learner(graph_learner)
+```
+
+The tuning space for the `content` hyperparameters should be a discrete set of possibilities to be evaluated, passed as a `r ref("p_fct")` (@sec-tune-ps).
+For the `"preproc"` proxy operator this would simply be the different `PipeOp`s that we want to consider:
+
+```{r non-sequential_pipelines_and_tuning-044}
+# define content for the preprocessing proxy operator
+preproc.content = p_fct(list(
+  nop = po("nop"),
+  pca = po("pca"),
+  yeojohnson = po("removeconstants") %>>% po("yeojohnson")
+))
+```
+
+For the `"learner"` proxy, this is more complicated as the selection of the learner depends on more than one search space component:
+The choice of the learner itself (`lrn("classif.rpart")` or `lrn("classif.kknn")`) and the tuned `k` hyperparameter of the KNN learner.
+To enable this we pass a transformation to `.extra_trafo` (@sec-tune-trafo).
+Note that inside this transformation we clone `learner.content`, otherwise, we would end up modifying the original `r ref("Learner")` object inside the search space by reference (@sec-r6).
+
+```{r non-sequential_pipelines_and_tuning-045}
+# define content for the learner proxy operator
+learner.content = p_fct(list(
+    classif.rpart = lrn("classif.rpart"),
+    classif.kknn = lrn("classif.kknn")
+))
+
+# define transformation to set the content values
+trafo = function(x, param_set) {
+    if (!is.null(x$classif.kknn.k)) {
+      x$learner.content = x$learner.content$clone(deep = TRUE)
+      x$learner.content$param_set$values$k = x$classif.kknn.k
+      x$classif.kknn.k = NULL
+    }
+    x
+}
+```
+
+We can now put this all together, add the KNN tuning, and run the experiment.
+
+```{r non-sequential_pipelines_and_tuning-046}
+search_space = ps(
+  preproc.content = preproc.content,
+  learner.content = learner.content,
+  # tune KKNN parameter as normal
+  classif.kknn.k = p_int(1, 32,
+    depends = learner.content == "classif.kknn"),
+  .extra_trafo = trafo
+)
+
+instance = tune(tnr("grid_search"), tsk_mnist, graph_learner,
+  rsmp("repeated_cv", folds = 3, repeats = 3), msr("classif.ce"),
+  search_space = search_space)
+
+as.data.table(instance$result)[,
+  .(preproc.content,
+    classif.kknn.k = x_domain[[1]]$learner.content$param_set$values$k,
+    learner.content, classif.ce)
+]
+```
+
+Once again, the best configuration is a KNN learner with the Yeo-Johnson transform.
+In practice `po("proxy")` offers complete flexibility and may be more useful for more complicated use cases, whereas `ppl("branch")` is more efficient in more straightforward scenarios.
+
+### Hyperband with Subsampling {#sec-hyperband-example-svm}
+
+{{< include ../../common/_optional.qmd >}}
+
+In @sec-hyperband we learned about the `r index('Hyperband')` tuner and how it can make use of `r index('fidelity parameters')` to efficiently tune learners.
+Now that you have learned about pipelines and how to tune them, in this short section we will briefly return to Hyperband to showcase how we can put together everything we have learned in this chapter to allow Hyperband to be used with any `Learner`.
+
+We previously saw how some learners have hyperparameters that can act naturally as fidelity parameters, such as the number of trees in a random forest.
+However, using pipelines, we can now create a fidelity parameter for any model using `po("subsample")`.
+The `frac` parameter of `po("subsample")` controls the amount of data fed into the subsequent `Learner`.
+In general, feeding less data to a `Learner` results in quicker model training but poorer quality predictions compared to when more training data is supplied.
+Resampling with less data will still give us some information about the relative performance of different model configurations, thus making the fraction of data to subsample the perfect candidate for a fidelity parameter.
+
+In this example, we will optimize the SVM\index{support vector machine} hyperparameters, `cost` and `gamma`, on `tsk("sonar")`:
+
+```{r non-sequential_pipelines_and_tuning-047}
+library(mlr3tuning)
+
+learner = lrn("classif.svm", id = "svm", type = "C-classification",
+  kernel = "radial", cost  = to_tune(1e-5, 1e5, logscale = TRUE),
+  gamma = to_tune(1e-5, 1e5, logscale = TRUE))
+```
+
+We then construct `po("subsample")` and specify that we want to use the `frac` parameter between $[3^{-3}, 1]$ as our fidelity parameter and set the `"budget"` tag to pass this information to Hyperband.
+We add this to our SVM and create a `r ref("GraphLearner")`.
+
+```{r non-sequential_pipelines_and_tuning-048}
+graph_learner = as_learner(
+  po("subsample", frac = to_tune(p_dbl(3^-3, 1, tags = "budget"))) %>>%
+  learner
+)
+```
+
+As good practice, we encapsulate our learner and add a fallback to prevent fatal errors (@sec-tuning-errors).
+
+```{r non-sequential_pipelines_and_tuning-049}
+graph_learner$encapsulate("evaluate", lrn("classif.featureless"))
+graph_learner$timeout = c(train = 30, predict = 30)
+```
+
+Now we can tune our SVM by tuning our `GraphLearner` as normal, below we set `eta = 3` for Hyperband.
+
+```{r non-sequential_pipelines_and_tuning-050}
+instance = tune(tnr("hyperband", eta = 3), tsk("sonar"), graph_learner,
+  rsmp("cv", folds = 3), msr("classif.ce"))
+
+instance$result_x_domain
+```
+
+### Feature Selection with Filter Pipelines {#sec-pipelines-featsel}
+
+{{< include ../../common/_optional.qmd >}}
+
+In @sec-fs-filter-based we learnt about filter-based `r index('feature selection')` and how we can manually run a filter and then extract the selected features, often using an arbitrary choice of thresholds that were not tuned.
+Now that we have covered pipelines and tuning, we will briefly return to feature selection to demonstrate how to automate filter-based feature selection by making use of `po("filter")`.
+`po("filter")` includes the `filter` construction argument, which takes a `r ref("Filter")` object to be used as the filter method as well as a choice of parameters for different methods of selecting features:
+
+* `filter.nfeat` -- Number of features to select
+* `filter.frac` -- Fraction of features to select
+* `filter.cutoff` -- Minimum value of filter such that features with filter values greater than or equal to the cutoff are kept
+* `filter.permuted` -- Random permutation of features added to task before applying the filter and all features before the `permuted`-th permuted features are kept
+
+Below we use the information gain filter and select the top three features:
+
+```{r non-sequential_pipelines_and_tuning-051, warning = FALSE, message = FALSE}
+library(mlr3filters)
+library(mlr3fselect)
+
+task_pen = tsk("penguins")
+
+# combine filter (keep top 3 features) with learner
+po_flt = po("filter", filter = flt("information_gain"), filter.nfeat = 3)
+graph = po_flt %>>% po("learner", lrn("classif.rpart"))
+
+po("filter", filter = flt("information_gain"), filter.nfeat = 3)$
+  train(list(task_pen))[[1]]$feature_names
+```
+
+Choosing `3` as the cutoff was fairly arbitrary but by tuning a graph we can optimize this cutoff:
+
+```{r non-sequential_pipelines_and_tuning-052}
+# tune between 1 and total number of features
+po_filter = po("filter", filter = flt("information_gain"),
+  filter.nfeat = to_tune(1, task_pen$ncol))
+
+graph = as_learner(po_filter %>>% po("learner", lrn("classif.rpart")))
+
+instance = tune(tnr("random_search"), task_pen, graph,
+  rsmp("cv", folds = 3), term_evals = 10)
+instance$result
+```
+
+In this example, ``r instance$result$information_gain.filter.nfeat`` is the optimal number of features.
+It can be especially useful in feature selection to visualize the tuning results as there may be cases where the optimal result is only marginally better than a result with less features (which would lead to a model that is quicker to train and possibly easier to interpret).
+
+```{r non-sequential_pipelines_and_tuning-053}
+#| label: fig-tunefilter
+#| fig-cap: Model performance with different numbers of features, selected by an information gain filter.
+#| fig-alt: Plot showing model performance in filter-based feature selection, showing that adding a second, third, and fourth feature to the model improves performance, while adding more features achieves no further performance gain.
+autoplot(instance)
+```
+
+Now we can see that four variables may be equally as good in this case so we could consider going forward by selecting four features and not six as suggested by `instance$result`.
+
+## Conclusion
+
+In this chapter, we built on what we learned in @sec-pipelines to develop complex non-sequential `Graph`s.
+We saw how to build our own graphs, as well as how to make use of `ppl()` to load `Graph`s that are available in `r mlr3pipelines`.
+We then looked at different ways to tune pipelines, including joint tuning of hyperparameters and tuning the selection of `PipeOp`s in a `Graph`, enabling the construction of simple, custom AutoML systems.
+In @sec-preprocessing we will study in more detail how to use pipelines for data preprocessing.
+
+| Class | Constructor/Function | Fields/Methods |
+| --- | --- | --- |
+| `r ref("Graph")` | `r ref("ppl()")` | `$train()`; `$predict()` |
+| `r ref("Selector")` | `r ref("selector_grep()")`; `r ref("selector_type()")`; `r ref("selector_invert()")` | - |
+| `r ref("PipeOpBranch")`; `r ref("PipeOpUnbranch")` | `po("branch")`; `po("unbranch")` | - |
+| `r ref("PipeOpProxy")` | `po("proxy")` | - |
+
+: Important classes and functions covered in this chapter with underlying class (if applicable), class constructor or function, and important class fields and methods (if applicable). {#tbl-api-pipelines-nonseq}
+
+## Exercises
+
+1. Create a graph that replaces all numeric columns that do not contain missing values with their PCA transform.
+  Solve this in two ways, using `affect_columns` in a sequential graph, and using `po("select")` in a non-sequential graph.
+  Train the graph on `tsk("pima")` to check your result.
+  Hint: You may find `selector_missing()` useful.
+2. The `po("select")` in @sec-pipelines-stack is necessary to remove redundant predictions (recall this is a binary classification task so we do not require predictions of both classes).
+  However, if this was a multiclass classification task, then using `selector_grep()` would need to be called with a pattern for *all* prediction columns that should be *kept*, which would be inefficient.
+  Instead it would be more appropriate to provide a pattern for the single class to remove.
+  How would you do this using the `Selector` functions provided by `mlr3pipelines`?
+  Implement this and train the modified stacking pipeline on `tsk("wine")`, using `lrn("classif.multinom")` as the level 1 learner.
+3. How would you solve the previous exercise without explicitly naming the class you want to exclude, so that your graph works for any classification task?
+  Hint: look at the `selector_subsample` in @sec-pipelines-bagging.
+4. (*) Create your own "minimal AutoML system" by combining pipelines, branching and tuning.
+  It should allow automatic preprocessing and the automatic selection of a well-performing learning algorithm.
+  Both your `PipeOp`s and models should be tuned.
+  Your system should feature options for two preprocessing steps (imputation and factor encoding) and at least three learning algorithms to choose from.
+  You can optimize this via random search, or try to use a more advanced tuning algorithm.
+  Test it on at least three different data sets and compare its performance against an untuned random forest via nested resampling.
+
+::: {.content-visible when-format="html"}
+`r citeas(chapter)`
+:::

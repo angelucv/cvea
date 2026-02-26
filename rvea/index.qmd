@@ -1,0 +1,41 @@
+---
+title: "Revista Venezolana de Actuariado (RVEA)"
+subtitle: "Eje de Investigación"
+listing:
+  type: table
+  contents:
+    - vol1-colmenares.qmd
+    - vol1-moreno-arlet.qmd
+    - vol1-moreno.qmd
+    - vol1-azuaje.qmd
+    - vol2-herrera.qmd
+  fields: [title, author, date]
+---
+
+La **Revista Venezolana de Actuariado (RVEA)** es la publicación arbitrada del CVEA. Publica trabajos originales en mortalidad, supervivencia, reservas, riesgo y bases técnicas, con énfasis en aplicaciones al contexto venezolano y latinoamericano. Cada manuscrito incluye código reproducible (R/Python/Julia) y está disponible en formato web y, cuando aplique, en PDF.
+
+**Alcance:** modelos estocásticos de mortalidad (Lee-Carter, BYM, INLA), análisis espacial y espacio-temporal, tablas dinámicas, proyección por causas (CoDa), solvencia y pensiones, tarificación y reservas. Se priorizan estudios que aporten datos, código y replicabilidad.
+
+## Volumen I
+
+- **Análisis espacio-temporal de la mortalidad (1996-2016)** (Angel Colmenares) — Riesgo Bayesiano BYM/INLA, autocorrelación espacial, SMR y clusters a nivel municipal.
+- **Mortalidad neonatal, postneonatal y en la niñez por entidad federal** (Arlet Moreno, Angel Colmenares) — Lee-Carter estocástico, desagregación subnacional.
+- **Valuación de Bases Técnicas** (Daylin Moreno) — Desfase de las bases de Masjuán (1960) frente a la realidad del siglo XXI.
+- **Tabla Dinámica LC15** (Daniel Azuaje) — Desarrollo de la tabla de mortalidad dinámica con R; superación de tablas estáticas CSO 1980.
+
+## Volumen II
+
+- **Proyección CoDa de Causas** (Iliria Herrera) — Proyección de mortalidad por causas integrando Lee-Carter con Análisis de Datos Composicionales.
+
+## Cómo publicar
+
+Si deseas enviar un manuscrito:
+
+1. Utiliza la estructura **I-RL-M-R-D** (Introducción, Revisión Literaria, Métodos, Resultados, Discusión).
+2. Prepara código y datos en un repositorio público (GitHub, Saber UCV u otro) y referéncialo en el artículo.
+3. Usa la plantilla oficial de la RVEA (Quarto) y el estilo de referencias APA. Detalles en [Sobre el CVEA — Editorial](../sobre.qmd#editorial).
+4. Contacta al Comité Editorial a través de los editores principales; ver [perfiles del Comité Editorial](../editores.qmd).
+
+## Modelo editorial y plantilla
+
+La RVEA exige **reproducibilidad** (código y datos en repositorio público) y la estructura **I-RL-M-R-D**. La plantilla para autores y el detalle del Comité Editorial se describen en [Sobre el CVEA — Editorial](../sobre.qmd#editorial).

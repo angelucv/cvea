@@ -1,0 +1,46 @@
+# Configuración del sitio (modelo Hertie Coding Club)
+website:
+  title: "Centro Venezolano de Estudios Actuariales"
+  site-url: https://angel-colmenares.github.io/cvea/
+  favicon: assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png
+  navbar:
+    logo: "assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png"
+    logo-alt: "CVEA"
+    href: index.qmd
+    collapse-below: lg
+    pinned: true
+    right:
+      - icon: house-fill
+        href: index.qmd
+        text: "Inicio"
+      - icon: people-fill
+        text: "Comité Editorial"
+        href: editores.qmd
+      - icon: info-circle-fill
+        text: "Sobre"
+        href: sobre.qmd
+      - icon: journal-richtext
+        text: "Investigación"
+        menu:
+          - text: "Revista RVEA"
+            href: rvea/index.qmd
+          - text: "Libros y Materiales Docentes"
+            href: libro/index.qmd
+      - icon: person-workspace
+        text: "Formación"
+        menu:
+          - text: "Series de Tiempo (Python)"
+            href: docencia/series-tiempo/index.qmd
+      - icon: gear-fill
+        text: "Servicios"
+        href: servicios/index.qmd
+      - icon: github
+        href: https://github.com/angel-colmenares/cvea-platform
+  page-footer:
+    left:
+      - text: "© CVEA — Centro Venezolano de Estudios Actuariales"
+    center:
+      - text: "Investigación · Docencia · Extensión"
+    right:
+      - icon: github
+        href: https://github.com/angel-colmenares/cvea-platform

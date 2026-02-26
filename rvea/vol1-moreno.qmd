@@ -1,0 +1,23 @@
+---
+title: "Valuación Actuarial de Bases Técnicas"
+subtitle: "Desfase de las bases de Masjuán (1960) frente a la realidad del siglo XXI"
+author: "Daylin Moreno"
+date: today
+format:
+  html:
+    toc: true
+    number-sections: true
+  pdf:
+    documentclass: article
+    papersize: a4
+---
+
+## Resumen
+
+Investigación sobre el desfase de las bases técnicas de Masjuán (1960) frente a la realidad demográfica y actuarial del siglo XXI. Análisis de la solvencia del sistema de pensiones y la subestimación sistemática de la supervivencia.
+
+*Este artículo es un placeholder. Sustituir por el contenido completo del manuscrito (por ejemplo, a partir de la plantilla RVEA en `d:\CVEA\RVEA\Volumen I\RVA_Vol_I_Arlet_M\` o material equivalente).*
+
+## Referencias
+
+- Moreno, D. (2018). Evaluación de la solvencia del sistema de pensiones en Venezuela: Un análisis de longevidad. Trabajo de Grado, UCV.

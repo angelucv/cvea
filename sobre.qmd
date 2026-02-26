@@ -1,0 +1,63 @@
+---
+title: "Sobre el CVEA"
+subtitle: "Estructura y Modelo de Publicación"
+toc: true
+toc-depth: 2
+---
+
+Los perfiles del **Comité Editorial y de Investigación** están en una página dedicada: [**Comité Editorial**](editores.qmd). Ahí se muestra el título «Centro Venezolano de Estudios Actuariales» y los perfiles de los miembros.
+
+## Estructura del Centro
+
+El **Centro Venezolano de Estudios Actuariales (CVEA)** integra tres ejes bajo una misma identidad institucional:
+
+| Eje | Contenido |
+|-----|-----------|
+| **Investigación** | Revista Venezolana de Actuariado (RVEA), Libros y Materiales Docentes, manuscritos y código reproducible. |
+| **Formación** | Cursos en series de tiempo, modelado actuarial y despliegue en entornos productivos. |
+| **Servicios** | Demos analíticos, dashboards interactivos y consultoría en reservas y riesgo. |
+
+La coordinación editorial, la tutoría de investigaciones y la relación con el sector (IVSS, Sudeaseg, aseguradoras) están a cargo del equipo cuyo perfil se presenta en [Comité Editorial](editores.qmd).
+
+## Editorial {#editorial}
+
+### Comité Editorial RVEA
+
+La Revista Venezolana de Actuariado (RVEA) cuenta con un Comité Editorial que vela por la calidad y la reproducibilidad de los manuscritos. Las recomendaciones estratégicas del CVEA (transición a tablas dinámicas, territorialización de reservas, observatorios de mortalidad) se dirigen al sector actuarial, IVSS, Sudeaseg y decisores de política pública.
+
+La tutoría y coordinación de investigaciones del volumen inaugural de la RVEA está a cargo del Prof. Angel Colmenares. Los tesistas Daylin Moreno, José Raúl Gálvez, Daniel Azuaje y Arlet Moreno han sido pilares del diagnóstico sistémico presentado en el primer volumen.
+
+### Modelo de artículo: I-RL-M-R-D
+
+Los manuscritos de la RVEA siguen la estructura **I-RL-M-R-D**:
+
+| Sigla | Sección | Contenido |
+|------|---------|-----------|
+| **I** | Introducción | Contexto, problema, vacío de conocimiento, objetivo y contribución. |
+| **RL** | Revisión literaria | Síntesis analítica (no cronológica), metodología de la revisión, conclusión que justifica los métodos. |
+| **M** | Métodos | Diseño, fuentes de datos, modelización, entorno computacional y código fuente. |
+| **R** | Resultados | Presentación objetiva y secuencial; figuras y tablas con leyendas y referenciación cruzada. |
+| **D** | Discusión | Interpretación, implicaciones, limitaciones y conclusiones. |
+
+Se exige **reproducibilidad**: código (R, Python, Julia) y datos en repositorio público; referencias en formato APA (`references.bib` + `.csl`).
+
+### Plantilla para autores
+
+La plantilla oficial de la RVEA está en la carpeta de referencia del proyecto:
+
+- **Ubicación:** `Referencias/Plantilla_RVEA/jfwm_template_raw.qmd`
+- Incluye guías por sección (Introducción, Revisión Literaria, Métodos, Resultados, Discusión), ejemplos de código y requisitos de archivos (`references.bib`, `apa.csl`, logo CVEA para PDF).
+
+Para integrar la plantilla en tu flujo de trabajo, copia ese archivo y los archivos indicados en su cabecera a tu carpeta de manuscrito.
+
+## Libros y Materiales Docentes y plantilla de libros
+
+El **modelo para los libros del CVEA** es la plantilla **Quarto Book** basada en *Applied Machine Learning Using mlr3 in R*, ubicada en `Referencias/Plantilla_CVEA_Book_Applied Machine Learning Using mlr3 in R/book/`. Incluye partes, capítulos, PDF descargable, sidebar y búsqueda; ya está adaptada al CVEA (título, logo, pie de página).
+
+El libro **Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial** fue generado con esa plantilla y está compilado; se publica en la web colocando solo el HTML y el PDF en `libro/demografia-siglo-xxi/`. Ver [Libros y Materiales Docentes](libro/index.qmd) para el enlace "Ver en línea" y "Descargar PDF".
+
+Los libros y materiales docentes (diagnóstico del sistema de pensiones y bases técnicas) sigue el plan editorial 2025-2026; los capítulos se irán añadiendo usando la misma plantilla.
+
+## Documentos de referencia
+
+La carpeta **Referencias** del repositorio contiene la estructura general del centro, editores, modelos de **revista (RVEA)** y de **libro**, volúmenes y artículos. Ver [Referencias/README.md](Referencias/README.md) para el detalle de la plantilla RVEA, la plantilla de libro (mlr3) y el libro Demografía.

@@ -1,0 +1,123 @@
+project:
+  type: book
+
+book:
+  title: "CVEA: Centro Venezolano de Estudios Actuariales"
+  #repo-url: https://github.com/mlr-org/mlr3book
+  #repo-actions: [edit, issue, source]
+  #repo-subdir: book
+  favicon: Figures/favicon.ico
+  cover-image: Figures/logo.png
+  downloads: [pdf]
+  sidebar:
+    style: "floating"
+    collapse-level: 1
+    border: true
+    search: true
+  page-footer:
+    left: |
+      All content licensed under [CC BY-NC-SA 4.0](CVEA PRUEBA 1) <br> &copy; NOMBRE1, NOMBRE2, NOMBRE3, NOMBRE4.
+    center: "[PRUEBA 1](https://cvechina.org/) | [PRUEBA 2](https://cvechina.org/) | [PRUEBA 3](https://cvechina.org/) | [PRUEBA 4](https://cvechina.org/)"
+    right: Built with [Quarto](https://quarto.org/).
+    background: "#f8f9fa"
+  chapters:
+    - index.qmd
+    - chapters/chapter1/introduction_and_overview.qmd
+    - part: "Fundamentals"
+      chapters:
+      - chapters/chapter2/data_and_basic_modeling.qmd
+      - chapters/chapter3/evaluation_and_benchmarking.qmd
+    - part: "Tuning and Feature Selection"
+      chapters:
+      - chapters/chapter4/hyperparameter_optimization.qmd
+      - chapters/chapter5/advanced_tuning_methods_and_black_box_optimization.qmd
+      - chapters/chapter6/feature_selection.qmd
+    - part: "Pipelines and Preprocessing"
+      chapters:
+      - chapters/chapter7/sequential_pipelines.qmd
+      - chapters/chapter8/non-sequential_pipelines_and_tuning.qmd
+      - chapters/chapter9/preprocessing.qmd
+    - part: "Advanced Topics"
+      chapters:
+      - chapters/chapter10/advanced_technical_aspects_of_mlr3.qmd
+      - chapters/chapter11/large-scale_benchmarking.qmd
+      - chapters/chapter12/model_interpretation.qmd
+      - chapters/chapter13/beyond_regression_and_classification.qmd
+      - chapters/chapter14/algorithmic_fairness.qmd
+      - chapters/chapter15/predsets_valid_inttune.qmd
+    - chapters/references.qmd
+  appendices:
+      - chapters/appendices/solutions.qmd # online only
+      - chapters/appendices/tasks.qmd # online only
+      - chapters/appendices/overview-tables.qmd # online only
+      - chapters/appendices/errata.qmd # online only
+      - chapters/appendices/session_info.qmd # online only
+
+bibliography: book.bib
+
+format:
+  html:
+    theme:
+      light: [default, style/custom.scss]
+    fontsize: "15px"
+    linestretch: 1.6
+    mainfont: "Roboto"
+    monofont: "Fira Mono"
+    smooth-scroll: true
+    toc-depth: 3
+    code-link: true
+    code-tools:
+      toggle: true
+    code-fold: false
+    highlight-style: printing
+    code-block-bg: true
+    code-overflow: wrap
+    reference-location: margin
+    embed-resources: true
+    mermaid:
+      theme: neutral
+
+  # see https://pandoc.org/MANUAL.html for all options
+  pdf:
+    documentclass: style/krantz
+    classoption: krantz2
+    lof: false
+    lot: false
+    toc: false
+    toc-depth: 2
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    urlcolor: "blue"
+    linkcolor: "black"
+    biblio-style: apalike
+    keep-tex: true
+    code-block-bg: "#f2f2f2"
+    code-block-border-left: "#f2f2f2"
+    code-overflow: wrap
+    mermaid:
+      theme: neutral
+    include-in-header:
+      text: |
+        \usepackage{makeidx}
+        \makeindex
+    include-after-body:
+      text: |
+        \printindex
+
+latex-auto-install: true
+
+knitr:
+  opts_chunk:
+    cache: true
+    cache.lazy: false
+    dpi: 600
+    fig.width: 5.5
+    fig.height: 3
+    out.width: "100%"
+    split: true
+    R.options:
+      knitr.graphics.auto_pdf: true
+      datatable.print.nrows: 10
+      datatable.print.class: false
+      datatable.print.keys: false
+      datatable.print.trunc.cols: TRUE

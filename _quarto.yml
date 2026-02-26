@@ -1,0 +1,16 @@
+# Orquestador global — modelo HCC (https://github.com/jurjoroa/hcc-website)
+project:
+  type: website
+  render:
+    - index.qmd
+    - editores.qmd
+    - sobre.qmd
+    - rvea
+    - libro
+    - docencia
+    - servicios
+
+metadata-files:
+  - _website.yml
+  - _format.yml
+  - _brand.yml

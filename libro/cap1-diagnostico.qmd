@@ -1,0 +1,14 @@
+---
+title: "Diagnóstico del sistema de pensiones"
+---
+
+## Introducción
+
+El diagnóstico del sistema de pensiones en Venezuela requiere abandonar las tablas estáticas heredadas (Masjuán, CSO 1980) y adoptar modelos dinámicos que capturen la tendencia de la mortalidad y la longevidad.
+
+*Este capítulo es un placeholder. Desarrollar con contenido de los libros y materiales docentes (propuesta editorial CVEA 2025-2026).*
+
+## Referencias clave
+
+- Moreno, D. (2018). Evaluación de la solvencia del sistema de pensiones en Venezuela.
+- Colmenares, A. (2026). Análisis espacio-temporal de la mortalidad en Venezuela (1996-2016). RVEA, Vol. I.

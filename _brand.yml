@@ -1,0 +1,25 @@
+# Identidad visual CVEA - Logos y colores actuariales
+# Usado por la web y los PDFs del libro/revista
+
+meta:
+  name: "Centro Venezolano de Estudios Actuariales"
+
+logo:
+  images:
+    header: "assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png"
+    white: assets/logos/cvea_white.png
+  medium: header
+  large: white
+
+color:
+  palette:
+    teal-cvea: "#38666A"
+  primary: teal-cvea
+  background: white
+
+typography:
+  fonts:
+    - family: "Montserrat"
+      source: google
+    - family: "Fira Code"
+      source: google

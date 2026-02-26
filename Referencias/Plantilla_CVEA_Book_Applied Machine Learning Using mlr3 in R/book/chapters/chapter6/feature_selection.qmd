@@ -1,0 +1,520 @@
+---
+aliases:
+  - "/feature_selection.html"
+---
+
+# Feature Selection {#sec-feature-selection}
+
+{{< include ../../common/_setup.qmd >}}
+
+`r chapter = "Feature Selection"`
+`r authors(chapter)`
+
+`r index('Feature selection')`, also known as variable or descriptor selection\index{variable selection|see{feature selection}}\index{descriptor selection|see{feature selection}}, is the process of finding a subset of features to use with a given task and learner.
+Using an *optimal set* of features can have several benefits:
+
+* improved predictive performance, since we reduce overfitting on irrelevant features,
+* robust models that do not rely on noisy features,
+* simpler models that are easier to interpret,
+* faster model fitting, e.g. for model updates,
+* faster prediction, and
+* no need to collect potentially expensive features.
+
+However, these objectives will not necessarily be optimized by the same set of features and thus feature selection can be seen as a `r index('multi-objective optimization')` problem.
+In this chapter, we mostly focus on feature selection as a means of improving predictive performance, but also briefly cover the optimization of multiple criteria (@sec-multicrit-featsel).
+
+Reducing the number of features can improve models across many scenarios, but it can be especially helpful in datasets that have a high number of features in comparison to the number of data points.
+Many learners perform implicit, also called embedded, feature selection,\index{feature selection!implicit}\index{feature selection!embedded} e.g. via the choice of variables used for splitting in a decision tree.
+Most other feature selection methods are model agnostic, i.e. they can be used together with any learner.
+Of the many different approaches to identifying relevant features, we will focus on two general concepts, which are described in detail below: Filter and Wrapper methods [@guyon2003;@chandrashekar2014].
+
+## Filters {#sec-fs-filter}
+
+Filter methods are `r index('preprocessing')` steps that can be applied before training a model.
+A very simple filter approach could look like this:
+
+1. calculate the correlation coefficient $\rho$ between each feature and a numeric target variable, and
+2. select all features with $\rho > 0.2$ for further modeling steps.
+
+This approach is a *univariate* filter because it only considers the univariate relationship between each feature and the target variable.
+Further, it can only be applied to regression tasks with continuous features and the threshold of $\rho > 0.2$ is quite arbitrary.
+Thus, more advanced filter methods, e.g. *multivariate* filters based on feature importance, usually perform better [@bommert2020].
+On the other hand, a benefit of univariate filters is that they are usually computationally cheaper than more complex filter or wrapper methods.
+In the following, we describe how to calculate univariate, multivariate and feature importance filters, how to access implicitly selected features, how to integrate filters in a machine learning pipeline and how to optimize filter thresholds.
+
+Filter algorithms select features by assigning numeric scores to each feature, e.g. correlation between features and target variable, use these to rank the features and select a feature subset based on the ranking.
+Features that are assigned lower scores are then omitted in subsequent modeling steps.
+All filters are implemented via the package `r mlr3filters`.
+Below, we cover how to
+
+* instantiate a `r ref("Filter")` object,
+* calculate scores for a given task, and
+* use calculated scores to select or drop features.
+
+Special cases of filters are `r index('feature importance')` filters (@sec-fs-var-imp-filters) and embedded methods (@sec-fs-embedded-methods).
+Feature importance filters select features that are important according to the model induced by a selected `r ref("Learner")`.
+They rely on the learner to extract information on feature importance from a trained model, for example, by inspecting a learned decision tree and returning the features that are used as split variables, or by computing model-agnostic feature importance (@sec-interpretation) values for each feature.
+Embedded methods use the feature selection that is implicitly performed by some learners and directly retrieve the internally selected features from the learner.
+
+::: {.callout-tip}
+
+## Independent Learners and Filters
+
+The learner used in a feature importance or embedded filter is independent of learners used in subsequent modeling steps.
+For example, one might use feature importance of a random forest for feature selection and train a neural network on the reduced feature set.
+:::
+
+Many filter methods are implemented in `mlr3filters`, including:
+
+* Correlation, calculating Pearson or Spearman correlation between numeric features and numeric targets (`flt("correlation")`)
+* Information gain, i.e. mutual information of the feature and the target or the reduction of uncertainty of the target due to a feature (`flt("information_gain")`)
+* Minimal joint mutual information maximization (`flt("jmim")`)
+* Permutation score, which calculates permutation feature importance (see @sec-interpretation) with a given learner for each feature (`flt("permutation")`)
+* Area under the ROC curve calculated for each feature separately (`flt("auc")`)
+
+Most of the filter methods have some limitations, for example, the correlation filter can only be calculated for regression tasks with numeric features.
+For a full list of all implemented filter methods, we refer the reader to `r link("https://mlr3filters.mlr-org.com")`, which also shows the supported task and features types.
+A benchmark of filter methods was performed by @bommert2020, who recommend not to rely on a single filter method but to try several ones if the available computational resources allow.
+If only a single filter method is to be used, the authors recommend to use a feature importance filter using random forest permutation importance (see (@sec-fs-var-imp-filters)), similar to the permutation method described above, but also the JMIM and AUC filters performed well in their comparison.
+
+### Calculating Filter Values {#sec-fs-calc}
+
+The first step is to create a new R object using the class of the desired filter method.
+These are accessible from the `r ref("mlr_filters", index = TRUE)` dictionary with the sugar function `r ref("flt()", index = TRUE, aside = TRUE)`.
+Each object of class `r ref("Filter", index = TRUE)` has a `$calculate()`\index{Filter!\$calculate()}[`$calculate()`]{.aside} method, which computes the filter values and ranks them in a descending order.
+For example, we can use the information gain filter described above:
+
+```{r feature_selection-001}
+library(mlr3filters)
+flt_gain = flt("information_gain")
+```
+
+Such a `Filter` object can now be used to calculate the filter on `tsk("penguins")` and get the results:
+
+```{r feature_selection-002}
+#install.packages("FSelectorRcpp")
+tsk_pen = tsk("penguins")
+flt_gain$calculate(tsk_pen)
+
+as.data.table(flt_gain)
+```
+
+This shows that the flipper and bill measurements are the most informative features for predicting the species of a penguin in this dataset, whereas sex and year are the least informative.
+Some filters have hyperparameters that can be changed in the same way as `Learner` hyperparameters.
+For example, to calculate `"spearman"` instead of `"pearson"` correlation with the correlation filter:
+
+```{r feature_selection-003}
+flt_cor = flt("correlation", method = "spearman")
+flt_cor$param_set
+```
+
+### Feature Importance Filters {#sec-fs-var-imp-filters}
+
+To use feature importance filters, we can use a learner with with an `$importance()` method that reports feature importance.
+All learners with the property "importance" have this functionality.
+A list of all learners with this property can be found with
+
+```{r feature_selection-004, eval = FALSE}
+as.data.table(mlr_learners)[
+  sapply(properties, function(x) "importance" %in% x)]
+```
+
+For some learners, the desired filter method needs to be set as a hyperparameter.
+For example, `lrn("classif.ranger")` comes with multiple integrated methods, which can be selected during construction:
+To use the `r index('feature importance')` method `"impurity"`, select it during learner construction:
+
+```{r feature_selection-005}
+lrn("classif.ranger")$param_set$levels$importance
+lrn_ranger = lrn("classif.ranger", importance = "impurity")
+```
+
+We first have to remove missing data because the learner cannot handle missing data, i.e. it does not have the property "missing".
+Note we use the `$filter()` method presented in @sec-tasks-mutators here to remove rows; the "filter" name is unrelated to feature filtering, however.
+
+```{r feature_selection-006}
+tsk_pen = tsk("penguins")
+tsk_pen$filter(tsk_pen$row_ids[complete.cases(tsk_pen$data())])
+```
+
+Now we can use `flt("importance")` to calculate importance values:
+
+```{r feature_selection-007}
+flt_importance = flt("importance", learner = lrn_ranger)
+flt_importance$calculate(tsk_pen)
+as.data.table(flt_importance)
+```
+
+### Embedded Methods {#sec-fs-embedded-methods}
+
+Many learners internally select a subset of the features which they find helpful for prediction, but ignore other features.
+For example, a decision tree might never select some features for splitting.
+These subsets can be used for feature selection, which we call `r index('embedded methods')` because the feature selection is embedded in the learner.
+The selected features (and those not selected) can be queried if the learner has the `"selected_features"` property.
+As above, we can find those learners with
+
+```{r feature_selection-008, eval = FALSE}
+as.data.table(mlr_learners)[
+  sapply(properties, function(x) "selected_features" %in% x)]
+```
+
+For example, we can use `lrn("classif.rpart")`:
+
+```{r feature_selection-009}
+tsk_pen = tsk("penguins")
+lrn_rpart = lrn("classif.rpart")
+lrn_rpart$train(tsk_pen)
+lrn_rpart$selected_features()
+```
+
+The features selected by the model can be extracted by a `r ref("Filter")` object, where `$calculate()` corresponds to training the learner on the given task:
+
+```{r feature_selection-010}
+flt_selected = flt("selected_features", learner = lrn_rpart)
+flt_selected$calculate(tsk_pen)
+as.data.table(flt_selected)
+```
+
+Contrary to other filter methods, embedded methods just return values of `1` (selected features) and `0` (dropped feature).
+
+### Filter-Based Feature Selection {#sec-fs-filter-based}
+
+After calculating a score for each feature, one has to select the features to be kept or those to be dropped from further modeling steps.
+For the `"selected_features"` filter described in embedded methods (@sec-fs-embedded-methods), this step is straight-forward since the methods assign either a value of `1` for a feature to be kept or `0` for a feature to be dropped.
+Below, we find the names of features with a value of `1` and select those features with `task$select()`.
+At first glance it may appear a bit convoluted to have a filter assign scores based on the feature names returned by `$selected_features()`, only to turn these scores back into the names of the features to be kept.
+However, this approach allows us to use the same interface for all filter methods, which is especially useful when we want to automate the feature selection process in pipelines, as we will see in @sec-pipelines-featsel.
+
+```{r feature_selection-011}
+flt_selected$calculate(tsk_pen)
+
+# select all features used by rpart
+keep = names(which(flt_selected$scores == 1))
+tsk_pen$select(keep)
+tsk_pen$feature_names
+```
+
+For filter methods that assign continuous scores, there are essentially two ways to select features:
+
+* Select the top $k$ features; or
+* Select all features with a score above a threshold $\tau$.
+
+The first option is equivalent to dropping the bottom $p-k$ features.
+For both options, one has to decide on a threshold, which is often quite arbitrary.
+For example, to implement the first option with the information gain filter:
+
+```{r feature_selection-012}
+tsk_pen = tsk("penguins")
+flt_gain = flt("information_gain")
+flt_gain$calculate(tsk_pen)
+
+# select top three features from information gain filter
+keep = names(head(flt_gain$scores, 3))
+tsk_pen$select(keep)
+tsk_pen$feature_names
+```
+
+Or, the second option with $\tau = 0.5$:
+
+```{r feature_selection-013}
+tsk_pen = tsk("penguins")
+flt_gain = flt("information_gain")
+flt_gain$calculate(tsk_pen)
+
+# select all features with score > 0.5 from information gain filter
+keep = names(which(flt_gain$scores > 0.5))
+tsk_pen$select(keep)
+tsk_pen$feature_names
+```
+
+In @sec-pipelines-featsel we will return to filter-based feature selection and how we can use `r index('pipelines')` and tuning to automate and optimize the feature selection process.
+
+## Wrapper Methods {#sec-fs-wrapper}
+
+Wrapper methods work by fitting models on selected feature subsets and evaluating their performance [@Kohavi1997].
+This can be done in a sequential fashion, e.g. by iteratively adding features to the model in sequential forward selection, or in a parallel fashion, e.g. by evaluating random feature subsets in a random search.
+Below, we describe these simple approaches in a common framework along with more advanced methods such as genetic search.
+We further show how to select features by optimizing multiple performance measures and how to wrap a learner with feature selection to use it in pipelines or benchmarks.
+
+In more detail, wrapper methods iteratively evaluate subsets of features by resampling a learner restricted to this feature subset and with a chosen performance metric (with holdout or a more expensive CV), and using the resulting performance to guide the search.
+The specific search strategy iteration is defined by a `r ref("FSelectorBatch", index = TRUE)` object.
+A simple example is the sequential forward selection that starts with computing each single-feature model, selects the best one, and then iteratively always adds the feature that leads to the largest performance improvement (@fig-sequential-forward-selection).
+
+```{r feature_selection-014, out.width = "80%", echo = FALSE}
+#| label: fig-sequential-forward-selection
+#| fig-cap: A binary representation of sequential forward selection with four features. Gray indicates feature sets that were evaluated, with dark gray indicating the best feature set in each iteration; white indicates feature sets that were not evaluated. We start at the bottom with no selected features (all are '0'). In the next iteration all features are separately tested (each is '1' separately) and the best option (darkest in row two) is selected. This continues for selecting the second, third, and fourth features.
+#| fig-alt: "A web graph with one element at the bottom, four on the second row, six on third row, four on fourth row and one on fifth (top) row. Each element consists of four numbers, 0s and 1s to represent the selected (1) and unselected (0) features. The diagram is covered to suggest the optimal path was '0000' -> '1000' -> '1010' -> '1011' -> '1111'."
+include_multi_graphics("mlr3book_figures-16")
+```
+
+Wrapper methods can be used with any learner, but need to train or even resample the learner potentially many times, leading to a computationally intensive method.
+All wrapper methods are implemented via the package `r mlr3fselect`.
+
+::: {.callout-tip}
+
+## Feature Selection and HPO
+
+The wrapper-based feature selection explained above is very similar to the black box optimization approach in HPO (@sec-optimization), see also @fig-optimization-loop-basic. The major difference is that we search for well-performing feature subsets instead of hyperparameter configurations.
+This similarity is not only true in terms of underlying concepts and structure, but also with respect to `mlr3` classes and API.
+The API is in many places nearly identical, we can use the same terminators, results are logged into an archive in a similar fashion to tuning, and we can also optimize multiple performance measures to create Pareto-optimal solutions in a similar way
+:::
+
+
+### Simple Forward Selection Example {#sec-fs-wrapper-example}
+
+We start with the simple example from above and do sequential forward selection with `tsk("penguins")`, similarly to how the sugar function `r ref("tune()")` shown in @sec-autotuner works, we can use `r ref('fselect()', aside = TRUE)` to directly start the optimization and select features.
+
+```{r feature_selection-015, message=FALSE}
+library(mlr3fselect)
+
+# subset features to ease visualization
+tsk_pen = tsk("penguins")
+tsk_pen$select(c("bill_depth", "bill_length", "body_mass",
+  "flipper_length"))
+
+instance = fselect(
+  fselector = fs("sequential"),
+  task =  tsk_pen,
+  learner = lrn_rpart,
+  resampling = rsmp("cv", folds = 3),
+  measure = msr("classif.acc")
+)
+```
+
+To show all analyzed feature subsets and the corresponding performance, we use `as.data.table(instance$archive)`.
+In this example, the `batch_nr` column represents the iteration of the `r index('sequential forward selection')` and we start by looking at the first iteration.
+
+```{r feature_selection-016}
+dt = as.data.table(instance$archive)
+dt[batch_nr == 1, 1:5]
+```
+
+We see that the feature `flipper_length` achieved the highest prediction performance in the first iteration and is thus selected.
+We plot the performance over the iterations:
+
+```{r feature_selection-017, output = FALSE, cache = FALSE}
+autoplot(instance, type = "performance")
+```
+
+```{r feature_selection-018, echo = FALSE, warning = FALSE, message = FALSE}
+#| label: fig-forwardselection
+#| fig-cap: Model performance in iterations of sequential forward selection.
+#| fig-alt: 'Scatter and line plot with "Batch" on the x-axis and "classif.acc" on the y-axis. Line shows improving performance from 1 to batch 2 then increases very slightly in batch 3 and decreases in 4, the values are in the printed instance archive.'
+plt = ggplot2::last_plot()
+plt = plt + ggplot2::scale_color_grey() + ggplot2::scale_fill_grey()
+plt
+```
+
+In the plot, we can see that adding a second feature further improves the performance to over 90%.
+To see which feature was added, we can go back to the archive and look at the second iteration:
+
+```{r feature_selection-019}
+dt[batch_nr == 2, 1:5]
+```
+
+The improvement in batch three is small so we may even prefer to select a marginally worse model with two features to reduce data size.
+
+To directly show the best feature set, we can use `$result_feature_set` which returns the features in alphabetical order (not order selected):
+
+```{r feature_selection-020}
+instance$result_feature_set
+```
+
+At the heart of `mlr3fselect` are the R6 classes:
+
+* `FSelectInstanceBatchSingleCrit`, `r ref("FSelectInstanceBatchMultiCrit")`: These two classes describe the feature selection problem and store the results.
+* `r ref("FSelectorBatch")`: This class is the base class for implementations of feature selection algorithms.
+
+Internally, the `fselect()` function creates an `r ref('FSelectInstanceBatchSingleCrit')` object and executes the feature selection with an `r ref('FSelectorBatch', index = TRUE)` object, based on the selected method, in this example an `r ref("FSelectorBatchSequential")` object.
+This is similar to what happens in the `tune()` function and will be explained in more detail in the following section.
+It uses the supplied resampling and measure to evaluate all feature subsets provided by the `FSelectorBatch` on the task.
+
+In the following two sections, these classes will be created manually, to learn more about the `mlr3fselect` package.
+
+### The FSelectInstance Classes
+
+To create an `FSelectInstanceBatchSingleCrit` object, we use the sugar function `r ref("fsi()", aside = TRUE)`:
+
+```{r feature_selection-021}
+instance = fsi(
+  task = tsk_pen,
+  learner = lrn_rpart,
+  resampling = rsmp("cv", folds = 3),
+  measure = msr("classif.acc"),
+  terminator = trm("evals", n_evals = 20)
+)
+```
+
+Note that we have not selected a feature selection algorithm and thus did not select any features, yet.
+We have also supplied a `Terminator`, which is used to stop the feature selection, these are the same objects as we saw in @sec-terminator.
+
+To start the feature selection, we still need to select an algorithm which are defined via the `r ref("FSelectorBatch")` class, described in the next section.
+
+### The FSelector Class
+
+The `r index('FSelectorBatch', code = TRUE)` class is the base class for different feature selection algorithms.
+The following algorithms are currently implemented in `mlr3fselect`:
+
+* Random search, trying random feature subsets until termination (`fs("random_search")`)
+* Exhaustive search, trying all possible feature subsets (`fs("exhaustive_search")`)
+* Sequential search, i.e. sequential forward or backward selection (`fs("sequential")`)
+* Recursive feature elimination, which uses a learner's importance scores to iteratively remove features with low feature importance (`fs("rfe")`)
+* Design points, trying all user-supplied feature sets (`fs("design_points")`)
+* Genetic search, implementing a genetic algorithm which treats the features as a binary sequence and tries to find the best subset with mutations (`fs("genetic_search")`)
+* Shadow variable search, which adds permuted copies of all features (shadow variables), performs forward selection, and stops when a shadow variable is selected (`fs("shadow_variable_search")`)
+
+Note that all these methods can be stopped (early) with a terminator, e.g. an exhaustive search can be stopped after a given number of evaluations.
+In this example, we will use a simple random search and retrieve it from the `r ref("mlr_fselectors", index = TRUE)` dictionary with `r ref("fs()", aside = TRUE)`.
+
+```{r feature_selection-022}
+fselector = fs("random_search")
+```
+
+### Starting the Feature Selection
+
+To start the feature selection, we pass the `FSelectInstanceBatchSingleCrit` object to the `$optimize()` method of the initialized `FSelectorBatch` object:
+
+```{r feature_selection-023, output=FALSE}
+fselector$optimize(instance)
+```
+
+The algorithm proceeds as follows
+
+1. The `FSelectorBatch` proposes at least one feature subset or may propose multiple subsets to be evaluated in parallel, which can be controlled via the setting `batch_size`.
+1. For each feature subset, the given learner is fitted on the task using the provided resampling and evaluated with the given measure.
+1. All evaluations are stored in the archive of the `FSelectInstanceBatchSingleCrit` object.
+2. The terminator is queried. If the termination criteria are not triggered, go to 1).
+3. Determine the feature subset with the best-observed performance.
+4. Store the best feature subset as the result in the instance object.
+
+The best feature subset and the corresponding measured performance can be accessed from the instance:
+
+```{r feature_selection-024}
+  as.data.table(instance$result)[, .(features, classif.acc)]
+```
+
+As in the forward selection example above, one can investigate all subset evaluations, which are stored in the archive of the `FSelectInstanceBatchSingleCrit` object and can be accessed by using `as.data.table()`:
+
+```{r feature_selection-025}
+as.data.table(instance$archive)[1:5,
+  .(bill_depth, bill_length, body_mass, flipper_length, classif.acc)]
+```
+
+Now the optimized feature subset can be used to subset the task and fit the model on all observations:
+
+```{r feature_selection-026, eval=FALSE}
+tsk_pen = tsk("penguins")
+
+tsk_pen$select(instance$result_feature_set)
+lrn_rpart$train(tsk_pen)
+```
+
+The trained model can now be used to make a prediction on external data.
+
+### Optimizing Multiple Performance Measures {#sec-multicrit-featsel}
+
+You might want to use multiple criteria to evaluate the performance of the feature subsets. With `mlr3fselect`, the result is the collection of all feature subsets which are not Pareto-dominated\index{Pareto optimality} by another subset. Again, we point out the similarity with HPO and refer to multi-objective hyperparameter optimization (see @sec-multi-metrics-tuning and @karl2022).
+
+In the following example, we will perform feature selection on the sonar dataset. This time, we will use `r ref("FSelectInstanceBatchMultiCrit")` to select a subset of features that has high sensitivity, i.e. TPR, and high specificity, i.e. TNR. The feature selection process with multiple criteria is similar to that with a single criterion, except that we select two measures to be optimized:
+
+```{r feature_selection-027}
+instance = fsi(
+  task = tsk("sonar"),
+  learner = lrn_rpart,
+  resampling = rsmp("holdout"),
+  measure = msrs(c("classif.tpr", "classif.tnr")),
+  terminator = trm("evals", n_evals = 20)
+)
+```
+
+The function `r ref("fsi")` creates an instance of `FSelectInstanceBatchMultiCrit` if more than one measure is selected.
+We now create an `r ref("FSelectorBatch")` and call the `$optimize()` function of the `FSelectorBatch` with the `FSelectInstanceBatchMultiCrit` object, to search for the subset of features with the best TPR and FPR.
+Note that these two measures cannot both be optimal at the same time (except for the perfect classifier) and we expect several Pareto-optimal solutions.
+
+```{r feature_selection-028, output=FALSE}
+fselector = fs("random_search")
+fselector$optimize(instance)
+```
+
+As above, the best feature subsets and the corresponding measured performance can be accessed from the instance.
+
+```{r feature_selection-029}
+as.data.table(instance$result)[, .(features, classif.tpr, classif.tnr)]
+```
+
+We see different tradeoffs of sensitivity and specificity but no feature subset is dominated by another, i.e. has worse sensitivity *and* specificity than any other subset.
+
+### Nested Resampling {#sec-autofselect}
+
+As in tuning, the performance estimate of the finally selected feature subset is usually optimistically biased.
+To obtain unbiased performance estimates, nested resampling is required and can be set up analogously to HPO (see @sec-nested-resampling).
+We now show this as an example on the `sonar` task.
+The `r ref('AutoFSelector', index = TRUE)` class wraps a learner and augments it with automatic feature selection.
+Because the `AutoFSelector` itself inherits from the `r ref("Learner")` base class, it can be used like any other learner.
+In the example below, a logistic regression learner is created.
+This learner is then wrapped in a random search feature selector that uses holdout (inner) resampling for performance evaluation.
+The sugar function `r ref("auto_fselector", aside = TRUE)` can be used to create an instance of `AutoFSelector`:
+
+```{r feature_selection-030}
+afs = auto_fselector(
+  fselector = fs("random_search"),
+  learner = lrn("classif.log_reg"),
+  resampling = rsmp("holdout"),
+  measure = msr("classif.acc"),
+  terminator = trm("evals", n_evals = 10)
+)
+afs
+```
+
+The `AutoFSelector` can then be passed to `benchmark()` or `resample()` for nested resampling (@sec-nested-resampling).
+Below we compare our wrapped learner `afs` with a normal logistic regression `lrn("classif.log_reg")`.
+
+```{r feature_selection-031, warning=FALSE}
+grid = benchmark_grid(tsk("sonar"), list(afs, lrn("classif.log_reg")),
+  rsmp("cv", folds = 3))
+
+bmr = benchmark(grid)$aggregate(msr("classif.acc"))
+as.data.table(bmr)[, .(learner_id, classif.acc)]
+```
+
+We can see that, in this example, the feature selection improves prediction performance.
+
+## Conclusion
+
+In this chapter, we learned how to perform feature selection with `mlr3`.
+We introduced filter and wrapper methods and covered the optimization of multiple performance measures.
+Once you have learned about pipelines we will return to feature selection in @sec-pipelines-featsel.
+
+If you are interested in learning more about feature selection then we recommend an overview of methods in @chandrashekar2014; a more formal and detailed introduction to filters and wrappers is in @guyon2003, and a benchmark of filter methods was performed by @bommert2020.
+
+| Class                                                                                 | Constructor/Function                    | Fields/Methods           |
+|---------------------------------------------------------------------------------------|-----------------------------------------|--------------------------|
+| `r ref("Filter")`                                                                     | `r ref("flt()")`                        | `$calculate()`           |
+| `r ref("FSelectInstanceBatchSingleCrit")` or `r ref("FSelectInstanceBatchMultiCrit")` | `r ref("fsi()")` / `r ref("fselect()")` | -                        |
+| `r ref("FSelectorBatch")`                                                             | `r ref("fs()")`                         | `$optimize()`            |
+| `r ref("AutoFSelector")`                                                              | `r ref("auto_fselector()")`             | `$train()`; `$predict()` |
+
+: Important classes and functions covered in this chapter with underlying class (if applicable), class constructor or function, and important class fields and methods (if applicable). {#tbl-api-feature-selection}
+
+## Exercises
+
+1. Compute the correlation filter scores on `tsk("mtcars")` and use the filter to select the five features most strongly correlated with the target.
+  Resample `lrn("regr.kknn")` on both the full dataset and the reduced one, and compare both performances based on 10-fold CV with respect to MSE.
+  NB: Here, we have performed the feature filtering outside of CV, which is generally not a good idea as it biases the CV performance estimation.
+  To do this properly, filtering should be embedded inside the CV via pipelines -- try to come back to this exercise after you read @sec-pipelines-nonseq to implement this with less bias.
+2. Apply backward selection to `tsk("penguins")` with `lrn("classif.rpart")` and holdout resampling by the classification accuracy measure.
+  Compare the results with those in @sec-fs-wrapper-example by also running the forward selection from that section.
+  Do the selected features differ?
+  Which feature selection method reports a higher classification accuracy in its `$result`?
+3. There is a problem in the performance comparison in Exercise 2 as feature selection is performed on the test-set.
+  Change the process by applying forward feature selection with `auto_fselector()`.
+  Compare the performance to backward feature selection from Exercise 2 using nested resampling.
+4. (*) Write a feature selection algorithm that is a hybrid of a filter and a wrapper method.
+  This search algorithm should compute filter scores for all features and then perform a forward search.
+  But instead of tentatively adding all remaining features to the current feature set, it should only stochastically try a subset of the available features.
+  Features with high filter scores should be added with higher probability.
+  Start by coding a stand-alone R method for this search (based on a learner, task, resampling, performance measure and some control settings).
+  Then, as a stretch goal, see if you can implement this as an R6 class inheriting from `FSelectorBatch`.
+
+::: {.content-visible when-format="html"}
+`r citeas(chapter)`
+:::

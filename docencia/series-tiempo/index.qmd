@@ -1,0 +1,38 @@
+---
+title: "Series de Tiempo con Python para Actuarios"
+author: "Prof. Angel Colmenares"
+listing:
+  type: table
+  contents: []
+  # Cuando tengas módulos: contents: modules/*.qmd
+---
+
+Este curso del **eje de Formación** del CVEA proporciona las bases computacionales para proyectar variables de riesgo. Integra modelos estocásticos con el despliegue en entornos productivos (Python, Quarto) y está orientado a actuarios, estadísticos y profesionales que requieran proyecciones de mortalidad, siniestralidad o indicadores económicos.
+
+## Objetivos del curso
+
+- Comprender y aplicar modelos de series de tiempo (ARIMA, suavizamiento, tendencias) en contextos actuariales.
+- Conectar la proyección de mortalidad y otras variables de riesgo con el ecosistema Python (pandas, statsmodels, scikit-learn cuando aplique).
+- Generar informes y dashboards reproducibles con Quarto para auditoría y toma de decisiones.
+
+## Temas cubiertos
+
+- Modelos estocásticos para series de tiempo (estacionariedad, autocorrelación, predicción).
+- Proyección de mortalidad y variables actuariales (índices temporales, escenarios).
+- Buenas prácticas de código y despliegue en entornos productivos (Python/Quarto).
+- Integración con la línea editorial del CVEA: reproducibilidad y documentación de supuestos.
+
+## Material en línea
+
+El desarrollo del curso está publicado en:
+
+**[Series de Tiempo con Python (Web)](https://angel-colmenares.quarto.pub/time-series-python-web/)**
+
+Para integrar módulos dentro de esta plataforma puedes:
+
+1. **Clonar o enlazar** el repositorio del curso en una subcarpeta `modules/` y listar los `.qmd` en `listing.contents` del encabezado de esta página.
+2. **Mantener el enlace externo** como arriba y usar esta página como índice institucional del CVEA.
+
+## Relación con la investigación CVEA
+
+Los temas del curso se alinean con los artículos de la RVEA (Lee-Carter, proyecciones por entidad federal, análisis espacio-temporal) y con los libros y materiales docentes. Los participantes pueden apoyarse en los manuscritos y el código publicado en la [Revista RVEA](../../rvea/index.qmd) para profundizar.

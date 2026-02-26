@@ -1,0 +1,17 @@
+---
+title: "Demo: Mapa de Riesgo de Mortalidad"
+format:
+  html:
+    page-layout: full
+---
+
+::: {.column-screen}
+
+<iframe
+  src="https://tu-app-mapa.app/?embed=true"
+  style="height: 800px; width: 100%; border: none;">
+</iframe>
+
+:::
+
+Aquí puede embeberse un dashboard de mapa de riesgo (por ejemplo, basado en el análisis espacio-temporal INLA/BYM del artículo de mortalidad municipal en RVEA Vol. I). Reemplaza la URL por tu aplicación publicada.

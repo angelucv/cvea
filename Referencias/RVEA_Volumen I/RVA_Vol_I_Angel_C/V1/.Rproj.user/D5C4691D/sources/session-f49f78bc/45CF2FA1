@@ -1,0 +1,33 @@
+{
+    "id": "45CF2FA1",
+    "path": "D:/Art Angel/V3/Art_Angel_Plantilla_RVEA.qmd",
+    "project_path": null,
+    "type": "quarto_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1769955909847.0,
+    "source_on_save": false,
+    "relative_order": 4,
+    "properties": {
+        "chunk_output_type": "console",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "28,2",
+        "scrollLine": "18",
+        "quartoPreviewFormat": "pdf",
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "0",
+        "rmdVisualModeLocation": "26958:10111.4287109375",
+        "rmdVisualCollapsedChunks": ""
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1770036128,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1770036128938,
+    "read_only": false,
+    "read_only_alternatives": []
+}

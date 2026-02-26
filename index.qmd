@@ -1,0 +1,211 @@
+---
+title: "Centro Venezolano de Estudios Actuariales"
+page-layout: custom
+title-block-banner: false
+toc: true
+include-in-header: assets/meta.html
+---
+
+```{=html}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100;400;700;900&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Hero con fondo animado css-doodle -->
+<div class="hero-cvea intro_f cvea-intro">
+  <div class="hero-doodle-bg" aria-hidden="true">
+    <css-doodle>
+      <style>
+        @grid: 30x1 / 100vmax;
+        :container { perspective: 22vmin; }
+        background: @m(
+          @r(180, 220),
+          radial-gradient(
+            @p(#38666A, #4a7d82, #2d5054, #5a9a9e, #1e3d40, #6bb5b9, #7bc4c8) 15%,
+            transparent 45%
+          ) @r(100%) @r(100%) / @r(1%, 4%) @lr no-repeat
+        );
+        @size: 50%;
+        @place-cell: center;
+        border-radius: 50%;
+        transform-style: preserve-3d;
+        animation: scale-up 28s linear infinite;
+        animation-delay: calc(@i * -.35s);
+        @keyframes scale-up {
+          0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0); }
+          12% { opacity: 0.8; }
+          90% { transform: translate3d(0, 0, @r(50vmin, 58vmin)) rotate(@r(-360deg, 360deg)); }
+          100% { opacity: 0; transform: translate3d(0, 0, 1vmin); }
+        }
+      </style>
+    </css-doodle>
+  </div>
+  <div class="hero-cvea-content">
+    <a href="editores.qmd">
+      <img src="assets/logos/Logo-CVEA-horizontal-grande-letrasnegras.png" alt="CVEA" style="max-width: 85%; height: auto; margin-bottom: 1rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));">
+    </a>
+    <p class="hero-rotate-line">
+      <span class="txt-rotate" data-period="2000" data-rotate='["Investigación", "Docencia", "Extensión", "Cursos", "Aplicativos", "Modelado", "Reservas", "Mortalidad", "Formación", "Publicaciones", "Consultoría", "Seguros", "Banca", "Pensiones", "Trading"]'></span>
+    </p>
+    <a href="editores.qmd" class="btn-21 animate__animated animate__zoomInUp" style="margin-top: 1.5rem; text-decoration: none; color: white;"><span>Conocer más</span></a>
+  </div>
+</div>
+
+<!-- Sección intro (slideshow + cita) -->
+<div class="intro intro_f" style="background-color: black;">
+  <div class="intro-slideshow">
+    <div class="image-wrapper">
+      <img src="assets/logos/Logo-CVEA-horizontal-grande-letrasnegras.png" alt="CVEA" style="object-fit: contain; background: #1a1a1a;">
+    </div>
+  </div>
+  <div class="scroll-text intro-text">
+    <div class="quote-wrapper">
+      <div class="quote-content">
+        <div class="quote-img">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" class="svg-quote" style="width: 60px; height: auto;"><path fill="#FFFFFF" fill-rule="evenodd" d="M6.438,50.5v35.875h35.875V50.5h-20.5c0-11.321,9.179-20.5,20.5-20.5V14.625C22.498,14.625,6.438,30.686,6.438,50.5z M93.562,30V14.625c-19.814,0-35.875,16.061-35.875,35.875v35.875h35.875V50.5h-20.5C73.062,39.179,82.241,30,93.562,30z"/></svg>
+        </div>
+        <p class="quote-copy" style="color:white;"><i>Producir y divulgar conocimiento actuarial y estadístico de alto nivel mediante la Revista Venezolana de Actuariado (RVEA), libros, materiales docentes, cursos especializados y asesorías.</i></p>
+        <img src="assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png" alt="CVEA" style="width: 100px; margin-bottom: 16px; filter: brightness(0) invert(1);">
+      </div>
+    </div>
+  </div>
+  <div class="intro-header">
+    <p class="scroll-text" id="main">El CVEA se basa en los tres pilares de la educación superior: Investigación · Docencia · Extensión</p>
+  </div>
+</div>
+
+<!-- Cita móvil -->
+<div class="quote-container-bg">
+  <div class="layout_grid_objectives_mob">
+    <div class="quote-container">
+      <h1 class="quote-text scroll-text" style="color:white;">Producir y divulgar conocimiento actuarial y estadístico de alto nivel mediante la RVEA, libros, materiales docentes, cursos especializados y asesorías.</h1>
+      <img src="assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png" alt="CVEA" style="width: 100px; margin-bottom: 16px; filter: brightness(0) invert(1);">
+    </div>
+  </div>
+</div>
+
+<!-- Objetivos con lord-icon: cada uno enlaza a su sección -->
+<div class="container-blue">
+  <div class="layout_grid_objectives">
+    <div class="achievements">
+      <a href="rvea/index.qmd" class="work work-link">
+        <div class="work-icon">
+          <lord-icon src="https://cdn.lordicon.com/nocovwne.json" trigger="loop" delay="250" colors="primary:#30c9e8,secondary:#104891" style="width:100px;height:100px"></lord-icon>
+          <p class="work-heading scroll-text">Investigación</p>
+        </div>
+        <div class="work-description">
+          <p class="work-text scroll-text">RVEA, libros y materiales docentes y manuscritos en mortalidad y reservas.</p>
+        </div>
+      </a>
+      <a href="docencia/series-tiempo/index.qmd" class="work work-link">
+        <div class="work-icon">
+          <lord-icon src="https://cdn.lordicon.com/flvisirw.json" trigger="loop" delay="250" colors="primary:#d1e3fa,secondary:#38666A" style="width:100px;height:100px"></lord-icon>
+          <p class="work-heading scroll-text">Formación</p>
+        </div>
+        <div class="work-description">
+          <p class="work-text scroll-text">Cursos en series de tiempo y modelado actuarial (R, Python, Quarto).</p>
+        </div>
+      </a>
+      <a href="servicios/index.qmd" class="work work-link">
+        <div class="work-icon">
+          <lord-icon src="https://cdn.lordicon.com/jkzrgmvk.json" trigger="loop" delay="400" colors="primary:#38666A,secondary:#30c9e8" style="width:100px;height:100px"></lord-icon>
+          <p class="work-heading scroll-text">Servicios</p>
+        </div>
+        <div class="work-description">
+          <p class="work-text scroll-text">Demos, dashboards (IBNR, mapas) y consultoría en reservas.</p>
+        </div>
+      </a>
+      <a href="editores.qmd" class="work work-link">
+        <div class="work-icon">
+          <lord-icon src="https://cdn.lordicon.com/zjscbpdr.json" trigger="loop" delay="250" colors="primary:#30c9e8,secondary:#38666A" style="width:100px;height:100px"></lord-icon>
+          <p class="work-heading scroll-text">Comité Editorial</p>
+        </div>
+        <div class="work-description">
+          <p class="work-text scroll-text">Equipo editorial y de investigación del CVEA.</p>
+        </div>
+      </a>
+      <a href="sobre.qmd" class="work work-link">
+        <div class="work-icon">
+          <lord-icon src="https://cdn.lordicon.com/gkstbnbz.json" trigger="loop" delay="1000" colors="primary:#38666A" style="width:100px;height:100px"></lord-icon>
+          <p class="work-heading scroll-text">Sobre el CVEA</p>
+        </div>
+        <div class="work-description">
+          <p class="work-text scroll-text">Estructura, modelo editorial y líneas de trabajo.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Tiles de acceso rápido -->
+<div class="wrap">
+  <div class="tile">
+    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=450&fit=crop" alt="Equipo"/>
+    <a href="editores.qmd">
+      <div class="text">
+        <h1>Comité Editorial</h1>
+        <p class="animate-text">Miembros del Comité Editorial y de Investigación del CVEA.</p>
+        <div class="dots"><span></span><span></span><span></span></div>
+      </div>
+    </a>
+  </div>
+  <div class="tile">
+    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=450&fit=crop" alt="Revista"/>
+    <a href="rvea/index.qmd">
+      <div class="text">
+        <h1>Revista RVEA</h1>
+        <p class="animate-text">Artículos del Volumen I y II: mortalidad, bases técnicas, Lee-Carter, BYM.</p>
+        <div class="dots"><span></span><span></span><span></span></div>
+      </div>
+    </a>
+  </div>
+  <div class="tile">
+    <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=400&h=450&fit=crop" alt="Libro"/>
+    <a href="libro/index.qmd">
+      <div class="text">
+        <h1>Libros y Materiales Docentes</h1>
+        <p class="animate-text">Diagnóstico del sistema de pensiones y libro Demografía, Mortalidad y Previsión Social.</p>
+        <div class="dots"><span></span><span></span><span></span></div>
+      </div>
+    </a>
+  </div>
+  <div class="tile">
+    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=450&fit=crop" alt="Formación"/>
+    <a href="docencia/series-tiempo/index.qmd">
+      <div class="text">
+        <h1>Series de Tiempo (Python)</h1>
+        <p class="animate-text">Curso para actuarios: series de tiempo con Python.</p>
+        <div class="dots"><span></span><span></span><span></span></div>
+      </div>
+    </a>
+  </div>
+  <div class="tile">
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=450&fit=crop" alt="Servicios"/>
+    <a href="servicios/index.qmd">
+      <div class="text">
+        <h1>Servicios y Demos</h1>
+        <p class="animate-text">Galería interactiva: IBNR, mapa de riesgo y dashboards.</p>
+        <div class="dots"><span></span><span></span><span></span></div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
+<script src="assets/js/text_obs.js"></script>
+<script src="assets/js/text_obs_achiev.js"></script>
+<script src="assets/js/text.js"></script>
+<script src="assets/js/background.js"></script>
+```
+
+::: {.column-page .acceso-rapido-contenido}
+
+## Contenido
+
+- [**Revista RVEA**](rvea/index.qmd) — Artículos del Volumen I y II
+- [**Libros y Materiales Docentes**](libro/index.qmd) — Diagnóstico del sistema de pensiones
+- [**Series de Tiempo con Python**](docencia/series-tiempo/index.qmd) — Curso para actuarios
+- [**Servicios y Demos**](servicios/index.qmd) — Galería interactiva (IBNR, mapa de riesgo)
+- [**Comité Editorial**](editores.qmd) — Miembros del Comité
+- [**Sobre el CVEA**](sobre.qmd) — Estructura y modelo editorial
+
+:::

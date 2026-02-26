@@ -1,0 +1,24 @@
+---
+title: "Servicios y Demos Analíticos"
+subtitle: "Eje de Extensión"
+listing:
+  type: grid
+  contents:
+    - title: "Simulador de Reservas IBNR"
+      path: demo-ibnr.qmd
+      # image: assets/img/dashboard-preview.png  # Descomenta cuando tengas la captura
+    - title: "Mapa de Riesgo de Mortalidad"
+      path: demo-mapa.qmd
+---
+
+El **eje de Extensión** del CVEA ofrece una galería de capacidades técnicas mediante dashboards interactivos y herramientas reproducibles. Los demos ilustran aplicaciones directas de la investigación publicada en la RVEA y los libros y materiales docentes (mortalidad, reservas, riesgo territorial).
+
+## Qué encontrarás aquí
+
+- **Demos interactivos:** simuladores de reservas IBNR y mapas de riesgo de mortalidad, enlazados desde las tarjetas siguientes. Para aplicaciones Streamlit o Shiny se utilizan iframes optimizados.
+- **Consultoría:** el CVEA ofrece asesoría en reservas técnicas, tarificación territorializada y diagnóstico de bases técnicas para entidades reguladas (IVSS, aseguradoras). Contacto a través del [Comité Editorial](../editores.qmd).
+- **Reproducibilidad:** cuando el código fuente de un demo esté disponible en un repositorio público, se enlazará desde la descripción del demo.
+
+## Galería de demos
+
+A continuación se listan los demos disponibles. Añade capturas en `assets/img/` (por ejemplo `dashboard-preview.png`) y referéncialas en `listing.contents` para mostrar miniaturas en cada tarjeta.
