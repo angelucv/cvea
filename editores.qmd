@@ -4,6 +4,7 @@ subtitle: "Miembros del Comité Editorial y de Investigación"
 toc: false
 format:
   html:
+    embed-resources: false
     include-in-header:
       text: |
         <style>
