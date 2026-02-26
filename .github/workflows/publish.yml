@@ -14,6 +14,19 @@ jobs:
       contents: write   # necesario para crear/actualizar la rama gh-pages
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create gh-pages branch if missing
+        run: |
+          git fetch origin
+          if ! git rev-parse --verify origin/gh-pages >/dev/null 2>&1; then
+            git checkout --orphan gh-pages
+            git reset --hard
+            git commit --allow-empty -m "Initialize gh-pages"
+            git push origin gh-pages
+            git checkout main
+          fi
 
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
