@@ -55,7 +55,7 @@ include-in-header: assets/meta.html
 <div class="intro intro_f" style="background-color: black;">
   <div class="intro-slideshow">
     <div class="image-wrapper">
-      <img src="assets/logos/Logo-CVEA-horizontal-grande-letrasnegras.png" alt="CVEA" style="object-fit: contain; background: #1a1a1a;">
+      <img src="assets/img/home-hero-noticias.jpg" alt="Actualidad y noticias" style="width: 100%; height: 100%; object-fit: cover;">
     </div>
   </div>
   <div class="scroll-text intro-text">
@@ -65,7 +65,7 @@ include-in-header: assets/meta.html
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" class="svg-quote" style="width: 60px; height: auto;"><path fill="#FFFFFF" fill-rule="evenodd" d="M6.438,50.5v35.875h35.875V50.5h-20.5c0-11.321,9.179-20.5,20.5-20.5V14.625C22.498,14.625,6.438,30.686,6.438,50.5z M93.562,30V14.625c-19.814,0-35.875,16.061-35.875,35.875v35.875h35.875V50.5h-20.5C73.062,39.179,82.241,30,93.562,30z"/></svg>
         </div>
         <p class="quote-copy" style="color:white;"><i>Juntos podemos transformar nuestra disciplina y avanzar hacia un futuro de excelencia.</i></p>
-        <img src="assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png" alt="CVEA" style="width: 100px; margin-bottom: 16px; filter: brightness(0) invert(1);">
+        <img src="assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png" alt="CVEA" style="width: 180px; margin-bottom: 16px; filter: brightness(0) invert(1);">
       </div>
     </div>
   </div>
@@ -79,7 +79,7 @@ include-in-header: assets/meta.html
   <div class="layout_grid_objectives_mob">
     <div class="quote-container">
       <h1 class="quote-text scroll-text" style="color:white;">El CVEA se basa en los tres pilares de la educación superior: Investigación · Docencia · Extensión</h1>
-      <img src="assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png" alt="CVEA" style="width: 100px; margin-bottom: 16px; filter: brightness(0) invert(1);">
+      <img src="assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png" alt="CVEA" style="width: 180px; margin-bottom: 16px; filter: brightness(0) invert(1);">
     </div>
   </div>
 </div>
@@ -151,7 +151,7 @@ include-in-header: assets/meta.html
 <p style="text-align:center; margin-top: 2rem;"><strong>Gestión y Vinculación</strong> — Sostenibilidad, dinamismo y comunicación con el entorno.</p>
 <div class="wrap">
   <div class="tile">
-    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=450&fit=crop" alt="RVEA"/>
+    <img src="assets/img/home-rvea.jpeg" alt="RVEA"/>
     <a href="rvea/index.qmd">
       <div class="text">
         <h1>RVEA</h1>
@@ -161,7 +161,7 @@ include-in-header: assets/meta.html
     </a>
   </div>
   <div class="tile">
-    <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=400&h=450&fit=crop" alt="Libros"/>
+    <img src="assets/img/home-libros.jpeg" alt="Libros"/>
     <a href="libro/index.qmd">
       <div class="text">
         <h1>Libros</h1>
@@ -171,7 +171,7 @@ include-in-header: assets/meta.html
     </a>
   </div>
   <div class="tile">
-    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=450&fit=crop" alt="Cursos"/>
+    <img src="assets/img/home-cursos.jpeg" alt="Cursos"/>
     <a href="docencia/index.qmd#cursos">
       <div class="text">
         <h1>Cursos</h1>
@@ -181,7 +181,7 @@ include-in-header: assets/meta.html
     </a>
   </div>
   <div class="tile">
-    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=450&fit=crop" alt="CVEA Suite"/>
+    <img src="assets/img/home-suite.jpeg" alt="CVEA Suite"/>
     <a href="cvea-suite.qmd">
       <div class="text">
         <h1>CVEA Suite</h1>
@@ -191,7 +191,7 @@ include-in-header: assets/meta.html
     </a>
   </div>
   <div class="tile">
-    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=450&fit=crop" alt="Actualidad"/>
+    <img src="assets/img/home-actualidad.jpeg" alt="Actualidad"/>
     <a href="actualidad.qmd">
       <div class="text">
         <h1>Actualidad</h1>
@@ -201,7 +201,7 @@ include-in-header: assets/meta.html
     </a>
   </div>
   <div class="tile">
-    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400&h=450&fit=crop" alt="Contacto"/>
+    <img src="assets/img/home-contacto.jpeg" alt="Contacto"/>
     <a href="contacto.qmd">
       <div class="text">
         <h1>Contacto / Soporte</h1>

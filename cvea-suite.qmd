@@ -67,4 +67,35 @@ La arquitectura modular de CVEA Suite es **100% adaptable** a los requerimientos
 
 ---
 
+## CVEA Suite Lab — Aplicativos demostrativos
+
+Para ilustrar el alcance de la Suite y la capacidad del CVEA para integrar **modelos actuariales avanzados con front-ends interactivos**, se dispone de un conjunto de desarrollos demostrativos:
+
+### Tarificación actuarial telemática
+
+- **Aplicativo Shiny (telemática)** — Plataforma de tarificación actuarial basada en comportamiento de conducción.
+  - [Ver demo en línea](https://7rho5x-profesor-angel.shinyapps.io/ActuarialTelematicsV2/){target=\"_blank\"}
+  - [Ver ejemplo detallado (HTML)](Referencias/Recursos_HTML/Xaringan1.html){target=\"_blank\"}
+- **Caso de uso:** integración de variables telemáticas, segmentación de riesgo y pricing dinámico.
+
+### Insurtech y analítica sectorial
+
+- **China Insurtech (HTML)** — Exploración de tendencias y modelos de negocio insurtech en Asia.
+  - [Ver demo HTML](Referencias/Recursos_HTML/China_Insurtech.html){target=\"_blank\"}
+- **Series de tiempo y actores del mercado** — Análisis dinámico de actores y series temporales:
+  - [Series de tiempo de actores](Referencias/Recursos_HTML/Series-de-tiempo-Actores.html){target=\"_blank\"}
+
+### Prototipo Actuarial Insurtech (versión R y versión Python)
+
+- **ActuarialInsurtechCARAMELS (Shiny, R)** — Dashboard avanzado que integra:
+  - Indicadores técnicos (PNC, reservas, siniestralidad, ROE, ratios de solvencia).
+  - Comparación de una aseguradora frente al mercado.
+  - Simulación de cartera técnica y siniestros por ramo.
+- **Versión demostrativa en Python / Streamlit (en desarrollo)** — Réplica conceptual y modernizada del dashboard anterior, centrada en:
+  - Lectura de portafolios simulados o reales.
+  - Panel de KPIs técnicos y de solvencia.
+  - Gráficos interactivos con filtros por ramo, canal, período y segmento de clientes.
+
+La intención es que estos aplicativos sirvan como **laboratorio demostrativo** dentro de CVEA Suite, mostrando la versatilidad del centro para implementar soluciones en **R (Shiny)** y **Python (Streamlit)** según los requerimientos del cliente.
+
 Para conocer más o solicitar una propuesta adaptada a su organización: [Contacto](contacto.qmd) · [Miembros](miembros.qmd).
