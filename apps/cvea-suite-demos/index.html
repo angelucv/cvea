@@ -19,8 +19,8 @@
   <h1>Aplicativos interactivos CVEA Suite</h1>
   <p>Los cinco demos (Bank, Insurance, Retail, Health, Control) se ejecutan en la aplicación siguiente. Use el menú lateral dentro del aplicativo para cambiar de módulo.</p>
   <div class="iframe-wrap">
-    <!-- Reemplace la URL por la de su app desplegada en Streamlit Cloud (ej. https://su-app.streamlit.app) -->
-    <iframe src="https://cvea-suite-demos-angelucv.streamlit.app" title="CVEA Suite Demos"></iframe>
+    <!-- Para pruebas locales con `streamlit run Home.py`, la aplicación estará en http://localhost:8501 -->
+    <iframe src="http://localhost:8501" title="CVEA Suite Demos"></iframe>
   </div>
   <div class="fallback">
     <strong>Si el aplicativo no carga:</strong> puede no estar desplegado en línea. Para ejecutarlo en su equipo, clone el repositorio del sitio, abra una terminal en la carpeta <code>apps/cvea-suite-demos</code> y ejecute: <code>pip install -r requirements.txt</code> y luego <code>streamlit run Home.py</code>.

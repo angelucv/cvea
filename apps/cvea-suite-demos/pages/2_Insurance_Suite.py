@@ -4,10 +4,13 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+from theme import cvea_header
 
-st.set_page_config(page_title="CVEA Insurance Suite", page_icon="🛡️", layout="wide")
-st.title("CVEA Insurance Suite")
-st.caption("Reservas, NIIF 17, estrés inflacionario y cumplimiento LC/FT — Datos simulados")
+st.set_page_config(page_title="CVEA Insurance Suite (CVEA-IS)", page_icon="🛡️", layout="wide")
+cvea_header(
+    "CVEA Insurance Suite (CVEA-IS)",
+    "Reservas, NIIF 17, estrés inflacionario y cumplimiento LC/FT — Datos simulados",
+)
 
 @st.cache_data
 def get_runoff_triangle(years=10):

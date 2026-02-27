@@ -5,10 +5,13 @@ import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from theme import cvea_header
 
-st.set_page_config(page_title="CVEA Bank Suite", page_icon="🏦", layout="wide")
-st.title("CVEA Bank Suite")
-st.caption("Credit & Market Risk Desk — NIIF 9 · Datos simulados")
+st.set_page_config(page_title="CVEA Bank Suite (CVEA-BS)", page_icon="🏦", layout="wide")
+cvea_header(
+    "CVEA Bank Suite (CVEA-BS)",
+    "Credit & Market Risk Desk — NIIF 9 · Datos simulados",
+)
 
 @st.cache_data
 def get_credit_portfolio(n=10_000):

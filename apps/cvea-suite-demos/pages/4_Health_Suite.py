@@ -4,10 +4,13 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+from theme import cvea_header
 
-st.set_page_config(page_title="CVEA Health Suite", page_icon="🏥", layout="wide")
-st.title("CVEA Health Suite")
-st.caption("Monitoreo epidemiológico, auditoría clínica, solvencia y tarificación — Datos simulados")
+st.set_page_config(page_title="CVEA Health Suite (CVEA-HS)", page_icon="🏥", layout="wide")
+cvea_header(
+    "CVEA Health Suite (CVEA-HS)",
+    "Monitoreo epidemiológico, auditoría clínica, solvencia y tarificación — Datos simulados",
+)
 
 @st.cache_data
 def get_health_claims(n=22_000):
