@@ -63,6 +63,8 @@ Ficha técnica, programa, objetivos e inscripción del curso orientado a actuari
 
 [**Ir al curso Series de Tiempo con Python**](series-tiempo/index.qmd)
 
+**Recurso complementario:** [Series de tiempo y actores del mercado (HTML)](../Referencias/Recursos_HTML/Series-de-tiempo-Actores.html) — Análisis dinámico de actores y series temporales.
+
 ### Próximas ofertas {#proximas}
 
 Webinars y certificaciones en temas emergentes (por ejemplo, IA en Actuaría). Las convocatorias se publicarán en [Actualidad](../actualidad.qmd).

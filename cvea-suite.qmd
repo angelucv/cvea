@@ -5,97 +5,123 @@ toc: true
 toc-depth: 2
 ---
 
-Pasamos sus procesos manuales a ecosistemas digitales inteligentes. En el CVEA no solo desarrollamos software corporativo; le brindamos el **acompañamiento de un equipo técnico y actuarial de excelencia**. Entendemos su negocio desde la raíz, diseñamos algoritmos a medida y le entregamos el control total de sus operaciones y datos en tiempo real.
+El entorno empresarial venezolano actual, caracterizado por su **dinamismo bimonetario**, retos inflacionarios y una notable reactivación en sectores clave, exige herramientas de gestión que vayan mucho más allá del simple reporte estático. Las empresas modernas no solo necesitan registrar sus operaciones diarias, sino **comprenderlas en tiempo real** y, más importante aún, **predecir sus resultados futuros** para proteger su patrimonio.
 
-## Más que un software: un ecosistema integral con acompañamiento experto
+Para responder a esta necesidad nace la **CVEA Suite**, un ecosistema tecnológico integral diseñado por y para actuarios, estadísticos y tomadores de decisiones. La visión de la CVEA Suite abarca el **ciclo de vida completo del dato empresarial**, estructurándose en tres pilares tecnológicos fundamentales que garantizan un flujo de trabajo ininterrumpido:
 
-Sabemos que cada industria —desde la banca y los seguros hasta el retail y la salud— enfrenta el desafío de procesar grandes volúmenes de datos, evaluar casos y tomar decisiones rápidas. **CVEA Suite** no es una herramienta genérica: es una **plataforma modular y paramétrica** que se adapta a su negocio mediante un ciclo completo de transformación:
+**Carga, Control y Operativa:** Constituye el cimiento del sistema. Permite la ingesta segura y estructurada de datos. Para sectores con alta madurez tecnológica, se conecta automáticamente a los servidores centrales de la empresa; para otros, ofrece interfaces web intuitivas que permiten el levantamiento manual de procesos y la carga inicial de información de manera validada y segura.
 
-- **Levantamiento y reingeniería de procesos:** Nuestro equipo de especialistas se sumerge en su operativa diaria para identificar cuellos de botella, optimizar flujos de trabajo y definir las reglas de negocio críticas.
+**Monitoreo y Cuadros de Mando:** La sala de mando en tiempo real. Aquí, la gerencia interactúa con visualizaciones dinámicas, evalúa indicadores clave de rendimiento (KPIs), recibe alertas tempranas e interactúa con simuladores de escenarios para la toma de decisiones ágiles y fundamentadas en evidencia.
 
-- **Modelado analítico y scoring automático:** Aplicamos ciencia de datos y matemáticas actuariales para crear "motores de decisión" que evalúan el riesgo y priorizan sus transacciones automáticamente.
+**Analítica Avanzada y Predictiva:** El cerebro actuarial y estadístico. Módulos especializados que aplican modelos matemáticos complejos, inteligencia artificial y simulaciones estocásticas (pruebas de estrés, modelos de supervivencia, proyecciones de demanda) para generar escenarios futuros que retroalimentan y blindan la estrategia del negocio.
 
-- **Desarrollo tecnológico flexible:** Implementamos nuestra Suite adaptada a su identidad corporativa, con arquitectura web segura y accesible desde cualquier lugar.
+A continuación se presenta la propuesta de valor comercial y el diseño técnico de los **demos interactivos** para cinco ecosistemas fundamentales: **Banca**, **Seguros**, **Retail**, **Salud**, y una suite de **Control General** adaptada a las complejidades de la cadena de suministro e industria.
 
-## Arquitectura del sistema: módulos configurables
-
-CVEA Suite está diseñada bajo una **arquitectura modular**. Usted puede implementar la suite completa o configurar únicamente los módulos que su organización requiere para escalar.
-
-### 1. Módulo Core de Ingesta y Gestión de Datos
-
-El corazón operativo de la plataforma.
-
-- **Carga masiva ágil:** Migre de hojas de cálculo dispersas a una base de datos centralizada. Importe volúmenes masivos de datos (Excel/CSV) en segundos con validación de errores.
-- **Gestión centralizada:** Registro de casos, transacciones o solicitudes individuales mediante formularios web dinámicos.
-- **Trazabilidad absoluta:** Historial de cambios, control de usuarios y seguimiento del estatus de cada gestión en tiempo real.
-
-### 2. Módulo de Motor de Reglas y Scoring (Decisión Automática)
-
-Inteligencia actuarial aplicada a sus procesos.
-
-- **Evaluación automatizada:** Clasificación inmediata de registros basada en sus propios criterios (scoring crediticio, nivel de riesgo en siniestros, triaje médico o calificación de proveedores).
-- **Asignación de prioridades:** Alertas visuales (Niveles Crítico, Alto, Medio, Bajo) para que su equipo atienda primero lo que genera mayor impacto o riesgo.
-- **Reglas parametrizables:** Ajuste los algoritmos de decisión a medida que cambian las políticas de su empresa, sin necesidad de reprogramar todo el sistema.
-
-### 3. Módulo de Control Financiero y Presupuestario
-
-Transparencia y control al centavo.
-
-- **Gestión multimoneda:** Registro de operaciones en moneda local y divisas, con conversión automática según tasas oficiales (ej. BCV).
-- **Control de presupuesto:** Monitoreo de partidas presupuestarias ejecutadas versus planificadas.
-- **Gestión de proveedores:** Seguimiento de pagos, facturación y liquidaciones a terceros (clínicas, proveedores, aliados comerciales).
-
-### 4. Módulo de Inteligencia de Negocios (Business Intelligence)
-
-De los datos operativos a las decisiones estratégicas.
-
-- **Dashboards interactivos:** Paneles de control gerenciales actualizados en tiempo real.
-- **Análisis de Pareto y tendencias:** Gráficos dinámicos para identificar visualmente dónde se concentra el mayor gasto o volumen operativo (top de especialidades, proveedores, sucursales).
-- **KPIs estratégicos:** Medición de eficiencia de su equipo, tiempos de respuesta y embudos de conversión o aprobación.
-
-## Sectores de aplicación: para quién es CVEA Suite
-
-La arquitectura modular de CVEA Suite es **100% adaptable** a los requerimientos técnicos de múltiples industrias:
-
-| Sector | Aplicaciones |
-|--------|----------------|
-| **Banca y finanzas** | Automatización de solicitudes de crédito, evaluación de riesgos y seguimiento de carteras. |
-| **Seguros** | Procesamiento ágil de siniestros, cálculo de primas, evaluación de pólizas y control de pagos a proveedores. |
-| **Salud** | Gestión de pacientes, priorización de ingresos (triaje inteligente) y administración de recursos médicos. |
-| **Retail y comercial** | Gestión de inventarios, evaluación de proveedores y análisis de rentabilidad por sucursal. |
-| **Responsabilidad Social (RSC) y ONGs** | Administración de fondos, priorización de ayudas sociales y control de presupuestos ejecutados. |
+Los demos están implementados en **Streamlit (Python)** con datos simulados. Para ejecutarlos en local: `cd apps/cvea-suite-demos && pip install -r requirements.txt && streamlit run Home.py`
 
 ---
 
-## CVEA Suite Lab — Aplicativos demostrativos
+## 1. CVEA Bank Suite
 
-Para ilustrar el alcance de la Suite y la capacidad del CVEA para integrar **modelos actuariales avanzados con front-ends interactivos**, se dispone de un conjunto de desarrollos demostrativos:
+**Visión para el público general**
 
-### Tarificación actuarial telemática
+El sector financiero venezolano opera hoy bajo un esquema bimonetario único, donde la agilidad en el manejo de liquidez y la mitigación del riesgo crediticio son vitales. El **CVEA Bank Suite** es una plataforma integral que permite a las instituciones bancarias, de microfinanzas y casas de bolsa evaluar la salud de su cartera y el valor de sus activos en tiempo real. Desde la automatización de la captura de datos de sus servidores hasta la predicción de impagos mediante inteligencia artificial, el sistema protege el patrimonio de la entidad frente a volatilidades cambiarias y asegura el cumplimiento de los estándares internacionales de riesgo.
 
-- **Aplicativo Shiny (telemática)** — Plataforma de tarificación actuarial basada en comportamiento de conducción.
-  - [Ver demo en línea](https://7rho5x-profesor-angel.shinyapps.io/ActuarialTelematicsV2/){target=\"_blank\"}
-  - [Ver ejemplo detallado (HTML)](Referencias/Recursos_HTML/Xaringan1.html){target=\"_blank\"}
-- **Caso de uso:** integración de variables telemáticas, segmentación de riesgo y pricing dinámico.
+**Demo interactivo (Streamlit)**
 
-### Insurtech y analítica sectorial
+El demo web simula un entorno de "Credit & Market Risk Desk" alineado con la normativa NIIF 9 y las exigencias de liquidez de SUDEBAN.
 
-- **China Insurtech (HTML)** — Exploración de tendencias y modelos de negocio insurtech en Asia.
-  - [Ver demo HTML](Referencias/Recursos_HTML/China_Insurtech.html){target=\"_blank\"}
-- **Series de tiempo y actores del mercado** — Análisis dinámico de actores y series temporales:
-  - [Series de tiempo de actores](Referencias/Recursos_HTML/Series-de-tiempo-Actores.html){target=\"_blank\"}
+- **Datos simulados:** Cartera de 10.000 créditos (score crediticio, ingreso, monto, tasa, días de mora, PD); series temporales bimonetarias (tasas pasivas/activas, liquidez).
+- **Controles:** Choque macroeconómico (slider), vista Moneda Nacional / Moneda Extranjera.
+- **Pestañas:** (1) Visión general — métricas de liquidez, solvencia, morosidad, intermediación; evolución de fondeo (captaciones vs cartera). (2) Riesgo de crédito NIIF 9 — diagrama Sankey de migración Stage 1 → 2 → 3; scatter Score vs PD por estrato de ingreso; editor de LGD y cálculo de ECL = EAD × PD × LGD. (3) Riesgo de mercado y tesorería — velas japonesas (índice/bonos), mapa de calor de correlaciones entre carteras.
 
-### Prototipo Actuarial Insurtech (versión R y versión Python)
+[**Abrir demo Bank Suite**](apps/cvea-suite-demos/) *(ejecutar localmente: ver instrucciones al inicio de esta página)*
 
-- **ActuarialInsurtechCARAMELS (Shiny, R)** — Dashboard avanzado que integra:
-  - Indicadores técnicos (PNC, reservas, siniestralidad, ROE, ratios de solvencia).
-  - Comparación de una aseguradora frente al mercado.
-  - Simulación de cartera técnica y siniestros por ramo.
-- **Versión demostrativa en Python / Streamlit (en desarrollo)** — Réplica conceptual y modernizada del dashboard anterior, centrada en:
-  - Lectura de portafolios simulados o reales.
-  - Panel de KPIs técnicos y de solvencia.
-  - Gráficos interactivos con filtros por ramo, canal, período y segmento de clientes.
+---
 
-La intención es que estos aplicativos sirvan como **laboratorio demostrativo** dentro de CVEA Suite, mostrando la versatilidad del centro para implementar soluciones en **R (Shiny)** y **Python (Streamlit)** según los requerimientos del cliente.
+## 2. CVEA Insurance Suite
+
+**Visión para el público general**
+
+El mercado asegurador venezolano se encuentra en una encrucijada financiera y técnica crítica. La adopción de la **NIIF 17** se ha convertido en una necesidad estratégica para el sector. Las aseguradoras enfrentan el reto de reestructurar sus modelos operativos para proteger a sus clientes mientras mantienen su solvencia frente a la inflación de costos. El **CVEA Insurance Suite** es una cabina de mando actuarial y financiera que automatiza el control de primas, siniestros y el cálculo riguroso de reservas. Desde la evaluación histórica de pólizas hasta proyecciones estocásticas a décadas, este sistema asegura que su patrimonio esté blindado y garantiza una transición fluida y auditable hacia los nuevos estándares contables internacionales.
+
+**Demo interactivo (Streamlit)**
+
+- **Datos simulados:** Triángulos de desarrollo (run-off) de siniestros pagados a 10 años; vectores de inflación histórica; indicadores de riesgo normativo.
+- **Óptica 1 — Reservas y siniestralidad histórica:** Tabla con estilización tipo mapa de calor para triángulos de siniestros; selector de modelo: Chain Ladder, Bornhuetter-Ferguson, Chain Ladder ajustado por inflación (IACL).
+- **Óptica 2 — Motor NIIF 17:** Diagrama de cascada (waterfall): Saldo inicial → Nuevos negocios → Cambios en supuestos → Descuento financiero → Ajustes de experiencia → Liberación a P&L. Selector BBA/GMM o PAA; ajuste de Risk Adjustment (Costo de capital / VaR).
+- **Óptica 3 — Simulador de estrés inflacionario:** Gráficos de abanico (fan charts) con intervalos 75% y 95%; slider de choque inflacionario (−10% a +10%); métricas que se recalculan en tiempo real.
+- **Óptica 4 — Cumplimiento LC/FT (SUDEASEG):** Gráficos de radar (riesgo bajo/medio/alto); alertas visuales según calificación simulada.
+
+[**Abrir demo Insurance Suite**](apps/cvea-suite-demos/) *(misma app multi-página; seleccionar Insurance en el menú)*
+
+---
+
+## 3. CVEA Retail Suite
+
+**Visión para el público general**
+
+El sector de consumo masivo en Venezuela está experimentando un notable renacimiento (crecimiento del 8,4%, más de 17,7 millones de unidades semanales). La gestión comercial se enfrenta a un sistema bimonetario y a un consumidor que en un 87% utiliza ahorros para financiar compras. En este escenario, **predecir la demanda y fijar el precio correcto** es la diferencia entre el éxito y el fracaso. El **CVEA Retail Suite** es una cabina de inteligencia comercial que captura en tiempo real las ventas de sus sucursales y emplea analítica basada en evidencia para identificar relaciones entre margen, volumen y rotación. Es su radar interactivo para maximizar la rentabilidad, optimizar inventarios y entender el comportamiento multimoneda de sus clientes.
+
+**Demo interactivo (Streamlit)**
+
+- **Datos simulados:** Más de 50.000 tickets (id_ticket, fecha, SKU, categoría, marca Tradicional/Genérica, precio Bs/USD, tasas de cambio, volumen, método de pago: Divisas/Bs/Cripto).
+- **Óptica 1 — Inteligencia comercial:** Métricas de volumen semanal, ticket promedio multimoneda, índice de confianza del consumidor; treemap de participación (ej. 61% marcas tradicionales) con drill-down por motivo (Calidad, Costumbre, Precio-Calidad). Filtros por región y formato de tienda.
+- **Óptica 2 — Elasticidad y precios multimoneda:** Curva de demanda (precio vs tasa de cambio); sliders para costo importado y tipos de cambio; aviso si se incumplen restricciones de arbitraje.
+- **Óptica 3 — Inventario y canastas:** Sankey o red de afinidades (reglas de asociación, ej. Harina → Margarina); controles de soporte mínimo y confianza (Apriori).
+- **Óptica 4 — Análisis exploratorio (Self-Service BI):** Integración de PyGWalker para arrastrar y soltar variables y construir tablas pivote y gráficos al vuelo.
+
+[**Abrir demo Retail Suite**](apps/cvea-suite-demos/) *(seleccionar Retail en el menú)*
+
+---
+
+## 4. CVEA Health Suite
+
+**Visión para el público general**
+
+El sector salud en Venezuela enfrenta presiones sin precedentes: mayor demanda, prevalencia de enfermedades crónicas y alta variabilidad en costos médicos. Fondos autoadministrados y empresas de medicina prepagada —reguladas por SUDEASEG— necesitan garantizar calidad sin comprometer viabilidad financiera. El **CVEA Health Suite** transforma su institución en una "Smart Health Organization": consolida estadísticas de morbilidad y siniestralidad, audita facturas clínicas contra baremos en tiempo real e incorpora modelos que calculan la solvencia de reservas técnicas de salud. Es la herramienta para contener el gasto, modernizar la tarificación (incluyendo telemedicina) y proteger el patrimonio frente a la hiperinflación biomédica.
+
+**Demo interactivo (Streamlit)**
+
+- **Datos simulados:** Más de 20.000 siniestros (id_paciente, código CIE-10, tipo_servicio, clínica, costo_facturado_usd, límite_baremo_usd, fecha_admisión).
+- **Óptica 1 — Monitoreo epidemiológico:** KPIs (tasa de admisión, prevalencia ENT, índice telemedicina vs presencial); mapas de densidad de siniestros y rendimiento de prestadores.
+- **Óptica 2 — Auditoría clínica:** Dispersión y diagramas de violín del costo por procedimiento vs baremo; gráficos de control (Shewhart); slider de sensibilidad de auditoría (Isolation Forest) con celdas en rojo para desviaciones.
+- **Óptica 3 — Solvencia y reservas:** Gráficos de área con simulación Monte Carlo del patrimonio a 5 años (teoría de la ruina); inputs de inflación médica vs general.
+- **Óptica 4 — Tarificación y modalidades:** Embudo de rentabilidad (tradicional vs asistencia domiciliaria y telemedicina); simulador de primas (coaseguro, deducible, tope) y comprobación de margen de suficiencia (SAA-01-0505-2024).
+
+[**Abrir demo Health Suite**](apps/cvea-suite-demos/) *(seleccionar Health en el menú)*
+
+---
+
+## 5. CVEA Control Suite (visión general y industria)
+
+**Visión para el público general**
+
+El tejido productivo venezolano abarca logística, agroindustria y manufactura, con retos que van desde la volatilidad en el abastecimiento de combustible hasta la optimización de flotas e inventarios en tiempo real. El **CVEA Control Suite** es la plataforma camaleónica e integrable: una torre de control (Control Tower) que permite desde el levantamiento a medida de datos operativos en planta o en la carretera hasta tableros directivos predictivos. Con ella se puede monitorear el desempeño de rutas logísticas, contener costos ocultos de distribución y aplicar modelos que optimizan el rendimiento de maquinarias y pronostican fallas antes de detener la producción. Es la solución para dotar de resiliencia y agilidad a la cadena de suministro.
+
+**Demo interactivo (Streamlit)**
+
+- **Datos simulados:** Más de 10.000 registros logísticos/industriales (id_vehículo/máquina, coordenadas GPS, consumo combustible, km recorridos, estado operativo, tiempo_ciclo_producción, costo_operativo_usd).
+- **Óptica 1 — Cadena de suministro y flotas:** KPIs (costo por km, rendimiento combustible, OTIF); mapa con arcos (centros de distribución → entregas) y dispersión de flota (PyDeck). Slider de variabilidad de combustible.
+- **Óptica 2 — Eficiencia industrial y mantenimiento predictivo:** Gauge de OEE; heatmap de fallas por zona/turno; curva de supervivencia (Weibull/Kaplan-Meier) — probabilidad de falla a 30 días; botón para simular orden de mantenimiento preventivo.
+- **Óptica 3 — Sostenibilidad y gastos operativos:** Diagrama de cascada del presupuesto (diesel, peajes, mantenimiento, depreciación → margen operativo neto); selector de fechas y escenarios de sobrecostos.
+- **Óptica 4 — Análisis exploratorio:** PyGWalker para cruzar variables (estado_operativo, tiempo_ciclo_producción, etc.) sin programación.
+
+[**Abrir demo Control Suite**](apps/cvea-suite-demos/) *(seleccionar Control en el menú)*
+
+---
+
+## CVEA Suite Lab — Otros desarrollos demostrativos
+
+**Tarificación actuarial telemática**
+
+- **Aplicativo Shiny (telemática):** [Ver demo en línea](https://7rho5x-profesor-angel.shinyapps.io/ActuarialTelematicsV2/){target="_blank"}
+- **Ejemplo detallado (HTML):** [Xaringan1 — Tarificación telemática](Referencias/Recursos_HTML/Xaringan1.html){target="_blank"}
+
+**Prototipo Actuarial Insurtech (Shiny, R)**
+
+- Dashboard avanzado (ActuarialInsurtechCARAMELS): indicadores técnicos, comparación aseguradora vs mercado, simulación de cartera; referencia en `Referencias/ActuarialInsurtechCARAMELS/`.
+
+---
 
 Para conocer más o solicitar una propuesta adaptada a su organización: [Contacto](contacto.qmd) · [Miembros](miembros.qmd).

@@ -24,6 +24,10 @@ Enlaces a revistas e instancias de interés para la comunidad actuarial y estad�
 - [IVSS](https://www.ivss.gob.ve/) — Instituto Venezolano de los Seguros Sociales.
 - [Sudeaseg](https://www.sudeaseg.gob.ve/) — Superintendencia de la Actividad Aseguradora (Venezuela).
 
+**Tendencias e insurtech**
+
+- [China Insurtech (HTML)](Referencias/Recursos_HTML/China_Insurtech.html) — Exploración de tendencias y modelos de negocio insurtech en Asia.
+
 ## Calendario de eventos {#calendario}
 
 Calendario para **eventos organizados o coorganizados por el CVEA**: defensas de TFPG, seminarios, conferencias y ofertas de formación. Las fechas se irán actualizando aquí.
