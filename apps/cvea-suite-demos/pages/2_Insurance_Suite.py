@@ -84,13 +84,13 @@ with tab1:
 
     st.subheader("Primas cobradas por ramo")
     fig_primas = px.bar(df_vs, x="Ramo", y="Primas_cobradas", title="Primas cobradas por ramo")
-    st.plotly_chart(fig_primas, use_container_width=True)
+    st.plotly_chart(fig_primas)
 
     st.subheader("Siniestralidad por ramo")
     fig_sin = px.bar(df_vs, x="Ramo", y="Siniestralidad", text="Siniestralidad", range_y=[0, 1])
     fig_sin.update_traces(texttemplate="%{text:.1%}", textposition="outside")
     fig_sin.update_layout(title="Siniestralidad por ramo")
-    st.plotly_chart(fig_sin, use_container_width=True)
+    st.plotly_chart(fig_sin)
 
     meta_sin = st.sidebar.slider("Meta de siniestralidad técnica (%)", 30.0, 90.0, 65.0, 1.0) / 100
     sin_prom = float(df_vs["Siniestralidad"].mean())
@@ -111,7 +111,7 @@ with tab1:
             title={"text": "Siniestralidad promedio vs meta"},
         )
     )
-    st.plotly_chart(fig_g, use_container_width=True)
+    st.plotly_chart(fig_g)
 
 with tab2:
     st.subheader("Monitoreo de reservas — marco SUDEASEG")
@@ -130,7 +130,7 @@ with tab2:
     st.subheader("Triángulo de desarrollo de siniestros (pagados)")
     tri_display = triangle_raw.copy()
     tri_display = tri_display.style.background_gradient(axis=None, cmap="YlOrRd")
-    st.dataframe(tri_display, use_container_width=True)
+    st.dataframe(tri_display)
     if modelo_reserva == "Chain Ladder":
         tri_proj = chain_ladder(triangle_raw)
     elif modelo_reserva == "Bornhuetter-Ferguson":
@@ -183,7 +183,7 @@ with tab3:
     fig_prod = px.bar(df_sel, x="Producto", y="Siniestralidad", text="Siniestralidad", range_y=[0, 1])
     fig_prod.update_traces(texttemplate="%{text:.1%}", textposition="outside")
     fig_prod.update_layout(title=f"Siniestralidad por producto — {ramo_sel}")
-    st.plotly_chart(fig_prod, use_container_width=True)
+    st.plotly_chart(fig_prod)
 
 with tab4:
     st.subheader("Cumplimiento SUDEASEG y prueba de estrés")
@@ -212,7 +212,7 @@ with tab4:
     fig_fan.add_trace(go.Scatter(x=x, y=p75_lo, fill="tonexty", line=dict(color="blue")))
     fig_fan.add_trace(go.Scatter(x=x, y=base, line=dict(color="darkblue", width=2), name="Central"))
     fig_fan.update_layout(title="Trayectoria probable de pagos futuros (IC 75% y 95%)", height=400)
-    st.plotly_chart(fig_fan, use_container_width=True)
+    st.plotly_chart(fig_fan)
 
 with tab4:
     st.subheader("Cumplimiento SUDEASEG — LC/FT/FPADM")
@@ -223,7 +223,7 @@ with tab4:
     fig_radar = go.Figure()
     fig_radar.add_trace(go.Scatterpolar(r=list(valores) + [valores[0]], theta=categorias + [categorias[0]], fill="toself", name="Calificación"))
     fig_radar.update_layout(polar=dict(radialaxis=dict(visible=True, range=[0, 100])), showlegend=False, height=450)
-    st.plotly_chart(fig_radar, use_container_width=True)
+    st.plotly_chart(fig_radar)
     score = np.mean(valores)
     if score >= 80:
         st.success("Calificación: Riesgo bajo — Cumplimiento adecuado.")

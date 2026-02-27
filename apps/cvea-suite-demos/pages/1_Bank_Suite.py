@@ -123,7 +123,7 @@ with tab1:
                 title={"text": "Liquidez vs meta"},
             )
         )
-        st.plotly_chart(fig_g1, use_container_width=True)
+        st.plotly_chart(fig_g1)
 
     with col_g2:
         fig_g2 = go.Figure(
@@ -147,14 +147,14 @@ with tab1:
                 title={"text": "Solvencia vs meta interna"},
             )
         )
-        st.plotly_chart(fig_g2, use_container_width=True)
+        st.plotly_chart(fig_g2)
 
     st.subheader("Evolución del fondeo (últimos 12 meses)")
     fig_fondo = go.Figure()
     fig_fondo.add_trace(go.Scatter(x=series["fecha"], y=series["captaciones_mn"], name="Captaciones", line=dict(color="blue")))
     fig_fondo.add_trace(go.Scatter(x=series["fecha"], y=series["cartera_bruta_mn"], name="Cartera bruta", line=dict(color="green")))
     fig_fondo.update_layout(xaxis_title="Fecha", yaxis_title="Monto (MN)", height=400)
-    st.plotly_chart(fig_fondo, use_container_width=True)
+    st.plotly_chart(fig_fondo)
 
 with tab2:
     st.subheader("Migración de cartera (NIIF 9 — Stages)")
@@ -173,16 +173,16 @@ with tab2:
         link=dict(source=source, target=target, value=value),
     )])
     fig_sankey.update_layout(title="Migración entre estadios de riesgo", height=400)
-    st.plotly_chart(fig_sankey, use_container_width=True)
+    st.plotly_chart(fig_sankey)
 
     st.subheader("Score crediticio vs Probabilidad de incumplimiento (PD)")
     fig_scatter = px.scatter(df_cred.sample(min(2000, len(df_cred))), x="score_crediticio", y="probabilidad_default", color="estrato_ingreso",
                              title="Credit Score vs PD (por estrato de ingreso)", opacity=0.6)
-    st.plotly_chart(fig_scatter, use_container_width=True)
+    st.plotly_chart(fig_scatter)
 
     st.subheader("Cálculo ECL (Pérdida esperada) — EAD × PD × LGD")
     lgd_default = 0.45
-    lgd = st.data_editor(pd.DataFrame([{"LGD (Loss Given Default)": lgd_default}]), use_container_width=True, hide_index=True)
+    lgd = st.data_editor(pd.DataFrame([{"LGD (Loss Given Default)": lgd_default}]), hide_index=True)
     lgd_val = float(lgd.iloc[0].iloc[0])
     if lgd_val < 0 or lgd_val > 1:
         lgd_val = 0.45
@@ -197,8 +197,8 @@ with tab3:
     cand = get_candlestick_data()
     fig_candle = go.Figure(data=[go.Candlestick(x=cand["fecha"], open=cand["open"], high=cand["high"], low=cand["low"], close=cand["close"])])
     fig_candle.update_layout(xaxis_rangeslider_visible=False, height=400)
-    st.plotly_chart(fig_candle, use_container_width=True)
+    st.plotly_chart(fig_candle)
     st.subheader("Mapa de calor de correlaciones entre carteras")
     corr_df = get_correlation_matrix()
     fig_corr = px.imshow(corr_df, text_auto=".2f", aspect="auto", color_continuous_scale="RdBu_r", zmin=-1, zmax=1)
-    st.plotly_chart(fig_corr, use_container_width=True)
+    st.plotly_chart(fig_corr)

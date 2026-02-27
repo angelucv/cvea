@@ -1,7 +1,9 @@
 import streamlit as st
 
-# Logo horizontal principal (letras negras) relativo a esta carpeta
-LOGO_URL = "../../assets/logos/Logo-CVEA-horizontal-grande-letrasnegras.png"
+# Logos relativos a esta carpeta
+LOGO_HORIZONTAL_COLOR = "../../assets/logos/Logo-CVEA-horizontal-grande-letrascolor.png"
+LOGO_VERTICAL_WHITE = "../../assets/logos/Logo-CVEA-vertical-fondocolorletrasblancas.png"
+LOGO_VERTICAL_W = "../../assets/logos/Logo-CVEA-vertical-w.png"
 
 CVEA_PRIMARY = "#38666A"
 CVEA_DARK = "#1e3d40"
@@ -34,6 +36,11 @@ body, .stApp {{
   color: var(--cvea-primary) !important;
 }}
 
+/* Mantener letras blancas en la barra lateral */
+.stSidebar, .stSidebar * {{
+  color: white !important;
+}}
+
 .stButton>button {{
   background-color: var(--cvea-primary);
   color: white;
@@ -62,6 +69,26 @@ body, .stApp {{
   font-size: 0.95rem;
   color: #444444 !important;
 }}
+
+.cvea-topbar {{
+  background-color: #000000;
+  color: white !important;
+  padding: 0.35rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}}
+
+.cvea-back {{
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  background-color: #38666A;
+  color: white !important;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+}}
 </style>
 """,
         unsafe_allow_html=True,
@@ -69,11 +96,15 @@ body, .stApp {{
 
 
 def cvea_header(title: str, subtitle: str | None = None) -> None:
-    """Cabecera con logo CVEA, título y subtítulo."""
+    """Cabecera con logo CVEA vertical, título y subtítulo, más logo pequeño en sidebar."""
     apply_cvea_theme()
+    # Cinta negra superior con texto
+    st.markdown("<div class='cvea-topbar'>CVEA Suite — Demos interactivos</div>", unsafe_allow_html=True)
+    # Logo pequeño en sidebar
+    st.sidebar.image(LOGO_VERTICAL_W)
     col_logo, col_text = st.columns([1, 3])
     with col_logo:
-        st.image(LOGO_URL)
+        st.image(LOGO_VERTICAL_WHITE)
     with col_text:
         st.markdown(f"<div class='cvea-header-title'>{title}</div>", unsafe_allow_html=True)
         if subtitle:

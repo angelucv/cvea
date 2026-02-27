@@ -1,8 +1,5 @@
-# CVEA Suite — Demos interactivos
-# Ejecutar: streamlit run Home.py
-
 import streamlit as st
-from theme import cvea_header
+from theme import apply_cvea_theme, LOGO_HORIZONTAL_COLOR
 
 st.set_page_config(
     page_title="CVEA Suite Demos",
@@ -11,12 +8,11 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-cvea_header(
-    "CVEA Suite — Demos interactivos",
-    "Aplicativos demostrativos con datos simulados para banca, seguros, retail, salud e industria.",
-)
+apply_cvea_theme()
 
-st.image("../../assets/logos/Logo-CVEA-horizontal-grande-letrascolor.png", use_column_width=True)
+st.markdown("<div class='cvea-topbar'>CVEA Suite — Demos interactivos</div>", unsafe_allow_html=True)
+st.markdown("<a href='../../cvea-suite.html' class='cvea-back'>Volver a CVEA Suite</a>", unsafe_allow_html=True)
+st.image(LOGO_HORIZONTAL_COLOR)
 st.markdown(
     "Todas las funcionalidades mostradas en cada módulo son **adaptables** a las necesidades y procesos específicos de cada organización usuaria."
 )
