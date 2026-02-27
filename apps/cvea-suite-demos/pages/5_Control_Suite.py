@@ -72,13 +72,13 @@ with tab2:
     oee_val = 0.72 + np.random.RandomState(44).uniform(-0.05, 0.05)
     fig_gauge = go.Figure(go.Indicator(mode="gauge+number", value=oee_val * 100, number={"suffix": "%"}, gauge={"axis": {"range": [0, 100]}, "bar": {"color": "darkblue"}, "steps": [{"range": [0, 50], "color": "lightgray"}, {"range": [50, 75], "color": "gray"}, {"range": [75, 100], "color": "lightblue"}], "threshold": {"line": {"color": "red", "width": 4}, "value": 85}}))
     fig_gauge.update_layout(title="OEE en tiempo real (simulado)", height=350)
-    st.plotly_chart(fig_gauge, use_container_width=True)
+    st.plotly_chart(fig_gauge)
     st.subheader("Frecuencia de fallas por zona/turno (heatmap)")
     df_log["zona"] = pd.cut(df_log["lat"], 5, labels=["Z1", "Z2", "Z3", "Z4", "Z5"])
     df_log["turno"] = np.random.RandomState(55).choice(["Mañana", "Tarde", "Noche"], len(df_log))
     fallas = df_log.groupby(["zona", "turno"]).size().unstack(fill_value=0)
     fig_heat = px.imshow(fallas, text_auto=True, aspect="auto", color_continuous_scale="Reds")
-    st.plotly_chart(fig_heat, use_container_width=True)
+    st.plotly_chart(fig_heat)
     st.subheader("Curva de supervivencia — Probabilidad de falla a 30 días")
     t = np.linspace(0, 30, 100)
     # Weibull simplificado
@@ -88,7 +88,7 @@ with tab2:
     fig_surv = go.Figure()
     fig_surv.add_trace(go.Scatter(x=t, y=surv, mode="lines", name="P(sin falla)"))
     fig_surv.update_layout(xaxis_title="Días", yaxis_title="P(sin falla)", title=f"P(falla antes 30 días) ≈ {prob_falla_30:.1%}", height=350)
-    st.plotly_chart(fig_surv, use_container_width=True)
+    st.plotly_chart(fig_surv)
     if st.button("Simular orden de mantenimiento preventivo"):
         st.success("Orden ejecutada. Probabilidad de falla reiniciada (simulación).")
 
@@ -105,7 +105,7 @@ with tab3:
     colors = ["blue" if v >= 0 else "red" for v in y]
     fig_w = go.Figure(go.Bar(x=x, y=y, marker_color=colors, text=[f"{v:,.0f}" for v in y], textposition="outside"))
     fig_w.update_layout(title="Cascada de gastos operativos", yaxis_title="USD", height=400)
-    st.plotly_chart(fig_w, use_container_width=True)
+    st.plotly_chart(fig_w)
 
 with tab4:
     st.subheader("Self-Service Analytics")
@@ -117,4 +117,4 @@ with tab4:
         st.components.v1.html(pyg_html, height=700, scrolling=True)
     except Exception as e:
         st.info("PyGWalker no disponible. Use la tabla para cruzar estado_operativo, tiempo_ciclo_produccion, etc.")
-        st.dataframe(df_log.head(2000), use_container_width=True)
+        st.dataframe(df_log.head(2000))

@@ -54,12 +54,12 @@ with tab1:
     st.subheader("Volumen de siniestros por tipo de servicio y clínica")
     agg = df_h.groupby(["tipo_servicio", "clinica_proveedora"]).size().unstack(fill_value=0)
     fig_map = px.imshow(agg, text_auto=True, aspect="auto", color_continuous_scale="Blues")
-    st.plotly_chart(fig_map, use_container_width=True)
+    st.plotly_chart(fig_map)
 
 with tab2:
     st.subheader("Costo por procedimiento vs baremo")
     fig_violin = px.violin(df_h, x="tipo_servicio", y="costo_facturado_usd", box=True, points="outliers")
-    st.plotly_chart(fig_violin, use_container_width=True)
+    st.plotly_chart(fig_violin)
     # Shewhart-style: costo promedio diario
     df_h["fecha"] = pd.to_datetime(df_h["fecha_admision"]).dt.date
     daily = df_h.groupby("fecha")["costo_facturado_usd"].mean().reset_index()
@@ -73,7 +73,7 @@ with tab2:
     fig_control.add_trace(go.Scatter(x=daily["fecha"], y=daily["LSC"], line=dict(dash="dash", color="red"), name="LSC"))
     fig_control.add_trace(go.Scatter(x=daily["fecha"], y=daily["LIC"], line=dict(dash="dash", color="red"), name="LIC"))
     fig_control.update_layout(title="Gráfico de control (Shewhart) — Costo promedio por admisión", height=350)
-    st.plotly_chart(fig_control, use_container_width=True)
+    st.plotly_chart(fig_control)
     # Auditoría: Isolation Forest style - marcar outliers
     from sklearn.ensemble import IsolationForest
     X = df_h[["costo_facturado_usd", "limite_baremo_usd"]].copy()
@@ -82,7 +82,7 @@ with tab2:
     df_h["_outlier"] = iso.fit_predict(X)
     df_audit = df_h[df_h["_outlier"] == -1][["id_paciente", "tipo_servicio", "clinica_proveedora", "costo_facturado_usd", "limite_baremo_usd"]].head(200)
     st.subheader("Facturas sugeridas para revisión (desviaciones)")
-    st.dataframe(df_audit, use_container_width=True)
+    st.dataframe(df_audit)
 
 with tab3:
     st.subheader("Simulación Monte Carlo — Patrimonio del fondo a 5 años (Teoría de la ruina)")
@@ -104,14 +104,14 @@ with tab3:
         fig_ruina.add_trace(go.Scatter(x=list(range(años + 1)), y=proy[i], mode="lines", line=dict(width=1, color="lightblue"), showlegend=False))
     fig_ruina.add_trace(go.Scatter(x=list(range(años + 1)), y=proy.mean(axis=0), mode="lines", line=dict(width=3, color="darkblue"), name="Media"))
     fig_ruina.update_layout(xaxis_title="Año", yaxis_title="Patrimonio (USD)", title="Proyección patrimonio (inflación médica aplicada)", height=400)
-    st.plotly_chart(fig_ruina, use_container_width=True)
+    st.plotly_chart(fig_ruina)
 
 with tab4:
     st.subheader("Rentabilidad por modalidad (embudo)")
     modalidades = ["Tradicional", "Asistencia domiciliaria", "Telemedicina"]
     siniestralidad = [0.72, 0.68, 0.55]
     fig_funnel = px.funnel(x=siniestralidad, y=modalidades, title="Siniestralidad por modalidad")
-    st.plotly_chart(fig_funnel, use_container_width=True)
+    st.plotly_chart(fig_funnel)
     st.subheader("Simulador de primas (coaseguro, deducible, tope)")
     coaseguro = st.number_input("Coaseguro (%)", 0, 50, 20)
     deducible = st.number_input("Deducible (USD)", 0, 500, 100)

@@ -80,7 +80,7 @@ with tab1:
     part = df_f.groupby(["categoria_producto", "marca_tipo"])["precio_usd"].sum().reset_index()
     part["participacion"] = part["precio_usd"] / part["precio_usd"].sum()
     fig_treemap = px.treemap(part, path=["categoria_producto", "marca_tipo"], values="precio_usd", title="Participación (Tradicional ~61%)")
-    st.plotly_chart(fig_treemap, use_container_width=True)
+st.plotly_chart(fig_treemap)
 
 with tab2:
     st.subheader("Curva de demanda (precio vs tasa de cambio)")
@@ -98,7 +98,7 @@ with tab2:
     fig_dem = px.line(x=precios, y=demanda, labels={"x": "Precio (MN)", "y": "Volumen proyectado"})
     fig_dem.add_vline(x=p_min_oficial, line_dash="dash", line_color="gray")
     fig_dem.add_vline(x=p_min_paralelo, line_dash="dash", line_color="red")
-    st.plotly_chart(fig_dem, use_container_width=True)
+    st.plotly_chart(fig_dem)
 
 with tab3:
     st.subheader("Reglas de asociación (afinidades de productos)")
@@ -116,7 +116,7 @@ with tab3:
             link=dict(source=[node_idx[s] for s in source], target=[node_idx[t] for t in target], value=value),
         )])
         fig_sankey.update_layout(title="Ej.: compran Harina → también Margarina (Soporte/Confianza aplicados)", height=450)
-        st.plotly_chart(fig_sankey, use_container_width=True)
+        st.plotly_chart(fig_sankey)
 
 with tab4:
     st.subheader("Self-Service BI — Arrastrar y soltar variables")
@@ -128,4 +128,4 @@ with tab4:
         st.components.v1.html(pyg_html, height=800, scrolling=True)
     except Exception as e:
         st.info("PyGWalker no disponible en este entorno. Para análisis exploratorio, use la tabla filtrable a continuación.")
-        st.dataframe(df_f.head(5000), use_container_width=True)
+        st.dataframe(df_f.head(5000))
