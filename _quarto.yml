@@ -5,8 +5,8 @@ project:
     - assets/articulos
   render:
     - index.qmd
-    - editores.qmd
-    - sobre.qmd
+    - el-cvea.qmd
+    - miembros.qmd
     - observatorio.qmd
     - actualidad.qmd
     - contacto.qmd

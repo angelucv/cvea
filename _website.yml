@@ -12,8 +12,11 @@ website:
     right:
       # Bloque A: Ejes Académicos (Núcleo Universitario)
       - icon: house-fill
-        text: "El Centro"
+        text: "Inicio"
         href: index.qmd
+      - icon: building
+        text: "El CVEA"
+        href: el-cvea.qmd
       - icon: journal-richtext
         text: "Investigación"
         menu:
@@ -47,9 +50,12 @@ website:
       - icon: book
         text: "Libros"
         href: libro/index.qmd
+      - icon: people-fill
+        text: "Miembros"
+        href: miembros.qmd
       - icon: play-btn
         text: "Cursos"
-        href: docencia/series-tiempo/index.qmd
+        href: docencia/index.qmd#cursos
       - icon: megaphone
         text: "Actualidad"
         href: actualidad.qmd

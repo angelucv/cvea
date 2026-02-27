@@ -12,7 +12,7 @@ El **Model Hub** del CVEA es un repositorio de herramientas técnicas reproducib
 - **Excel actuarial:** plantillas parametrizadas para cálculos técnicos y docencia.
 - **Bases de datos abiertas:** referencias a fuentes públicas utilizadas en los artículos (MPPS, INE, GADM, etc.).
 
-Los materiales se irán incorporando según el plan editorial y la disponibilidad de código en repositorios públicos. La plantilla de libro (Quarto Book) y la plantilla RVEA están referenciadas en [Sobre el CVEA — Editorial](../sobre.qmd#editorial).
+Los materiales se irán incorporando según el plan editorial y la disponibilidad de código en repositorios públicos. La plantilla de libro (Quarto Book) y la plantilla RVEA están referenciadas en [RVEA — Modelo y plantilla](../rvea/index.qmd#modelo-editorial) y [Libros](../libro/index.qmd).
 
 ## Enlaces relacionados
 

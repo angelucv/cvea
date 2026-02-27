@@ -30,6 +30,29 @@ La **Revista Venezolana de Actuariado (RVEA)** es la publicación arbitrada del 
 
 **Alcance:** la RVEA mantiene una visión amplia y plural; acoge contribuciones en modelización de riesgos, solvencia, pensiones, tarificación, seguros, matemáticas financieras y actuariales, proyecciones demográficas, metodologías reproducibles y temas emergentes del sector. Se priorizan estudios que aporten datos, código y replicabilidad.
 
+## Modelo de artículo: I-RL-M-R-D {#modelo-editorial}
+
+Los manuscritos de la RVEA siguen la estructura **I-RL-M-R-D**:
+
+| Sigla | Sección | Contenido |
+|------|---------|-----------|
+| **I** | Introducción | Contexto, problema, vacío de conocimiento, objetivo y contribución. |
+| **RL** | Revisión literaria | Síntesis analítica (no cronológica), metodología de la revisión, conclusión que justifica los métodos. |
+| **M** | Métodos | Diseño, fuentes de datos, modelización, entorno computacional y código fuente. |
+| **R** | Resultados | Presentación objetiva y secuencial; figuras y tablas con leyendas y referenciación cruzada. |
+| **D** | Discusión | Interpretación, implicaciones, limitaciones y conclusiones. |
+
+Se exige **reproducibilidad**: código (R, Python, Julia) y datos en repositorio público; referencias en formato APA (`references.bib` + `.csl`).
+
+## Plantilla para autores
+
+La plantilla oficial de la RVEA está en la carpeta de referencia del proyecto:
+
+- **Ubicación:** `Referencias/Plantilla_RVEA/jfwm_template_raw.qmd`
+- Incluye guías por sección (Introducción, Revisión Literaria, Métodos, Resultados, Discusión), ejemplos de código y requisitos de archivos (`references.bib`, `apa.csl`, logo CVEA para PDF).
+
+Para integrar la plantilla en tu flujo de trabajo, copia ese archivo y los archivos indicados en su cabecera a tu carpeta de manuscrito.
+
 ## Volumen I
 
 ::: {.rvea-tabla-articulos}
@@ -83,11 +106,7 @@ Los siguientes enlaces abren el **manuscrito completo** (incluye introducción, 
 
 Si deseas enviar un manuscrito:
 
-1. Utiliza la estructura **I-RL-M-R-D** (Introducción, Revisión Literaria, Métodos, Resultados, Discusión).
+1. Utiliza la estructura **I-RL-M-R-D** (véase [Modelo de artículo](#modelo-editorial) más arriba).
 2. Prepara código y datos en un repositorio público (GitHub, Saber UCV u otro) y referéncialo en el artículo.
-3. Usa la plantilla oficial de la RVEA (Quarto) y el estilo de referencias APA. Detalles en [Sobre el CVEA — Editorial](../sobre.qmd#editorial).
-4. Contacta al Comité Editorial a través de los editores principales; ver [perfiles del Comité Editorial](../editores.qmd).
-
-## Modelo editorial y plantilla
-
-La RVEA exige **reproducibilidad** (código y datos en repositorio público) y la estructura **I-RL-M-R-D**. La plantilla para autores y el detalle del Comité Editorial se describen en [Sobre el CVEA — Editorial](../sobre.qmd#editorial).
+3. Usa la plantilla oficial de la RVEA (Quarto) y el estilo de referencias APA (véase [Plantilla para autores](#plantilla-para-autores)).
+4. Contacta al Comité Editorial a través de los editores principales; ver [Miembros](../miembros.qmd).

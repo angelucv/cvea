@@ -7,7 +7,7 @@ Pasos para publicar los cambios del sitio en la web (GitHub Pages y/o Cloudflare
 ## 1. Revisar cambios localmente (opcional)
 
 - Abre el proyecto en Cursor o tu editor.
-- Asegúrate de que los archivos que editaste estén guardados (`index.qmd`, `libro/index.qmd`, `editores.qmd`, etc.).
+- Asegúrate de que los archivos que editaste estén guardados (`index.qmd`, `libro/index.qmd`, `el-cvea.qmd`, `miembros.qmd`, etc.).
 
 ## 2. Generar el sitio con Quarto (previsualización local)
 

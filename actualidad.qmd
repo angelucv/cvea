@@ -18,7 +18,7 @@ Calendario de **defensas de TFPG**, seminarios y conferencias organizados o coor
 
 ## Editorial (Notificaciones)
 
-- **Call for Papers:** la [Revista RVEA](rvea/index.qmd) mantiene convocatoria abierta para manuscritos con revisión por pares. Estructura I-RL-M-R-D y reproducibilidad (código y datos en repositorio público). Detalles en [Sobre el CVEA — Editorial](sobre.qmd#editorial).
+- **Call for Papers:** la [Revista RVEA](rvea/index.qmd) mantiene convocatoria abierta para manuscritos con revisión por pares. Estructura I-RL-M-R-D y reproducibilidad (código y datos en repositorio público). Detalles en [RVEA — Modelo y plantilla](rvea/index.qmd#modelo-editorial).
 - **Actualizaciones:** nuevas publicaciones, volúmenes y libros se anunciarán en esta sección y en la página de la RVEA.
 
 ---

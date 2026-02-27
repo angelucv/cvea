@@ -49,7 +49,7 @@ Formulario de solicitud de asesoría técnica y convenios de pasantías industri
 - **Informes técnicos y policy briefs:** síntesis de hallazgos en formato breve con recomendaciones de política (IVSS, Sudeaseg, aseguradoras, decisores).
 - **Reproducibilidad:** cuando el código de un demo esté en repositorio público, se enlaza desde la descripción.
 
-Contacto a través del [Comité Editorial](../editores.qmd) y [Contacto](../contacto.qmd).
+Contacto a través de [Miembros](../miembros.qmd) y [Contacto](../contacto.qmd).
 
 ## Galería de demos
 

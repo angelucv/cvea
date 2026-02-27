@@ -37,4 +37,4 @@ Los siguientes autores han contribuido con trabajos que sustentan el Volumen I d
 - **Arlet Moreno** (2025) — Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal.
 - **Franklin Quero** (2025) — *Introducción a las Matemáticas Financieras* (TFPG).
 
-Para más perfiles y enlaces a LinkedIn, ver [Nuestro equipo](../editores.qmd#colaboradores-y-tesistas-volúmenes-inaugurales). Para solicitar información sobre un TFPG concreto, use [Contacto](../contacto.qmd).
+Para más perfiles y enlaces a LinkedIn, ver [Miembros](../miembros.qmd#colaboradores-y-tesistas-volúmenes-inaugurales). Para solicitar información sobre un TFPG concreto, use [Contacto](../contacto.qmd).

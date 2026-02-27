@@ -49,7 +49,7 @@ La carpeta **`Referencias/`** contiene la estructura general del centro, editore
 - **`Referencias/Plantilla_RVEA/jfwm_template_raw.qmd`** — Plantilla oficial para manuscritos de la RVEA.
 - **`Referencias/RVEA_Volumen I/`** — Artículos de referencia (Angel Colmenares, Arlet Moreno) con código reproducible.
 
-La web integra ese contenido: los artículos aparecen en [rvea/index.qmd](rvea/index.qmd); el modelo editorial y la plantilla se describen en [sobre.qmd](sobre.qmd#editorial).
+La web integra ese contenido: los artículos aparecen en [rvea/index.qmd](rvea/index.qmd); el modelo editorial y la plantilla se describen en [rvea/index.qmd](rvea/index.qmd#modelo-editorial).
 
 Opcionalmente puedes mantener copias adicionales en `docs/` (presentación, propuesta editorial PDF, etc.) para que Cursor u otras herramientas las lean desde el workspace.
 

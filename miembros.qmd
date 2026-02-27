@@ -1,6 +1,6 @@
 ---
-title: "Centro Venezolano de Estudios Actuariales"
-subtitle: "Miembros del Comité Editorial y de Investigación"
+title: "Miembros"
+subtitle: "Comité Editorial y equipo de investigación"
 toc: false
 format:
   html:

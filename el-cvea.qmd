@@ -1,0 +1,34 @@
+---
+title: "El CVEA"
+subtitle: "Identidad, estructura e historia"
+toc: true
+toc-depth: 2
+---
+
+El CVEA no nace únicamente como un espacio físico, sino como un **imperativo técnico y académico**. Aunque su génesis se centra en estudios de la Previsión Social y Demografía, el CVEA abarcará todos los sectores de la economía nacional. La meta es la **creación de conocimiento**: generar modelos propios y adaptados a la realidad venezolana del siglo XXI. Para lograrlo, articulamos nuestra gestión en los **tres ejes** de la educación universitaria definidos en el Departamento de Actuariado: **Investigación, Docencia y Extensión**.
+
+## Estructura del Centro
+
+El **Centro Venezolano de Estudios Actuariales (CVEA)** integra tres ejes bajo una misma identidad institucional:
+
+| Eje | Contenido |
+|-----|-----------|
+| **Investigación** | Revista Venezolana de Actuariado (RVEA), Libros y Materiales Docentes, manuscritos y código reproducible. |
+| **Formación** | Cursos en series de tiempo, modelado actuarial y despliegue en entornos productivos. |
+| **Servicios** | Demos analíticos, dashboards interactivos y consultoría en reservas y riesgo. |
+
+La coordinación editorial, la tutoría de investigaciones y la relación con el sector (IVSS, Sudeaseg, aseguradoras) están a cargo del equipo cuyo perfil se presenta en [Miembros](miembros.qmd).
+
+## Historia
+
+El CVEA tiene su origen en la **Escuela de Estadística y Ciencias Actuariales (EECA)** de la **Universidad Central de Venezuela (UCV)** y en el **Departamento de Actuariado**. Su consolidación como centro de investigación y extensión ha contado con el impulso del **Prof. Jorge Días** (Jefe del Departamento de Actuariado, profesor en la EECA) y del **Prof. Angel Colmenares** (Jefe de Cátedra y coordinación de la investigación del volumen inaugural de la RVEA). La relación con el departamento permite articular la docencia de grado, los trabajos finales de pregrado (TFPG) y la producción científica (RVEA, libros) en un mismo ecosistema.
+
+## Editorial {#editorial}
+
+### Comité Editorial RVEA
+
+La Revista Venezolana de Actuariado (RVEA) cuenta con un Comité Editorial que vela por la calidad y la reproducibilidad de los manuscritos. Las recomendaciones estratégicas del CVEA (transición a tablas dinámicas, territorialización de reservas, observatorios de mortalidad) se dirigen al sector actuarial, IVSS, Sudeaseg y decisores de política pública.
+
+La tutoría y coordinación de investigaciones del volumen inaugural de la RVEA está a cargo del Prof. Jorge Dias y del Prof. Angel Colmenares. Los tesistas Daylin Moreno, José Raúl Gálvez, Daniel Azuaje y Arlet Moreno han sido pilares del diagnóstico sistémico presentado en el primer volumen.
+
+Los perfiles del Comité Editorial y del equipo de investigación se encuentran en [**Miembros**](miembros.qmd).

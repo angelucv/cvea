@@ -4,7 +4,56 @@ subtitle: "Formación continua y recursos para estudiantes"
 toc: true
 ---
 
-El **eje de Docencia** del CVEA capitaliza la experiencia docente y los cursos existentes, y ofrece recursos para estudiantes y profesionales.
+## Transformando datos en decisiones estratégicas y gestión de riesgos {#cursos}
+
+En la era de la información, la capacidad para modelar escenarios, predecir tendencias y cuantificar riesgos es el activo más valioso de cualquier organización. Nuestro centro de formación está especializado en capacitar a profesionales del sector financiero, asegurador, científico y empresarial.
+
+Aprende a dominar el análisis complejo y la creación de modelos predictivos utilizando las herramientas de código abierto líderes en la industria —**R** y **Python**—, integrándolas de manera fluida y nativa en entornos corporativos basados en Windows.
+
+### Rutas de Aprendizaje Analítico
+
+Hemos estructurado nuestros programas en rutas especializadas y progresivas. Ya sea que busques automatizar reportes, adentrarte en el Machine Learning o desarrollar modelos actuariales complejos, tenemos un camino para ti:
+
+**1. Ruta: Fundamentos Analíticos en Entornos Corporativos**
+
+- **Dirigido a:** Analistas de negocios, contadores, estudiantes de economía/matemáticas y profesionales que buscan migrar de Excel a lenguajes de programación.
+- **Objetivo:** Instalar, configurar y dominar los entornos de desarrollo de R y Python en Windows, sentando las bases de la programación orientada a datos.
+- *Configuración del Entorno de Trabajo en Windows:* Instalación y gestión de entornos con Anaconda (Jupyter Notebooks) y RStudio. Manejo de variables de entorno y terminal de PowerShell para analistas.
+- *Introducción a Python para Datos:* Sintaxis básica, estructuras de datos (listas, diccionarios), bucles y funciones. Introducción a la vectorización.
+- *Fundamentos de R para Estadística:* Sintaxis de R, manejo de data frames, vectores y funciones base. ¿Cuándo usar R y cuándo usar Python?
+
+**2. Ruta: Ingeniería de Datos y Visualización Avanzada**
+
+- **Dirigido a:** Analistas de datos, científicos de datos junior y profesionales de inteligencia de negocios (BI).
+- **Objetivo:** Extraer, limpiar, transformar (ETL) y visualizar grandes volúmenes de datos de manera eficiente.
+- *Manipulación de Datos con Python (Pandas y NumPy):* Limpieza de datos estructurados, manejo de valores nulos, agrupaciones y cruce de bases de datos.
+- *El Ecosistema Tidyverse en R:* Uso avanzado de dplyr y tidyr para la manipulación elegante y eficiente de conjuntos de datos complejos.
+- *Storytelling y Visualización Interactiva:* Creación de gráficos estáticos y dinámicos usando ggplot2 (R), Matplotlib y Seaborn (Python). Integración de scripts con herramientas como Power BI.
+
+**3. Ruta: Modelado Actuarial y Matemáticas Financieras**
+
+- **Dirigido a:** Actuarios, analistas de riesgos, gestores de carteras y auditores financieros.
+- **Objetivo:** Aplicar programación avanzada para el cálculo de primas, reservas, análisis de supervivencia y modelado de riesgos.
+- *Matemáticas Financieras y Series de Tiempo:* Análisis y pronóstico de series temporales financieras usando statsmodels (Python) y el ecosistema forecast / fpp3 (R).
+- *Modelos de Supervivencia y Tablas de Mortalidad:* Uso de paquetes especializados en R (como survival y lifecontingencies) para seguros de vida y pensiones.
+- *Simulación Estocástica y Análisis de Riesgos:* Implementación del método Monte Carlo, modelos de cadenas de Markov y cuantificación de riesgo (VaR - Value at Risk) combinando la velocidad de NumPy (Python) y librerías estadísticas de R.
+
+**4. Ruta: Machine Learning y Analítica Predictiva**
+
+- **Dirigido a:** Científicos de datos, estadísticos y líderes técnicos de proyectos analíticos.
+- **Objetivo:** Entrenar, evaluar y desplegar modelos de aprendizaje automático para la toma de decisiones automatizada.
+- *Machine Learning Clásico con Scikit-Learn (Python):* Regresión lineal/logística, árboles de decisión, Random Forest y clustering. Ajuste de hiperparámetros.
+- *Modelado Predictivo con Tidymodels (R):* Un enfoque moderno para el preprocesamiento, validación cruzada y evaluación de modelos predictivos estadísticos.
+- *Automatización y Despliegue en Windows:* Creación de APIs para modelos predictivos usando FastAPI (Python) y desarrollo de aplicaciones web interactivas con Shiny (R) y Streamlit (Python) ejecutadas en servidores Windows locales.
+
+### ¿Por qué estudiar con nosotros?
+
+- **Enfoque Corporativo Real:** Enseñamos a utilizar R y Python integrados en los sistemas operativos y flujos de trabajo (como Microsoft Office/Power BI) que realmente utilizan las empresas e instituciones financieras hoy en día.
+- **Rigor Científico y Matemático:** No solo enseñamos a escribir código; enseñamos la estadística, la probabilidad y la matemática actuarial que fundamentan los modelos.
+- **Eficiencia y Escalabilidad:** Aprende a superar los límites de las hojas de cálculo tradicionales procesando millones de registros en segundos.
+- **Proyectos Aplicados:** Casos de estudio reales: desde la predicción de abandono de clientes (churn) hasta la tarificación de pólizas de seguros.
+
+Los cursos están orientados inicialmente a **programación en software libre** para los diversos sectores: **banca, seguros y pensiones**.
 
 ## Formación continua
 
@@ -22,10 +71,10 @@ Webinars y certificaciones en temas emergentes (por ejemplo, IA en Actuaría). L
 
 ## Recursos para estudiantes {#recursos}
 
-- **Guías metodológicas para TFPG:** estructura I-RL-M-R-D, reproducibilidad y referencias en formato APA; ver [Sobre el CVEA — Editorial](../sobre.qmd#editorial).
+- **Guías metodológicas para TFPG:** estructura I-RL-M-R-D, reproducibilidad y referencias en formato APA; ver [RVEA — Modelo y plantilla](../rvea/index.qmd#modelo-editorial).
 - **Bibliografía recomendada:** alineada con los libros y materiales docentes del Centro; ver [Libros](../libro/index.qmd).
 - **Acceso al Model Hub:** scripts en R/Python, Excel actuarial y bases de datos abiertas con fines pedagógicos; ver [Model Hub](../investigacion/model-hub.qmd).
 
 ## Ecosistema de aprendizaje
 
-Información sobre el **currículo actuarial** en la UCV y cómo los estudiantes se integran en cursos electivos y en la investigación del centro. Perfiles del Comité Editorial y colaboradores en [Nuestro equipo](../editores.qmd).
+Información sobre el **currículo actuarial** en la UCV y cómo los estudiantes se integran en cursos electivos y en la investigación del centro. Perfiles del Comité Editorial y colaboradores en [Miembros](../miembros.qmd).

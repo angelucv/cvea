@@ -1,5 +1,5 @@
 ---
-title: "El Centro"
+title: "Inicio"
 subtitle: "Hub de Innovación Actuarial — Investigación, Docencia y Extensión"
 page-layout: custom
 title-block-banner: false
@@ -41,7 +41,7 @@ include-in-header: assets/meta.html
     </css-doodle>
   </div>
   <div class="hero-cvea-content">
-    <a href="editores.qmd">
+    <a href="index.qmd">
       <img src="assets/logos/Logo-CVEA-horizontal-grande-letrasnegras.png" alt="CVEA" style="max-width: 85%; height: auto; margin-bottom: 1rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2));">
     </a>
     <p class="hero-rotate-line">
@@ -92,10 +92,19 @@ include-in-header: assets/meta.html
       <a href="#identidad" class="work work-link">
         <div class="work-icon">
           <lord-icon src="https://cdn.lordicon.com/zjscbpdr.json" trigger="loop" delay="250" colors="primary:#30c9e8,secondary:#38666A" style="width:100px;height:100px"></lord-icon>
-          <p class="work-heading scroll-text">El Centro</p>
+          <p class="work-heading scroll-text">Inicio</p>
         </div>
         <div class="work-description">
-          <p class="work-text scroll-text">Identidad institucional, misión y equipo de expertos.</p>
+          <p class="work-text scroll-text">Identidad institucional y enlaces rápidos.</p>
+        </div>
+      </a>
+      <a href="el-cvea.qmd" class="work work-link">
+        <div class="work-icon">
+          <lord-icon src="https://cdn.lordicon.com/zjscbpdr.json" trigger="loop" delay="250" colors="primary:#30c9e8,secondary:#38666A" style="width:100px;height:100px"></lord-icon>
+          <p class="work-heading scroll-text">El CVEA</p>
+        </div>
+        <div class="work-description">
+          <p class="work-text scroll-text">Estructura, historia, editorial y propósito del centro.</p>
         </div>
       </a>
       <a href="investigacion/index.qmd" class="work work-link">
@@ -163,10 +172,10 @@ include-in-header: assets/meta.html
   </div>
   <div class="tile">
     <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&h=450&fit=crop" alt="Cursos"/>
-    <a href="docencia/series-tiempo/index.qmd">
+    <a href="docencia/index.qmd#cursos">
       <div class="text">
         <h1>Cursos</h1>
-        <p class="animate-text">Formación continua: Series de Tiempo (Python) y próximas ofertas.</p>
+        <p class="animate-text">Rutas de aprendizaje en R y Python: fundamentos, datos, modelado actuarial y ML.</p>
         <div class="dots"><span></span><span></span><span></span></div>
       </div>
     </a>
@@ -202,16 +211,13 @@ include-in-header: assets/meta.html
 
 ::: {.column-page .acceso-rapido-contenido #identidad}
 
-## El Centro — Identidad y propósito
+## Inicio — Identidad y propósito
 
 El **Centro Venezolano de Estudios Actuariales (CVEA)** se erige como un **Hub de Innovación Actuarial**. Integrado por profesores de la Escuela de Estadística y Ciencias Actuariales (EECA) de la Universidad Central de Venezuela, tiene un enfoque integral y multidisciplinario. El CVEA busca ser el puente entre la academia y el país, aportando precisión matemática a diversos sectores donde el riesgo es un factor crítico.
 
-El CVEA no nace únicamente como un espacio físico, sino como un **imperativo técnico y académico**. Aunque su génesis se centra en estudios de la Previsión Social y Demografía, el CVEA abarcará todos los sectores de la economía nacional. La meta es la **creación de conocimiento**: generar modelos propios y adaptados a la realidad venezolana del siglo XXI. Para lograrlo, articulamos nuestra gestión en los **tres ejes** de la educación universitaria definidos en el Departamento de Actuariado: **Investigación, Docencia y Extensión**.
-
-- **Identidad y Propósito:** Misión, visión y valores actuariales; autonomía técnica del CVEA. Detalle en [Sobre el CVEA](sobre.qmd).
-- **Nuestro Equipo:** Perfiles profesionales con enlace a LinkedIn y áreas de experticia. [**Comité Editorial y equipo de investigación**](editores.qmd).
-- **Historia:** Origen del centro en la UCV y su relación con el Departamento de Actuariado (Prof. Jorge Días, Prof. Angel Colmenares — jefe de departamento y jefe de cátedra).
-- **Sello editorial:** Instancia para la difusión del material que se produzca; modelo I-RL-M-R-D y plantillas. [Sobre el CVEA — Editorial](sobre.qmd#editorial).
+- **El CVEA:** Identidad, estructura en tres ejes, historia y editorial. [Ver página El CVEA](el-cvea.qmd).
+- **Nuestro Equipo:** Perfiles del Comité Editorial y equipo de investigación. [**Miembros**](miembros.qmd).
+- **Sello editorial:** Modelo I-RL-M-R-D y plantillas para la RVEA y para libros. [RVEA — Modelo y plantilla](rvea/index.qmd#modelo-editorial) · [Libros — Plantilla](libro/index.qmd).
 
 ## Enlaces rápidos
 

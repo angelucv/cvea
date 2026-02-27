@@ -3,9 +3,19 @@ title: "Libros y Materiales Docentes"
 subtitle: "Eje de Investigación — Diagnóstico del sistema de pensiones y bases técnicas"
 ---
 
+## Plantilla de Libros y Materiales Docentes
+
+El **modelo para los libros del CVEA** es la plantilla **Quarto Book** basada en *Applied Machine Learning Using mlr3 in R*, ubicada en `Referencias/Plantilla_CVEA_Book_Applied Machine Learning Using mlr3 in R/book/`. Incluye partes, capítulos, PDF descargable, sidebar y búsqueda; ya está adaptada al CVEA (título, logo, pie de página).
+
+El libro **Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial** fue generado con esa plantilla y está compilado; se publica en la web colocando solo el HTML y el PDF en `libro/demografia-siglo-xxi/`. Ver más abajo la sección [Libro disponible](#libro-disponible) para el enlace "Ver en línea" y "Descargar PDF".
+
+Los libros y materiales docentes (diagnóstico del sistema de pensiones y bases técnicas) siguen el plan editorial 2025-2026; los capítulos se irán añadiendo usando la misma plantilla.
+
+## Presentación
+
 **Libros y Materiales Docentes** recopila el diagnóstico del sistema de pensiones venezolano y las bases técnicas actualizadas, en línea con la misión del CVEA de soberanía técnica y divulgación reproducible. Los volúmenes se dirigen a actuarios, reguladores (IVSS, Sudeaseg), académicos y decisores de política pública.
 
-**Objetivos:** (1) Documentar el desfase de las tablas históricas (Masjuán, CSO 1980) frente a la realidad demográfica actual; (2) ofrecer metodologías dinámicas y territorializadas (Lee-Carter, modelos espaciales); (3) proporcionar código y datos para replicación. Los libros del CVEA se generan con la **plantilla Quarto Book** (modelo: *Applied Machine Learning Using mlr3 in R*). La plantilla está en el repositorio: [Ver plantilla mlr3 (HTML)](https://github.com/angelucv/cvea/blob/main/Referencias/Plantilla_CVEA_Book_Applied%20Machine%20Learning%20Using%20mlr3%20in%20R/book/index.html). El libro *Demografía, Mortalidad y Previsión Social…* dispone de enlace «Ver en línea» y «Descargar PDF» en la sección [Libro disponible](#libro-disponible).
+**Objetivos:** (1) Documentar el desfase de las tablas históricas (Masjuán, CSO 1980) frente a la realidad demográfica actual; (2) ofrecer metodologías dinámicas y territorializadas (Lee-Carter, modelos espaciales); (3) proporcionar código y datos para replicación. La plantilla está en el repositorio: [Ver plantilla mlr3 (HTML)](https://github.com/angelucv/cvea/blob/main/Referencias/Plantilla_CVEA_Book_Applied%20Machine%20Learning%20Using%20mlr3%20in%20R/book/index.html).
 
 ## Libros base de los materiales docentes
 
@@ -26,4 +36,4 @@ Libro compilado con la plantilla CVEA Book. Si ya colocaste el HTML y el PDF en 
 
 1. [Diagnóstico del sistema de pensiones](cap1-diagnostico.qmd) — Introducción al diagnóstico del sistema de pensiones, necesidad de abandonar tablas estáticas y adoptar modelos dinámicos.
 
-*Se irán añadiendo capítulos según el plan editorial 2025-2026 (bases técnicas por edad/sexo, territorialización, proyecciones), usando la misma plantilla de libro. La coordinación editorial está a cargo del equipo del CVEA; ver [Comité Editorial](../editores.qmd).*
+*Se irán añadiendo capítulos según el plan editorial 2025-2026 (bases técnicas por edad/sexo, territorialización, proyecciones), usando la misma plantilla de libro. La coordinación editorial está a cargo del equipo del CVEA; ver [Miembros](../miembros.qmd).*
