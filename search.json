@@ -39,7 +39,7 @@
     "href": "servicios/index.html#demos-y-galería",
     "title": "Servicios y Demos Analíticos",
     "section": "Demos y galería",
-    "text": "Demos y galería\n\nDemos interactivos: simuladores de reservas IBNR, mapas de riesgo de mortalidad (tarjetas siguientes). Para aplicaciones Streamlit o Shiny se utilizan iframes optimizados.\nFormación continua y talleres: sesiones orientadas a actuarios, reguladores y profesionales; alineadas con la RVEA y los libros del Centro.\nInformes técnicos y policy briefs: síntesis de hallazgos en formato breve con recomendaciones de política (IVSS, Sudeaseg, aseguradoras, decisores).\nReproducibilidad: cuando el código de un demo esté en repositorio público, se enlaza desde la descripción.\n\nContacto a través del Comité Editorial y Contacto."
+    "text": "Demos y galería\n\nDemos interactivos: simuladores de reservas IBNR, mapas de riesgo de mortalidad (tarjetas siguientes). Para aplicaciones Streamlit o Shiny se utilizan iframes optimizados.\nFormación continua y talleres: sesiones orientadas a actuarios, reguladores y profesionales; alineadas con la RVEA y los libros del Centro.\nInformes técnicos y policy briefs: síntesis de hallazgos en formato breve con recomendaciones de política (IVSS, Sudeaseg, aseguradoras, decisores).\nReproducibilidad: cuando el código de un demo esté en repositorio público, se enlaza desde la descripción.\n\nContacto a través de Miembros y Contacto."
   },
   {
     "objectID": "servicios/index.html#galería-de-demos",
@@ -53,7 +53,14 @@
     "href": "docencia/index.html",
     "title": "Docencia",
     "section": "",
-    "text": "El eje de Docencia del CVEA capitaliza la experiencia docente y los cursos existentes, y ofrece recursos para estudiantes y profesionales."
+    "text": "En la era de la información, la capacidad para modelar escenarios, predecir tendencias y cuantificar riesgos es el activo más valioso de cualquier organización. Nuestro centro de formación está especializado en capacitar a profesionales del sector financiero, asegurador, científico y empresarial.\nAprende a dominar el análisis complejo y la creación de modelos predictivos utilizando las herramientas de código abierto líderes en la industria —R y Python—, integrándolas de manera fluida y nativa en entornos corporativos basados en Windows.\n\n\nHemos estructurado nuestros programas en rutas especializadas y progresivas. Ya sea que busques automatizar reportes, adentrarte en el Machine Learning o desarrollar modelos actuariales complejos, tenemos un camino para ti:\n1. Ruta: Fundamentos Analíticos en Entornos Corporativos\n\nDirigido a: Analistas de negocios, contadores, estudiantes de economía/matemáticas y profesionales que buscan migrar de Excel a lenguajes de programación.\nObjetivo: Instalar, configurar y dominar los entornos de desarrollo de R y Python en Windows, sentando las bases de la programación orientada a datos.\nConfiguración del Entorno de Trabajo en Windows: Instalación y gestión de entornos con Anaconda (Jupyter Notebooks) y RStudio. Manejo de variables de entorno y terminal de PowerShell para analistas.\nIntroducción a Python para Datos: Sintaxis básica, estructuras de datos (listas, diccionarios), bucles y funciones. Introducción a la vectorización.\nFundamentos de R para Estadística: Sintaxis de R, manejo de data frames, vectores y funciones base. ¿Cuándo usar R y cuándo usar Python?\n\n2. Ruta: Ingeniería de Datos y Visualización Avanzada\n\nDirigido a: Analistas de datos, científicos de datos junior y profesionales de inteligencia de negocios (BI).\nObjetivo: Extraer, limpiar, transformar (ETL) y visualizar grandes volúmenes de datos de manera eficiente.\nManipulación de Datos con Python (Pandas y NumPy): Limpieza de datos estructurados, manejo de valores nulos, agrupaciones y cruce de bases de datos.\nEl Ecosistema Tidyverse en R: Uso avanzado de dplyr y tidyr para la manipulación elegante y eficiente de conjuntos de datos complejos.\nStorytelling y Visualización Interactiva: Creación de gráficos estáticos y dinámicos usando ggplot2 (R), Matplotlib y Seaborn (Python). Integración de scripts con herramientas como Power BI.\n\n3. Ruta: Modelado Actuarial y Matemáticas Financieras\n\nDirigido a: Actuarios, analistas de riesgos, gestores de carteras y auditores financieros.\nObjetivo: Aplicar programación avanzada para el cálculo de primas, reservas, análisis de supervivencia y modelado de riesgos.\nMatemáticas Financieras y Series de Tiempo: Análisis y pronóstico de series temporales financieras usando statsmodels (Python) y el ecosistema forecast / fpp3 (R).\nModelos de Supervivencia y Tablas de Mortalidad: Uso de paquetes especializados en R (como survival y lifecontingencies) para seguros de vida y pensiones.\nSimulación Estocástica y Análisis de Riesgos: Implementación del método Monte Carlo, modelos de cadenas de Markov y cuantificación de riesgo (VaR - Value at Risk) combinando la velocidad de NumPy (Python) y librerías estadísticas de R.\n\n4. Ruta: Machine Learning y Analítica Predictiva\n\nDirigido a: Científicos de datos, estadísticos y líderes técnicos de proyectos analíticos.\nObjetivo: Entrenar, evaluar y desplegar modelos de aprendizaje automático para la toma de decisiones automatizada.\nMachine Learning Clásico con Scikit-Learn (Python): Regresión lineal/logística, árboles de decisión, Random Forest y clustering. Ajuste de hiperparámetros.\nModelado Predictivo con Tidymodels (R): Un enfoque moderno para el preprocesamiento, validación cruzada y evaluación de modelos predictivos estadísticos.\nAutomatización y Despliegue en Windows: Creación de APIs para modelos predictivos usando FastAPI (Python) y desarrollo de aplicaciones web interactivas con Shiny (R) y Streamlit (Python) ejecutadas en servidores Windows locales.\n\n\n\n\n\nEnfoque Corporativo Real: Enseñamos a utilizar R y Python integrados en los sistemas operativos y flujos de trabajo (como Microsoft Office/Power BI) que realmente utilizan las empresas e instituciones financieras hoy en día.\nRigor Científico y Matemático: No solo enseñamos a escribir código; enseñamos la estadística, la probabilidad y la matemática actuarial que fundamentan los modelos.\nEficiencia y Escalabilidad: Aprende a superar los límites de las hojas de cálculo tradicionales procesando millones de registros en segundos.\nProyectos Aplicados: Casos de estudio reales: desde la predicción de abandono de clientes (churn) hasta la tarificación de pólizas de seguros.\n\nLos cursos están orientados inicialmente a programación en software libre para los diversos sectores: banca, seguros y pensiones."
+  },
+  {
+    "objectID": "docencia/index.html#cursos",
+    "href": "docencia/index.html#cursos",
+    "title": "Docencia",
+    "section": "",
+    "text": "En la era de la información, la capacidad para modelar escenarios, predecir tendencias y cuantificar riesgos es el activo más valioso de cualquier organización. Nuestro centro de formación está especializado en capacitar a profesionales del sector financiero, asegurador, científico y empresarial.\nAprende a dominar el análisis complejo y la creación de modelos predictivos utilizando las herramientas de código abierto líderes en la industria —R y Python—, integrándolas de manera fluida y nativa en entornos corporativos basados en Windows.\n\n\nHemos estructurado nuestros programas en rutas especializadas y progresivas. Ya sea que busques automatizar reportes, adentrarte en el Machine Learning o desarrollar modelos actuariales complejos, tenemos un camino para ti:\n1. Ruta: Fundamentos Analíticos en Entornos Corporativos\n\nDirigido a: Analistas de negocios, contadores, estudiantes de economía/matemáticas y profesionales que buscan migrar de Excel a lenguajes de programación.\nObjetivo: Instalar, configurar y dominar los entornos de desarrollo de R y Python en Windows, sentando las bases de la programación orientada a datos.\nConfiguración del Entorno de Trabajo en Windows: Instalación y gestión de entornos con Anaconda (Jupyter Notebooks) y RStudio. Manejo de variables de entorno y terminal de PowerShell para analistas.\nIntroducción a Python para Datos: Sintaxis básica, estructuras de datos (listas, diccionarios), bucles y funciones. Introducción a la vectorización.\nFundamentos de R para Estadística: Sintaxis de R, manejo de data frames, vectores y funciones base. ¿Cuándo usar R y cuándo usar Python?\n\n2. Ruta: Ingeniería de Datos y Visualización Avanzada\n\nDirigido a: Analistas de datos, científicos de datos junior y profesionales de inteligencia de negocios (BI).\nObjetivo: Extraer, limpiar, transformar (ETL) y visualizar grandes volúmenes de datos de manera eficiente.\nManipulación de Datos con Python (Pandas y NumPy): Limpieza de datos estructurados, manejo de valores nulos, agrupaciones y cruce de bases de datos.\nEl Ecosistema Tidyverse en R: Uso avanzado de dplyr y tidyr para la manipulación elegante y eficiente de conjuntos de datos complejos.\nStorytelling y Visualización Interactiva: Creación de gráficos estáticos y dinámicos usando ggplot2 (R), Matplotlib y Seaborn (Python). Integración de scripts con herramientas como Power BI.\n\n3. Ruta: Modelado Actuarial y Matemáticas Financieras\n\nDirigido a: Actuarios, analistas de riesgos, gestores de carteras y auditores financieros.\nObjetivo: Aplicar programación avanzada para el cálculo de primas, reservas, análisis de supervivencia y modelado de riesgos.\nMatemáticas Financieras y Series de Tiempo: Análisis y pronóstico de series temporales financieras usando statsmodels (Python) y el ecosistema forecast / fpp3 (R).\nModelos de Supervivencia y Tablas de Mortalidad: Uso de paquetes especializados en R (como survival y lifecontingencies) para seguros de vida y pensiones.\nSimulación Estocástica y Análisis de Riesgos: Implementación del método Monte Carlo, modelos de cadenas de Markov y cuantificación de riesgo (VaR - Value at Risk) combinando la velocidad de NumPy (Python) y librerías estadísticas de R.\n\n4. Ruta: Machine Learning y Analítica Predictiva\n\nDirigido a: Científicos de datos, estadísticos y líderes técnicos de proyectos analíticos.\nObjetivo: Entrenar, evaluar y desplegar modelos de aprendizaje automático para la toma de decisiones automatizada.\nMachine Learning Clásico con Scikit-Learn (Python): Regresión lineal/logística, árboles de decisión, Random Forest y clustering. Ajuste de hiperparámetros.\nModelado Predictivo con Tidymodels (R): Un enfoque moderno para el preprocesamiento, validación cruzada y evaluación de modelos predictivos estadísticos.\nAutomatización y Despliegue en Windows: Creación de APIs para modelos predictivos usando FastAPI (Python) y desarrollo de aplicaciones web interactivas con Shiny (R) y Streamlit (Python) ejecutadas en servidores Windows locales.\n\n\n\n\n\nEnfoque Corporativo Real: Enseñamos a utilizar R y Python integrados en los sistemas operativos y flujos de trabajo (como Microsoft Office/Power BI) que realmente utilizan las empresas e instituciones financieras hoy en día.\nRigor Científico y Matemático: No solo enseñamos a escribir código; enseñamos la estadística, la probabilidad y la matemática actuarial que fundamentan los modelos.\nEficiencia y Escalabilidad: Aprende a superar los límites de las hojas de cálculo tradicionales procesando millones de registros en segundos.\nProyectos Aplicados: Casos de estudio reales: desde la predicción de abandono de clientes (churn) hasta la tarificación de pólizas de seguros.\n\nLos cursos están orientados inicialmente a programación en software libre para los diversos sectores: banca, seguros y pensiones."
   },
   {
     "objectID": "docencia/index.html#formación-continua",
@@ -67,21 +74,35 @@
     "href": "docencia/index.html#recursos",
     "title": "Docencia",
     "section": "Recursos para estudiantes",
-    "text": "Recursos para estudiantes\n\nGuías metodológicas para TFPG: estructura I-RL-M-R-D, reproducibilidad y referencias en formato APA; ver Sobre el CVEA — Editorial.\nBibliografía recomendada: alineada con los libros y materiales docentes del Centro; ver Libros.\nAcceso al Model Hub: scripts en R/Python, Excel actuarial y bases de datos abiertas con fines pedagógicos; ver Model Hub."
+    "text": "Recursos para estudiantes\n\nGuías metodológicas para TFPG: estructura I-RL-M-R-D, reproducibilidad y referencias en formato APA; ver RVEA — Modelo y plantilla.\nBibliografía recomendada: alineada con los libros y materiales docentes del Centro; ver Libros.\nAcceso al Model Hub: scripts en R/Python, Excel actuarial y bases de datos abiertas con fines pedagógicos; ver Model Hub."
   },
   {
     "objectID": "docencia/index.html#ecosistema-de-aprendizaje",
     "href": "docencia/index.html#ecosistema-de-aprendizaje",
     "title": "Docencia",
     "section": "Ecosistema de aprendizaje",
-    "text": "Ecosistema de aprendizaje\nInformación sobre el currículo actuarial en la UCV y cómo los estudiantes se integran en cursos electivos y en la investigación del centro. Perfiles del Comité Editorial y colaboradores en Nuestro equipo."
+    "text": "Ecosistema de aprendizaje\nInformación sobre el currículo actuarial en la UCV y cómo los estudiantes se integran en cursos electivos y en la investigación del centro. Perfiles del Comité Editorial y colaboradores en Miembros."
   },
   {
     "objectID": "libro/index.html",
     "href": "libro/index.html",
     "title": "Libros y Materiales Docentes",
     "section": "",
-    "text": "Libros y Materiales Docentes recopila el diagnóstico del sistema de pensiones venezolano y las bases técnicas actualizadas, en línea con la misión del CVEA de soberanía técnica y divulgación reproducible. Los volúmenes se dirigen a actuarios, reguladores (IVSS, Sudeaseg), académicos y decisores de política pública.\nObjetivos: (1) Documentar el desfase de las tablas históricas (Masjuán, CSO 1980) frente a la realidad demográfica actual; (2) ofrecer metodologías dinámicas y territorializadas (Lee-Carter, modelos espaciales); (3) proporcionar código y datos para replicación. Los libros del CVEA se generan con la plantilla Quarto Book (modelo: Applied Machine Learning Using mlr3 in R). La plantilla está en el repositorio: Ver plantilla mlr3 (HTML). El libro Demografía, Mortalidad y Previsión Social… dispone de enlace «Ver en línea» y «Descargar PDF» en la sección Libro disponible."
+    "text": "El modelo para los libros del CVEA es la plantilla Quarto Book basada en Applied Machine Learning Using mlr3 in R, ubicada en Referencias/Plantilla_CVEA_Book_Applied Machine Learning Using mlr3 in R/book/. Incluye partes, capítulos, PDF descargable, sidebar y búsqueda; ya está adaptada al CVEA (título, logo, pie de página).\nEl libro Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial fue generado con esa plantilla y está compilado; se publica en la web colocando solo el HTML y el PDF en libro/demografia-siglo-xxi/. Ver más abajo la sección Libro disponible para el enlace “Ver en línea” y “Descargar PDF”.\nLos libros y materiales docentes (diagnóstico del sistema de pensiones y bases técnicas) siguen el plan editorial 2025-2026; los capítulos se irán añadiendo usando la misma plantilla."
+  },
+  {
+    "objectID": "libro/index.html#plantilla-de-libros-y-materiales-docentes",
+    "href": "libro/index.html#plantilla-de-libros-y-materiales-docentes",
+    "title": "Libros y Materiales Docentes",
+    "section": "",
+    "text": "El modelo para los libros del CVEA es la plantilla Quarto Book basada en Applied Machine Learning Using mlr3 in R, ubicada en Referencias/Plantilla_CVEA_Book_Applied Machine Learning Using mlr3 in R/book/. Incluye partes, capítulos, PDF descargable, sidebar y búsqueda; ya está adaptada al CVEA (título, logo, pie de página).\nEl libro Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial fue generado con esa plantilla y está compilado; se publica en la web colocando solo el HTML y el PDF en libro/demografia-siglo-xxi/. Ver más abajo la sección Libro disponible para el enlace “Ver en línea” y “Descargar PDF”.\nLos libros y materiales docentes (diagnóstico del sistema de pensiones y bases técnicas) siguen el plan editorial 2025-2026; los capítulos se irán añadiendo usando la misma plantilla."
+  },
+  {
+    "objectID": "libro/index.html#presentación",
+    "href": "libro/index.html#presentación",
+    "title": "Libros y Materiales Docentes",
+    "section": "Presentación",
+    "text": "Presentación\nLibros y Materiales Docentes recopila el diagnóstico del sistema de pensiones venezolano y las bases técnicas actualizadas, en línea con la misión del CVEA de soberanía técnica y divulgación reproducible. Los volúmenes se dirigen a actuarios, reguladores (IVSS, Sudeaseg), académicos y decisores de política pública.\nObjetivos: (1) Documentar el desfase de las tablas históricas (Masjuán, CSO 1980) frente a la realidad demográfica actual; (2) ofrecer metodologías dinámicas y territorializadas (Lee-Carter, modelos espaciales); (3) proporcionar código y datos para replicación. La plantilla está en el repositorio: Ver plantilla mlr3 (HTML)."
   },
   {
     "objectID": "libro/index.html#libros-base-de-los-materiales-docentes",
@@ -102,7 +123,7 @@
     "href": "libro/index.html#contenido-libros-y-materiales-docentes-en-desarrollo",
     "title": "Libros y Materiales Docentes",
     "section": "Contenido (Libros y Materiales Docentes en desarrollo)",
-    "text": "Contenido (Libros y Materiales Docentes en desarrollo)\n\nDiagnóstico del sistema de pensiones — Introducción al diagnóstico del sistema de pensiones, necesidad de abandonar tablas estáticas y adoptar modelos dinámicos.\n\nSe irán añadiendo capítulos según el plan editorial 2025-2026 (bases técnicas por edad/sexo, territorialización, proyecciones), usando la misma plantilla de libro. La coordinación editorial está a cargo del equipo del CVEA; ver Comité Editorial."
+    "text": "Contenido (Libros y Materiales Docentes en desarrollo)\n\nDiagnóstico del sistema de pensiones — Introducción al diagnóstico del sistema de pensiones, necesidad de abandonar tablas estáticas y adoptar modelos dinámicos.\n\nSe irán añadiendo capítulos según el plan editorial 2025-2026 (bases técnicas por edad/sexo, territorialización, proyecciones), usando la misma plantilla de libro. La coordinación editorial está a cargo del equipo del CVEA; ver Miembros."
   },
   {
     "objectID": "rvea/ENLACES_BOX_ARTICULOS.html",
@@ -203,39 +224,46 @@
     "text": "La Revista Venezolana de Actuariado (RVEA) es la publicación arbitrada del CVEA. Publica trabajos originales en ciencias actuariales, estadística y disciplinas afines, con un enfoque global que abarca teoría, metodología y aplicaciones en contextos nacionales e internacionales. Cada manuscrito incluye código reproducible (R/Python/Julia) y está disponible en formato web y, cuando aplique, en PDF.\nAlcance: la RVEA mantiene una visión amplia y plural; acoge contribuciones en modelización de riesgos, solvencia, pensiones, tarificación, seguros, matemáticas financieras y actuariales, proyecciones demográficas, metodologías reproducibles y temas emergentes del sector. Se priorizan estudios que aporten datos, código y replicabilidad."
   },
   {
+    "objectID": "rvea/index.html#modelo-editorial",
+    "href": "rvea/index.html#modelo-editorial",
+    "title": "Revista Venezolana de Actuariado (RVEA)",
+    "section": "1 Modelo de artículo: I-RL-M-R-D",
+    "text": "1 Modelo de artículo: I-RL-M-R-D\nLos manuscritos de la RVEA siguen la estructura I-RL-M-R-D:\n\n\n\n\n\n\n\n\nSigla\nSección\nContenido\n\n\n\n\nI\nIntroducción\nContexto, problema, vacío de conocimiento, objetivo y contribución.\n\n\nRL\nRevisión literaria\nSíntesis analítica (no cronológica), metodología de la revisión, conclusión que justifica los métodos.\n\n\nM\nMétodos\nDiseño, fuentes de datos, modelización, entorno computacional y código fuente.\n\n\nR\nResultados\nPresentación objetiva y secuencial; figuras y tablas con leyendas y referenciación cruzada.\n\n\nD\nDiscusión\nInterpretación, implicaciones, limitaciones y conclusiones.\n\n\n\nSe exige reproducibilidad: código (R, Python, Julia) y datos en repositorio público; referencias en formato APA (references.bib + .csl)."
+  },
+  {
+    "objectID": "rvea/index.html#plantilla-para-autores",
+    "href": "rvea/index.html#plantilla-para-autores",
+    "title": "Revista Venezolana de Actuariado (RVEA)",
+    "section": "2 Plantilla para autores",
+    "text": "2 Plantilla para autores\nLa plantilla oficial de la RVEA está en la carpeta de referencia del proyecto:\n\nUbicación: Referencias/Plantilla_RVEA/jfwm_template_raw.qmd\nIncluye guías por sección (Introducción, Revisión Literaria, Métodos, Resultados, Discusión), ejemplos de código y requisitos de archivos (references.bib, apa.csl, logo CVEA para PDF).\n\nPara integrar la plantilla en tu flujo de trabajo, copia ese archivo y los archivos indicados en su cabecera a tu carpeta de manuscrito."
+  },
+  {
     "objectID": "rvea/index.html#volumen-i",
     "href": "rvea/index.html#volumen-i",
     "title": "Revista Venezolana de Actuariado (RVEA)",
-    "section": "1 Volumen I",
-    "text": "1 Volumen I\n\n\n\n\n\n\n\n\n\nArtículo\nAutor(es)\nTema / Área\n\n\n\n\nAnálisis espacio-temporal de la mortalidad (1996-2016)\nAngel Colmenares\nRiesgo Bayesiano BYM/INLA, autocorrelación espacial, SMR y clusters a nivel municipal\n\n\nMortalidad neonatal, postneonatal y en la niñez por entidad federal\nArlet Moreno, Angel Colmenares\nLee-Carter estocástico, desagregación subnacional\n\n\nValuación de Bases Técnicas\nDaylin Moreno\nDesfase de las bases de Masjuán (1960) frente a la realidad del siglo XXI\n\n\nTabla Dinámica LC15\nDaniel Azuaje\nTabla de mortalidad dinámica con R; superación de tablas estáticas CSO 1980\n\n\n\n\n\n1.1 Artículos completos (manuscrito extendido)\nLos siguientes enlaces abren el manuscrito completo (incluye introducción, revisión literaria, métodos, resultados, figuras y conclusiones). Disponible en HTML (ver en navegador) y PDF (descargar). Los archivos se publican en el repositorio cvea-articulos.\n\nAngel Colmenares — Análisis espacio-temporal de la mortalidad en Venezuela 1996-2016 (BYM/INLA): Ver HTML · Descargar PDF\nArlet Moreno y Angel Colmenares — Mortalidad neonatal, postneonatal y en la niñez por entidad federal (Lee-Carter): Ver HTML · Descargar PDF"
+    "section": "3 Volumen I",
+    "text": "3 Volumen I\n\n\n\n\n\n\n\n\n\nArtículo\nAutor(es)\nTema / Área\n\n\n\n\nAnálisis espacio-temporal de la mortalidad (1996-2016)\nAngel Colmenares\nRiesgo Bayesiano BYM/INLA, autocorrelación espacial, SMR y clusters a nivel municipal\n\n\nMortalidad neonatal, postneonatal y en la niñez por entidad federal\nArlet Moreno, Angel Colmenares\nLee-Carter estocástico, desagregación subnacional\n\n\nValuación de Bases Técnicas\nDaylin Moreno\nDesfase de las bases de Masjuán (1960) frente a la realidad del siglo XXI\n\n\nTabla Dinámica LC15\nDaniel Azuaje\nTabla de mortalidad dinámica con R; superación de tablas estáticas CSO 1980\n\n\n\n\n\n3.1 Artículos completos (manuscrito extendido)\nLos siguientes enlaces abren el manuscrito completo (incluye introducción, revisión literaria, métodos, resultados, figuras y conclusiones). Disponible en HTML (ver en navegador) y PDF (descargar). Los archivos se publican en el repositorio cvea-articulos.\n\nAngel Colmenares — Análisis espacio-temporal de la mortalidad en Venezuela 1996-2016 (BYM/INLA): Ver HTML · Descargar PDF\nArlet Moreno y Angel Colmenares — Mortalidad neonatal, postneonatal y en la niñez por entidad federal (Lee-Carter): Ver HTML · Descargar PDF"
   },
   {
     "objectID": "rvea/index.html#volumen-ii-las-dimensiones-de-la-mortalidad-causa-género-y-territorio",
     "href": "rvea/index.html#volumen-ii-las-dimensiones-de-la-mortalidad-causa-género-y-territorio",
     "title": "Revista Venezolana de Actuariado (RVEA)",
-    "section": "2 Volumen II: Las dimensiones de la mortalidad (causa, género y territorio)",
-    "text": "2 Volumen II: Las dimensiones de la mortalidad (causa, género y territorio)\n\n\n\n\n\n\n\n\n\nArtículo\nAutor(es)\nTema / Área\n\n\n\n\nProyección de la mortalidad por causas (Lee-Carter y CoDa)\nIliria Herrera\nAnálisis de Datos Composicionales para causas de fallecimiento\n\n\nTablas de decrecimiento múltiple con Cadenas de Markov\nWilliams Fernandez\nMetodología alternativa para causas de fallecimiento\n\n\nPrincipales causas de fallecimiento (población masculina)\nKelvin Guedez\nTablas de decrecimiento múltiple, sobremortalidad masculina por causas externas\n\n\nPrincipales causas de fallecimiento (población femenina)\nDorielys Rangel\nPerfil de riesgo femenino, enfermedades crónicas\n\n\nTablas de decrecimiento múltiple (Occidental, Andes, Central)\nKennya Briceño\nHeterogeneidad geográfica de la mortalidad\n\n\nPrincipales causas (regiones Los Llanos y Capital)\nDaniela Godoy\nMapeo geográfico del riesgo\n\n\nPrincipales causas (regiones Oriental y Guayana)\nOriana Lopez\nCobertura nacional del mapa de riesgo"
+    "section": "4 Volumen II: Las dimensiones de la mortalidad (causa, género y territorio)",
+    "text": "4 Volumen II: Las dimensiones de la mortalidad (causa, género y territorio)\n\n\n\n\n\n\n\n\n\nArtículo\nAutor(es)\nTema / Área\n\n\n\n\nProyección de la mortalidad por causas (Lee-Carter y CoDa)\nIliria Herrera\nAnálisis de Datos Composicionales para causas de fallecimiento\n\n\nTablas de decrecimiento múltiple con Cadenas de Markov\nWilliams Fernandez\nMetodología alternativa para causas de fallecimiento\n\n\nPrincipales causas de fallecimiento (población masculina)\nKelvin Guedez\nTablas de decrecimiento múltiple, sobremortalidad masculina por causas externas\n\n\nPrincipales causas de fallecimiento (población femenina)\nDorielys Rangel\nPerfil de riesgo femenino, enfermedades crónicas\n\n\nTablas de decrecimiento múltiple (Occidental, Andes, Central)\nKennya Briceño\nHeterogeneidad geográfica de la mortalidad\n\n\nPrincipales causas (regiones Los Llanos y Capital)\nDaniela Godoy\nMapeo geográfico del riesgo\n\n\nPrincipales causas (regiones Oriental y Guayana)\nOriana Lopez\nCobertura nacional del mapa de riesgo"
   },
   {
     "objectID": "rvea/index.html#volumen-iii-perspectivas-internacionales-y-fronteras-en-la-modelización",
     "href": "rvea/index.html#volumen-iii-perspectivas-internacionales-y-fronteras-en-la-modelización",
     "title": "Revista Venezolana de Actuariado (RVEA)",
-    "section": "3 Volumen III: Perspectivas internacionales y fronteras en la modelización",
-    "text": "3 Volumen III: Perspectivas internacionales y fronteras en la modelización\n\n\n\n\n\n\n\n\n\nArtículo\nAutor(es)\nTema / Área\n\n\n\n\nAnálisis comparativo de métodos de proyección (Chile y Japón)\nEleazar Domínguez\nLee-Carter y variantes (Lee-Miller, BMS, Hyndman-Ullah)\n\n\nMedición del riesgo de longevidad (Portugal)\nOliver Triveño\nImpacto financiero en rentas vitalicias y pensiones\n\n\nComparativa internacional (Países Bajos, Bélgica)\nLuis Alvarez\nEn desarrollo\n\n\nComparativa internacional (Italia, Grecia)\nJosé Mendoza\nEn desarrollo"
+    "section": "5 Volumen III: Perspectivas internacionales y fronteras en la modelización",
+    "text": "5 Volumen III: Perspectivas internacionales y fronteras en la modelización\n\n\n\n\n\n\n\n\n\nArtículo\nAutor(es)\nTema / Área\n\n\n\n\nAnálisis comparativo de métodos de proyección (Chile y Japón)\nEleazar Domínguez\nLee-Carter y variantes (Lee-Miller, BMS, Hyndman-Ullah)\n\n\nMedición del riesgo de longevidad (Portugal)\nOliver Triveño\nImpacto financiero en rentas vitalicias y pensiones\n\n\nComparativa internacional (Países Bajos, Bélgica)\nLuis Alvarez\nEn desarrollo\n\n\nComparativa internacional (Italia, Grecia)\nJosé Mendoza\nEn desarrollo"
   },
   {
     "objectID": "rvea/index.html#cómo-publicar",
     "href": "rvea/index.html#cómo-publicar",
     "title": "Revista Venezolana de Actuariado (RVEA)",
-    "section": "4 Cómo publicar",
-    "text": "4 Cómo publicar\nSi deseas enviar un manuscrito:\n\nUtiliza la estructura I-RL-M-R-D (Introducción, Revisión Literaria, Métodos, Resultados, Discusión).\nPrepara código y datos en un repositorio público (GitHub, Saber UCV u otro) y referéncialo en el artículo.\nUsa la plantilla oficial de la RVEA (Quarto) y el estilo de referencias APA. Detalles en Sobre el CVEA — Editorial.\nContacta al Comité Editorial a través de los editores principales; ver perfiles del Comité Editorial."
-  },
-  {
-    "objectID": "rvea/index.html#modelo-editorial-y-plantilla",
-    "href": "rvea/index.html#modelo-editorial-y-plantilla",
-    "title": "Revista Venezolana de Actuariado (RVEA)",
-    "section": "5 Modelo editorial y plantilla",
-    "text": "5 Modelo editorial y plantilla\nLa RVEA exige reproducibilidad (código y datos en repositorio público) y la estructura I-RL-M-R-D. La plantilla para autores y el detalle del Comité Editorial se describen en Sobre el CVEA — Editorial."
+    "section": "6 Cómo publicar",
+    "text": "6 Cómo publicar\nSi deseas enviar un manuscrito:\n\nUtiliza la estructura I-RL-M-R-D (véase Modelo de artículo más arriba).\nPrepara código y datos en un repositorio público (GitHub, Saber UCV u otro) y referéncialo en el artículo.\nUsa la plantilla oficial de la RVEA (Quarto) y el estilo de referencias APA (véase Plantilla para autores).\nContacta al Comité Editorial a través de los editores principales; ver Miembros."
   },
   {
     "objectID": "investigacion/model-hub.html",
@@ -249,7 +277,7 @@
     "href": "investigacion/model-hub.html#contenido-previsto",
     "title": "Model Hub",
     "section": "Contenido previsto",
-    "text": "Contenido previsto\n\nScripts R/Python: modelos de mortalidad (Lee-Carter, BYM/INLA), reservas IBNR, proyecciones demográficas.\nExcel actuarial: plantillas parametrizadas para cálculos técnicos y docencia.\nBases de datos abiertas: referencias a fuentes públicas utilizadas en los artículos (MPPS, INE, GADM, etc.).\n\nLos materiales se irán incorporando según el plan editorial y la disponibilidad de código en repositorios públicos. La plantilla de libro (Quarto Book) y la plantilla RVEA están referenciadas en Sobre el CVEA — Editorial."
+    "text": "Contenido previsto\n\nScripts R/Python: modelos de mortalidad (Lee-Carter, BYM/INLA), reservas IBNR, proyecciones demográficas.\nExcel actuarial: plantillas parametrizadas para cálculos técnicos y docencia.\nBases de datos abiertas: referencias a fuentes públicas utilizadas en los artículos (MPPS, INE, GADM, etc.).\n\nLos materiales se irán incorporando según el plan editorial y la disponibilidad de código en repositorios públicos. La plantilla de libro (Quarto Book) y la plantilla RVEA están referenciadas en RVEA — Modelo y plantilla y Libros."
   },
   {
     "objectID": "investigacion/model-hub.html#enlaces-relacionados",
@@ -270,21 +298,21 @@
     "href": "contacto.html#consultoría-y-asesoría",
     "title": "Contacto y soporte",
     "section": "Consultoría y asesoría",
-    "text": "Consultoría y asesoría\n\nAuditoría de reservas, gestión de riesgos (ERM), diseño técnico de productos, valuaciones de sostenibilidad fiscal y modelado actuarial (seguros, banca, previsión social).\nSolicitudes a través del Comité Editorial y del equipo de investigación. Perfiles y áreas de experticia en Nuestro equipo."
+    "text": "Consultoría y asesoría\n\nAuditoría de reservas, gestión de riesgos (ERM), diseño técnico de productos, valuaciones de sostenibilidad fiscal y modelado actuarial (seguros, banca, previsión social).\nSolicitudes a través del Comité Editorial y del equipo de investigación. Perfiles y áreas de experticia en Miembros."
   },
   {
     "objectID": "contacto.html#investigación-y-tfpg",
     "href": "contacto.html#investigación-y-tfpg",
     "title": "Contacto y soporte",
     "section": "Investigación y TFPG",
-    "text": "Investigación y TFPG\n\nPara solicitar más información sobre trabajos finales de pregrado (TFPG) o acceso a documentos del catálogo: indicar en el mensaje el título o autor del trabajo de interés.\nPropuestas de colaboración en investigación y tutoría: contactar al equipo en Comité Editorial."
+    "text": "Investigación y TFPG\n\nPara solicitar más información sobre trabajos finales de pregrado (TFPG) o acceso a documentos del catálogo: indicar en el mensaje el título o autor del trabajo de interés.\nPropuestas de colaboración en investigación y tutoría: contactar al equipo en Miembros."
   },
   {
     "objectID": "contacto.html#revista-rvea-y-publicaciones",
     "href": "contacto.html#revista-rvea-y-publicaciones",
     "title": "Contacto y soporte",
     "section": "Revista RVEA y publicaciones",
-    "text": "Revista RVEA y publicaciones\n\nEnvío de manuscritos y consultas sobre el proceso de revisión por pares: ver Revista RVEA y Sobre el CVEA — Editorial.\nPlantillas para autores y libros: referenciadas en Sobre el CVEA."
+    "text": "Revista RVEA y publicaciones\n\nEnvío de manuscritos y consultas sobre el proceso de revisión por pares: ver Revista RVEA y RVEA — Modelo y plantilla.\nPlantillas para autores y libros: RVEA · Libros."
   },
   {
     "objectID": "contacto.html#formación-y-cursos",
@@ -298,7 +326,7 @@
     "href": "contacto.html#cómo-contactar",
     "title": "Contacto y soporte",
     "section": "Cómo contactar",
-    "text": "Cómo contactar\n\nGitHub (repositorio de la plataforma): angel-colmenares/cvea-platform\nPerfiles profesionales: Comité Editorial — enlaces a LinkedIn de cada miembro.\n\n(Se puede añadir aquí un formulario de contacto o correo institucional cuando esté definido.)"
+    "text": "Cómo contactar\n\nGitHub (repositorio de la plataforma): angel-colmenares/cvea-platform\nPerfiles profesionales: Miembros — enlaces a LinkedIn de cada miembro.\n\n(Se puede añadir aquí un formulario de contacto o correo institucional cuando esté definido.)"
   },
   {
     "objectID": "observatorio.html",
@@ -329,81 +357,67 @@
     "text": "Variables de previsión\nIndicadores de solvencia y sostenibilidad de fondos de pensiones y regímenes de previsión social. Síntesis de diagnósticos del CVEA dirigidos a IVSS, Sudeaseg y decisores de política pública.\n\nReferencia: Libros — Diagnóstico del sistema de pensiones.\n\n\nPara consultoría sobre indicadores o convenios de datos, utilice Contacto."
   },
   {
-    "objectID": "editores.html",
-    "href": "editores.html",
-    "title": "Centro Venezolano de Estudios Actuariales",
+    "objectID": "el-cvea.html",
+    "href": "el-cvea.html",
+    "title": "El CVEA",
     "section": "",
-    "text": "Perfiles del Comité Editorial de la RVEA y del equipo de investigación del CVEA."
+    "text": "El CVEA no nace únicamente como un espacio físico, sino como un imperativo técnico y académico. Aunque su génesis se centra en estudios de la Previsión Social y Demografía, el CVEA abarcará todos los sectores de la economía nacional. La meta es la creación de conocimiento: generar modelos propios y adaptados a la realidad venezolana del siglo XXI. Para lograrlo, articulamos nuestra gestión en los tres ejes de la educación universitaria definidos en el Departamento de Actuariado: Investigación, Docencia y Extensión."
   },
   {
-    "objectID": "editores.html#comité-editorial",
-    "href": "editores.html#comité-editorial",
-    "title": "Centro Venezolano de Estudios Actuariales",
-    "section": "Comité Editorial",
-    "text": "Comité Editorial\n\n\n\n\nProf. Jorge Dias\n\n\n\nProf. Jorge Dias\nPerfil en LinkedIn\nLicenciado en Ciencias Actuariales por la Universidad Central de Venezuela (UCV), con una Maestría en Estadísticas Aplicadas de la Universidad Jiaotong de Pekín y candidato a Doctor en Finanzas y Seguros en la Universidad de Economía y Negocios Internacionales de Pekín. Es Jefe del Departamento de Actuariado y profesor asistente en la Escuela de Estadística y Ciencias Actuariales de la UCV, con experiencia docente en áreas como Seguros de Personas y Matemáticas de Pensiones. Su carrera combina la academia con la experiencia profesional en la Superintendencia de la Actividad Aseguradora, aportando una visión integral del sector.\n\n\n\n\n\n\nProf. Angel Colmenares\n\n\n\nProf. Angel Colmenares\nPerfil en LinkedIn\nLicenciado en Ciencias Actuariales y Magister Scientiarum en Modelos Aleatorios por la Universidad Central de Venezuela (UCV), actualmente cursando un Doctorado en Matemáticas en la misma casa de estudios. Como profesor asistente en la UCV, ha liderado múltiples departamentos y ha sido un actor clave en la reforma curricular y en la promoción de convenios interinstitucionales. Su vasta experiencia profesional incluye roles de alta dirección como Vicepresidente de Suscripción en C.N.A. de Seguros La Previsora, Vicepresidente Ejecutivo de Riesgo en el Banco de Venezuela y Profesional V Actuarial en la Superintendencia de la Actividad Aseguradora, lo que le confiere una profunda comprensión del riesgo en los sectores de seguros y finanzas.\n\n\n\n\n\n\nProf. Aymara Gerdel\n\n\n\nProf. Aymara Gerdel\nPerfil en LinkedIn\nLicenciada en Estadística y Especialista en Gobierno y Políticas Públicas por la Universidad Central de Venezuela (UCV). Posee una Maestría en Economía (Comercio Internacional) y actualmente es candidata a Doctora en Políticas Públicas por la University of International Business and Economics en Pekín. Como profesora en la UCV, su perfil combina un sólido fundamento cuantitativo con una especialización en políticas públicas y economía internacional, aportando una perspectiva crucial para evaluar el impacto socioeconómico y regulatorio de los sistemas de previsión social.\n\n\n\n\n\n\nProf. Jhon Beens\n\n\n\nProf. Jhon Beens\nPerfil en LinkedIn\nLicenciado en Ciencias Estadísticas por la Escuela de Estadística y Ciencias Actuariales de la Universidad Central de Venezuela (UCV) y maestrante en Estudios de la Ciencia y la Tecnología en el Instituto Venezolano de Investigaciones Científicas (IVIC). Es profesor en la Facultad de Ciencias Económicas y Sociales de la UCV y Coordinador del Área de Estudios Históricos y Culturales del Centro Venezolano de Estudios sobre China (CVEC). Su formación en estadística y su enfoque en los estudios de la ciencia y la tecnología aportan una visión crítica sobre la construcción y aplicación del conocimiento técnico y científico."
-  },
-  {
-    "objectID": "editores.html#colaboradores-y-tesistas-volúmenes-inaugurales",
-    "href": "editores.html#colaboradores-y-tesistas-volúmenes-inaugurales",
-    "title": "Centro Venezolano de Estudios Actuariales",
-    "section": "Colaboradores y tesistas (volúmenes inaugurales)",
-    "text": "Colaboradores y tesistas (volúmenes inaugurales)\nLos siguientes autores han contribuido con trabajos de grado y manuscritos que sustentan el diagnóstico sistémico de los tres volúmenes de la RVEA y del libro Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI (según la Propuesta Editorial CVEA 2025-2026):\nVolumen I: Fundamentos, demografía y sostenibilidad del sistema de previsión social\n\nDaylin Moreno (2025) — Valuación actuarial de las bases técnicas de Masjuán; desfase y obsolescencia.\nJosé Raúl Gálvez (2025) — Situación de pensiones y jubilaciones; gobernanza, morosidad y sostenibilidad.\nDaniel Azuaje (2025) — Tabla de mortalidad dinámica Lee-Carter (LC15); superación de tablas estáticas (CSO 1980).\nArlet Moreno (2025) — Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal.\n\nVolumen II: Las dimensiones de la mortalidad (causa, género y territorio)\n\nIliria Herrera (2025) — Proyección de la mortalidad por causas (Lee-Carter y CoDa).\nWilliams Fernandez (2025) — Tablas de decrecimiento múltiple con Cadenas de Markov.\nKelvin Guedez (2025) — Principales causas de fallecimiento en la población masculina venezolana.\nDorielys Rangel (2025) — Principales causas de fallecimiento en la población femenina venezolana.\nKennya Briceño (2025) — Tablas de decrecimiento múltiple (regiones Occidental, Andes, Central).\nDaniela Godoy (2025) — Principales causas en las regiones Los Llanos y Capital.\nOriana Lopez (2025) — Principales causas en las regiones Oriental y Guayana.\n\nVolumen III: Perspectivas internacionales y fronteras en la modelización\n\nEleazar Domínguez (2025) — Análisis comparativo de métodos de proyección (Chile y Japón).\nOliver Triveño (2025) — Medición del riesgo de longevidad (Portugal); impacto en rentas vitalicias y pensiones.\nLuis Alvarez (2026, en desarrollo) — Comparativa internacional (Países Bajos, Bélgica).\nJosé Mendoza (2026, en desarrollo) — Comparativa internacional (Italia, Grecia).\n\nOtros autores\n\nFranklin Quero (2025) — Introducción a las Matemáticas Financieras (TFPG).\nFelipe Moreno — Colaboración en Introducción a las Matemáticas Actuariales (en preparación)."
-  },
-  {
-    "objectID": "index.html#el-centro-identidad-y-propósito",
-    "href": "index.html#el-centro-identidad-y-propósito",
-    "title": "El Centro",
-    "section": "El Centro — Identidad y propósito",
-    "text": "El Centro — Identidad y propósito\nEl Centro Venezolano de Estudios Actuariales (CVEA) se erige como un Hub de Innovación Actuarial. Integrado por profesores de la Escuela de Estadística y Ciencias Actuariales (EECA) de la Universidad Central de Venezuela, tiene un enfoque integral y multidisciplinario. El CVEA busca ser el puente entre la academia y el país, aportando precisión matemática a diversos sectores donde el riesgo es un factor crítico.\nEl CVEA no nace únicamente como un espacio físico, sino como un imperativo técnico y académico. Aunque su génesis se centra en estudios de la Previsión Social y Demografía, el CVEA abarcará todos los sectores de la economía nacional. La meta es la creación de conocimiento: generar modelos propios y adaptados a la realidad venezolana del siglo XXI. Para lograrlo, articulamos nuestra gestión en los tres ejes de la educación universitaria definidos en el Departamento de Actuariado: Investigación, Docencia y Extensión.\n\nIdentidad y Propósito: Misión, visión y valores actuariales; autonomía técnica del CVEA. Detalle en Sobre el CVEA.\nNuestro Equipo: Perfiles profesionales con enlace a LinkedIn y áreas de experticia. Comité Editorial y equipo de investigación.\nHistoria: Origen del centro en la UCV y su relación con el Departamento de Actuariado (Prof. Jorge Días, Prof. Angel Colmenares — jefe de departamento y jefe de cátedra).\nSello editorial: Instancia para la difusión del material que se produzca; modelo I-RL-M-R-D y plantillas. Sobre el CVEA — Editorial."
-  },
-  {
-    "objectID": "index.html#enlaces-rápidos",
-    "href": "index.html#enlaces-rápidos",
-    "title": "El Centro",
-    "section": "Enlaces rápidos",
-    "text": "Enlaces rápidos\n\nInvestigación — Libros, TFPG, RVEA, Model Hub\nDocencia — Cursos, recursos, próximas ofertas\nExtensión / Servicios — Consultoría, demos, observatorio\nObservatorio — Variables biométricas, financieras y de previsión\nActualidad — Noticias, eventos, Call for Papers\nContacto — Solicitudes y soporte"
-  },
-  {
-    "objectID": "sobre.html",
-    "href": "sobre.html",
-    "title": "Sobre el CVEA",
-    "section": "",
-    "text": "Los perfiles del Comité Editorial y de Investigación están en una página dedicada: Comité Editorial. Ahí se muestra el título «Centro Venezolano de Estudios Actuariales» y los perfiles de los miembros."
-  },
-  {
-    "objectID": "sobre.html#estructura-del-centro",
-    "href": "sobre.html#estructura-del-centro",
-    "title": "Sobre el CVEA",
+    "objectID": "el-cvea.html#estructura-del-centro",
+    "href": "el-cvea.html#estructura-del-centro",
+    "title": "El CVEA",
     "section": "Estructura del Centro",
-    "text": "Estructura del Centro\nEl Centro Venezolano de Estudios Actuariales (CVEA) integra tres ejes bajo una misma identidad institucional:\n\n\n\n\n\n\n\nEje\nContenido\n\n\n\n\nInvestigación\nRevista Venezolana de Actuariado (RVEA), Libros y Materiales Docentes, manuscritos y código reproducible.\n\n\nFormación\nCursos en series de tiempo, modelado actuarial y despliegue en entornos productivos.\n\n\nServicios\nDemos analíticos, dashboards interactivos y consultoría en reservas y riesgo.\n\n\n\nLa coordinación editorial, la tutoría de investigaciones y la relación con el sector (IVSS, Sudeaseg, aseguradoras) están a cargo del equipo cuyo perfil se presenta en Comité Editorial."
+    "text": "Estructura del Centro\nEl Centro Venezolano de Estudios Actuariales (CVEA) integra tres ejes bajo una misma identidad institucional:\n\n\n\n\n\n\n\nEje\nContenido\n\n\n\n\nInvestigación\nRevista Venezolana de Actuariado (RVEA), Libros y Materiales Docentes, manuscritos y código reproducible.\n\n\nFormación\nCursos en series de tiempo, modelado actuarial y despliegue en entornos productivos.\n\n\nServicios\nDemos analíticos, dashboards interactivos y consultoría en reservas y riesgo.\n\n\n\nLa coordinación editorial, la tutoría de investigaciones y la relación con el sector (IVSS, Sudeaseg, aseguradoras) están a cargo del equipo cuyo perfil se presenta en Miembros."
   },
   {
-    "objectID": "sobre.html#historia",
-    "href": "sobre.html#historia",
-    "title": "Sobre el CVEA",
+    "objectID": "el-cvea.html#historia",
+    "href": "el-cvea.html#historia",
+    "title": "El CVEA",
     "section": "Historia",
     "text": "Historia\nEl CVEA tiene su origen en la Escuela de Estadística y Ciencias Actuariales (EECA) de la Universidad Central de Venezuela (UCV) y en el Departamento de Actuariado. Su consolidación como centro de investigación y extensión ha contado con el impulso del Prof. Jorge Días (Jefe del Departamento de Actuariado, profesor en la EECA) y del Prof. Angel Colmenares (Jefe de Cátedra y coordinación de la investigación del volumen inaugural de la RVEA). La relación con el departamento permite articular la docencia de grado, los trabajos finales de pregrado (TFPG) y la producción científica (RVEA, libros) en un mismo ecosistema."
   },
   {
-    "objectID": "sobre.html#editorial",
-    "href": "sobre.html#editorial",
-    "title": "Sobre el CVEA",
+    "objectID": "el-cvea.html#editorial",
+    "href": "el-cvea.html#editorial",
+    "title": "El CVEA",
     "section": "Editorial",
-    "text": "Editorial\n\nComité Editorial RVEA\nLa Revista Venezolana de Actuariado (RVEA) cuenta con un Comité Editorial que vela por la calidad y la reproducibilidad de los manuscritos. Las recomendaciones estratégicas del CVEA (transición a tablas dinámicas, territorialización de reservas, observatorios de mortalidad) se dirigen al sector actuarial, IVSS, Sudeaseg y decisores de política pública.\nLa tutoría y coordinación de investigaciones del volumen inaugural de la RVEA está a cargo del Prof. Jorge Dias y del Prof. Angel Colmenares. Los tesistas Daylin Moreno, José Raúl Gálvez, Daniel Azuaje y Arlet Moreno han sido pilares del diagnóstico sistémico presentado en el primer volumen.\n\n\nModelo de artículo: I-RL-M-R-D\nLos manuscritos de la RVEA siguen la estructura I-RL-M-R-D:\n\n\n\n\n\n\n\n\nSigla\nSección\nContenido\n\n\n\n\nI\nIntroducción\nContexto, problema, vacío de conocimiento, objetivo y contribución.\n\n\nRL\nRevisión literaria\nSíntesis analítica (no cronológica), metodología de la revisión, conclusión que justifica los métodos.\n\n\nM\nMétodos\nDiseño, fuentes de datos, modelización, entorno computacional y código fuente.\n\n\nR\nResultados\nPresentación objetiva y secuencial; figuras y tablas con leyendas y referenciación cruzada.\n\n\nD\nDiscusión\nInterpretación, implicaciones, limitaciones y conclusiones.\n\n\n\nSe exige reproducibilidad: código (R, Python, Julia) y datos en repositorio público; referencias en formato APA (references.bib + .csl).\n\n\nPlantilla para autores\nLa plantilla oficial de la RVEA está en la carpeta de referencia del proyecto:\n\nUbicación: Referencias/Plantilla_RVEA/jfwm_template_raw.qmd\nIncluye guías por sección (Introducción, Revisión Literaria, Métodos, Resultados, Discusión), ejemplos de código y requisitos de archivos (references.bib, apa.csl, logo CVEA para PDF).\n\nPara integrar la plantilla en tu flujo de trabajo, copia ese archivo y los archivos indicados en su cabecera a tu carpeta de manuscrito."
+    "text": "Editorial\n\nComité Editorial RVEA\nLa Revista Venezolana de Actuariado (RVEA) cuenta con un Comité Editorial que vela por la calidad y la reproducibilidad de los manuscritos. Las recomendaciones estratégicas del CVEA (transición a tablas dinámicas, territorialización de reservas, observatorios de mortalidad) se dirigen al sector actuarial, IVSS, Sudeaseg y decisores de política pública.\nLa tutoría y coordinación de investigaciones del volumen inaugural de la RVEA está a cargo del Prof. Jorge Dias y del Prof. Angel Colmenares. Los tesistas Daylin Moreno, José Raúl Gálvez, Daniel Azuaje y Arlet Moreno han sido pilares del diagnóstico sistémico presentado en el primer volumen.\nLos perfiles del Comité Editorial y del equipo de investigación se encuentran en Miembros."
   },
   {
-    "objectID": "sobre.html#plantilla-de-libros-y-materiales-docentes",
-    "href": "sobre.html#plantilla-de-libros-y-materiales-docentes",
-    "title": "Sobre el CVEA",
-    "section": "Plantilla de Libros y Materiales Docentes",
-    "text": "Plantilla de Libros y Materiales Docentes\nEl modelo para los libros del CVEA es la plantilla Quarto Book basada en Applied Machine Learning Using mlr3 in R, ubicada en Referencias/Plantilla_CVEA_Book_Applied Machine Learning Using mlr3 in R/book/. Incluye partes, capítulos, PDF descargable, sidebar y búsqueda; ya está adaptada al CVEA (título, logo, pie de página).\nEl libro Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial fue generado con esa plantilla y está compilado; se publica en la web colocando solo el HTML y el PDF en libro/demografia-siglo-xxi/. Ver Libros y Materiales Docentes para el enlace “Ver en línea” y “Descargar PDF”.\nLos libros y materiales docentes (diagnóstico del sistema de pensiones y bases técnicas) siguen el plan editorial 2025-2026; los capítulos se irán añadiendo usando la misma plantilla."
+    "objectID": "index.html#inicio-identidad-y-propósito",
+    "href": "index.html#inicio-identidad-y-propósito",
+    "title": "Inicio",
+    "section": "Inicio — Identidad y propósito",
+    "text": "Inicio — Identidad y propósito\nEl Centro Venezolano de Estudios Actuariales (CVEA) se erige como un Hub de Innovación Actuarial. Integrado por profesores de la Escuela de Estadística y Ciencias Actuariales (EECA) de la Universidad Central de Venezuela, tiene un enfoque integral y multidisciplinario. El CVEA busca ser el puente entre la academia y el país, aportando precisión matemática a diversos sectores donde el riesgo es un factor crítico.\n\nEl CVEA: Identidad, estructura en tres ejes, historia y editorial. Ver página El CVEA.\nNuestro Equipo: Perfiles del Comité Editorial y equipo de investigación. Miembros.\nSello editorial: Modelo I-RL-M-R-D y plantillas para la RVEA y para libros. RVEA — Modelo y plantilla · Libros — Plantilla."
   },
   {
-    "objectID": "sobre.html#documentos-de-referencia",
-    "href": "sobre.html#documentos-de-referencia",
-    "title": "Sobre el CVEA",
-    "section": "Documentos de referencia",
-    "text": "Documentos de referencia\nLa carpeta Referencias del repositorio contiene la estructura general del centro, editores, modelos de revista (RVEA) y de libro, volúmenes y artículos. Ver Referencias/README.md para el detalle de la plantilla RVEA, la plantilla de libro (mlr3) y el libro Demografía."
+    "objectID": "index.html#enlaces-rápidos",
+    "href": "index.html#enlaces-rápidos",
+    "title": "Inicio",
+    "section": "Enlaces rápidos",
+    "text": "Enlaces rápidos\n\nInvestigación — Libros, TFPG, RVEA, Model Hub\nDocencia — Cursos, recursos, próximas ofertas\nExtensión / Servicios — Consultoría, demos, observatorio\nObservatorio — Variables biométricas, financieras y de previsión\nActualidad — Noticias, eventos, Call for Papers\nContacto — Solicitudes y soporte"
+  },
+  {
+    "objectID": "miembros.html",
+    "href": "miembros.html",
+    "title": "Miembros",
+    "section": "",
+    "text": "Perfiles del Comité Editorial de la RVEA y del equipo de investigación del CVEA."
+  },
+  {
+    "objectID": "miembros.html#comité-editorial",
+    "href": "miembros.html#comité-editorial",
+    "title": "Miembros",
+    "section": "Comité Editorial",
+    "text": "Comité Editorial\n\n\n\n\nProf. Jorge Dias\n\n\n\nProf. Jorge Dias\nPerfil en LinkedIn\nLicenciado en Ciencias Actuariales por la Universidad Central de Venezuela (UCV), con una Maestría en Estadísticas Aplicadas de la Universidad Jiaotong de Pekín y candidato a Doctor en Finanzas y Seguros en la Universidad de Economía y Negocios Internacionales de Pekín. Es Jefe del Departamento de Actuariado y profesor asistente en la Escuela de Estadística y Ciencias Actuariales de la UCV, con experiencia docente en áreas como Seguros de Personas y Matemáticas de Pensiones. Su carrera combina la academia con la experiencia profesional en la Superintendencia de la Actividad Aseguradora, aportando una visión integral del sector.\n\n\n\n\n\n\nProf. Angel Colmenares\n\n\n\nProf. Angel Colmenares\nPerfil en LinkedIn\nLicenciado en Ciencias Actuariales y Magister Scientiarum en Modelos Aleatorios por la Universidad Central de Venezuela (UCV), actualmente cursando un Doctorado en Matemáticas en la misma casa de estudios. Como profesor asistente en la UCV, ha liderado múltiples departamentos y ha sido un actor clave en la reforma curricular y en la promoción de convenios interinstitucionales. Su vasta experiencia profesional incluye roles de alta dirección como Vicepresidente de Suscripción en C.N.A. de Seguros La Previsora, Vicepresidente Ejecutivo de Riesgo en el Banco de Venezuela y Profesional V Actuarial en la Superintendencia de la Actividad Aseguradora, lo que le confiere una profunda comprensión del riesgo en los sectores de seguros y finanzas.\n\n\n\n\n\n\nProf. Aymara Gerdel\n\n\n\nProf. Aymara Gerdel\nPerfil en LinkedIn\nLicenciada en Estadística y Especialista en Gobierno y Políticas Públicas por la Universidad Central de Venezuela (UCV). Posee una Maestría en Economía (Comercio Internacional) y actualmente es candidata a Doctora en Políticas Públicas por la University of International Business and Economics en Pekín. Como profesora en la UCV, su perfil combina un sólido fundamento cuantitativo con una especialización en políticas públicas y economía internacional, aportando una perspectiva crucial para evaluar el impacto socioeconómico y regulatorio de los sistemas de previsión social.\n\n\n\n\n\n\nProf. Jhon Beens\n\n\n\nProf. Jhon Beens\nPerfil en LinkedIn\nLicenciado en Ciencias Estadísticas por la Escuela de Estadística y Ciencias Actuariales de la Universidad Central de Venezuela (UCV) y maestrante en Estudios de la Ciencia y la Tecnología en el Instituto Venezolano de Investigaciones Científicas (IVIC). Es profesor en la Facultad de Ciencias Económicas y Sociales de la UCV y Coordinador del Área de Estudios Históricos y Culturales del Centro Venezolano de Estudios sobre China (CVEC). Su formación en estadística y su enfoque en los estudios de la ciencia y la tecnología aportan una visión crítica sobre la construcción y aplicación del conocimiento técnico y científico."
+  },
+  {
+    "objectID": "miembros.html#colaboradores-y-tesistas-volúmenes-inaugurales",
+    "href": "miembros.html#colaboradores-y-tesistas-volúmenes-inaugurales",
+    "title": "Miembros",
+    "section": "Colaboradores y tesistas (volúmenes inaugurales)",
+    "text": "Colaboradores y tesistas (volúmenes inaugurales)\nLos siguientes autores han contribuido con trabajos de grado y manuscritos que sustentan el diagnóstico sistémico de los tres volúmenes de la RVEA y del libro Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI (según la Propuesta Editorial CVEA 2025-2026):\nVolumen I: Fundamentos, demografía y sostenibilidad del sistema de previsión social\n\nDaylin Moreno (2025) — Valuación actuarial de las bases técnicas de Masjuán; desfase y obsolescencia.\nJosé Raúl Gálvez (2025) — Situación de pensiones y jubilaciones; gobernanza, morosidad y sostenibilidad.\nDaniel Azuaje (2025) — Tabla de mortalidad dinámica Lee-Carter (LC15); superación de tablas estáticas (CSO 1980).\nArlet Moreno (2025) — Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal.\n\nVolumen II: Las dimensiones de la mortalidad (causa, género y territorio)\n\nIliria Herrera (2025) — Proyección de la mortalidad por causas (Lee-Carter y CoDa).\nWilliams Fernandez (2025) — Tablas de decrecimiento múltiple con Cadenas de Markov.\nKelvin Guedez (2025) — Principales causas de fallecimiento en la población masculina venezolana.\nDorielys Rangel (2025) — Principales causas de fallecimiento en la población femenina venezolana.\nKennya Briceño (2025) — Tablas de decrecimiento múltiple (regiones Occidental, Andes, Central).\nDaniela Godoy (2025) — Principales causas en las regiones Los Llanos y Capital.\nOriana Lopez (2025) — Principales causas en las regiones Oriental y Guayana.\n\nVolumen III: Perspectivas internacionales y fronteras en la modelización\n\nEleazar Domínguez (2025) — Análisis comparativo de métodos de proyección (Chile y Japón).\nOliver Triveño (2025) — Medición del riesgo de longevidad (Portugal); impacto en rentas vitalicias y pensiones.\nLuis Alvarez (2026, en desarrollo) — Comparativa internacional (Países Bajos, Bélgica).\nJosé Mendoza (2026, en desarrollo) — Comparativa internacional (Italia, Grecia).\n\nOtros autores\n\nFranklin Quero (2025) — Introducción a las Matemáticas Financieras (TFPG).\nFelipe Moreno — Colaboración en Introducción a las Matemáticas Actuariales (en preparación)."
   },
   {
     "objectID": "actualidad.html",
@@ -431,7 +445,7 @@
     "href": "actualidad.html#editorial-notificaciones",
     "title": "Actualidad",
     "section": "Editorial (Notificaciones)",
-    "text": "Editorial (Notificaciones)\n\nCall for Papers: la Revista RVEA mantiene convocatoria abierta para manuscritos con revisión por pares. Estructura I-RL-M-R-D y reproducibilidad (código y datos en repositorio público). Detalles en Sobre el CVEA — Editorial.\nActualizaciones: nuevas publicaciones, volúmenes y libros se anunciarán en esta sección y en la página de la RVEA.\n\n\nPara proponer noticias o eventos, utilice Contacto."
+    "text": "Editorial (Notificaciones)\n\nCall for Papers: la Revista RVEA mantiene convocatoria abierta para manuscritos con revisión por pares. Estructura I-RL-M-R-D y reproducibilidad (código y datos en repositorio público). Detalles en RVEA — Modelo y plantilla.\nActualizaciones: nuevas publicaciones, volúmenes y libros se anunciarán en esta sección y en la página de la RVEA.\n\n\nPara proponer noticias o eventos, utilice Contacto."
   },
   {
     "objectID": "investigacion/index.html",
@@ -480,7 +494,7 @@
     "href": "investigacion/tfpg.html#fichas-de-investigación",
     "title": "Trabajos Finales de Pregrado (TFPG)",
     "section": "Fichas de investigación",
-    "text": "Fichas de investigación\n\nAnálisis de riesgo en carteras de salud colectiva (ejemplo de ficha)\n\n\n\nCampo\nContenido\n\n\n\n\nTítulo\nAnálisis de riesgo en carteras de salud colectiva\n\n\nAutor\n[Nombre del autor]\n\n\nTutor\n[Nombre del tutor]\n\n\nAño\n2025\n\n\n\nResumen ejecutivo: (300–500 palabras enfocadas en resultados, metodología y conclusiones. Este bloque se completará con los resúmenes reales de cada TFPG registrado.)\nSolicitar más información\n\n\n\nTFPG vinculados a la RVEA y al libro Demografía y Previsión Social\nLos siguientes autores han contribuido con trabajos que sustentan el Volumen I de la RVEA y el libro Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI:\n\nDaylin Moreno (2025) — Valuación actuarial de las bases técnicas de Masjuán.\nJosé Raúl Gálvez (2025) — Situación de pensiones y jubilaciones; gobernanza y sostenibilidad.\nDaniel Azuaje (2025) — Tabla de mortalidad dinámica Lee-Carter (LC15).\nArlet Moreno (2025) — Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal.\nFranklin Quero (2025) — Introducción a las Matemáticas Financieras (TFPG).\n\nPara más perfiles y enlaces a LinkedIn, ver Nuestro equipo. Para solicitar información sobre un TFPG concreto, use Contacto."
+    "text": "Fichas de investigación\n\nAnálisis de riesgo en carteras de salud colectiva (ejemplo de ficha)\n\n\n\nCampo\nContenido\n\n\n\n\nTítulo\nAnálisis de riesgo en carteras de salud colectiva\n\n\nAutor\n[Nombre del autor]\n\n\nTutor\n[Nombre del tutor]\n\n\nAño\n2025\n\n\n\nResumen ejecutivo: (300–500 palabras enfocadas en resultados, metodología y conclusiones. Este bloque se completará con los resúmenes reales de cada TFPG registrado.)\nSolicitar más información\n\n\n\nTFPG vinculados a la RVEA y al libro Demografía y Previsión Social\nLos siguientes autores han contribuido con trabajos que sustentan el Volumen I de la RVEA y el libro Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI:\n\nDaylin Moreno (2025) — Valuación actuarial de las bases técnicas de Masjuán.\nJosé Raúl Gálvez (2025) — Situación de pensiones y jubilaciones; gobernanza y sostenibilidad.\nDaniel Azuaje (2025) — Tabla de mortalidad dinámica Lee-Carter (LC15).\nArlet Moreno (2025) — Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal.\nFranklin Quero (2025) — Introducción a las Matemáticas Financieras (TFPG).\n\nPara más perfiles y enlaces a LinkedIn, ver Miembros. Para solicitar información sobre un TFPG concreto, use Contacto."
   },
   {
     "objectID": "rvea/vol2-herrera.html",
