@@ -1,7 +1,7 @@
 import streamlit as st
 
-# URL pública del logo en GitHub Pages (ajustable si cambia la ruta)
-LOGO_URL = "https://angelucv.github.io/cvea/assets/logos/Logo-CVEA-icono-sin%20fondo%20letrasblancas.png"
+# Logo local del CVEA (ruta relativa desde esta carpeta)
+LOGO_URL = "../../assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png"
 
 CVEA_PRIMARY = "#38666A"
 CVEA_DARK = "#1e3d40"
@@ -20,6 +20,11 @@ def apply_cvea_theme() -> None:
 }}
 
 body {{
+  background-color: white;
+  color: #111111;
+}}
+
+.stApp {{
   background-color: white;
 }}
 
@@ -44,10 +49,6 @@ a, .stMarkdown a {{
   font-weight: 600;
 }}
 
-.stApp {{
-  background-color: white;
-}}
-
 .cvea-header-title {{
   font-size: 1.6rem;
   font-weight: 700;
@@ -57,7 +58,7 @@ a, .stMarkdown a {{
 
 .cvea-header-subtitle {{
   font-size: 0.95rem;
-  color: #555;
+  color: #444444;
 }}
 </style>
 """,
@@ -70,7 +71,7 @@ def cvea_header(title: str, subtitle: str | None = None) -> None:
     apply_cvea_theme()
     col_logo, col_text = st.columns([1, 3])
     with col_logo:
-        st.image(LOGO_URL, use_column_width=True)
+        st.image(LOGO_URL)
     with col_text:
         st.markdown(f"<div class='cvea-header-title'>{title}</div>", unsafe_allow_html=True)
         if subtitle:
