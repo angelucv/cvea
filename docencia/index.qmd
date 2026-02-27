@@ -10,6 +10,8 @@ En la era de la información, la capacidad para modelar escenarios, predecir ten
 
 Aprende a dominar el análisis complejo y la creación de modelos predictivos utilizando las herramientas de código abierto líderes en la industria —**R** y **Python**—, integrándolas de manera fluida en entornos corporativos.
 
+Los módulos que se describen a continuación se dictan en la **plataforma Moodle**, referente en enseñanza en línea. Inscripciones, materiales y seguimiento: [**Acceso a la plataforma de cursos (Moodle)**](https://cvea.gnomio.com/){target="_blank"}.
+
 ### Módulos de aprendizaje
 
 Hemos estructurado nuestros programas en módulos especializados y progresivos. Ya sea que busques automatizar reportes, adentrarte en el Machine Learning o desarrollar modelos actuariales complejos, tenemos un camino para ti:
