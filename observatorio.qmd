@@ -4,7 +4,7 @@ subtitle: "Motor dinámico del portal — indicadores biométricos, financieros 
 toc: true
 ---
 
-El **Observatorio** es el núcleo dinámico de datos y variables actuariales del país. Su objetivo es que el portal no sea visitado solo una vez, sino que se convierta en una **herramienta de consulta diaria** para actuarios y analistas en Venezuela.
+El **Observatorio** es una **plataforma que el CVEA pone a disposición de tomadores de decisión e investigadores**. Además de ofrecer información actualizada sobre variables biométricas, financieras y de previsión, se prevé incorporar **cuadros de control y dashboards** con analítica de sectores financieros (seguros, banca) y otros sectores sensibles, para apoyar la evaluación de riesgo y la política pública.
 
 ## Variables biométricas
 

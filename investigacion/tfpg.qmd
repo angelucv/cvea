@@ -6,13 +6,56 @@ toc: true
 
 Catálogo de trabajos finales de pregrado vinculados al CVEA. Cada ficha incluye título, autor, tutor, resumen ejecutivo y metodología. Para solicitar más información o acceso al documento completo, utilice el botón **Solicitar más información**.
 
+La siguiente es una **lista de los primeros TFPG que se incorporarán a las publicaciones del CVEA**: artículos en la Revista Venezolana de Actuariado (RVEA), capítulos del libro *Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI* y materiales docentes asociados. El catálogo se irá ampliando según el plan editorial 2025-2026.
+
 ::: {.callout-note}
-El CVEA no publica los PDF completos de forma abierta; la ficha de investigación está diseñada para generar autoridad y canalizar consultas a través del [Contacto](contacto.qmd).
+El CVEA no publica los PDF completos de forma abierta; la ficha de investigación está diseñada para generar autoridad y canalizar consultas a través del [Contacto](../contacto.qmd).
 :::
 
-## Fichas de investigación
+## Listado exhaustivo de trabajos de grado
 
-### Análisis de riesgo en carteras de salud colectiva (ejemplo de ficha)
+### Volumen I — Fundamentos, demografía y sostenibilidad del sistema de previsión social
+
+| Autor | Título / tema | Año |
+|-------|----------------|-----|
+| **Daylin Moreno** | Valuación actuarial de las bases técnicas de Masjuán; desfase y obsolescencia | 2025 |
+| **José Raúl Gálvez** | Situación de pensiones y jubilaciones; gobernanza, morosidad y sostenibilidad | 2025 |
+| **Daniel Azuaje** | Tabla de mortalidad dinámica Lee-Carter (LC15); superación de tablas estáticas (CSO 1980) | 2025 |
+| **Arlet Moreno** | Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal | 2025 |
+
+### Volumen II — Las dimensiones de la mortalidad (causa, género y territorio)
+
+| Autor | Título / tema | Año |
+|-------|----------------|-----|
+| **Iliria Herrera** | Proyección de la mortalidad por causas (Lee-Carter y CoDa) | 2025 |
+| **Williams Fernandez** | Tablas de decrecimiento múltiple con Cadenas de Markov | 2025 |
+| **Kelvin Guedez** | Principales causas de fallecimiento en la población masculina venezolana | 2025 |
+| **Dorielys Rangel** | Principales causas de fallecimiento en la población femenina venezolana | 2025 |
+| **Kennya Briceño** | Tablas de decrecimiento múltiple (regiones Occidental, Andes, Central) | 2025 |
+| **Daniela Godoy** | Principales causas en las regiones Los Llanos y Capital | 2025 |
+| **Oriana Lopez** | Principales causas en las regiones Oriental y Guayana | 2025 |
+
+### Volumen III — Perspectivas internacionales y fronteras en la modelización
+
+| Autor | Título / tema | Año |
+|-------|----------------|-----|
+| **Eleazar Domínguez** | Análisis comparativo de métodos de proyección (Chile y Japón) | 2025 |
+| **Oliver Triveño** | Medición del riesgo de longevidad (Portugal); impacto en rentas vitalicias y pensiones | 2025 |
+| **Luis Alvarez** | Comparativa internacional (Países Bajos, Bélgica) | 2026 (en desarrollo) |
+| **José Mendoza** | Comparativa internacional (Italia, Grecia) | 2026 (en desarrollo) |
+
+### Otros trabajos y colaboraciones
+
+| Autor | Título / tema | Año |
+|-------|----------------|-----|
+| **Franklin Quero** | *Introducción a las Matemáticas Financieras* (TFPG) | 2025 |
+| **Felipe Moreno** | Colaboración en *Introducción a las Matemáticas Actuariales* (en preparación) | — |
+
+## Fichas de investigación (plantilla)
+
+Para cada TFPG registrado se puede completar una ficha con resumen ejecutivo, metodología y enlace a **Solicitar más información**. Ejemplo:
+
+### Ejemplo de ficha
 
 | Campo | Contenido |
 |-------|-----------|
@@ -21,20 +64,10 @@ El CVEA no publica los PDF completos de forma abierta; la ficha de investigació
 | **Tutor** | [Nombre del tutor] |
 | **Año** | 2025 |
 
-**Resumen ejecutivo:** (300–500 palabras enfocadas en resultados, metodología y conclusiones. Este bloque se completará con los resúmenes reales de cada TFPG registrado.)
+**Resumen ejecutivo:** (300–500 palabras enfocadas en resultados, metodología y conclusiones.)
 
 [**Solicitar más información**](../contacto.qmd){.btn .btn-primary}
 
 ---
 
-### TFPG vinculados a la RVEA y al libro Demografía y Previsión Social
-
-Los siguientes autores han contribuido con trabajos que sustentan el Volumen I de la RVEA y el libro *Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI*:
-
-- **Daylin Moreno** (2025) — Valuación actuarial de las bases técnicas de Masjuán.
-- **José Raúl Gálvez** (2025) — Situación de pensiones y jubilaciones; gobernanza y sostenibilidad.
-- **Daniel Azuaje** (2025) — Tabla de mortalidad dinámica Lee-Carter (LC15).
-- **Arlet Moreno** (2025) — Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal.
-- **Franklin Quero** (2025) — *Introducción a las Matemáticas Financieras* (TFPG).
-
-Para más perfiles y enlaces a LinkedIn, ver [Miembros](../miembros.qmd#colaboradores-y-tesistas-volúmenes-inaugurales). Para solicitar información sobre un TFPG concreto, use [Contacto](../contacto.qmd).
+Para más perfiles y enlaces a LinkedIn de autores y tesistas, ver [Miembros](../miembros.qmd#colaboradores-y-tesistas-volúmenes-inaugurales). Para solicitar información sobre un TFPG concreto, use [Contacto](../contacto.qmd).

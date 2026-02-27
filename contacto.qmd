@@ -8,7 +8,7 @@ Canales de atención del CVEA para **solicitudes de investigación**, **consulto
 
 ## Consultoría y asesoría
 
-- **Auditoría de reservas,** gestión de riesgos (ERM), diseño técnico de productos, valuaciones de sostenibilidad fiscal y modelado actuarial (seguros, banca, previsión social).
+- **Auditoría de reservas,** diseño técnico de productos, valuaciones de sostenibilidad fiscal y modelado actuarial (seguros, banca, previsión social).
 - Solicitudes a través del Comité Editorial y del equipo de investigación. Perfiles y áreas de experticia en [Miembros](miembros.qmd).
 
 ## Investigación y TFPG
@@ -27,7 +27,7 @@ Canales de atención del CVEA para **solicitudes de investigación**, **consulto
 
 ## Cómo contactar
 
-- **GitHub (repositorio de la plataforma):** [angel-colmenares/cvea-platform](https://github.com/angel-colmenares/cvea-platform)
-- **Perfiles profesionales:** [Miembros](miembros.qmd) — enlaces a LinkedIn de cada miembro.
+- **Correo CVEA:** [jorged.cvea@gmail.com](mailto:jorged.cvea@gmail.com) · [angelc.cvea@gmail.com](mailto:angelc.cvea@gmail.com)
+- **Perfiles y LinkedIn del equipo:** [Miembros](miembros.qmd) — Jorge Dias, Angel Colmenares, Aymara Gerdel y Jhon Beens (enlaces a LinkedIn en cada perfil).
 
-*(Se puede añadir aquí un formulario de contacto o correo institucional cuando esté definido.)*
+*(Se puede añadir aquí un formulario de contacto cuando esté definido.)*

@@ -6,15 +6,38 @@ toc: true
 
 Sección de **comunicación dinámica** del CVEA: noticias del sector, eventos académicos y notificaciones editoriales.
 
+## Revistas e instancias de referencia
+
+Enlaces a revistas e instancias de interés para la comunidad actuarial y estadística:
+
+**Revistas y publicaciones**
+
+- [Anales del Instituto de Actuarios Españoles](https://revistas.actuarios.org/) — Principal publicación científica en español en ciencia actuarial (JCR, FECYT).
+- [Society of Actuaries (SOA)](https://www.soa.org/) — Publicaciones, investigación y certificación (EE. UU. e internacional).
+- [Casualty Actuarial Society (CAS)](https://www.casact.org/) — Seguros de no vida y riesgo operacional.
+- [International Actuarial Association (IAA)](https://www.actuaries.org/) — Asociación internacional de actuarios.
+- [ASTIN Bulletin](https://www.cambridge.org/core/journals/astin-bulletin) — Revista del Comité ASTIN (IAE).
+
+**Repositorios e información sectorial**
+
+- [FASECOLDA — Biblioteca](https://biblioteca.fasecolda.com/) — Catálogo y recursos del sector asegurador colombiano (referencia regional).
+- [IVSS](https://www.ivss.gob.ve/) — Instituto Venezolano de los Seguros Sociales.
+- [Sudeaseg](https://www.sudeaseg.gob.ve/) — Superintendencia de la Actividad Aseguradora (Venezuela).
+
+## Calendario de eventos {#calendario}
+
+Calendario para **eventos organizados o coorganizados por el CVEA**: defensas de TFPG, seminarios, conferencias y ofertas de formación. Las fechas se irán actualizando aquí.
+
+| Fecha | Evento | Lugar / modalidad |
+|-------|--------|-------------------|
+| *Por definir* | Próximas defensas TFPG (Vol. II y III) | UCV / por anunciar |
+| *Por definir* | Webinars y cursos (Series de Tiempo, módulos R/Python) | [Cursos](docencia/index.qmd#cursos) |
+
+*(Añade filas a esta tabla según se confirmen eventos. Para proponer uno, use [Contacto](contacto.qmd).)*
+
 ## Noticias y blog
 
 Artículos de opinión técnica y análisis de coyuntura económica y actuarial. *(Contenido se irá publicando según disponibilidad.)*
-
-## Eventos
-
-Calendario de **defensas de TFPG**, seminarios y conferencias organizados o coorganizados por el CVEA. Próximas ofertas de formación continua (webinars, certificaciones) en [Docencia](docencia/series-tiempo/index.qmd).
-
-*(Próximos eventos se anunciarán aquí.)*
 
 ## Editorial (Notificaciones)
 

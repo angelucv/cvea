@@ -27,12 +27,15 @@ El **eje de Extensión** del CVEA es el brazo ejecutor que vincula al centro con
 
 ## Consultoría estratégica — Portafolio
 
-- **Auditoría de Reservas** y **Gestión de Riesgos (ERM)**.
 - **Actividad Aseguradora:** diseño técnico de productos, cálculo preciso de reservas, auditorías externas.
 - **Banca y Seguridad Social:** modelado de riesgo de crédito, valuaciones de sostenibilidad fiscal.
 - **Sectores no tradicionales:** modelado actuarial del riesgo de deserción (churn), determinación de baremos, cuantificación financiera de riesgo operacional.
 
 **Casos de estudio:** documentos que explican problemas resueltos sin revelar datos confidenciales (en desarrollo).
+
+## Formación y cursos
+
+El CVEA ofrece [**cursos y rutas de aprendizaje**](docencia/index.qmd#cursos) en análisis de datos, modelado actuarial y matemáticas financieras con R y Python: desde fundamentos analíticos hasta machine learning y despliegue de modelos. Los programas están orientados a profesionales de banca, seguros y pensiones. Ver [Cursos](docencia/index.qmd#cursos) para el detalle de módulos y ofertas.
 
 ## Observatorio actuarial (Dashboard)
 

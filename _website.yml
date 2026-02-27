@@ -17,6 +17,9 @@ website:
       - icon: building
         text: "El CVEA"
         href: el-cvea.qmd
+      - icon: people-fill
+        text: "Miembros"
+        href: miembros.qmd
       - icon: journal-richtext
         text: "Investigación"
         menu:
@@ -50,9 +53,6 @@ website:
       - icon: book
         text: "Libros"
         href: libro/index.qmd
-      - icon: people-fill
-        text: "Miembros"
-        href: miembros.qmd
       - icon: play-btn
         text: "Cursos"
         href: docencia/index.qmd#cursos
@@ -62,13 +62,8 @@ website:
       - icon: envelope
         text: "Contacto"
         href: contacto.qmd
-      - icon: github
-        href: https://github.com/angel-colmenares/cvea-platform
   page-footer:
     left:
       - text: "© CVEA — Centro Venezolano de Estudios Actuariales"
     center:
       - text: "Investigación · Docencia · Extensión"
-    right:
-      - icon: github
-        href: https://github.com/angel-colmenares/cvea-platform

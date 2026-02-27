@@ -5,17 +5,15 @@ subtitle: "Eje de Investigación — Diagnóstico del sistema de pensiones y bas
 
 ## Plantilla de Libros y Materiales Docentes
 
-El **modelo para los libros del CVEA** es la plantilla **Quarto Book** basada en *Applied Machine Learning Using mlr3 in R*, ubicada en `Referencias/Plantilla_CVEA_Book_Applied Machine Learning Using mlr3 in R/book/`. Incluye partes, capítulos, PDF descargable, sidebar y búsqueda; ya está adaptada al CVEA (título, logo, pie de página).
+El **modelo para los libros del CVEA** es la plantilla **Quarto Book** basada en *Applied Machine Learning Using mlr3 in R*. Incluye partes, capítulos, PDF descargable, sidebar y búsqueda; ya está adaptada al CVEA (título, logo, pie de página).
 
-El libro **Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial** fue generado con esa plantilla y está compilado; se publica en la web colocando solo el HTML y el PDF en `libro/demografia-siglo-xxi/`. Ver más abajo la sección [Libro disponible](#libro-disponible) para el enlace "Ver en línea" y "Descargar PDF".
-
-Los libros y materiales docentes (diagnóstico del sistema de pensiones y bases técnicas) siguen el plan editorial 2025-2026; los capítulos se irán añadiendo usando la misma plantilla.
+El libro **Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial** fue generado con esa plantilla y está compilado. Los libros y materiales docentes (diagnóstico del sistema de pensiones y bases técnicas) siguen el plan editorial 2025-2026; los capítulos se irán añadiendo usando la misma plantilla.
 
 ## Presentación
 
 **Libros y Materiales Docentes** recopila el diagnóstico del sistema de pensiones venezolano y las bases técnicas actualizadas, en línea con la misión del CVEA de soberanía técnica y divulgación reproducible. Los volúmenes se dirigen a actuarios, reguladores (IVSS, Sudeaseg), académicos y decisores de política pública.
 
-**Objetivos:** (1) Documentar el desfase de las tablas históricas (Masjuán, CSO 1980) frente a la realidad demográfica actual; (2) ofrecer metodologías dinámicas y territorializadas (Lee-Carter, modelos espaciales); (3) proporcionar código y datos para replicación. La plantilla está en el repositorio: [Ver plantilla mlr3 (HTML)](https://github.com/angelucv/cvea/blob/main/Referencias/Plantilla_CVEA_Book_Applied%20Machine%20Learning%20Using%20mlr3%20in%20R/book/index.html).
+**Objetivos:** (1) Documentar el desfase de las tablas históricas (Masjuán, CSO 1980) frente a la realidad demográfica actual; (2) ofrecer metodologías dinámicas y territorializadas (Lee-Carter, modelos espaciales); (3) proporcionar código y datos para replicación.
 
 ## Libros base de los materiales docentes
 
@@ -25,10 +23,10 @@ Los materiales docentes del CVEA se apoyan en obras de referencia que recopilan 
 
 **Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial**
 
-Libro compilado con la plantilla CVEA Book. Si ya colocaste el HTML y el PDF en `libro/demografia-siglo-xxi/`, usa los enlaces siguientes:
+Libro compilado con la plantilla CVEA Book. Cuando el HTML y el PDF estén publicados en esta carpeta, estarán disponibles:
 
-- [Ver en línea (HTML)](demografia-siglo-xxi/index.html)
-- [Descargar PDF](demografia-siglo-xxi/Demografia-Mortalidad-Prevision-Social-Venezuela-Siglo-XXI.pdf)
+- **Ver en línea (HTML):** enlace a publicar cuando el build esté en `libro/demografia-siglo-xxi/` (ver [README](demografia-siglo-xxi/README.md)).
+- [Descargar PDF](demografia-siglo-xxi/Demografia-Mortalidad-Prevision-Social-Venezuela-Siglo-XXI.pdf) *(si el archivo existe en esa ruta).*
 
 *Si el PDF tiene otro nombre, edita este archivo y sustituye el nombre del enlace. Instrucciones en `libro/demografia-siglo-xxi/README.md`.*
 
