@@ -97,14 +97,14 @@ with tab2:
 
 with tab3:
     st.subheader("Prueba de estrés sobre patrimonio")
-    st.slider("Choque inflacionario (%)", -10.0, 10.0, float(choque_infl * 100), 0.5, key="stress_slider")
+    choque_central = st.slider("Choque inflacionario (%)", -10.0, 10.0, float(choque_infl * 100), 0.5, key="stress_slider") / 100
     # Métricas que reaccionan al choque
     base_ratio = 0.734
-    new_ratio = base_ratio * (1 + choque_infl * 0.5)
+    new_ratio = base_ratio * (1 + choque_central * 0.5)
     c1, c2, c3 = st.columns(3)
     c1.metric("Ratio IBNR/costos (base)", f"{base_ratio:.3f}", "—")
     c2.metric("Ratio IBNR/costos (post-choque)", f"{new_ratio:.3f}", f"{(new_ratio - base_ratio) / base_ratio * 100:+.1f}%")
-    c3.metric("Choque aplicado", f"{choque_infl * 100:+.1f}%", "—")
+    c3.metric("Choque aplicado", f"{choque_central * 100:+.1f}%", "—")
     # Fan chart simulado
     periods = 60
     rng = np.random.RandomState(77)
