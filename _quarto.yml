@@ -5,6 +5,7 @@ project:
   resources:
     - assets/articulos
     - Referencias/Recursos_HTML
+    - apps/cvea-suite-demos
   render:
     - index.qmd
     - el-cvea.qmd

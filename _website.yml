@@ -49,7 +49,19 @@ website:
       # Bloque B: Gestión y Vinculación
       - icon: cpu
         text: "CVEA Suite"
-        href: cvea-suite.qmd
+        menu:
+          - text: "Página CVEA Suite"
+            href: cvea-suite.qmd
+          - text: "Aplicativo Bank Suite"
+            href: cvea-suite.qmd#cvea-bank-suite
+          - text: "Aplicativo Insurance Suite"
+            href: cvea-suite.qmd#cvea-insurance-suite
+          - text: "Aplicativo Retail Suite"
+            href: cvea-suite.qmd#cvea-retail-suite
+          - text: "Aplicativo Health Suite"
+            href: cvea-suite.qmd#cvea-health-suite
+          - text: "Aplicativo Control Suite"
+            href: cvea-suite.qmd#cvea-control-suite-visión-general-y-industria
       - icon: file-earmark-text
         text: "RVEA"
         href: rvea/index.qmd
