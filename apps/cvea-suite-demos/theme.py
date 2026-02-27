@@ -104,14 +104,17 @@ body, .stApp {{
   padding: 0.3rem 0.9rem;
   border: 1px solid #cccccc;
   background-color: #f3f3f3;
-  color: #333333 !important;
+  color: #000000 !important;
   font-weight: 500;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }}
 
 .stTabs [role="tab"][aria-selected="true"] {{
   background-color: {CVEA_PRIMARY};
   color: #ffffff !important;
   border-color: {CVEA_PRIMARY};
+  border-bottom: none !important;
 }}
 </style>
 """,
