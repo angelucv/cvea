@@ -9,7 +9,7 @@ CVEA_LIGHT = "#f5f5f5"
 
 
 def apply_cvea_theme() -> None:
-    """Inyecta estilos básicos con la paleta CVEA y texto oscuro."""
+    """Inyecta estilos básicos con la paleta CVEA y texto oscuro (sin afectar la barra lateral)."""
     st.markdown(
         f"""
 <style>
@@ -24,13 +24,13 @@ body, .stApp {{
   color: #111111;
 }}
 
-/* Forzar texto oscuro en casi todos los elementos de Streamlit */
-.stApp, .stApp * {{
+/* Forzar texto oscuro en el área principal (contenedor central) */
+.block-container, .block-container * {{
   color: #111111 !important;
 }}
 
-/* Reaplicar color corporativo solo a enlaces */
-.stApp a, .stApp .stMarkdown a {{
+/* Reaplicar color corporativo solo a enlaces del área principal */
+.block-container a, .block-container .stMarkdown a {{
   color: var(--cvea-primary) !important;
 }}
 

@@ -48,14 +48,14 @@ El sector financiero venezolano opera hoy bajo un esquema bimonetario único, do
 
 ## 2. CVEA Insurance Suite
 
-El mercado asegurador venezolano se encuentra en una encrucijada financiera y técnica crítica. La adopción de la **NIIF 17** se ha convertido en una necesidad estratégica para el sector. El **CVEA Insurance Suite** es una cabina de mando actuarial y financiera que automatiza el control de primas, siniestros y el cálculo riguroso de reservas.
+El mercado asegurador venezolano se encuentra en una encrucijada financiera y técnica crítica. Las aseguradoras enfrentan el reto de reestructurar sus modelos operativos para proteger a sus clientes mientras mantienen su solvencia frente a la inflación de costos. El **CVEA Insurance Suite** es una cabina de mando actuarial y financiera que automatiza el control de primas, siniestros y el cálculo riguroso de reservas, alineada con las exigencias de la SUDEASEG.
 
 **Qué ofrece el aplicativo**
 
 - **Reservas y siniestralidad:** Tablas que muestran la evolución de los siniestros en el tiempo; posibilidad de elegir distintos métodos de proyección de reservas (incluyendo ajuste por inflación).
-- **Transición NIIF 17:** Diagrama que desglosa el puente contable: saldo inicial, nuevos negocios, cambios en supuestos, descuento financiero, ajustes por experiencia y liberación a resultados. Opciones de medición y de ajuste por riesgo.
-- **Simulador de estrés:** Gráficos que muestran el abanico de escenarios posibles de pagos futuros; se puede inyectar un choque inflacionario y ver cómo se actualizan las métricas al instante.
-- **Cumplimiento normativo:** Evaluación visual del nivel de cumplimiento en materia de legitimación de capitales (LC/FT), con indicadores de riesgo y alertas según la calificación.
+- **Visión general por ramos:** Panel de primas cobradas, siniestros pagados y siniestralidad promedio por ramo, con tacómetro de cumplimiento de metas técnicas.
+- **Ramos y productos:** Análisis de indicadores de siniestralidad por producto dentro de cada ramo (automóviles, salud, personas, patrimoniales, fianzas).
+- **Cumplimiento normativo y estrés:** Evaluación visual del nivel de cumplimiento en materia de legitimación de capitales (LC/FT) y simulaciones de estrés sobre patrimonio y reservas.
 
 [**Abrir CVEA Insurance Suite (CVEA-IS)**](#aplicativos){.btn .btn-primary}
 [**Abrir en nueva pestaña**](apps/cvea-suite-demos/index.html){target="_blank"}
