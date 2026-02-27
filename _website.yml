@@ -47,6 +47,9 @@ website:
         text: "Observatorio"
         href: observatorio.qmd
       # Bloque B: Gestión y Vinculación
+      - icon: cpu
+        text: "CVEA Suite"
+        href: cvea-suite.qmd
       - icon: file-earmark-text
         text: "RVEA"
         href: rvea/index.qmd

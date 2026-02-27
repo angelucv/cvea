@@ -181,6 +181,16 @@ include-in-header: assets/meta.html
     </a>
   </div>
   <div class="tile">
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=450&fit=crop" alt="CVEA Suite"/>
+    <a href="cvea-suite.qmd">
+      <div class="text">
+        <h1>CVEA Suite</h1>
+        <p class="animate-text">Plataforma modular: tecnología a medida y analítica de alto nivel para su operatividad.</p>
+        <div class="dots"><span></span><span></span><span></span></div>
+      </div>
+    </a>
+  </div>
+  <div class="tile">
     <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=450&fit=crop" alt="Actualidad"/>
     <a href="actualidad.qmd">
       <div class="text">
@@ -224,6 +234,7 @@ El **Centro Venezolano de Estudios Actuariales (CVEA)** se erige como un **Hub d
 - [**Investigación**](investigacion/index.qmd) — Libros, TFPG, RVEA, Model Hub
 - [**Docencia**](docencia/index.qmd) — Cursos, recursos, próximas ofertas
 - [**Extensión / Servicios**](servicios/index.qmd) — Consultoría, demos, observatorio
+- [**CVEA Suite**](cvea-suite.qmd) — Plataforma modular: tecnología a medida y analítica para su operatividad
 - [**Observatorio**](observatorio.qmd) — Variables biométricas, financieras y de previsión
 - [**Actualidad**](actualidad.qmd) — Noticias, eventos, Call for Papers
 - [**Contacto**](contacto.qmd) — Solicitudes y soporte

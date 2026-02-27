@@ -23,7 +23,9 @@ format:
         </style>
 ---
 
-El **eje de Extensión** del CVEA es el brazo ejecutor que vincula al centro con la industria mediante **consultoría estratégica**, **observatorio de variables** y **servicios al sector**. Transferencia tecnológica y aplicaciones directas de la investigación publicada en la RVEA y en los libros (mortalidad, reservas, riesgo territorial).
+El **eje de Extensión** del CVEA es el brazo ejecutor que vincula al centro con la industria mediante **consultoría estratégica**, **observatorio de variables**, **servicios al sector** y la oferta de **CVEA Suite**: plataforma modular de tecnología a medida y analítica de alto nivel para transformar la operatividad de su organización. Transferencia tecnológica y aplicaciones directas de la investigación publicada en la RVEA y en los libros (mortalidad, reservas, riesgo territorial).
+
+- **CVEA Suite:** Plataforma modular (ingesta de datos, motor de reglas y scoring, control financiero, Business Intelligence) para banca, seguros, salud, retail y más. [Conocer CVEA Suite](../cvea-suite.qmd).
 
 ## Consultoría estratégica — Portafolio
 

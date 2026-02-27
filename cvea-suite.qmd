@@ -1,0 +1,70 @@
+---
+title: "CVEA Suite"
+subtitle: "Transforme su operatividad con tecnología a medida y analítica de alto nivel"
+toc: true
+toc-depth: 2
+---
+
+Pasamos sus procesos manuales a ecosistemas digitales inteligentes. En el CVEA no solo desarrollamos software corporativo; le brindamos el **acompañamiento de un equipo técnico y actuarial de excelencia**. Entendemos su negocio desde la raíz, diseñamos algoritmos a medida y le entregamos el control total de sus operaciones y datos en tiempo real.
+
+## Más que un software: un ecosistema integral con acompañamiento experto
+
+Sabemos que cada industria —desde la banca y los seguros hasta el retail y la salud— enfrenta el desafío de procesar grandes volúmenes de datos, evaluar casos y tomar decisiones rápidas. **CVEA Suite** no es una herramienta genérica: es una **plataforma modular y paramétrica** que se adapta a su negocio mediante un ciclo completo de transformación:
+
+- **Levantamiento y reingeniería de procesos:** Nuestro equipo de especialistas se sumerge en su operativa diaria para identificar cuellos de botella, optimizar flujos de trabajo y definir las reglas de negocio críticas.
+
+- **Modelado analítico y scoring automático:** Aplicamos ciencia de datos y matemáticas actuariales para crear "motores de decisión" que evalúan el riesgo y priorizan sus transacciones automáticamente.
+
+- **Desarrollo tecnológico flexible:** Implementamos nuestra Suite adaptada a su identidad corporativa, con arquitectura web segura y accesible desde cualquier lugar.
+
+## Arquitectura del sistema: módulos configurables
+
+CVEA Suite está diseñada bajo una **arquitectura modular**. Usted puede implementar la suite completa o configurar únicamente los módulos que su organización requiere para escalar.
+
+### 1. Módulo Core de Ingesta y Gestión de Datos
+
+El corazón operativo de la plataforma.
+
+- **Carga masiva ágil:** Migre de hojas de cálculo dispersas a una base de datos centralizada. Importe volúmenes masivos de datos (Excel/CSV) en segundos con validación de errores.
+- **Gestión centralizada:** Registro de casos, transacciones o solicitudes individuales mediante formularios web dinámicos.
+- **Trazabilidad absoluta:** Historial de cambios, control de usuarios y seguimiento del estatus de cada gestión en tiempo real.
+
+### 2. Módulo de Motor de Reglas y Scoring (Decisión Automática)
+
+Inteligencia actuarial aplicada a sus procesos.
+
+- **Evaluación automatizada:** Clasificación inmediata de registros basada en sus propios criterios (scoring crediticio, nivel de riesgo en siniestros, triaje médico o calificación de proveedores).
+- **Asignación de prioridades:** Alertas visuales (Niveles Crítico, Alto, Medio, Bajo) para que su equipo atienda primero lo que genera mayor impacto o riesgo.
+- **Reglas parametrizables:** Ajuste los algoritmos de decisión a medida que cambian las políticas de su empresa, sin necesidad de reprogramar todo el sistema.
+
+### 3. Módulo de Control Financiero y Presupuestario
+
+Transparencia y control al centavo.
+
+- **Gestión multimoneda:** Registro de operaciones en moneda local y divisas, con conversión automática según tasas oficiales (ej. BCV).
+- **Control de presupuesto:** Monitoreo de partidas presupuestarias ejecutadas versus planificadas.
+- **Gestión de proveedores:** Seguimiento de pagos, facturación y liquidaciones a terceros (clínicas, proveedores, aliados comerciales).
+
+### 4. Módulo de Inteligencia de Negocios (Business Intelligence)
+
+De los datos operativos a las decisiones estratégicas.
+
+- **Dashboards interactivos:** Paneles de control gerenciales actualizados en tiempo real.
+- **Análisis de Pareto y tendencias:** Gráficos dinámicos para identificar visualmente dónde se concentra el mayor gasto o volumen operativo (top de especialidades, proveedores, sucursales).
+- **KPIs estratégicos:** Medición de eficiencia de su equipo, tiempos de respuesta y embudos de conversión o aprobación.
+
+## Sectores de aplicación: para quién es CVEA Suite
+
+La arquitectura modular de CVEA Suite es **100% adaptable** a los requerimientos técnicos de múltiples industrias:
+
+| Sector | Aplicaciones |
+|--------|----------------|
+| **Banca y finanzas** | Automatización de solicitudes de crédito, evaluación de riesgos y seguimiento de carteras. |
+| **Seguros** | Procesamiento ágil de siniestros, cálculo de primas, evaluación de pólizas y control de pagos a proveedores. |
+| **Salud** | Gestión de pacientes, priorización de ingresos (triaje inteligente) y administración de recursos médicos. |
+| **Retail y comercial** | Gestión de inventarios, evaluación de proveedores y análisis de rentabilidad por sucursal. |
+| **Responsabilidad Social (RSC) y ONGs** | Administración de fondos, priorización de ayudas sociales y control de presupuestos ejecutados. |
+
+---
+
+Para conocer más o solicitar una propuesta adaptada a su organización: [Contacto](contacto.qmd) · [Miembros](miembros.qmd).

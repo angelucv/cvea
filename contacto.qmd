@@ -9,6 +9,7 @@ Canales de atención del CVEA para **solicitudes de investigación**, **consulto
 ## Consultoría y asesoría
 
 - **Auditoría de reservas,** diseño técnico de productos, valuaciones de sostenibilidad fiscal y modelado actuarial (seguros, banca, previsión social).
+- **CVEA Suite:** propuestas de implementación de la plataforma modular (ingesta, scoring, control financiero, BI) para su organización. Ver [CVEA Suite](cvea-suite.qmd).
 - Solicitudes a través del Comité Editorial y del equipo de investigación. Perfiles y áreas de experticia en [Miembros](miembros.qmd).
 
 ## Investigación y TFPG

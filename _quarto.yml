@@ -7,6 +7,7 @@ project:
     - index.qmd
     - el-cvea.qmd
     - miembros.qmd
+    - cvea-suite.qmd
     - observatorio.qmd
     - actualidad.qmd
     - contacto.qmd
