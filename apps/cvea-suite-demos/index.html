@@ -17,13 +17,10 @@
 <body>
   <a class="back" href="../../cvea-suite.html">← Volver a CVEA Suite</a>
   <h1>Aplicativos interactivos CVEA Suite</h1>
-  <p>Los cinco demos (Bank, Insurance, Retail, Health, Control) se ejecutan en la aplicación siguiente. Use el menú lateral dentro del aplicativo para cambiar de módulo.</p>
-  <div class="iframe-wrap">
-    <!-- Para pruebas locales con `streamlit run Home.py`, la aplicación suele estar en http://localhost:8501 (u otro puerto que indique Streamlit). -->
-    <iframe src="http://localhost:8504" title="CVEA Suite Demos"></iframe>
-  </div>
-  <div class="fallback">
-    <strong>Si el aplicativo no carga:</strong> puede no estar desplegado en línea. Para ejecutarlo en su equipo, clone el repositorio del sitio, abra una terminal en la carpeta <code>apps/cvea-suite-demos</code> y ejecute: <code>pip install -r requirements.txt</code> y luego <code>streamlit run Home.py</code>.
-  </div>
+  <p>Redirigiendo al aplicativo en ejecución local...</p>
+  <script>
+    window.location.href = "http://localhost:8504/";
+  </script>
+  <p>Si no se abre automáticamente, haga clic <a href="http://localhost:8504/">aquí</a>.</p>
 </body>
 </html>

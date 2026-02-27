@@ -1,9 +1,9 @@
 import streamlit as st
 
 # Logos relativos a esta carpeta
-LOGO_HORIZONTAL_COLOR = "../../assets/logos/Logo-CVEA-horizontal-grande-letrascolor.png"
-LOGO_VERTICAL_WHITE = "../../assets/logos/Logo-CVEA-vertical-fondocolorletrasblancas.png"
-LOGO_VERTICAL_W = "../../assets/logos/Logo-CVEA-vertical-w.png"
+LOGO_HORIZONTAL_COLOR = "assets/logos/Logo-CVEA-horizontal-grande-letrascolor.png"
+LOGO_VERTICAL_WHITE = "assets/logos/Logo-CVEA-vertical-fondocolorletrasblancas.png"
+LOGO_VERTICAL_W = "assets/logos/Logo-CVEA-vertical-w.png"
 
 CVEA_PRIMARY = "#38666A"
 CVEA_DARK = "#1e3d40"

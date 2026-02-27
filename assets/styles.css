@@ -197,6 +197,11 @@ header#title-block-header.quarto-title-block.default {
   text-decoration: underline;
 }
 
+/* Botones primarios: texto siempre blanco para mejor contraste */
+.btn.btn-primary {
+  color: #ffffff !important;
+}
+
 /* Objetivos con iconos: enlaces que mantienen layout (icono + texto al lado) */
 .achievements a.work-link {
   display: flex;
