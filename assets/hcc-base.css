@@ -1422,45 +1422,45 @@ display: grid;
 
 
 .user-container .card:nth-child(1) {
-  background: url("members_images/giorgiocoppola.jpg") no-repeat;
+  background: transparent none;
   background-size: 400px 400px;
   background-position: center;
 }
 
 .user-container .card:nth-child(2) {
-  background: url("members_images/tushiagarwal.jpeg") no-repeat;
+  background: transparent none;
   background-size: 400px 400px;
   background-position: center;
 }
 
 .user-container .card:nth-child(3) {
-  background: url("members_images/issacjohn.jpg") no-repeat;
+  background: transparent none;
   background-size: 350px 450px;
   background-position: center;
 }
 
 .user-container .card:nth-child(4) {
-  background: url("Presentation/images/lukas.jpeg") no-repeat;
+  background: transparent none;
   background-size: 400px 400px;
   background-position: center;
 }
 .card:nth-child(5) {
-  background: url("Presentation/images/lukas.jpeg") no-repeat;
+  background: transparent none;
   background-size: 400px 400px;
   background-position: center;
 }
 .card:nth-child(6) {
-  background: url("Presentation/images/lukas.jpeg") no-repeat;
+  background: transparent none;
   background-size: 400px 400px;
   background-position: center;
 }
 .user-container .card:nth-child(7) {
-  background: url("Presentation/images/lukas.jpeg") no-repeat;
+  background: transparent none;
   background-size: 400px 400px;
   background-position: center;
 }
 .user-container .card:nth-child(8) {
-  background: url("Presentation/images/lukas.jpeg") no-repeat;
+  background: transparent none;
   background-size: 400px 400px;
   background-position: center;
 }
@@ -1479,78 +1479,78 @@ display: grid;
 
 
 .user-container #gayatrishejwal.card_team {
-  background: url("members/team/team/gayatri_shejwal/gayatrishejwal.jpg") no-repeat;
+  background: transparent none;
   background-size: 300px 400px;
   background-position: center;
 }
 
 .user-container #huydang.card_team {
-  background: url("members/team/team/huy_dang/huydang.png") no-repeat;
+  background: transparent none;
   background-size: 300px 400px;
   background-position: center;
 }
 
 .user-container #simonmunzert.card_team {
-  background: url("members/team/team/simon_munzert/simonmunzert.jpg") no-repeat;
+  background: transparent none;
   background-size: 300px 400px;
   background-position: center;
 }
 
 .user-container #jorgeroa.card_team {
-  background: url("members/team/team/jorge_roa/jorgeroa.jpeg") no-repeat;
+  background: transparent none;
   background-size: 320px 350px;
   background-position: center;
 }
 
 .user-container #lukaswarode.card_team {
-  background: url("members/team/team/lukas_warode/lukas.jpeg") no-repeat;
+  background: transparent none;
   background-size: 340px 360px;
   background-position: center;
 }
 
 .user-container #rodrigodornelles.card_team {
-  background: url("members/team/team/rodrigo_dornelles/rodrigo.jpg") no-repeat;
+  background: transparent none;
   background-size: 400px 400px;
   background-position: center;
 }
 
 .user-container #carmengarro.card_team {
-  background: url("members/team/team/carmen_garro/carmen.jpeg") no-repeat;
+  background: transparent none;
   background-size: 350px 350px;
   background-position: center;
 }
 
 .user-container #valeriagracia.card_team {
-  background: url("members/team/team/valeria_gracia/valeriagracia.jpg") no-repeat;
+  background: transparent none;
   background-size: 350px 450px;
   background-position: center;
 }
 
 .user-container #davidgaribay.card_team {
-  background: url("members/team/team/david_garibay/davidgaribay.png") no-repeat;
+  background: transparent none;
   background-size: 350px 450px;
   background-position: center;
 }
 
 .user-container #gabrielzech.card_team {
-  background: url("members/team/team/gabriel_zech/gabriel.jpg") no-repeat;
+  background: transparent none;
   background-size: 320px 460px;
   background-position: center;
 }
 .user-container #lukaslehmann.card_team {
-  background: url("members/team/team/lukas_lehmann/lukaslehmann.jpeg") no-repeat;
+  background: transparent none;
   background-size: 400px 400px;
   background-position: center;
 }
 
 .user-container #aayransalman.card_team {
-  background: url("members/staff/staff/aayran_salman/aayransalman.jpeg") no-repeat;
+  background: transparent none;
   background-size:300px 500px;
   background-position: center;
 }
 
 .user-container #ridhimasingh.card_team {
-  background: url("members/staff/staff/ridhima_singh/ridhimasingh.jpeg") no-repeat;
+  background: transparent none;
   background-size:400px 400px;
   background-position: center;
 }
@@ -1939,7 +1939,7 @@ code span.dv {
 
 #listing-books .card-left:before{
     content: '';
-    background:url('images/hcc_logo_card.png');
+    background:transparent;
     background-size:cover;
     position:absolute;
     width: 100px;
@@ -1963,7 +1963,7 @@ code span.dv {
 
 .card-left:before{
     content: '';
-    background:url('images/hcc_logo_card.png');
+    background:transparent;
     background-size:cover;
     position:absolute;
     width: 100px;
@@ -1996,7 +1996,7 @@ code span.dv {
 
 .image-right:before {
     content: '';
-    background:url('images/hcc_logo_card.png');
+    background:transparent;
     background-size:cover;
     position:absolute;
     width: 100px;
@@ -2027,7 +2027,7 @@ code span.dv {
 
 #learn-r .image-right:before {
     content: '';
-    background:url('images/hcc_logo_card.png');
+    background:transparent;
     background-size:cover;
     position:absolute;
     width: 100px;
@@ -2056,7 +2056,7 @@ code span.dv {
 
 .card-left:before {
     content: '';
-    background:url('images/hcc_logo_card.png');
+    background:transparent;
     background-size:cover;
     position:absolute;
     width: 100px;
@@ -3034,7 +3034,8 @@ figcaption {
    margin-top: -150px;
    height:1000px;
    opacity:.9;
-   background-image:url('images/brandenburg.jpg');
+   background-image:none;
+   background-color: var(--cvea-teal, #38666A);
    background-size:cover;
    background-position:bottom;
    position: relative;
