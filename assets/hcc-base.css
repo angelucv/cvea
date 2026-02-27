@@ -3821,16 +3821,16 @@ background: repeating-radial-gradient(circle at bottom left, #fedc00 0%, #fedc00
 .wrap
 {
   margin: 20px auto 0 auto;
-  width: 80%;
+  width: 90%;
   display:flex;
   align-items:space-around;
-  max-width:1500px;
+  max-width:1800px;
 }
 .tile
 {
-  width:380px;
-  height:450px;
-  margin:10px;
+  width:420px;
+  height:520px;
+  margin:15px;
   background-color:#99aeff;
   border-radius:15px;
   display:inline-block;
