@@ -88,7 +88,7 @@ body, .stApp {{
   margin-bottom: 0.5rem;
   padding: 0.25rem 0.75rem;
   background-color: #38666A;
-  color: white !important;
+  color: #ffffff !important;
   border-radius: 4px;
   text-decoration: none;
   font-size: 0.85rem;
