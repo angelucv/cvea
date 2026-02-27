@@ -1,7 +1,7 @@
 import streamlit as st
 
-# Logo local del CVEA (ruta relativa desde esta carpeta)
-LOGO_URL = "../../assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png"
+# Logo horizontal principal (letras negras) relativo a esta carpeta
+LOGO_URL = "../../assets/logos/Logo-CVEA-horizontal-grande-letrasnegras.png"
 
 CVEA_PRIMARY = "#38666A"
 CVEA_DARK = "#1e3d40"
@@ -9,7 +9,7 @@ CVEA_LIGHT = "#f5f5f5"
 
 
 def apply_cvea_theme() -> None:
-    """Inyecta estilos básicos con la paleta CVEA."""
+    """Inyecta estilos básicos con la paleta CVEA y texto oscuro."""
     st.markdown(
         f"""
 <style>
@@ -19,17 +19,19 @@ def apply_cvea_theme() -> None:
   --cvea-light: {CVEA_LIGHT};
 }}
 
-body {{
+body, .stApp {{
   background-color: white;
   color: #111111;
 }}
 
-.stApp {{
-  background-color: white;
+/* Forzar texto oscuro en casi todos los elementos de Streamlit */
+.stApp, .stApp * {{
+  color: #111111 !important;
 }}
 
-a, .stMarkdown a {{
-  color: var(--cvea-primary);
+/* Reaplicar color corporativo solo a enlaces */
+.stApp a, .stApp .stMarkdown a {{
+  color: var(--cvea-primary) !important;
 }}
 
 .stButton>button {{
@@ -45,20 +47,20 @@ a, .stMarkdown a {{
 }}
 
 .stMetric-label {{
-  color: var(--cvea-dark);
+  color: var(--cvea-dark) !important;
   font-weight: 600;
 }}
 
 .cvea-header-title {{
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--cvea-dark);
+  color: var(--cvea-dark) !important;
   margin-bottom: 0.15rem;
 }}
 
 .cvea-header-subtitle {{
   font-size: 0.95rem;
-  color: #444444;
+  color: #444444 !important;
 }}
 </style>
 """,
