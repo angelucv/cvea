@@ -15,9 +15,7 @@ Para responder a esta necesidad nace la **CVEA Suite**, un ecosistema tecnológi
 
 **Analítica Avanzada y Predictiva:** El cerebro actuarial y estadístico. Módulos especializados que aplican modelos matemáticos complejos, inteligencia artificial y simulaciones estocásticas (pruebas de estrés, modelos de supervivencia, proyecciones de demanda) para generar escenarios futuros que retroalimentan y blindan la estrategia del negocio.
 
-A continuación se presenta la propuesta de valor comercial y el diseño técnico de los **demos interactivos** para cinco ecosistemas fundamentales: **Banca**, **Seguros**, **Retail**, **Salud**, y una suite de **Control General** adaptada a las complejidades de la cadena de suministro e industria.
-
-Los demos están implementados en **Streamlit (Python)** con datos simulados. Para ejecutarlos en local: `cd apps/cvea-suite-demos && pip install -r requirements.txt && streamlit run Home.py`
+A continuación se presenta la propuesta de valor y los **demos interactivos** para cinco ecosistemas: **Banca**, **Seguros**, **Retail**, **Salud** y **Control General** (cadena de suministro e industria).
 
 ---
 
@@ -27,15 +25,15 @@ Los demos están implementados en **Streamlit (Python)** con datos simulados. Pa
 
 El sector financiero venezolano opera hoy bajo un esquema bimonetario único, donde la agilidad en el manejo de liquidez y la mitigación del riesgo crediticio son vitales. El **CVEA Bank Suite** es una plataforma integral que permite a las instituciones bancarias, de microfinanzas y casas de bolsa evaluar la salud de su cartera y el valor de sus activos en tiempo real. Desde la automatización de la captura de datos de sus servidores hasta la predicción de impagos mediante inteligencia artificial, el sistema protege el patrimonio de la entidad frente a volatilidades cambiarias y asegura el cumplimiento de los estándares internacionales de riesgo.
 
-**Demo interactivo (Streamlit)**
+**Qué ofrece el demo**
 
-El demo web simula un entorno de "Credit & Market Risk Desk" alineado con la normativa NIIF 9 y las exigencias de liquidez de SUDEBAN.
+El demo permite explorar un escritorio de riesgo crediticio y de mercado, alineado con normativa internacional y exigencias de liquidez.
 
-- **Datos simulados:** Cartera de 10.000 créditos (score crediticio, ingreso, monto, tasa, días de mora, PD); series temporales bimonetarias (tasas pasivas/activas, liquidez).
-- **Controles:** Choque macroeconómico (slider), vista Moneda Nacional / Moneda Extranjera.
-- **Pestañas:** (1) Visión general — métricas de liquidez, solvencia, morosidad, intermediación; evolución de fondeo (captaciones vs cartera). (2) Riesgo de crédito NIIF 9 — diagrama Sankey de migración Stage 1 → 2 → 3; scatter Score vs PD por estrato de ingreso; editor de LGD y cálculo de ECL = EAD × PD × LGD. (3) Riesgo de mercado y tesorería — velas japonesas (índice/bonos), mapa de calor de correlaciones entre carteras.
+- **Visión general:** Indicadores de liquidez, solvencia, morosidad e intermediación; evolución de captaciones y cartera a lo largo del tiempo.
+- **Riesgo de crédito:** Visualización del flujo de la cartera entre estados de riesgo (normal, riesgo significativo, impago); relación entre puntuación crediticia y probabilidad de incumplimiento; ajuste de parámetros y cálculo de la pérdida esperada.
+- **Riesgo de mercado y tesorería:** Gráficos de evolución de índices o bonos; mapa de correlaciones entre distintas carteras de inversión.
 
-[**Abrir demo Bank Suite**](apps/cvea-suite-demos/) *(ejecutar localmente: ver instrucciones al inicio de esta página)*
+[**Abrir demo Bank Suite**](apps/cvea-suite-demos/)
 
 ---
 
@@ -45,15 +43,14 @@ El demo web simula un entorno de "Credit & Market Risk Desk" alineado con la nor
 
 El mercado asegurador venezolano se encuentra en una encrucijada financiera y técnica crítica. La adopción de la **NIIF 17** se ha convertido en una necesidad estratégica para el sector. Las aseguradoras enfrentan el reto de reestructurar sus modelos operativos para proteger a sus clientes mientras mantienen su solvencia frente a la inflación de costos. El **CVEA Insurance Suite** es una cabina de mando actuarial y financiera que automatiza el control de primas, siniestros y el cálculo riguroso de reservas. Desde la evaluación histórica de pólizas hasta proyecciones estocásticas a décadas, este sistema asegura que su patrimonio esté blindado y garantiza una transición fluida y auditable hacia los nuevos estándares contables internacionales.
 
-**Demo interactivo (Streamlit)**
+**Qué ofrece el demo**
 
-- **Datos simulados:** Triángulos de desarrollo (run-off) de siniestros pagados a 10 años; vectores de inflación histórica; indicadores de riesgo normativo.
-- **Óptica 1 — Reservas y siniestralidad histórica:** Tabla con estilización tipo mapa de calor para triángulos de siniestros; selector de modelo: Chain Ladder, Bornhuetter-Ferguson, Chain Ladder ajustado por inflación (IACL).
-- **Óptica 2 — Motor NIIF 17:** Diagrama de cascada (waterfall): Saldo inicial → Nuevos negocios → Cambios en supuestos → Descuento financiero → Ajustes de experiencia → Liberación a P&L. Selector BBA/GMM o PAA; ajuste de Risk Adjustment (Costo de capital / VaR).
-- **Óptica 3 — Simulador de estrés inflacionario:** Gráficos de abanico (fan charts) con intervalos 75% y 95%; slider de choque inflacionario (−10% a +10%); métricas que se recalculan en tiempo real.
-- **Óptica 4 — Cumplimiento LC/FT (SUDEASEG):** Gráficos de radar (riesgo bajo/medio/alto); alertas visuales según calificación simulada.
+- **Reservas y siniestralidad:** Tablas que muestran la evolución de los siniestros en el tiempo; posibilidad de elegir distintos métodos de proyección de reservas (incluyendo ajuste por inflación).
+- **Transición NIIF 17:** Diagrama que desglosa el puente contable: saldo inicial, nuevos negocios, cambios en supuestos, descuento financiero, ajustes por experiencia y liberación a resultados. Opciones de medición y de ajuste por riesgo.
+- **Simulador de estrés:** Gráficos que muestran el abanico de escenarios posibles de pagos futuros; se puede inyectar un choque inflacionario y ver cómo se actualizan las métricas al instante.
+- **Cumplimiento normativo:** Evaluación visual del nivel de cumplimiento en materia de legitimación de capitales (LC/FT), con indicadores de riesgo y alertas según la calificación.
 
-[**Abrir demo Insurance Suite**](apps/cvea-suite-demos/) *(misma app multi-página; seleccionar Insurance en el menú)*
+[**Abrir demo Insurance Suite**](apps/cvea-suite-demos/)
 
 ---
 
@@ -63,15 +60,14 @@ El mercado asegurador venezolano se encuentra en una encrucijada financiera y t�
 
 El sector de consumo masivo en Venezuela está experimentando un notable renacimiento (crecimiento del 8,4%, más de 17,7 millones de unidades semanales). La gestión comercial se enfrenta a un sistema bimonetario y a un consumidor que en un 87% utiliza ahorros para financiar compras. En este escenario, **predecir la demanda y fijar el precio correcto** es la diferencia entre el éxito y el fracaso. El **CVEA Retail Suite** es una cabina de inteligencia comercial que captura en tiempo real las ventas de sus sucursales y emplea analítica basada en evidencia para identificar relaciones entre margen, volumen y rotación. Es su radar interactivo para maximizar la rentabilidad, optimizar inventarios y entender el comportamiento multimoneda de sus clientes.
 
-**Demo interactivo (Streamlit)**
+**Qué ofrece el demo**
 
-- **Datos simulados:** Más de 50.000 tickets (id_ticket, fecha, SKU, categoría, marca Tradicional/Genérica, precio Bs/USD, tasas de cambio, volumen, método de pago: Divisas/Bs/Cripto).
-- **Óptica 1 — Inteligencia comercial:** Métricas de volumen semanal, ticket promedio multimoneda, índice de confianza del consumidor; treemap de participación (ej. 61% marcas tradicionales) con drill-down por motivo (Calidad, Costumbre, Precio-Calidad). Filtros por región y formato de tienda.
-- **Óptica 2 — Elasticidad y precios multimoneda:** Curva de demanda (precio vs tasa de cambio); sliders para costo importado y tipos de cambio; aviso si se incumplen restricciones de arbitraje.
-- **Óptica 3 — Inventario y canastas:** Sankey o red de afinidades (reglas de asociación, ej. Harina → Margarina); controles de soporte mínimo y confianza (Apriori).
-- **Óptica 4 — Análisis exploratorio (Self-Service BI):** Integración de PyGWalker para arrastrar y soltar variables y construir tablas pivote y gráficos al vuelo.
+- **Inteligencia comercial:** Indicadores de volumen de ventas, ticket promedio en distintas monedas e índice de confianza del consumidor; visualización de la participación de mercado por categoría y tipo de marca (tradicional vs genérica), con filtros por región y tipo de tienda.
+- **Precios y elasticidad:** Curva de demanda según precio y tipo de cambio; posibilidad de simular cambios en costos importados y en tasas de cambio para ver el impacto en las ventas, con avisos cuando los precios salen de rangos sostenibles.
+- **Inventario y canastas:** Red de afinidades entre productos (qué se compra junto con qué), para apoyar decisiones de surtido y promociones.
+- **Análisis a la medida:** Herramienta de exploración donde el usuario puede cruzar variables (forma de pago, categoría, hora, etc.) y construir sus propias tablas y gráficos sin programar.
 
-[**Abrir demo Retail Suite**](apps/cvea-suite-demos/) *(seleccionar Retail en el menú)*
+[**Abrir demo Retail Suite**](apps/cvea-suite-demos/)
 
 ---
 
@@ -81,15 +77,14 @@ El sector de consumo masivo en Venezuela está experimentando un notable renacim
 
 El sector salud en Venezuela enfrenta presiones sin precedentes: mayor demanda, prevalencia de enfermedades crónicas y alta variabilidad en costos médicos. Fondos autoadministrados y empresas de medicina prepagada —reguladas por SUDEASEG— necesitan garantizar calidad sin comprometer viabilidad financiera. El **CVEA Health Suite** transforma su institución en una "Smart Health Organization": consolida estadísticas de morbilidad y siniestralidad, audita facturas clínicas contra baremos en tiempo real e incorpora modelos que calculan la solvencia de reservas técnicas de salud. Es la herramienta para contener el gasto, modernizar la tarificación (incluyendo telemedicina) y proteger el patrimonio frente a la hiperinflación biomédica.
 
-**Demo interactivo (Streamlit)**
+**Qué ofrece el demo**
 
-- **Datos simulados:** Más de 20.000 siniestros (id_paciente, código CIE-10, tipo_servicio, clínica, costo_facturado_usd, límite_baremo_usd, fecha_admisión).
-- **Óptica 1 — Monitoreo epidemiológico:** KPIs (tasa de admisión, prevalencia ENT, índice telemedicina vs presencial); mapas de densidad de siniestros y rendimiento de prestadores.
-- **Óptica 2 — Auditoría clínica:** Dispersión y diagramas de violín del costo por procedimiento vs baremo; gráficos de control (Shewhart); slider de sensibilidad de auditoría (Isolation Forest) con celdas en rojo para desviaciones.
-- **Óptica 3 — Solvencia y reservas:** Gráficos de área con simulación Monte Carlo del patrimonio a 5 años (teoría de la ruina); inputs de inflación médica vs general.
-- **Óptica 4 — Tarificación y modalidades:** Embudo de rentabilidad (tradicional vs asistencia domiciliaria y telemedicina); simulador de primas (coaseguro, deducible, tope) y comprobación de margen de suficiencia (SAA-01-0505-2024).
+- **Monitoreo epidemiológico:** Indicadores de admisión, prevalencia de enfermedades no transmisibles y uso de telemedicina frente a atención presencial; mapas que muestran la distribución geográfica de los siniestros y el rendimiento de la red de prestadores.
+- **Auditoría clínica:** Comparación del costo facturado por procedimiento frente a los baremos acordados; gráficos de control para detectar desviaciones; ajuste del nivel de sensibilidad de la auditoría para resaltar los casos que requieren revisión manual.
+- **Solvencia y reservas:** Proyección del patrimonio del fondo a varios años mediante simulaciones; posibilidad de introducir inflación médica e inflación general por separado para ver el impacto en las reservas.
+- **Tarificación y modalidades:** Comparación de la rentabilidad entre atención tradicional, asistencia domiciliaria y telemedicina; simulador de primas donde se pueden ajustar coaseguro, deducible y tope de cobertura, y comprobar si se cumple el margen de suficiencia exigido por la normativa.
 
-[**Abrir demo Health Suite**](apps/cvea-suite-demos/) *(seleccionar Health en el menú)*
+[**Abrir demo Health Suite**](apps/cvea-suite-demos/)
 
 ---
 
@@ -99,15 +94,14 @@ El sector salud en Venezuela enfrenta presiones sin precedentes: mayor demanda, 
 
 El tejido productivo venezolano abarca logística, agroindustria y manufactura, con retos que van desde la volatilidad en el abastecimiento de combustible hasta la optimización de flotas e inventarios en tiempo real. El **CVEA Control Suite** es la plataforma camaleónica e integrable: una torre de control (Control Tower) que permite desde el levantamiento a medida de datos operativos en planta o en la carretera hasta tableros directivos predictivos. Con ella se puede monitorear el desempeño de rutas logísticas, contener costos ocultos de distribución y aplicar modelos que optimizan el rendimiento de maquinarias y pronostican fallas antes de detener la producción. Es la solución para dotar de resiliencia y agilidad a la cadena de suministro.
 
-**Demo interactivo (Streamlit)**
+**Qué ofrece el demo**
 
-- **Datos simulados:** Más de 10.000 registros logísticos/industriales (id_vehículo/máquina, coordenadas GPS, consumo combustible, km recorridos, estado operativo, tiempo_ciclo_producción, costo_operativo_usd).
-- **Óptica 1 — Cadena de suministro y flotas:** KPIs (costo por km, rendimiento combustible, OTIF); mapa con arcos (centros de distribución → entregas) y dispersión de flota (PyDeck). Slider de variabilidad de combustible.
-- **Óptica 2 — Eficiencia industrial y mantenimiento predictivo:** Gauge de OEE; heatmap de fallas por zona/turno; curva de supervivencia (Weibull/Kaplan-Meier) — probabilidad de falla a 30 días; botón para simular orden de mantenimiento preventivo.
-- **Óptica 3 — Sostenibilidad y gastos operativos:** Diagrama de cascada del presupuesto (diesel, peajes, mantenimiento, depreciación → margen operativo neto); selector de fechas y escenarios de sobrecostos.
-- **Óptica 4 — Análisis exploratorio:** PyGWalker para cruzar variables (estado_operativo, tiempo_ciclo_producción, etc.) sin programación.
+- **Cadena de suministro y flotas:** Indicadores de costo por kilómetro, rendimiento de combustible y entregas a tiempo (OTIF); mapa con la ubicación de la flota y las rutas entre centros de distribución y puntos de entrega; posibilidad de simular variaciones en el precio o la disponibilidad del combustible.
+- **Eficiencia industrial y mantenimiento:** Medidor de la efectividad global de los equipos (OEE); mapa de calor de fallas por zona de la planta o turno; curva que muestra la probabilidad de falla de un equipo en los próximos 30 días y opción de simular una orden de mantenimiento preventivo.
+- **Sostenibilidad y gastos:** Diagrama que desglosa el presupuesto operativo (combustible, peajes, mantenimiento, depreciación) hasta el margen operativo neto; selector de periodos y escenarios de sobrecostos.
+- **Análisis a la medida:** Exploración libre de los datos: cruce de estado de las máquinas, tiempos de ciclo, costos y otras variables para detectar ineficiencias sin necesidad de programar.
 
-[**Abrir demo Control Suite**](apps/cvea-suite-demos/) *(seleccionar Control en el menú)*
+[**Abrir demo Control Suite**](apps/cvea-suite-demos/)
 
 ---
 
