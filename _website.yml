@@ -52,15 +52,15 @@ website:
         menu:
           - text: "Página CVEA Suite"
             href: cvea-suite.qmd
-          - text: "Aplicativo Bank Suite"
+          - text: "CVEA Bank Suite (CVEA-BS)"
             href: cvea-suite.qmd#cvea-bank-suite
-          - text: "Aplicativo Insurance Suite"
+          - text: "CVEA Insurance Suite (CVEA-IS)"
             href: cvea-suite.qmd#cvea-insurance-suite
-          - text: "Aplicativo Retail Suite"
+          - text: "CVEA Retail Suite (CVEA-RS)"
             href: cvea-suite.qmd#cvea-retail-suite
-          - text: "Aplicativo Health Suite"
+          - text: "CVEA Health Suite (CVEA-HS)"
             href: cvea-suite.qmd#cvea-health-suite
-          - text: "Aplicativo Control Suite"
+          - text: "CVEA Control Suite (CVEA-CS)"
             href: cvea-suite.qmd#cvea-control-suite-visión-general-y-industria
       - icon: file-earmark-text
         text: "RVEA"

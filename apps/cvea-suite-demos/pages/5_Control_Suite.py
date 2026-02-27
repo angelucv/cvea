@@ -4,10 +4,13 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+from theme import cvea_header
 
-st.set_page_config(page_title="CVEA Control Suite", page_icon="⚙️", layout="wide")
-st.title("CVEA Control Suite")
-st.caption("Cadena de suministro, mantenimiento predictivo, gastos operativos y análisis exploratorio — Datos simulados")
+st.set_page_config(page_title="CVEA Control Suite (CVEA-CS)", page_icon="⚙️", layout="wide")
+cvea_header(
+    "CVEA Control Suite (CVEA-CS)",
+    "Cadena de suministro, mantenimiento predictivo, gastos operativos y análisis exploratorio — Datos simulados",
+)
 
 @st.cache_data
 def get_logistics_data(n=12_000):

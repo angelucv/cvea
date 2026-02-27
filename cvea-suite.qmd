@@ -24,7 +24,7 @@ Los cinco módulos (Bank, Insurance, Retail, Health, Control) se ejecutan en una
 :::
 
 <div id="aplicativos" class="iframe-wrap" style="margin: 1.5rem 0; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
-<iframe src="https://cvea-suite-demos-angelucv.streamlit.app" title="CVEA Suite Demos" style="width:100%; height:750px; border:none;"></iframe>
+<iframe src="http://localhost:8501" title="CVEA Suite Demos" style="width:100%; height:750px; border:none;"></iframe>
 </div>
 
 *Reemplace la URL del iframe en el código fuente por la de su app desplegada en Streamlit Cloud cuando esté disponible.*
@@ -41,7 +41,7 @@ El sector financiero venezolano opera hoy bajo un esquema bimonetario único, do
 - **Riesgo de crédito:** Visualización del flujo de la cartera entre estados de riesgo (normal, riesgo significativo, impago); relación entre puntuación crediticia y probabilidad de incumplimiento; ajuste de parámetros y cálculo de la pérdida esperada.
 - **Riesgo de mercado y tesorería:** Gráficos de evolución de índices o bonos; mapa de correlaciones entre distintas carteras de inversión.
 
-[**Abrir aplicativo Bank Suite**](#aplicativos){.btn .btn-primary}
+[**Abrir CVEA Bank Suite (CVEA-BS)**](#aplicativos){.btn .btn-primary}
 [**Abrir en nueva pestaña**](apps/cvea-suite-demos/index.html){target="_blank"}
 
 ---
@@ -57,7 +57,7 @@ El mercado asegurador venezolano se encuentra en una encrucijada financiera y t�
 - **Simulador de estrés:** Gráficos que muestran el abanico de escenarios posibles de pagos futuros; se puede inyectar un choque inflacionario y ver cómo se actualizan las métricas al instante.
 - **Cumplimiento normativo:** Evaluación visual del nivel de cumplimiento en materia de legitimación de capitales (LC/FT), con indicadores de riesgo y alertas según la calificación.
 
-[**Abrir aplicativo Insurance Suite**](#aplicativos){.btn .btn-primary}
+[**Abrir CVEA Insurance Suite (CVEA-IS)**](#aplicativos){.btn .btn-primary}
 [**Abrir en nueva pestaña**](apps/cvea-suite-demos/index.html){target="_blank"}
 
 ---
@@ -73,7 +73,7 @@ El sector de consumo masivo en Venezuela está experimentando un notable renacim
 - **Inventario y canastas:** Red de afinidades entre productos (qué se compra junto con qué), para apoyar decisiones de surtido y promociones.
 - **Análisis a la medida:** Herramienta de exploración donde el usuario puede cruzar variables (forma de pago, categoría, hora, etc.) y construir sus propias tablas y gráficos sin programar.
 
-[**Abrir aplicativo Retail Suite**](#aplicativos){.btn .btn-primary}
+[**Abrir CVEA Retail Suite (CVEA-RS)**](#aplicativos){.btn .btn-primary}
 [**Abrir en nueva pestaña**](apps/cvea-suite-demos/index.html){target="_blank"}
 
 ---
@@ -89,7 +89,7 @@ El sector salud en Venezuela enfrenta mayor demanda, prevalencia de enfermedades
 - **Solvencia y reservas:** Proyección del patrimonio del fondo a varios años mediante simulaciones; posibilidad de introducir inflación médica e inflación general por separado para ver el impacto en las reservas.
 - **Tarificación y modalidades:** Comparación de la rentabilidad entre atención tradicional, asistencia domiciliaria y telemedicina; simulador de primas donde se pueden ajustar coaseguro, deducible y tope de cobertura, y comprobar si se cumple el margen de suficiencia exigido por la normativa.
 
-[**Abrir aplicativo Health Suite**](#aplicativos){.btn .btn-primary}
+[**Abrir CVEA Health Suite (CVEA-HS)**](#aplicativos){.btn .btn-primary}
 [**Abrir en nueva pestaña**](apps/cvea-suite-demos/index.html){target="_blank"}
 
 ---
@@ -105,7 +105,7 @@ El tejido productivo venezolano abarca logística, agroindustria y manufactura, 
 - **Sostenibilidad y gastos:** Diagrama que desglosa el presupuesto operativo (combustible, peajes, mantenimiento, depreciación) hasta el margen operativo neto; selector de periodos y escenarios de sobrecostos.
 - **Análisis a la medida:** Exploración libre de los datos: cruce de estado de las máquinas, tiempos de ciclo, costos y otras variables para detectar ineficiencias sin necesidad de programar.
 
-[**Abrir aplicativo Control Suite**](#aplicativos){.btn .btn-primary}
+[**Abrir CVEA Control Suite (CVEA-CS)**](#aplicativos){.btn .btn-primary}
 [**Abrir en nueva pestaña**](apps/cvea-suite-demos/index.html){target="_blank"}
 
 ---

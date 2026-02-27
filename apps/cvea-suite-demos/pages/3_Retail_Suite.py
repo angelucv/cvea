@@ -4,10 +4,13 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 import plotly.graph_objects as go
+from theme import cvea_header
 
-st.set_page_config(page_title="CVEA Retail Suite", page_icon="🛒", layout="wide")
-st.title("CVEA Retail Suite")
-st.caption("Inteligencia comercial, elasticidad de precios, canastas y Self-Service BI — Datos simulados")
+st.set_page_config(page_title="CVEA Retail Suite (CVEA-RS)", page_icon="🛒", layout="wide")
+cvea_header(
+    "CVEA Retail Suite (CVEA-RS)",
+    "Inteligencia comercial, elasticidad de precios, canastas y Self-Service BI — Datos simulados",
+)
 
 @st.cache_data
 def get_transactions(n=55_000):

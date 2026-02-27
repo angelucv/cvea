@@ -2,6 +2,7 @@
 # Ejecutar: streamlit run Home.py
 
 import streamlit as st
+from theme import cvea_header
 
 st.set_page_config(
     page_title="CVEA Suite Demos",
@@ -10,11 +11,10 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-st.title("CVEA Suite — Demos interactivos")
-st.markdown("""
-Ecosistema tecnológico integral del **Centro Venezolano de Estudios Actuariales (CVEA)** para actuarios, 
-estadísticos y tomadores de decisiones. Los demos utilizan **datos simulados** con fines pedagógicos y de demostración.
-""")
+cvea_header(
+    "CVEA Suite — Demos interactivos",
+    "Aplicativos demostrativos con datos simulados para banca, seguros, retail, salud e industria.",
+)
 
 st.subheader("Demos por sector")
 st.markdown("""
