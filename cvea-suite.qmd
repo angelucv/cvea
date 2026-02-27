@@ -1,5 +1,5 @@
 ---
-title: "CVEA Suite"
+title: "CVEA Suite: Solución Tecnológica a la Medida"
 subtitle: "Transforme su operatividad con tecnología a medida y analítica de alto nivel"
 toc: true
 toc-depth: 2
@@ -15,7 +15,7 @@ Para responder a esta necesidad nace la **CVEA Suite**, un ecosistema tecnológi
 
 **Analítica Avanzada y Predictiva:** El cerebro actuarial y estadístico. Módulos especializados que aplican modelos matemáticos complejos, inteligencia artificial y simulaciones estocásticas (pruebas de estrés, modelos de supervivencia, proyecciones de demanda) para generar escenarios futuros que retroalimentan y blindan la estrategia del negocio.
 
-## CVEA Suite: Solución Tecnológica a la Medida
+## Demos interactivos por sector
 
 A continuación se presenta la propuesta de valor y los **demos interactivos** para cinco ecosistemas: **Banca**, **Seguros**, **Retail**, **Salud** y **Control General** (cadena de suministro e industria).
 
@@ -31,7 +31,7 @@ El sector financiero venezolano opera hoy bajo un esquema bimonetario único, do
 - **Riesgo de crédito:** Visualización del flujo de la cartera entre estados de riesgo (normal, riesgo significativo, impago); relación entre puntuación crediticia y probabilidad de incumplimiento; ajuste de parámetros y cálculo de la pérdida esperada.
 - **Riesgo de mercado y tesorería:** Gráficos de evolución de índices o bonos; mapa de correlaciones entre distintas carteras de inversión.
 
-[**Abrir CVEA Bank Suite (CVEA-BS)**](http://localhost:8504/){.btn .btn-primary}
+[**Abrir CVEA Bank Suite (CVEA-BS)**](https://cvea-suite-demos.streamlit.app/){.btn .btn-primary target="_blank"}
 
 ---
 
@@ -46,7 +46,7 @@ El mercado asegurador venezolano se encuentra en una encrucijada financiera y t�
 - **Ramos y productos:** Análisis de indicadores de siniestralidad por producto dentro de cada ramo (automóviles, salud, personas, patrimoniales, fianzas).
 - **Cumplimiento normativo y estrés:** Evaluación visual del nivel de cumplimiento en materia de legitimación de capitales (LC/FT) y simulaciones de estrés sobre patrimonio y reservas.
 
-[**Abrir CVEA Insurance Suite (CVEA-IS)**](http://localhost:8504/){.btn .btn-primary}
+[**Abrir CVEA Insurance Suite (CVEA-IS)**](https://cvea-suite-demos.streamlit.app/Insurance_Suite){.btn .btn-primary target="_blank"}
 
 ---
 
@@ -61,7 +61,7 @@ El sector de consumo masivo en Venezuela está experimentando un notable renacim
 - **Inventario y canastas:** Red de afinidades entre productos (qué se compra junto con qué), para apoyar decisiones de surtido y promociones.
 - **Análisis a la medida:** Herramienta de exploración donde el usuario puede cruzar variables (forma de pago, categoría, hora, etc.) y construir sus propias tablas y gráficos sin programar.
 
-[**Abrir CVEA Retail Suite (CVEA-RS)**](http://localhost:8504/){.btn .btn-primary}
+[**Abrir CVEA Retail Suite (CVEA-RS)**](https://cvea-suite-demos.streamlit.app/Retail_Suite){.btn .btn-primary target="_blank"}
 
 ---
 
@@ -76,7 +76,7 @@ El sector salud en Venezuela enfrenta mayor demanda, prevalencia de enfermedades
 - **Solvencia y reservas:** Proyección del patrimonio del fondo a varios años mediante simulaciones; posibilidad de introducir inflación médica e inflación general por separado para ver el impacto en las reservas.
 - **Tarificación y modalidades:** Comparación de la rentabilidad entre atención tradicional, asistencia domiciliaria y telemedicina; simulador de primas donde se pueden ajustar coaseguro, deducible y tope de cobertura, y comprobar si se cumple el margen de suficiencia exigido por la normativa.
 
-[**Abrir CVEA Health Suite (CVEA-HS)**](http://localhost:8504/){.btn .btn-primary}
+[**Abrir CVEA Health Suite (CVEA-HS)**](https://cvea-suite-demos.streamlit.app/Health_Suite){.btn .btn-primary target="_blank"}
 
 ---
 
@@ -91,7 +91,7 @@ El tejido productivo venezolano abarca logística, agroindustria y manufactura, 
 - **Sostenibilidad y gastos:** Diagrama que desglosa el presupuesto operativo (combustible, peajes, mantenimiento, depreciación) hasta el margen operativo neto; selector de periodos y escenarios de sobrecostos.
 - **Análisis a la medida:** Exploración libre de los datos: cruce de estado de las máquinas, tiempos de ciclo, costos y otras variables para detectar ineficiencias sin necesidad de programar.
 
-[**Abrir CVEA Control Suite (CVEA-CS)**](http://localhost:8504/){.btn .btn-primary}
+[**Abrir CVEA Control Suite (CVEA-CS)**](https://cvea-suite-demos.streamlit.app/Control_Suite){.btn .btn-primary target="_blank"}
 
 ---
 
