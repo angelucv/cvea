@@ -1,9 +1,13 @@
 import streamlit as st
+from pathlib import Path
 
-# Logos relativos a esta carpeta
-LOGO_HORIZONTAL_COLOR = "assets/logos/Logo-CVEA-horizontal-grande-letrascolor.png"
-LOGO_VERTICAL_WHITE = "assets/logos/Logo-CVEA-vertical-fondocolorletrasblancas.png"
-LOGO_VERTICAL_W = "assets/logos/Logo-CVEA-vertical-w.png"
+# Directorio raíz del proyecto (dos niveles arriba de esta carpeta)
+ROOT = Path(__file__).resolve().parents[2]
+
+# Logos con ruta absoluta, independiente del directorio donde se ejecute streamlit
+LOGO_HORIZONTAL_COLOR = str(ROOT / "assets" / "logos" / "Logo-CVEA-horizontal-grande-letrascolor.png")
+LOGO_VERTICAL_WHITE = str(ROOT / "assets" / "logos" / "Logo-CVEA-vertical-fondocolorletrasblancas.png")
+LOGO_VERTICAL_W = str(ROOT / "assets" / "logos" / "Logo-CVEA-vertical-w.png")
 
 CVEA_PRIMARY = "#38666A"
 CVEA_DARK = "#1e3d40"
