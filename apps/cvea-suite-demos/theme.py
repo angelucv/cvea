@@ -93,6 +93,26 @@ body, .stApp {{
   text-decoration: none;
   font-size: 0.85rem;
 }}
+
+/* Estilo de pestañas tipo "pastillas" para st.tabs */
+.stTabs [role="tablist"] {{
+  gap: 0.5rem;
+}}
+
+.stTabs [role="tab"] {{
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  border: 1px solid #cccccc;
+  background-color: #f3f3f3;
+  color: #333333 !important;
+  font-weight: 500;
+}}
+
+.stTabs [role="tab"][aria-selected="true"] {{
+  background-color: {CVEA_PRIMARY};
+  color: #ffffff !important;
+  border-color: {CVEA_PRIMARY};
+}}
 </style>
 """,
         unsafe_allow_html=True,
