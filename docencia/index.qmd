@@ -53,7 +53,7 @@ Hemos estructurado nuestros programas en módulos especializados y progresivos. 
 - **Eficiencia y Escalabilidad:** Aprende a superar los límites de las hojas de cálculo tradicionales procesando millones de registros en segundos.
 - **Proyectos Aplicados:** Casos de estudio reales: desde la predicción de abandono de clientes (churn) hasta la tarificación de pólizas de seguros.
 
-Los cursos están orientados inicialmente a **programación en software libre** para los diversos sectores: **banca, seguros y pensiones**.
+Los cursos están orientados inicialmente a **programación en software libre** para los diversos sectores: **banca, seguros y pensiones**. Se dictan en la **plataforma Moodle**, referente en enseñanza en línea; el acceso a inscripciones y materiales está en el enlace [Plataforma de cursos (Moodle)](https://cvea.gnomio.com/){target="_blank"}.
 
 ## Formación continua
 
@@ -64,6 +64,14 @@ Ficha técnica, programa, objetivos e inscripción del curso orientado a actuari
 [**Ir al curso Series de Tiempo con Python**](series-tiempo/index.qmd)
 
 **Recurso complementario:** [Series de tiempo y actores del mercado (HTML)](../Referencias/Recursos_HTML/Series-de-tiempo-Actores.html) — Análisis dinámico de actores y series temporales.
+
+### Plataforma de cursos (Moodle) {#plataforma}
+
+Los cursos del CVEA se dictan en **Moodle**, la plataforma líder de cursos en línea de código abierto, utilizada por universidades e instituciones en todo el mundo. Inscripciones, materiales y seguimiento están disponibles en nuestra aula virtual.
+
+[**Acceso a la plataforma de cursos (Moodle)**](https://cvea.gnomio.com/){target="_blank"}
+
+Para más detalles sobre la implementación (infraestructura y guías): [Plataforma de cursos CVEA — guía](plataforma-cursos/index.qmd).
 
 ### Próximas ofertas {#proximas}
 
