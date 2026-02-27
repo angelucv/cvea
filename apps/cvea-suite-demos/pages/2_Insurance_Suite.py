@@ -1,4 +1,4 @@
-# CVEA Insurance Suite — Reservas, NIIF 17, Estrés, Cumplimiento
+# CVEA Insurance Suite — Reservas, siniestralidad, cumplimiento
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -9,7 +9,7 @@ from theme import cvea_header
 st.set_page_config(page_title="CVEA Insurance Suite (CVEA-IS)", page_icon="🛡️", layout="wide")
 cvea_header(
     "CVEA Insurance Suite (CVEA-IS)",
-    "Reservas, NIIF 17, estrés inflacionario y cumplimiento LC/FT — Datos simulados",
+    "Reservas técnicas, siniestralidad por ramo y cumplimiento LC/FT — Datos simulados",
 )
 
 @st.cache_data
@@ -56,13 +56,77 @@ infl_vec = get_inflation_vector()
 
 st.sidebar.header("Controles")
 modelo_reserva = st.sidebar.radio("Modelo de proyección IBNR", ["Chain Ladder", "Bornhuetter-Ferguson", "Chain Ladder Ajustado por Inflación (IACL)"], index=0)
-medicion_niff17 = st.sidebar.selectbox("Modelo de medición NIIF 17", ["BBA (Bloques de Construcción / GMM)", "PAA (Asignación de Primas)"], index=0)
-risk_adj = st.sidebar.selectbox("Ajuste por riesgo no financiero", ["Costo de capital", "Valor en Riesgo (VaR)"], index=0)
 choque_infl = st.sidebar.slider("Choque inflacionario exógeno (%)", -10.0, 10.0, 0.0, 0.5) / 100
 
-tab1, tab2, tab3, tab4 = st.tabs(["Reservas y siniestralidad histórica", "Motor NIIF 17", "Simulador de estrés inflacionario", "Cumplimiento LC/FT"])
+tab1, tab2, tab3, tab4 = st.tabs(
+    [
+        "Visión general",
+        "Monitoreo de reservas (SUDEASEG)",
+        "Ramos y productos",
+        "Cumplimiento y estrés",
+    ]
+)
 
 with tab1:
+    st.subheader("Visión general — primas y siniestralidad por ramo")
+    ramos = ["Automóviles", "Salud", "Personas", "Patrimoniales", "Fianzas"]
+    rng_vis = np.random.default_rng(123)
+    primas = rng_vis.uniform(1e6, 5e6, len(ramos))
+    siniestros = primas * rng_vis.uniform(0.4, 0.9, len(ramos))
+    df_vs = pd.DataFrame({"Ramo": ramos, "Primas_cobradas": primas, "Siniestros_pagados": siniestros})
+    df_vs["Siniestralidad"] = df_vs["Siniestros_pagados"] / df_vs["Primas_cobradas"]
+
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Primas totales (USD)", f"{df_vs['Primas_cobradas'].sum():,.0f}")
+    c2.metric("Siniestros totales (USD)", f"{df_vs['Siniestros_pagados'].sum():,.0f}")
+    c3.metric("Siniestralidad promedio", f"{df_vs['Siniestralidad'].mean():.1%}")
+    c4.metric("Número de ramos", f"{len(ramos)}")
+
+    st.subheader("Primas cobradas por ramo")
+    fig_primas = px.bar(df_vs, x="Ramo", y="Primas_cobradas", title="Primas cobradas por ramo")
+    st.plotly_chart(fig_primas, use_container_width=True)
+
+    st.subheader("Siniestralidad por ramo")
+    fig_sin = px.bar(df_vs, x="Ramo", y="Siniestralidad", text="Siniestralidad", range_y=[0, 1])
+    fig_sin.update_traces(texttemplate="%{text:.1%}", textposition="outside")
+    fig_sin.update_layout(title="Siniestralidad por ramo")
+    st.plotly_chart(fig_sin, use_container_width=True)
+
+    meta_sin = st.sidebar.slider("Meta de siniestralidad técnica (%)", 30.0, 90.0, 65.0, 1.0) / 100
+    sin_prom = float(df_vs["Siniestralidad"].mean())
+    fig_g = go.Figure(
+        go.Indicator(
+            mode="gauge+number",
+            value=sin_prom * 100,
+            number={"suffix": "%"},
+            gauge={
+                "axis": {"range": [0, 100]},
+                "bar": {"color": "#38666A"},
+                "steps": [
+                    {"range": [0, meta_sin * 100], "color": "#d9ead3"},
+                    {"range": [meta_sin * 100, 100], "color": "#f4cccc"},
+                ],
+                "threshold": {"line": {"color": "red", "width": 4}, "value": meta_sin * 100},
+            },
+            title={"text": "Siniestralidad promedio vs meta"},
+        )
+    )
+    st.plotly_chart(fig_g, use_container_width=True)
+
+with tab2:
+    st.subheader("Monitoreo de reservas — marco SUDEASEG")
+    reservas = [
+        ("Reserva de riesgos en curso", "Cobertura de la parte no devengada de las primas."),
+        ("Reserva de siniestros reportados", "Siniestros ocurridos y reportados, pendientes de pago."),
+        ("Reserva IBNR", "Siniestros ocurridos y no reportados."),
+        ("Reserva de desviación de siniestralidad", "Suavizar volatilidad de la siniestralidad futura."),
+        ("Reserva catastrófica", "Eventos de baja frecuencia y alta severidad."),
+        ("Reserva matemática de vida", "Compromisos de largo plazo en seguros de vida."),
+        ("Reserva de previsión", "Otras contingencias y ajustes prudenciales."),
+    ]
+    df_res = pd.DataFrame(reservas, columns=["Reserva", "Descripción resumida"])
+    st.table(df_res)
+
     st.subheader("Triángulo de desarrollo de siniestros (pagados)")
     tri_display = triangle_raw.copy()
     tri_display = tri_display.style.background_gradient(axis=None, cmap="YlOrRd")
@@ -81,24 +145,48 @@ with tab1:
     ibnr = tri_proj.sum().sum() - triangle_raw.sum().sum()
     st.metric("Reserva IBNR proyectada (simulada)", f"{max(0, ibnr):,.0f}", f"Modelo: {modelo_reserva}")
 
-with tab2:
-    st.subheader("Puente contable NIIF 17 (Waterfall)")
-    # Valores simulados para el waterfall
-    opening = 1_200_000
-    new_business = 180_000
-    change_supuestos = -45_000
-    unwinds = 30_000
-    exp_adj = -20_000
-    release_pl = 85_000
-    closing = opening + new_business + change_supuestos + unwinds + exp_adj + release_pl
-    x = ["Saldo inicial", "Nuevos negocios", "Cambios supuestos", "Descuento fin.", "Ajuste experiencia", "Liberación P&L", "Cierre"]
-    y = [opening, new_business, change_supuestos, unwinds, exp_adj, release_pl, closing]
-    colors = ["blue" if v >= 0 else "red" for v in y]
-    fig_w = go.Figure(go.Bar(x=x, y=y, marker_color=colors, text=[f"{v:,.0f}" for v in y], textposition="outside"))
-    fig_w.update_layout(title=f"Enfoque: {medicion_niff17} · Risk Adj: {risk_adj}", yaxis_title="Monto", height=400)
-    st.plotly_chart(fig_w, use_container_width=True)
-
 with tab3:
+    st.subheader("Ramos y productos — indicadores de siniestralidad")
+    ramos = ["Automóviles", "Salud", "Personas", "Patrimoniales", "Fianzas"]
+    productos = {
+        "Automóviles": ["Auto individual", "Flotas empresariales", "Taxis"],
+        "Salud": ["Plan individual", "Plan colectivo", "Ambulatorio"],
+        "Personas": ["Vida riesgo", "Accidentes personales", "Vida colectivo"],
+        "Patrimoniales": ["Incendio", "Robo", "RC General"],
+        "Fianzas": ["Fiel cumplimiento", "Anticipo", "Laboral"],
+    }
+    filas = []
+    rng_det = np.random.default_rng(456)
+    for ramo in ramos:
+        for prod in productos[ramo]:
+            prima = rng_det.uniform(100_000, 900_000)
+            sin_pago = prima * rng_det.uniform(0.3, 0.95)
+            filas.append(
+                {
+                    "Ramo": ramo,
+                    "Producto": prod,
+                    "Primas": prima,
+                    "Siniestros_pagados": sin_pago,
+                    "Siniestralidad": sin_pago / prima,
+                }
+            )
+    df_prod = pd.DataFrame(filas)
+
+    ramo_sel = st.selectbox("Ramo", ramos)
+    df_sel = df_prod[df_prod["Ramo"] == ramo_sel]
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Primas (ramo)", f"{df_sel['Primas'].sum():,.0f}")
+    c2.metric("Siniestros (ramo)", f"{df_sel['Siniestros_pagados'].sum():,.0f}")
+    c3.metric("Siniestralidad media", f"{df_sel['Siniestralidad'].mean():.1%}")
+    c4.metric("Nº productos", f"{df_sel['Producto'].nunique()}")
+
+    fig_prod = px.bar(df_sel, x="Producto", y="Siniestralidad", text="Siniestralidad", range_y=[0, 1])
+    fig_prod.update_traces(texttemplate="%{text:.1%}", textposition="outside")
+    fig_prod.update_layout(title=f"Siniestralidad por producto — {ramo_sel}")
+    st.plotly_chart(fig_prod, use_container_width=True)
+
+with tab4:
+    st.subheader("Cumplimiento SUDEASEG y prueba de estrés")
     st.subheader("Prueba de estrés sobre patrimonio")
     choque_central = st.slider("Choque inflacionario (%)", -10.0, 10.0, float(choque_infl * 100), 0.5, key="stress_slider") / 100
     # Métricas que reaccionan al choque

@@ -76,6 +76,8 @@ def get_correlation_matrix():
 st.sidebar.header("Controles globales")
 choque_macro = st.sidebar.slider("Choque macroeconómico (% impacto inflación/devaluación)", -15.0, 15.0, 0.0, 0.5) / 100
 moneda = st.sidebar.selectbox("Vista", ["Moneda Nacional (MN)", "Moneda Extranjera (ME)"], index=1)
+meta_liquidez = st.sidebar.slider("Meta de liquidez regulatoria (%)", 10.0, 60.0, 30.0, 0.5) / 100
+meta_solvencia = st.sidebar.slider("Meta de solvencia interna (%)", 10.0, 40.0, 15.0, 0.5) / 100
 
 df_cred = get_credit_portfolio()
 series = get_series_bimonetarias()
@@ -89,12 +91,64 @@ intermed_sim = 0.65 * (1 - choque_macro * 0.3)
 tab1, tab2, tab3 = st.tabs(["Visión general", "Riesgo de crédito (NIIF 9)", "Riesgo de mercado y tesorería"])
 
 with tab1:
-    st.subheader("Panel de indicadores")
+    st.subheader("Visión 360 — panel de indicadores")
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("Liquidez", f"{liquidez_actual:.2%}", f"{choque_macro*100:+.1f}% choque")
     c2.metric("Solvencia", f"{solvencia_sim:.2%}", "—")
     c3.metric("Índice de morosidad", f"{morosidad_sim:.2%}", "—")
     c4.metric("Nivel intermediación financiera", f"{intermed_sim:.1%}", "—")
+
+    # Tacómetros de cumplimiento de metas
+    col_g1, col_g2 = st.columns(2)
+    with col_g1:
+        cumplimiento_liq = min(liquidez_actual / meta_liquidez if meta_liquidez > 0 else 0, 2.0)
+        fig_g1 = go.Figure(
+            go.Indicator(
+                mode="gauge+number",
+                value=liquidez_actual * 100,
+                number={"suffix": "%"},
+                gauge={
+                    "axis": {"range": [0, meta_liquidez * 200]},
+                    "bar": {"color": "#38666A"},
+                    "steps": [
+                        {"range": [0, meta_liquidez * 100], "color": "#f4cccc"},
+                        {"range": [meta_liquidez * 100, meta_liquidez * 150], "color": "#ffe599"},
+                        {"range": [meta_liquidez * 150, meta_liquidez * 200], "color": "#d9ead3"},
+                    ],
+                    "threshold": {
+                        "line": {"color": "red", "width": 4},
+                        "value": meta_liquidez * 100,
+                    },
+                },
+                title={"text": "Liquidez vs meta"},
+            )
+        )
+        st.plotly_chart(fig_g1, use_container_width=True)
+
+    with col_g2:
+        fig_g2 = go.Figure(
+            go.Indicator(
+                mode="gauge+number",
+                value=solvencia_sim * 100,
+                number={"suffix": "%"},
+                gauge={
+                    "axis": {"range": [0, meta_solvencia * 200]},
+                    "bar": {"color": "#38666A"},
+                    "steps": [
+                        {"range": [0, meta_solvencia * 100], "color": "#f4cccc"},
+                        {"range": [meta_solvencia * 100, meta_solvencia * 150], "color": "#ffe599"},
+                        {"range": [meta_solvencia * 150, meta_solvencia * 200], "color": "#d9ead3"},
+                    ],
+                    "threshold": {
+                        "line": {"color": "red", "width": 4},
+                        "value": meta_solvencia * 100,
+                    },
+                },
+                title={"text": "Solvencia vs meta interna"},
+            )
+        )
+        st.plotly_chart(fig_g2, use_container_width=True)
+
     st.subheader("Evolución del fondeo (últimos 12 meses)")
     fig_fondo = go.Figure()
     fig_fondo.add_trace(go.Scatter(x=series["fecha"], y=series["captaciones_mn"], name="Captaciones", line=dict(color="blue")))
