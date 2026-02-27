@@ -8,7 +8,7 @@ format:
     toc-title: ""
     code-link: true
     link-external-newwindow: true
-    embed-resources: true
+    embed-resources: false
     include-in-header:
       - assets/doodle-head.html
       - assets/mathjax-config.html

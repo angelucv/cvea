@@ -1,6 +1,7 @@
 # Orquestador global — modelo HCC (https://github.com/jurjoroa/hcc-website)
 project:
   type: website
+  output-dir: _site
   resources:
     - assets/articulos
     - Referencias/Recursos_HTML
@@ -17,6 +18,10 @@ project:
     - libro
     - docencia
     - servicios
+
+format:
+  html:
+    embed-resources: false
 
 metadata-files:
   - _website.yml
