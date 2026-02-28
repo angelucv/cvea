@@ -1,120 +1,160 @@
 ---
 title: "Revista Venezolana de Actuariado (RVEA)"
-subtitle: "Eje de Investigación"
-listing:
-  type: table
-  contents:
-    - vol1-colmenares.qmd
-    - vol1-moreno-arlet.qmd
-    - vol1-moreno.qmd
-    - vol1-azuaje.qmd
-    - vol2-herrera.qmd
-  fields: [title, author, date]
+subtitle: "Publicación arbitrada del CVEA"
+page-layout: custom
+title-block-banner: false
 format:
   html:
+    toc: false
     include-in-header:
       text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
         <style>
-        .quarto-listing-table,
-        .quarto-listing-table th,
-        .quarto-listing-table td { background: #38666A !important; color: white !important; border-color: rgba(255,255,255,0.3) !important; }
-        .quarto-listing-table a { color: white !important; text-decoration: underline; }
-        .rvea-tabla-articulos table { width: 100%; }
-        .rvea-tabla-articulos table th,
-        .rvea-tabla-articulos table td { background: #38666A !important; color: white !important; border: 1px solid rgba(255,255,255,0.3); }
-        .rvea-tabla-articulos table a { color: white !important; }
-        a.btn-portal { display: inline-block; background: #38666A; color: white !important; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 500; }
-        a.btn-portal:hover { background: #2a4f52; color: white !important; }
+        .hero-rvea { min-height: 58vh !important; padding-top: 100px; }
+        .rvea-hero-logo { max-width: 85%; height: auto; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2)); display: block; }
+        .rvea-hero-title { color: #fff !important; font-size: clamp(2rem, 6vw, 3.5rem) !important; margin-bottom: 0.25rem !important; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+        .hero-rvea .rvea-hero-rvea { color: #fff !important; font-size: clamp(2rem, 6vw, 3.5rem) !important; margin: 0.2rem 0 !important; font-weight: 700; letter-spacing: 0.08em; text-shadow: 0 2px 8px rgba(0,0,0,0.2); line-height: 1.2; display: block; }
+        .rvea-hero-rotate { color: #fff !important; font-size: clamp(1.4rem, 4vw, 2rem) !important; font-weight: 600; margin: 0.75rem 0; min-height: 1.4em; }
+        .rvea-hero-rotate .txt-rotate .wrap { border-right-color: rgba(255,255,255,0.9); }
+        .rvea-hero-cta { margin-top: 1.25rem !important; }
+        .rvea-hero-cta .btn-21 { text-decoration: none; color: #fff !important; width: auto !important; min-width: 280px; height: auto !important; padding: 14px 28px !important; font-size: clamp(1.15rem, 2.5vw, 1.5rem) !important; font-weight: 600; }
+        .rvea-hero-cta .btn-21 span { padding: 0.3em 0.5em !important; color: #fff !important; }
+        .rvea-card { background: #f8f9fa; border-radius: 12px; padding: 1.25rem; margin: 1rem 0; border-left: 4px solid #38666A; }
+        .rvea-card h3 { margin-top: 0; color: #38666A; }
+        .rvea-card .btn-art { display: inline-block; margin: 0.25rem 0.25rem 0 0; padding: 0.4rem 0.9rem; background: #38666A; color: white !important; border-radius: 6px; text-decoration: none; font-size: 0.95rem; }
+        .rvea-card .btn-art:hover { background: #2a4f52; color: white !important; }
+        .rvea-section { margin: 2.5rem 0; }
         </style>
 ---
 
-La **Revista Venezolana de Actuariado (RVEA)** es la publicación arbitrada del CVEA. Publica trabajos originales en ciencias actuariales, estadística y disciplinas afines, con un enfoque global que abarca teoría, metodología y aplicaciones en contextos nacionales e internacionales. Cada manuscrito incluye código reproducible (R/Python/Julia) y está disponible en formato web y, cuando aplique, en PDF.
+```{=html}
+<!-- Hero RVEA: presentación con fondo animado -->
+<div class="hero-cvea intro_f cvea-intro hero-rvea">
+  <div class="hero-doodle-bg" aria-hidden="true">
+    <css-doodle>
+      <style>
+        @grid: 20x1 / 100vmax;
+        :container { perspective: 22vmin; }
+        background: @m(
+          @r(180, 220),
+          radial-gradient(
+            @p(#38666A, #4a7d82, #2d5054, #5a9a9e, #1e3d40, #6bb5b9) 15%,
+            transparent 45%
+          ) @r(100%) @r(100%) / @r(1%, 4%) @lr no-repeat
+        );
+        @size: 50%;
+        @place-cell: center;
+        border-radius: 50%;
+        transform-style: preserve-3d;
+        animation: scale-up 24s linear infinite;
+        animation-delay: calc(@i * -.4s);
+        @keyframes scale-up {
+          0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0); }
+          15% { opacity: 0.85; }
+          90% { transform: translate3d(0, 0, @r(45vmin, 55vmin)) rotate(@r(-360deg, 360deg)); }
+          100% { opacity: 0; transform: translate3d(0, 0, 1vmin); }
+        }
+      </style>
+    </css-doodle>
+  </div>
+  <div class="hero-cvea-content">
+    <img src="../assets/logos/Logo-CVEA-horizontal-grande-letrasblancas.png" alt="CVEA" class="animate__animated animate__fadeInDown rvea-hero-logo">
+    <h1 class="animate__animated animate__fadeInDown rvea-hero-title">Revista Venezolana de Actuariado</h1>
+    <div class="animate__animated animate__fadeIn rvea-hero-rvea">RVEA</div>
+    <p class="rvea-hero-rotate animate__animated animate__fadeIn" id="rvea-rotate-wrap"><span class="txt-rotate" id="rvea-txt-rotate"></span></p>
+    <div class="rvea-hero-cta">
+      <a href="articulos.qmd" class="btn-21 animate__animated animate__zoomIn"><span>Publicación arbitrada del CVEA</span></a>
+    </div>
+  </div>
+</div>
+<script>
+(function() {
+  var words = ["Investigación", "Docencia", "Extensión", "Mortalidad", "Pensiones", "Seguros", "Modelado", "Reservas", "Publicaciones", "Demografía", "Riesgos", "Tarificación", "Formación", "Consultoría", "Banca"];
+  var el = document.getElementById("rvea-txt-rotate");
+  if (el) {
+    el.setAttribute("data-period", "2000");
+    el.setAttribute("data-rotate", JSON.stringify(words));
+  }
+})();
+</script>
+<script src="../assets/js/text.js"></script>
 
-**Alcance:** la RVEA mantiene una visión amplia y plural; acoge contribuciones en modelización de riesgos, solvencia, pensiones, tarificación, seguros, matemáticas financieras y actuariales, proyecciones demográficas, metodologías reproducibles y temas emergentes del sector. Se priorizan estudios que aporten datos, código y replicabilidad.
+<!-- Tiles de acceso -->
+<p style="text-align:center; margin-top: 2rem;"><strong>Accesos rápidos</strong></p>
+<div class="wrap">
+  <div class="tile">
+    <img src="../assets/img/home-rvea.jpeg" alt="Artículos"/>
+    <a href="articulos.qmd">
+      <div class="text">
+        <h1>Artículos</h1>
+        <p class="animate-text">Leer los manuscritos por volumen. HTML y PDF disponibles.</p>
+        <div class="dots"><span></span><span></span><span></span></div>
+      </div>
+    </a>
+  </div>
+  <div class="tile">
+    <img src="../assets/img/home-libros.jpeg" alt="Portal RVEA"/>
+    <a href="portal.qmd">
+      <div class="text">
+        <h1>Portal RVEA</h1>
+        <p class="animate-text">Plan de publicación de los tres volúmenes y control editorial.</p>
+        <div class="dots"><span></span><span></span><span></span></div>
+      </div>
+    </a>
+  </div>
+  <div class="tile">
+    <img src="../assets/img/home-cursos.jpeg" alt="Sobre la revista"/>
+    <a href="#sobre">
+      <div class="text">
+        <h1>Sobre la revista</h1>
+        <p class="animate-text">Alcance, modelo I-RL-M-R-D y cómo publicar en la RVEA.</p>
+        <div class="dots"><span></span><span></span><span></span></div>
+      </div>
+    </a>
+  </div>
+</div>
+```
 
-::: {.callout-tip}
-## Acceso al Portal RVEA
-Control editorial de volúmenes y artículos, estado de manuscritos y enlace al repositorio de la revista: [**Acceso al Portal RVEA**](portal.qmd){.btn-portal .btn}
+::: {.rvea-section #sobre}
+## Sobre la revista
+
+La **Revista Venezolana de Actuariado (RVEA)** es la publicación arbitrada del CVEA. Publica trabajos originales en ciencias actuariales, estadística y disciplinas afines, con enfoque en teoría, metodología y aplicaciones. Cada manuscrito incluye código reproducible (R/Python/Julia) y está disponible en formato web y PDF.
+
+**Alcance:** modelización de riesgos, solvencia, pensiones, tarificación, seguros, matemáticas financieras y actuariales, proyecciones demográficas y temas emergentes del sector. Se priorizan estudios con datos, código y replicabilidad.
+
+**Modelo editorial I-RL-M-R-D:** Introducción → Revisión literaria → Métodos → Resultados → Discusión. Referencias en APA y plantilla Quarto disponible (ver [Portal RVEA](portal.qmd)).
 :::
 
-## Modelo de artículo: I-RL-M-R-D {#modelo-editorial}
+::: {.rvea-section}
+## Artículos disponibles
 
-Los manuscritos de la RVEA siguen la estructura **I-RL-M-R-D**:
+Los siguientes manuscritos están publicados y pueden leerse en línea o descargarse en PDF.
 
-| Sigla | Sección | Contenido |
-|------|---------|-----------|
-| **I** | Introducción | Contexto, problema, vacío de conocimiento, objetivo y contribución. |
-| **RL** | Revisión literaria | Síntesis analítica (no cronológica), metodología de la revisión, conclusión que justifica los métodos. |
-| **M** | Métodos | Diseño, fuentes de datos, modelización, entorno computacional y código fuente. |
-| **R** | Resultados | Presentación objetiva y secuencial; figuras y tablas con leyendas y referenciación cruzada. |
-| **D** | Discusión | Interpretación, implicaciones, limitaciones y conclusiones. |
+::: {.rvea-card}
+**Análisis espacio-temporal de la mortalidad en Venezuela (1996-2016)**  
+*Angel Colmenares* — Riesgo Bayesiano BYM/INLA, autocorrelación espacial, SMR y clusters a nivel municipal.
 
-Se exige **reproducibilidad**: código (R, Python, Julia) y datos en repositorio público; referencias en formato APA (`references.bib` + `.csl`).
-
-## Plantilla para autores
-
-La plantilla oficial de la RVEA está en la carpeta de referencia del proyecto:
-
-- **Ubicación:** `Referencias/Plantilla_RVEA/jfwm_template_raw.qmd`
-- Incluye guías por sección (Introducción, Revisión Literaria, Métodos, Resultados, Discusión), ejemplos de código y requisitos de archivos (`references.bib`, `apa.csl`, logo CVEA para PDF).
-
-Para integrar la plantilla en tu flujo de trabajo, copia ese archivo y los archivos indicados en su cabecera a tu carpeta de manuscrito.
-
-## Volumen I
-
-::: {.rvea-tabla-articulos}
-
-| Artículo | Autor(es) | Tema / Área |
-|----------|-----------|-------------|
-| Análisis espacio-temporal de la mortalidad (1996-2016) | Angel Colmenares | Riesgo Bayesiano BYM/INLA, autocorrelación espacial, SMR y clusters a nivel municipal |
-| Mortalidad neonatal, postneonatal y en la niñez por entidad federal | Arlet Moreno, Angel Colmenares | Lee-Carter estocástico, desagregación subnacional |
-| Tema por definir | Prof. Jorge Dias | Por definir |
-| Valuación de Bases Técnicas | Daylin Moreno | Desfase de las bases de Masjuán (1960) frente a la realidad del siglo XXI |
-| Tabla Dinámica LC15 | Daniel Azuaje | Tabla de mortalidad dinámica con R; superación de tablas estáticas CSO 1980 |
-
+[Ver en HTML](https://angelucv.github.io/cvea-articulos/articulo-colmenares-espacio-temporal.html){.btn-art target="_blank"} [Descargar PDF](https://angelucv.github.io/cvea-articulos/articulo-colmenares-espacio-temporal.pdf){.btn-art target="_blank"}
 :::
 
-### Artículos completos (manuscrito extendido)
+::: {.rvea-card}
+**Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal**  
+*Arlet Moreno, Angel Colmenares* — Lee-Carter estocástico, desagregación subnacional.
 
-Los siguientes enlaces abren el **manuscrito completo** (incluye introducción, revisión literaria, métodos, resultados, figuras y conclusiones). Disponible en **HTML** (ver en navegador) y **PDF** (descargar). Los archivos se publican en el repositorio [cvea-articulos](https://github.com/angelucv/cvea-articulos).
-
-- **Angel Colmenares** — Análisis espacio-temporal de la mortalidad en Venezuela 1996-2016 (BYM/INLA): [Ver HTML](https://angelucv.github.io/cvea-articulos/articulo-colmenares-espacio-temporal.html){target="_blank"} · [Descargar PDF](https://angelucv.github.io/cvea-articulos/articulo-colmenares-espacio-temporal.pdf){target="_blank"}
-- **Arlet Moreno y Angel Colmenares** — Mortalidad neonatal, postneonatal y en la niñez por entidad federal (Lee-Carter): [Ver HTML](https://angelucv.github.io/cvea-articulos/articulo-moreno-colmenares-mortalidad-infantil.html){target="_blank"} · [Descargar PDF](https://angelucv.github.io/cvea-articulos/articulo-moreno-colmenares-mortalidad-infantil.pdf){target="_blank"}
-
-## Volumen II: Las dimensiones de la mortalidad (causa, género y territorio)
-
-::: {.rvea-tabla-articulos}
-
-| Artículo | Autor(es) | Tema / Área |
-|----------|-----------|-------------|
-| Proyección de la mortalidad por causas (Lee-Carter y CoDa) | Iliria Herrera | Análisis de Datos Composicionales para causas de fallecimiento |
-| Tablas de decrecimiento múltiple con Cadenas de Markov | Williams Fernandez | Metodología alternativa para causas de fallecimiento |
-| Principales causas de fallecimiento (población masculina) | Kelvin Guedez | Tablas de decrecimiento múltiple, sobremortalidad masculina por causas externas |
-| Principales causas de fallecimiento (población femenina) | Dorielys Rangel | Perfil de riesgo femenino, enfermedades crónicas |
-| Tablas de decrecimiento múltiple (Occidental, Andes, Central) | Kennya Briceño | Heterogeneidad geográfica de la mortalidad |
-| Principales causas (regiones Los Llanos y Capital) | Daniela Godoy | Mapeo geográfico del riesgo |
-| Principales causas (regiones Oriental y Guayana) | Oriana Lopez | Cobertura nacional del mapa de riesgo |
-
+[Ver en HTML](https://angelucv.github.io/cvea-articulos/articulo-moreno-colmenares-mortalidad-infantil.html){.btn-art target="_blank"} [Descargar PDF](https://angelucv.github.io/cvea-articulos/articulo-moreno-colmenares-mortalidad-infantil.pdf){.btn-art target="_blank"}
 :::
 
-## Volumen III: Perspectivas internacionales y fronteras en la modelización
-
-::: {.rvea-tabla-articulos}
-
-| Artículo | Autor(es) | Tema / Área |
-|----------|-----------|-------------|
-| Análisis comparativo de métodos de proyección (Chile y Japón) | Eleazar Domínguez | Lee-Carter y variantes (Lee-Miller, BMS, Hyndman-Ullah) |
-| Medición del riesgo de longevidad (Portugal) | Oliver Triveño | Impacto financiero en rentas vitalicias y pensiones |
-| Comparativa internacional (Países Bajos, Bélgica) | Luis Alvarez | En desarrollo |
-| Comparativa internacional (Italia, Grecia) | José Mendoza | En desarrollo |
-
+Más artículos y el plan completo por volumen: [**Artículos**](articulos.qmd) · [**Portal RVEA**](portal.qmd).
 :::
 
+::: {.rvea-section}
 ## Cómo publicar
 
-Si deseas enviar un manuscrito:
+1. Utiliza la estructura **I-RL-M-R-D** (Introducción, Revisión literaria, Métodos, Resultados, Discusión).
+2. Prepara código y datos en un repositorio público y referéncialos en el artículo.
+3. Usa la plantilla oficial de la RVEA (Quarto) y el estilo APA.
+4. Contacta al Comité Editorial; ver [Miembros](../miembros.qmd).
 
-1. Utiliza la estructura **I-RL-M-R-D** (véase [Modelo de artículo](#modelo-editorial) más arriba).
-2. Prepara código y datos en un repositorio público (GitHub, Saber UCV u otro) y referéncialo en el artículo.
-3. Usa la plantilla oficial de la RVEA (Quarto) y el estilo de referencias APA (véase [Plantilla para autores](#plantilla-para-autores)).
-4. Contacta al Comité Editorial a través de los editores principales; ver [Miembros](../miembros.qmd).
+Plantilla y detalles: [Portal RVEA](portal.qmd).
+:::
+

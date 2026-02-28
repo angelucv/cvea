@@ -1,9 +1,91 @@
 ---
 title: "CVEA Suite: Solución Tecnológica a la Medida"
 subtitle: "Transforme su operatividad con tecnología a medida y analítica de alto nivel"
-toc: true
-toc-depth: 2
+page-layout: custom
+title-block-banner: false
+toc: false
+format:
+  html:
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <style>
+        .hero-suite { min-height: 55vh !important; padding-top: 100px; background-color: #1a2e30 !important; }
+        .suite-hero-logo { max-width: 80%; height: auto; margin-bottom: 1rem; display: block; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); }
+        .suite-hero-title { color: #fff !important; font-size: clamp(2rem, 6vw, 3.5rem) !important; margin: 0.4rem 0 !important; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.25); }
+        .intro_f.hero-suite p.suite-hero-tagline,
+        .hero-suite .hero-cvea-content p.suite-hero-tagline { color: rgba(255,255,255,0.95) !important; font-size: clamp(2rem, 6vw, 3.5rem) !important; margin: 0.3rem 0 !important; font-weight: 400; text-shadow: 0 2px 10px rgba(0,0,0,0.25); }
+        .suite-hero-rotate { color: #fff !important; font-size: clamp(1.2rem, 3.5vw, 1.75rem) !important; font-weight: 600; margin: 0.75rem 0; min-height: 1.5em; }
+        .suite-hero-rotate .txt-rotate .wrap { border-right-color: rgba(255,255,255,0.8); }
+        .suite-hero-cta { margin-top: 1.25rem; }
+        .suite-tagline-anim { display: inline-block; margin-bottom: 1rem; color: #fff !important; font-size: clamp(1.15rem, 2.5vw, 1.5rem); font-weight: 500; position: relative; padding: 10px 20px; cursor: default; }
+        .suite-tagline-anim::before, .suite-tagline-anim::after { content: ""; position: absolute; background: linear-gradient(to right, transparent, rgba(255,255,255,0.6)); animation: suite-border-r 2s linear infinite; }
+        .suite-tagline-anim::before { top: 0; left: 0; width: 100%; height: 2px; }
+        .suite-tagline-anim::after { top: 0; right: 0; width: 2px; height: 100%; animation: suite-border-b 2s linear infinite; animation-delay: 1s; transform: translateY(-100%); }
+        .suite-tagline-anim span { position: relative; display: block; }
+        .suite-tagline-anim span::before { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(to left, transparent, rgba(255,255,255,0.6)); animation: suite-border-l 2s linear infinite; }
+        .suite-tagline-anim span::after { content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 100%; background: linear-gradient(to top, transparent, rgba(255,255,255,0.6)); animation: suite-border-t 2s linear infinite; animation-delay: 1s; transform: translateY(-100%); }
+        @keyframes suite-border-r { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        @keyframes suite-border-b { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+        @keyframes suite-border-l { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        @keyframes suite-border-t { 0% { transform: translateY(100%); } 100% { transform: translateY(-100%); } }
+        .suite-btn-demos { display: inline-block; padding: 12px 28px; background: #38666A; color: #fff !important; text-decoration: none !important; font-weight: 600; font-size: 1.15rem; border-radius: 8px; border: 2px solid rgba(255,255,255,0.5); cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: inherit; }
+        .suite-btn-demos:hover { background: #2a4f52; color: #fff !important; transform: scale(1.02); }
+        button.suite-btn-demos { border: 2px solid rgba(255,255,255,0.5); outline: none; }
+        .suite-cta-bar { background: #1a2e30; padding: 1rem 1.5rem; text-align: center; position: relative; z-index: 9999; }
+        .suite-cta-bar a { text-decoration: none; }
+        .suite-btn-demos-bar { margin: 0 0.5rem; }
+        </style>
 ---
+
+```{=html}
+<!-- Hero CVEA Suite: logo, título y nube de palabras -->
+<div class="hero-cvea intro_f cvea-intro hero-suite">
+  <div class="hero-doodle-bg" aria-hidden="true">
+    <css-doodle>
+      <style>
+        @grid: 20x1 / 100vmax;
+        :container { perspective: 22vmin; }
+        background: @m(
+          @r(180, 220),
+          radial-gradient(
+            @p(#1a3a3d, #2d5054, #1e3d40, #244548, #152a2c, #38666A) 15%,
+            transparent 45%
+          ) @r(100%) @r(100%) / @r(1%, 4%) @lr no-repeat
+        );
+        @size: 50%;
+        @place-cell: center;
+        border-radius: 50%;
+        transform-style: preserve-3d;
+        animation: scale-up 24s linear infinite;
+        animation-delay: calc(@i * -.4s);
+        @keyframes scale-up {
+          0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0); }
+          15% { opacity: 0.85; }
+          90% { transform: translate3d(0, 0, @r(45vmin, 55vmin)) rotate(@r(-360deg, 360deg)); }
+          100% { opacity: 0; transform: translate3d(0, 0, 1vmin); }
+        }
+      </style>
+    </css-doodle>
+  </div>
+  <div class="hero-cvea-content">
+    <img src="assets/logos/Logo-CVEA-horizontal-grande-letrasblancas.png" alt="CVEA" class="animate__animated animate__fadeInDown suite-hero-logo">
+    <h1 class="animate__animated animate__fadeInDown suite-hero-title">CVEA Suite</h1>
+    <p class="animate__animated animate__fadeIn suite-hero-tagline">Soluciones Tecnológicas del CVEA</p>
+    <p class="suite-hero-rotate animate__animated animate__fadeIn">
+      <span class="txt-rotate" data-period="2000" data-rotate='["Banca", "Seguros", "Retail", "Salud", "Control", "Reservas", "Demos", "Analítica", "Cuadros de mando", "Predictivo"]'></span>
+    </p>
+    <p class="suite-hero-cta animate__animated animate__fadeIn">
+      <span class="suite-tagline-anim"><span>Desarrollos a la medida de cada sector</span></span>
+    </p>
+  </div>
+</div>
+<!-- Barra CTA fuera del hero: enlace directo que siempre funciona -->
+<div class="suite-cta-bar" id="suite-cta-bar">
+  <a href="https://cvea-suite-demos.streamlit.app/" target="_blank" rel="noopener noreferrer" class="suite-btn-demos suite-btn-demos-bar">Abrir Demos</a>
+</div>
+<script src="assets/js/text.js"></script>
+```
 
 El entorno empresarial venezolano actual, caracterizado por su **dinamismo bimonetario**, retos inflacionarios y una notable reactivación en sectores clave, exige herramientas de gestión que vayan mucho más allá del simple reporte estático. Las empresas modernas no solo necesitan registrar sus operaciones diarias, sino **comprenderlas en tiempo real** y, más importante aún, **predecir sus resultados futuros** para proteger su patrimonio.
 

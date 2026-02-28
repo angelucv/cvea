@@ -1,0 +1,31 @@
+---
+title: "Plataforma de cursos"
+subtitle: "Cursos del CVEA en Moodle"
+toc: false
+---
+
+Los cursos del CVEA se imparten en **Moodle**, la plataforma de enseñanza en línea de referencia utilizada por universidades e instituciones en todo el mundo. Inscripciones, materiales y seguimiento están disponibles en el aula virtual del Centro.
+
+**Acceso:** [**Plataforma de cursos del CVEA (Moodle)**](https://cvea.gnomio.com/){target="_blank"}
+
+---
+
+## Módulos ofrecidos
+
+La formación se organiza en cuatro módulos progresivos:
+
+**Módulo 1 — Fundamentos analíticos en entornos corporativos**  
+Dirigido a analistas de negocios, contadores y profesionales que migran de Excel a R y Python. Configuración de entornos (Anaconda, RStudio), introducción a Python para datos y fundamentos de R para estadística.
+
+**Módulo 2 — Ingeniería de datos y visualización avanzada**  
+Dirigido a analistas de datos, científicos de datos junior y profesionales de BI. Manipulación de datos con Pandas y NumPy (Python), Tidyverse (R), y storytelling con ggplot2, Matplotlib, Seaborn e integración con Power BI.
+
+**Módulo 3 — Modelado actuarial y matemáticas financieras**  
+Dirigido a actuarios, analistas de riesgos y gestores de carteras. Series temporales financieras, modelos de supervivencia y tablas de mortalidad, simulación estocástica y análisis de riesgos (Monte Carlo, VaR).
+
+**Módulo 4 — Machine Learning y analítica predictiva**  
+Dirigido a científicos de datos y líderes técnicos. Machine Learning con Scikit-Learn (Python), modelado predictivo con Tidymodels (R), y automatización con FastAPI, Shiny y Streamlit.
+
+---
+
+Para más información sobre los programas y fechas: [Docencia — Cursos](../index.qmd#cursos).
