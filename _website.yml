@@ -36,7 +36,7 @@ website:
         menu:
           - text: "Series de Tiempo (Python)"
             href: docencia/series-tiempo/index.qmd
-          - text: "Plataforma de cursos (Moodle + Oracle)"
+          - text: "Plataforma de cursos"
             href: docencia/plataforma-cursos/index.qmd
           - text: "Recursos para estudiantes"
             href: docencia/index.qmd#recursos
@@ -69,6 +69,8 @@ website:
         menu:
           - text: "Revista RVEA"
             href: rvea/index.qmd
+          - text: "Artículos"
+            href: rvea/articulos.qmd
           - text: "Portal RVEA"
             href: rvea/portal.qmd
       - icon: book

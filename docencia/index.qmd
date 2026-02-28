@@ -1,8 +1,91 @@
 ---
 title: "Docencia"
 subtitle: "Formación continua y recursos para estudiantes"
-toc: true
+page-layout: custom
+title-block-banner: false
+toc: false
+format:
+  html:
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <style>
+        .hero-moodle { min-height: 50vh !important; padding-top: 100px; background-color: #1a2e30 !important; }
+        .moodle-hero-logo { max-width: 75%; height: auto; margin-bottom: 0.75rem; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); }
+        .moodle-hero-title { color: #fff !important; font-size: clamp(1.75rem, 5vw, 3rem) !important; margin: 0.3rem 0 !important; font-weight: 700; }
+        .intro_f.hero-moodle p.moodle-hero-subtitle, .hero-moodle .hero-cvea-content p.moodle-hero-subtitle { color: rgba(255,255,255,0.95) !important; font-size: clamp(1.75rem, 5vw, 3rem) !important; margin: 0.25rem 0 !important; font-weight: 400; }
+        .moodle-hero-words { background: rgba(255,255,255,0.95); color: #111 !important; padding: 0.5rem 1rem; margin: 0.75rem auto; display: inline-block; border-radius: 8px; font-size: clamp(1rem, 2.5vw, 1.35rem); font-weight: 600; }
+        .moodle-hero-words .txt-rotate .wrap { border-right-color: #333; }
+        .moodle-tagline-anim { display: inline-block; margin: 0.5rem 0; color: #fff !important; font-size: clamp(1.15rem, 2.5vw, 1.5rem); font-weight: 500; position: relative; padding: 10px 20px; cursor: default; }
+        .moodle-tagline-anim::before, .moodle-tagline-anim::after { content: ""; position: absolute; background: linear-gradient(to right, transparent, rgba(255,255,255,0.6)); animation: moodle-border-r 2s linear infinite; }
+        .moodle-tagline-anim::before { top: 0; left: 0; width: 100%; height: 2px; }
+        .moodle-tagline-anim::after { top: 0; right: 0; width: 2px; height: 100%; animation: moodle-border-b 2s linear infinite; animation-delay: 1s; transform: translateY(-100%); }
+        .moodle-tagline-anim span { position: relative; display: block; }
+        .moodle-tagline-anim span::before { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(to left, transparent, rgba(255,255,255,0.6)); animation: moodle-border-l 2s linear infinite; }
+        .moodle-tagline-anim span::after { content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 100%; background: linear-gradient(to top, transparent, rgba(255,255,255,0.6)); animation: moodle-border-t 2s linear infinite; animation-delay: 1s; transform: translateY(-100%); }
+        @keyframes moodle-border-r { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        @keyframes moodle-border-b { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+        @keyframes moodle-border-l { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        @keyframes moodle-border-t { 0% { transform: translateY(100%); } 100% { transform: translateY(-100%); } }
+        .moodle-cta-bar { background: #1a2e30; padding: 1rem 1.5rem; text-align: center; position: relative; z-index: 9999; }
+        .moodle-cta-bar a { text-decoration: none; }
+        .moodle-btn-portal { display: inline-block; padding: 12px 28px; background: #38666A; color: #fff !important; text-decoration: none !important; font-weight: 600; font-size: 1.15rem; border-radius: 8px; border: 2px solid rgba(255,255,255,0.5); cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: inherit; }
+        .moodle-btn-portal:hover { background: #2a4f52; color: #fff !important; transform: scale(1.02); }
+        </style>
 ---
+
+```{=html}
+<div class="hero-cvea intro_f cvea-intro hero-moodle">
+  <div class="hero-doodle-bg" aria-hidden="true">
+    <css-doodle>
+      <style>
+        @grid: 18x1 / 100vmax;
+        :container { perspective: 22vmin; }
+        background: @m(
+          @r(180, 220),
+          radial-gradient(
+            @p(#1a3a3d, #2d5054, #1e3d40, #244548, #38666A) 15%,
+            transparent 45%
+          ) @r(100%) @r(100%) / @r(1%, 4%) @lr no-repeat
+        );
+        @size: 50%;
+        @place-cell: center;
+        border-radius: 50%;
+        transform-style: preserve-3d;
+        animation: scale-up 22s linear infinite;
+        animation-delay: calc(@i * -.4s);
+        @keyframes scale-up {
+          0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0); }
+          15% { opacity: 0.85; }
+          90% { transform: translate3d(0, 0, @r(40vmin, 50vmin)) rotate(@r(-360deg, 360deg)); }
+          100% { opacity: 0; transform: translate3d(0, 0, 1vmin); }
+        }
+      </style>
+    </css-doodle>
+  </div>
+  <div class="hero-cvea-content">
+    <img src="../assets/logos/Logo-CVEA-horizontal-grande-letrasblancas.png" alt="CVEA" class="animate__animated animate__fadeInDown moodle-hero-logo">
+    <h1 class="animate__animated animate__fadeInDown moodle-hero-title">CVEA Moodle</h1>
+    <p class="animate__animated animate__fadeIn moodle-hero-subtitle">Plataforma de Cursos del CVEA</p>
+    <p class="moodle-hero-words animate__animated animate__fadeIn">
+      <span class="txt-rotate" id="moodle-txt-rotate"></span>
+    </p>
+    <p class="animate__animated animate__fadeIn">
+      <span class="moodle-tagline-anim"><span>Cursos adaptados a cada sector</span></span>
+    </p>
+  </div>
+</div>
+<div class="moodle-cta-bar">
+  <a href="https://cvea.gnomio.com/" target="_blank" rel="noopener noreferrer" class="moodle-btn-portal animate__animated animate__zoomIn">Abrir Portal de Cursos</a>
+</div>
+<script>
+(function(){ var w = ["R", "Python", "Datos", "Modelado", "Moodle", "Cursos", "Formación", "Analítica", "Visualización", "Machine Learning"];
+  var el = document.getElementById("moodle-txt-rotate");
+  if (el) { el.setAttribute("data-period", "2000"); el.setAttribute("data-rotate", JSON.stringify(w)); }
+})();
+</script>
+<script src="../assets/js/text.js"></script>
+```
 
 ## Transformando datos en decisiones estratégicas y gestión de riesgos {#cursos}
 
@@ -69,11 +152,7 @@ Ficha técnica, programa, objetivos e inscripción del curso orientado a actuari
 
 ### Plataforma de cursos (Moodle) {#plataforma}
 
-Los cursos del CVEA se dictan en **Moodle**, la plataforma líder de cursos en línea de código abierto, utilizada por universidades e instituciones en todo el mundo. Inscripciones, materiales y seguimiento están disponibles en nuestra aula virtual.
-
-[**Acceso a la plataforma de cursos (Moodle)**](https://cvea.gnomio.com/){target="_blank"}
-
-Para más detalles sobre la implementación (infraestructura y guías): [Plataforma de cursos CVEA — guía](plataforma-cursos/index.qmd).
+Los cursos del CVEA se dictan en **Moodle**, la plataforma líder de cursos en línea de código abierto, utilizada por universidades e instituciones en todo el mundo. Inscripciones, materiales y seguimiento están disponibles en nuestra aula virtual. El acceso principal está en el inicio de esta sección (botón **Abrir Portal de Cursos**). Resumen de módulos: [Plataforma de cursos — módulos ofrecidos](plataforma-cursos/index.qmd).
 
 ### Próximas ofertas {#proximas}
 
