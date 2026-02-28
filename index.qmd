@@ -5,6 +5,16 @@ page-layout: custom
 title-block-banner: false
 toc: true
 include-in-header: assets/meta.html
+format:
+  html:
+    include-in-header:
+      text: |
+        <style>
+        .home-cta-bar { background: #1a2e30; padding: 1rem 1.5rem; text-align: center; position: relative; z-index: 9999; }
+        .home-cta-bar a { text-decoration: none; }
+        .home-btn-articulos { display: inline-block; padding: 12px 28px; background: #38666A; color: #fff !important; text-decoration: none !important; font-weight: 600; font-size: 1.15rem; border-radius: 8px; border: 2px solid rgba(255,255,255,0.5); cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: inherit; }
+        .home-btn-articulos:hover { background: #2a4f52; color: #fff !important; transform: scale(1.02); }
+        </style>
 ---
 
 ```{=html}
@@ -49,6 +59,9 @@ include-in-header: assets/meta.html
     </p>
     <a href="#bloque-academico" class="btn-21 animate__animated animate__zoomInUp" style="margin-top: 1.5rem; text-decoration: none; color: white;"><span>Conocer más</span></a>
   </div>
+</div>
+<div class="home-cta-bar">
+  <a href="rvea/articulos.qmd" class="home-btn-articulos">Ver artículos RVEA</a>
 </div>
 
 <!-- Sección intro (slideshow + cita) -->
