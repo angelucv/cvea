@@ -2,5 +2,11 @@ _site/
 .quarto/
 *.log
 cvea-articulos-repo/
+repos-editorial/
+
+# Archivos R pesados (Cloudflare Pages límite 25 MiB)
+.RData
+.RDataTmp
+*.RData
 
 /.quarto/
