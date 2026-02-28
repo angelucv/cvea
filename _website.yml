@@ -36,6 +36,8 @@ website:
         menu:
           - text: "Series de Tiempo (Python)"
             href: docencia/series-tiempo/index.qmd
+          - text: "Plataforma de cursos (Moodle + Oracle)"
+            href: docencia/plataforma-cursos/index.qmd
           - text: "Recursos para estudiantes"
             href: docencia/index.qmd#recursos
           - text: "Próximas ofertas"
@@ -64,7 +66,11 @@ website:
             href: cvea-suite.qmd#cvea-control-suite-visión-general-y-industria
       - icon: file-earmark-text
         text: "RVEA"
-        href: rvea/index.qmd
+        menu:
+          - text: "Revista RVEA"
+            href: rvea/index.qmd
+          - text: "Portal RVEA"
+            href: rvea/portal.qmd
       - icon: book
         text: "Libros"
         href: libro/index.qmd

@@ -1,0 +1,74 @@
+---
+title: "Portal RVEA"
+subtitle: "Control editorial — Volúmenes y artículos"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    include-in-header:
+      text: |
+        <style>
+        .portal-vol { background: #38666A; color: white; padding: 0.5rem 1rem; border-radius: 6px; margin: 1rem 0; }
+        .portal-vol h2 { color: white; margin-top: 0; }
+        .portal-tabla { width: 100%; margin: 0.5rem 0; }
+        .portal-tabla th, .portal-tabla td { padding: 0.4rem 0.6rem; border: 1px solid rgba(255,255,255,0.3); }
+        .estado-listo { background: #2d7d32; color: white; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.9em; }
+        .estado-borrador { background: #ed6c02; color: white; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.9em; }
+        .estado-pendiente { background: #666; color: white; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.9em; }
+        .btn-portal { display: inline-block; background: #38666A; color: white !important; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 500; margin: 0.25rem 0.25rem 0.25rem 0; }
+        .btn-portal:hover { background: #2a4f52; color: white !important; }
+        </style>
+---
+
+El **Portal RVEA** es la interfaz de referencia del CVEA para el control editorial de la Revista Venezolana de Actuariado. Desde aquí se accede a la estructura del repositorio de manuscritos, el estado de cada volumen y el enlace al repositorio donde se gestionan los artículos.
+
+**Repositorio editorial:** [cvea-rvea](https://github.com/angelucv/cvea-rvea) (manuscritos en Quarto, plantilla I-RL-M-R-D, referencias BibTeX).
+
+::: {.callout-note}
+## Acceso al repositorio
+El contenido de la revista (manuscritos, plantilla, datos y código reproducible) se gestiona en el repositorio **cvea-rvea**. Si tienes permisos de colaborador, clona el repositorio y trabaja en la carpeta del volumen y artículo correspondiente.
+:::
+
+## Volumen I — Fundamentos, demografía y sostenibilidad del sistema de previsión social
+
+| Artículo / tema | Autor(es) | Estado | Carpeta en repo |
+|-----------------|-----------|--------|------------------|
+| Análisis espacio-temporal de la mortalidad en Venezuela (1996-2016) | Prof. Angel Colmenares | Listo | `vol1/art-colmenares/` |
+| Modelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal | Arlet Moreno, Prof. Angel Colmenares | Listo | `vol1/art-moreno-arlet/` |
+| Tema por definir | Prof. Jorge Dias | Pendiente | `vol1/art-dias/` |
+| Valuación actuarial de bases técnicas Masjuán | Daylin Moreno | Borrador | `vol1/art-moreno-daylin/` |
+| Pensiones y jubilaciones; gobernanza y sostenibilidad | José Raúl Gálvez | Borrador | `vol1/art-galvez/` |
+| Tabla de mortalidad dinámica Lee-Carter (LC15) | Daniel Azuaje | Borrador | `vol1/art-azuaje/` |
+
+## Volumen II — Las dimensiones de la mortalidad (causa, género y territorio)
+
+| Artículo / tema | Autor(es) | Estado | Carpeta en repo |
+|-----------------|-----------|--------|------------------|
+| Proyección de la mortalidad por causas (Lee-Carter y CoDa) | Iliria Herrera | Borrador | `vol2/` |
+| Tablas de decrecimiento múltiple con Cadenas de Markov | Williams Fernandez | Pendiente | `vol2/` |
+| Principales causas (población masculina) | Kelvin Guedez | Pendiente | `vol2/` |
+| Principales causas (población femenina) | Dorielys Rangel | Pendiente | `vol2/` |
+| Tablas de decrecimiento múltiple (regiones) | Kennya Briceño | Pendiente | `vol2/` |
+| Principales causas (Los Llanos y Capital) | Daniela Godoy | Pendiente | `vol2/` |
+| Principales causas (Oriental y Guayana) | Oriana Lopez | Pendiente | `vol2/` |
+
+## Volumen III — Perspectivas internacionales y fronteras en la modelización
+
+| Artículo / tema | Autor(es) | Estado | Carpeta en repo |
+|-----------------|-----------|--------|------------------|
+| Análisis comparativo de métodos de proyección (Chile y Japón) | Eleazar Domínguez | Pendiente | `vol3/` |
+| Medición del riesgo de longevidad (Portugal) | Oliver Triveño | Pendiente | `vol3/` |
+| Comparativa internacional (Países Bajos, Bélgica) | Luis Alvarez | Pendiente | `vol3/` |
+| Comparativa internacional (Italia, Grecia) | José Mendoza | Pendiente | `vol3/` |
+
+## Leyenda de estados
+
+- **Listo:** manuscrito compilado (HTML/PDF), listo para revisión o publicación.
+- **Borrador:** en redacción o revisión interna.
+- **Pendiente:** planificado; carpeta o tema por definir.
+
+## Enlaces rápidos
+
+- [Revista RVEA (página principal)](index.qmd) — Presentación de la revista, modelo I-RL-M-R-D y enlaces a artículos publicados.
+- [Repositorio cvea-rvea](https://github.com/angelucv/cvea-rvea) — Código, manuscritos y plantilla (acceso según permisos).
+- [CVEA — Miembros](../miembros.qmd) — Comité editorial y contacto.
