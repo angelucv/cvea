@@ -96,12 +96,36 @@ ul.task-list li input[type="checkbox"] {
 <!-- Meta y título CVEA -->
 <title>Centro Venezolano de Estudios Actuariales (CVEA)</title>
 <meta name="description" content="CVEA — Investigación, docencia y extensión en ciencias actuariales. Revista RVEA, Libros y Materiales Docentes, formación y servicios.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<style>
+.hero-moodle { min-height: 50vh !important; padding-top: 100px; background-color: #1a2e30 !important; }
+.moodle-hero-logo { max-width: 75%; height: auto; margin-bottom: 0.75rem; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); }
+.moodle-hero-title { color: #fff !important; font-size: clamp(1.75rem, 5vw, 3rem) !important; margin: 0.3rem 0 !important; font-weight: 700; }
+.intro_f.hero-moodle p.moodle-hero-subtitle, .hero-moodle .hero-cvea-content p.moodle-hero-subtitle { color: rgba(255,255,255,0.95) !important; font-size: clamp(1.75rem, 5vw, 3rem) !important; margin: 0.25rem 0 !important; font-weight: 400; }
+.moodle-hero-words { background: rgba(255,255,255,0.95); color: #111 !important; padding: 0.5rem 1rem; margin: 0.75rem auto; display: inline-block; border-radius: 8px; font-size: clamp(1rem, 2.5vw, 1.35rem); font-weight: 600; }
+.moodle-hero-words .txt-rotate .wrap { border-right-color: #333; }
+.moodle-tagline-anim { display: inline-block; margin: 0.5rem 0; color: #fff !important; font-size: clamp(1.15rem, 2.5vw, 1.5rem); font-weight: 500; position: relative; padding: 10px 20px; cursor: default; }
+.moodle-tagline-anim::before, .moodle-tagline-anim::after { content: ""; position: absolute; background: linear-gradient(to right, transparent, rgba(255,255,255,0.6)); animation: moodle-border-r 2s linear infinite; }
+.moodle-tagline-anim::before { top: 0; left: 0; width: 100%; height: 2px; }
+.moodle-tagline-anim::after { top: 0; right: 0; width: 2px; height: 100%; animation: moodle-border-b 2s linear infinite; animation-delay: 1s; transform: translateY(-100%); }
+.moodle-tagline-anim span { position: relative; display: block; }
+.moodle-tagline-anim span::before { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(to left, transparent, rgba(255,255,255,0.6)); animation: moodle-border-l 2s linear infinite; }
+.moodle-tagline-anim span::after { content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 100%; background: linear-gradient(to top, transparent, rgba(255,255,255,0.6)); animation: moodle-border-t 2s linear infinite; animation-delay: 1s; transform: translateY(-100%); }
+@keyframes moodle-border-r { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+@keyframes moodle-border-b { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+@keyframes moodle-border-l { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+@keyframes moodle-border-t { 0% { transform: translateY(100%); } 100% { transform: translateY(-100%); } }
+.moodle-cta-bar { background: #1a2e30; padding: 1rem 1.5rem; text-align: center; position: relative; z-index: 9999; }
+.moodle-cta-bar a { text-decoration: none; }
+.moodle-btn-portal { display: inline-block; padding: 12px 28px; background: #38666A; color: #fff !important; text-decoration: none !important; font-weight: 600; font-size: 1.15rem; border-radius: 8px; border: 2px solid rgba(255,255,255,0.5); cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: inherit; }
+.moodle-btn-portal:hover { background: #2a4f52; color: #fff !important; transform: scale(1.02); }
+</style>
 
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -175,7 +199,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li>
     <a class="dropdown-item" href="../docencia/plataforma-cursos/index.qmd">
- <span class="dropdown-text">Plataforma de cursos (Moodle + Oracle)</span></a>
+ <span class="dropdown-text">Plataforma de cursos</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../docencia/index.html#recursos">
@@ -242,6 +266,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Revista RVEA</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../rvea/articulos.qmd">
+ <span class="dropdown-text">Artículos</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../rvea/portal.html">
  <span class="dropdown-text">Portal RVEA</span></a>
   </li>  
@@ -275,32 +303,10 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#cursos" id="toc-cursos" class="nav-link active" data-scroll-target="#cursos">Transformando datos en decisiones estratégicas y gestión de riesgos</a>
-  <ul class="collapse">
-  <li><a href="#módulos-de-aprendizaje" id="toc-módulos-de-aprendizaje" class="nav-link" data-scroll-target="#módulos-de-aprendizaje">Módulos de aprendizaje</a></li>
-  <li><a href="#por-qué-estudiar-con-nosotros" id="toc-por-qué-estudiar-con-nosotros" class="nav-link" data-scroll-target="#por-qué-estudiar-con-nosotros">¿Por qué estudiar con nosotros?</a></li>
-  </ul></li>
-  <li><a href="#formación-continua" id="toc-formación-continua" class="nav-link" data-scroll-target="#formación-continua">Formación continua</a>
-  <ul class="collapse">
-  <li><a href="#curso-de-series-de-tiempo-python" id="toc-curso-de-series-de-tiempo-python" class="nav-link" data-scroll-target="#curso-de-series-de-tiempo-python">Curso de Series de Tiempo (Python)</a></li>
-  <li><a href="#plataforma" id="toc-plataforma" class="nav-link" data-scroll-target="#plataforma">Plataforma de cursos (Moodle)</a></li>
-  <li><a href="#proximas" id="toc-proximas" class="nav-link" data-scroll-target="#proximas">Próximas ofertas</a></li>
-  </ul></li>
-  <li><a href="#recursos" id="toc-recursos" class="nav-link" data-scroll-target="#recursos">Recursos para estudiantes</a></li>
-  <li><a href="#ecosistema-de-aprendizaje" id="toc-ecosistema-de-aprendizaje" class="nav-link" data-scroll-target="#ecosistema-de-aprendizaje">Ecosistema de aprendizaje</a></li>
-  </ul>
-</nav>
-    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -322,13 +328,63 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<div class="hero-cvea intro_f cvea-intro hero-moodle">
+  <div class="hero-doodle-bg" aria-hidden="true">
+    <css-doodle>
+      <style>
+        @grid: 18x1 / 100vmax;
+        :container { perspective: 22vmin; }
+        background: @m(
+          @r(180, 220),
+          radial-gradient(
+            @p(#1a3a3d, #2d5054, #1e3d40, #244548, #38666A) 15%,
+            transparent 45%
+          ) @r(100%) @r(100%) / @r(1%, 4%) @lr no-repeat
+        );
+        @size: 50%;
+        @place-cell: center;
+        border-radius: 50%;
+        transform-style: preserve-3d;
+        animation: scale-up 22s linear infinite;
+        animation-delay: calc(@i * -.4s);
+        @keyframes scale-up {
+          0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0); }
+          15% { opacity: 0.85; }
+          90% { transform: translate3d(0, 0, @r(40vmin, 50vmin)) rotate(@r(-360deg, 360deg)); }
+          100% { opacity: 0; transform: translate3d(0, 0, 1vmin); }
+        }
+      </style>
+    </css-doodle>
+  </div>
+  <div class="hero-cvea-content">
+    <img src="../assets/logos/Logo-CVEA-horizontal-grande-letrasblancas.png" alt="CVEA" class="animate__animated animate__fadeInDown moodle-hero-logo">
+    <h1 class="animate__animated animate__fadeInDown moodle-hero-title">CVEA Moodle</h1>
+    <p class="animate__animated animate__fadeIn moodle-hero-subtitle">Plataforma de Cursos del CVEA</p>
+    <p class="moodle-hero-words animate__animated animate__fadeIn">
+      <span class="txt-rotate" id="moodle-txt-rotate"></span>
+    </p>
+    <p class="animate__animated animate__fadeIn">
+      <span class="moodle-tagline-anim"><span>Cursos adaptados a cada sector</span></span>
+    </p>
+  </div>
+</div>
+<div class="moodle-cta-bar">
+  <a href="https://cvea.gnomio.com/" target="_blank" rel="noopener noreferrer" class="moodle-btn-portal animate__animated animate__zoomIn">Abrir Portal de Cursos</a>
+</div>
+<script>
+(function(){ var w = ["R", "Python", "Datos", "Modelado", "Moodle", "Cursos", "Formación", "Analítica", "Visualización", "Machine Learning"];
+  var el = document.getElementById("moodle-txt-rotate");
+  if (el) { el.setAttribute("data-period", "2000"); el.setAttribute("data-rotate", JSON.stringify(w)); }
+})();
+</script>
+<script src="../assets/js/text.js"></script>
 <section id="cursos" class="level2">
-<h2 class="anchored" data-anchor-id="cursos">Transformando datos en decisiones estratégicas y gestión de riesgos</h2>
+<h2 data-anchor-id="cursos">Transformando datos en decisiones estratégicas y gestión de riesgos</h2>
 <p>En la era de la información, la capacidad para modelar escenarios, predecir tendencias y cuantificar riesgos es el activo más valioso de cualquier organización. Nuestro centro de formación está especializado en capacitar a profesionales del sector financiero, asegurador, científico y empresarial.</p>
 <p>Aprende a dominar el análisis complejo y la creación de modelos predictivos utilizando las herramientas de código abierto líderes en la industria —<strong>R</strong> y <strong>Python</strong>—, integrándolas de manera fluida en entornos corporativos.</p>
 <p>Los módulos que se describen a continuación se dictan en la <strong>plataforma Moodle</strong>, referente en enseñanza en línea. Inscripciones, materiales y seguimiento: <a href="https://cvea.gnomio.com/" target="_blank"><strong>Acceso a la plataforma de cursos (Moodle)</strong></a>.</p>
 <section id="módulos-de-aprendizaje" class="level3">
-<h3 class="anchored" data-anchor-id="módulos-de-aprendizaje">Módulos de aprendizaje</h3>
+<h3 data-anchor-id="módulos-de-aprendizaje">Módulos de aprendizaje</h3>
 <p>Hemos estructurado nuestros programas en módulos especializados y progresivos. Ya sea que busques automatizar reportes, adentrarte en el Machine Learning o desarrollar modelos actuariales complejos, tenemos un camino para ti:</p>
 <p><strong>Módulo 1 — Fundamentos analíticos en entornos corporativos</strong></p>
 <ul>
@@ -364,7 +420,7 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="por-qué-estudiar-con-nosotros" class="level3">
-<h3 class="anchored" data-anchor-id="por-qué-estudiar-con-nosotros">¿Por qué estudiar con nosotros?</h3>
+<h3 data-anchor-id="por-qué-estudiar-con-nosotros">¿Por qué estudiar con nosotros?</h3>
 <ul>
 <li><strong>Enfoque corporativo real:</strong> Enseñamos a utilizar R y Python integrados en los flujos de trabajo (incl.&nbsp;Office/Power BI) que utilizan las empresas e instituciones financieras.</li>
 <li><strong>Rigor Científico y Matemático:</strong> No solo enseñamos a escribir código; enseñamos la estadística, la probabilidad y la matemática actuarial que fundamentan los modelos.</li>
@@ -375,27 +431,25 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 <section id="formación-continua" class="level2">
-<h2 class="anchored" data-anchor-id="formación-continua">Formación continua</h2>
+<h2 data-anchor-id="formación-continua">Formación continua</h2>
 <section id="curso-de-series-de-tiempo-python" class="level3">
-<h3 class="anchored" data-anchor-id="curso-de-series-de-tiempo-python">Curso de Series de Tiempo (Python)</h3>
+<h3 data-anchor-id="curso-de-series-de-tiempo-python">Curso de Series de Tiempo (Python)</h3>
 <p>Ficha técnica, programa, objetivos e inscripción del curso orientado a actuarios y profesionales que requieran proyecciones de mortalidad, siniestralidad o indicadores económicos.</p>
 <p><a href="../docencia/series-tiempo/index.html"><strong>Ir al curso Series de Tiempo con Python</strong></a></p>
 <p><strong>Recurso complementario:</strong> <a href="../Referencias/Recursos_HTML/Series-de-tiempo-Actores.html">Series de tiempo y actores del mercado (HTML)</a> — Análisis dinámico de actores y series temporales.</p>
 </section>
 <section id="plataforma" class="level3">
-<h3 class="anchored" data-anchor-id="plataforma">Plataforma de cursos (Moodle)</h3>
-<p>Los cursos del CVEA se dictan en <strong>Moodle</strong>, la plataforma líder de cursos en línea de código abierto, utilizada por universidades e instituciones en todo el mundo. Inscripciones, materiales y seguimiento están disponibles en nuestra aula virtual.</p>
-<p><a href="https://cvea.gnomio.com/" target="_blank"><strong>Acceso a la plataforma de cursos (Moodle)</strong></a></p>
-<p>Para más detalles sobre la implementación (infraestructura y guías): <a href="plataforma-cursos/index.qmd">Plataforma de cursos CVEA — guía</a>.</p>
+<h3 data-anchor-id="plataforma">Plataforma de cursos (Moodle)</h3>
+<p>Los cursos del CVEA se dictan en <strong>Moodle</strong>, la plataforma líder de cursos en línea de código abierto, utilizada por universidades e instituciones en todo el mundo. Inscripciones, materiales y seguimiento están disponibles en nuestra aula virtual. El acceso principal está en el inicio de esta sección (botón <strong>Abrir Portal de Cursos</strong>). Resumen de módulos: <a href="plataforma-cursos/index.qmd">Plataforma de cursos — módulos ofrecidos</a>.</p>
 </section>
 <section id="proximas" class="level3">
-<h3 class="anchored" data-anchor-id="proximas">Próximas ofertas</h3>
+<h3 data-anchor-id="proximas">Próximas ofertas</h3>
 <p>Webinars y certificaciones en temas emergentes (por ejemplo, IA en Actuaría). Las convocatorias se publicarán en <a href="../actualidad.html">Actualidad</a>.</p>
 <p><em>(Próximas ofertas se anunciarán aquí.)</em></p>
 </section>
 </section>
 <section id="recursos" class="level2">
-<h2 class="anchored" data-anchor-id="recursos">Recursos para estudiantes</h2>
+<h2 data-anchor-id="recursos">Recursos para estudiantes</h2>
 <ul>
 <li><strong>Guías metodológicas para TFPG:</strong> estructura I-RL-M-R-D, reproducibilidad y referencias en formato APA; ver <a href="../rvea/index.html#modelo-editorial">RVEA — Modelo y plantilla</a>.</li>
 <li><strong>Bibliografía recomendada:</strong> alineada con los libros y materiales docentes del Centro; ver <a href="../libro/index.html">Libros</a>.</li>
@@ -403,13 +457,13 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="ecosistema-de-aprendizaje" class="level2">
-<h2 class="anchored" data-anchor-id="ecosistema-de-aprendizaje">Ecosistema de aprendizaje</h2>
+<h2 data-anchor-id="ecosistema-de-aprendizaje">Ecosistema de aprendizaje</h2>
 <p>Información sobre el <strong>currículo actuarial</strong> en la UCV y cómo los estudiantes se integran en cursos electivos y en la investigación del centro. Perfiles del Comité Editorial y colaboradores en <a href="../miembros.html">Miembros</a>.</p>
 
 
 </section>
 
-</main> <!-- /main -->
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
