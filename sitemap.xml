@@ -2,102 +2,106 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://angelucv.github.io/cvea/servicios/demo-ibnr.html</loc>
-    <lastmod>2026-02-27T22:40:11.909Z</lastmod>
+    <lastmod>2026-02-28T20:39:53.777Z</lastmod>
   </url>
   <url>
     <loc>https://angelucv.github.io/cvea/servicios/index.html</loc>
-    <lastmod>2026-02-27T22:40:11.911Z</lastmod>
+    <lastmod>2026-02-28T20:39:53.778Z</lastmod>
   </url>
   <url>
     <loc>https://angelucv.github.io/cvea/docencia/index.html</loc>
-    <lastmod>2026-02-27T22:40:11.907Z</lastmod>
+    <lastmod>2026-02-28T20:39:53.774Z</lastmod>
   </url>
   <url>
     <loc>https://angelucv.github.io/cvea/libro/index.html</loc>
-    <lastmod>2026-02-27T22:40:11.909Z</lastmod>
+    <lastmod>2026-02-28T20:39:53.776Z</lastmod>
   </url>
   <url>
     <loc>https://angelucv.github.io/cvea/rvea/ENLACES_BOX_ARTICULOS.html</loc>
-    <lastmod>2026-02-27T22:40:11.909Z</lastmod>
+    <lastmod>2026-02-28T20:39:53.776Z</lastmod>
   </url>
   <url>
     <loc>https://angelucv.github.io/cvea/rvea/vol1-moreno-arlet.html</loc>
-    <lastmod>2026-02-27T22:40:11.909Z</lastmod>
+    <lastmod>2026-02-28T20:39:53.777Z</lastmod>
   </url>
   <url>
-    <loc>https://angelucv.github.io/cvea/rvea/vol1-colmenares.html</loc>
-    <lastmod>2026-02-27T22:40:11.909Z</lastmod>
-  </url>
-  <url>
-    <loc>https://angelucv.github.io/cvea/rvea/index.html</loc>
-    <lastmod>2026-02-27T22:40:11.909Z</lastmod>
-  </url>
-  <url>
-    <loc>https://angelucv.github.io/cvea/investigacion/model-hub.html</loc>
-    <lastmod>2026-02-27T22:40:11.909Z</lastmod>
-  </url>
-  <url>
-    <loc>https://angelucv.github.io/cvea/contacto.html</loc>
-    <lastmod>2026-02-27T22:40:11.906Z</lastmod>
-  </url>
-  <url>
-    <loc>https://angelucv.github.io/cvea/observatorio.html</loc>
-    <lastmod>2026-02-27T22:40:11.909Z</lastmod>
-  </url>
-  <url>
-    <loc>https://angelucv.github.io/cvea/miembros.html</loc>
-    <lastmod>2026-02-27T22:40:11.909Z</lastmod>
-  </url>
-  <url>
-    <loc>https://angelucv.github.io/cvea/index.html</loc>
-    <lastmod>2026-02-27T22:40:11.907Z</lastmod>
-  </url>
-  <url>
-    <loc>https://angelucv.github.io/cvea/el-cvea.html</loc>
-    <lastmod>2026-02-27T22:40:11.907Z</lastmod>
-  </url>
-  <url>
-    <loc>https://angelucv.github.io/cvea/cvea-suite.html</loc>
-    <lastmod>2026-02-27T22:40:11.906Z</lastmod>
-  </url>
-  <url>
-    <loc>https://angelucv.github.io/cvea/actualidad.html</loc>
-    <lastmod>2026-02-27T22:40:11.815Z</lastmod>
-  </url>
-  <url>
-    <loc>https://angelucv.github.io/cvea/investigacion/index.html</loc>
-    <lastmod>2026-02-27T22:40:11.908Z</lastmod>
-  </url>
-  <url>
-    <loc>https://angelucv.github.io/cvea/investigacion/tfpg.html</loc>
-    <lastmod>2026-02-27T22:40:11.909Z</lastmod>
+    <loc>https://angelucv.github.io/cvea/rvea/portal.html</loc>
+    <lastmod>2026-02-28T20:39:53.777Z</lastmod>
   </url>
   <url>
     <loc>https://angelucv.github.io/cvea/rvea/vol2-herrera.html</loc>
-    <lastmod>2026-02-27T22:40:11.909Z</lastmod>
+    <lastmod>2026-02-28T20:39:53.777Z</lastmod>
+  </url>
+  <url>
+    <loc>https://angelucv.github.io/cvea/investigacion/tfpg.html</loc>
+    <lastmod>2026-02-28T20:39:53.776Z</lastmod>
+  </url>
+  <url>
+    <loc>https://angelucv.github.io/cvea/investigacion/index.html</loc>
+    <lastmod>2026-02-28T20:39:53.775Z</lastmod>
+  </url>
+  <url>
+    <loc>https://angelucv.github.io/cvea/actualidad.html</loc>
+    <lastmod>2026-02-28T20:39:53.689Z</lastmod>
+  </url>
+  <url>
+    <loc>https://angelucv.github.io/cvea/cvea-suite.html</loc>
+    <lastmod>2026-02-28T20:39:53.774Z</lastmod>
+  </url>
+  <url>
+    <loc>https://angelucv.github.io/cvea/el-cvea.html</loc>
+    <lastmod>2026-02-28T20:39:53.775Z</lastmod>
+  </url>
+  <url>
+    <loc>https://angelucv.github.io/cvea/index.html</loc>
+    <lastmod>2026-02-28T20:39:53.775Z</lastmod>
+  </url>
+  <url>
+    <loc>https://angelucv.github.io/cvea/miembros.html</loc>
+    <lastmod>2026-02-28T20:39:53.776Z</lastmod>
+  </url>
+  <url>
+    <loc>https://angelucv.github.io/cvea/observatorio.html</loc>
+    <lastmod>2026-02-28T20:39:53.776Z</lastmod>
+  </url>
+  <url>
+    <loc>https://angelucv.github.io/cvea/contacto.html</loc>
+    <lastmod>2026-02-28T20:39:53.774Z</lastmod>
+  </url>
+  <url>
+    <loc>https://angelucv.github.io/cvea/investigacion/model-hub.html</loc>
+    <lastmod>2026-02-28T20:39:53.776Z</lastmod>
+  </url>
+  <url>
+    <loc>https://angelucv.github.io/cvea/rvea/index.html</loc>
+    <lastmod>2026-02-28T20:39:53.777Z</lastmod>
+  </url>
+  <url>
+    <loc>https://angelucv.github.io/cvea/rvea/vol1-colmenares.html</loc>
+    <lastmod>2026-02-28T20:39:53.777Z</lastmod>
   </url>
   <url>
     <loc>https://angelucv.github.io/cvea/rvea/OPCIONES_ARTICULOS_HTML.html</loc>
-    <lastmod>2026-02-27T22:40:11.909Z</lastmod>
+    <lastmod>2026-02-28T20:39:53.777Z</lastmod>
   </url>
   <url>
     <loc>https://angelucv.github.io/cvea/rvea/vol1-moreno.html</loc>
-    <lastmod>2026-02-27T22:40:11.909Z</lastmod>
+    <lastmod>2026-02-28T20:39:53.777Z</lastmod>
   </url>
   <url>
     <loc>https://angelucv.github.io/cvea/rvea/vol1-azuaje.html</loc>
-    <lastmod>2026-02-27T22:40:11.909Z</lastmod>
+    <lastmod>2026-02-28T20:39:53.777Z</lastmod>
   </url>
   <url>
     <loc>https://angelucv.github.io/cvea/libro/cap1-diagnostico.html</loc>
-    <lastmod>2026-02-27T22:40:11.909Z</lastmod>
+    <lastmod>2026-02-28T20:39:53.776Z</lastmod>
   </url>
   <url>
     <loc>https://angelucv.github.io/cvea/docencia/series-tiempo/index.html</loc>
-    <lastmod>2026-02-27T22:40:11.907Z</lastmod>
+    <lastmod>2026-02-28T20:39:53.775Z</lastmod>
   </url>
   <url>
     <loc>https://angelucv.github.io/cvea/servicios/demo-mapa.html</loc>
-    <lastmod>2026-02-27T22:40:11.911Z</lastmod>
+    <lastmod>2026-02-28T20:39:53.778Z</lastmod>
   </url>
 </urlset>
