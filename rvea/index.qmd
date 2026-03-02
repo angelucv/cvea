@@ -113,6 +113,13 @@ Los siguientes manuscritos están publicados y pueden leerse en línea o descarg
 [Ver en HTML](https://angelucv.github.io/cvea-articulos/articulo-moreno-colmenares-mortalidad-infantil.html){.btn-art target="_blank"} [Descargar PDF](https://angelucv.github.io/cvea-articulos/articulo-moreno-colmenares-mortalidad-infantil.pdf){.btn-art target="_blank"}
 :::
 
+::: {.rvea-card}
+**Propuesta para el desarrollo de una tabla de mortalidad selecta por medio del método de Lee-Carter**  
+*Daniel Azuaje* — Aplicación en R a partir de datos censales y comparación con la mortalidad observada de una empresa de seguros venezolana. *(Versión preliminar.)*
+
+[Ver en HTML](vol1-azuaje.html){.btn-art} [Descargar PDF](vol1-azuaje.pdf){.btn-art}
+:::
+
 Más artículos y el plan completo por volumen: [**Artículos**](articulos.qmd) · [**Portal RVEA**](portal.qmd).
 :::
 
