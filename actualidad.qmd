@@ -16,6 +16,21 @@ Sección de **comunicación dinámica** del CVEA: noticias del sector, eventos a
 
 *(Añade aquí una fila cada vez que publiques algo nuevo que el público deba ver: artículo, libro, curso, noticia. Solo contenido de interés público — no detalles internos ni actualizaciones de código. Criterios detallados en el archivo `NOVEDADES.md` del repositorio.)*
 
+## Noticias del sector en tiempo real {#noticias-tiempo-real}
+
+Enlaces a portales de noticias y actualidad del mundo actuarial y asegurador. Abre los enlaces para ver titulares y noticias actualizadas.
+
+| Fuente | Enlace | Descripción |
+|--------|--------|-------------|
+| **SOA — News & Publications** | [soa.org/news-and-publications](https://www.soa.org/news-and-publications/) | Noticias, investigaciones y comunicados de la Society of Actuaries. |
+| **CAS — News & Updates** | [casact.org/news](https://www.casact.org/news) | Actualidad de la Casualty Actuarial Society (seguros de no vida). |
+| **IAA — News** | [actuaries.org/news](https://www.actuaries.org/News) | Noticias de la International Actuarial Association. |
+| **The Actuary (IFoA)** | [theactuary.com](https://www.theactuary.com/) | Revista y noticias del Instituto de Actuarios del Reino Unido. |
+| **Google Noticias — búsqueda "actuarial"** | [news.google.com](https://news.google.com/search?q=actuarial&hl=es) | Titulares recientes que mencionan temas actuariales. |
+| **Google Noticias — búsqueda "seguros"** | [news.google.com](https://news.google.com/search?q=seguros&hl=es) | Noticias del sector asegurador. |
+
+Para seguir novedades de forma centralizada, puedes usar un lector RSS (por ejemplo Feedly o Inoreader) y añadir los feeds que ofrezcan estas instituciones cuando estén disponibles en sus sitios.
+
 ## Revistas e instancias de referencia
 
 Enlaces a revistas e instancias de interés para la comunidad actuarial y estadística:

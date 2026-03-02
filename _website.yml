@@ -1,16 +1,18 @@
-# Configuración del sitio — Arquitectura: Investigación, Docencia y Extensión
+# Configuración del sitio — Menú en barra lateral izquierda desplegable
 website:
   title: "Centro Venezolano de Estudios Actuariales"
   site-url: https://angelucv.github.io/cvea/
   favicon: assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png
+
+  # Barra superior fija: logo + acceso rápido a las secciones principales (sin Actualidad)
   navbar:
     logo: "assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png"
     logo-alt: "CVEA"
     href: index.qmd
+    title: "CVEA"
     collapse-below: lg
     pinned: true
     right:
-      # Bloque A: Ejes Académicos (Núcleo Universitario)
       - icon: house-fill
         text: "Inicio"
         href: index.qmd
@@ -20,9 +22,32 @@ website:
       - icon: people-fill
         text: "Miembros"
         href: miembros.qmd
-      - icon: journal-richtext
-        text: "Investigación"
-        menu:
+      - icon: file-earmark-text
+        text: "RVEA"
+        href: rvea/index.qmd
+      - icon: cpu
+        text: "CVEA Suite"
+        href: cvea-suite.qmd
+      - icon: play-btn
+        text: "Cursos"
+        href: docencia/index.qmd
+
+  # Menú principal en barra lateral izquierda (desplegable por secciones, color institucional)
+  sidebar:
+    style: "docked"
+    collapse-level: 1
+    pinned: true
+    background: "#38666A"
+    type: "dark"
+    contents:
+      - text: "Inicio"
+        href: index.qmd
+      - text: "El CVEA"
+        href: el-cvea.qmd
+      - text: "Miembros"
+        href: miembros.qmd
+      - section: "Investigación"
+        contents:
           - text: "Libros"
             href: libro/index.qmd
           - text: "TFPG"
@@ -31,9 +56,8 @@ website:
             href: rvea/index.qmd
           - text: "Model Hub"
             href: investigacion/model-hub.qmd
-      - icon: person-workspace
-        text: "Docencia"
-        menu:
+      - section: "Docencia"
+        contents:
           - text: "Series de Tiempo (Python)"
             href: docencia/series-tiempo/index.qmd
           - text: "Plataforma de cursos"
@@ -42,16 +66,12 @@ website:
             href: docencia/index.qmd#recursos
           - text: "Próximas ofertas"
             href: docencia/index.qmd#proximas
-      - icon: gear-fill
-        text: "Extensión"
+      - text: "Extensión (Servicios)"
         href: servicios/index.qmd
-      - icon: bar-chart-line
-        text: "Observatorio"
+      - text: "Observatorio"
         href: observatorio.qmd
-      # Bloque B: Gestión y Vinculación
-      - icon: cpu
-        text: "CVEA Suite"
-        menu:
+      - section: "CVEA Suite"
+        contents:
           - text: "Página CVEA Suite"
             href: cvea-suite.qmd
           - text: "CVEA Bank Suite (CVEA-BS)"
@@ -64,27 +84,23 @@ website:
             href: cvea-suite.qmd#cvea-health-suite
           - text: "CVEA Control Suite (CVEA-CS)"
             href: cvea-suite.qmd#cvea-control-suite-visión-general-y-industria
-      - icon: file-earmark-text
-        text: "RVEA"
-        menu:
+      - section: "RVEA"
+        contents:
           - text: "Revista RVEA"
             href: rvea/index.qmd
           - text: "Artículos"
             href: rvea/articulos.qmd
           - text: "Portal RVEA"
             href: rvea/portal.qmd
-      - icon: book
-        text: "Libros"
+      - text: "Libros"
         href: libro/index.qmd
-      - icon: play-btn
-        text: "Cursos"
-        href: docencia/index.qmd#cursos
-      - icon: megaphone
-        text: "Actualidad"
+      - text: "Cursos"
+        href: docencia/index.qmd
+      - text: "Actualidad"
         href: actualidad.qmd
-      - icon: envelope
-        text: "Contacto"
+      - text: "Contacto"
         href: contacto.qmd
+
   page-footer:
     left:
       - text: "© CVEA — Centro Venezolano de Estudios Actuariales"

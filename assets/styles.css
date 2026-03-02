@@ -23,6 +23,58 @@ p > a:hover::before { visibility: visible; transform: scaleX(1); }
 ul.share li a { background-color: var(--cvea-teal); }
 .sidebar nav[role=doc-toc] ul>li>a.active { border-left-color: var(--cvea-teal); color: var(--cvea-teal) !important; }
 .sidebar nav[role=doc-toc] ul>li>ul>li>a.active { border-left-color: var(--cvea-teal); color: var(--cvea-teal) !important; }
+/* Barra lateral: desplegable (colapsable) y verde institucional CVEA */
+#quarto-sidebar {
+  background: var(--cvea-teal) !important;
+  transition: width 0.25s ease, min-width 0.25s ease;
+}
+/* Asegurar que la barra lateral sea desplegable: al colapsar se oculta, al expandir se muestra */
+nav#quarto-sidebar.collapse:not(.show) {
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+nav#quarto-sidebar.collapse.show {
+  width: 280px !important;
+  min-width: 280px !important;
+  max-width: 280px !important;
+}
+#quarto-sidebar .sidebar-menu-container {
+  background: var(--cvea-teal) !important;
+}
+#quarto-sidebar .sidebar-item a,
+#quarto-sidebar .sidebar-item-text,
+#quarto-sidebar .sidebar-item-section-title {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+#quarto-sidebar .sidebar-item a:hover {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.1);
+}
+#quarto-sidebar .sidebar-item a.active {
+  color: #fff !important;
+  border-left-color: #fff !important;
+  font-weight: 600;
+}
+#quarto-sidebar .sidebar-item-section-title {
+  color: #fff !important;
+  font-weight: 600;
+  opacity: 1;
+}
+#quarto-sidebar .sidebar-item-section .sidebar-item-section-title {
+  cursor: pointer;
+}
+#quarto-sidebar .sidebar-item-section.collapsed .sidebar-item-section-title::after {
+  color: rgba(255, 255, 255, 0.8);
+}
+.sidebar-item-container .sidebar-item a.active { color: #fff !important; border-left-color: #fff; }
+.sidebar-item-container .sidebar-item a:hover { color: #fff !important; }
+.sidebar-item-container .sidebar-item-text { color: rgba(255, 255, 255, 0.95) !important; }
+.sidebar nav[role="navigation"] .sidebar-item-section-title { color: #fff !important; font-weight: 600; }
 .nav-link:hover, .nav-link:focus { color: var(--cvea-teal); }
 .btn-21:hover:before { background: linear-gradient(to right, transparent, var(--cvea-teal)); }
 .btn-21:hover:after { background: linear-gradient(to bottom, transparent, var(--cvea-teal)); }
