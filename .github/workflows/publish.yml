@@ -26,6 +26,12 @@ jobs:
       - name: Install R packages for Quarto (knitr, rmarkdown, xml2)
         run: Rscript -e "install.packages(c('knitr', 'rmarkdown', 'xml2'), repos = 'https://cloud.r-project.org')"
 
+      - name: Install TinyTeX (for PDF output)
+        run: |
+          Rscript -e "install.packages('tinytex', repos = 'https://cloud.r-project.org'); tinytex::install_tinytex(force = TRUE)"
+          echo "${HOME}/.TinyTeX/bin/x86_64-linux" >> $GITHUB_PATH
+          echo "PATH=${HOME}/.TinyTeX/bin/x86_64-linux:$PATH" >> $GITHUB_ENV
+
       - name: Create gh-pages branch if missing
         run: |
           git config user.email "quarto-publish@github-actions"
@@ -42,9 +48,6 @@ jobs:
       - uses: quarto-dev/quarto-actions/setup@v2
         with:
           version: "1.8.27"
-
-      - name: Install TinyTeX (for PDF output)
-        run: quarto install tinytex
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
