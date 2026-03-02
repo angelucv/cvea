@@ -50,7 +50,24 @@ include-in-header: assets/meta.html
     <a href="#bloque-academico" class="btn-21 animate__animated animate__zoomInUp" style="margin-top: 1.5rem; text-decoration: none; color: white;"><span>Conocer más</span></a>
   </div>
 </div>
+```
 
+```{=html}
+<nav class="portal-nav-bar" aria-label="Navegación principal">
+  <div class="portal-nav-bar-inner">
+    <a href="index.qmd" class="active">Inicio</a><span class="sep">·</span>
+    <a href="el-cvea.qmd">El CVEA</a><span class="sep">·</span>
+    <a href="miembros.qmd">Miembros</a><span class="sep">·</span>
+    <a href="rvea/index.qmd">RVEA</a><span class="sep">·</span>
+    <a href="cvea-suite.qmd">CVEA Suite</a><span class="sep">·</span>
+    <a href="docencia/index.qmd">Cursos</a><span class="sep">·</span>
+    <a href="actualidad.qmd">Actualidad</a><span class="sep">·</span>
+    <a href="contacto.qmd">Contacto</a>
+  </div>
+</nav>
+```
+
+```{=html}
 <!-- Sección intro (slideshow + cita) -->
 <div class="intro intro_f" style="background-color: black;">
   <div class="intro-slideshow">
