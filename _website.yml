@@ -31,6 +31,13 @@ website:
       - icon: play-btn
         text: "Cursos"
         href: docencia/index.qmd
+    tools:
+      - icon: envelope-fill
+        href: "mailto:cvea.ucv@gmail.com"
+        aria-label: "Correo CVEA"
+      - icon: instagram
+        href: "https://instagram.com/cvea_actuarial"
+        aria-label: "Instagram CVEA"
 
   # Menú principal en barra lateral izquierda (desplegable por secciones, color institucional)
   sidebar:
@@ -106,3 +113,8 @@ website:
       - text: "© CVEA — Centro Venezolano de Estudios Actuariales"
     center:
       - text: "Investigación · Docencia · Extensión"
+    right:
+      - text: "cvea.ucv@gmail.com"
+        href: "mailto:cvea.ucv@gmail.com"
+      - text: "@cvea_actuarial"
+        href: "https://instagram.com/cvea_actuarial"

@@ -23,8 +23,8 @@ jobs:
           r-version: "4.3"
           use-public-rspm: true
 
-      - name: Install R packages for Quarto (knitr, rmarkdown)
-        run: Rscript -e "install.packages(c('knitr', 'rmarkdown'), repos = 'https://cloud.r-project.org')"
+      - name: Install R packages for Quarto (knitr, rmarkdown, xml2)
+        run: Rscript -e "install.packages(c('knitr', 'rmarkdown', 'xml2'), repos = 'https://cloud.r-project.org')"
 
       - name: Create gh-pages branch if missing
         run: |

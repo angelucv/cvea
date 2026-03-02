@@ -239,4 +239,32 @@ El **Centro Venezolano de Estudios Actuariales (CVEA)** se erige como un **Hub d
 - [**Actualidad**](actualidad.qmd) — Noticias, eventos, Call for Papers
 - [**Contacto**](contacto.qmd) — Solicitudes y soporte
 
+## Últimas noticias del sector
+
+Titulares recientes (seguros y actuarial). [**Ver todas en Actualidad**](actualidad.qmd#noticias-tiempo-real).
+
+```{r}
+#| label: inicio-noticias-teaser
+#| echo: false
+#| results: asis
+#| cache: false
+url_rss <- "https://news.google.com/rss/search?q=seguros+actuarial&hl=es"
+tryCatch({
+  xml <- xml2::read_xml(url_rss, options = c("NOBLANKS", "NOCDATA"),
+    user_agent = "Mozilla/5.0 (compatible; CVEA/1.0)")
+  items <- xml2::xml_find_all(xml, "//item")[1:min(3, length(xml2::xml_find_all(xml, "//item")))]
+  if (length(items) == 0) stop("No items")
+  cat('<ul class="list-unstyled">\n')
+  for (it in items) {
+    title <- xml2::xml_text(xml2::xml_find_first(it, "title"))
+    link  <- xml2::xml_text(xml2::xml_find_first(it, "link"))
+    if (is.na(link)) link <- "https://news.google.com/search?q=seguros+actuarial&hl=es"
+    cat(sprintf('  <li class="mb-1"><a href="%s" target="_blank" rel="noopener">%s</a></li>\n', link, title))
+  }
+  cat('</ul>\n')
+}, error = function(e) {
+  cat('<p class="text-muted small">Ver noticias en <a href="actualidad.qmd#noticias-tiempo-real">Actualidad</a>.</p>')
+})
+```
+
 :::

@@ -31,4 +31,4 @@
 - **Corto plazo:** Crear la cuenta de Instagram del CVEA y, cada vez que se añada algo en **Actualidad → Novedades**, publicar manualmente en Instagram con el enlace al sitio. Puedes indicar en la bio de Instagram: “Novedades y enlaces en [url del CVEA]”.
 - **Mediano plazo:** Si se implementa un RSS de Novedades en el sitio, usarlo con IFTTT/Zapier para notificaciones o recordatorios; la publicación en Instagram seguirá siendo manual o semiautomática.
 
-Este archivo se puede ampliar cuando se defina la cuenta oficial de Instagram y el flujo que se quiera usar (por ejemplo, si se usa Meta Business Suite o un gestor de redes).
+**Cuenta oficial del CVEA:** [@cvea_actuarial](https://instagram.com/cvea_actuarial) (Instagram). Correo oficial: [cvea.ucv@gmail.com](mailto:cvea.ucv@gmail.com). Este archivo se puede ampliar cuando se defina el flujo que se quiera usar (por ejemplo, si se usa Meta Business Suite o un gestor de redes).

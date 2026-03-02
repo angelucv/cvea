@@ -17,7 +17,7 @@ El **Centro Venezolano de Estudios Actuariales (CVEA)** integra tres ejes bajo u
 | **Formación** | Cursos en series de tiempo, modelado actuarial y despliegue en entornos productivos. |
 | **Servicios** | Demos analíticos, dashboards interactivos y consultoría en reservas y riesgo. |
 
-La coordinación editorial, la tutoría de investigaciones y la relación con el sector (IVSS, Sudeaseg, aseguradoras) están a cargo del equipo cuyo perfil se presenta en [Miembros](miembros.qmd).
+La coordinación editorial, la tutoría de investigaciones y la relación con el sector (IVSS, Sudeaseg, aseguradoras) están a cargo del equipo cuyo perfil se presenta en [Miembros](miembros.qmd). **Contacto oficial:** [cvea.ucv@gmail.com](mailto:cvea.ucv@gmail.com) · [Instagram @cvea_actuarial](https://instagram.com/cvea_actuarial).
 
 ## Historia
 
