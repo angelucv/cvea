@@ -1,10 +1,9 @@
-# Configuración del sitio — Menú en barra lateral izquierda desplegable
+# Configuración del sitio — Menú lateral por ejes (Investigación, Docencia, Extensión)
 website:
   title: "Centro Venezolano de Estudios Actuariales"
   site-url: https://angelucv.github.io/cvea/
   favicon: assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png
 
-  # Barra superior fija: logo + acceso rápido a las secciones principales (sin Actualidad)
   navbar:
     logo: "assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png"
     logo-alt: "CVEA"
@@ -39,7 +38,6 @@ website:
         href: "https://instagram.com/cvea_actuarial"
         aria-label: "Instagram CVEA"
 
-  # Menú principal en barra lateral izquierda (desplegable por secciones, color institucional)
   sidebar:
     style: "docked"
     collapse-level: 1
@@ -65,6 +63,8 @@ website:
             href: investigacion/model-hub.qmd
       - section: "Docencia"
         contents:
+          - text: "Cursos"
+            href: docencia/index.qmd
           - text: "Series de Tiempo (Python)"
             href: docencia/series-tiempo/index.qmd
           - text: "Plataforma de cursos"
@@ -73,13 +73,13 @@ website:
             href: docencia/index.qmd#recursos
           - text: "Próximas ofertas"
             href: docencia/index.qmd#proximas
-      - text: "Extensión (Servicios)"
-        href: servicios/index.qmd
-      - text: "Observatorio"
-        href: observatorio.qmd
-      - section: "CVEA Suite"
+      - section: "Extensión"
         contents:
-          - text: "Página CVEA Suite"
+          - text: "Servicios"
+            href: servicios/index.qmd
+          - text: "Observatorio"
+            href: observatorio.qmd
+          - text: "CVEA Suite"
             href: cvea-suite.qmd
           - text: "CVEA Bank Suite (CVEA-BS)"
             href: cvea-suite.qmd#cvea-bank-suite
@@ -91,18 +91,6 @@ website:
             href: cvea-suite.qmd#cvea-health-suite
           - text: "CVEA Control Suite (CVEA-CS)"
             href: cvea-suite.qmd#cvea-control-suite-visión-general-y-industria
-      - section: "RVEA"
-        contents:
-          - text: "Revista RVEA"
-            href: rvea/index.qmd
-          - text: "Artículos"
-            href: rvea/articulos.qmd
-          - text: "Portal RVEA"
-            href: rvea/portal.qmd
-      - text: "Libros"
-        href: libro/index.qmd
-      - text: "Cursos"
-        href: docencia/index.qmd
       - text: "Actualidad"
         href: actualidad.qmd
       - text: "Contacto"

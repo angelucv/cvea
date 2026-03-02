@@ -75,6 +75,24 @@ format:
     </p>
   </div>
 </div>
+```
+
+```{=html}
+<nav class="portal-nav-bar" aria-label="Navegación principal">
+  <div class="portal-nav-bar-inner">
+    <a href="../index.qmd">Inicio</a><span class="sep">·</span>
+    <a href="../el-cvea.qmd">El CVEA</a><span class="sep">·</span>
+    <a href="../miembros.qmd">Miembros</a><span class="sep">·</span>
+    <a href="../rvea/index.qmd">RVEA</a><span class="sep">·</span>
+    <a href="../cvea-suite.qmd">CVEA Suite</a><span class="sep">·</span>
+    <a href="index.qmd" class="active">Cursos</a><span class="sep">·</span>
+    <a href="../actualidad.qmd">Actualidad</a><span class="sep">·</span>
+    <a href="../contacto.qmd">Contacto</a>
+  </div>
+</nav>
+```
+
+```{=html}
 <div class="moodle-cta-bar">
   <a href="https://cvea.gnomio.com/" target="_blank" rel="noopener noreferrer" class="moodle-btn-portal animate__animated animate__zoomIn">Abrir Portal de Cursos</a>
 </div>

@@ -8,13 +8,11 @@ Sección de **comunicación dinámica** del CVEA: noticias del sector, eventos a
 
 ## Novedades {#novedades}
 
-Últimas incorporaciones al sitio de interés para el público: nuevos artículos, libros publicados, cursos o secciones y noticias. *(Solo se listan contenidos ya visibles en la web; no se incluyen detalles internos de repositorios ni actualizaciones de código.)*
+Últimas incorporaciones al sitio: nuevos artículos, libros publicados, cursos o secciones y noticias.
 
 | Fecha | Tipo | Novedad | Enlace |
 |-------|------|---------|--------|
 | Marzo 2026 | Artículo RVEA | **Daniel Azuaje** — Propuesta para el desarrollo de una tabla de mortalidad selecta por Lee-Carter (datos censales, R, comparación con CSO 1980 y TDM Venezolana). Versión preliminar. | [Ver artículo](rvea/vol1-azuaje.html) · [PDF](rvea/vol1-azuaje.pdf) |
-
-*(Añade aquí una fila cada vez que publiques algo nuevo que el público deba ver: artículo, libro, curso, noticia. Solo contenido de interés público — no detalles internos ni actualizaciones de código. Criterios detallados en el archivo `NOVEDADES.md` del repositorio.)*
 
 ## Noticias del sector en tiempo real {#noticias-tiempo-real}
 
@@ -67,8 +65,6 @@ Enlaces a portales de noticias y actualidad del mundo actuarial y asegurador. Ab
 | **Google Noticias — búsqueda "actuarial"** | [news.google.com](https://news.google.com/search?q=actuarial&hl=es) | Titulares recientes que mencionan temas actuariales. |
 | **Google Noticias — búsqueda "seguros"** | [news.google.com](https://news.google.com/search?q=seguros&hl=es) | Noticias del sector asegurador. |
 
-Para seguir novedades de forma centralizada, puedes usar un lector RSS (por ejemplo Feedly o Inoreader) y añadir los feeds que ofrezcan estas instituciones cuando estén disponibles en sus sitios.
-
 ## Revistas e instancias de referencia
 
 Enlaces a revistas e instancias de interés para la comunidad actuarial y estadística:
@@ -100,11 +96,11 @@ Calendario para **eventos organizados o coorganizados por el CVEA**: defensas de
 | *Por definir* | Próximas defensas TFPG (Vol. II y III) | UCV / por anunciar |
 | *Por definir* | Webinars y cursos (Series de Tiempo, módulos R/Python) | [Cursos](docencia/index.qmd#cursos) |
 
-*(Añade filas a esta tabla según se confirmen eventos. Para proponer uno, use [Contacto](contacto.qmd).)*
+Para proponer un evento: [Contacto](contacto.qmd).
 
 ## Noticias y blog
 
-Artículos de opinión técnica y análisis de coyuntura económica y actuarial. *(Contenido se irá publicando según disponibilidad.)*
+Artículos de opinión técnica y análisis de coyuntura económica y actuarial.
 
 ## Editorial (Notificaciones)
 

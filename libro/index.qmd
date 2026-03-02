@@ -19,16 +19,21 @@ El libro **Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo
 
 Los materiales docentes del CVEA se apoyan en obras de referencia que recopilan diagnóstico, bases técnicas y metodologías reproducibles. La propuesta editorial del CVEA (2025-2026) contempla el libro *Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial*, estructurado en cuatro partes: (I) Diagnóstico del sistema de previsión social venezolano; (II) Dinámica de la mortalidad: métodos y proyecciones (Lee-Carter, Cadenas de Markov, CoDa); (III) Anatomía del riesgo por causa, género y región; (IV) Síntesis y recomendaciones para política pública y práctica actuarial. Además, el CVEA incorpora *Introducción a las Matemáticas Financieras*, producto del Trabajo Final de Pregrado (TFPG) de **Franklin Quero (2025)**. Está previsto un segundo libro, *Introducción a las Matemáticas Actuariales*, en colaboración con el **Prof. Felipe Moreno**. Estas obras y otros materiales de la presentación institucional del Centro complementan la base para cursos, asesorías y recomendaciones a reguladores (IVSS, Sudeaseg) y al sector asegurador.
 
-## Libro disponible
+## Libros disponibles
 
-**Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial**
+### Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial
 
 Libro compilado con la plantilla CVEA Book. Cuando el HTML y el PDF estén publicados en esta carpeta, estarán disponibles:
 
-- **Ver en línea (HTML):** enlace a publicar cuando el build esté en `libro/demografia-siglo-xxi/` (ver [README](demografia-siglo-xxi/README.md)).
-- [Descargar PDF](demografia-siglo-xxi/Demografia-Mortalidad-Prevision-Social-Venezuela-Siglo-XXI.pdf) *(si el archivo existe en esa ruta).*
+- **Ver en línea (HTML):** enlace a publicar cuando el build esté disponible.
+- [Descargar PDF](demografia-siglo-xxi/Demografia-Mortalidad-Prevision-Social-Venezuela-Siglo-XXI.pdf) *(si está disponible).*
 
-*Si el PDF tiene otro nombre, edita este archivo y sustituye el nombre del enlace. Instrucciones en `libro/demografia-siglo-xxi/README.md`.*
+### Introducción a las Matemáticas Financieras (Franklin Quero, 2025)
+
+Basado en el TFPG TFPG-FRANKLIN-QUERO-05-10-2025. Primer vaciado en plantilla CVEA Book; desarrollo en curso.
+
+- **Ver en línea (HTML):** [intro-matematicas-financieras](intro-matematicas-financieras/index.html).
+- **Capítulos y contenido:** [intro-matematicas-financieras](intro-matematicas-financieras/).
 
 ## Contenido (Libros y Materiales Docentes en desarrollo)
 

@@ -68,6 +68,18 @@ format:
     <p class="rvea-hero-rotate animate__animated animate__fadeIn" id="rvea-rotate-wrap"><span class="txt-rotate" id="rvea-txt-rotate"></span></p>
   </div>
 </div>
+<nav class="portal-nav-bar" aria-label="Navegación principal">
+  <div class="portal-nav-bar-inner">
+    <a href="../index.qmd">Inicio</a><span class="sep">·</span>
+    <a href="../el-cvea.qmd">El CVEA</a><span class="sep">·</span>
+    <a href="../miembros.qmd">Miembros</a><span class="sep">·</span>
+    <a href="index.qmd" class="active">RVEA</a><span class="sep">·</span>
+    <a href="../cvea-suite.qmd">CVEA Suite</a><span class="sep">·</span>
+    <a href="../docencia/index.qmd">Cursos</a><span class="sep">·</span>
+    <a href="../actualidad.qmd">Actualidad</a><span class="sep">·</span>
+    <a href="../contacto.qmd">Contacto</a>
+  </div>
+</nav>
 <div class="rvea-cta-bar">
   <a href="articulos.qmd" class="rvea-btn-articulos animate__animated animate__zoomIn">Ver artículos</a>
 </div>

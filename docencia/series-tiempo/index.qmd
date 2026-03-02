@@ -28,10 +28,7 @@ El desarrollo del curso está publicado en:
 
 **[Series de Tiempo con Python (Web)](https://angel-colmenares.quarto.pub/time-series-python-web/)**
 
-Para integrar módulos dentro de esta plataforma puedes:
-
-1. **Clonar o enlazar** el repositorio del curso en una subcarpeta `modules/` y listar los `.qmd` en `listing.contents` del encabezado de esta página.
-2. **Mantener el enlace externo** como arriba y usar esta página como índice institucional del CVEA.
+Los módulos del curso se irán incorporando en esta plataforma según estén disponibles.
 
 ## Relación con la investigación CVEA
 
