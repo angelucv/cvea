@@ -6,6 +6,16 @@ toc: true
 
 Sección de **comunicación dinámica** del CVEA: noticias del sector, eventos académicos y notificaciones editoriales.
 
+## Novedades {#novedades}
+
+Últimas incorporaciones al sitio de interés para el público: nuevos artículos, libros publicados, cursos o secciones y noticias. *(Solo se listan contenidos ya visibles en la web; no se incluyen detalles internos de repositorios ni actualizaciones de código.)*
+
+| Fecha | Tipo | Novedad | Enlace |
+|-------|------|---------|--------|
+| Marzo 2026 | Artículo RVEA | **Daniel Azuaje** — Propuesta para el desarrollo de una tabla de mortalidad selecta por Lee-Carter (datos censales, R, comparación con CSO 1980 y TDM Venezolana). Versión preliminar. | [Ver artículo](rvea/vol1-azuaje.html) · [PDF](rvea/vol1-azuaje.pdf) |
+
+*(Añade aquí una fila cada vez que publiques algo nuevo que el público deba ver: artículo, libro, curso, noticia. Solo contenido de interés público — no detalles internos ni actualizaciones de código. Criterios detallados en el archivo `NOVEDADES.md` del repositorio.)*
+
 ## Revistas e instancias de referencia
 
 Enlaces a revistas e instancias de interés para la comunidad actuarial y estadística:
