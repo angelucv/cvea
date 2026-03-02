@@ -14,7 +14,8 @@
     "text": "El eje de Extensión del CVEA es el brazo ejecutor que vincula al centro con la industria mediante consultoría estratégica, observatorio de variables, servicios al sector y la oferta de CVEA Suite: plataforma modular de tecnología a medida y analítica de alto nivel para transformar la operatividad de su organización. Transferencia tecnológica y aplicaciones directas de la investigación publicada en la RVEA y en los libros (mortalidad, reservas, riesgo territorial).",
     "crumbs": [
       "Inicio",
-      "Extensión (Servicios)"
+      "Extensión",
+      "Servicios"
     ]
   },
   {
@@ -25,7 +26,8 @@
     "text": "Consultoría estratégica — Portafolio\n\nActividad Aseguradora: diseño técnico de productos, cálculo preciso de reservas, auditorías externas.\nBanca y Seguridad Social: modelado de riesgo de crédito, valuaciones de sostenibilidad fiscal.\nSectores no tradicionales: modelado actuarial del riesgo de deserción (churn), determinación de baremos, cuantificación financiera de riesgo operacional.\n\nCasos de estudio: documentos que explican problemas resueltos sin revelar datos confidenciales (en desarrollo).",
     "crumbs": [
       "Inicio",
-      "Extensión (Servicios)"
+      "Extensión",
+      "Servicios"
     ]
   },
   {
@@ -36,7 +38,8 @@
     "text": "Formación y cursos\nEl CVEA ofrece cursos y rutas de aprendizaje en análisis de datos, modelado actuarial y matemáticas financieras con R y Python: desde fundamentos analíticos hasta machine learning y despliegue de modelos. Los programas están orientados a profesionales de banca, seguros y pensiones. Ver Cursos para el detalle de módulos y ofertas.",
     "crumbs": [
       "Inicio",
-      "Extensión (Servicios)"
+      "Extensión",
+      "Servicios"
     ]
   },
   {
@@ -47,7 +50,8 @@
     "text": "Observatorio actuarial (Dashboard)\nVisualizaciones interactivas de variables biométricas (mortalidad), financieras (tasas de interés) y demográficas; boletines de indicadores mensuales. Detalle en Observatorio.",
     "crumbs": [
       "Inicio",
-      "Extensión (Servicios)"
+      "Extensión",
+      "Servicios"
     ]
   },
   {
@@ -58,7 +62,8 @@
     "text": "Servicios al sector\nFormulario de solicitud de asesoría técnica y convenios de pasantías industriales. Contacto.",
     "crumbs": [
       "Inicio",
-      "Extensión (Servicios)"
+      "Extensión",
+      "Servicios"
     ]
   },
   {
@@ -69,7 +74,8 @@
     "text": "Demos y galería\n\nDemos interactivos: simuladores de reservas IBNR, mapas de riesgo de mortalidad (tarjetas siguientes). Para aplicaciones Streamlit o Shiny se utilizan iframes optimizados.\nFormación continua y talleres: sesiones orientadas a actuarios, reguladores y profesionales; alineadas con la RVEA y los libros del Centro.\nInformes técnicos y policy briefs: síntesis de hallazgos en formato breve con recomendaciones de política (IVSS, Sudeaseg, aseguradoras, decisores).\nReproducibilidad: cuando el código de un demo esté en repositorio público, se enlaza desde la descripción.\n\nContacto a través de Miembros y Contacto.",
     "crumbs": [
       "Inicio",
-      "Extensión (Servicios)"
+      "Extensión",
+      "Servicios"
     ]
   },
   {
@@ -80,7 +86,8 @@
     "text": "Galería de demos\nA continuación se listan los demos disponibles. Añade capturas en assets/img/ (por ejemplo dashboard-preview.png) y referéncialas en listing.contents para mostrar miniaturas en cada tarjeta.",
     "crumbs": [
       "Inicio",
-      "Extensión (Servicios)"
+      "Extensión",
+      "Servicios"
     ]
   },
   {
@@ -461,7 +468,7 @@
     "href": "actualidad.html#novedades",
     "title": "Actualidad",
     "section": "Novedades",
-    "text": "Novedades\nÚltimas incorporaciones al sitio de interés para el público: nuevos artículos, libros publicados, cursos o secciones y noticias. (Solo se listan contenidos ya visibles en la web; no se incluyen detalles internos de repositorios ni actualizaciones de código.)\n\n\n\nFecha\nTipo\nNovedad\nEnlace\n\n\n\n\nMarzo 2026\nArtículo RVEA\nDaniel Azuaje — Propuesta para el desarrollo de una tabla de mortalidad selecta por Lee-Carter (datos censales, R, comparación con CSO 1980 y TDM Venezolana). Versión preliminar.\nVer artículo · PDF\n\n\n\n(Añade aquí una fila cada vez que publiques algo nuevo que el público deba ver: artículo, libro, curso, noticia. Solo contenido de interés público — no detalles internos ni actualizaciones de código. Criterios detallados en el archivo NOVEDADES.md del repositorio.)",
+    "text": "Novedades\nÚltimas incorporaciones al sitio: nuevos artículos, libros publicados, cursos o secciones y noticias.\n\n\n\nFecha\nTipo\nNovedad\nEnlace\n\n\n\n\nMarzo 2026\nArtículo RVEA\nDaniel Azuaje — Propuesta para el desarrollo de una tabla de mortalidad selecta por Lee-Carter (datos censales, R, comparación con CSO 1980 y TDM Venezolana). Versión preliminar.\nVer artículo · PDF",
     "crumbs": [
       "Inicio",
       "Actualidad"
@@ -472,7 +479,7 @@
     "href": "actualidad.html#noticias-tiempo-real",
     "title": "Actualidad",
     "section": "Noticias del sector en tiempo real",
-    "text": "Noticias del sector en tiempo real\n\nTitulares recientes (seguros y actuarial)\nLas siguientes noticias se obtienen del feed de Google Noticias en cada compilación de la página. Fuente: búsqueda «seguros» y «actuarial».\n\n\nLos actuarios catalanes plantean soluciones financieras ante las pérdidas por eventos catastróficos - SegurosNews Fri, 27 Feb 2026 12:47:14 GMT\n\n\nModernización actuarial en seguros 2025: estrategias clave - PwC Tue, 11 Nov 2025 08:00:00 GMT\n\n\nDirectora actuarial dice que la Caja no está en quiebra: seguro de salud tiene cubierto hasta 2035 - Semanario Universidad Fri, 06 Feb 2026 08:00:00 GMT\n\n\nLa SSN participó en las XXVI Jornadas Nacionales y Latinoamericanas Actuariales - 100% seguro Tue, 21 Oct 2025 07:00:00 GMT\n\n\nAlumnos de Actuaría se acercan al sector asegurador con Prevem Seguros - Anáhuac Mon, 14 Jul 2025 07:00:00 GMT\n\n\nEl Instituto de Actuarios acredita a 29 colegiados como distribuidores de seguros Nivel 1 - SegurosNews Tue, 17 Feb 2026 15:20:12 GMT\n\n\nAMA y Púrpura IA impulsan inteligencia artificial en seguros y fianzas - ITSitio Thu, 08 Jan 2026 08:00:00 GMT\n\n\nEl Instituto de Actuarios de España homenajea a sus Actuarios de Honor - Servimedia Wed, 26 Nov 2025 08:00:00 GMT\n\n\nAsesoría en la CSS: Esta es la entidad que evaluará la sostenibilidad de las pensiones - Telemetro Mon, 22 Sep 2025 07:00:00 GMT\n\n\nJose Luis Pérez Torres | Facultat d’Econòmiques i Empresarials | Página 3 - UB - Universitat de Barcelona Sun, 02 Nov 2025 07:00:00 GMT\n\n\n\nMás resultados en Google Noticias.\n\n\n\nEnlaces a fuentes\nEnlaces a portales de noticias y actualidad del mundo actuarial y asegurador. Abre los enlaces para ver titulares y noticias actualizadas.\n\n\n\nFuente\nEnlace\nDescripción\n\n\n\n\nSOA — News & Publications\nsoa.org/news-and-publications\nNoticias, investigaciones y comunicados de la Society of Actuaries.\n\n\nCAS — News & Updates\ncasact.org/news\nActualidad de la Casualty Actuarial Society (seguros de no vida).\n\n\nIAA — News\nactuaries.org/news\nNoticias de la International Actuarial Association.\n\n\nThe Actuary (IFoA)\ntheactuary.com\nRevista y noticias del Instituto de Actuarios del Reino Unido.\n\n\nGoogle Noticias — búsqueda “actuarial”\nnews.google.com\nTitulares recientes que mencionan temas actuariales.\n\n\nGoogle Noticias — búsqueda “seguros”\nnews.google.com\nNoticias del sector asegurador.\n\n\n\nPara seguir novedades de forma centralizada, puedes usar un lector RSS (por ejemplo Feedly o Inoreader) y añadir los feeds que ofrezcan estas instituciones cuando estén disponibles en sus sitios.",
+    "text": "Noticias del sector en tiempo real\n\nTitulares recientes (seguros y actuarial)\nLas siguientes noticias se obtienen del feed de Google Noticias en cada compilación de la página. Fuente: búsqueda «seguros» y «actuarial».\n\n\nLos actuarios catalanes plantean soluciones financieras ante las pérdidas por eventos catastróficos - SegurosNews Fri, 27 Feb 2026 12:47:14 GMT\n\n\nModernización actuarial en seguros 2025: estrategias clave - PwC Tue, 11 Nov 2025 08:00:00 GMT\n\n\nDirectora actuarial dice que la Caja no está en quiebra: seguro de salud tiene cubierto hasta 2035 - Semanario Universidad Fri, 06 Feb 2026 08:00:00 GMT\n\n\nLa SSN participó en las XXVI Jornadas Nacionales y Latinoamericanas Actuariales - 100% seguro Tue, 21 Oct 2025 07:00:00 GMT\n\n\nAlumnos de Actuaría se acercan al sector asegurador con Prevem Seguros - Anáhuac Mon, 14 Jul 2025 07:00:00 GMT\n\n\nEl Instituto de Actuarios acredita a 29 colegiados como distribuidores de seguros Nivel 1 - SegurosNews Tue, 17 Feb 2026 15:20:12 GMT\n\n\nAMA y Púrpura IA impulsan inteligencia artificial en seguros y fianzas - ITSitio Thu, 08 Jan 2026 08:00:00 GMT\n\n\nEl Instituto de Actuarios de España homenajea a sus Actuarios de Honor - Servimedia Wed, 26 Nov 2025 08:00:00 GMT\n\n\nAsesoría en la CSS: Esta es la entidad que evaluará la sostenibilidad de las pensiones - Telemetro Mon, 22 Sep 2025 07:00:00 GMT\n\n\nJose Luis Pérez Torres | Facultat d’Econòmiques i Empresarials | Página 3 - UB - Universitat de Barcelona Sun, 02 Nov 2025 07:00:00 GMT\n\n\n\nMás resultados en Google Noticias.\n\n\n\nEnlaces a fuentes\nEnlaces a portales de noticias y actualidad del mundo actuarial y asegurador. Abre los enlaces para ver titulares y noticias actualizadas.\n\n\n\nFuente\nEnlace\nDescripción\n\n\n\n\nSOA — News & Publications\nsoa.org/news-and-publications\nNoticias, investigaciones y comunicados de la Society of Actuaries.\n\n\nCAS — News & Updates\ncasact.org/news\nActualidad de la Casualty Actuarial Society (seguros de no vida).\n\n\nIAA — News\nactuaries.org/news\nNoticias de la International Actuarial Association.\n\n\nThe Actuary (IFoA)\ntheactuary.com\nRevista y noticias del Instituto de Actuarios del Reino Unido.\n\n\nGoogle Noticias — búsqueda “actuarial”\nnews.google.com\nTitulares recientes que mencionan temas actuariales.\n\n\nGoogle Noticias — búsqueda “seguros”\nnews.google.com\nNoticias del sector asegurador.",
     "crumbs": [
       "Inicio",
       "Actualidad"
@@ -494,7 +501,7 @@
     "href": "actualidad.html#calendario",
     "title": "Actualidad",
     "section": "Calendario de eventos",
-    "text": "Calendario de eventos\nCalendario para eventos organizados o coorganizados por el CVEA: defensas de TFPG, seminarios, conferencias y ofertas de formación. Las fechas se irán actualizando aquí.\n\n\n\nFecha\nEvento\nLugar / modalidad\n\n\n\n\nPor definir\nPróximas defensas TFPG (Vol. II y III)\nUCV / por anunciar\n\n\nPor definir\nWebinars y cursos (Series de Tiempo, módulos R/Python)\nCursos\n\n\n\n(Añade filas a esta tabla según se confirmen eventos. Para proponer uno, use Contacto.)",
+    "text": "Calendario de eventos\nCalendario para eventos organizados o coorganizados por el CVEA: defensas de TFPG, seminarios, conferencias y ofertas de formación. Las fechas se irán actualizando aquí.\n\n\n\nFecha\nEvento\nLugar / modalidad\n\n\n\n\nPor definir\nPróximas defensas TFPG (Vol. II y III)\nUCV / por anunciar\n\n\nPor definir\nWebinars y cursos (Series de Tiempo, módulos R/Python)\nCursos\n\n\n\nPara proponer un evento: Contacto.",
     "crumbs": [
       "Inicio",
       "Actualidad"
@@ -505,7 +512,7 @@
     "href": "actualidad.html#noticias-y-blog",
     "title": "Actualidad",
     "section": "Noticias y blog",
-    "text": "Noticias y blog\nArtículos de opinión técnica y análisis de coyuntura económica y actuarial. (Contenido se irá publicando según disponibilidad.)",
+    "text": "Noticias y blog\nArtículos de opinión técnica y análisis de coyuntura económica y actuarial.",
     "crumbs": [
       "Inicio",
       "Actualidad"
@@ -530,8 +537,8 @@
     "text": "Demos interactivos por sector\nA continuación se presenta la propuesta de valor y los demos interactivos para cinco ecosistemas: Banca, Seguros, Retail, Salud y Control General (cadena de suministro e industria).",
     "crumbs": [
       "Inicio",
-      "CVEA Suite",
-      "Página CVEA Suite"
+      "Extensión",
+      "CVEA Suite"
     ]
   },
   {
@@ -542,8 +549,8 @@
     "text": "1. CVEA Bank Suite\nEl sector financiero venezolano opera hoy bajo un esquema bimonetario único, donde la agilidad en el manejo de liquidez y la mitigación del riesgo crediticio son vitales. El CVEA Bank Suite es una plataforma integral que permite a las instituciones bancarias, de microfinanzas y casas de bolsa evaluar la salud de su cartera y el valor de sus activos en tiempo real.\nQué ofrece el aplicativo\n\nVisión general: Indicadores de liquidez, solvencia, morosidad e intermediación; evolución de captaciones y cartera a lo largo del tiempo.\nRiesgo de crédito: Visualización del flujo de la cartera entre estados de riesgo (normal, riesgo significativo, impago); relación entre puntuación crediticia y probabilidad de incumplimiento; ajuste de parámetros y cálculo de la pérdida esperada.\nRiesgo de mercado y tesorería: Gráficos de evolución de índices o bonos; mapa de correlaciones entre distintas carteras de inversión.\n\nAbrir CVEA Bank Suite (CVEA-BS)",
     "crumbs": [
       "Inicio",
-      "CVEA Suite",
-      "Página CVEA Suite"
+      "Extensión",
+      "CVEA Suite"
     ]
   },
   {
@@ -554,8 +561,8 @@
     "text": "2. CVEA Insurance Suite\nEl mercado asegurador venezolano se encuentra en una encrucijada financiera y técnica crítica. Las aseguradoras enfrentan el reto de reestructurar sus modelos operativos para proteger a sus clientes mientras mantienen su solvencia frente a la inflación de costos. El CVEA Insurance Suite es una cabina de mando actuarial y financiera que automatiza el control de primas, siniestros y el cálculo riguroso de reservas, alineada con las exigencias de la SUDEASEG.\nQué ofrece el aplicativo\n\nReservas y siniestralidad: Tablas que muestran la evolución de los siniestros en el tiempo; posibilidad de elegir distintos métodos de proyección de reservas (incluyendo ajuste por inflación).\nVisión general por ramos: Panel de primas cobradas, siniestros pagados y siniestralidad promedio por ramo, con tacómetro de cumplimiento de metas técnicas.\nRamos y productos: Análisis de indicadores de siniestralidad por producto dentro de cada ramo (automóviles, salud, personas, patrimoniales, fianzas).\nCumplimiento normativo y estrés: Evaluación visual del nivel de cumplimiento en materia de legitimación de capitales (LC/FT) y simulaciones de estrés sobre patrimonio y reservas.\n\nAbrir CVEA Insurance Suite (CVEA-IS)",
     "crumbs": [
       "Inicio",
-      "CVEA Suite",
-      "Página CVEA Suite"
+      "Extensión",
+      "CVEA Suite"
     ]
   },
   {
@@ -566,8 +573,8 @@
     "text": "3. CVEA Retail Suite\nEl sector de consumo masivo en Venezuela está experimentando un notable renacimiento. La gestión comercial se enfrenta a un sistema bimonetario y a un consumidor que en gran medida utiliza ahorros para financiar compras. El CVEA Retail Suite es una cabina de inteligencia comercial que captura en tiempo real las ventas y emplea analítica basada en evidencia para identificar relaciones entre margen, volumen y rotación.\nQué ofrece el aplicativo\n\nInteligencia comercial: Indicadores de volumen de ventas, ticket promedio en distintas monedas e índice de confianza del consumidor; visualización de la participación de mercado por categoría y tipo de marca (tradicional vs genérica), con filtros por región y tipo de tienda.\nPrecios y elasticidad: Curva de demanda según precio y tipo de cambio; posibilidad de simular cambios en costos importados y en tasas de cambio para ver el impacto en las ventas, con avisos cuando los precios salen de rangos sostenibles.\nInventario y canastas: Red de afinidades entre productos (qué se compra junto con qué), para apoyar decisiones de surtido y promociones.\nAnálisis a la medida: Herramienta de exploración donde el usuario puede cruzar variables (forma de pago, categoría, hora, etc.) y construir sus propias tablas y gráficos sin programar.\n\nAbrir CVEA Retail Suite (CVEA-RS)",
     "crumbs": [
       "Inicio",
-      "CVEA Suite",
-      "Página CVEA Suite"
+      "Extensión",
+      "CVEA Suite"
     ]
   },
   {
@@ -578,8 +585,8 @@
     "text": "4. CVEA Health Suite\nEl sector salud en Venezuela enfrenta mayor demanda, prevalencia de enfermedades crónicas y alta variabilidad en costos médicos. Fondos autoadministrados y empresas de medicina prepagada —reguladas por SUDEASEG— necesitan garantizar calidad sin comprometer viabilidad financiera. El CVEA Health Suite consolida estadísticas de morbilidad y siniestralidad, audita facturas clínicas contra baremos en tiempo real e incorpora modelos que calculan la solvencia de reservas técnicas de salud.\nQué ofrece el aplicativo\n\nMonitoreo epidemiológico: Indicadores de admisión, prevalencia de enfermedades no transmisibles y uso de telemedicina frente a atención presencial; mapas que muestran la distribución geográfica de los siniestros y el rendimiento de la red de prestadores.\nAuditoría clínica: Comparación del costo facturado por procedimiento frente a los baremos acordados; gráficos de control para detectar desviaciones; ajuste del nivel de sensibilidad de la auditoría para resaltar los casos que requieren revisión manual.\nSolvencia y reservas: Proyección del patrimonio del fondo a varios años mediante simulaciones; posibilidad de introducir inflación médica e inflación general por separado para ver el impacto en las reservas.\nTarificación y modalidades: Comparación de la rentabilidad entre atención tradicional, asistencia domiciliaria y telemedicina; simulador de primas donde se pueden ajustar coaseguro, deducible y tope de cobertura, y comprobar si se cumple el margen de suficiencia exigido por la normativa.\n\nAbrir CVEA Health Suite (CVEA-HS)",
     "crumbs": [
       "Inicio",
-      "CVEA Suite",
-      "Página CVEA Suite"
+      "Extensión",
+      "CVEA Suite"
     ]
   },
   {
@@ -590,8 +597,8 @@
     "text": "5. CVEA Control Suite (visión general y industria)\nEl tejido productivo venezolano abarca logística, agroindustria y manufactura, con retos que van desde la volatilidad en el abastecimiento de combustible hasta la optimización de flotas e inventarios en tiempo real. El CVEA Control Suite es una torre de control que permite desde el levantamiento de datos operativos en planta o en la carretera hasta tableros directivos predictivos.\nQué ofrece el aplicativo\n\nCadena de suministro y flotas: Indicadores de costo por kilómetro, rendimiento de combustible y entregas a tiempo (OTIF); mapa con la ubicación de la flota y las rutas entre centros de distribución y puntos de entrega; posibilidad de simular variaciones en el precio o la disponibilidad del combustible.\nEficiencia industrial y mantenimiento: Medidor de la efectividad global de los equipos (OEE); mapa de calor de fallas por zona de la planta o turno; curva que muestra la probabilidad de falla de un equipo en los próximos 30 días y opción de simular una orden de mantenimiento preventivo.\nSostenibilidad y gastos: Diagrama que desglosa el presupuesto operativo (combustible, peajes, mantenimiento, depreciación) hasta el margen operativo neto; selector de periodos y escenarios de sobrecostos.\nAnálisis a la medida: Exploración libre de los datos: cruce de estado de las máquinas, tiempos de ciclo, costos y otras variables para detectar ineficiencias sin necesidad de programar.\n\nAbrir CVEA Control Suite (CVEA-CS)",
     "crumbs": [
       "Inicio",
-      "CVEA Suite",
-      "Página CVEA Suite"
+      "Extensión",
+      "CVEA Suite"
     ]
   },
   {
@@ -602,8 +609,8 @@
     "text": "CVEA Suite Lab — Otros desarrollos demostrativos\nTarificación actuarial telemática\n\nAplicativo Shiny (telemática): Ver demo en línea\nEjemplo detallado (HTML): Xaringan1 — Tarificación telemática\n\nPrototipo Actuarial Insurtech (Shiny, R)\n\nDashboard avanzado (ActuarialInsurtechCARAMELS): indicadores técnicos, comparación aseguradora vs mercado, simulación de cartera; referencia en Referencias/ActuarialInsurtechCARAMELS/.\n\n\nPara conocer más o solicitar una propuesta adaptada a su organización: Contacto · Miembros.",
     "crumbs": [
       "Inicio",
-      "CVEA Suite",
-      "Página CVEA Suite"
+      "Extensión",
+      "CVEA Suite"
     ]
   },
   {
@@ -732,6 +739,7 @@
     "text": "El Observatorio es una plataforma que el CVEA pone a disposición de tomadores de decisión e investigadores. Además de ofrecer información actualizada sobre variables biométricas, financieras y de previsión, se prevé incorporar cuadros de control y dashboards con analítica de sectores financieros (seguros, banca) y otros sectores sensibles, para apoyar la evaluación de riesgo y la política pública.",
     "crumbs": [
       "Inicio",
+      "Extensión",
       "Observatorio"
     ]
   },
@@ -743,6 +751,7 @@
     "text": "Variables biométricas\nGráficos dinámicos de las últimas tablas de mortalidad calibradas por el centro: tendencias nacionales y subnacionales, SMR, clusters de riesgo y proyecciones Lee-Carter. Basado en la investigación publicada en la RVEA y en el libro Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI.\n\nEnlace a dashboards: Servicios y Demos — Mapa de riesgo y visualizaciones asociadas.\nBoletines de indicadores mensuales (en desarrollo).",
     "crumbs": [
       "Inicio",
+      "Extensión",
       "Observatorio"
     ]
   },
@@ -754,6 +763,7 @@
     "text": "Variables financieras\nSeguimiento de la inflación actuarial y de las tasas técnicas de descuento relevantes para reservas, tarificación y valuación de pensiones. Insumos para el sector asegurador, banca y previsión social.\n(Contenido en construcción según disponibilidad de series oficiales.)",
     "crumbs": [
       "Inicio",
+      "Extensión",
       "Observatorio"
     ]
   },
@@ -765,6 +775,7 @@
     "text": "Variables de previsión\nIndicadores de solvencia y sostenibilidad de fondos de pensiones y regímenes de previsión social. Síntesis de diagnósticos del CVEA dirigidos a IVSS, Sudeaseg y decisores de política pública.\n\nReferencia: Libros — Diagnóstico del sistema de pensiones.\n\n\nPara consultoría sobre indicadores o convenios de datos, utilice Contacto.",
     "crumbs": [
       "Inicio",
+      "Extensión",
       "Observatorio"
     ]
   },
@@ -875,12 +886,7 @@
     "href": "rvea/articulos.html",
     "title": "Artículos",
     "section": "",
-    "text": "Revista RVEA · Portal RVEA · Artículos\n\nEn esta página se listan los artículos de la RVEA por volumen. Los publicados incluyen enlace para lectura en línea (HTML) y descarga (PDF).\n\n  \n    Volumen I— Fundamentos, demografía y sostenibilidad del sistema de previsión social\n  \n  Trabajos sobre mortalidad subnacional, bases técnicas y proyecciones del sistema de previsión social. Incluye modelación espacial (BYM/INLA), Lee-Carter estocástico, actualización de tablas (Masjuán, CSO 1980) y diagnósticos territorializados. Tesistas vinculados: Daylin Moreno, José Raúl Gálvez, Daniel Azuaje, Arlet Moreno (Referencias CVEA).\n  \n    Análisis espacio-temporal de la mortalidad en Venezuela (1996-2016)Angel Colmenares·BYM/INLA, SMR, clusters(2024)Análisis en 335 municipios con modelo Bayesiano BYM vía INLA; tendencia nacional 1,4% anual; clusters de riesgo en arco central y fronteras; superficie heterogénea que invalida tablas únicas nacionales.HTMLPDF\n    Mortalidad neonatal, postneonatal y en la niñez por entidad federalArlet Moreno, Angel Colmenares·Lee-Carter estocástico(2025)Lee-Carter a datos MPPS 1995-2012; desagregación por entidad federal, sexo y edad; proyección de κ_t hasta 2022; disparidad regional (Zulia, Trujillo) y riesgo concentrado en fase neonatal.HTMLPDF\n    Tema por definirProf. Jorge Dias·Por definir(—)Artículo en planificación para este volumen.Próximamente\n    Valuación de Bases TécnicasDaylin Moreno·Bases Masjuán(2024)Desfase de las bases de Masjuán (1960) frente a la realidad del siglo XXI; diagnóstico para tarificación y previsión social.Próximamente\n    Propuesta para el desarrollo de una tabla de mortalidad selecta por medio del método de Lee-CarterDaniel Azuaje·Lee-Carter, datos censales, R(versión preliminar)Tabla de mortalidad dinámica LC15 en R a partir de datos censales (INE, MPPS); comparación con CSO 1980, mortalidad observada de una aseguradora venezolana y Tabla de Mortalidad Venezolana.HTMLPDF\n  \n\n\n\n  \n    Volumen II— Las dimensiones de la mortalidad (causa, género y territorio)\n  \n  Proyección de la mortalidad por causas (Lee-Carter, CoDa), tablas de decrecimiento múltiple con Cadenas de Markov, y análisis por género y región. Heterogeneidad geográfica y mapeo del riesgo por causas de fallecimiento (Referencias CVEA).\n  \n    Proyección de la mortalidad por causas (Lee-Carter y CoDa)Iliria Herrera·CoDa, causas de fallecimiento(2024)Análisis de datos composicionales para proyección de mortalidad por causas; integración Lee-Carter y CoDa.Próximamente\n    Tablas de decrecimiento múltiple con Cadenas de MarkovWilliams Fernandez·Markov(2024)Metodología alternativa para causas de fallecimiento mediante tablas de decrecimiento múltiple.Próximamente\n    Principales causas de fallecimiento (población masculina)Kelvin Guedez·Decrecimiento múltiple(2024)Tablas de decrecimiento múltiple y sobremortalidad masculina por causas externas.Próximamente\n    Principales causas de fallecimiento (población femenina)Dorielys Rangel·Riesgo femenino(2024)Perfil de riesgo femenino y enfermedades crónicas en tablas de decrecimiento por causas.Próximamente\n    Tablas de decrecimiento múltiple (Occidental, Andes, Central)Kennya Briceño·Regiones(2024)Heterogeneidad geográfica de la mortalidad por causas en regiones Occidental, Andes y Central.Próximamente\n    Principales causas (regiones Los Llanos y Capital)Daniela Godoy·Mapeo(2024)Mapeo geográfico del riesgo por causas en Los Llanos y Capital.Próximamente\n    Principales causas (regiones Oriental y Guayana)Oriana Lopez·Cobertura nacional(2024)Cobertura nacional del mapa de riesgo por causas en Oriental y Guayana.Próximamente\n  \n\n\n\n  \n    Volumen III— Perspectivas internacionales y fronteras en la modelización\n  \n  Comparativas internacionales de métodos de proyección (Chile, Japón, Países Bajos, Bélgica, Italia, Grecia), medición del riesgo de longevidad (Portugal) e impacto en rentas vitalicias y pensiones (Referencias CVEA).\n  \n    Análisis comparativo de métodos de proyección (Chile y Japón)Eleazar Domínguez·Lee-Carter y variantes(2025)Comparativa Lee-Carter, Lee-Miller, BMS, Hyndman-Ullah en contextos Chile y Japón.Próximamente\n    Medición del riesgo de longevidad (Portugal)Oliver Triveño·Longevidad(2025)Impacto financiero del riesgo de longevidad en rentas vitalicias y pensiones (caso Portugal).Próximamente\n    Comparativa internacional (Países Bajos, Bélgica)Luis Alvarez·En desarrollo(—)Comparativa de proyección y modelización en contexto Países Bajos y Bélgica.Próximamente\n    Comparativa internacional (Italia, Grecia)José Mendoza·En desarrollo(—)Comparativa de proyección y modelización en contexto Italia y Grecia.Próximamente\n  \n\nPlan editorial completo y estado de manuscritos: Portal RVEA.",
-    "crumbs": [
-      "Inicio",
-      "RVEA",
-      "Artículos"
-    ]
+    "text": "Revista RVEA · Portal RVEA · Artículos\n\nEn esta página se listan los artículos de la RVEA por volumen. Los publicados incluyen enlace para lectura en línea (HTML) y descarga (PDF).\n\n  \n    Volumen I— Fundamentos, demografía y sostenibilidad del sistema de previsión social\n  \n  Trabajos sobre mortalidad subnacional, bases técnicas y proyecciones del sistema de previsión social. Incluye modelación espacial (BYM/INLA), Lee-Carter estocástico, actualización de tablas (Masjuán, CSO 1980) y diagnósticos territorializados. Tesistas vinculados: Daylin Moreno, José Raúl Gálvez, Daniel Azuaje, Arlet Moreno (Referencias CVEA).\n  \n    Análisis espacio-temporal de la mortalidad en Venezuela (1996-2016)Angel Colmenares·BYM/INLA, SMR, clusters(2024)Análisis en 335 municipios con modelo Bayesiano BYM vía INLA; tendencia nacional 1,4% anual; clusters de riesgo en arco central y fronteras; superficie heterogénea que invalida tablas únicas nacionales.HTMLPDF\n    Mortalidad neonatal, postneonatal y en la niñez por entidad federalArlet Moreno, Angel Colmenares·Lee-Carter estocástico(2025)Lee-Carter a datos MPPS 1995-2012; desagregación por entidad federal, sexo y edad; proyección de κ_t hasta 2022; disparidad regional (Zulia, Trujillo) y riesgo concentrado en fase neonatal.HTMLPDF\n    Tema por definirProf. Jorge Dias·Por definir(—)Artículo en planificación para este volumen.Próximamente\n    Valuación de Bases TécnicasDaylin Moreno·Bases Masjuán(2024)Desfase de las bases de Masjuán (1960) frente a la realidad del siglo XXI; diagnóstico para tarificación y previsión social.Próximamente\n    Propuesta para el desarrollo de una tabla de mortalidad selecta por medio del método de Lee-CarterDaniel Azuaje·Lee-Carter, datos censales, R(versión preliminar)Tabla de mortalidad dinámica LC15 en R a partir de datos censales (INE, MPPS); comparación con CSO 1980, mortalidad observada de una aseguradora venezolana y Tabla de Mortalidad Venezolana.HTMLPDF\n  \n\n\n\n  \n    Volumen II— Las dimensiones de la mortalidad (causa, género y territorio)\n  \n  Proyección de la mortalidad por causas (Lee-Carter, CoDa), tablas de decrecimiento múltiple con Cadenas de Markov, y análisis por género y región. Heterogeneidad geográfica y mapeo del riesgo por causas de fallecimiento (Referencias CVEA).\n  \n    Proyección de la mortalidad por causas (Lee-Carter y CoDa)Iliria Herrera·CoDa, causas de fallecimiento(2024)Análisis de datos composicionales para proyección de mortalidad por causas; integración Lee-Carter y CoDa.Próximamente\n    Tablas de decrecimiento múltiple con Cadenas de MarkovWilliams Fernandez·Markov(2024)Metodología alternativa para causas de fallecimiento mediante tablas de decrecimiento múltiple.Próximamente\n    Principales causas de fallecimiento (población masculina)Kelvin Guedez·Decrecimiento múltiple(2024)Tablas de decrecimiento múltiple y sobremortalidad masculina por causas externas.Próximamente\n    Principales causas de fallecimiento (población femenina)Dorielys Rangel·Riesgo femenino(2024)Perfil de riesgo femenino y enfermedades crónicas en tablas de decrecimiento por causas.Próximamente\n    Tablas de decrecimiento múltiple (Occidental, Andes, Central)Kennya Briceño·Regiones(2024)Heterogeneidad geográfica de la mortalidad por causas en regiones Occidental, Andes y Central.Próximamente\n    Principales causas (regiones Los Llanos y Capital)Daniela Godoy·Mapeo(2024)Mapeo geográfico del riesgo por causas en Los Llanos y Capital.Próximamente\n    Principales causas (regiones Oriental y Guayana)Oriana Lopez·Cobertura nacional(2024)Cobertura nacional del mapa de riesgo por causas en Oriental y Guayana.Próximamente\n  \n\n\n\n  \n    Volumen III— Perspectivas internacionales y fronteras en la modelización\n  \n  Comparativas internacionales de métodos de proyección (Chile, Japón, Países Bajos, Bélgica, Italia, Grecia), medición del riesgo de longevidad (Portugal) e impacto en rentas vitalicias y pensiones (Referencias CVEA).\n  \n    Análisis comparativo de métodos de proyección (Chile y Japón)Eleazar Domínguez·Lee-Carter y variantes(2025)Comparativa Lee-Carter, Lee-Miller, BMS, Hyndman-Ullah en contextos Chile y Japón.Próximamente\n    Medición del riesgo de longevidad (Portugal)Oliver Triveño·Longevidad(2025)Impacto financiero del riesgo de longevidad en rentas vitalicias y pensiones (caso Portugal).Próximamente\n    Comparativa internacional (Países Bajos, Bélgica)Luis Alvarez·En desarrollo(—)Comparativa de proyección y modelización en contexto Países Bajos y Bélgica.Próximamente\n    Comparativa internacional (Italia, Grecia)José Mendoza·En desarrollo(—)Comparativa de proyección y modelización en contexto Italia y Grecia.Próximamente\n  \n\nPlan editorial completo y estado de manuscritos: Portal RVEA."
   },
   {
     "objectID": "rvea/vol2-herrera.html",
@@ -901,72 +907,42 @@
     "href": "rvea/portal.html",
     "title": "Portal RVEA",
     "section": "",
-    "text": "Portal RVEA · Revista RVEA · Artículos\nEl Portal RVEA es la interfaz de referencia del CVEA para el control editorial de la Revista Venezolana de Actuariado. Desde aquí se accede al plan de publicación de los tres volúmenes, el estado de cada manuscrito y el enlace al repositorio donde se gestionan los artículos.\nRepositorio editorial: cvea-rvea (manuscritos en Quarto, plantilla I-RL-M-R-D, referencias BibTeX).",
-    "crumbs": [
-      "Inicio",
-      "RVEA",
-      "Portal RVEA"
-    ]
+    "text": "Portal RVEA · Revista RVEA · Artículos\nEl Portal RVEA es la interfaz de referencia del CVEA para el control editorial de la Revista Venezolana de Actuariado. Desde aquí se accede al plan de publicación de los tres volúmenes, el estado de cada manuscrito y el enlace al repositorio donde se gestionan los artículos.\nRepositorio editorial: cvea-rvea (manuscritos en Quarto, plantilla I-RL-M-R-D, referencias BibTeX)."
   },
   {
     "objectID": "rvea/portal.html#volumen-i-fundamentos-demografía-y-sostenibilidad-del-sistema-de-previsión-social",
     "href": "rvea/portal.html#volumen-i-fundamentos-demografía-y-sostenibilidad-del-sistema-de-previsión-social",
     "title": "Portal RVEA",
     "section": "1 Volumen I — Fundamentos, demografía y sostenibilidad del sistema de previsión social",
-    "text": "1 Volumen I — Fundamentos, demografía y sostenibilidad del sistema de previsión social\n\n\n\nArtículo / tema\nAutor(es)\nEstado\nVer artículo\nCarpeta en repo\n\n\n\n\nAnálisis espacio-temporal de la mortalidad en Venezuela (1996-2016)\nProf. Angel Colmenares\nListo\nHTML · PDF\nvol1/art-colmenares/\n\n\nModelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal\nArlet Moreno, Prof. Angel Colmenares\nListo\nHTML · PDF\nvol1/art-moreno-arlet/\n\n\nTema por definir\nProf. Jorge Dias\nPendiente\n—\nvol1/art-dias/\n\n\nValuación actuarial de bases técnicas Masjuán\nDaylin Moreno\nBorrador\n—\nvol1/art-moreno-daylin/\n\n\nPensiones y jubilaciones; gobernanza y sostenibilidad\nJosé Raúl Gálvez\nBorrador\n—\nvol1/art-galvez/\n\n\nTabla de mortalidad dinámica Lee-Carter (LC15)\nDaniel Azuaje\nBorrador\n—\nvol1/art-azuaje/",
-    "crumbs": [
-      "Inicio",
-      "RVEA",
-      "Portal RVEA"
-    ]
+    "text": "1 Volumen I — Fundamentos, demografía y sostenibilidad del sistema de previsión social\n\n\n\nArtículo / tema\nAutor(es)\nEstado\nVer artículo\nCarpeta en repo\n\n\n\n\nAnálisis espacio-temporal de la mortalidad en Venezuela (1996-2016)\nProf. Angel Colmenares\nListo\nHTML · PDF\nvol1/art-colmenares/\n\n\nModelación y proyección de la mortalidad neonatal, postneonatal y en la niñez por entidad federal\nArlet Moreno, Prof. Angel Colmenares\nListo\nHTML · PDF\nvol1/art-moreno-arlet/\n\n\nTema por definir\nProf. Jorge Dias\nPendiente\n—\nvol1/art-dias/\n\n\nValuación actuarial de bases técnicas Masjuán\nDaylin Moreno\nBorrador\n—\nvol1/art-moreno-daylin/\n\n\nPensiones y jubilaciones; gobernanza y sostenibilidad\nJosé Raúl Gálvez\nBorrador\n—\nvol1/art-galvez/\n\n\nTabla de mortalidad dinámica Lee-Carter (LC15)\nDaniel Azuaje\nBorrador\n—\nvol1/art-azuaje/"
   },
   {
     "objectID": "rvea/portal.html#volumen-ii-las-dimensiones-de-la-mortalidad-causa-género-y-territorio",
     "href": "rvea/portal.html#volumen-ii-las-dimensiones-de-la-mortalidad-causa-género-y-territorio",
     "title": "Portal RVEA",
     "section": "2 Volumen II — Las dimensiones de la mortalidad (causa, género y territorio)",
-    "text": "2 Volumen II — Las dimensiones de la mortalidad (causa, género y territorio)\n\n\n\n\n\n\n\n\n\nArtículo / tema\nAutor(es)\nEstado\nCarpeta en repo\n\n\n\n\nProyección de la mortalidad por causas (Lee-Carter y CoDa)\nIliria Herrera\nBorrador\nvol2/\n\n\nTablas de decrecimiento múltiple con Cadenas de Markov\nWilliams Fernandez\nPendiente\nvol2/\n\n\nPrincipales causas (población masculina)\nKelvin Guedez\nPendiente\nvol2/\n\n\nPrincipales causas (población femenina)\nDorielys Rangel\nPendiente\nvol2/\n\n\nTablas de decrecimiento múltiple (regiones)\nKennya Briceño\nPendiente\nvol2/\n\n\nPrincipales causas (Los Llanos y Capital)\nDaniela Godoy\nPendiente\nvol2/\n\n\nPrincipales causas (Oriental y Guayana)\nOriana Lopez\nPendiente\nvol2/",
-    "crumbs": [
-      "Inicio",
-      "RVEA",
-      "Portal RVEA"
-    ]
+    "text": "2 Volumen II — Las dimensiones de la mortalidad (causa, género y territorio)\n\n\n\n\n\n\n\n\n\nArtículo / tema\nAutor(es)\nEstado\nCarpeta en repo\n\n\n\n\nProyección de la mortalidad por causas (Lee-Carter y CoDa)\nIliria Herrera\nBorrador\nvol2/\n\n\nTablas de decrecimiento múltiple con Cadenas de Markov\nWilliams Fernandez\nPendiente\nvol2/\n\n\nPrincipales causas (población masculina)\nKelvin Guedez\nPendiente\nvol2/\n\n\nPrincipales causas (población femenina)\nDorielys Rangel\nPendiente\nvol2/\n\n\nTablas de decrecimiento múltiple (regiones)\nKennya Briceño\nPendiente\nvol2/\n\n\nPrincipales causas (Los Llanos y Capital)\nDaniela Godoy\nPendiente\nvol2/\n\n\nPrincipales causas (Oriental y Guayana)\nOriana Lopez\nPendiente\nvol2/"
   },
   {
     "objectID": "rvea/portal.html#volumen-iii-perspectivas-internacionales-y-fronteras-en-la-modelización",
     "href": "rvea/portal.html#volumen-iii-perspectivas-internacionales-y-fronteras-en-la-modelización",
     "title": "Portal RVEA",
     "section": "3 Volumen III — Perspectivas internacionales y fronteras en la modelización",
-    "text": "3 Volumen III — Perspectivas internacionales y fronteras en la modelización\n\n\n\n\n\n\n\n\n\nArtículo / tema\nAutor(es)\nEstado\nCarpeta en repo\n\n\n\n\nAnálisis comparativo de métodos de proyección (Chile y Japón)\nEleazar Domínguez\nPendiente\nvol3/\n\n\nMedición del riesgo de longevidad (Portugal)\nOliver Triveño\nPendiente\nvol3/\n\n\nComparativa internacional (Países Bajos, Bélgica)\nLuis Alvarez\nPendiente\nvol3/\n\n\nComparativa internacional (Italia, Grecia)\nJosé Mendoza\nPendiente\nvol3/",
-    "crumbs": [
-      "Inicio",
-      "RVEA",
-      "Portal RVEA"
-    ]
+    "text": "3 Volumen III — Perspectivas internacionales y fronteras en la modelización\n\n\n\n\n\n\n\n\n\nArtículo / tema\nAutor(es)\nEstado\nCarpeta en repo\n\n\n\n\nAnálisis comparativo de métodos de proyección (Chile y Japón)\nEleazar Domínguez\nPendiente\nvol3/\n\n\nMedición del riesgo de longevidad (Portugal)\nOliver Triveño\nPendiente\nvol3/\n\n\nComparativa internacional (Países Bajos, Bélgica)\nLuis Alvarez\nPendiente\nvol3/\n\n\nComparativa internacional (Italia, Grecia)\nJosé Mendoza\nPendiente\nvol3/"
   },
   {
     "objectID": "rvea/portal.html#leyenda-de-estados",
     "href": "rvea/portal.html#leyenda-de-estados",
     "title": "Portal RVEA",
     "section": "4 Leyenda de estados",
-    "text": "4 Leyenda de estados\n\nListo: manuscrito compilado (HTML/PDF), listo para revisión o publicación.\nBorrador: en redacción o revisión interna.\nPendiente: planificado; carpeta o tema por definir.",
-    "crumbs": [
-      "Inicio",
-      "RVEA",
-      "Portal RVEA"
-    ]
+    "text": "4 Leyenda de estados\n\nListo: manuscrito compilado (HTML/PDF), listo para revisión o publicación.\nBorrador: en redacción o revisión interna.\nPendiente: planificado; carpeta o tema por definir."
   },
   {
     "objectID": "rvea/portal.html#enlaces-rápidos",
     "href": "rvea/portal.html#enlaces-rápidos",
     "title": "Portal RVEA",
     "section": "5 Enlaces rápidos",
-    "text": "5 Enlaces rápidos\n\nRevista RVEA — Presentación de la revista con accesos rápidos.\nArtículos — Listado por volumen con enlaces a manuscritos publicados.\nRepositorio cvea-rvea — Código, manuscritos y plantilla (acceso según permisos).\nCVEA — Miembros — Comité editorial y contacto.",
-    "crumbs": [
-      "Inicio",
-      "RVEA",
-      "Portal RVEA"
-    ]
+    "text": "5 Enlaces rápidos\n\nRevista RVEA — Presentación de la revista con accesos rápidos.\nArtículos — Listado por volumen con enlaces a manuscritos publicados.\nRepositorio cvea-rvea — Código, manuscritos y plantilla (acceso según permisos).\nCVEA — Miembros — Comité editorial y contacto."
   },
   {
     "objectID": "rvea/vol1-moreno-arlet.html",
@@ -1073,11 +1049,11 @@
     ]
   },
   {
-    "objectID": "libro/index.html#libro-disponible",
-    "href": "libro/index.html#libro-disponible",
+    "objectID": "libro/index.html#libros-disponibles",
+    "href": "libro/index.html#libros-disponibles",
     "title": "Libros y Materiales Docentes",
-    "section": "Libro disponible",
-    "text": "Libro disponible\nDemografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial\nLibro compilado con la plantilla CVEA Book. Cuando el HTML y el PDF estén publicados en esta carpeta, estarán disponibles:\n\nVer en línea (HTML): enlace a publicar cuando el build esté en libro/demografia-siglo-xxi/ (ver README).\nDescargar PDF (si el archivo existe en esa ruta).\n\nSi el PDF tiene otro nombre, edita este archivo y sustituye el nombre del enlace. Instrucciones en libro/demografia-siglo-xxi/README.md.",
+    "section": "Libros disponibles",
+    "text": "Libros disponibles\n\nDemografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI — Un Enfoque Actuarial\nLibro compilado con la plantilla CVEA Book. Cuando el HTML y el PDF estén publicados en esta carpeta, estarán disponibles:\n\nVer en línea (HTML): enlace a publicar cuando el build esté disponible.\nDescargar PDF (si está disponible).\n\n\n\nIntroducción a las Matemáticas Financieras (Franklin Quero, 2025)\nBasado en el TFPG TFPG-FRANKLIN-QUERO-05-10-2025. Primer vaciado en plantilla CVEA Book; desarrollo en curso.\n\nVer en línea (HTML): intro-matematicas-financieras.\nCapítulos y contenido: intro-matematicas-financieras.",
     "crumbs": [
       "Inicio",
       "Investigación",
@@ -1104,6 +1080,7 @@
     "text": "Transformando datos en decisiones estratégicas y gestión de riesgos\nEn la era de la información, la capacidad para modelar escenarios, predecir tendencias y cuantificar riesgos es el activo más valioso de cualquier organización. Nuestro centro de formación está especializado en capacitar a profesionales del sector financiero, asegurador, científico y empresarial.\nAprende a dominar el análisis complejo y la creación de modelos predictivos utilizando las herramientas de código abierto líderes en la industria —R y Python—, integrándolas de manera fluida en entornos corporativos.\nLos módulos que se describen a continuación se dictan en la plataforma Moodle, referente en enseñanza en línea. Inscripciones, materiales y seguimiento: Acceso a la plataforma de cursos (Moodle).\n\nMódulos de aprendizaje\nHemos estructurado nuestros programas en módulos especializados y progresivos. Ya sea que busques automatizar reportes, adentrarte en el Machine Learning o desarrollar modelos actuariales complejos, tenemos un camino para ti:\nMódulo 1 — Fundamentos analíticos en entornos corporativos\n\nDirigido a: Analistas de negocios, contadores, estudiantes de economía/matemáticas y profesionales que buscan migrar de Excel a lenguajes de programación.\nObjetivo: Instalar, configurar y dominar los entornos de desarrollo de R y Python, sentando las bases de la programación orientada a datos.\nConfiguración del entorno de trabajo: Instalación y gestión de entornos con Anaconda (Jupyter Notebooks) y RStudio. Manejo de variables de entorno y terminal para analistas.\nIntroducción a Python para datos: Sintaxis básica, estructuras de datos (listas, diccionarios), bucles y funciones. Introducción a la vectorización.\nFundamentos de R para estadística: Sintaxis de R, manejo de data frames, vectores y funciones base. ¿Cuándo usar R y cuándo usar Python?\n\nMódulo 2 — Ingeniería de datos y visualización avanzada\n\nDirigido a: Analistas de datos, científicos de datos junior y profesionales de inteligencia de negocios (BI).\nObjetivo: Extraer, limpiar, transformar (ETL) y visualizar grandes volúmenes de datos de manera eficiente.\nManipulación de datos con Python (Pandas y NumPy): Limpieza de datos estructurados, manejo de valores nulos, agrupaciones y cruce de bases de datos.\nEl ecosistema Tidyverse en R: Uso avanzado de dplyr y tidyr para la manipulación elegante y eficiente de conjuntos de datos complejos.\nStorytelling y visualización interactiva: Creación de gráficos estáticos y dinámicos usando ggplot2 (R), Matplotlib y Seaborn (Python). Integración con herramientas como Power BI.\n\nMódulo 3 — Modelado actuarial y matemáticas financieras\n\nDirigido a: Actuarios, analistas de riesgos, gestores de carteras y auditores financieros.\nObjetivo: Aplicar programación avanzada para el cálculo de primas, reservas, análisis de supervivencia y modelado de riesgos.\nMatemáticas financieras y series de tiempo: Análisis y pronóstico de series temporales financieras usando statsmodels (Python) y el ecosistema forecast / fpp3 (R).\nModelos de supervivencia y tablas de mortalidad: Uso de paquetes especializados en R (como survival y lifecontingencies) para seguros de vida y pensiones.\nSimulación estocástica y análisis de riesgos: Implementación del método Monte Carlo, modelos de cadenas de Markov y cuantificación de riesgo (VaR) combinando NumPy (Python) y librerías estadísticas de R.\n\nMódulo 4 — Machine Learning y analítica predictiva\n\nDirigido a: Científicos de datos, estadísticos y líderes técnicos de proyectos analíticos.\nObjetivo: Entrenar, evaluar y desplegar modelos de aprendizaje automático para la toma de decisiones automatizada.\nMachine Learning clásico con Scikit-Learn (Python): Regresión lineal/logística, árboles de decisión, Random Forest y clustering. Ajuste de hiperparámetros.\nModelado predictivo con Tidymodels (R): Preprocesamiento, validación cruzada y evaluación de modelos predictivos estadísticos.\nAutomatización y despliegue: Creación de APIs para modelos predictivos (FastAPI en Python) y aplicaciones web interactivas con Shiny (R) y Streamlit (Python).\n\n\n\n¿Por qué estudiar con nosotros?\n\nEnfoque corporativo real: Enseñamos a utilizar R y Python integrados en los flujos de trabajo (incl. Office/Power BI) que utilizan las empresas e instituciones financieras.\nRigor Científico y Matemático: No solo enseñamos a escribir código; enseñamos la estadística, la probabilidad y la matemática actuarial que fundamentan los modelos.\nEficiencia y Escalabilidad: Aprende a superar los límites de las hojas de cálculo tradicionales procesando millones de registros en segundos.\nProyectos Aplicados: Casos de estudio reales: desde la predicción de abandono de clientes (churn) hasta la tarificación de pólizas de seguros.\n\nLos cursos están orientados inicialmente a programación en software libre para los diversos sectores: banca, seguros y pensiones. Se dictan en la plataforma Moodle, referente en enseñanza en línea; el acceso a inscripciones y materiales está en el enlace Plataforma de cursos (Moodle).",
     "crumbs": [
       "Inicio",
+      "Docencia",
       "Cursos"
     ]
   },
@@ -1115,6 +1092,7 @@
     "text": "Formación continua\n\nCurso de Series de Tiempo (Python)\nFicha técnica, programa, objetivos e inscripción del curso orientado a actuarios y profesionales que requieran proyecciones de mortalidad, siniestralidad o indicadores económicos.\nIr al curso Series de Tiempo con Python\nRecurso complementario: Series de tiempo y actores del mercado (HTML) — Análisis dinámico de actores y series temporales.\n\n\nPlataforma de cursos (Moodle)\nLos cursos del CVEA se dictan en Moodle, la plataforma líder de cursos en línea de código abierto, utilizada por universidades e instituciones en todo el mundo. Inscripciones, materiales y seguimiento están disponibles en nuestra aula virtual. El acceso principal está en el inicio de esta sección (botón Abrir Portal de Cursos). Resumen de módulos: Plataforma de cursos — módulos ofrecidos.\n\n\nPróximas ofertas\nWebinars y certificaciones en temas emergentes (por ejemplo, IA en Actuaría). Las convocatorias se publicarán en Actualidad.\n(Próximas ofertas se anunciarán aquí.)",
     "crumbs": [
       "Inicio",
+      "Docencia",
       "Cursos"
     ]
   },
@@ -1126,6 +1104,7 @@
     "text": "Recursos para estudiantes\n\nGuías metodológicas para TFPG: estructura I-RL-M-R-D, reproducibilidad y referencias en formato APA; ver RVEA — Modelo y plantilla.\nBibliografía recomendada: alineada con los libros y materiales docentes del Centro; ver Libros.\nAcceso al Model Hub: scripts en R/Python, Excel actuarial y bases de datos abiertas con fines pedagógicos; ver Model Hub.",
     "crumbs": [
       "Inicio",
+      "Docencia",
       "Cursos"
     ]
   },
@@ -1137,6 +1116,7 @@
     "text": "Ecosistema de aprendizaje\nInformación sobre el currículo actuarial en la UCV y cómo los estudiantes se integran en cursos electivos y en la investigación del centro. Perfiles del Comité Editorial y colaboradores en Miembros.",
     "crumbs": [
       "Inicio",
+      "Docencia",
       "Cursos"
     ]
   },
@@ -1181,7 +1161,7 @@
     "href": "docencia/series-tiempo/index.html#material-en-línea",
     "title": "Series de Tiempo con Python para Actuarios",
     "section": "Material en línea",
-    "text": "Material en línea\nEl desarrollo del curso está publicado en:\nSeries de Tiempo con Python (Web)\nPara integrar módulos dentro de esta plataforma puedes:\n\nClonar o enlazar el repositorio del curso en una subcarpeta modules/ y listar los .qmd en listing.contents del encabezado de esta página.\nMantener el enlace externo como arriba y usar esta página como índice institucional del CVEA.",
+    "text": "Material en línea\nEl desarrollo del curso está publicado en:\nSeries de Tiempo con Python (Web)\nLos módulos del curso se irán incorporando en esta plataforma según estén disponibles.",
     "crumbs": [
       "Inicio",
       "Docencia",
