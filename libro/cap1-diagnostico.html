@@ -42,9 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-f1aadacce99040138bbb613f9330654f.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c9c92d45e79e84334e96d2b3e96679bf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c9c92d45e79e84334e96d2b3e96679bf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-c9c92d45e79e84334e96d2b3e96679bf.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-02438ba0fd5219a2b858406673208a93.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-02438ba0fd5219a2b858406673208a93.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-02438ba0fd5219a2b858406673208a93.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -96,12 +96,111 @@ ul.task-list li input[type="checkbox"] {
 <!-- Meta y título CVEA -->
 <title>Centro Venezolano de Estudios Actuariales (CVEA)</title>
 <meta name="description" content="CVEA — Investigación, docencia y extensión en ciencias actuariales. Revista RVEA, Libros y Materiales Docentes, formación y servicios.">
+<style>
+/* Barra secundaria y botón de menú lateral siempre visibles (desktop y móvil) en verde CVEA */
+.quarto-secondary-nav {
+  padding: 0.35rem 0;
+  min-height: 2.5rem;
+  display: flex !important;
+  align-items: center;
+}
+.quarto-secondary-nav .quarto-btn-toggle {
+  background: var(--cvea-teal, #38666A) !important;
+  color: #fff !important;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+.quarto-secondary-nav .quarto-btn-toggle:hover {
+  background: var(--cvea-teal-light, #4a7d82) !important;
+  color: #fff !important;
+}
+.quarto-secondary-nav .quarto-btn-toggle i {
+  margin-right: 0.35rem;
+}
+/* Texto "Menú" junto al icono para que sea obvio que es desplegable */
+.quarto-secondary-nav .quarto-btn-toggle::after {
+  content: " Menú";
+  margin-left: 0.25rem;
+}
+/* Pestaña flotante "Menú" a la izquierda: siempre visible para abrir/cerrar la barra */
+#cvea-sidebar-toggle-tab {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1050;
+  background: var(--cvea-teal, #38666A);
+  color: #fff;
+  padding: 0.6rem 0.5rem;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 0.05em;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+  transition: background 0.2s, left 0.25s ease;
+}
+#cvea-sidebar-toggle-tab:hover {
+  background: var(--cvea-teal-light, #4a7d82);
+  color: #fff;
+}
+#cvea-sidebar-toggle-tab.sidebar-open {
+  left: 280px;
+}
+#cvea-sidebar-toggle-tab:not(.sidebar-open) {
+  left: 0;
+}
+/* Ocultar pestaña flotante en móvil (ahí el menú está en la navbar) */
+@media (max-width: 991.98px) {
+  #cvea-sidebar-toggle-tab { display: none !important; }
+  .quarto-secondary-nav .quarto-btn-toggle::after { content: none; }
+}
+/* Solo mostrar la pestaña en páginas que tienen barra lateral (body.nav-sidebar) */
+body:not(.nav-sidebar) #cvea-sidebar-toggle-tab { display: none !important; }
+</style>
+<script>
+(function() {
+  function initSidebarToggleTab() {
+    var sidebar = document.getElementById('quarto-sidebar');
+    if (!sidebar || document.getElementById('cvea-sidebar-toggle-tab')) return;
+    var tab = document.createElement('div');
+    tab.id = 'cvea-sidebar-toggle-tab';
+    tab.setAttribute('aria-label', 'Abrir o cerrar menú');
+    tab.innerHTML = 'Menú';
+    document.body.appendChild(tab);
+    function updateTab() {
+      var isOpen = sidebar.classList.contains('show');
+      tab.classList.toggle('sidebar-open', isOpen);
+      tab.innerHTML = isOpen ? '◀ Menú' : 'Menú ▶';
+    }
+    tab.addEventListener('click', function() {
+      var btn = document.querySelector('.quarto-btn-toggle[data-bs-target=".quarto-sidebar-collapse-item"]');
+      if (btn) btn.click();
+      setTimeout(updateTab, 50);
+    });
+    var observer = new MutationObserver(updateTab);
+    observer.observe(sidebar, { attributes: true, attributeFilter: ['class'] });
+    setTimeout(updateTab, 200);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSidebarToggleTab);
+  } else {
+    initSidebarToggleTab();
+  }
+})();
+</script>
 
 
 <link rel="stylesheet" href="../assets/styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-sidebar docked nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -113,7 +212,7 @@ ul.task-list li input[type="checkbox"] {
     <img src="../assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png" alt="CVEA" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Centro Venezolano de Estudios Actuariales</span>
+    <span class="navbar-title">CVEA</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -123,7 +222,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html"> <i class="bi bi-house-fill" role="img">
+    <a class="nav-link active" href="../index.html" aria-current="page"> <i class="bi bi-house-fill" role="img">
 </i> 
 <span class="menu-text">Inicio</span></a>
   </li>  
@@ -137,139 +236,20 @@ ul.task-list li input[type="checkbox"] {
 </i> 
 <span class="menu-text">Miembros</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-investigación" role="link" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="bi bi-journal-richtext" role="img">
-</i> 
- <span class="menu-text">Investigación</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-investigación">    
-        <li>
-    <a class="dropdown-item" href="../libro/index.html">
- <span class="dropdown-text">Libros</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../investigacion/tfpg.html">
- <span class="dropdown-text">TFPG</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../rvea/index.html">
- <span class="dropdown-text">Revista RVEA</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../investigacion/model-hub.html">
- <span class="dropdown-text">Model Hub</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-docencia" role="link" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="bi bi-person-workspace" role="img">
-</i> 
- <span class="menu-text">Docencia</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-docencia">    
-        <li>
-    <a class="dropdown-item" href="../docencia/series-tiempo/index.html">
- <span class="dropdown-text">Series de Tiempo (Python)</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../docencia/plataforma-cursos/index.html">
- <span class="dropdown-text">Plataforma de cursos</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../docencia/index.html#recursos">
- <span class="dropdown-text">Recursos para estudiantes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../docencia/index.html#proximas">
- <span class="dropdown-text">Próximas ofertas</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item">
-    <a class="nav-link" href="../servicios/index.html"> <i class="bi bi-gear-fill" role="img">
+    <a class="nav-link" href="../rvea/index.html"> <i class="bi bi-file-earmark-text" role="img">
 </i> 
-<span class="menu-text">Extensión</span></a>
+<span class="menu-text">RVEA</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../observatorio.html"> <i class="bi bi-bar-chart-line" role="img">
+    <a class="nav-link" href="../cvea-suite.html"> <i class="bi bi-cpu" role="img">
 </i> 
-<span class="menu-text">Observatorio</span></a>
-  </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-cvea-suite" role="link" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="bi bi-cpu" role="img">
-</i> 
- <span class="menu-text">CVEA Suite</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-cvea-suite">    
-        <li>
-    <a class="dropdown-item" href="../cvea-suite.html">
- <span class="dropdown-text">Página CVEA Suite</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../cvea-suite.html#cvea-bank-suite">
- <span class="dropdown-text">CVEA Bank Suite (CVEA-BS)</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../cvea-suite.html#cvea-insurance-suite">
- <span class="dropdown-text">CVEA Insurance Suite (CVEA-IS)</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../cvea-suite.html#cvea-retail-suite">
- <span class="dropdown-text">CVEA Retail Suite (CVEA-RS)</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../cvea-suite.html#cvea-health-suite">
- <span class="dropdown-text">CVEA Health Suite (CVEA-HS)</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../cvea-suite.html#cvea-control-suite-visión-general-y-industria">
- <span class="dropdown-text">CVEA Control Suite (CVEA-CS)</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rvea" role="link" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="bi bi-file-earmark-text" role="img">
-</i> 
- <span class="menu-text">RVEA</span>
-    </a>
-    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-rvea">    
-        <li>
-    <a class="dropdown-item" href="../rvea/index.html">
- <span class="dropdown-text">Revista RVEA</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../rvea/articulos.html">
- <span class="dropdown-text">Artículos</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../rvea/portal.html">
- <span class="dropdown-text">Portal RVEA</span></a>
-  </li>  
-    </ul>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../libro/index.html"> <i class="bi bi-book" role="img">
-</i> 
-<span class="menu-text">Libros</span></a>
+<span class="menu-text">CVEA Suite</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../docencia/index.html#cursos"> <i class="bi bi-play-btn" role="img">
+    <a class="nav-link" href="../docencia/index.html"> <i class="bi bi-play-btn" role="img">
 </i> 
 <span class="menu-text">Cursos</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../actualidad.html"> <i class="bi bi-megaphone" role="img">
-</i> 
-<span class="menu-text">Actualidad</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../contacto.html"> <i class="bi bi-envelope" role="img">
-</i> 
-<span class="menu-text">Contacto</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -277,10 +257,233 @@ ul.task-list li input[type="checkbox"] {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Diagnóstico del sistema de pensiones</li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../assets/logos/Logo-CVEA-icono-sin fondo letrasblancas.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inicio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../el-cvea.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">El CVEA</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../miembros.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Miembros</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Investigación</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../libro/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Libros</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../investigacion/tfpg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">TFPG</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../rvea/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Revista RVEA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../investigacion/model-hub.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model Hub</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">Docencia</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docencia/series-tiempo/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Series de Tiempo (Python)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docencia/plataforma-cursos/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plataforma de cursos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docencia/index.html#recursos" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recursos para estudiantes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docencia/index.html#proximas" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Próximas ofertas</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../servicios/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Extensión (Servicios)</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../observatorio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Observatorio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">CVEA Suite</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cvea-suite.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Página CVEA Suite</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cvea-suite.html#cvea-bank-suite" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CVEA Bank Suite (CVEA-BS)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cvea-suite.html#cvea-insurance-suite" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CVEA Insurance Suite (CVEA-IS)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cvea-suite.html#cvea-retail-suite" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CVEA Retail Suite (CVEA-RS)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cvea-suite.html#cvea-health-suite" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CVEA Health Suite (CVEA-HS)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../cvea-suite.html#cvea-control-suite-visión-general-y-industria" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">CVEA Control Suite (CVEA-CS)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">RVEA</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../rvea/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Revista RVEA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../rvea/articulos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Artículos</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../rvea/portal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Portal RVEA</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../libro/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Libros</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../docencia/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Cursos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../actualidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Actualidad</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contacto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contacto</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
