@@ -1,0 +1,19 @@
+---
+title: "Investigación"
+subtitle: "Producción de conocimiento — Resources y Model Hub"
+toc: true
+---
+
+El **eje de Investigación** de Actuarial Cortex articula la producción científica en los materiales académicos (Resources) y el repositorio de modelos y herramientas (Model Hub).
+
+## Resources — Materiales académicos
+
+Materiales académicos con revisión editorial y artículos con código reproducible (R/Python/Julia). En Resources se listan también los trabajos finales de pregrado (TFPG) en los que el Prof. Angel Colmenares ha sido tutor y los tesistas han aceptado su publicación.
+
+[**Ir a Resources**](../resources/index.qmd)
+
+## Model Hub (Otros materiales)
+
+Repositorio de scripts en R/Python, hojas Excel parametrizadas y bases de datos abiertas para replicación y uso pedagógico.
+
+[**Ir al Model Hub**](model-hub.qmd)

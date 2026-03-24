@@ -1,0 +1,194 @@
+---
+title: "Docencia"
+subtitle: "Formación continua y recursos para estudiantes"
+page-layout: custom
+title-block-banner: false
+toc: false
+format:
+  html:
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <style>
+        .hero-moodle { min-height: 50vh !important; padding-top: 100px; background-color: #1a2e30 !important; }
+        .moodle-hero-logo { max-width: 42%; height: auto; margin-bottom: 0.4rem; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3)); }
+        .moodle-hero-title { color: #fff !important; font-size: clamp(1.35rem, 4vw, 2.25rem) !important; margin: 0.25rem 0 !important; font-weight: 700; }
+        .intro_f.hero-moodle p.moodle-hero-subtitle, .hero-moodle .hero-cvea-content p.moodle-hero-subtitle { color: rgba(255,255,255,0.95) !important; font-size: clamp(1.1rem, 3.5vw, 1.6rem) !important; margin: 0.2rem 0 !important; font-weight: 400; }
+        .moodle-hero-words { background: rgba(255,255,255,0.95); color: #111 !important; padding: 0.4rem 0.85rem; margin: 0.5rem auto; display: inline-block; border-radius: 8px; font-size: clamp(0.9rem, 2.2vw, 1.15rem); font-weight: 600; }
+        .moodle-hero-words .txt-rotate .wrap { border-right-color: #333; color: #111 !important; }
+        .moodle-hero-words .txt-rotate, .moodle-hero-words span { color: #111 !important; }
+        .moodle-tagline-anim { display: inline-block; margin: 0.4rem 0; color: #fff !important; font-size: clamp(0.95rem, 2vw, 1.2rem); font-weight: 500; position: relative; padding: 8px 16px; cursor: default; }
+        .moodle-tagline-anim::before, .moodle-tagline-anim::after { content: ""; position: absolute; background: linear-gradient(to right, transparent, rgba(255,255,255,0.6)); animation: moodle-border-r 2s linear infinite; }
+        .moodle-tagline-anim::before { top: 0; left: 0; width: 100%; height: 2px; }
+        .moodle-tagline-anim::after { top: 0; right: 0; width: 2px; height: 100%; animation: moodle-border-b 2s linear infinite; animation-delay: 1s; transform: translateY(-100%); }
+        .moodle-tagline-anim span { position: relative; display: block; }
+        .moodle-tagline-anim span::before { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(to left, transparent, rgba(255,255,255,0.6)); animation: moodle-border-l 2s linear infinite; }
+        .moodle-tagline-anim span::after { content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 100%; background: linear-gradient(to top, transparent, rgba(255,255,255,0.6)); animation: moodle-border-t 2s linear infinite; animation-delay: 1s; transform: translateY(-100%); }
+        @keyframes moodle-border-r { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        @keyframes moodle-border-b { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+        @keyframes moodle-border-l { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        @keyframes moodle-border-t { 0% { transform: translateY(100%); } 100% { transform: translateY(-100%); } }
+        .moodle-cta-bar { background: #1a2e30; padding: 1rem 1.5rem; text-align: center; position: relative; z-index: 9999; }
+        .moodle-cta-bar a { text-decoration: none; }
+        .moodle-btn-portal { display: inline-block; padding: 12px 28px; background: #38666A; color: #fff !important; text-decoration: none !important; font-weight: 600; font-size: 1.15rem; border-radius: 8px; border: 2px solid rgba(255,255,255,0.5); cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: inherit; }
+        .moodle-btn-portal:hover { background: #2a4f52; color: #fff !important; transform: scale(1.02); }
+        @media (max-width: 768px) {
+          .hero-moodle { min-height: 42vh !important; padding-top: 70px !important; }
+          .moodle-hero-logo { max-width: 34% !important; margin-bottom: 0.3rem !important; }
+          .moodle-hero-title { font-size: clamp(1.1rem, 4vw, 1.5rem) !important; margin: 0.15rem 0 !important; }
+          .hero-moodle .moodle-hero-subtitle { font-size: clamp(0.85rem, 3vw, 1.1rem) !important; margin: 0.1rem 0 !important; }
+          .moodle-hero-words { font-size: clamp(0.75rem, 2vw, 0.9rem) !important; padding: 0.35rem 0.6rem; margin: 0.4rem auto !important; }
+          .moodle-tagline-anim { font-size: clamp(0.75rem, 1.8vw, 0.9rem) !important; padding: 5px 12px !important; }
+          .moodle-btn-portal { padding: 10px 20px; font-size: 0.95rem; }
+        }
+        </style>
+---
+
+```{=html}
+<div class="hero-cvea intro_f cvea-intro hero-moodle">
+  <div class="hero-doodle-bg" aria-hidden="true">
+    <css-doodle>
+      <style>
+        @grid: 18x1 / 100vmax;
+        :container { perspective: 22vmin; }
+        background: @m(
+          @r(180, 220),
+          radial-gradient(
+            @p(#1a3a3d, #2d5054, #1e3d40, #244548, #38666A) 15%,
+            transparent 45%
+          ) @r(100%) @r(100%) / @r(1%, 4%) @lr no-repeat
+        );
+        @size: 50%;
+        @place-cell: center;
+        border-radius: 50%;
+        transform-style: preserve-3d;
+        animation: scale-up 22s linear infinite;
+        animation-delay: calc(@i * -.4s);
+        @keyframes scale-up {
+          0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0); }
+          15% { opacity: 0.85; }
+          90% { transform: translate3d(0, 0, @r(40vmin, 50vmin)) rotate(@r(-360deg, 360deg)); }
+          100% { opacity: 0; transform: translate3d(0, 0, 1vmin); }
+        }
+      </style>
+    </css-doodle>
+  </div>
+  <div class="hero-cvea-content">
+    <img src="../logo-AC/logo-AC-AC-vertical-horizontal-blanco.png" alt="Actuarial Cortex" class="animate__animated animate__fadeInDown moodle-hero-logo">
+    <h1 class="animate__animated animate__fadeInDown moodle-hero-title">Plataforma de Cursos</h1>
+    <p class="moodle-hero-words animate__animated animate__fadeIn">
+      <span class="txt-rotate" id="moodle-txt-rotate"></span>
+    </p>
+    <p class="animate__animated animate__fadeIn">
+      <span class="moodle-tagline-anim"><span>Cursos adaptados a cada sector</span></span>
+    </p>
+  </div>
+</div>
+```
+
+```{=html}
+<nav class="portal-nav-bar" aria-label="Navegación principal">
+  <div class="portal-nav-bar-inner">
+    <a href="../index.qmd">Inicio</a><span class="sep">·</span>
+    <a href="../sobre-cortex.qmd">Sobre Cortex</a><span class="sep">·</span>
+    <a href="../miembros.qmd">Miembros</a><span class="sep">·</span>
+    <a href="../resources/index.html">Resources</a><span class="sep">·</span>
+    <a href="../actuarial-suite.html">Actuarial Suite</a><span class="sep">·</span>
+    <a href="../cortex-suite.html">Cortex Suite</a><span class="sep">·</span>
+    <a href="index.qmd" class="active">Cursos</a><span class="sep">·</span>
+    <a href="../actualidad.qmd">Actualidad</a><span class="sep">·</span>
+    <a href="../contacto.qmd">Contacto</a>
+  </div>
+</nav>
+```
+
+```{=html}
+<div class="moodle-cta-bar">
+  <a href="https://cvea.gnomio.com/" target="_blank" rel="noopener noreferrer" class="moodle-btn-portal animate__animated animate__zoomIn">Abrir Portal de Cursos</a>
+</div>
+<script>
+(function(){ var w = ["R", "Python", "Datos", "Modelado", "Moodle", "Cursos", "Formación", "Analítica", "Visualización", "Machine Learning"];
+  var el = document.getElementById("moodle-txt-rotate");
+  if (el) { el.setAttribute("data-period", "2000"); el.setAttribute("data-rotate", JSON.stringify(w)); }
+})();
+</script>
+<script src="../assets/js/text.js"></script>
+```
+
+## Transformando datos en decisiones estratégicas y gestión de riesgos {#cursos}
+
+En la era de la información, la capacidad para modelar escenarios, predecir tendencias y cuantificar riesgos es el activo más valioso de cualquier organización. Nuestro centro de formación está especializado en capacitar a profesionales del sector financiero, asegurador, científico y empresarial.
+
+Aprende a dominar el análisis complejo y la creación de modelos predictivos utilizando las herramientas de código abierto líderes en la industria —**R** y **Python**—, integrándolas de manera fluida en entornos corporativos.
+
+Los módulos que se describen a continuación se dictan en la **plataforma Moodle**, referente en enseñanza en línea. Inscripciones, materiales y seguimiento: [**Acceso a la plataforma de cursos (Moodle)**](https://cvea.gnomio.com/){target="_blank"}.
+
+### Módulos de aprendizaje
+
+Hemos estructurado nuestros programas en módulos especializados y progresivos. Ya sea que busques automatizar reportes, adentrarte en el Machine Learning o desarrollar modelos actuariales complejos, tenemos un camino para ti:
+
+**Módulo 1 — Fundamentos analíticos en entornos corporativos**
+
+- **Dirigido a:** Analistas de negocios, contadores, estudiantes de economía/matemáticas y profesionales que buscan migrar de Excel a lenguajes de programación.
+- **Objetivo:** Instalar, configurar y dominar los entornos de desarrollo de R y Python, sentando las bases de la programación orientada a datos.
+- *Configuración del entorno de trabajo:* Instalación y gestión de entornos con Anaconda (Jupyter Notebooks) y RStudio. Manejo de variables de entorno y terminal para analistas.
+- *Introducción a Python para datos:* Sintaxis básica, estructuras de datos (listas, diccionarios), bucles y funciones. Introducción a la vectorización.
+- *Fundamentos de R para estadística:* Sintaxis de R, manejo de data frames, vectores y funciones base. ¿Cuándo usar R y cuándo usar Python?
+
+**Módulo 2 — Ingeniería de datos y visualización avanzada**
+
+- **Dirigido a:** Analistas de datos, científicos de datos junior y profesionales de inteligencia de negocios (BI).
+- **Objetivo:** Extraer, limpiar, transformar (ETL) y visualizar grandes volúmenes de datos de manera eficiente.
+- *Manipulación de datos con Python (Pandas y NumPy):* Limpieza de datos estructurados, manejo de valores nulos, agrupaciones y cruce de bases de datos.
+- *El ecosistema Tidyverse en R:* Uso avanzado de dplyr y tidyr para la manipulación elegante y eficiente de conjuntos de datos complejos.
+- *Storytelling y visualización interactiva:* Creación de gráficos estáticos y dinámicos usando ggplot2 (R), Matplotlib y Seaborn (Python). Integración con herramientas como Power BI.
+
+**Módulo 3 — Modelado actuarial y matemáticas financieras**
+
+- **Dirigido a:** Actuarios, analistas de riesgos, gestores de carteras y auditores financieros.
+- **Objetivo:** Aplicar programación avanzada para el cálculo de primas, reservas, análisis de supervivencia y modelado de riesgos.
+- *Matemáticas financieras y series de tiempo:* Análisis y pronóstico de series temporales financieras usando statsmodels (Python) y el ecosistema forecast / fpp3 (R).
+- *Modelos de supervivencia y tablas de mortalidad:* Uso de paquetes especializados en R (como survival y lifecontingencies) para seguros de vida y pensiones.
+- *Simulación estocástica y análisis de riesgos:* Implementación del método Monte Carlo, modelos de cadenas de Markov y cuantificación de riesgo (VaR) combinando NumPy (Python) y librerías estadísticas de R.
+
+**Módulo 4 — Machine Learning y analítica predictiva**
+
+- **Dirigido a:** Científicos de datos, estadísticos y líderes técnicos de proyectos analíticos.
+- **Objetivo:** Entrenar, evaluar y desplegar modelos de aprendizaje automático para la toma de decisiones automatizada.
+- *Machine Learning clásico con Scikit-Learn (Python):* Regresión lineal/logística, árboles de decisión, Random Forest y clustering. Ajuste de hiperparámetros.
+- *Modelado predictivo con Tidymodels (R):* Preprocesamiento, validación cruzada y evaluación de modelos predictivos estadísticos.
+- *Automatización y despliegue:* Creación de APIs para modelos predictivos (FastAPI en Python) y aplicaciones web interactivas con Shiny (R) y Streamlit (Python).
+
+### ¿Por qué estudiar con nosotros?
+
+- **Enfoque corporativo real:** Enseñamos a utilizar R y Python integrados en los flujos de trabajo (incl. Office/Power BI) que utilizan las empresas e instituciones financieras.
+- **Rigor Científico y Matemático:** No solo enseñamos a escribir código; enseñamos la estadística, la probabilidad y la matemática actuarial que fundamentan los modelos.
+- **Eficiencia y Escalabilidad:** Aprende a superar los límites de las hojas de cálculo tradicionales procesando millones de registros en segundos.
+- **Proyectos Aplicados:** Casos de estudio reales: desde la predicción de abandono de clientes (churn) hasta la tarificación de pólizas de seguros.
+
+Los cursos están orientados inicialmente a **programación en software libre** para los diversos sectores: **banca, seguros y pensiones**. Se dictan en la **plataforma Moodle**, referente en enseñanza en línea; el acceso a inscripciones y materiales está en el enlace [Plataforma de cursos (Moodle)](https://cvea.gnomio.com/){target="_blank"}.
+
+## Formación continua
+
+### Curso de Series de Tiempo (Python)
+
+Ficha técnica, programa, objetivos e inscripción del curso orientado a actuarios y profesionales que requieran proyecciones de mortalidad, siniestralidad o indicadores económicos.
+
+[**Ir al curso Series de Tiempo con Python**](series-tiempo/index.qmd)
+
+**Recurso complementario:** [Series de tiempo y actores del mercado (HTML)](../Referencias/Recursos_HTML/Series-de-tiempo-Actores.html) — Análisis dinámico de actores y series temporales.
+
+### Plataforma de cursos (Moodle) {#plataforma}
+
+Los cursos de Actuarial Cortex se dictan en **Moodle**, la plataforma líder de cursos en línea de código abierto, utilizada por universidades e instituciones en todo el mundo. Inscripciones, materiales y seguimiento están disponibles en nuestra aula virtual. El acceso principal está en el inicio de esta sección (botón **Abrir Portal de Cursos**). Resumen de módulos: [Plataforma de cursos — módulos ofrecidos](plataforma-cursos/index.qmd).
+
+### Próximas ofertas {#proximas}
+
+Webinars y certificaciones en temas emergentes (por ejemplo, IA en Actuaría). Las convocatorias se publicarán en [Actualidad](../actualidad.qmd).
+
+*(Próximas ofertas se anunciarán aquí.)*
+
+## Recursos para estudiantes {#recursos}
+
+- **Guías metodológicas para TFPG:** reproducibilidad y referencias en formato APA; ver [Resources — Modelo y plantilla](../resources/index.qmd#modelo-editorial).
+- **Acceso al Model Hub:** scripts en R/Python, Excel actuarial y bases de datos abiertas con fines pedagógicos; ver [Model Hub](../investigacion/model-hub.qmd).

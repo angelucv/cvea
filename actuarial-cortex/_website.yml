@@ -1,0 +1,82 @@
+# Configuración del sitio — Menú lateral por ejes (Investigación, Docencia, Extensión)
+website:
+  title: "Actuarial Cortex"
+  site-url: ""
+  favicon: logo-AC/logo-ac-blanco.png
+
+  navbar:
+    logo: "logo-AC/logo-ac-blanco.png"
+    logo-alt: "Actuarial Cortex"
+    href: index.qmd
+    title: "Actuarial Cortex"
+    collapse-below: lg
+    pinned: true
+    left:
+      - icon: list
+        text: "Menú"
+        menu:
+          - text: "Inicio"
+            href: index.qmd
+          - text: "Sobre Cortex"
+            href: sobre-cortex.qmd
+          - text: "Miembros"
+            href: miembros.qmd
+          - text: "Resources"
+            href: resources/index.qmd
+          - text: "Model Hub"
+            href: investigacion/model-hub.qmd
+          - text: "Cursos"
+            href: docencia/index.qmd
+          - text: "Actuarial Suite"
+            href: actuarial-suite.qmd
+          - text: "Cortex Suite"
+            href: cortex-suite.qmd
+          - text: "Servicios"
+            href: servicios/index.qmd
+          - text: "Observatorio"
+            href: observatorio.qmd
+          - text: "Actualidad"
+            href: actualidad.qmd
+          - text: "Contacto"
+            href: contacto.qmd
+    right:
+      - icon: house-fill
+        text: "Inicio"
+        href: index.qmd
+      - icon: building
+        text: "Sobre Cortex"
+        href: sobre-cortex.qmd
+      - icon: people-fill
+        text: "Miembros"
+        href: miembros.qmd
+      - icon: grid-3x3-gap
+        text: "Actuarial Suite"
+        href: actuarial-suite.qmd
+      - icon: collection
+        text: "Cortex Suite"
+        href: cortex-suite.qmd
+      - icon: journal-bookmark-fill
+        text: "Portal de cursos"
+        href: docencia/index.qmd
+    tools:
+      - icon: envelope-fill
+        href: "mailto:actuarial.cortex@gmail.com"
+        aria-label: "Correo Actuarial Cortex"
+      - icon: instagram
+        href: "https://instagram.com/actuarial_cortex"
+        aria-label: "Instagram Actuarial Cortex"
+
+  sidebar:
+    style: "docked"
+    contents: []
+
+  page-footer:
+    left:
+      - text: "© Actuarial Cortex"
+    center:
+      - text: "Conocimiento - Tecnología - Formación"
+    right:
+      - text: "actuarial.cortex@gmail.com"
+        href: "mailto:actuarial.cortex@gmail.com"
+      - text: "@actuarial_cortex"
+        href: "https://instagram.com/actuarial_cortex"

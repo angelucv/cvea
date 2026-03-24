@@ -1,0 +1,234 @@
+---
+title: "Cortex Suite: Solución Tecnológica a la Medida"
+subtitle: "Transforme su operatividad con tecnología a medida y analítica de alto nivel"
+page-layout: custom
+title-block-banner: false
+toc: false
+format:
+  html:
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <style>
+        .hero-suite { min-height: 55vh !important; padding-top: 100px; background-color: #1a2e30 !important; }
+        .suite-hero-logo { max-width: 44%; height: auto; margin-bottom: 0.5rem; display: block; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4)); }
+        .suite-hero-title { color: #fff !important; font-size: clamp(1.5rem, 4.5vw, 2.5rem) !important; margin: 0.3rem 0 !important; font-weight: 700; text-shadow: 0 2px 10px rgba(0,0,0,0.25); }
+        .intro_f.hero-suite p.suite-hero-tagline,
+        .hero-suite .hero-cvea-content p.suite-hero-tagline { color: rgba(255,255,255,0.95) !important; font-size: clamp(1.1rem, 3.5vw, 1.75rem) !important; margin: 0.25rem 0 !important; font-weight: 400; text-shadow: 0 2px 10px rgba(0,0,0,0.25); }
+        .suite-hero-rotate { color: #fff !important; font-size: clamp(1rem, 2.8vw, 1.4rem) !important; font-weight: 600; margin: 0.5rem 0; min-height: 1.5em; }
+        .suite-hero-rotate .txt-rotate .wrap { border-right-color: rgba(255,255,255,0.8); }
+        .suite-hero-cta { margin-top: 1rem; }
+        .suite-tagline-anim { display: inline-block; margin-bottom: 0.75rem; color: #fff !important; font-size: clamp(0.95rem, 2vw, 1.2rem); font-weight: 500; position: relative; padding: 8px 16px; cursor: default; }
+        .suite-tagline-anim::before, .suite-tagline-anim::after { content: ""; position: absolute; background: linear-gradient(to right, transparent, rgba(255,255,255,0.6)); animation: suite-border-r 2s linear infinite; }
+        .suite-tagline-anim::before { top: 0; left: 0; width: 100%; height: 2px; }
+        .suite-tagline-anim::after { top: 0; right: 0; width: 2px; height: 100%; animation: suite-border-b 2s linear infinite; animation-delay: 1s; transform: translateY(-100%); }
+        .suite-tagline-anim span { position: relative; display: block; }
+        .suite-tagline-anim span::before { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(to left, transparent, rgba(255,255,255,0.6)); animation: suite-border-l 2s linear infinite; }
+        .suite-tagline-anim span::after { content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 100%; background: linear-gradient(to top, transparent, rgba(255,255,255,0.6)); animation: suite-border-t 2s linear infinite; animation-delay: 1s; transform: translateY(-100%); }
+        @keyframes suite-border-r { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        @keyframes suite-border-b { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+        @keyframes suite-border-l { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        @keyframes suite-border-t { 0% { transform: translateY(100%); } 100% { transform: translateY(-100%); } }
+        .suite-btn-demos { display: inline-block; padding: 12px 28px; background: #38666A; color: #fff !important; text-decoration: none !important; font-weight: 600; font-size: 1.15rem; border-radius: 8px; border: 2px solid rgba(255,255,255,0.5); cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: inherit; }
+        .suite-btn-demos:hover { background: #2a4f52; color: #fff !important; transform: scale(1.02); }
+        button.suite-btn-demos { border: 2px solid rgba(255,255,255,0.5); outline: none; }
+        .suite-cta-bar { background: #1a2e30; padding: 1rem 1.5rem; text-align: center; position: relative; z-index: 9999; }
+        .suite-cta-bar a { text-decoration: none; }
+        .suite-btn-demos-bar { margin: 0 0.5rem; }
+        @media (max-width: 768px) {
+          .hero-suite { min-height: 45vh !important; padding-top: 70px !important; }
+          .suite-hero-logo { max-width: 36% !important; margin-bottom: 0.35rem !important; }
+          .suite-hero-title { font-size: clamp(1.2rem, 4.5vw, 1.6rem) !important; margin: 0.2rem 0 !important; }
+          .hero-suite .suite-hero-tagline { font-size: clamp(0.85rem, 3vw, 1.15rem) !important; margin: 0.15rem 0 !important; }
+          .suite-hero-rotate { font-size: clamp(0.85rem, 2.5vw, 1rem) !important; margin: 0.4rem 0 !important; }
+          .suite-tagline-anim { font-size: clamp(0.8rem, 2vw, 0.95rem) !important; padding: 5px 12px !important; }
+          .suite-btn-demos { padding: 10px 20px; font-size: 0.95rem; }
+        }
+        </style>
+---
+
+```{=html}
+<!-- Hero Cortex Suite -->
+<div class="hero-cvea intro_f cvea-intro hero-suite">
+  <div class="hero-doodle-bg" aria-hidden="true">
+    <css-doodle>
+      <style>
+        @grid: 20x1 / 100vmax;
+        :container { perspective: 22vmin; }
+        background: @m(
+          @r(180, 220),
+          radial-gradient(
+            @p(#1a3a3d, #2d5054, #1e3d40, #244548, #152a2c, #38666A) 15%,
+            transparent 45%
+          ) @r(100%) @r(100%) / @r(1%, 4%) @lr no-repeat
+        );
+        @size: 50%;
+        @place-cell: center;
+        border-radius: 50%;
+        transform-style: preserve-3d;
+        animation: scale-up 24s linear infinite;
+        animation-delay: calc(@i * -.4s);
+        @keyframes scale-up {
+          0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0); }
+          15% { opacity: 0.85; }
+          90% { transform: translate3d(0, 0, @r(45vmin, 55vmin)) rotate(@r(-360deg, 360deg)); }
+          100% { opacity: 0; transform: translate3d(0, 0, 1vmin); }
+        }
+      </style>
+    </css-doodle>
+  </div>
+  <div class="hero-cvea-content">
+    <img src="logo-AC/logo-actuarial-cortex-principal-blanco.png" alt="Actuarial Cortex" class="animate__animated animate__fadeInDown suite-hero-logo">
+    <h1 class="animate__animated animate__fadeInDown suite-hero-title">Cortex Suite</h1>
+    <p class="animate__animated animate__fadeIn suite-hero-tagline">Soluciones Tecnológicas</p>
+    <p class="suite-hero-rotate animate__animated animate__fadeIn">
+      <span class="txt-rotate" data-period="2000" data-rotate='["Banca", "Seguros", "Retail", "Salud", "Control", "Reservas", "Demos", "Analítica", "Cuadros de mando", "Predictivo"]'></span>
+    </p>
+    <p class="suite-hero-cta animate__animated animate__fadeIn">
+      <span class="suite-tagline-anim"><span>Desarrollos a la medida de cada sector</span></span>
+    </p>
+  </div>
+</div>
+```
+
+```{=html}
+<nav class="portal-nav-bar" aria-label="Navegación principal">
+  <div class="portal-nav-bar-inner">
+    <a href="index.html">Inicio</a><span class="sep">·</span>
+    <a href="sobre-cortex.html">Sobre Cortex</a><span class="sep">·</span>
+    <a href="miembros.html">Miembros</a><span class="sep">·</span>
+    <a href="resources/index.html">Resources</a><span class="sep">·</span>
+    <a href="actuarial-suite.html">Actuarial Suite</a><span class="sep">·</span>
+    <a href="cortex-suite.html" class="active">Cortex Suite</a><span class="sep">·</span>
+    <a href="docencia/index.html">Cursos</a><span class="sep">·</span>
+    <a href="actualidad.html">Actualidad</a><span class="sep">·</span>
+    <a href="contacto.html">Contacto</a>
+  </div>
+</nav>
+```
+
+```{=html}
+<div class="suite-cta-bar" id="suite-cta-bar">
+  <a href="https://cvea-suite-demos.streamlit.app/" target="_blank" rel="noopener noreferrer" class="suite-btn-demos suite-btn-demos-bar">Abrir Demos</a>
+</div>
+<script src="assets/js/text.js"></script>
+```
+
+El entorno empresarial venezolano actual, caracterizado por su **dinamismo bimonetario**, retos inflacionarios y una notable reactivación en sectores clave, exige herramientas de gestión que vayan mucho más allá del simple reporte estático. Las empresas modernas no solo necesitan registrar sus operaciones diarias, sino **comprenderlas en tiempo real** y, más importante aún, **predecir sus resultados futuros** para proteger su patrimonio.
+
+Para responder a esta necesidad nace **Cortex Suite**, un ecosistema tecnológico integral diseñado por y para actuarios, estadísticos y tomadores de decisiones. La visión de Cortex Suite abarca el **ciclo de vida completo del dato empresarial**, estructurándose en tres pilares tecnológicos fundamentales que garantizan un flujo de trabajo ininterrumpido:
+
+**Carga, Control y Operativa:** Constituye el cimiento del sistema. Permite la ingesta segura y estructurada de datos. Para sectores con alta madurez tecnológica, se conecta automáticamente a los servidores centrales de la empresa; para otros, ofrece interfaces web intuitivas que permiten el levantamiento manual de procesos y la carga inicial de información de manera validada y segura.
+
+**Monitoreo y Cuadros de Mando:** La sala de mando en tiempo real. Aquí, la gerencia interactúa con visualizaciones dinámicas, evalúa indicadores clave de rendimiento (KPIs), recibe alertas tempranas e interactúa con simuladores de escenarios para la toma de decisiones ágiles y fundamentadas en evidencia.
+
+**Analítica Avanzada y Predictiva:** El cerebro actuarial y estadístico. Módulos especializados que aplican modelos matemáticos complejos, inteligencia artificial y simulaciones estocásticas (pruebas de estrés, modelos de supervivencia, proyecciones de demanda) para generar escenarios futuros que retroalimentan y blindan la estrategia del negocio.
+
+## Demos interactivos por sector
+
+A continuación se presenta la propuesta de valor y los **demos interactivos** para cinco ecosistemas: **Banca**, **Seguros**, **Retail**, **Salud** y **Control General** (cadena de suministro e industria).
+
+---
+
+## 1. Cortex Bank Suite
+
+El sector financiero venezolano opera hoy bajo un esquema bimonetario único, donde la agilidad en el manejo de liquidez y la mitigación del riesgo crediticio son vitales. **Cortex Bank Suite** es una plataforma integral que permite a las instituciones bancarias, de microfinanzas y casas de bolsa evaluar la salud de su cartera y el valor de sus activos en tiempo real.
+
+**Qué ofrece el aplicativo**
+
+- **Visión general:** Indicadores de liquidez, solvencia, morosidad e intermediación; evolución de captaciones y cartera a lo largo del tiempo.
+- **Riesgo de crédito:** Visualización del flujo de la cartera entre estados de riesgo (normal, riesgo significativo, impago); relación entre puntuación crediticia y probabilidad de incumplimiento; ajuste de parámetros y cálculo de la pérdida esperada.
+- **Riesgo de mercado y tesorería:** Gráficos de evolución de índices o bonos; mapa de correlaciones entre distintas carteras de inversión.
+
+[**Abrir Cortex Bank Suite**](https://cvea-suite-demos.streamlit.app/){.btn .btn-primary target="_blank"}
+
+---
+
+## 2. Cortex Insurance Suite
+
+El mercado asegurador venezolano se encuentra en una encrucijada financiera y técnica crítica. Las aseguradoras enfrentan el reto de reestructurar sus modelos operativos para proteger a sus clientes mientras mantienen su solvencia frente a la inflación de costos. **Cortex Insurance Suite** es una cabina de mando actuarial y financiera que automatiza el control de primas, siniestros y el cálculo riguroso de reservas, alineada con las exigencias de la SUDEASEG.
+
+**Qué ofrece el aplicativo**
+
+- **Reservas y siniestralidad:** Tablas que muestran la evolución de los siniestros en el tiempo; posibilidad de elegir distintos métodos de proyección de reservas (incluyendo ajuste por inflación).
+- **Visión general por ramos:** Panel de primas cobradas, siniestros pagados y siniestralidad promedio por ramo, con tacómetro de cumplimiento de metas técnicas.
+- **Ramos y productos:** Análisis de indicadores de siniestralidad por producto dentro de cada ramo (automóviles, salud, personas, patrimoniales, fianzas).
+- **Cumplimiento normativo y estrés:** Evaluación visual del nivel de cumplimiento en materia de legitimación de capitales (LC/FT) y simulaciones de estrés sobre patrimonio y reservas.
+
+[**Abrir Cortex Insurance Suite**](https://cvea-suite-demos.streamlit.app/Insurance_Suite){.btn .btn-primary target="_blank"}
+
+---
+
+## 3. Cortex Retail Suite
+
+El sector de consumo masivo en Venezuela está experimentando un notable renacimiento. La gestión comercial se enfrenta a un sistema bimonetario y a un consumidor que en gran medida utiliza ahorros para financiar compras. **Cortex Retail Suite** es una cabina de inteligencia comercial que captura en tiempo real las ventas y emplea analítica basada en evidencia para identificar relaciones entre margen, volumen y rotación.
+
+**Qué ofrece el aplicativo**
+
+- **Inteligencia comercial:** Indicadores de volumen de ventas, ticket promedio en distintas monedas e índice de confianza del consumidor; visualización de la participación de mercado por categoría y tipo de marca (tradicional vs genérica), con filtros por región y tipo de tienda.
+- **Precios y elasticidad:** Curva de demanda según precio y tipo de cambio; posibilidad de simular cambios en costos importados y en tasas de cambio para ver el impacto en las ventas, con avisos cuando los precios salen de rangos sostenibles.
+- **Inventario y canastas:** Red de afinidades entre productos (qué se compra junto con qué), para apoyar decisiones de surtido y promociones.
+- **Análisis a la medida:** Herramienta de exploración donde el usuario puede cruzar variables (forma de pago, categoría, hora, etc.) y construir sus propias tablas y gráficos sin programar.
+
+[**Abrir Cortex Retail Suite**](https://cvea-suite-demos.streamlit.app/Retail_Suite){.btn .btn-primary target="_blank"}
+
+---
+
+## 4. Cortex Health Suite
+
+El sector salud en Venezuela enfrenta mayor demanda, prevalencia de enfermedades crónicas y alta variabilidad en costos médicos. Fondos autoadministrados y empresas de medicina prepagada —reguladas por SUDEASEG— necesitan garantizar calidad sin comprometer viabilidad financiera. **Cortex Health Suite** consolida estadísticas de morbilidad y siniestralidad, audita facturas clínicas contra baremos en tiempo real e incorpora modelos que calculan la solvencia de reservas técnicas de salud.
+
+**Qué ofrece el aplicativo**
+
+- **Monitoreo epidemiológico:** Indicadores de admisión, prevalencia de enfermedades no transmisibles y uso de telemedicina frente a atención presencial; mapas que muestran la distribución geográfica de los siniestros y el rendimiento de la red de prestadores.
+- **Auditoría clínica:** Comparación del costo facturado por procedimiento frente a los baremos acordados; gráficos de control para detectar desviaciones; ajuste del nivel de sensibilidad de la auditoría para resaltar los casos que requieren revisión manual.
+- **Solvencia y reservas:** Proyección del patrimonio del fondo a varios años mediante simulaciones; posibilidad de introducir inflación médica e inflación general por separado para ver el impacto en las reservas.
+- **Tarificación y modalidades:** Comparación de la rentabilidad entre atención tradicional, asistencia domiciliaria y telemedicina; simulador de primas donde se pueden ajustar coaseguro, deducible y tope de cobertura, y comprobar si se cumple el margen de suficiencia exigido por la normativa.
+
+[**Abrir Cortex Health Suite**](https://cvea-suite-demos.streamlit.app/Health_Suite){.btn .btn-primary target="_blank"}
+
+---
+
+## 5. Cortex Control Suite (visión general y industria)
+
+El tejido productivo venezolano abarca logística, agroindustria y manufactura, con retos que van desde la volatilidad en el abastecimiento de combustible hasta la optimización de flotas e inventarios en tiempo real. **Cortex Control Suite** es una torre de control que permite desde el levantamiento de datos operativos en planta o en la carretera hasta tableros directivos predictivos.
+
+**Qué ofrece el aplicativo**
+
+- **Cadena de suministro y flotas:** Indicadores de costo por kilómetro, rendimiento de combustible y entregas a tiempo (OTIF); mapa con la ubicación de la flota y las rutas entre centros de distribución y puntos de entrega; posibilidad de simular variaciones en el precio o la disponibilidad del combustible.
+- **Eficiencia industrial y mantenimiento:** Medidor de la efectividad global de los equipos (OEE); mapa de calor de fallas por zona de la planta o turno; curva que muestra la probabilidad de falla de un equipo en los próximos 30 días y opción de simular una orden de mantenimiento preventivo.
+- **Sostenibilidad y gastos:** Diagrama que desglosa el presupuesto operativo (combustible, peajes, mantenimiento, depreciación) hasta el margen operativo neto; selector de periodos y escenarios de sobrecostos.
+- **Análisis a la medida:** Exploración libre de los datos: cruce de estado de las máquinas, tiempos de ciclo, costos y otras variables para detectar ineficiencias sin necesidad de programar.
+
+[**Abrir Cortex Control Suite**](https://cvea-suite-demos.streamlit.app/Control_Suite){.btn .btn-primary target="_blank"}
+
+---
+
+## 6. Gestión Social (demo en Hugging Face)
+
+Aplicativo **Django** para la gestión de solicitudes y ayudas sociales: carga de datos, scoring de prioridad, dashboard con KPIs, mapa por estados y visión histórica. Incluye Admin para importar desde CSV/Excel, filtros y exportación. Desplegado en Hugging Face Spaces.
+
+**Qué ofrece el aplicativo**
+
+- **Admin:** login, listado de solicitudes, filtros por prioridad/estatus/especialidad, import/export, recalcular scoring.
+- **Dashboard:** gráficos (Pareto, estatus, proveedores), mapa interactivo por estados, visión histórica y detallada.
+- **Código:** [GitHub (actuarial-cortex-suite-gestion-social)](https://github.com/angelucv/actuarial-cortex-suite-gestion-social){target="_blank"}.
+
+[**Abrir Gestión Social (demo)**](https://angelucv-actuarial-cortex-gestion-social.hf.space){.btn .btn-primary target="_blank"}
+
+---
+
+## Cortex Suite Lab — Otros desarrollos demostrativos
+
+**Tarificación actuarial telemática**
+
+- **Aplicativo Shiny (telemática):** [Ver demo en línea](https://7rho5x-profesor-angel.shinyapps.io/ActuarialTelematicsV2/){target="_blank"}
+- **Ejemplo detallado (HTML):** [Xaringan1 — Tarificación telemática](Referencias/Recursos_HTML/Xaringan1.html){target="_blank"}
+
+**Prototipo Actuarial Insurtech (Shiny, R)**
+
+- Dashboard avanzado (ActuarialInsurtechCARAMELS): indicadores técnicos, comparación aseguradora vs mercado, simulación de cartera; referencia en `Referencias/ActuarialInsurtechCARAMELS/`.
+
+---
+
+Para conocer más o solicitar una propuesta adaptada a su organización: [Contacto](contacto.qmd) · [Miembros](miembros.qmd).

@@ -1,0 +1,42 @@
+---
+title: "Observatorio de Variables Actuariales"
+subtitle: "Motor dinámico del portal — indicadores biométricos, financieros y de previsión"
+toc: true
+---
+
+El **Observatorio** es una **plataforma que Actuarial Cortex pone a disposición de tomadores de decisión e investigadores**. Además de ofrecer información actualizada sobre variables biométricas, financieras y de previsión, se prevé incorporar **cuadros de control y dashboards** con analítica de sectores financieros (seguros, banca) y otros sectores sensibles, para apoyar la evaluación de riesgo y la política pública.
+
+## Variables biométricas
+
+Gráficos dinámicos de las últimas tablas de mortalidad calibradas por el hub: tendencias nacionales y subnacionales, SMR, clusters de riesgo y proyecciones Lee-Carter. Basado en la investigación publicada en [Resources](resources/index.qmd).
+
+- Enlace a dashboards: [Servicios y Demos — Mapa de riesgo](servicios/demo-mapa.qmd) y visualizaciones asociadas.
+- Boletines de indicadores mensuales (en desarrollo).
+
+## Variables financieras
+
+Seguimiento de la **inflación actuarial** y de las **tasas técnicas de descuento** relevantes para reservas, tarificación y valuación de pensiones. Insumos para el sector asegurador, banca y previsión social.
+
+*(Contenido en construcción según disponibilidad de series oficiales.)*
+
+## Variables de previsión
+
+Indicadores de **solvencia** y **sostenibilidad** de fondos de pensiones y regímenes de previsión social. Síntesis de diagnósticos de Actuarial Cortex dirigidos a IVSS, Sudeaseg y decisores de política pública.
+
+## Mapa de servicios financieros y salud
+
+Mapa interactivo de **bancos**, **cajeros automáticos**, **aseguradoras**, **hospitales y clínicas** y **farmacias** en Venezuela. Puedes filtrar por entidad, ver densidad por estado o explorar pines, círculos o mapa de calor. Datos de OpenStreetMap.
+
+<div class="mapa-embed-wrapper" style="width: 100%; border: none; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<iframe
+  src="https://actuarial-cortex-mapa-servicios.streamlit.app/?embed=true"
+  title="Mapa de servicios financieros y salud — Venezuela"
+  style="width: 100%; height: 600px; border: none;"
+  allow="fullscreen"
+  loading="lazy">
+</iframe>
+</div>
+
+---
+
+Para consultoría sobre indicadores o convenios de datos, utilice [Contacto](contacto.qmd).

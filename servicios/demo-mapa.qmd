@@ -8,10 +8,10 @@ format:
 ::: {.column-screen}
 
 <iframe
-  src="https://tu-app-mapa.app/?embed=true"
+  src="https://actuarial-cortex-mapa-servicios.streamlit.app/?embed=true"
   style="height: 800px; width: 100%; border: none;">
 </iframe>
 
 :::
 
-Aquí puede embeberse un dashboard de mapa de riesgo (por ejemplo, basado en el análisis espacio-temporal INLA/BYM del artículo de mortalidad municipal en RVEA Vol. I). Reemplaza la URL por tu aplicación publicada.
+Aplicativo **Mapa de servicios** (Streamlit), código en [angelucv/actuarial-cortex-mapa-servicios](https://github.com/angelucv/actuarial-cortex-mapa-servicios). [**Abrir en nueva pestaña**](https://actuarial-cortex-mapa-servicios.streamlit.app/){target="_blank" rel="noopener noreferrer"}

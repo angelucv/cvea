@@ -1,0 +1,319 @@
+---
+title: "Fase 1 — Pasos ejecutables"
+subtitle: "Construir la infraestructura Moodle en Oracle Cloud paso a paso"
+toc: true
+toc-depth: 2
+---
+
+Sigue estos pasos en orden. En cada uno se indica qué hacer y qué anotar. Al final tendrás Moodle funcionando en una VM de Oracle Cloud.
+
+::: {.callout-note}
+## Si Oracle te muestra "Export laws" / acceso denegado
+
+Si al abrir oracle.com o al registrarte aparece un mensaje de restricción por leyes de exportación de EE.UU., **no podrás completar estos pasos con Oracle Cloud**. En ese caso usa las [alternativas (MoodleCloud, Gnomio o VPS)](alternativas-oracle.qmd) para tener Moodle en línea y continuar con la Fase 2.
+:::
+
+---
+
+## Paso 1 — Crear cuenta en Oracle Cloud (Free Tier)
+
+1. Abre en el navegador: **https://www.oracle.com/cloud/free/**
+2. Pulsa **"Start for free"** (o "Comenzar gratis").
+3. Completa el formulario:
+   - **Country:** tu país (ej. Venezuela).
+   - **Email:** correo que usarás para entrar siempre.
+   - **Password:** contraseña segura (anótala en un gestor de contraseñas).
+4. En **Cloud Account Name** elige un nombre (ej. `cvea-cursos`). Será parte de tu identificador; anótalo.
+5. **Home Region:** elige la más cercana (ej. **São Paulo** o **Phoenix**). No podrás cambiarla luego.
+6. Indica si eres estudiante/profesor si aplica; acepta términos.
+7. Verificación: te pedirán **tarjeta de crédito/débito**. Oracle no cobra si solo usas recursos *Always Free*; la usa para verificación. Revisa [FAQ Free Tier](https://www.oracle.com/cloud/free/faq/).
+8. Tras verificar el correo, entra a la consola: **https://cloud.oracle.com/**  
+   - Anota: **Tenancy name** (aparece arriba a la derecha o en el menú de perfil) y **Region**.
+
+**Checkpoint:** Puedes entrar a la consola Oracle Cloud y ves el dashboard.
+
+---
+
+## Paso 2 — Crear la red (VCN) si no existe
+
+1. En la consola: menú **≡ → Networking → Virtual cloud networks**.
+2. Si tu región ya tiene una VCN por defecto (ej. "Default VCN for..."), puedes usarla. Si no:
+   - **Start VCN Wizard → Create VCN with Internet Connectivity**.
+   - **VCN name:** `moodle-vcn` (o el que quieras).
+   - **Compartment:** el por defecto.
+   - Deja el resto y pulsa **Next** y **Create**.
+3. Luego: **Networking → Virtual cloud networks** → tu VCN → **Security Lists** → **Default Security List**.
+   - **Add Ingress Rules** (si no existen ya):
+     - **Source:** 0.0.0.0/0
+     - **IP Protocol:** TCP
+     - **Destination port range:** 22 (SSH), luego repite para 80 (HTTP) y 443 (HTTPS).
+   - O una sola regla: **Source** 0.0.0.0/0, **Destination port range:** 22,80,443.
+
+**Checkpoint:** La VCN existe y permite tráfico en 22, 80 y 443.
+
+---
+
+## Paso 3 — Crear la VM (instancia de computación)
+
+1. Menú **≡ → Compute → Instances**.
+2. **Create instance**.
+3. Rellena:
+   - **Name:** `moodle-cvea`
+   - **Placement:** misma región que tu tenancy.
+   - **Image and shape:**
+     - **Image:** **Oracle Linux** (por defecto suele ser 8 o 9). No cambies a otra distro si quieres seguir esta guía al pie.
+     - **Shape:** **Change shape** → **Ampere** o **AMD** → elegir un shape **Always Free**:
+       - AMD: **VM.Standard.E2.1.Micro** (1 OCPU, 1 GB RAM).
+       - O el equivalente en tu región (puede llamarse "Always Free eligible").
+   - **Networking:**
+     - **Primary VNIC:** crear nueva o existente; **Public IPv4 address:** **Assign a public IPv4 address** (debe quedar marcado).
+   - **Add SSH keys:**
+     - **Generate a key pair for me** → descarga la clave privada (`.key`) y guárdala en un lugar seguro.  
+     - O **Upload public key** si ya tienes una (ej. `id_rsa.pub`).
+4. **Create**. Espera a que el estado sea **Running** (icono verde).
+5. En la lista de instancias, anota la **Public IP address** de `moodle-cvea`.
+
+**Checkpoint:** Tienes una VM en estado *Running* y una IP pública (ej. 129.146.xxx.xxx).
+
+---
+
+## Paso 4 — Conectar por SSH a la VM
+
+En tu PC (PowerShell o terminal):
+
+- Si elegiste **Generate a key pair**, la clave privada suele llamarse `ssh-key-2025-xx-xx.key` (o similar). Mueve ese archivo a `~/.ssh/` y ajusta permisos:
+
+```bash
+# En PowerShell (Windows) o bash (Linux/Mac)
+# Sustituir <IP_PUBLICA> por la IP del Paso 3
+# Sustituir ruta del .key por la tuya
+
+ssh -i ruta/a/tu-key.key opc@<IP_PUBLICA>
+```
+
+En Windows con PuTTY: convertir la clave a `.ppk` con PuTTYgen y usar esa clave en Session → SSH → Auth.
+
+- Usuario por defecto en Oracle Linux es **`opc`**.
+- Si es la primera vez, acepta el fingerprint con `yes`.
+
+**Checkpoint:** Estás dentro de la VM y ves el prompt `[opc@moodle-cvea ~]$`.
+
+---
+
+## Paso 5 — Instalar Apache, PHP y dependencias
+
+Dentro de la VM, ejecuta (puedes copiar y pegar cada bloque):
+
+```bash
+# Actualizar sistema
+sudo dnf update -y
+
+# Apache y PHP (y extensiones que Moodle necesita)
+sudo dnf install -y httpd php php-cli php-common php-mysqlnd php-xml php-gd php-mbstring php-zip php-json php-curl php-intl php-soap unzip
+
+# Habilitar e iniciar Apache
+sudo systemctl enable --now httpd
+```
+
+Comprobar que Apache responde:
+
+```bash
+curl -s -o /dev/null -w "%{http_code}" http://localhost
+```
+
+Debería devolver `200`. Desde tu navegador, prueba **http://&lt;IP_PUBLICA&gt;** y deberías ver la página por defecto de Apache.
+
+**Checkpoint:** `http://<IP_PUBLICA>` muestra la página de Apache.
+
+---
+
+## Paso 6 — Instalar MariaDB y crear base de datos para Moodle
+
+```bash
+# Instalar MariaDB
+sudo dnf install -y mariadb-server
+sudo systemctl enable --now mariadb
+```
+
+Seguridad básica de MariaDB (ejecuta y responde según indicaciones):
+
+```bash
+sudo mysql_secure_installation
+```
+
+- Contraseña root: puedes dejarla vacía en desarrollo o poner una y anotarla.
+- Remove anonymous users: **Y**
+- Disallow root login remotely: **Y**
+- Remove test database: **Y**
+- Reload privileges: **Y**
+
+Crear base de datos y usuario para Moodle (cambia `TU_PASSWORD_SEGURA` por una contraseña fuerte):
+
+```bash
+sudo mysql -e "
+CREATE DATABASE moodle CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'moodleuser'@'localhost' IDENTIFIED BY 'TU_PASSWORD_SEGURA';
+GRANT ALL PRIVILEGES ON moodle.* TO 'moodleuser'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+"
+```
+
+Anota en un lugar seguro: **usuario:** `moodleuser`, **contraseña:** la que pusiste, **base de datos:** `moodle`, **host:** `localhost`.
+
+**Checkpoint:** Puedes entrar a MariaDB: `mysql -u moodleuser -p moodle` (te pedirá la contraseña).
+
+---
+
+## Paso 7 — Descargar e instalar Moodle en el servidor
+
+Sigue estos comandos en la VM (sustituye la versión por una estable reciente si prefieres; 4.3 es LTS):
+
+```bash
+# Ir al directorio web
+cd /var/www/html
+
+# Descargar Moodle 4.3 LTS (compatible con PHP 8.0/8.1; si tienes PHP 8.2+ puedes usar la última estable desde https://download.moodle.org/)
+sudo curl -L -o moodle.tgz https://download.moodle.org/download.php/direct/stable43/moodle-latest-43.tgz
+
+# Descomprimir
+sudo tar -xzf moodle.tgz
+
+# Crear directorio de datos (fuera del document root por seguridad)
+sudo mkdir -p /var/moodledata
+sudo chown -R apache:apache /var/moodledata
+sudo chmod 0777 /var/moodledata
+
+# Permisos para el código de Moodle
+sudo chown -R apache:apache /var/www/html/moodle
+sudo chmod -R 0755 /var/www/html/moodle
+```
+
+Si la descarga falla por versión, entra a [https://download.moodle.org/](https://download.moodle.org/) y elige la última estable; copia la URL del .tgz y úsala en el `curl`.
+
+**Checkpoint:** Existe `/var/www/html/moodle` y `/var/moodledata` con propietario `apache`.
+
+---
+
+## Paso 8 — Configurar Apache para Moodle (y PHP)
+
+Crear un archivo de configuración para Moodle:
+
+```bash
+sudo tee /etc/httpd/conf.d/moodle.conf << 'EOF'
+<VirtualHost *:80>
+    DocumentRoot /var/www/html/moodle
+    <Directory /var/www/html/moodle>
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+    ErrorLog logs/moodle_error.log
+    CustomLog logs/moodle_access.log combined
+</VirtualHost>
+EOF
+```
+
+Ajustar `php.ini` para límites que Moodle recomienda:
+
+```bash
+# Buscar php.ini (puede ser /etc/php.ini o /etc/php.d/...)
+sudo sed -i 's/^memory_limit = .*/memory_limit = 256M/' /etc/php.ini
+sudo sed -i 's/^upload_max_filesize = .*/upload_max_filesize = 64M/' /etc/php.ini
+sudo sed -i 's/^post_max_size = .*/post_max_size = 64M/' /etc/php.ini
+sudo sed -i 's/^max_execution_time = .*/max_execution_time = 300/' /etc/php.ini
+```
+
+Reiniciar Apache:
+
+```bash
+sudo systemctl restart httpd
+```
+
+**Checkpoint:** Al abrir **http://&lt;IP_PUBLICA&gt;** en el navegador deberías ver el **instalador de Moodle** (idioma, etc.). Si ves "403 Forbidden", revisa permisos de `/var/www/html/moodle` (propietario `apache`) y que `DocumentRoot` en el VirtualHost apunte a ese directorio.
+
+---
+
+## Paso 9 — Abrir puertos en el firewall (Oracle Linux)
+
+```bash
+# Firewalld
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --permanent --add-service=ssh
+sudo firewall-cmd --reload
+```
+
+Además, en **Oracle Cloud** la VCN debe permitir tráfico (Paso 2). Si aun así no cargas la página, revisa la **Security List** de la subred de la VM (puertos 80 y 443).
+
+**Checkpoint:** Desde tu navegador, **http://&lt;IP_PUBLICA&gt;** abre el instalador de Moodle.
+
+---
+
+## Paso 10 — Completar el instalador de Moodle en el navegador
+
+1. Abre **http://&lt;IP_PUBLICA&gt;** (o http://&lt;IP_PUBLICA&gt;/ si configuraste el VirtualHost como raíz).
+2. **Idioma:** Español (o el que prefieras) → **Siguiente**.
+3. **Rutas:**
+   - **Directorio de datos:** `/var/moodledata` (debe estar en verde si los permisos son correctos).
+4. **Base de datos:**
+   - **Driver:** MariaDB / MySQL nativo.
+   - **Host:** `localhost`
+   - **Base de datos:** `moodle`
+   - **Usuario:** `moodleuser`
+   - **Contraseña:** la que definiste en el Paso 6.
+   - **Prefijo de tablas:** `mdl_` (por defecto).
+5. **Siguiente** y espera a que Moodle cree las tablas.
+6. **Perfil del administrador:** nombre, apellido, correo y contraseña del admin. Anótalos.
+7. **Nombre del sitio:** p. ej. "Actuarial Cortex — Plataforma de cursos".
+8. Finaliza el asistente. Si aparece aviso de "Secure base URL" o HTTPS, puedes dejarlo para más adelante (por ahora HTTP con IP está bien para validar).
+
+**Checkpoint:** Entras al sitio Moodle y ves el escritorio (dashboard) como administrador.
+
+---
+
+## Paso 11 — Crear un curso de prueba y un usuario
+
+1. **Curso de prueba:**  
+   **Inicio del sitio → Crear curso** (o **Site administration → Courses → Add a new course**).  
+   - Nombre: "Curso de prueba Actuarial Cortex".  
+   - Guardar. Entra al curso y añade una sección o recurso (p. ej. una etiqueta con texto).
+
+2. **Usuario de prueba:**  
+   **Site administration → Users → Accounts → Add a new user**.  
+   - Completa nombre, apellido, correo, contraseña.  
+   - Crea el usuario y asígnalo al curso de prueba si quieres (Participants → Add users).
+
+**Checkpoint:** Existe un curso visible y al menos un usuario además del admin; puedes entrar con ese usuario y ver el curso.
+
+---
+
+## Paso 12 — Anotar la URL y opcionalmente enlazar desde el hub
+
+- **URL de la plataforma (por ahora):** `http://<IP_PUBLICA>`  
+  Anótala; más adelante se puede poner un dominio y HTTPS (Let's Encrypt) y actualizar el enlace en la web del hub.
+
+- Para **enlazar desde la página de Docencia:** en [Docencia](../index.qmd) (o en la guía [Plataforma de cursos](index.qmd)) se puede añadir un botón o enlace: *"Acceso a la plataforma de cursos (Moodle)"* → `http://<IP_PUBLICA>`.
+
+Cuando tengas dominio propio, cambias esa URL por `https://tudominio.edu` y configuras SSL en la VM (certbot + Apache).
+
+---
+
+## Resumen de la Fase 1
+
+| Paso | Acción | Resultado |
+|-----|--------|-----------|
+| 1 | Cuenta Oracle Cloud Free Tier | Acceso a la consola |
+| 2 | VCN y reglas de tráfico | Red con puertos 22, 80, 443 |
+| 3 | Crear VM Oracle Linux (Always Free) | IP pública anotada |
+| 4 | SSH a la VM | Sesión en la VM |
+| 5 | Apache + PHP | Página por defecto en http://IP |
+| 6 | MariaDB + BD moodle | Base de datos lista |
+| 7 | Descargar Moodle, moodledata | Archivos en /var/www/html/moodle |
+| 8 | VirtualHost y php.ini | Apache sirve Moodle |
+| 9 | Firewall (y Security List) | Puertos abiertos |
+| 10 | Instalador web Moodle | Sitio Moodle funcionando |
+| 11 | Curso y usuario de prueba | Validación completa |
+| 12 | Anotar URL / enlace al hub | Listo para Fase 2 |
+
+Si algo falla en un paso, detente ahí y revisa: permisos, firewall en la VM, Security List en Oracle, y que la IP sea la pública correcta. Cuando todos los checkpoints estén cumplidos, la **Fase 1** está terminada y puedes pasar a la [Fase 2](index.qmd#fase-2--primer-curso-módulo-2-ingeniería-de-datos-y-visualización-avanzada) (diseño del Módulo 2 y contenidos en Quarto).

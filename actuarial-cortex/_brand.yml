@@ -1,0 +1,29 @@
+# Identidad visual Actuarial Cortex — Logos y colores actuariales
+# Usado por la web y los PDFs del libro/revista
+
+meta:
+  name: "Actuarial Cortex"
+
+logo:
+  images:
+    header: "logo-AC/logo-ac-blanco.png"
+    white: logo-AC/logo-ac-blanco.png
+  medium: header
+  large: white
+
+color:
+  palette:
+    cortex-dark:   "#0b1720"
+    cortex-mid:    "#13315c"
+    cortex-bright: "#1768ac"
+    cortex-cyan:   "#45a9c4"
+    cortex-light:  "#eef4f4"
+  primary: cortex-bright
+  background: cortex-light
+
+typography:
+  fonts:
+    - family: "Montserrat"
+      source: google
+    - family: "Fira Code"
+      source: google

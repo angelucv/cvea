@@ -1,0 +1,56 @@
+<style>
+/* Logo horizontal en la barra: altura fija para que no desborde (sustituye cvea_teal) */
+.navbar-logo {
+  max-height: 48px !important;
+  width: auto !important;
+}
+/* Título "Actuarial Cortex" en dos líneas, al lado del logo (izquierda) */
+.navbar-title,
+.navbar-brand-container .navbar-brand:not(.navbar-brand-logo) {
+  display: block !important;
+  color: #fff !important;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 0.9em;
+  white-space: normal !important;
+  overflow: visible !important;
+  max-width: 5.5em; /* fuerza dos líneas: Actuarial / Cortex si el script no ha corrido */
+}
+.navbar-brand-container .navbar-brand:not(.navbar-brand-logo) {
+  display: block !important;
+  overflow: visible !important;
+  max-width: none;
+}
+.navbar-brand-container {
+  overflow: visible !important;
+}
+/* Móvil: título más pequeño para que "Actuarial" y "Cortex" quepan sin cortarse */
+@media (max-width: 991px) {
+  .navbar-title,
+  .navbar-brand-container .navbar-brand:not(.navbar-brand-logo) .navbar-title {
+    font-size: 0.7em !important;
+    max-width: 5em !important;
+  }
+}
+</style>
+<script>
+(function() {
+  function twoLineTitle() {
+    var t = document.querySelector('.navbar-title');
+    if (t && /Actuarial\s+Cortex/.test(t.textContent)) {
+      t.innerHTML = 'Actuarial<br>Cortex';
+    }
+  }
+  function run() {
+    twoLineTitle();
+    /* Por si Quarto o el tema pintan el navbar después */
+    setTimeout(twoLineTitle, 100);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run);
+  } else {
+    run();
+  }
+})();
+</script>

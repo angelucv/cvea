@@ -1,0 +1,33 @@
+# Orquestador global — modelo HCC (https://github.com/jurjoroa/hcc-website)
+# Sin ejecución de código en CI (Cloudflare); para generar con R local: quarto render --execute
+execute:
+  eval: false
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - assets/articulos
+    - Referencias/Recursos_HTML
+    - logo-AC
+  render:
+    - index.qmd
+    - sobre-cortex.qmd
+    - miembros.qmd
+    - actuarial-suite.qmd
+    - cortex-suite.qmd
+    - observatorio.qmd
+    - actualidad.qmd
+    - contacto.qmd
+    - investigacion
+    - resources
+    - docencia
+    - servicios
+
+format:
+  html:
+    embed-resources: false
+
+metadata-files:
+  - _website.yml
+  - _format.yml
+  - _brand.yml

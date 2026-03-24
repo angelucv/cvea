@@ -1,0 +1,180 @@
+<style>
+/* Panel de menú propio (no dropdown Bootstrap): enlaces normales que sí redirigen */
+#cortex-custom-menu-panel {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 300px;
+  max-width: 85vw;
+  height: 100vh;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.98);
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.12);
+  z-index: 1050;
+  transition: transform 0.25s ease;
+  transform: translateX(-100%);
+  padding-bottom: 1rem;
+}
+body.cortex-menu-open #cortex-custom-menu-panel {
+  transform: translateX(0);
+}
+.cortex-menu-panel-logo,
+.cortex-menu-panel-logo-bottom {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 0.5rem;
+  background: #0b1720;
+  text-align: center;
+}
+.cortex-menu-panel-logo-bottom {
+  border-bottom: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+.cortex-menu-panel-logo a,
+.cortex-menu-panel-logo-bottom a {
+  display: inline-block;
+}
+/* Mismo tamaño logo arriba y abajo */
+.cortex-menu-panel-logo img,
+.cortex-menu-panel-logo-bottom img {
+  max-height: 100px;
+  width: auto;
+}
+#cortex-custom-menu-panel .cortex-menu-link {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+#cortex-custom-menu-panel .cortex-menu-link:hover {
+  background: rgba(23, 104, 172, 0.08);
+  color: #1768ac;
+}
+/* Ocultar el dropdown de Bootstrap; usamos solo nuestro panel */
+#cortex-menu-dropdown .dropdown-menu {
+  display: none !important;
+}
+.cortex-menu-backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  z-index: 1040;
+  display: none;
+  cursor: pointer;
+}
+body.cortex-menu-open .cortex-menu-backdrop {
+  display: block;
+}
+body.cortex-menu-open .page-body,
+body.cortex-menu-open .content-inner,
+body.cortex-menu-open main.content,
+body.cortex-menu-open #quarto-document-content {
+  margin-left: 300px !important;
+  transition: margin-left 0.25s ease;
+}
+@media (max-width: 991.98px) {
+  body.cortex-menu-open .page-body,
+  body.cortex-menu-open .content-inner,
+  body.cortex-menu-open main.content,
+  body.cortex-menu-open #quarto-document-content {
+    margin-left: 0 !important;
+  }
+}
+</style>
+<script>
+(function() {
+  function initCortexMenuPanel() {
+    var dropdown = null;
+    var navs = document.querySelectorAll('.navbar .navbar-nav');
+    for (var n = 0; n < navs.length; n++) {
+      var items = navs[n].querySelectorAll('.dropdown');
+      for (var i = 0; i < items.length; i++) {
+        var t = items[i].querySelector('.dropdown-toggle');
+        if (t && (t.textContent || '').indexOf('Menú') !== -1) { dropdown = items[i]; break; }
+      }
+      if (dropdown) break;
+    }
+    if (!dropdown) return;
+    var menu = dropdown.querySelector('.dropdown-menu');
+    if (!menu) return;
+    dropdown.id = 'cortex-menu-dropdown';
+
+    var logoLink = document.querySelector('.navbar-brand[href]');
+    var logoHref = (logoLink && logoLink.getAttribute('href')) ? logoLink.getAttribute('href') : 'index.html';
+    if (logoHref.indexOf('.qmd') !== -1) logoHref = logoHref.replace(/\.qmd/g, '.html');
+    var logoImg = document.querySelector('.navbar-brand img');
+    var baseSrc = (logoImg && logoImg.getAttribute('src')) ? logoImg.getAttribute('src') : '';
+    baseSrc = baseSrc.replace(/\\/g, '/');
+    var dir = baseSrc ? baseSrc.split('/').slice(0, -1).join('/') : 'logo-AC';
+    if (!dir) dir = 'logo-AC';
+    var logoSrc = dir + '/logo-AC-AC-vertical-blanco.png';
+
+    /* Recoger enlaces del menú (mismos href que genera Quarto por página) */
+    var links = [];
+    menu.querySelectorAll('a.dropdown-item').forEach(function(a) {
+      var href = a.getAttribute('href');
+      if (href && href !== '#') {
+        if (href.indexOf('.qmd') !== -1) href = href.replace(/\.qmd/g, '.html');
+        var text = (a.querySelector('.dropdown-text') && a.querySelector('.dropdown-text').textContent) || a.textContent || '';
+        if (text) links.push({ href: href, text: text.trim() });
+      }
+    });
+
+    /* Crear panel propio con enlaces HTML normales (sin Bootstrap) */
+    var panel = document.getElementById('cortex-custom-menu-panel');
+    if (!panel) {
+      panel = document.createElement('div');
+      panel.id = 'cortex-custom-menu-panel';
+      var topLogo = '<div class="cortex-menu-panel-logo"><a href="' + logoHref + '"><img src="' + logoSrc + '" alt="Actuarial Cortex" onerror="this.style.display=\'none\'"></a></div>';
+      var list = '';
+      links.forEach(function(item) {
+        list += '<a class="cortex-menu-link" href="' + item.href + '">' + (item.text || item.href) + '</a>';
+      });
+      var bottomLogo = '<div class="cortex-menu-panel-logo-bottom"><a href="' + logoHref + '"><img src="' + logoSrc + '" alt="Actuarial Cortex" onerror="this.style.display=\'none\'"></a></div>';
+      panel.innerHTML = topLogo + list + bottomLogo;
+      document.body.appendChild(panel);
+    }
+
+    var backdrop = document.getElementById('cortex-menu-backdrop');
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.id = 'cortex-menu-backdrop';
+      backdrop.className = 'cortex-menu-backdrop';
+      document.body.appendChild(backdrop);
+    }
+
+    function openPanel() {
+      document.body.classList.add('cortex-menu-open');
+    }
+    function closePanel() {
+      document.body.classList.remove('cortex-menu-open');
+    }
+    function togglePanel() {
+      document.body.classList.toggle('cortex-menu-open');
+    }
+
+    var toggleEl = dropdown.querySelector('.dropdown-toggle') || dropdown.querySelector('[data-bs-toggle="dropdown"]');
+    if (toggleEl) {
+      toggleEl.addEventListener('click', function(ev) {
+        ev.preventDefault();
+        ev.stopPropagation();
+        ev.stopImmediatePropagation();
+        togglePanel();
+      }, true);
+    }
+
+    backdrop.addEventListener('click', closePanel);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCortexMenuPanel);
+  } else {
+    initCortexMenuPanel();
+  }
+})();
+</script>

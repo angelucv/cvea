@@ -1,0 +1,37 @@
+---
+title: "Contacto y soporte"
+subtitle: "Canales de atención para investigación, consultoría y soporte técnico"
+toc: true
+---
+
+Canales de atención de **Actuarial Cortex** para **solicitudes de investigación**, **consultoría estratégica** y **soporte técnico**.
+
+## Consultoría y asesoría
+
+- **Auditoría de reservas,** diseño técnico de productos, valuaciones de sostenibilidad fiscal y modelado actuarial (seguros, banca, previsión social).
+- **Cortex Suite:** propuestas de implementación de la plataforma modular (ingesta, scoring, control financiero, BI) para su organización. Ver [Cortex Suite](cortex-suite.qmd).
+- Solicitudes y perfiles del equipo en [Miembros](miembros.qmd).
+
+## Investigación
+
+- Para **solicitar más información** sobre trabajos finales de pregrado o acceso a documentos: indicar en el mensaje el título o autor del trabajo de interés.
+- Propuestas de colaboración en investigación y tutoría: contactar vía los correos indicados más abajo o a través de [Miembros](miembros.qmd).
+
+## Materiales académicos y publicaciones
+
+- Envío de manuscritos y consultas sobre el proceso de revisión: ver [Resources — Materiales académicos](resources/index.qmd) y [Modelo y plantilla](resources/index.qmd#modelo-editorial).
+- Plantillas para autores: [Resources](resources/index.qmd#plantilla-para-autores).
+
+## Formación y cursos
+
+- Información sobre el **Demo de Shiny de tarificación telemática**, Series de Tiempo y próximas ofertas: [Docencia](docencia/series-tiempo/index.qmd).
+
+## Cómo contactar
+
+- **Correo del hub:** [actuarial.cortex@gmail.com](mailto:actuarial.cortex@gmail.com)
+- **Correo institucional (UCV):** [angel.colmenares@ucv.ve](mailto:angel.colmenares@ucv.ve)
+- **Otro correo de contacto:** [angelc.ucv@gmail.com](mailto:angelc.ucv@gmail.com)
+- **Instagram:** [@actuarial_cortex](https://instagram.com/actuarial_cortex)
+- **Equipo y perfiles:** [Miembros](miembros.qmd)
+
+*(Se puede añadir aquí un formulario de contacto cuando esté definido.)*

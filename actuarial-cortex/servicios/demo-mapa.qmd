@@ -1,0 +1,17 @@
+---
+title: "Demo: Mapa de Riesgo de Mortalidad"
+format:
+  html:
+    page-layout: full
+---
+
+::: {.column-screen}
+
+<iframe
+  src="https://actuarial-cortex-mapa-servicios.streamlit.app/?embed=true"
+  style="height: 800px; width: 100%; border: none;">
+</iframe>
+
+:::
+
+Aplicativo **Mapa de servicios** (Streamlit), código en [angelucv/actuarial-cortex-mapa-servicios](https://github.com/angelucv/actuarial-cortex-mapa-servicios). Puede enlazarse con el análisis espacio-temporal (p. ej. mortalidad municipal en RVEA Vol. I). [**Abrir en nueva pestaña**](https://actuarial-cortex-mapa-servicios.streamlit.app/){target="_blank" rel="noopener noreferrer"}

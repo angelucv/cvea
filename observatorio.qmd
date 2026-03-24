@@ -6,6 +6,57 @@ toc: true
 
 El **Observatorio** es una **plataforma que el CVEA pone a disposición de tomadores de decisión e investigadores**. Además de ofrecer información actualizada sobre variables biométricas, financieras y de previsión, se prevé incorporar **cuadros de control y dashboards** con analítica de sectores financieros (seguros, banca) y otros sectores sensibles, para apoyar la evaluación de riesgo y la política pública.
 
+## Mapa de servicios financieros y salud
+
+Mapa interactivo de **bancos**, **cajeros automáticos**, **aseguradoras**, **hospitales y clínicas** y **farmacias** en Venezuela. Puedes filtrar por entidad, ver densidad por estado o explorar pines, círculos o mapa de calor. Funcionalidades de **mapa por estados** y cuadros de control similares están disponibles también en el [demo de Gestión Social](https://angelucv-actuarial-cortex-gestion-social.hf.space){target="_blank"} (dashboard con KPIs y visión por territorio).
+
+<div class="mapa-embed-wrapper" style="width: 100%; border: none; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<iframe
+  src="https://actuarial-cortex-mapa-servicios.streamlit.app/?embed=true"
+  title="Mapa de servicios financieros y salud — Venezuela"
+  style="width: 100%; height: 600px; border: none;"
+  allow="fullscreen"
+  loading="lazy">
+</iframe>
+</div>
+
+### Demos desplegados
+
+Estos aplicativos están en línea y pueden probarse desde aquí.
+
+```{=html}
+<style>
+.demos-cards { max-width: 640px; margin: 1.5rem 0; }
+.demos-cards .demo-card { background: #f8f9fa; border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+.demos-cards .demo-card h4 { margin: 0 0 0.5rem 0; font-size: 1.2rem; font-weight: 700; color: #1a365d; }
+.demos-cards .demo-card p { margin: 0 0 0.75rem 0; font-size: 0.9rem; color: #4a5568; line-height: 1.4; }
+.demos-cards .demo-card .demo-btn { display: inline-block; padding: 6px 14px; background: #38666A; color: #fff !important; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
+.demos-cards .demo-card .demo-btn:hover { background: #2d5154; color: #fff !important; }
+</style>
+<div class="demos-cards">
+  <div class="demo-card">
+    <h4>Dashboard Actividad Aseguradora</h4>
+    <p>Inteligencia de datos del sector asegurador (SUDEASEG). Primas, siniestros, análisis por empresa.</p>
+    <a href="https://insurdata-dashboard.streamlit.app/" target="_blank" rel="noopener noreferrer" class="demo-btn">Ir</a>
+  </div>
+  <div class="demo-card">
+    <h4>Gestión Social</h4>
+    <p>Gestión de solicitudes y ayudas sociales: Admin, dashboard con KPIs, mapa por estados, visión histórica (Django).</p>
+    <a href="https://angelucv-actuarial-cortex-gestion-social.hf.space" target="_blank" rel="noopener noreferrer" class="demo-btn">Ir</a>
+  </div>
+  <div class="demo-card">
+    <h4>Detección de Fraude (Banca)</h4>
+    <p>Análisis de fraude: IER, tasa de fraude, segmentación por marca de tarjeta o categoría (Streamlit).</p>
+    <a href="https://angelucv-actuarial-cortex-bank-fraud.hf.space" target="_blank" rel="noopener noreferrer" class="demo-btn">Ir</a>
+  </div>
+  <div class="demo-card">
+    <h4>Demos por sector</h4>
+    <p>Banca, Seguros, Retail, Salud, Control — plataforma unificada.</p>
+    <a href="https://cvea-suite-demos.streamlit.app/" target="_blank" rel="noopener noreferrer" class="demo-btn">Ir</a>
+  </div>
+</div>
+```
+
 ## Variables biométricas
 
 Gráficos dinámicos de las últimas tablas de mortalidad calibradas por el centro: tendencias nacionales y subnacionales, SMR, clusters de riesgo y proyecciones Lee-Carter. Basado en la investigación publicada en la [RVEA](rvea/index.qmd) y en el libro *Demografía, Mortalidad y Previsión Social en la Venezuela del Siglo XXI*.

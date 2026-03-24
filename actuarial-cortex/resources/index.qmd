@@ -1,0 +1,111 @@
+---
+title: "Materiales Académicos"
+subtitle: "Actuarial Cortex Hub"
+page-layout: custom
+title-block-banner: false
+format:
+  html:
+    toc: false
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <style>
+        .hero-rvea { min-height: 58vh !important; padding-top: 100px; }
+        .rvea-hero-logo { max-width: 52%; height: auto; margin-bottom: 1.25rem; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2)); display: block; }
+        .rvea-hero-title { color: #fff !important; font-size: clamp(2rem, 6vw, 3.5rem) !important; margin-bottom: 0.25rem !important; font-weight: 700; text-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+        .hero-rvea .rvea-hero-rvea { color: #fff !important; font-size: clamp(2rem, 6vw, 3.5rem) !important; margin: 0.2rem 0 !important; font-weight: 700; letter-spacing: 0.08em; text-shadow: 0 2px 8px rgba(0,0,0,0.2); line-height: 1.2; display: block; }
+        .rvea-hero-rotate { color: #fff !important; font-size: clamp(1.4rem, 4vw, 2rem) !important; font-weight: 600; margin: 0.75rem 0; min-height: 1.4em; }
+        .rvea-hero-rotate .txt-rotate .wrap { border-right-color: rgba(255,255,255,0.9); }
+        .rvea-hero-cta { margin-top: 1.25rem !important; }
+        .rvea-hero-cta .btn-21 { text-decoration: none; color: #fff !important; width: auto !important; min-width: 280px; height: auto !important; padding: 14px 28px !important; font-size: clamp(1.15rem, 2.5vw, 1.5rem) !important; font-weight: 600; }
+        .rvea-hero-cta .btn-21 span { padding: 0.3em 0.5em !important; color: #fff !important; }
+        .rvea-card { background: #f8f9fa; border-radius: 12px; padding: 1.25rem; margin: 1rem 0; border-left: 4px solid #38666A; }
+        .rvea-card h3 { margin-top: 0; color: #38666A; }
+        .rvea-card .btn-art { display: inline-block; margin: 0.25rem 0.25rem 0 0; padding: 0.4rem 0.9rem; background: #38666A; color: white !important; border-radius: 6px; text-decoration: none; font-size: 0.95rem; }
+        .rvea-card .btn-art:hover { background: #2a4f52; color: white !important; }
+        .rvea-section { margin: 2.5rem 0; }
+        .rvea-cta-bar { background: #1a2e30; padding: 1rem 1.5rem; text-align: center; position: relative; z-index: 9999; }
+        .rvea-cta-bar a { text-decoration: none; }
+        .rvea-btn-articulos { display: inline-block; padding: 12px 28px; background: #38666A; color: #fff !important; text-decoration: none !important; font-weight: 600; font-size: 1.15rem; border-radius: 8px; border: 2px solid rgba(255,255,255,0.5); cursor: pointer; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: inherit; }
+        .rvea-btn-articulos:hover { background: #2a4f52; color: #fff !important; transform: scale(1.02); }
+        </style>
+---
+
+```{=html}
+<!-- Hero Resources: presentación con fondo animado -->
+<div class="hero-cvea intro_f cvea-intro hero-rvea">
+  <div class="hero-doodle-bg" aria-hidden="true">
+    <css-doodle>
+      <style>
+        @grid: 20x1 / 100vmax;
+        :container { perspective: 22vmin; }
+        background: @m(
+          @r(180, 220),
+          radial-gradient(
+            @p(#38666A, #4a7d82, #2d5054, #5a9a9e, #1e3d40, #6bb5b9) 15%,
+            transparent 45%
+          ) @r(100%) @r(100%) / @r(1%, 4%) @lr no-repeat
+        );
+        @size: 50%;
+        @place-cell: center;
+        border-radius: 50%;
+        transform-style: preserve-3d;
+        animation: scale-up 24s linear infinite;
+        animation-delay: calc(@i * -.4s);
+        @keyframes scale-up {
+          0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0); }
+          15% { opacity: 0.85; }
+          90% { transform: translate3d(0, 0, @r(45vmin, 55vmin)) rotate(@r(-360deg, 360deg)); }
+          100% { opacity: 0; transform: translate3d(0, 0, 1vmin); }
+        }
+      </style>
+    </css-doodle>
+  </div>
+  <div class="hero-cvea-content">
+    <img src="../logo-AC/logo-actuarial-cortex-principal-blanco.png" alt="Actuarial Cortex" class="animate__animated animate__fadeInDown rvea-hero-logo">
+    <h1 class="animate__animated animate__fadeInDown rvea-hero-title">Materiales Académicos del Actuarial Cortex Hub</h1>
+    <p class="rvea-hero-rotate animate__animated animate__fadeIn" id="rvea-rotate-wrap"><span class="txt-rotate" id="rvea-txt-rotate"></span></p>
+  </div>
+</div>
+<nav class="portal-nav-bar" aria-label="Navegación principal">
+  <div class="portal-nav-bar-inner">
+    <a href="../index.html">Inicio</a><span class="sep">·</span>
+    <a href="../sobre-cortex.html">Sobre Cortex</a><span class="sep">·</span>
+    <a href="../miembros.html">Miembros</a><span class="sep">·</span>
+    <a href="index.html" class="active">Resources</a><span class="sep">·</span>
+    <a href="../actuarial-suite.html">Actuarial Suite</a><span class="sep">·</span>
+    <a href="../cortex-suite.html">Cortex Suite</a><span class="sep">·</span>
+    <a href="../docencia/index.html">Cursos</a><span class="sep">·</span>
+    <a href="../actualidad.html">Actualidad</a><span class="sep">·</span>
+    <a href="../contacto.html">Contacto</a>
+  </div>
+</nav>
+<script>
+(function() {
+  var words = ["Investigación", "Docencia", "Extensión", "Mortalidad", "Pensiones", "Seguros", "Modelado", "Reservas", "Publicaciones", "Demografía", "Riesgos", "Tarificación", "Formación", "Consultoría", "Banca"];
+  var el = document.getElementById("rvea-txt-rotate");
+  if (el) {
+    el.setAttribute("data-period", "2000");
+    el.setAttribute("data-rotate", JSON.stringify(words));
+  }
+})();
+</script>
+<script src="../assets/js/text.js"></script>
+```
+
+::: {.rvea-section #cursos-y-libros}
+## Curso de Series de Tiempo
+
+Curso orientado a actuarios y profesionales que requieran proyecciones de mortalidad, siniestralidad o indicadores económicos.
+
+[**Ir al curso Series de Tiempo con Python**](../docencia/series-tiempo/index.qmd)
+:::
+
+::: {.rvea-section #plantilla}
+## Plantilla de Libros y Materiales Docentes
+
+El **modelo para los libros de Actuarial Cortex** es la plantilla **Quarto Book** basada en *Applied Machine Learning Using mlr3 in R*. Incluye partes, capítulos, PDF descargable, sidebar y búsqueda; ya está adaptada al hub (título, logo, pie de página).
+
+**Libro de referencia:** *Applied Machine Learning Using mlr3 in R* — [Descargar PDF](mlr3book.pdf) *(coloca el PDF compilado en la carpeta `resources/` con el nombre `mlr3book.pdf` para habilitar el enlace).*
+:::
+

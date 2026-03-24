@@ -1,0 +1,17 @@
+---
+title: "Demo: Reservas Estocásticas IBNR"
+format:
+  html:
+    page-layout: full
+---
+
+::: {.column-screen}
+
+<iframe
+  src="https://tu-app-streamlit.app/?embed=true"
+  style="height: 800px; width: 100%; border: none;">
+</iframe>
+
+:::
+
+Reemplaza `https://tu-app-streamlit.app/` por la URL real de tu aplicación Streamlit (por ejemplo, en Streamlit Cloud o tu propio servidor) cuando esté desplegada.

@@ -1,0 +1,28 @@
+---
+title: "Sobre Actuarial Cortex"
+subtitle: "Hub personal de conocimiento y tecnología actuarial"
+toc: true
+toc-depth: 2
+---
+
+**Actuarial Cortex** es un **hub personal de conocimiento y tecnología actuarial** propuesto por el Prof. **Angel Colmenares**. No es un centro institucional, sino un espacio independiente donde convergen su experiencia académica, profesional y de consultoría en seguros, pensiones y riesgo financiero.
+
+El propósito de Actuarial Cortex es **construir y compartir modelos, herramientas y narrativas técnicas** que tengan impacto real en la toma de decisiones: desde reservas y tarificación hasta analítica avanzada y visualización de datos. La idea es acercar la matemática actuarial —tradicionalmente asociada a textos y aulas universitarias— a un ecosistema más **modular, tecnológico y orientado a productos**.
+
+Para organizar este hub se plantean tres grandes ejes de trabajo:
+
+- **Conocimiento aplicado**: modelos actuariales y financieros documentados, reproducibles y acompañados de ejemplos en R, Python y otras herramientas abiertas.
+- **Tecnología y demos**: prototipos web (Streamlit, Shiny, dashboards) que muestran cómo llevar esos modelos a entornos interactivos y de negocio.
+- **Formación continua**: materiales, cursos y rutas de aprendizaje diseñadas a partir de la práctica docente del Prof. Colmenares y de las necesidades reales del mercado.
+
+## Ejes del Hub Actuarial Cortex
+
+De forma resumida, Actuarial Cortex integra estos tres ejes bajo una misma identidad personal:
+
+| Eje | Contenido |
+|-----|-----------|
+| **Conocimiento aplicado** | Libros, notas técnicas, scripts en R/Python y cuadernos reproducibles sobre seguros, pensiones y riesgo. |
+| **Tecnología y demos** | Demos analíticos, dashboards interactivos y prototipos sectoriales derivados de la experiencia con Cortex Suite y otros proyectos. |
+| **Formación continua** | Cursos y materiales en matemáticas actuariales, financieras y ciencia de datos, pensados para actuarios y profesionales afines. |
+
+Actuarial Cortex se nutre de la **experiencia laboral** del Prof. Colmenares en **seguros, banca y pensiones**, y de su labor como **profesor desde 2011** en la Universidad Central de Venezuela (EECA-UCV). Se presenta aquí como una **plataforma personal e independiente**, donde el diseño de contenidos, demos y rutas formativas responde a su propia visión sobre la profesión actuarial en el siglo XXI.

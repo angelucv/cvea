@@ -1,0 +1,20 @@
+---
+title: "Model Hub"
+subtitle: "Repositorio de scripts, Excel actuarial y bases de datos abiertas"
+toc: true
+---
+
+El **Model Hub** de Actuarial Cortex es un repositorio de herramientas técnicas reproducibles: scripts en R/Python, hojas Excel parametrizadas y bases de datos abiertas, alineadas con la investigación publicada en Resources.
+
+## Contenido previsto
+
+- **Scripts R/Python:** modelos de mortalidad (Lee-Carter, BYM/INLA), reservas IBNR, proyecciones demográficas.
+- **Excel actuarial:** plantillas parametrizadas para cálculos técnicos y docencia.
+- **Bases de datos abiertas:** referencias a fuentes públicas utilizadas en los artículos (MPPS, INE, GADM, etc.).
+
+Los materiales se irán incorporando según el plan editorial y la disponibilidad de código en repositorios públicos. La plantilla de materiales está referenciada en [Resources — Modelo y plantilla](../resources/index.qmd#modelo-editorial).
+
+## Enlaces relacionados
+
+- [Resources](../resources/index.qmd) — materiales académicos con código reproducible.
+- [Docencia — Recursos para estudiantes](../docencia/index.qmd#recursos) — acceso al Model Hub con fines pedagógicos.

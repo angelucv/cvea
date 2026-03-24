@@ -1,0 +1,15 @@
+---
+title: "Gestión Social (demo)"
+subtitle: "Aplicativo Django — Ayudas y casos"
+format:
+  html:
+    toc: false
+---
+
+Demo desplegado en **Hugging Face Spaces**: gestión de solicitudes y ayudas sociales con base de datos, Admin, dashboard con KPIs, mapa por estados y visión histórica.
+
+**Enlace al aplicativo:** [**Abrir Gestión Social**](https://angelucv-actuarial-cortex-gestion-social.hf.space){target="_blank"}
+
+- **Admin:** usuario `admin`, contraseña `admin` (carga de datos, filtros, import/export).
+- **Dashboard:** tablero con gráficos, mapa interactivo y análisis temporal.
+- **Código:** [actuarial-cortex-suite-gestion-social (GitHub)](https://github.com/angelucv/actuarial-cortex-suite-gestion-social){target="_blank"}.

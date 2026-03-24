@@ -1,0 +1,85 @@
+---
+title: "Alternativas cuando Oracle Cloud no está disponible"
+subtitle: "Restricciones de acceso y opciones para montar Moodle"
+toc: true
+---
+
+## Por qué Oracle Cloud puede bloquear el acceso
+
+Al intentar acceder a **https://www.oracle.com/** (o al registro de Oracle Cloud) puede aparecer un mensaje como:
+
+> *"In compliance with U.S. and applicable Export laws we are unable to process your request..."*
+
+**Causa:** Oracle es una empresa estadounidense y aplica las **leyes de exportación de EE.UU.** En ciertos países o regiones el acceso a sus servicios en la nube puede restringirse por razones de cumplimiento normativo, sin que sea un error técnico ni un fallo del usuario.
+
+Si te aparece ese aviso, **no podrás usar Oracle Cloud** para la Fase 1. En su lugar puedes usar una de las alternativas siguientes para tener Moodle operativo y seguir con la Fase 2 (primer curso y enlace al hub).
+
+---
+
+## Alternativa 1 — MoodleCloud (prueba gratuita, sin tarjeta)
+
+**Qué es:** Servicio oficial de Moodle que ofrece alojamiento gestionado de Moodle. Tiene una **prueba gratuita** sin tarjeta de crédito.
+
+- **Web:** [moodlecloud.com](https://moodlecloud.com/) o [moodle.cloud](https://moodle.cloud/)
+- **Prueba gratuita:** hasta 50 usuarios, 1 GB de almacenamiento; para probar la plataforma y el primer curso.
+- **Idioma:** interfaz en español disponible.
+- **Ventaja:** Cero instalación; en minutos tienes una URL de Moodle lista para crear cursos.
+- **Limitación:** Si moodle.com/moodlecloud también aplica restricciones por región, podría no estar disponible; en ese caso usar Alternativa 2 o 3.
+
+**Pasos resumidos:**
+
+1. Entra en [moodlecloud.com](https://moodlecloud.com/) (o [moodle.cloud](https://moodle.cloud/)).
+2. Elige la opción de **prueba gratuita** o **Free trial**.
+3. Registra tu sitio (nombre, subdominio tipo `tusitio.moodlecloud.com`, correo, contraseña).
+4. Cuando esté listo, anota la URL de tu Moodle (ej. `https://cvea-cursos.moodlecloud.com`).
+5. Crea un curso de prueba y el usuario administrador; luego enlaza esa URL desde la página de Docencia del hub.
+
+Si el acceso a MoodleCloud también está bloqueado en tu red/país, usa Gnomio o un VPS.
+
+---
+
+## Alternativa 2 — Gnomio (Moodle gratuito con anuncios)
+
+**Qué es:** Servicio de **hosting gratuito de Moodle** (no dependiente de Oracle ni de la nube estadounidense). Incluye anuncios en la interfaz; hay planes de pago sin anuncios.
+
+- **Web:** [gnomio.com](https://www.gnomio.com/)
+- **Plan gratuito:** hasta 500 usuarios registrados, 50 cursos, 2 GB de almacenamiento; subida de archivos hasta 100 MB.
+- **Idioma:** español disponible.
+- **Ventaja:** Moodle completo sin instalar servidor; útil para validar la Fase 1 y desarrollar el Módulo 2.
+
+**Pasos resumidos:**
+
+1. Entra en [gnomio.com](https://www.gnomio.com/).
+2. Regístrate para crear un sitio Moodle gratuito (elige subdominio, correo, contraseña).
+3. Recibirás la URL de tu Moodle (ej. `https://tusitio.gnomio.com`).
+4. Configura el sitio, crea un curso de prueba y usuarios.
+5. Usa esa URL como “plataforma de cursos” y enlázala desde la web del hub ([Plataforma de cursos](index.qmd)).
+
+---
+
+## Alternativa 3 — VPS en Europa o Latinoamérica (Moodle autoinstalado)
+
+Si prefieres **control total** y un servidor propio (sin depender de Oracle ni de servicios en EE.UU.):
+
+- Contrata un **VPS** (servidor virtual) con un proveedor con datacenters en **Europa** o **Latinoamérica**, por ejemplo:
+  - **Hetzner** (Alemania/Finlandia): [hetzner.com](https://www.hetzner.com/)
+  - **Contabo** (Europa): [contabo.com](https://contabo.com/)
+  - **DigitalOcean** (tiene regiones fuera de EE.UU.; revisar si en tu país está disponible).
+  - Proveedores locales en tu país o región (hosting/VPS en LATAM).
+
+En ese VPS puedes seguir la misma lógica que en la [guía de la Fase 1](fase1-pasos.qmd) (Pasos 5–11): instalar **Apache, PHP, MariaDB y Moodle** en una distribución Linux (Ubuntu, Debian u Oracle Linux si la imagen está disponible). La diferencia es que la VM la creas en el panel del proveedor elegido, no en Oracle Cloud; el resto de comandos (instalación de paquetes, descarga de Moodle, configuración de Apache y base de datos) se mantiene.
+
+- **Ventaja:** Sin restricciones de Oracle; puedes usar dominio propio y HTTPS.
+- **Coste:** Muchos VPS en Europa/LATAM tienen planes desde unos pocos euros/dólares al mes.
+
+---
+
+## Qué hacer en el hub si usas una alternativa
+
+El objetivo de la **Fase 1** sigue siendo el mismo: **tener Moodle en línea y validar que la plataforma funciona** (curso de prueba, usuarios). Da igual si ese Moodle está en MoodleCloud, Gnomio o en un VPS propio.
+
+1. **Anota la URL** de tu Moodle (ej. `https://cvea-cursos.moodlecloud.com` o `https://cvea.gnomio.com`).
+2. En la página de [Docencia](../index.qmd) del sitio puedes añadir un enlace: *“Acceso a la plataforma de cursos (Moodle)”* → esa URL.
+3. Pasa a la **Fase 2**: diseñar el **Módulo 2 — Ingeniería de datos y visualización avanzada** dentro de ese Moodle y enlazar los contenidos (Quarto, PDF, etc.) desde la web del hub.
+
+Con cualquiera de estas alternativas puedes seguir el plan de la [Plataforma de cursos](index.qmd) sin depender de Oracle Cloud.

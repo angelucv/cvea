@@ -1,0 +1,99 @@
+<style>
+/* Barra secundaria y botón de menú lateral siempre visibles (desktop y móvil) en verde Actuarial Cortex */
+.quarto-secondary-nav {
+  padding: 0.35rem 0;
+  min-height: 2.5rem;
+  display: flex !important;
+  align-items: center;
+}
+.quarto-secondary-nav .quarto-btn-toggle {
+  background: var(--cvea-teal, #38666A) !important;
+  color: #fff !important;
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.75rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+.quarto-secondary-nav .quarto-btn-toggle:hover {
+  background: var(--cvea-teal-light, #4a7d82) !important;
+  color: #fff !important;
+}
+.quarto-secondary-nav .quarto-btn-toggle i {
+  margin-right: 0.35rem;
+}
+/* Texto "Menú" junto al icono para que sea obvio que es desplegable */
+.quarto-secondary-nav .quarto-btn-toggle::after {
+  content: " Menú";
+  margin-left: 0.25rem;
+}
+/* Pestaña flotante "Menú" a la izquierda: siempre visible para abrir/cerrar la barra */
+#cvea-sidebar-toggle-tab {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1050;
+  background: var(--cvea-teal, #38666A);
+  color: #fff;
+  padding: 0.6rem 0.5rem;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  letter-spacing: 0.05em;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.15);
+  transition: background 0.2s, left 0.25s ease;
+}
+#cvea-sidebar-toggle-tab:hover {
+  background: var(--cvea-teal-light, #4a7d82);
+  color: #fff;
+}
+#cvea-sidebar-toggle-tab.sidebar-open {
+  left: 280px;
+}
+#cvea-sidebar-toggle-tab:not(.sidebar-open) {
+  left: 0;
+}
+/* Ocultar pestaña flotante en móvil (ahí el menú está en la navbar) */
+@media (max-width: 991.98px) {
+  #cvea-sidebar-toggle-tab { display: none !important; }
+  .quarto-secondary-nav .quarto-btn-toggle::after { content: none; }
+}
+/* Solo mostrar la pestaña en páginas que tienen barra lateral (body.nav-sidebar) */
+body:not(.nav-sidebar) #cvea-sidebar-toggle-tab { display: none !important; }
+</style>
+<script>
+(function() {
+  function initSidebarToggleTab() {
+    var sidebar = document.getElementById('quarto-sidebar');
+    if (!sidebar || document.getElementById('cvea-sidebar-toggle-tab')) return;
+    var tab = document.createElement('div');
+    tab.id = 'cvea-sidebar-toggle-tab';
+    tab.setAttribute('aria-label', 'Abrir o cerrar menú');
+    tab.innerHTML = 'Menú';
+    document.body.appendChild(tab);
+    function updateTab() {
+      var isOpen = sidebar.classList.contains('show');
+      tab.classList.toggle('sidebar-open', isOpen);
+      tab.innerHTML = isOpen ? '◀ Menú' : 'Menú ▶';
+    }
+    tab.addEventListener('click', function() {
+      var btn = document.querySelector('.quarto-btn-toggle[data-bs-target=".quarto-sidebar-collapse-item"]');
+      if (btn) btn.click();
+      setTimeout(updateTab, 50);
+    });
+    var observer = new MutationObserver(updateTab);
+    observer.observe(sidebar, { attributes: true, attributeFilter: ['class'] });
+    setTimeout(updateTab, 200);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSidebarToggleTab);
+  } else {
+    initSidebarToggleTab();
+  }
+})();
+</script>
